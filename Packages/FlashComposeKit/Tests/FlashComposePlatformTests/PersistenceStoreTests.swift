@@ -120,9 +120,18 @@ extension SwiftDataTodoRepositoryTests {
                     isDone: true,
                 ),
             ])
-            // Unchanged hashes mean SwiftData found the file already at the current
-            // model and migrated nothing: the rename did not touch the stored shape.
-            #expect(try Fixture.modelVersion(of: url) == written)
+            // V1, installed nowhere yet, has since gained the progress entities, so the
+            // reopen adds their tables and the stored hash set grows. The entity the old
+            // store held must come through unchanged: an equal `TodoRecord` hash means
+            // the rename did not touch its stored shape.
+            let reopenedVersion = try Fixture.modelVersion(of: url)
+            #expect(reopenedVersion.hashes["TodoRecord"] == written.hashes["TodoRecord"])
+            #expect(reopenedVersion.entities == [
+                "AnswerRecord",
+                "CardProgressRecord",
+                "TodoRecord",
+            ])
+            #expect(reopenedVersion.identifiers == written.identifiers)
             #expect(written.identifiers == ["1.0.0"])
             #expect(written.entities == ["TodoRecord"])
         }

@@ -87,7 +87,9 @@ public actor SwiftDataProgressStore: ProgressStore {
 
     /// Makes every later ``record(answer:progress:)`` fail after it has staged its change
     /// and before it saves (`true`), or succeed again (`false`): the only way a test can
-    /// reach the rollback, since an in-memory save does not fail on its own.
+    /// reach the rollback, since an in-memory save does not fail on its own. Internal
+    /// rather than `#if DEBUG`, like ``loggedAnswers()``: `swift test -c release` builds
+    /// the Platform tests that call both.
     func failSaves(_ failing: Bool) {
         savesFail = failing
     }

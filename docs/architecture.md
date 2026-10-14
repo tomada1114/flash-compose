@@ -262,7 +262,6 @@ Code work these decisions imply; each becomes an issue.
 - Port FSRS-6 with the golden-vector suite.
 - The practice day and today's queue: due reviews by lowest retrievability, new cards
   from the scope at random, re-asks.
-- The `ProgressStore` port, its fake and contract, and the SwiftData adapter.
 - The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
   keys.
 - The Japanese values in `Localizable.xcstrings`, settling the open question above.
