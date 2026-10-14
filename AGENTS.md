@@ -157,7 +157,7 @@ Packages/FlashComposeKit/
 │                           #   (enforced by lint and test); coverage-gated
 ├── Sources/FlashComposeUI/        # SwiftUI views — thin, render Core view models; shared
 │                           #   presentation values in `DesignSystem/DesignTokens.swift`
-├── Sources/FlashComposePlatform/  # Adapters behind Core ports (SwiftData, URLSession, UserDefaults) — translation
+├── Sources/FlashComposePlatform/  # Adapters behind Core ports (SwiftData, UserDefaults) — translation
 │                           #   only, no domain logic, outside the coverage floor
 ├── Tests/FlashComposeTestSupport/ # Each port's fake and contract function — test code no
 │                           #   shipped module imports (enforced by test)
@@ -171,8 +171,7 @@ LaunchUITests/              # XCUITest on the iOS Simulator (XCTest by necessity
   `FlashComposeUI` and `FlashComposePlatform` are siblings and never import each other.
 - Storage and OS services go in `FlashComposePlatform` as an adapter behind a `Sendable` port
   Core declares, with one fake and one contract function in `Tests/FlashComposeTestSupport`.
-  The worked example is `TodoRepository` / `SwiftDataTodoRepository`; networking
-  included: `HTTPClient` / `URLSessionHTTPClient`; preferences included:
+  The worked example is `TodoRepository` / `SwiftDataTodoRepository`; preferences included:
   `PreferencesStoring` / `UserDefaultsPreferences`.
 - `FlashComposeCore` never imports SwiftUI, UIKit, AppKit, Cocoa, SwiftData, CoreData, CloudKit,
   UserNotifications, CoreLocation, Photos, PhotosUI, StoreKit, or WidgetKit — in any

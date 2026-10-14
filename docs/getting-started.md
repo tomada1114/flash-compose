@@ -165,8 +165,6 @@ once it has run).
 - The port/fake/contract shape: a `Sendable` protocol in Core, its adapter in
   `FlashComposePlatform`, one fake and one contract function in `FlashComposeTestSupport` — the
   `TodoRepository` files above are the worked example until your first port exists
-- `HTTPClient` — `Packages/FlashComposeKit/Sources/FlashComposeCore/Networking/HTTPClient.swift`
-  and `Packages/FlashComposeKit/Sources/FlashComposePlatform/Networking/URLSessionHTTPClient.swift`
 - `PreferencesStoring` — `Packages/FlashComposeKit/Sources/FlashComposeCore/Preferences/PreferencesStoring.swift`
   and `Packages/FlashComposeKit/Sources/FlashComposePlatform/Preferences/UserDefaultsPreferences.swift`
 - `NavigationModel` — `Packages/FlashComposeKit/Sources/FlashComposeCore/Navigation/NavigationModel.swift`

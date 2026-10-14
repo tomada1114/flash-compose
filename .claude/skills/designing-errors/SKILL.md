@@ -122,7 +122,7 @@ do {
   and treats it as a no-op — no failure reported, no error state, nothing logged — since
   a store that saw its caller cancel can only answer with a failure case.
   `TodoListViewModel.load()` is the worked example, and puts `phase` back to what it
-  was before the load. A port that can observe it (`HTTPClient`) declares the case
+  was before the load. A port that can observe it declares a `.cancelled` case
   instead, and its caller switches on it.
 - A test asserts cancellation with `#expect(throws: CancellationError.self)`.
 
@@ -168,13 +168,6 @@ AppLog.persistence.error(
     "read failed: \(nsError.domain, privacy: .public) \(nsError.code, privacy: .public)",
 )
 ```
-
-- **`URLError`.** `URLSessionHTTPClient.clientError(for:)` maps by `code` into
-  `HTTPClientError`: `.cancelled` to `cancelled`; no usable connection
-  (`.notConnectedToInternet`, `.cannotFindHost`, …) to `notConnected`; `.timedOut` to
-  `timedOut`; every other code to `transport(code:)`. A `CancellationError` also maps to
-  `cancelled` — the port throws typed, so cancellation is a case the caller treats as a
-  no-op — and it is the one failure the adapter does not log.
 
 A Platform test checks the mapping under plain `swift test` (`just test`) when the
 framework runs on the host — SwiftData with an in-memory store does
