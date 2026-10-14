@@ -12,6 +12,159 @@
         }
       }
     },
+    "scope.allShown" : {
+      "comment" : "Shown instead of the count when every card in the scope has been shown before.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every card in this scope shown"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この範囲は全カード出題済み"
+          }
+        }
+      }
+    },
+    "scope.done" : {
+      "comment" : "Button that closes the scope sheet.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了"
+          }
+        }
+      }
+    },
+    "scope.levels" : {
+      "comment" : "Header of the scope sheet's section listing the levels.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Levels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "レベル"
+          }
+        }
+      }
+    },
+    "scope.note.newCards" : {
+      "comment" : "First line of the note at the top of the scope sheet: the scope picks where new cards come from.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where new cards come from."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規カードの出題範囲。"
+          }
+        }
+      }
+    },
+    "scope.note.reviews" : {
+      "comment" : "Second line of the note at the top of the scope sheet: due reviews come from every topic and level.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reviews ignore the scope."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "復習は範囲に関係なく出題。"
+          }
+        }
+      }
+    },
+    "scope.pickAtLeastOne" : {
+      "comment" : "Note under a scope section whose only checked row cannot be unchecked.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pick at least one"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1つ以上を選択"
+          }
+        }
+      }
+    },
+    "scope.title" : {
+      "comment" : "Title of the sheet where the learner picks which topics and levels new cards come from.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scope"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "出題範囲"
+          }
+        }
+      }
+    },
+    "scope.topics" : {
+      "comment" : "Header of the scope sheet's section listing the topics.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Topics"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "トピック"
+          }
+        }
+      }
+    },
+    "scope.unseenCount" : {
+      "comment" : "Live count at the bottom of the scope sheet. The argument is the number of never-seen cards, formatted with grouping.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unseen in this scope: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "この範囲の未出題：%@枚"
+          }
+        }
+      }
+    },
     "todoDetail.created" : {
       "comment" : "Label beside the date a to-do item was created, on its detail screen.",
       "localizations" : {

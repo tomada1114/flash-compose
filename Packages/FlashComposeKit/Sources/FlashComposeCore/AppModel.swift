@@ -25,6 +25,11 @@ public final class AppModel {
     /// the same items and a pushed detail screen shows what the list shows.
     public let todoList: TodoListViewModel
 
+    /// The scope every scene shares, built over `preferences`: the sheet renders it, and
+    /// the queue and the drill read its ``ScopeViewModel/selection``, so all three see one
+    /// value.
+    public let scope: ScopeViewModel
+
     /// Builds the shared view models over `repository` and `preferences`. Nothing is read
     /// until a view model's own `load()`: construction stays free of side effects.
     ///
@@ -43,6 +48,7 @@ public final class AppModel {
             now: now,
             makeID: makeID,
         )
+        scope = ScopeViewModel(preferences: preferences)
     }
 
     /// The view model of the screen ``AppRoute/todoDetail(_:)`` pushes for `id`.
