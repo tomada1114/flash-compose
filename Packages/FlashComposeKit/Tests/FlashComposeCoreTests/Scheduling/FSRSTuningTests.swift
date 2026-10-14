@@ -65,11 +65,14 @@ struct FSRSTuningTests {
         #expect(try FSRSWeights(changed) != .default)
         #expect(
             Tuning.default
-                == Tuning(fsrs: Self.tuning(
-                    maximumIntervalDays: 365,
-                    shortestIntervalDays: 1,
-                    fuzz: .default,
-                )),
+                == Tuning(
+                    fsrs: Self.tuning(
+                        maximumIntervalDays: 365,
+                        shortestIntervalDays: 1,
+                        fuzz: .default,
+                    ),
+                    reAsk: .default,
+                ),
         )
     }
 
