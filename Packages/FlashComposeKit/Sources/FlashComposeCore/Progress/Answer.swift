@@ -16,7 +16,8 @@ public struct Answer: Hashable, Sendable {
     public enum Kind: Hashable, Sendable, CaseIterable {
         /// The card's first answer of its practice day, which the scheduler moved.
         case firstOfDay
-        /// A repeat of a card graded again earlier in the session, which moved nothing.
+        /// A card shown again later in the same session because an earlier grade called
+        /// for it (§3.2); it moves nothing.
         case reAsk
     }
 
@@ -33,8 +34,7 @@ public struct Answer: Hashable, Sendable {
     public let kind: Kind
     /// The card's state before the grade; `nil` for a card answered for the first time.
     public let before: FSRSState?
-    /// The card's state after the grade — the same as ``before`` for a re-ask, which
-    /// moves nothing.
+    /// The card's state after the grade; a re-ask moves nothing (§3.3).
     public let after: FSRSState
     /// How long the card was on screen before the learner revealed the answer, in seconds.
     public let secondsToReveal: Double

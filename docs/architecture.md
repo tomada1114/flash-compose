@@ -95,9 +95,9 @@ with `Text(verbatim:)`.
 - **Fields.** A card is `id`, `ja`, `en`, `alternatives`, `point`, `topic`, `subtopic`,
   `level`, and `grammar`, spelled as the old JSON spells them. `Card` keeps those names
   except `ja` and `en`, which it calls `japanese` and `english` because SwiftLint's
-  `identifier_name` refuses a two-letter name, so the decoder maps those two keys and
-  reads the rest by default. The old `createdAt` and `stamps` (its authoring pipeline's
-  review hashes) are not carried.
+  `identifier_name` refuses a two-letter name, so the decoder maps those two keys to
+  them. The old `createdAt` and `stamps` (its authoring pipeline's review hashes) are not
+  carried.
 - **Retired ids.** `retired-ids.json` lists every card id the old repository retired —
   its 77 card tombstones, without the 10 vocabulary ones — each with its `replacedBy` id
   when it has one, and every id this repository retires from now on.

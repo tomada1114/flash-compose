@@ -5,7 +5,7 @@
 /// catalog decodes into and what the drill shows. Its properties are spelled as the
 /// catalog's JSON keys are, except ``japanese`` and ``english``: the JSON's `ja` and `en`
 /// are shorter than the lint's `identifier_name` rule allows, so the decoder maps those
-/// two keys by name. The content rules — non-empty text, at least one alternative, known
+/// two keys to them. The content rules — non-empty text, at least one alternative, known
 /// topic, subtopic, and grammar tags — are the catalog integrity test's to hold, against
 /// the real files, rather than this initializer's: a card is only ever made from those
 /// files.
