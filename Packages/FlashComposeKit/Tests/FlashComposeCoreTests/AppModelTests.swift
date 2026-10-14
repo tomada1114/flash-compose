@@ -145,6 +145,17 @@ struct AppModelTests {
         #expect(preferences.value(for: PreferenceKeys.scopeTopicsOff) == "daily")
     }
 
+    @Test
+    func `the start-up indicator watches the shared drill and starts hidden`() async {
+        let model = Self.appModel(
+            over: InMemoryTodoRepository(),
+            preferences: InMemoryPreferences(),
+        )
+        #expect(!model.startupIndicator.isVisible)
+        await model.drill.start()
+        #expect(!model.startupIndicator.isVisible)
+    }
+
     /// The composition root's fallback: a store that cannot open shows E1.
     @Test
     func `an unavailable progress store leaves the drill on E1`() async {

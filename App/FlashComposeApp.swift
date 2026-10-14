@@ -51,6 +51,12 @@ struct FlashComposeApp: App {
         /// fails (`UpdateFailingTodoRepository`), so a failure alert can be seen and
         /// UI-tested. Release builds neither read the argument nor contain the type.
         private static let failUpdatesArgument = "-failUpdates"
+
+        /// Debug-only fault injection: every grade fails to save
+        /// (`RecordFailingProgressStore`), so E2 can be seen and UI-tested while the
+        /// start-up still loads. Release builds neither read the argument nor contain the
+        /// type.
+        private static let failRecordsArgument = "-failRecords"
     #endif
 
     /// Owned here, in `@State`, so the model outlives any one scene's view tree and every
@@ -83,22 +89,37 @@ struct FlashComposeApp: App {
         let storage: PersistenceStore.Storage = isUITesting ? .inMemory : .onDisk
         do {
             let container = try PersistenceStore.makeContainer(storage: storage)
-            let progress = SwiftDataProgressStore(modelContainer: container)
-            let repository = SwiftDataTodoRepository(modelContainer: container)
+            let stores = Stores(
+                todos: SwiftDataTodoRepository(modelContainer: container),
+                progress: SwiftDataProgressStore(modelContainer: container),
+            )
             #if DEBUG
-                if ProcessInfo.processInfo.arguments.contains(failUpdatesArgument) {
-                    return Stores(
-                        todos: UpdateFailingTodoRepository(wrapping: repository),
-                        progress: progress,
-                    )
-                }
+                return faultInjected(stores)
+            #else
+                return stores
             #endif
-            return Stores(todos: repository, progress: progress)
         } catch {
             // `makeContainer` has logged the failure; the null objects are the handling.
             return Stores(todos: UnavailableTodoRepository(), progress: UnavailableProgressStore())
         }
     }
+
+    #if DEBUG
+        /// `stores`, each wrapped in its fault injection when its launch argument is
+        /// present.
+        private static func faultInjected(_ stores: Stores) -> Stores {
+            let arguments = ProcessInfo.processInfo.arguments
+            var todos = stores.todos
+            var progress = stores.progress
+            if arguments.contains(failUpdatesArgument) {
+                todos = UpdateFailingTodoRepository(wrapping: todos)
+            }
+            if arguments.contains(failRecordsArgument) {
+                progress = RecordFailingProgressStore(wrapping: progress)
+            }
+            return Stores(todos: todos, progress: progress)
+        }
+    #endif
 
     /// The preferences the app runs on: the standard defaults, or — under UI testing — a
     /// suite of its own, cleared at launch. `just uitest` reuses the simulator, so without

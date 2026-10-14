@@ -6,17 +6,26 @@
 /// means rather than how it is tuned — is a constant on its own type instead.
 public struct Tuning: Sendable, Equatable {
     /// The values the app ships with.
-    public static let `default` = Self(fsrs: .default, reAsk: .default)
+    public static let `default` = Self(fsrs: .default, reAsk: .default, startupIndicator: .default)
 
     /// The FSRS-6 scheduler's parameters (`docs/architecture.md` › Scheduling).
     public let fsrs: FSRSTuning
     /// When a graded card comes back within the session (`docs/product/requirements.md`
     /// §3.2).
     public let reAsk: ReAskTuning
+    /// When the start-up shows its progress indicator (`docs/design/ux-guidelines.md` ›
+    /// States).
+    public let startupIndicator: StartupIndicatorTuning
 
-    /// Gathers the tunables; the app uses ``default``.
-    public init(fsrs: FSRSTuning, reAsk: ReAskTuning) {
+    /// Gathers the tunables; the app uses ``default``. `startupIndicator` defaults to the
+    /// shipped timing, which no scheduler or queue test needs to restate.
+    public init(
+        fsrs: FSRSTuning,
+        reAsk: ReAskTuning,
+        startupIndicator: StartupIndicatorTuning = .default,
+    ) {
         self.fsrs = fsrs
         self.reAsk = reAsk
+        self.startupIndicator = startupIndicator
     }
 }

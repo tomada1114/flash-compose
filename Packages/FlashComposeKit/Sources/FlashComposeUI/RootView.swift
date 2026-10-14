@@ -1,9 +1,9 @@
 import FlashComposeCore
 import SwiftUI
 
-/// One window's navigation root: the stack every screen is pushed onto, its root screen,
-/// the one place a route becomes a screen, and the one place a failure is presented
-/// (`failureAlert(_:dismiss:)`).
+/// One window's navigation root: the stack every screen is pushed onto, its root screen —
+/// the drill (`DrillView`) — the one place a route becomes a screen, and the one place a
+/// failure is presented (`failureAlert(_:dismiss:)`).
 ///
 /// The app's only `NavigationStack(path:)` and its only
 /// `navigationDestination(for: AppRoute.self)` live here, so a new screen adds an
@@ -23,7 +23,7 @@ public struct RootView: View {
 
     public var body: some View {
         NavigationStack(path: $navigation.path) {
-            TodoListView(model: app.todoList)
+            DrillView(model: app.drill, startup: app.startupIndicator)
                 .navigationDestination(for: AppRoute.self) { route in
                     // Identified by its route, so a deep link that swaps one pushed item
                     // for another gets a fresh screen, and a fresh model, rather than
@@ -31,9 +31,9 @@ public struct RootView: View {
                     destination(for: route).id(route)
                 }
         }
-        // Outside the stack, so a failure presents over whichever screen is on top: a
-        // toggle on the pushed detail screen is the list's, and fails as the list's.
-        .failureAlert(app.todoList.failure) { app.todoList.dismissFailure() }
+        // Outside the stack, so a failure presents over whichever screen is on top: a grade
+        // that could not be saved (E2) leaves the drill on the same card under the alert.
+        .failureAlert(app.drill.failure) { app.drill.dismissFailure() }
     }
 
     /// Creates the root over `app` and `navigation`, which the caller owns.
@@ -56,16 +56,12 @@ public struct RootView: View {
 }
 
 #if DEBUG
-    #Preview("Items") {
+    #Preview("Drill") {
         RootView(
             app: AppModel(
-                repository: PreviewTodoRepository(titles: [
-                    "Buy milk",
-                    "Call the bank",
-                    "Water plants",
-                ]),
+                repository: PreviewTodoRepository(titles: []),
                 preferences: PreviewPreferences(),
-                progressStore: UnavailableProgressStore(),
+                progressStore: PreviewProgressStore(),
             ),
             navigation: NavigationModel(),
         )

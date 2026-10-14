@@ -35,6 +35,10 @@ public final class AppModel {
     /// follows its grades.
     public let drill: DrillViewModel
 
+    /// Whether the drill's start-up shows a progress indicator, built over ``drill`` and
+    /// waiting on the drill environment's clock.
+    public let startupIndicator: StartupIndicator
+
     /// Builds the shared view models over `repository`, `preferences`, and
     /// `progressStore`. Nothing is read until a view model's own `load()` or `start()`:
     /// construction stays free of side effects.
@@ -65,6 +69,11 @@ public final class AppModel {
             scope: scope,
             now: now,
             environment: drillEnvironment,
+        )
+        startupIndicator = StartupIndicator(
+            drill: drill,
+            clock: drillEnvironment.clock,
+            tuning: drillEnvironment.tuning.startupIndicator,
         )
     }
 
