@@ -80,6 +80,38 @@ struct LocalizationTests {
         "scope.allShown": "この範囲は全カード出題済み",
     ]
 
+    /// The Japanese the drill ships, held to the catalog's source as ``scopeJapanese`` is,
+    /// in the glossary's words and terse register (`docs/design/ux-guidelines.md`).
+    static let drillJapanese = [
+        "drill.kind.new": "新規",
+        "drill.kind.review": "復習",
+        "drill.kind.reAsk": "もう一度",
+        "drill.card.kindLine": "%@ · %@ · L%lld",
+        "drill.showAnswer": "答えを見る",
+        "drill.alternatives": "別解",
+        "drill.grade.again": "忘れた",
+        "drill.grade.hard": "微妙",
+        "drill.grade.good": "覚えてた",
+        "drill.grade.spoken": "%@、次回%@後",
+        "drill.interval.oneDay": "1日",
+        "drill.interval.days": "%lld日",
+        "drill.interval.months": "約%lldか月",
+        "drill.interval.oneYear": "約1年",
+        "drill.header.spoken.new": "新規 %@、復習 %@、もう一度 %@。このカードは新規",
+        "drill.header.spoken.review": "新規 %@、復習 %@、もう一度 %@。このカードは復習",
+        "drill.header.spoken.reAsk": "新規 %@、復習 %@、もう一度 %@。このカードはもう一度",
+        "drill.header.spoken.none": "新規 %@、復習 %@、もう一度 %@",
+        "drill.done.title": "今日の分は完了",
+        "drill.done.nextReview": "次の復習：%@",
+        "drill.done.outsideScope": "範囲外の未出題カード：%@枚",
+        "drill.done.changeScope": "範囲を変える…",
+        "drill.startFailure.title": "データを開けません",
+        "drill.startFailure.message": "カードまたは学習記録の読み込みに失敗",
+        "drill.startFailure.retry": "再試行",
+        "drill.failure.save.title": "回答の保存に失敗",
+        "drill.failure.save.message": "もう一度評価をタップ",
+    ]
+
     /// Every resource Core returns, once per state that picks a different key, with the
     /// arguments its English takes. Adding a key to Core means adding it here: the
     /// source-scan tests fail until this list names every key Core's sources declare.
@@ -101,6 +133,54 @@ struct LocalizationTests {
         return strings.map { Case(resource: $0, arguments: []) }
             + failures.map { Case(resource: $0.message, arguments: []) }
             + [Case(resource: ScopeStrings.unseenCount("1,402"), arguments: ["1,402"])]
+            + drillCases()
+    }
+
+    /// The drill's resources (``DrillStrings``, ``IntervalLabel``, ``DrillFailure``), once
+    /// per key, with the English each argument renders as.
+    static func drillCases() -> [Case] {
+        let plain: [LocalizedStringResource] = [
+            DrillStrings.showAnswer, DrillStrings.alternatives, DrillStrings.doneTitle,
+            DrillStrings.changeScope, DrillStrings.startFailureTitle,
+            DrillStrings.startFailureMessage, DrillStrings.retry,
+            DrillFailure.saveFailed.title, DrillFailure.saveFailed.message,
+            IntervalLabel.days(1).text, IntervalLabel.year.text,
+        ]
+            + DrillPile.allCases.map(DrillStrings.kind)
+            + Grade.allCases.map(DrillStrings.grade)
+        let counts = ["1,820", "12", "0"]
+        let headers = ([nil] + DrillPile.allCases.map(Optional.some)).map { pile in
+            Case(
+                resource: DrillStrings.header(
+                    new: counts[0],
+                    review: counts[1],
+                    reAsk: counts[2],
+                    pile: pile,
+                ),
+                arguments: counts,
+            )
+        }
+        return plain.map { Case(resource: $0, arguments: []) } + headers + [
+            Case(
+                resource: DrillStrings.kindLine(
+                    kind: DrillStrings.kind(.review),
+                    topic: "仕事",
+                    level: 5,
+                ),
+                arguments: ["Review", "仕事", 5],
+            ),
+            Case(
+                resource: DrillStrings.gradeWithInterval(
+                    DrillStrings.grade(.again),
+                    interval: IntervalLabel.days(1).text,
+                ),
+                arguments: ["Forgot", "1 day"],
+            ),
+            Case(resource: IntervalLabel.days(29).text, arguments: [29]),
+            Case(resource: IntervalLabel.months(2).text, arguments: [2]),
+            Case(resource: DrillStrings.nextReview("Thu, Oct 15"), arguments: ["Thu, Oct 15"]),
+            Case(resource: DrillStrings.outsideScope("1,402"), arguments: ["1,402"]),
+        ]
     }
 
     /// `Sources/FlashComposeCore/Resources/Localizable.xcstrings`.
@@ -228,6 +308,19 @@ struct LocalizationTests {
         let scopeKeys = Set(catalog.strings.keys.filter { $0.hasPrefix("scope.") })
         #expect(scopeKeys == Set(Self.scopeJapanese.keys))
         for (key, japanese) in Self.scopeJapanese {
+            #expect(
+                catalog.strings[key]?.localizations["ja"]?.stringUnit?.value == japanese,
+                "\(key)",
+            )
+        }
+    }
+
+    @Test
+    func `every drill key has its Japanese value`() throws {
+        let catalog = try Self.catalog()
+        let drillKeys = Set(catalog.strings.keys.filter { $0.hasPrefix("drill.") })
+        #expect(drillKeys == Set(Self.drillJapanese.keys))
+        for (key, japanese) in Self.drillJapanese {
             #expect(
                 catalog.strings[key]?.localizations["ja"]?.stringUnit?.value == japanese,
                 "\(key)",
