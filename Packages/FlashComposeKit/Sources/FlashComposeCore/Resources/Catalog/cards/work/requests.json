@@ -1,0 +1,629 @@
+[
+  {
+    "id": "c_2b6g7y2d",
+    "ja": "私は、こんなお願いはめったにしない。",
+    "en": "Rarely do I ask for favors like this.",
+    "alternatives": [
+      "I rarely ask for favors like this.",
+      "I hardly ever ask for favors like this."
+    ],
+    "point": "Rarely を前に出すと do が主語の前へ",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_2k8s7y7e",
+    "ja": "サムにやり直してと頼んだ。",
+    "en": "I asked Sam to redo it.",
+    "alternatives": ["I asked Sam to do it again.", "I asked Sam to try again."],
+    "point": "ask + 人 + to do の語順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_2t9n3b2w",
+    "ja": "明日、代わりに出られる？",
+    "en": "Can you cover for me tomorrow?",
+    "alternatives": [
+      "Could you cover for me tomorrow?",
+      "Can you fill in for me tomorrow?"
+    ],
+    "point": "代わりを務めるは cover for ~",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_2u4n6t9b",
+    "ja": "断っていれば、今は暇なのに。",
+    "en": "If I'd refused, I'd be free now.",
+    "alternatives": [
+      "If I'd said no, I'd be free now.",
+      "Had I said no, I'd be free now."
+    ],
+    "point": "過去の仮定 + 今の結果は would be",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_2v4t5q7v",
+    "ja": "返事、ずっと待ってます。",
+    "en": "I've been waiting for your reply.",
+    "alternatives": [
+      "I've been waiting to hear back.",
+      "I've been waiting on your reply."
+    ],
+    "point": "続いている動作は have been ~ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_2z3g5j4g",
+    "ja": "今、彼に連絡中です。",
+    "en": "I'm contacting him now.",
+    "alternatives": ["I'm reaching out to him now.", "I'm getting in touch with him."],
+    "point": "「今〜している」は am + -ing。連絡する contact",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_3d3f6s4u",
+    "ja": "共有してくれてれば、手伝ったのに。",
+    "en": "If you'd looped me in, I'd have helped.",
+    "alternatives": [
+      "Had you looped me in, I'd have helped.",
+      "If you'd told me, I'd have helped.",
+      "If you'd kept me posted, I'd have helped."
+    ],
+    "point": "「共有する」は loop ~ in。過去の仮定は had done",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_3m3b5z4p",
+    "ja": "私が曖昧に頼んでたら君は今も手探りだ。",
+    "en": "Had I equivocated, you'd still be flying blind.",
+    "alternatives": [
+      "If I'd been evasive, you'd still lack essential guidance.",
+      "You'd still be working without guidance if I'd equivocated."
+    ],
+    "point": "equivocate は言葉を濁す、fly blind は情報なしに進める。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_3y9m6v5h",
+    "ja": "お言葉に甘えられたらいいのですが。",
+    "en": "I wish I could take you up on that.",
+    "alternatives": [
+      "I wish I could take you up on it.",
+      "I wish I could accept your offer."
+    ],
+    "point": "take ~ up on は申し出を受ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_4b5z6p4b",
+    "ja": "この件を引き受ける余裕はない。",
+    "en": "I can't afford to take this on.",
+    "alternatives": [
+      "I don't have the capacity to take this on.",
+      "I don't have the bandwidth for this."
+    ],
+    "point": "can't afford to + 動詞で「〜する余裕がない」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_4c7s9k3c",
+    "ja": "頼みたいのは、第三者の目です。",
+    "en": "What I need is fresh eyes.",
+    "alternatives": [
+      "What I'm after is a second pair of eyes.",
+      "It's a second pair of eyes I need."
+    ],
+    "point": "「別の人の目」は a second pair of eyes",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4e2x7p2k",
+    "ja": "彼が無理と言ったら、こっそり教えて。",
+    "en": "Tip me off if he says he can't.",
+    "alternatives": [
+      "Give me a heads-up if he says he can't.",
+      "Let me know early if he says he can't."
+    ],
+    "point": "「こっそり知らせる」は tip off。if 節の中に says 節",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_4e5z8v9x",
+    "ja": "顧客の依頼が一件未処理。",
+    "en": "There's one outstanding client request.",
+    "alternatives": [
+      "One client request is still pending.",
+      "There's one client request awaiting action."
+    ],
+    "point": "outstanding はまだ処理されていない意味もある。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_4x3h9j8f",
+    "ja": "よければ、手伝ってもらえない？",
+    "en": "I don't suppose you could help?",
+    "alternatives": [
+      "I was wondering if you could help.",
+      "Would there be any chance you could help?"
+    ],
+    "point": "I don't suppose you could で控えめに頼む",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4z2b4b5p",
+    "ja": "もうお願いしたと思ってた。",
+    "en": "I thought I'd already asked you.",
+    "alternatives": [
+      "I believed I'd already asked you.",
+      "I was under the impression I'd already asked."
+    ],
+    "point": "それ以前の出来事は過去完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["past-perfect", "hedging-softening"]
+  },
+  {
+    "id": "c_4z4r6d7p",
+    "ja": "今、忙しいですか？",
+    "en": "Are you busy now?",
+    "alternatives": ["Are you busy right now?", "Are you free now?"],
+    "point": "疑問文は Are you の順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_4z8t9b5g",
+    "ja": "手空きなら私が問合せをさばくのに。",
+    "en": "If I weren't swamped, I'd field inquiries.",
+    "alternatives": [
+      "If I were free, I'd handle inquiries.",
+      "I'd handle inquiries if I weren't busy."
+    ],
+    "point": "field は問い合わせなどを受けて対応すること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_5d4y5v8d",
+    "ja": "手が空いたら手伝います。",
+    "en": "I'll help once I'm free.",
+    "alternatives": ["When I'm available, I'll help.", "I'll help when I have time."],
+    "point": "once の後は未来のことも現在形。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_5k6y2b6x",
+    "ja": "チームに、明日やり直させます。",
+    "en": "I'll have the team redo it tomorrow.",
+    "alternatives": [
+      "I'll get the team to redo it tomorrow.",
+      "I'll have the team do it over tomorrow."
+    ],
+    "point": "have + 人 + 原形で「させる」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5p7u5d5b",
+    "ja": "この仕事の方が要求が厳しい。",
+    "en": "This task is more exacting.",
+    "alternatives": ["This task is more demanding.", "This assignment demands more."],
+    "point": "exacting は高い水準を要求する。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5s9q8a5g",
+    "ja": "報告書が昼までに必要です。",
+    "en": "The report is needed by noon.",
+    "alternatives": ["We need the report by noon.", "I need the report by noon."],
+    "point": "期限は until ではなく by noon",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_5w5g7g8x",
+    "ja": "代わりに、これお願いできますか？",
+    "en": "Would you mind covering this for me?",
+    "alternatives": [
+      "Could you cover this for me?",
+      "Would you mind taking care of this for me?"
+    ],
+    "point": "Would you mind の後ろは -ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_6a7x2u4m",
+    "ja": "細かな問題を潰してくれますか？",
+    "en": "Could you iron out the wrinkles?",
+    "alternatives": [
+      "Could you fix the minor issues?",
+      "Could you work out the kinks?"
+    ],
+    "point": "iron out the wrinkles は細かな問題を解消すること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6d7y9z8f",
+    "ja": "ちょっと見ていただけますか？",
+    "en": "Would you mind taking a look?",
+    "alternatives": [
+      "Could you possibly take a look?",
+      "Do you think you could take a look?"
+    ],
+    "point": "Would you mind + -ing は丁寧な依頼",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_6g9y3z8s",
+    "ja": "一つお願いがあります。",
+    "en": "I need a favor.",
+    "alternatives": ["I have a favor to ask.", "I'd like to ask a favor."],
+    "point": "favor は数えられる名詞。a を付ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6p6f9w3g",
+    "ja": "やりたいのは山々だけど無理。",
+    "en": "Much as I'd love to, I can't.",
+    "alternatives": [
+      "As much as I'd love to, I can't.",
+      "I'd love to, but I can't.",
+      "Much as I'd like to, I can't."
+    ],
+    "point": "「〜は山々だが」は Much as I'd love to",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7a3n8w9m",
+    "ja": "頼んだ件、もう終わった？",
+    "en": "Have you finished what I asked?",
+    "alternatives": ["Did you finish what I asked?", "Are you done with what I asked?"],
+    "point": "現在の結果は現在完了、過去の時点は過去形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_7e7x4w4f",
+    "ja": "先に一言くれてもよかったのに。",
+    "en": "You could've given me a heads-up.",
+    "alternatives": [
+      "You could have told me beforehand.",
+      "You might have given me some warning."
+    ],
+    "point": "「〜してくれてもよかった」は could have done",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_7k9u6s9m",
+    "ja": "それでいいですよ。",
+    "en": "That's fine with me.",
+    "alternatives": ["That works for me.", "That's okay with me."],
+    "point": "「私はいい」は fine with me",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_7n9q6n2r",
+    "ja": "忙しいのを承知でお願いします。",
+    "en": "Knowing you're busy, I hate asking.",
+    "alternatives": [
+      "I hate to ask, knowing you're busy.",
+      "Sorry to ask, knowing how busy you are."
+    ],
+    "point": "Knowing で前置きする分詞構文",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["participle-clauses", "hedging-softening"]
+  },
+  {
+    "id": "c_7s7x8m4w",
+    "ja": "昨日、彼に頼みました。",
+    "en": "I asked him yesterday.",
+    "alternatives": ["I asked him about it yesterday.", "Yesterday I asked him."],
+    "point": "ask の過去形は asked。yesterday と一緒に使う",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_7u2q2k2k",
+    "ja": "もっと早く頼んでほしかったな。",
+    "en": "I wish you'd asked me sooner.",
+    "alternatives": [
+      "I wish you had asked me earlier.",
+      "I wish you'd let me know earlier."
+    ],
+    "point": "過去の不満は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7w7y5q7g",
+    "ja": "君が濁してたら私は君の職責を誤解した。",
+    "en": "Had you hedged, I'd have misread your remit.",
+    "alternatives": [
+      "If you'd been evasive, I'd have misunderstood your role.",
+      "I'd have misread your responsibilities if you'd hedged."
+    ],
+    "point": "hedge は曖昧にする、remit は依頼された役割や範囲。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_7x8h3r9p",
+    "ja": "何かあれば、連絡してください。",
+    "en": "Should anything come up, call me.",
+    "alternatives": [
+      "If anything comes up, call me.",
+      "Let me know if anything comes up.",
+      "Should anything happen, contact me."
+    ],
+    "point": "Should + 主語で if を省く倒置",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_8b7b3d5y",
+    "ja": "それは私の仕事です。",
+    "en": "That's my job.",
+    "alternatives": ["That's my responsibility.", "It's my job."],
+    "point": "「それ」は That。That's は That is の短縮",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8e5f4f2h",
+    "ja": "話した資料、送ってね。",
+    "en": "Send the file I mentioned.",
+    "alternatives": [
+      "Please send the file I mentioned.",
+      "Send me the file we talked about."
+    ],
+    "point": "file の後ろに I mentioned を置いて資料を特定する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["relative-clauses", "requests-permission"]
+  },
+  {
+    "id": "c_8g4e4n7z",
+    "ja": "頼みたいのは、話を聞くことだけです。",
+    "en": "All I ask is you hear me out.",
+    "alternatives": [
+      "All I'm asking is that you hear me out.",
+      "All I want is for you to hear me out."
+    ],
+    "point": "All I ask is that ~ で「望むのは〜だけ」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_8g7j8y4r",
+    "ja": "今、対応中です。",
+    "en": "I'm working on it.",
+    "alternatives": ["I'm handling it now.", "I'm on it."],
+    "point": "「〜中」は am + -ing。work on は「取り組む」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8k6q2k5q",
+    "ja": "承認を早められる人、君は分かる？",
+    "en": "Any idea who could fast-track approval?",
+    "alternatives": [
+      "Do you know who can fast-track approval?",
+      "Do you know who can expedite approval?"
+    ],
+    "point": "fast-track は通常より迅速に進める。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_8m4g6w6g",
+    "ja": "助けが必要です。",
+    "en": "I need some help.",
+    "alternatives": ["I need help.", "I need a hand."],
+    "point": "help は数えられない名詞。a は付けない",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_8n2b3j5f",
+    "ja": "先に彼に聞いたほうがいい。",
+    "en": "You should ask him first.",
+    "alternatives": [
+      "You'd better ask him first.",
+      "I think you should ask him first."
+    ],
+    "point": "助言は should。first は文末に置く",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9b7p3z2d",
+    "ja": "顧客の修正依頼を優先して。",
+    "en": "Prioritize the client's requested revisions.",
+    "alternatives": [
+      "Address the client's requested edits first.",
+      "Put the client's requested edits first."
+    ],
+    "point": "prioritize は優先順位を上げること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_9f4p6z5s",
+    "ja": "私が明日までにやります。",
+    "en": "I'll do it by tomorrow.",
+    "alternatives": ["I'll get it done by tomorrow.", "I'll finish it by tomorrow."],
+    "point": "「〜までに」は by。その場の約束は I'll",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9f9g6y7s",
+    "ja": "原案はもうご覧になりましたか？",
+    "en": "Have you seen the draft yet?",
+    "alternatives": [
+      "Have you looked at the draft yet?",
+      "Have you had a look at the draft?"
+    ],
+    "point": "「もう」を尋ねる yet は現在完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_9v2c8f6m",
+    "ja": "早退してもいいですか？",
+    "en": "May I leave early?",
+    "alternatives": ["Is it okay if I leave early?", "Can I head out early?"],
+    "point": "許可を求めるときは May I / Is it okay if",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9x4v4e7x",
+    "ja": "君が求めてるのはほぼ白紙委任だ。",
+    "en": "What you seek borders on carte blanche.",
+    "alternatives": [
+      "You're asking for almost unrestricted authority.",
+      "You're seeking virtually a free hand."
+    ],
+    "point": "border on はほとんど当たる、carte blanche は全面的な裁量。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_9y7s9a2b",
+    "ja": "彼は穴埋めすると言った。",
+    "en": "He said he'd pick up the slack.",
+    "alternatives": [
+      "He said he'd cover the missing work.",
+      "He said he'd make up the shortfall."
+    ],
+    "point": "pick up the slack は足りない分の仕事を引き受けること。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["reported-speech", "phrasal-verbs"]
+  },
+  {
+    "id": "c_9z7k8s8b",
+    "ja": "君を待ち受ける仕事は過酷だ。",
+    "en": "Work awaiting you is grueling.",
+    "alternatives": ["The work ahead of you is exhausting.", "You face grueling work."],
+    "point": "awaiting you は後ろからの説明、grueling は非常にきつい。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["post-modification"]
+  }
+]

@@ -1,0 +1,798 @@
+[
+  {
+    "id": "c_2a8k6q3a",
+    "ja": "自己紹介しなきゃね。",
+    "en": "I should introduce myself.",
+    "alternatives": [
+      "I need to introduce myself.",
+      "I have to introduce myself.",
+      "I'd better introduce myself."
+    ],
+    "point": "「〜しなきゃ」は should か have to",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_2d2w6j7m",
+    "ja": "私の肩書きは名ばかりとも言える。",
+    "en": "My title is, shall we say, nominal.",
+    "alternatives": [
+      "You could say my title is in name only.",
+      "My title is more nominal than substantive, I'd say."
+    ],
+    "point": "shall we say は少し含みを持たせて言葉を選ぶ。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_2e3d8e2p",
+    "ja": "移住してなければ、今ここにいない。",
+    "en": "If I hadn't emigrated, I wouldn't be here.",
+    "alternatives": [
+      "Had I not emigrated, I wouldn't be here.",
+      "I wouldn't be here if I hadn't emigrated."
+    ],
+    "point": "過去の事実が今に響く。if 節は had、結果は would be",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_2n2n6t8a",
+    "ja": "私は出版でずっと修業してます。",
+    "en": "I've been cutting my teeth in publishing.",
+    "alternatives": [
+      "I've been learning the ropes in publishing.",
+      "I've been getting my start in publishing."
+    ],
+    "point": "cut my teeth は初めの実務経験を積むこと。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_2q9a6d8y",
+    "ja": "私が型に従えば居場所は見つからなかった。",
+    "en": "Had I conformed, I'd never have found my niche.",
+    "alternatives": [
+      "If I'd conformed, I wouldn't have found my niche.",
+      "I'd never have found my place had I conformed."
+    ],
+    "point": "find my niche は自分に合う役割や居場所を見つける。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_2t9p7k9j",
+    "ja": "作ったの君だって、ミカが言ってた。",
+    "en": "Mika said you're the one who made this.",
+    "alternatives": [
+      "Mika said it was you who made this.",
+      "Mika told me you made this."
+    ],
+    "point": "said の中に the one who の節。時制は文脈で選ぶ",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["reported-speech", "relative-clauses"]
+  },
+  {
+    "id": "c_2v9w5m3s",
+    "ja": "私が重役と付き合う機会は稀だ。",
+    "en": "Seldom do I rub shoulders with executives.",
+    "alternatives": [
+      "I rarely mingle with executives.",
+      "I seldom mix with senior executives."
+    ],
+    "point": "rub shoulders with は人と交流すること。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_2x2r3n6a",
+    "ja": "私は音楽が好き。",
+    "en": "I like music.",
+    "alternatives": ["I enjoy music.", "Music appeals to me."],
+    "point": "music は数えないので a をつけない。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3c6q9n4a",
+    "ja": "あなたの原動力を伺えますか？",
+    "en": "May I ask what makes you tick?",
+    "alternatives": [
+      "Could you tell me what drives you?",
+      "May I ask what really motivates you?"
+    ],
+    "point": "what makes you tick は行動や関心の原動力を尋ねる表現。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3d7g4c3x",
+    "ja": "私を雇ったのは、ミカさんです。",
+    "en": "It was Mika who hired me.",
+    "alternatives": [
+      "Mika is the one who hired me.",
+      "Mika was the person who hired me."
+    ],
+    "point": "It was 人 who で「〜なのは」を強調",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_3e2h2m8p",
+    "ja": "私は大阪出身の設計士です。",
+    "en": "I'm an architect from Osaka.",
+    "alternatives": [
+      "I'm an architect who's from Osaka.",
+      "I'm an Osaka-born architect."
+    ],
+    "point": "「〜出身の」は名詞の後ろに from を置く",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3j3y9x4u",
+    "ja": "ここに惹かれたのは、人の温かさ。",
+    "en": "What drew me here was the people's warmth.",
+    "alternatives": [
+      "It was the people's warmth that drew me here.",
+      "The warmth of the people is what drew me here."
+    ],
+    "point": "What ~ was で一番の理由を強調",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_3k4x2m5d",
+    "ja": "ここで働いて三年になります。",
+    "en": "I've worked here for three years.",
+    "alternatives": [
+      "I've been working here for three years.",
+      "I've been at this company for three years."
+    ],
+    "point": "「今まで続く期間」は現在完了 + for",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_3n4h7v9u",
+    "ja": "そこに私の妹がいる。",
+    "en": "There's my younger sister.",
+    "alternatives": ["My younger sister's there.", "That's my little sister."],
+    "point": "There's でそこにいる人を指し示す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_3n4u5s6w",
+    "ja": "弊社はこの分野で有名です。",
+    "en": "We're well known in this field.",
+    "alternatives": [
+      "Our company is well known in this field.",
+      "Our firm is well known in this industry."
+    ],
+    "point": "受動態 be well known in ~",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_3q2d5p9e",
+    "ja": "私が避けた分野は今では得意分野だ。",
+    "en": "The field I avoided is now my forte.",
+    "alternatives": [
+      "What I avoided is now my strong suit.",
+      "The field I avoided is now my specialty."
+    ],
+    "point": "forte は得意分野。避けた過去と得意な現在を対比する。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"]
+  },
+  {
+    "id": "c_3q9r9y8u",
+    "ja": "ミカが君は会うべき人だと言っていた。",
+    "en": "Mika told me you're someone I should meet.",
+    "alternatives": [
+      "Mika said you're someone I should meet.",
+      "Mika said I should meet you."
+    ],
+    "point": "you're someone (that) I should meet の入れ子",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_3v9x5j9a",
+    "ja": "型にはめられたくなくて肩書きを避ける。",
+    "en": "I avoid job titles to resist being pigeonholed.",
+    "alternatives": [
+      "I avoid titles because I dislike being pigeonholed.",
+      "I skip job titles to avoid being labeled."
+    ],
+    "point": "to resist being pigeonholed は一つの型に当てはめられるのを避ける目的を表す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3w6j9h2q",
+    "ja": "こちら営業部の田中です。",
+    "en": "This is Tanaka from Sales.",
+    "alternatives": ["This is Tanaka in Sales.", "I'm Tanaka from Sales."],
+    "point": "名詞の後ろに from + 部署で説明",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3y7d6d4f",
+    "ja": "緊張すると私は黙り込む。",
+    "en": "I clam up when nervous.",
+    "alternatives": [
+      "I go quiet when I get nervous.",
+      "I stop talking when I feel nervous."
+    ],
+    "point": "clam up は黙り込む。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"]
+  },
+  {
+    "id": "c_4g3y6n3s",
+    "ja": "私は先に挨拶すべき。",
+    "en": "I should say hello first.",
+    "alternatives": [
+      "I ought to say hello first.",
+      "I should give the first greeting."
+    ],
+    "point": "should で先に挨拶するのがよいと伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_4n6z6c2x",
+    "ja": "ピアノが弾けます。",
+    "en": "I can play piano.",
+    "alternatives": ["I can play the piano.", "I'm able to play piano."],
+    "point": "「弾ける」は can + 動詞。楽器には the を付けても付けなくてもよい",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4t3r9n4w",
+    "ja": "大阪出身で、たこ焼き好きです。",
+    "en": "Born in Osaka, I love takoyaki.",
+    "alternatives": [
+      "As an Osaka native, I love takoyaki.",
+      "Being from Osaka, I love takoyaki.",
+      "Coming from Osaka, I love takoyaki."
+    ],
+    "point": "分詞構文では Born の前の being を省ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_4y8h4t7c",
+    "ja": "君はどんな仕事してるの？",
+    "en": "What's your line of work?",
+    "alternatives": ["What kind of work do you do?", "What do you do for a living?"],
+    "point": "line of work は仕事の分野や職種。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_4z4y2u2h",
+    "ja": "私が名刺を渡していい？",
+    "en": "May I give you my card?",
+    "alternatives": ["Can I offer my business card?", "May I hand you my card?"],
+    "point": "May I give you my card? で相手に自分の名刺を渡す許可を求める。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_5c2u6w7j",
+    "ja": "私は姉より社交的だ。",
+    "en": "I'm more outgoing than my sister.",
+    "alternatives": [
+      "I'm more sociable than my sister.",
+      "My sister's less outgoing than me."
+    ],
+    "point": "outgoing は人と気軽に交流する性格。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5c4k7p2e",
+    "ja": "もっと早く会えていればよかった。",
+    "en": "I wish we had met earlier.",
+    "alternatives": ["If only we'd met sooner.", "I wish we'd met sooner."],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_5h8s6t6p",
+    "ja": "ケンって呼んでね。",
+    "en": "Call me Ken.",
+    "alternatives": ["Just call me Ken.", "You can call me Ken."],
+    "point": "「呼んで」は call me + 名前",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_5m7s7z6r",
+    "ja": "会う前から、存じていました。",
+    "en": "I'd heard of you before we met.",
+    "alternatives": [
+      "I knew of you before we met.",
+      "I had known your name before we met."
+    ],
+    "point": "会う前のことなので過去完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_5p8f6b4s",
+    "ja": "私の仕事は、企業向けの翻訳です。",
+    "en": "What I do is translate for companies.",
+    "alternatives": [
+      "My job is translating for companies.",
+      "What I do is business translation."
+    ],
+    "point": "What I do is のあとは動詞の原形",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_5s7j3z5s",
+    "ja": "自分を安売りする衝動を抑えればよかった。",
+    "en": "I wish I'd resisted the urge to undersell myself.",
+    "alternatives": [
+      "I wish I'd resisted the temptation to undersell myself.",
+      "If only I'd resisted the urge to undersell myself."
+    ],
+    "point": "undersell myself は実力以下に自分を紹介する。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_5x8s6n4g",
+    "ja": "私は看護師です。",
+    "en": "I'm a nurse.",
+    "alternatives": ["I work as a nurse.", "I'm a nurse by profession."],
+    "point": "職業の前には a をつける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6b2c5k8q",
+    "ja": "先月ここに越したばかりです。",
+    "en": "I only moved here last month.",
+    "alternatives": [
+      "I just moved here last month.",
+      "I've only lived here since last month."
+    ],
+    "point": "last month があれば過去形、since なら現在完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_6d6m9p8v",
+    "ja": "私は先生です。",
+    "en": "I'm a teacher.",
+    "alternatives": ["I teach.", "Teaching is my job."],
+    "point": "職業を言う単数の名詞は a teacher。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6f6c4v7q",
+    "ja": "私は英語を勉強中。",
+    "en": "I'm studying English.",
+    "alternatives": ["I'm learning English.", "I'm working on my English."],
+    "point": "am studying で現在勉強していることを伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6g9a6h7j",
+    "ja": "行ってなきゃ、会えなかったね。",
+    "en": "If I hadn't gone, we'd never have met.",
+    "alternatives": [
+      "If I hadn't gone, we wouldn't have met.",
+      "Had I not gone, we'd never have met."
+    ],
+    "point": "過去の仮定は If + had + 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_6h7t9m9z",
+    "ja": "仕事で、出張ばかりさせられてる。",
+    "en": "Work has me living out of suitcases.",
+    "alternatives": [
+      "My job has me living out of a suitcase.",
+      "My job has me traveling constantly."
+    ],
+    "point": "have + 人 + 〜ing で「〜させられている」状態を表す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_7a4z9k6s",
+    "ja": "不器用に見えても私は人の意図を察する。",
+    "en": "Awkward though I seem, I read between the lines.",
+    "alternatives": [
+      "Although I seem awkward, I pick up unspoken intentions.",
+      "I understand unstated intentions despite seeming awkward."
+    ],
+    "point": "read between the lines は言葉に出ない意図を読み取る。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7e9r6q4e",
+    "ja": "私の得意分野は言外の意味を読むこと。",
+    "en": "What I do best is decipher what's left unsaid.",
+    "alternatives": [
+      "My strength is understanding what people leave unspoken.",
+      "I'm best at interpreting what isn't explicitly said."
+    ],
+    "point": "left unsaid は口にされないが含まれている意味。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "nested-clauses"]
+  },
+  {
+    "id": "c_7f5g2j9b",
+    "ja": "うちの課は十人います。",
+    "en": "There are ten of us.",
+    "alternatives": ["Our team has ten people.", "We're a team of ten."],
+    "point": "人数は there are ten of us と言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7k3d4z2k",
+    "ja": "あなたも来るとケンが言ってた。",
+    "en": "Ken said you'd be coming too.",
+    "alternatives": [
+      "Ken told me you'd be coming too.",
+      "Ken mentioned you were coming too."
+    ],
+    "point": "said の後は would。you'd は you would",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_7m3m8d2h",
+    "ja": "私は海の近くで育った。",
+    "en": "I grew up near the sea.",
+    "alternatives": ["I was raised near the ocean.", "I grew up by the ocean."],
+    "point": "grew up は grow up の過去形。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_7n9f5n6f",
+    "ja": "自分を型にはめるなら私は仲介役かな。",
+    "en": "Were I to pigeonhole myself, I'd say mediator.",
+    "alternatives": [
+      "If I had to categorize myself, I'd say mediator.",
+      "If I needed a label, I'd choose mediator."
+    ],
+    "point": "pigeonhole は人を単純な一つの型に押し込める。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_7s4a3f5k",
+    "ja": "仕事で私は合わなそうな意見をまとめる。",
+    "en": "My work has me reconciling seemingly irreconcilable positions.",
+    "alternatives": [
+      "My job involves getting apparently incompatible viewpoints reconciled.",
+      "My work makes me reconcile seemingly incompatible positions."
+    ],
+    "point": "have 人 doing は仕事でその役割を担うことを表す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_7u9e5v5c",
+    "ja": "前に会ったかもしれませんね。",
+    "en": "We might have met before.",
+    "alternatives": ["We may have met before.", "I think we might have met before."],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_8n8b3n4z",
+    "ja": "出身は東京です。",
+    "en": "I'm from Tokyo.",
+    "alternatives": ["I come from Tokyo.", "Tokyo is my hometown."],
+    "point": "出身は be from で言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8v8h7m7u",
+    "ja": "人見知りでも話は好き。",
+    "en": "Although I'm shy, I enjoy chatting.",
+    "alternatives": [
+      "Though I'm shy, I like talking.",
+      "I'm shy, but I enjoy chatting."
+    ],
+    "point": "although の節に but は重ねない",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8v9v2k9h",
+    "ja": "私は今年卒業する予定。",
+    "en": "I'm graduating this year.",
+    "alternatives": [
+      "I'm going to graduate this year.",
+      "I plan to graduate this year."
+    ],
+    "point": "予定の進行形で決まっている卒業を伝える。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8w3u6n3s",
+    "ja": "どちらのご出身か伺えますか？",
+    "en": "May I ask where you're from?",
+    "alternatives": [
+      "Would you mind telling me where you're from?",
+      "Could I ask where you're from?"
+    ],
+    "point": "間接疑問は where you're from の語順",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_8x7n9t3m",
+    "ja": "お噂はかねがね伺っております。",
+    "en": "I've heard a lot about you.",
+    "alternatives": [
+      "I've heard so much about you.",
+      "I've heard great things about you."
+    ],
+    "point": "初対面の定番は現在完了 I've heard",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_9c7t4r7r",
+    "ja": "私が転職してなければ今も型通りに働く。",
+    "en": "Had I not changed jobs, I'd still work conventionally.",
+    "alternatives": [
+      "Without changing jobs, I'd still be working conventionally.",
+      "I'd still work conventionally had I not changed jobs."
+    ],
+    "point": "Had I not changed jobs は過去の転職がなかった場合と今も型通りに働く結果を結ぶ。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_9c9k5e6g",
+    "ja": "時間があれば、サーフを始めるのに。",
+    "en": "If I had time, I'd take up surfing.",
+    "alternatives": [
+      "I'd take up surfing if I had time.",
+      "If I had more time, I'd take up surfing."
+    ],
+    "point": "始める趣味は take up、仮定は had と would",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["second-conditional", "phrasal-verbs"]
+  },
+  {
+    "id": "c_9e2b8q3v",
+    "ja": "加藤さんによろしくと頼まれた。",
+    "en": "Kato asked me to say hi.",
+    "alternatives": ["Kato asked me to say hello.", "Kato wanted me to say hi."],
+    "point": "「人に〜を頼む」は ask 人 to do",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_9f9k9a9u",
+    "ja": "英語を学びに来ました。",
+    "en": "I came to learn English.",
+    "alternatives": ["I'm here to learn English.", "I came here to study English."],
+    "point": "目的は to + 動詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9h6d9c2a",
+    "ja": "まあ、何でも屋みたいなものです。",
+    "en": "I'm something of a jack-of-all-trades.",
+    "alternatives": [
+      "You could say I'm a jack-of-all-trades.",
+      "I'm a bit of a jack-of-all-trades."
+    ],
+    "point": "something of a 〜 で断定をやわらげる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_9k6c6y4p",
+    "ja": "料理なら少しできます。",
+    "en": "I can cook a little.",
+    "alternatives": ["I can cook a bit.", "I can cook a little bit."],
+    "point": "a little で「少し」の控えめさが出る",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_9n8y9y6f",
+    "ja": "分野を変え私は内部の常識を疑った。",
+    "en": "Changing fields, I questioned what insiders take for granted.",
+    "alternatives": [
+      "Changing fields made me question insiders' unexamined assumptions.",
+      "I challenged insiders' unquestioned assumptions when I changed fields."
+    ],
+    "point": "take for granted は疑わず当然と思う。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["participle-clauses", "noun-clauses"]
+  },
+  {
+    "id": "c_9t7c2w8f",
+    "ja": "来月、結婚するんです。",
+    "en": "I'm getting married next month.",
+    "alternatives": ["I'll get married next month.", "Next month I'm getting married."],
+    "point": "近い予定は現在進行形で言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9u5a7c7d",
+    "ja": "先日メールを差し上げた者です。",
+    "en": "I'm the one who emailed you.",
+    "alternatives": [
+      "I'm the person who emailed you.",
+      "I'm the one who sent you an email."
+    ],
+    "point": "人を説明する関係詞は who",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_9x4z9n8c",
+    "ja": "週末は映画を観て過ごす。",
+    "en": "I spend my weekends watching movies.",
+    "alternatives": [
+      "I spend weekends watching movies.",
+      "I usually watch movies on weekends."
+    ],
+    "point": "spend + 時間 + -ing で「〜して過ごす」",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_9z4f3h9s",
+    "ja": "今は東京に住んでます。",
+    "en": "I'm living in Tokyo.",
+    "alternatives": ["I live in Tokyo now.", "Now I live in Tokyo."],
+    "point": "今の暮らしは進行形でも現在形でも言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  }
+]

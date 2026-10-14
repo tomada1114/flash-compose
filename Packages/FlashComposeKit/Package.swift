@@ -28,9 +28,15 @@ let package = Package(
         // Core owns the user-facing wording (it returns `LocalizedStringResource`), so the
         // one String Catalog lives here. xcodebuild compiles it into Core's resource
         // bundle; `swift build` only copies it, so tests read English from `defaultValue`.
+        // The card catalog is copied, not processed, so `cards/<topic>/<subtopic>.json`
+        // keeps its folder layout in the bundle and `CatalogLoader` finds each file where
+        // the taxonomy names it (docs/architecture.md › Card catalog).
         .target(
             name: "FlashComposeCore",
-            resources: [.process("Resources/Localizable.xcstrings")],
+            resources: [
+                .process("Resources/Localizable.xcstrings"),
+                .copy("Resources/Catalog"),
+            ],
             swiftSettings: strictSettings,
         ),
         .target(

@@ -1,0 +1,690 @@
+[
+  {
+    "id": "c_2a2d3e2e",
+    "ja": "原因は彼が見つけたバグだと思う。",
+    "en": "I think it's the bug he found.",
+    "alternatives": [
+      "I think the bug he found is the cause.",
+      "I think the bug he found caused it."
+    ],
+    "point": "I think の中に the bug he found が入る",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_2a7q4d6p",
+    "ja": "業者が抜けて以来、遅れてます。",
+    "en": "We've slipped since the vendor left.",
+    "alternatives": [
+      "We've fallen behind since the vendor left.",
+      "We've been behind since the vendor dropped out."
+    ],
+    "point": "since の後ろは過去形、主節は現在完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2e9e8s7p",
+    "ja": "私が伝えてたら、こうならなかった。",
+    "en": "If I'd flagged it, this wouldn't have happened.",
+    "alternatives": [
+      "Had I flagged it, this wouldn't have happened.",
+      "If I'd reported it, this wouldn't have happened."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_2k3z7u4h",
+    "ja": "私、問題があります。",
+    "en": "I have a problem.",
+    "alternatives": ["I've got a problem.", "I have an issue."],
+    "point": "数えられる名詞の単数には a。problem は子音",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_2q2t4n2t",
+    "ja": "私たちは不足分を補える。",
+    "en": "We can make up the shortfall.",
+    "alternatives": [
+      "We can cover the shortfall.",
+      "We're able to make up the deficit."
+    ],
+    "point": "make up the shortfall は不足分を埋め合わせる。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability", "phrasal-verbs"]
+  },
+  {
+    "id": "c_2s3k7u5f",
+    "ja": "私があなたなら、上司に話します。",
+    "en": "If I were you, I'd tell your boss.",
+    "alternatives": [
+      "If I were you, I'd talk to your boss.",
+      "I'd tell your boss, if I were you."
+    ],
+    "point": "If I were you は仮定法の定番",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_2v5y9f3f",
+    "ja": "スライドを作成中です。",
+    "en": "I'm making the slides.",
+    "alternatives": ["I'm working on the slides.", "I'm preparing the slides."],
+    "point": "「〜中」は am + -ing。slide は複数形で",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_3b8a8g9t",
+    "ja": "私は彼に報告を頼んだ。",
+    "en": "I asked him to report.",
+    "alternatives": ["I asked him for a report.", "I requested that he report."],
+    "point": "ask 人 to do で依頼した内容を伝える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_3j2v4m3g",
+    "ja": "予算案は棚上げだと彼女に言われた。",
+    "en": "She said the budget was shelved.",
+    "alternatives": [
+      "She told me the budget had been shelved.",
+      "She said the budget was put on ice."
+    ],
+    "point": "「棚上げ」は shelve。said の後ろは過去形にそろえる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3p4f4y8e",
+    "ja": "君はいつ始める？",
+    "en": "When do you start?",
+    "alternatives": ["When are you starting?", "When will you begin?"],
+    "point": "when で作業を始める時を尋ねる。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_3t2r8s3m",
+    "ja": "確認前に彼は引き下がってた。",
+    "en": "He'd backed down before the review.",
+    "alternatives": [
+      "He'd withdrawn his claim before the review.",
+      "He'd dropped his objection before the review."
+    ],
+    "point": "back down は主張を引っ込める。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3t6s3k6g",
+    "ja": "保留中の資金が足かせです。",
+    "en": "Funding on hold is a bottleneck.",
+    "alternatives": [
+      "The funding on hold is delaying us.",
+      "The pending funding is holding us back."
+    ],
+    "point": "on hold は保留中、bottleneck は進行の妨げ。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3w4a9t5d",
+    "ja": "不具合は修正されました。",
+    "en": "The bug was fixed.",
+    "alternatives": [
+      "The bug got fixed.",
+      "The issue was fixed.",
+      "The bug has been fixed."
+    ],
+    "point": "受け身は was + 過去分詞。fix は fixed",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_3y5k3x2q",
+    "ja": "もう報告書を送りました。",
+    "en": "I've already sent the report.",
+    "alternatives": ["I've sent the report already.", "I already sent the report."],
+    "point": "「もう」は already。have + 過去分詞 sent",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_4d5d8n2k",
+    "ja": "未定ですが、少し遅れそうです。",
+    "en": "It looks like we might slip a little.",
+    "alternatives": [
+      "We may be running a little behind.",
+      "It seems we could fall slightly behind."
+    ],
+    "point": "might と a little で断定を避ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4d6x5q9s",
+    "ja": "人手があれば、間に合うのに。",
+    "en": "If we had help, we'd make it.",
+    "alternatives": [
+      "If we had another person, we could make it.",
+      "We'd make it if we had more help."
+    ],
+    "point": "今の仮定は if + 過去形、would + 原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_4e7t2h6z",
+    "ja": "私には紙が必要。",
+    "en": "I need paper.",
+    "alternatives": ["I need some paper.", "Some paper would help."],
+    "point": "paper は紙の素材として数えないので an を付けない。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_4m3j8y9u",
+    "ja": "何が問題ですか？",
+    "en": "What's the problem?",
+    "alternatives": ["What's the issue?", "What's wrong?"],
+    "point": "「何が」は What。特定の問題なので the",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_4r3u2q4m",
+    "ja": "承認に遅れがあります。",
+    "en": "There's a delay in approval.",
+    "alternatives": [
+      "Approval is running late.",
+      "Approval is taking longer than expected."
+    ],
+    "point": "a delay in でどこに遅れがあるか示す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_4y2j8b7z",
+    "ja": "金曜までに終えられません。",
+    "en": "I can't finish it by Friday.",
+    "alternatives": [
+      "I can't get it done by Friday.",
+      "I'm unable to finish by Friday."
+    ],
+    "point": "できないは can't、期限は by",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_5a5d9j8h",
+    "ja": "納期がいつかご存じですか？",
+    "en": "Do you know when it's due?",
+    "alternatives": [
+      "Do you know when the deadline is?",
+      "Would you know when it's due?"
+    ],
+    "point": "間接疑問は when it's due の語順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_5a5w8g6s",
+    "ja": "わかり次第、ご報告します。",
+    "en": "I'll update you when I know.",
+    "alternatives": ["I'll update you once I know.", "I'll tell you once I know."],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_5g4z4j2d",
+    "ja": "法務は来週連絡すると言ってた。",
+    "en": "Legal said they'd circle back next week.",
+    "alternatives": [
+      "Legal said they'd get back to us next week.",
+      "Legal said they'd follow up next week."
+    ],
+    "point": "said の後は will が would に変わる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_5h9f4k4x",
+    "ja": "原因が分かったので直します。",
+    "en": "Knowing the cause, I'll fix it.",
+    "alternatives": [
+      "Now I've found the cause, I'll fix it.",
+      "I found the cause, so I'll fix it."
+    ],
+    "point": "理由は Knowing で先に言う分詞構文",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5t2u9s5d",
+    "ja": "遅延で我々は現状維持だけでも必死だ。",
+    "en": "Delays have us running to stand still.",
+    "alternatives": [
+      "Delays leave us barely holding our ground.",
+      "With delays, we're barely treading water."
+    ],
+    "point": "run to stand still は努力しても現状維持が精いっぱい。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5u9m9k6b",
+    "ja": "進み具合を知らせてね。",
+    "en": "Keep me posted.",
+    "alternatives": [
+      "Keep me updated.",
+      "Let me know how it's going.",
+      "Update me on your progress."
+    ],
+    "point": "Keep me posted は「随時知らせて」の定番",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_5y7d5h2k",
+    "ja": "承認後に私が手配するよ。",
+    "en": "I'll arrange it once approval arrives.",
+    "alternatives": [
+      "I'll arrange it when approval comes through.",
+      "I'll make arrangements once we get approval."
+    ],
+    "point": "once は承認が下り次第という条件を表す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"]
+  },
+  {
+    "id": "c_6a5y5y9c",
+    "ja": "足を引っ張っているのは、引き継ぎです。",
+    "en": "What's holding us back is the handoff.",
+    "alternatives": [
+      "It's the handoff that's holding us back.",
+      "The handoff is what's holding us back."
+    ],
+    "point": "足を引っ張る = hold back。What 節で焦点を後ろへ置く",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_6c2h8a4f",
+    "ja": "万事予定どおりです。",
+    "en": "Everything is on schedule.",
+    "alternatives": ["Everything is going as planned.", "Everything is on track."],
+    "point": "Everything は単数扱いなので is",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6c2y7a2f",
+    "ja": "私は目標を達成しました。",
+    "en": "I met the target.",
+    "alternatives": ["I achieved my goal.", "I reached my goal."],
+    "point": "meet a target は目標を達成する。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6h7q5x3y",
+    "ja": "報告は金曜でもいいですか？",
+    "en": "Could I report back on Friday?",
+    "alternatives": [
+      "Is it okay if I update you on Friday?",
+      "Is Friday okay for the report?"
+    ],
+    "point": "許可を求めるときは Could I 〜？ が使える",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_6q4v4t5c",
+    "ja": "明日、ご報告します。",
+    "en": "I'll update you tomorrow.",
+    "alternatives": ["I'll report back tomorrow.", "I'm going to update you tomorrow."],
+    "point": "update + 人。「報告する」は update you が自然",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_6u2k6a5c",
+    "ja": "売上は先月より好調です。",
+    "en": "Sales are better than last month.",
+    "alternatives": [
+      "Sales are up from last month.",
+      "Sales are stronger than last month."
+    ],
+    "point": "比べる相手は than で示す",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_6y3u4n9d",
+    "ja": "私たちは問題を取り繕ってるかも。",
+    "en": "We may be papering over the cracks.",
+    "alternatives": [
+      "We might be glossing over the problems.",
+      "Perhaps we're covering up the underlying problems."
+    ],
+    "point": "paper over the cracks は根本を直さず取り繕う。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["hedging-softening", "phrasal-verbs"]
+  },
+  {
+    "id": "c_7h7q2u3y",
+    "ja": "予算がきついです。",
+    "en": "The budget is tight.",
+    "alternatives": ["The budget is limited.", "We're on a tight budget."],
+    "point": "「きつい」は tight。予算は the budget",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_7p7f3x9b",
+    "ja": "もっと早く報告すべきでした。",
+    "en": "I should have reported it sooner.",
+    "alternatives": [
+      "I should have told you earlier.",
+      "I ought to have reported it earlier."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_7y5y9q6z",
+    "ja": "我々は甘い試算だと知った。",
+    "en": "We found the estimate was too optimistic.",
+    "alternatives": [
+      "We discovered the estimate was too optimistic.",
+      "We learned our estimate was too optimistic."
+    ],
+    "point": "too optimistic は見積もりが楽観的すぎて甘いこと。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_8a4m6d8y",
+    "ja": "報告書を書き終えました。",
+    "en": "I finished writing the report.",
+    "alternatives": [
+      "I've finished writing the report.",
+      "I'm done writing the report."
+    ],
+    "point": "finish の後ろは ~ing",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_8c4u7y9r",
+    "ja": "もっと早くお伝えすればよかった。",
+    "en": "I wish I'd told you sooner.",
+    "alternatives": [
+      "I wish I had told you earlier.",
+      "I wish I'd let you know sooner.",
+      "I should have told you sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_8f3g2j2e",
+    "ja": "先方に承認してもらった。",
+    "en": "I got the client to sign off.",
+    "alternatives": [
+      "I had the client sign off on it.",
+      "I got the client to approve it."
+    ],
+    "point": "get + 人 + to 原形。sign off は承認する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_8g6n4f3m",
+    "ja": "それでも我々の試算は精査に耐えない。",
+    "en": "Even so, our estimates don't bear scrutiny.",
+    "alternatives": [
+      "Nevertheless, our estimates don't stand up to scrutiny.",
+      "Still, our estimates don't withstand close examination."
+    ],
+    "point": "bear scrutiny は厳しく調べても成り立つこと。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8g8j9s3b",
+    "ja": "作業は順調に進んでいます。",
+    "en": "Things are coming along nicely.",
+    "alternatives": ["It's coming along well.", "We're making good progress."],
+    "point": "順調に進むは come along",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_8v3n8z6z",
+    "ja": "先日話した問題は解決済みです。",
+    "en": "The issue I raised is resolved.",
+    "alternatives": [
+      "The problem I mentioned has been solved.",
+      "The issue that I brought up is resolved."
+    ],
+    "point": "目的語の関係詞 that は省ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_8v4z4g5h",
+    "ja": "心配なのは日程です。",
+    "en": "What worries me is the schedule.",
+    "alternatives": [
+      "What I'm worried about is the schedule.",
+      "The schedule is what worries me."
+    ],
+    "point": "What worries me is ~ の形で「〜なのは〜だ」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_8w2e2h5x",
+    "ja": "私が知らせていれば、今は無事なのに。",
+    "en": "If I'd raised it, we'd be fine now.",
+    "alternatives": [
+      "If I'd flagged it, we'd be fine now.",
+      "If I'd spoken up, we'd be fine now.",
+      "Had I raised it, we'd be fine now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done / would be",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_8w3j9r4w",
+    "ja": "私たちは金曜にやっと気づいた。",
+    "en": "Not until Friday did we notice it.",
+    "alternatives": [
+      "Only on Friday did we notice it.",
+      "It wasn't until Friday that we noticed it.",
+      "We didn't notice it until Friday."
+    ],
+    "point": "Not until を前に出すと、did we と倒置する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_9e8n4z2b",
+    "ja": "この数字を見て。",
+    "en": "Look at this number.",
+    "alternatives": ["Check this number.", "Look at the number here."],
+    "point": "look at で報告中のこの数字を見るよう促す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_9f8n4b5e",
+    "ja": "私たちは損失を抑えたいです。",
+    "en": "We aim to contain the losses.",
+    "alternatives": [
+      "Our goal is to limit the losses.",
+      "We want to keep the losses down."
+    ],
+    "point": "contain は損失が広がるのを抑える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9g4d4a3w",
+    "ja": "その件は、ずっと調べています。",
+    "en": "I've been looking into it.",
+    "alternatives": ["I've been digging into it.", "I've been investigating it."],
+    "point": "調べるは look into、継続は現在完了進行形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "present-perfect-continuous"]
+  },
+  {
+    "id": "c_9j2y7m4y",
+    "ja": "すぐ上司に相談したほうがいい。",
+    "en": "You should consult your boss now.",
+    "alternatives": [
+      "You'd better talk to your boss soon.",
+      "You should talk to your boss right away."
+    ],
+    "point": "助言は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9m4u9h8p",
+    "ja": "遅れても、品質は落としません。",
+    "en": "Even if we slip, quality won't suffer.",
+    "alternatives": [
+      "Even if we're late, quality won't suffer.",
+      "Even if we fall behind, we won't cut quality."
+    ],
+    "point": "Even if は「たとえ〜でも」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_9v8h2k9j",
+    "ja": "知ってれば我々は警鐘を鳴らしたのに。",
+    "en": "Had we known, we'd have sounded the alarm.",
+    "alternatives": [
+      "If we'd known, we'd have sounded the alarm.",
+      "Had we known, we'd have raised the alarm."
+    ],
+    "point": "If を省くと Had we known と倒置。警鐘は sound the alarm",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"]
+  }
+]

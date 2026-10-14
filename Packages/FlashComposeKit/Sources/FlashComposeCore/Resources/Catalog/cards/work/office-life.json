@@ -1,0 +1,624 @@
+[
+  {
+    "id": "c_2a3y3v2j",
+    "ja": "私のメール、もう見た？",
+    "en": "Have you seen my email yet?",
+    "alternatives": ["Did you see my email yet?", "Have you looked at my email yet?"],
+    "point": "「もう」を尋ねるときは yet を文末に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2c3b5d2h",
+    "ja": "コピー機が速ければいいのに。",
+    "en": "I wish the copier were faster.",
+    "alternatives": [
+      "If only the copier were faster.",
+      "I wish the copier was faster."
+    ],
+    "point": "現在の願望は wish + 過去形（be は were）",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2j6b7z4s",
+    "ja": "コーヒー当番が誰か、誰も知らない。",
+    "en": "Nobody knows who's on coffee duty.",
+    "alternatives": [
+      "No one knows who has coffee duty.",
+      "Nobody's sure who's on coffee duty."
+    ],
+    "point": "who's on coffee duty は who 節。語順は平叙文",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_2q2x6n3t",
+    "ja": "ゴミは分別すべきです。",
+    "en": "We should sort the trash.",
+    "alternatives": [
+      "Trash should be sorted.",
+      "We should separate the trash.",
+      "You should sort the trash."
+    ],
+    "point": "「〜すべき」は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_2w8t6c5d",
+    "ja": "コーヒーを入れたよ。",
+    "en": "I made some coffee.",
+    "alternatives": ["I brewed some coffee.", "I made us some coffee."],
+    "point": "coffee は数えられない名詞。some を使う",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3a2s2c2m",
+    "ja": "お昼、どこで食べる？",
+    "en": "Where should we eat lunch?",
+    "alternatives": ["Where do you want to eat?", "Where should we go for lunch?"],
+    "point": "「どこで〜する？」は Where should we〜？",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["wh-questions", "modal-obligation-advice"]
+  },
+  {
+    "id": "c_3b2u6w7w",
+    "ja": "経理に、領収書がまだだと言われた。",
+    "en": "Accounting told me my receipts were still missing.",
+    "alternatives": [
+      "Accounting said my receipts were still missing.",
+      "Accounting told me they hadn't received my receipts."
+    ],
+    "point": "told me の後は過去形に時制を合わせる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3c9r9h6r",
+    "ja": "何があっても、温度設定は触らないで。",
+    "en": "Under no circumstances should you touch the thermostat.",
+    "alternatives": [
+      "On no account should you touch the thermostat.",
+      "Whatever you do, don't touch the thermostat."
+    ],
+    "point": "否定句が文頭に来ると should you の語順に倒置",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_3s3k3s3u",
+    "ja": "もう戻らなきゃ。",
+    "en": "I must get back.",
+    "alternatives": ["I have to get back.", "I've got to get back."],
+    "point": "しなきゃ は have to / must",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_3x3q5e3r",
+    "ja": "時間がなくて、昼を抜いた。",
+    "en": "Pressed for time, I skipped lunch.",
+    "alternatives": [
+      "Short on time, I skipped lunch.",
+      "Being short on time, I skipped lunch."
+    ],
+    "point": "理由は Pressed for time で先に言う分詞構文",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_3z5q7e7h",
+    "ja": "仕切り役の人は、今日お休みです。",
+    "en": "The person running point is out today.",
+    "alternatives": [
+      "The person in charge is out today.",
+      "Whoever is running point is off today.",
+      "The one running point is off today."
+    ],
+    "point": "「仕切り役」は run point。person の後ろから修飾",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_4c3e4z2e",
+    "ja": "古いけど、コピー機は動くよ。",
+    "en": "Although it's old, the copier works.",
+    "alternatives": [
+      "Even though the copier's old, it works.",
+      "The copier works, even though it's old."
+    ],
+    "point": "譲歩は although / even though。but とは重ねない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_4f5t6x7d",
+    "ja": "あの時、部長は帰ってたよ。",
+    "en": "The boss had already gone home.",
+    "alternatives": [
+      "The boss had left for the day.",
+      "The manager had already gone home."
+    ],
+    "point": "その時点より前の出来事は had + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4f7b7m9u",
+    "ja": "お土産、買わなくてよかったのに。",
+    "en": "You needn't have bought us souvenirs.",
+    "alternatives": [
+      "You didn't need to buy us souvenirs.",
+      "You shouldn't have bought us souvenirs."
+    ],
+    "point": "needn't have + 過去分詞で「不要だったのに」",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_4f7n6p6s",
+    "ja": "ホチキスがどこにあるか分かる？",
+    "en": "Any idea where the stapler is?",
+    "alternatives": ["Do you know where the stapler is?", "Know where the stapler is?"],
+    "point": "間接疑問は where のあとを平叙文の語順に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_4h9k6m6z",
+    "ja": "置いた充電器、誰が取ったか分かる？",
+    "en": "Know who took the charger I left?",
+    "alternatives": [
+      "Any idea who took the charger I left?",
+      "Anyone know who took the charger I left?"
+    ],
+    "point": "who 節の中に、さらに charger I left が入る",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["indirect-questions", "relative-clauses"]
+  },
+  {
+    "id": "c_4r2a3k7g",
+    "ja": "今日は早めに上がろうかな。",
+    "en": "I might knock off early today.",
+    "alternatives": [
+      "I'm thinking of knocking off early today.",
+      "I think I'll head out early today."
+    ],
+    "point": "「仕事を切り上げる」は knock off",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_4t2a8k8n",
+    "ja": "今日は五時に上がります。",
+    "en": "I'm leaving at five today.",
+    "alternatives": ["I'm going home at five today.", "I'm heading out at five today."],
+    "point": "決まった予定は進行形で言える",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_4u7u6f2z",
+    "ja": "噂では、彼女は部長の座を狙ってる。",
+    "en": "Rumor has it she's gunning for the director's job.",
+    "alternatives": [
+      "I hear she's after the director's job.",
+      "The word is she wants the director's job.",
+      "Rumor has it she's angling for the director's job."
+    ],
+    "point": "「噂では」は Rumor has it (that) 〜",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_5c9x6z4y",
+    "ja": "プリンターは紙切れだ。",
+    "en": "The printer's out of paper.",
+    "alternatives": ["The printer has no paper.", "The printer's paper has run out."],
+    "point": "out of paper は紙を使い切った状態。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5g7w7f7s",
+    "ja": "新しい椅子が届いた。",
+    "en": "The new chair arrived.",
+    "alternatives": ["The new chair is here.", "The new chair came in."],
+    "point": "届いた新しいものには the を付ける",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_5r7n4r5v",
+    "ja": "先週の金曜は休んだよ。",
+    "en": "I took last Friday off.",
+    "alternatives": ["I was off last Friday.", "I took a day off last Friday."],
+    "point": "休みを取るは take ~ off",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_5r8g2u7a",
+    "ja": "ちょうど君の話をしてた。",
+    "en": "We were just talking about you.",
+    "alternatives": ["We were just discussing you.", "We were just mentioning you."],
+    "point": "その時していた最中の動作は過去進行形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5t2s9a7c",
+    "ja": "朝からずっと報告書を書いてる。",
+    "en": "I've been writing reports all morning.",
+    "alternatives": [
+      "I've been writing reports since morning.",
+      "I've been working on reports all morning."
+    ],
+    "point": "今も続く動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5t9r6q8v",
+    "ja": "課長は今日在宅だと言ってたよ。",
+    "en": "The manager said she's working from home.",
+    "alternatives": [
+      "The manager said she'd be working from home today.",
+      "The manager told me she's working from home."
+    ],
+    "point": "said のあとでも、今も続く話は現在形のままでよい",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_5u2q9c5y",
+    "ja": "金曜、お休みをいただきたいです。",
+    "en": "I was hoping to take Friday off.",
+    "alternatives": [
+      "I was wondering if I could take Friday off.",
+      "I was hoping to have Friday off."
+    ],
+    "point": "was hoping で頼みを柔らかくする",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_6a4j2y4k",
+    "ja": "プリンター、壊れたと思う。",
+    "en": "I think the printer's broken.",
+    "alternatives": [
+      "I think the printer has broken down.",
+      "I think the printer isn't working."
+    ],
+    "point": "I think の後ろに文をそのまま続ける",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_6b2m2k9v",
+    "ja": "上司に土曜出勤させられた。",
+    "en": "My boss made me work Saturday.",
+    "alternatives": [
+      "My boss made me come in Saturday.",
+      "My boss made me work on Saturday."
+    ],
+    "point": "強制は make + 人 + 動詞の原形。to は付けない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_6b5r6m7b",
+    "ja": "ケーキが余ってるよ。",
+    "en": "There's leftover cake.",
+    "alternatives": ["There's some cake left.", "We have leftover cake."],
+    "point": "cake は数えられない名詞。There's でよい",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"]
+  },
+  {
+    "id": "c_6e9t2c5e",
+    "ja": "ここでコーヒーと称する物には呆れる。",
+    "en": "What passes for coffee here beggars belief.",
+    "alternatives": [
+      "I can't believe they call this coffee.",
+      "What they call coffee here is a joke."
+    ],
+    "point": "pass for はそれらしく見なされることを皮肉にも使う。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_6g2r3k9n",
+    "ja": "その台車を廊下に戻して。",
+    "en": "Return that cart to the hallway.",
+    "alternatives": [
+      "Put that cart back in the hallway.",
+      "Take that cart back to the hall."
+    ],
+    "point": "return + 物 + to で元の場所に戻す。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_6k5e4d5g",
+    "ja": "時間があれば手伝うのに。",
+    "en": "If I had time, I'd help.",
+    "alternatives": ["I'd help if I had time.", "If I weren't so busy, I'd help."],
+    "point": "現実と違う仮定は if + 過去形、主節は would",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_6m5t7j4w",
+    "ja": "このオフィスに要るのは動ける広さだ。",
+    "en": "What this office needs is elbow room.",
+    "alternatives": [
+      "What this office needs is room to move.",
+      "It's space to move that this office needs."
+    ],
+    "point": "elbow room は窮屈でなく動ける空間のこと。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_6z7g3s7s",
+    "ja": "私は備品共有が好き。",
+    "en": "I like sharing office supplies.",
+    "alternatives": [
+      "I enjoy sharing workplace supplies.",
+      "I like letting others use office supplies."
+    ],
+    "point": "supplies は職場で使う消耗品や備品。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_7b8g9f8z",
+    "ja": "私が席を外してもいい？",
+    "en": "May I step away?",
+    "alternatives": ["Could I leave my desk?", "Would it be okay to step out?"],
+    "point": "step away は仕事の場所を一時離れる。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_7d3x6d3j",
+    "ja": "席替えは月曜に発表される。",
+    "en": "Seat changes will be announced Monday.",
+    "alternatives": [
+      "They'll announce the seat changes Monday.",
+      "The seat changes will be announced Monday."
+    ],
+    "point": "will be + 過去分詞で未来の受動態",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7d8j8s2g",
+    "ja": "遅れそうで、朝礼を逃しました。",
+    "en": "Running late, I missed the morning huddle.",
+    "alternatives": [
+      "Being late, I missed the morning huddle.",
+      "Running behind, I missed the morning huddle."
+    ],
+    "point": "分詞構文の Running late は「遅れ気味で」",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7s2a4m3q",
+    "ja": "きっと彼、部屋を予約したの忘れてる。",
+    "en": "I bet he's forgotten he booked the room.",
+    "alternatives": [
+      "I'll bet he forgot he'd booked the room.",
+      "He probably forgot that he'd booked the room.",
+      "He's probably forgotten he booked the room."
+    ],
+    "point": "「きっと〜」は I'll bet。節の中に節が続く",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_7u6v4e6j",
+    "ja": "空いてる会議室がないよ。",
+    "en": "There's no free meeting room.",
+    "alternatives": ["There are no free meeting rooms.", "No meeting room is free."],
+    "point": "「〜がない」は There's no + 名詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_8e6k9k8n",
+    "ja": "上着を持ってくればよかった。",
+    "en": "I wish I'd brought a jacket.",
+    "alternatives": [
+      "If only I'd brought a jacket.",
+      "I should have brought a jacket."
+    ],
+    "point": "過去の後悔は If only / wish + 過去完了",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_8g2s6h9n",
+    "ja": "総務は私たちを手続きで振り回す。",
+    "en": "Admin has us jumping through hoops.",
+    "alternatives": [
+      "Admin makes us deal with red tape.",
+      "Admin puts us through endless bureaucratic hassle."
+    ],
+    "point": "jump through hoops は厄介な手続きをいくつもこなすこと。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_8h6s6r3a",
+    "ja": "この椅子の方が楽だ。",
+    "en": "This chair is more comfortable.",
+    "alternatives": ["This chair feels comfier.", "This chair feels more comfortable."],
+    "point": "more comfortable はより座り心地がよい。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_8q7h9u5v",
+    "ja": "昼食後は私に電話して。",
+    "en": "Call me when lunch is over.",
+    "alternatives": ["Call me after lunch.", "Phone me once lunch is over."],
+    "point": "未来の昼食後でも when 節は現在形。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_8w2h8w6j",
+    "ja": "頼んでくれれば、手伝ったのに。",
+    "en": "I'd have helped if you'd asked.",
+    "alternatives": [
+      "If you'd asked, I would have helped.",
+      "If you had asked me, I'd have helped."
+    ],
+    "point": "過去の事実に反する仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_9d5p8x5g",
+    "ja": "私、鍵を閉め忘れたかも。",
+    "en": "I might have forgotten to lock up.",
+    "alternatives": [
+      "I may have forgotten to lock up.",
+      "I may have forgotten to lock the door."
+    ],
+    "point": "might have + 過去分詞で「かもしれなかった」",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_9h2q3y3e",
+    "ja": "今なら手伝えるよ。",
+    "en": "I can help now.",
+    "alternatives": ["I can help right now.", "I can help you now."],
+    "point": "できる は can + 動詞の原形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_9p5z5g2y",
+    "ja": "昨日休まなきゃ、今ごろ死んでる。",
+    "en": "If I hadn't rested, I'd be dead.",
+    "alternatives": [
+      "I'd be dead now if I hadn't rested.",
+      "If I hadn't rested, I'd be dead by now."
+    ],
+    "point": "過去の仮定 + 今の結果は、had done と would be",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_9r6u9v4z",
+    "ja": "休憩室はどこですか？",
+    "en": "Where's the break room?",
+    "alternatives": ["Where's the lounge?", "Where's the staff room?"],
+    "point": "場所は Where + is。the を付ける",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["wh-questions", "articles-and-countability"]
+  }
+]

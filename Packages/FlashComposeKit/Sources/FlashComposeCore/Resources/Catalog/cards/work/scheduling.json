@@ -1,0 +1,723 @@
+[
+  {
+    "id": "c_2d7z5x5g",
+    "ja": "金曜にしましょう。",
+    "en": "Let's make it Friday.",
+    "alternatives": ["Let's do Friday.", "Let's go with Friday."],
+    "point": "「〜しましょう」は Let's + 動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_2n4u4c5k",
+    "ja": "日程に迷い私は判断を保留した。",
+    "en": "Torn between dates, I postponed deciding.",
+    "alternatives": [
+      "Unable to choose dates, I postponed my decision.",
+      "I put off deciding, torn between dates."
+    ],
+    "point": "torn は選択肢の間で気持ちが揺れている。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_3b9q6d9a",
+    "ja": "火曜の方が私たちは楽だ。",
+    "en": "Tuesday is less taxing for us.",
+    "alternatives": [
+      "Tuesday puts less strain on us.",
+      "Tuesday is less demanding for us."
+    ],
+    "point": "taxing は負担が大きい、骨が折れるという意味。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_3j7e7v8t",
+    "ja": "私は締切の再交渉を避けたい。",
+    "en": "I'm keen to avoid renegotiating deadlines.",
+    "alternatives": [
+      "I want to avoid renegotiating deadlines.",
+      "I'd rather not renegotiate deadlines."
+    ],
+    "point": "avoid の後は renegotiating のように動名詞。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_3k7p2s6k",
+    "ja": "いつなら空いていますか？",
+    "en": "When are you free?",
+    "alternatives": ["When are you available?", "When would you be free?"],
+    "point": "疑問詞 When + be 動詞 + 主語の順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["wh-questions", "be-and-present-simple"]
+  },
+  {
+    "id": "c_3r4s3q3m",
+    "ja": "私はもっと早く来るべき。",
+    "en": "I should come earlier.",
+    "alternatives": ["I should arrive earlier.", "I ought to come earlier."],
+    "point": "earlier は予定などより早い時間に。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_3r8v8f5k",
+    "ja": "会議は何時ですか？",
+    "en": "What time's the meeting?",
+    "alternatives": ["When does the meeting start?", "When is the meeting?"],
+    "point": "「何時」は What time。疑問詞が文頭",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_3u4f9p7e",
+    "ja": "期限が延びてたとは知らなかった。",
+    "en": "I didn't know it had been extended.",
+    "alternatives": [
+      "I hadn't realized it had been extended.",
+      "I didn't know they'd extended it."
+    ],
+    "point": "知る前に済んでいたことは過去完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_3v8r2k7c",
+    "ja": "この件、来週に回してもいい？",
+    "en": "Can we bump this to next week?",
+    "alternatives": [
+      "Could we push this to next week?",
+      "Can we push this back to next week?"
+    ],
+    "point": "bump / push で「後ろに回す」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_4a9v2y7z",
+    "ja": "会議を遅らせてもいい？",
+    "en": "Can we delay it?",
+    "alternatives": [
+      "Could we delay it?",
+      "Can we push it back?",
+      "Can we delay the meeting?"
+    ],
+    "point": "「延期する」は push back。許可は Can we",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4c7b5d2m",
+    "ja": "言ってくれれば、ずらせたのに。",
+    "en": "Had you said, I could've moved it.",
+    "alternatives": [
+      "If you'd told me, I could've moved it.",
+      "If you'd warned me, I could've moved it."
+    ],
+    "point": "If を省くと Had you said ～ と倒置になる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_4d9f6y6s",
+    "ja": "日程が動くと彼らは分かってないと思う。",
+    "en": "I doubt they grasp how fluid our schedule is.",
+    "alternatives": [
+      "I doubt they realize our schedule can change.",
+      "They probably don't grasp how changeable our schedule is."
+    ],
+    "point": "fluid は予定がまだ動き得る状態。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_4e9b2f6z",
+    "ja": "これ、30分前倒しにできますか？",
+    "en": "Could we move it up by 30 minutes?",
+    "alternatives": [
+      "Could we bring it forward by half an hour?",
+      "Would it be possible to move it up 30 minutes?"
+    ],
+    "point": "move up は「前倒しする」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_4g2e4a4e",
+    "ja": "交渉中の日程はまだ流動的だ。",
+    "en": "The dates under negotiation remain fluid.",
+    "alternatives": [
+      "The dates being negotiated are still unsettled.",
+      "The dates we're negotiating remain subject to change."
+    ],
+    "point": "under negotiation で日程を後ろから修飾する。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_4j7b3c9e",
+    "ja": "私、早く帰っていい？",
+    "en": "Can I leave early?",
+    "alternatives": ["Is leaving early okay?", "Could I go home early?"],
+    "point": "Can I は早く帰る許可を求める。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4p9q6r4c",
+    "ja": "できれば、金曜は避けたかったんです。",
+    "en": "I was hoping to avoid Friday, if possible.",
+    "alternatives": [
+      "I'd have liked to avoid Friday, if possible.",
+      "I was hoping we could avoid Friday, if possible."
+    ],
+    "point": "I was hoping で希望を控えめに伝える",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4u4e3x4u",
+    "ja": "火曜のほうが都合いい？",
+    "en": "Is Tuesday better for you?",
+    "alternatives": [
+      "Would Tuesday work better for you?",
+      "Is Tuesday more convenient for you?"
+    ],
+    "point": "都合がいいは better for you",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5c4d9j5z",
+    "ja": "私は会議をずらすのに抵抗がある。",
+    "en": "I'm reluctant to reschedule the meeting.",
+    "alternatives": [
+      "I'm hesitant about moving the meeting.",
+      "I'd rather not reschedule the meeting."
+    ],
+    "point": "reluctant to は気が進まない。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5g6w5f5s",
+    "ja": "全員空いてる日に決めましょう。",
+    "en": "Let's choose a day when everyone's free.",
+    "alternatives": [
+      "Let's pick a day when everyone is free.",
+      "Let's find a day that works for everyone."
+    ],
+    "point": "時を表す名詞の後ろは when で修飾",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_5h2v2v6x",
+    "ja": "金曜に会うのはどう？",
+    "en": "How about meeting on Friday?",
+    "alternatives": ["What about meeting on Friday?", "How about we meet on Friday?"],
+    "point": "How about の後は -ing。曜日の前は on",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_5j5e6j3k",
+    "ja": "今週ずっと会議を調整してる。",
+    "en": "I've been rescheduling meetings all week.",
+    "alternatives": [
+      "I've been coordinating meetings all week.",
+      "I've been juggling the schedule all week."
+    ],
+    "point": "今週ずっとは現在完了進行形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5k9t3k5t",
+    "ja": "私が選んだ日はもう埋まってる。",
+    "en": "The date I chose is already booked.",
+    "alternatives": [
+      "The day I picked is already taken.",
+      "My chosen date is already booked."
+    ],
+    "point": "I chose が選んだ日を限定し、already booked は既に埋まっている状態を表す。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast", "relative-clauses"]
+  },
+  {
+    "id": "c_5m4j7y6v",
+    "ja": "明日、空いてる？",
+    "en": "Are you free tomorrow?",
+    "alternatives": ["Are you available tomorrow?", "Do you have time tomorrow?"],
+    "point": "「空いている」は be free。疑問は Are を前に",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5v4q9p7z",
+    "ja": "火曜に空いてる枠はありますか？",
+    "en": "Are there any slots open Tuesday?",
+    "alternatives": [
+      "Are there any open slots on Tuesday?",
+      "Do you have any slots open Tuesday?"
+    ],
+    "point": "名詞のあとに open を置いて「空いている」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_5z5s9u9t",
+    "ja": "彼女に、締め切りの延長を頼んだ。",
+    "en": "I asked her to extend the deadline.",
+    "alternatives": [
+      "I asked her to push the deadline back.",
+      "I asked her to give us an extension."
+    ],
+    "point": "ask + 人 + to 原形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_6m5j9g4d",
+    "ja": "遅れても木曜で大丈夫です。",
+    "en": "Even if we're late, Thursday's fine.",
+    "alternatives": [
+      "Thursday's fine even if we run late.",
+      "Thursday works even if we're late."
+    ],
+    "point": "Even if のあとは未来のことも現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_6w5s9q2e",
+    "ja": "私は日付を選んでる。",
+    "en": "I'm choosing dates.",
+    "alternatives": ["I'm picking the dates.", "I'm selecting dates."],
+    "point": "進行形で日付を今選んでいると伝える。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6w6u5u2s",
+    "ja": "君が提案した日は空いてる。",
+    "en": "The date you suggested is available.",
+    "alternatives": [
+      "The day you proposed is open.",
+      "There's availability on the date you suggested."
+    ],
+    "point": "you suggested がどの日かを絞る。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_6y3b2p9d",
+    "ja": "私は火曜を選んだ。",
+    "en": "I chose Tuesday.",
+    "alternatives": ["I picked Tuesday.", "Tuesday was my choice."],
+    "point": "chose は choose の過去形。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6y4d7x9c",
+    "ja": "月曜の会議は中止です。",
+    "en": "Monday's meeting is canceled.",
+    "alternatives": ["The meeting on Monday is canceled.", "Monday's meeting is off."],
+    "point": "「中止された」は be canceled の受け身",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_6z3j5w5k",
+    "ja": "会議、もう金曜に移したよ。",
+    "en": "I've moved it to Friday.",
+    "alternatives": [
+      "I've already moved it to Friday.",
+      "I've moved the meeting to Friday."
+    ],
+    "point": "もう〜した は already + 現在完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_6z6v6m5z",
+    "ja": "会議は先送りになりました。",
+    "en": "The meeting's been pushed back.",
+    "alternatives": [
+      "The meeting has been postponed.",
+      "They pushed the meeting back."
+    ],
+    "point": "push back は「延期する」の定番句動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_6z8u2r7j",
+    "ja": "我々は日程をやり繰りしてる。",
+    "en": "We're juggling the schedule.",
+    "alternatives": [
+      "We're juggling the dates.",
+      "We're trying to fit the dates together."
+    ],
+    "point": "juggle は複数の都合をやり繰りする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6z9a2g5x",
+    "ja": "私たちが日程に余裕を残してたらな。",
+    "en": "I wish we'd built float into the schedule.",
+    "alternatives": [
+      "I wish we'd allowed leeway in the schedule.",
+      "If only we'd left slack in the schedule."
+    ],
+    "point": "float は日程に組み込む余裕時間。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7c6s3n5d",
+    "ja": "私は日程に余裕を持たせた。",
+    "en": "I've built slack into the schedule.",
+    "alternatives": [
+      "I've allowed extra time in the schedule.",
+      "I've included breathing room in the schedule."
+    ],
+    "point": "slack は遅れを吸収できる時間の余裕。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_7k7u8w3t",
+    "ja": "プリヤは木曜を仮押さえすると言った。",
+    "en": "Priya said she'd pencil in Thursday.",
+    "alternatives": [
+      "Priya said she would pencil Thursday in.",
+      "Priya said she'd tentatively hold Thursday."
+    ],
+    "point": "仮押さえは pencil in。said の後は時制を一つ下げる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_7v6m8a2q",
+    "ja": "確認したら、金曜は大丈夫です。",
+    "en": "Having checked, I'm free on Friday.",
+    "alternatives": [
+      "Having checked my calendar, I can do Friday.",
+      "I've checked, and Friday works for me."
+    ],
+    "point": "先に済ませた動作は having + 過去分詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7w6r5k5c",
+    "ja": "木曜予定の会議、ずらせる？",
+    "en": "Can we push Thursday's meeting back?",
+    "alternatives": [
+      "Can we move Thursday's meeting?",
+      "Could we reschedule Thursday's meeting?"
+    ],
+    "point": "push ~ back は「延期する」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_7x7r8x3q",
+    "ja": "ケンに会議室を取ってもらった。",
+    "en": "I had Ken book the room.",
+    "alternatives": ["I got Ken to book the room.", "Ken booked the room for me."],
+    "point": "have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_7y4u4x8v",
+    "ja": "何曜日がいいですか？",
+    "en": "Which day is good?",
+    "alternatives": ["Which day works for you?", "What day is good?"],
+    "point": "曜日を選ぶなら Which day。works も便利",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_8b4e9m2r",
+    "ja": "何時ならいいか教えてね。",
+    "en": "Let me know what time works.",
+    "alternatives": [
+      "Could you tell me what time suits you?",
+      "Please tell me what time works for you."
+    ],
+    "point": "what time 節を動詞の目的語にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_8b6g5r5j",
+    "ja": "私、日にちを間違えたかも。",
+    "en": "I might have mixed up the date.",
+    "alternatives": [
+      "I may have gotten the date wrong.",
+      "I think I got the date wrong."
+    ],
+    "point": "might have + 過去分詞で過去の推量",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_8d3y5j8g",
+    "ja": "締め切りは月曜です。",
+    "en": "The deadline is Monday.",
+    "alternatives": ["The deadline is on Monday.", "It's due Monday."],
+    "point": "「締め切り」は deadline。It's due Monday. とも言える",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8f6d5b6j",
+    "ja": "仕事を前倒ししてたら今我々は余裕なのに。",
+    "en": "Had we front-loaded work, we'd have slack now.",
+    "alternatives": [
+      "If we'd done more upfront, we'd have leeway now.",
+      "We'd have breathing room now had we worked ahead."
+    ],
+    "point": "front-load は仕事を前半に集中させる。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_8g7r6s9a",
+    "ja": "我々に必要なのは確約だ。",
+    "en": "What we need is a firm commitment.",
+    "alternatives": [
+      "A firm commitment is what we need.",
+      "We need a definite commitment."
+    ],
+    "point": "firm commitment は曖昧な予定ではなく確かな約束。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_8h2s9b3m",
+    "ja": "いつ空いてるか、教えてもらえる？",
+    "en": "Could you tell me when you're free?",
+    "alternatives": [
+      "Would you tell me when you're free?",
+      "Can you let me know when you're available?"
+    ],
+    "point": "間接疑問は when you're free の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_8n7k6d7a",
+    "ja": "私は今会える。",
+    "en": "I can meet now.",
+    "alternatives": ["I can meet right now.", "I'm able to meet now."],
+    "point": "can で今すぐ会えると伝える。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_8p2d4u9a",
+    "ja": "午後なら空いています。",
+    "en": "I'm free in the afternoon.",
+    "alternatives": ["I'm available in the afternoon.", "I'm free this afternoon."],
+    "point": "「午後に」は in the afternoon",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8q3z3k6u",
+    "ja": "私たちは候補日を絞るべき。",
+    "en": "We should shortlist possible dates.",
+    "alternatives": [
+      "We should narrow down possible dates.",
+      "We should choose fewer possible dates."
+    ],
+    "point": "shortlist possible dates は候補日を少数に絞る。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_8r9z9b5v",
+    "ja": "私が決めるなら、後ろにずらすのに。",
+    "en": "If it were my call, I'd delay it.",
+    "alternatives": [
+      "If it were up to me, I'd delay it.",
+      "If I could decide, I'd push it back.",
+      "If the call were mine, I'd postpone it."
+    ],
+    "point": "「私が決める」は my call。if 節は were",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_8s9d3w5z",
+    "ja": "絶対に、期限は延ばしません。",
+    "en": "Never will we extend the deadline.",
+    "alternatives": [
+      "We won't extend the deadline under any circumstances.",
+      "There's no way we'll extend the deadline."
+    ],
+    "point": "Never が文頭なら、後ろは疑問文の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_8z5m9z5n",
+    "ja": "頼まれる前に、会議を動かした。",
+    "en": "I moved the meeting before anyone asked.",
+    "alternatives": [
+      "I moved the meeting before I was asked.",
+      "I rescheduled the meeting before anyone asked."
+    ],
+    "point": "before の節は単純過去。過去完了にしなくてよい",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_9a3a2t5e",
+    "ja": "我々がその期限を緩める。",
+    "en": "We'll relax that deadline.",
+    "alternatives": [
+      "We'll make that deadline flexible.",
+      "We won't enforce that deadline strictly."
+    ],
+    "point": "relax a deadline は締め切りを厳しくなくする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9k8p2n5h",
+    "ja": "空き時間がない。",
+    "en": "There's no free time.",
+    "alternatives": ["There's no spare time.", "No free time is left."],
+    "point": "time は数えないので there is。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_9q6y6y3q",
+    "ja": "会議室、取っておきました。",
+    "en": "I've reserved a meeting room.",
+    "alternatives": ["I booked a meeting room.", "I've booked us a room."],
+    "point": "初めて話に出る部屋なので a を使う",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability"]
+  }
+]

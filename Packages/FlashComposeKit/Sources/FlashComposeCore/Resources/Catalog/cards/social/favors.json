@@ -1,0 +1,694 @@
+[
+  {
+    "id": "c_2e9g2q8s",
+    "ja": "手伝ってくれた友達に頼むよ。",
+    "en": "I'll ask the friend who helped me.",
+    "alternatives": [
+      "I'll ask my friend who helped me.",
+      "I'll ask the friend who helped me out."
+    ],
+    "point": "人を後ろから説明する who 節",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_2k9x6n5h",
+    "ja": "車で送らなくていいよ。",
+    "en": "No need to drive me.",
+    "alternatives": ["You don't have to drive me.", "You don't need to drive me."],
+    "point": "「〜しなくていい」は No need to / don't have to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_2n7c7d8n",
+    "ja": "空いてる椅子がある。",
+    "en": "There's a free chair.",
+    "alternatives": ["One chair is available.", "There's an unused chair."],
+    "point": "a free chair は今使われていない椅子。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_2p6a3p2x",
+    "ja": "君が断ってたら、今も困ってる。",
+    "en": "If you'd said no, I'd still be stuck.",
+    "alternatives": [
+      "If you'd refused, I'd still be stuck.",
+      "Had you said no, I'd still be stuck."
+    ],
+    "point": "過去の仮定 + 今の結果は would be",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_2p9u4s2f",
+    "ja": "何を手伝えばいい？",
+    "en": "What can I do?",
+    "alternatives": ["How can I help?", "What can I help with?"],
+    "point": "「手伝う」は help。what で始める",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_2s7k6t6r",
+    "ja": "代わってもらえたら、一つ借りだね。",
+    "en": "If you could cover, I'd owe you one.",
+    "alternatives": [
+      "If you covered for me, I'd owe you one.",
+      "If you could cover, I'd owe you big."
+    ],
+    "point": "owe you one は「借りができる」。if 節は過去形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_2t3y7b7j",
+    "ja": "ずっとお願いしたかったんだ。",
+    "en": "I've been meaning to ask you.",
+    "alternatives": [
+      "I've been wanting to ask you a favor.",
+      "I've been meaning to ask you something."
+    ],
+    "point": "「ずっと〜しようと」は have been meaning to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_2u7j4e8j",
+    "ja": "できたら手伝うよ。",
+    "en": "I'll help if I can.",
+    "alternatives": ["If I can, I'll help.", "I'll help you if I can."],
+    "point": "if 節の中は現在形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_2w8d5g2e",
+    "ja": "彼が頼むなんて、夢にも思わなかった。",
+    "en": "Never would I have thought he'd ask me.",
+    "alternatives": [
+      "I never imagined he'd ask me.",
+      "I'd never have thought he'd ask me."
+    ],
+    "point": "Never を文頭に出すと would I の倒置",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion", "nested-clauses"]
+  },
+  {
+    "id": "c_2z8g5w4k",
+    "ja": "もしかして、お時間ありません？",
+    "en": "Would you happen to have time?",
+    "alternatives": [
+      "I don't suppose you'd have a minute?",
+      "Do you happen to have a minute?"
+    ],
+    "point": "Would you happen to ～? で控えめに頼む",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_3j5u5t4p",
+    "ja": "誰に聞けばいいか分かりますか？",
+    "en": "Do you know who to ask?",
+    "alternatives": ["Could you tell me who to ask?", "Do you know who I should ask?"],
+    "point": "疑問詞 + to do で「誰に聞けば」",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3k4m3j3y",
+    "ja": "君が頼む前に私は無理してた。",
+    "en": "I'd overextended myself before you asked.",
+    "alternatives": [
+      "I'd already overextended myself before you asked.",
+      "I'd overdone it before you asked."
+    ],
+    "point": "overextend myself は自分の余力を超えて引き受ける。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_3r9t8j7k",
+    "ja": "頼む相手は、彼女が知ってるかも。",
+    "en": "She might know who I should ask.",
+    "alternatives": [
+      "Maybe she knows who I should ask.",
+      "She may know who I ought to ask."
+    ],
+    "point": "who の後は平叙文の語順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_3s3d4m9z",
+    "ja": "君は借りた工具を返すべき。",
+    "en": "You should return borrowed tools.",
+    "alternatives": [
+      "You ought to return borrowed tools.",
+      "You should give borrowed tools back."
+    ],
+    "point": "borrowed tools は借りている工具。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_3v6f2x8k",
+    "ja": "僕を君の防波堤に使わないで。",
+    "en": "Don't have me run interference for you.",
+    "alternatives": [
+      "Don't use me as your shield.",
+      "Don't make me act as your buffer."
+    ],
+    "point": "run interference は邪魔や圧力を引き受けて人を守る。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_3w5f3n8n",
+    "ja": "この箱は壊れやすい。",
+    "en": "This box is fragile.",
+    "alternatives": ["This box breaks easily.", "The box is easily damaged."],
+    "point": "fragile は壊れやすい。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_3y8p9u8g",
+    "ja": "君の負担が増えるのが心配だ。",
+    "en": "I worry this increases your burden.",
+    "alternatives": [
+      "I'm concerned this increases your workload.",
+      "I'm worried this increases your burden."
+    ],
+    "point": "burden は相手に負担をかける動詞にもなる。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_4a2x9c9j",
+    "ja": "私は君の頼みを断り心苦しい。",
+    "en": "I regret turning down your request.",
+    "alternatives": [
+      "I feel bad about declining your request.",
+      "I'm sorry I declined your request."
+    ],
+    "point": "regret doing はその行為を心苦しく思う。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_4c3x4q4d",
+    "ja": "彼の代わりを務めたのは、私なんだよ。",
+    "en": "It was me who covered for him.",
+    "alternatives": [
+      "I'm the one who covered for him.",
+      "I was the one who filled in for him."
+    ],
+    "point": "cover for は「〜の代わりを務める」",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "phrasal-verbs"]
+  },
+  {
+    "id": "c_4d7b4u6z",
+    "ja": "手を貸せるよ。",
+    "en": "I can give you a hand.",
+    "alternatives": ["I can lend you a hand.", "I could help you out."],
+    "point": "「手を貸す」は give a hand",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4n4x7p8b",
+    "ja": "彼が車で送ってくれた。",
+    "en": "He drove me.",
+    "alternatives": ["He gave me a ride.", "He drove me home."],
+    "point": "「送ってくれた」は過去形で言う",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_4p2r5y8m",
+    "ja": "彼女は口利きをすると言った。",
+    "en": "She said she'd pull some strings.",
+    "alternatives": [
+      "She said she'd use her influence.",
+      "She said she'd put in a word."
+    ],
+    "point": "pull strings はコネや影響力を使うこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_4w2q6j8r",
+    "ja": "君が手一杯でも、手を貸して。",
+    "en": "Even if you're swamped, please pitch in.",
+    "alternatives": [
+      "Please help even if you're swamped.",
+      "Even if you're busy, please help."
+    ],
+    "point": "pitch in は協力して手を貸すこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["concession-contrast", "phrasal-verbs"]
+  },
+  {
+    "id": "c_4z5m4c7h",
+    "ja": "今、料理中で手が離せない。",
+    "en": "I'm busy cooking right now.",
+    "alternatives": [
+      "I'm in the middle of cooking.",
+      "I'm busy cooking at the moment."
+    ],
+    "point": "busy の後ろは -ing(busy cooking)",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5a3t4m6s",
+    "ja": "私のバッグが重い。",
+    "en": "My bag is heavy.",
+    "alternatives": ["My bag's a heavy one.", "Mine's a heavy bag."],
+    "point": "heavy は持ち運ぶのが大変な重さ。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5g8d4a2n",
+    "ja": "悪いけど、今回は降りるしかない。",
+    "en": "I'm afraid I'll have to bow out.",
+    "alternatives": [
+      "Sorry, I'll have to sit this one out.",
+      "I'm afraid I have to back out."
+    ],
+    "point": "断りは bow out / back out で柔らかく",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_5h2a9h7a",
+    "ja": "ペン貸して。",
+    "en": "Lend me a pen.",
+    "alternatives": ["Please lend me a pen.", "Can I borrow a pen?"],
+    "point": "「貸す」は lend、「借りる」は borrow",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"]
+  },
+  {
+    "id": "c_5k4a2e9g",
+    "ja": "少しゆっくりお願いします。",
+    "en": "Could you speak a little slower?",
+    "alternatives": [
+      "Could you slow down a little?",
+      "Could you speak more slowly, please?"
+    ],
+    "point": "「もう少し〜」は a little + 比較級",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "requests-permission"]
+  },
+  {
+    "id": "c_5k9w7t3j",
+    "ja": "鍵がどこか、心当たりある？",
+    "en": "Any idea where my key is?",
+    "alternatives": ["Do you know where my key is?", "Any idea where I left my key?"],
+    "point": "間接疑問は where + 主語 + 動詞の順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_5m7y4p3b",
+    "ja": "私、荷物を運んでる。",
+    "en": "I'm carrying bags.",
+    "alternatives": ["I'm carrying the bags.", "I'm moving the bags."],
+    "point": "進行形で今荷物を運んでいると伝える。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5p7h4r5p",
+    "ja": "受けてたら私は今知らずに操られてる。",
+    "en": "Had I agreed, I'd be an unwitting pawn.",
+    "alternatives": [
+      "If I'd agreed, I'd be an unwitting pawn.",
+      "I'd be an unwitting pawn now had I agreed."
+    ],
+    "point": "unwitting pawn は気づかずに他人に利用される人。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_5s4g9r3v",
+    "ja": "父が呼んだら私が手伝う。",
+    "en": "I'll help when Dad calls.",
+    "alternatives": ["I'll help if Dad calls.", "I'll help once Dad calls."],
+    "point": "未来の呼びかけでも when 節は現在形。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_5t7y6r4w",
+    "ja": "頼みは、ざっと見るだけ。",
+    "en": "What I need is a quick look.",
+    "alternatives": [
+      "All I need is a quick look.",
+      "What I'm asking for is a quick look."
+    ],
+    "point": "What I need is ~ で頼みの中心を強調",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_5x6m9c5t",
+    "ja": "私はずっと頼みをさばいてる。",
+    "en": "I've been fielding requests.",
+    "alternatives": [
+      "I've been dealing with requests.",
+      "I've been handling people's requests."
+    ],
+    "point": "field requests は寄せられる頼みに対応する。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5x6r9w9x",
+    "ja": "充電器ってある？",
+    "en": "Is there a charger?",
+    "alternatives": ["Do you have a charger?", "Got a charger?"],
+    "point": "「ある？」は Is there 〜?",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6f6n8c3z",
+    "ja": "頼んだ件、もう見てくれた？",
+    "en": "Have you checked it yet?",
+    "alternatives": ["Did you check it yet?", "Have you looked at it yet?"],
+    "point": "「もう〜した？」は現在完了 + yet",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"]
+  },
+  {
+    "id": "c_6k2b8r9s",
+    "ja": "彼に手加減してと頼んで。",
+    "en": "Ask him to go easy.",
+    "alternatives": ["Ask him to ease up.", "Ask him to be less demanding."],
+    "point": "go easy は厳しさを和らげる。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_6q2r2g5g",
+    "ja": "ちょっとこれ持ってて。",
+    "en": "Hold this for a second.",
+    "alternatives": ["Just hold this for a second, please.", "Hold this for me a sec."],
+    "point": "頼みの命令文は please で和らぐ",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_6w8v4w2c",
+    "ja": "ちょっとカバンを預かってくれる？",
+    "en": "Could you hang on to my bag?",
+    "alternatives": ["Can you hold on to my bag?", "Could you keep an eye on my bag?"],
+    "point": "預かるは hang on to / hold on to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6z3j3w8x",
+    "ja": "先に別の人に頼まれてたの。",
+    "en": "Someone else had asked me first.",
+    "alternatives": [
+      "I'd already been asked by someone else.",
+      "Someone else had already asked me."
+    ],
+    "point": "断る理由の「先に」は過去完了",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_7b6a4w6z",
+    "ja": "誰が手伝ってくれる？",
+    "en": "Who will help me?",
+    "alternatives": ["Who can help me?", "Who's going to help me?"],
+    "point": "who が主語のときは倒置しない",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7q6q4t7q",
+    "ja": "言ってくれたら、手伝ったのに。",
+    "en": "If you'd asked, I'd have helped.",
+    "alternatives": [
+      "I'd have helped if you'd asked.",
+      "Had you asked, I'd have helped."
+    ],
+    "point": "過去の仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_7t3c7m3j",
+    "ja": "ミカは私の頼みを忘れたかも。",
+    "en": "Mika might have forgotten my request.",
+    "alternatives": [
+      "Maybe Mika forgot what I asked her.",
+      "Mika may have forgotten my request."
+    ],
+    "point": "過去の可能性は might have + 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_7u8r3n4t",
+    "ja": "彼に頼んで送ってもらった。",
+    "en": "I got him to drive me.",
+    "alternatives": ["I asked him to drive me.", "I got him to take me."],
+    "point": "get 人 to do は説得して〜してもらう。have は to なし",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_7v4r4b4x",
+    "ja": "ちょっとお願いがあるの。",
+    "en": "I need a favor.",
+    "alternatives": ["I have a favor to ask.", "I'd like to ask a favor."],
+    "point": "「お願い」は a favor",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_7v4z6a6m",
+    "ja": "私はもう君への貸しを超えて頼んだ。",
+    "en": "I've already overdrawn my favor account with you.",
+    "alternatives": [
+      "I've already asked more than you owe me.",
+      "I've called in more favors than you owed."
+    ],
+    "point": "overdraw は貸しの残高以上に頼むという比喩。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_7x8z2d4r",
+    "ja": "あの子守の頼みは重荷に感じる。",
+    "en": "That request for babysitting feels onerous.",
+    "alternatives": [
+      "That babysitting request feels burdensome.",
+      "That request for babysitting feels burdensome."
+    ],
+    "point": "for babysitting は request の説明、onerous は負担が重い。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_8d4x3z2v",
+    "ja": "頼みを断ることは、めったにないんだ。",
+    "en": "Rarely do I turn down a request.",
+    "alternatives": [
+      "I rarely turn down a request.",
+      "I hardly ever say no to a request."
+    ],
+    "point": "Rarely を前に出すと主語と助動詞が倒置",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion", "phrasal-verbs"]
+  },
+  {
+    "id": "c_8y3f8r3h",
+    "ja": "私も君に恩返しできたらな。",
+    "en": "I wish I could reciprocate.",
+    "alternatives": [
+      "I wish I could repay your kindness.",
+      "If only I could return the favor."
+    ],
+    "point": "reciprocate は受けた好意を返すこと。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_8y5p2h6m",
+    "ja": "仕事に追われて手伝えないんだ。",
+    "en": "Swamped with work, I can't help.",
+    "alternatives": [
+      "Being swamped at work, I can't help.",
+      "I'm swamped with work, so I can't help."
+    ],
+    "point": "Swamped は「手一杯」。分詞構文で理由を添える",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_9f8u8c9a",
+    "ja": "手伝ってと頼まれたよ。",
+    "en": "I was asked to help.",
+    "alternatives": ["Someone asked me to help.", "They asked me to help."],
+    "point": "「頼まれた」は was asked to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["passive-voice", "infinitives"]
+  },
+  {
+    "id": "c_9p9w6d9d",
+    "ja": "私は君を車で送れる。",
+    "en": "I can drive you.",
+    "alternatives": ["I can give you a ride.", "I can take you by car."],
+    "point": "drive you は車で相手を送る。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_9u6q3b9h",
+    "ja": "軽い方の箱を運んで。",
+    "en": "Carry the lighter box.",
+    "alternatives": ["Take the lighter box.", "Move the lighter box."],
+    "point": "lighter は二つなどを比べて軽い方。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_9v2g8f7f",
+    "ja": "私は彼女を手伝った。",
+    "en": "I helped her.",
+    "alternatives": ["I gave her some help.", "I helped her out."],
+    "point": "helped は help の過去形。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_9z6s7f3g",
+    "ja": "消しゴム借りるね。",
+    "en": "I'll borrow your eraser.",
+    "alternatives": ["Let me borrow your eraser.", "I'm borrowing your eraser."],
+    "point": "借りるのは borrow、貸すのは lend。その場の決定は I'll",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["future-forms"]
+  }
+]
