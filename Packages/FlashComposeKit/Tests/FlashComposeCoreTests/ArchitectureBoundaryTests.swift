@@ -39,9 +39,9 @@ struct ArchitectureBoundaryTests {
     ]
 
     /// Foundation types `FlashComposeCore` must not name: Core imports Foundation, so no import
-    /// ban can see them, yet each belongs to an adapter — `URLSession` to
-    /// `URLSessionHTTPClient`, behind the ``FlashComposeCore/HTTPClient`` port, and `UserDefaults`
-    /// to `UserDefaultsPreferences`, behind ``FlashComposeCore/PreferencesStoring``.
+    /// ban can see them, yet each belongs in an adapter — `URLSession` in one
+    /// `FlashComposePlatform` would hold if the app ever reached a network, and `UserDefaults`
+    /// in `UserDefaultsPreferences`, behind ``FlashComposeCore/PreferencesStoring``.
     /// `.swiftlint.yml` has no twin rule, so this list and the test that reads it are the
     /// only enforcement.
     static let forbiddenFoundationTypes = ["URLSession", "UserDefaults"]
@@ -92,7 +92,7 @@ struct ArchitectureBoundaryTests {
     }
 
     /// `\b<Type>\b` for any of `types`, with simple word boundaries so `URLSession.shared`
-    /// matches and `URLSessionHTTPClient` does not.
+    /// matches and `URLSessionAdapter` does not.
     static func typeRegex(forAnyOf types: [String]) throws -> Regex<AnyRegexOutput> {
         try Regex(#"\b("# + types.joined(separator: "|") + #")\b"#).wordBoundaryKind(.simple)
     }
@@ -234,7 +234,7 @@ struct ArchitectureBoundaryTests {
         ("    private let session: URLSession", true),
         ("// URLSession is the adapter's", false),
         ("    /// Wraps `URLSession` in FlashComposePlatform.", false),
-        ("let client: URLSessionHTTPClient", false),
+        ("let client: URLSessionAdapter", false),
         ("let defaults = UserDefaults.standard", true),
         ("/// `UserDefaults` stores it natively.", false),
         ("let preferences: UserDefaultsPreferences", false),

@@ -3,7 +3,7 @@ import Foundation
 
 /// The `UserDefaults`-backed adapter for ``FlashComposeCore/PreferencesStoring``.
 ///
-/// Translation only, in the manner of `URLSessionHTTPClient`: a key's name is the
+/// Translation only, like every adapter: a key's name is the
 /// `UserDefaults` key, and a value is stored as the property-list type it already is.
 /// `PreferencesContract` checks it in `FlashComposePlatformTests`, on a scratch suite, under
 /// plain `just test`.
