@@ -20,7 +20,7 @@ SwiftData adapter, a fake, a contract test, and a UI test.
 | Card catalog | Read-only JSON inside `FlashComposeCore` (`Resources/Catalog/`), decoded by Core at launch; never copied into the store | Cards ship with the app and change only in this repository, so an update that adds, fixes, or removes cards migrates nothing; as a Core resource, the catalog's integrity test runs under `just test` ([Card catalog](#card-catalog)) |
 | Persistence | Progress — each card's FSRS state and the append-only answer log — in SwiftData, behind the Core `ProgressStore` port | First-party (no dependency), migrations built in, and the port keeps it replaceable: Core never imports SwiftData ([Progress store](#progress-store)) |
 | Scheduler | FSRS-6, ported into Core from the old app's port of ts-fsrs 5.4.2 | Reproduces the old app's results exactly, checked against its golden vectors, without the app's first dependency ([Scheduling](#scheduling)) |
-| Networking | None: FlashCompose sends no request, and the package holds no HTTP client, adapter, or `network` log category | No network access is a Product non-goal; an unused layer under the coverage floor would only invite a feature the non-goals forbid |
+| Networking | None: FlashCompose sends no request, and the package holds no request code, transport adapter, or `network` log category | No network access is a Product non-goal; an unused layer under the coverage floor would only invite a feature the non-goals forbid |
 | Preferences | `UserDefaults` behind a synchronous Core `PreferencesStoring` port; the scope is FlashCompose's one setting | First-party and synchronous; the port keeps key names in one Core file where a test pins them ([Scope](#scope)) |
 | Navigation | One `NavigationStack(path:)`, in `FlashComposeUI`'s `RootView`, bound to a Core `NavigationModel`; a custom URL scheme (`flash-compose`, `project.yml`'s `info:` block) parsed by Core's `DeepLink`. The drill is the root and the scope a sheet, so the path stays empty until a pushed screen exists | Which screen shows is Core state a test drives, so a deep link and state restoration have something to hold on to; the seam stays for the pushed screens Later brings (a card browser, statistics). A custom scheme is an `Info.plist` entry, not an entitlement; `flash-compose://` opens the app on the drill |
 | Shipped languages | English (the source) and Japanese, following the device's language | The owner's iPhone runs in Japanese, and English buttons around a Japanese prompt would read as two apps ([Localization](#localization)) |
@@ -48,7 +48,7 @@ it looks the Design lock in [`docs/design-system.md`](design-system.md#design-lo
 
 - **Offline and alone.** Everything runs on the phone, with no network, account, or
   server, and no screen waits on anything but local storage. Rules out sync, remote card
-  updates, and any HTTP client.
+  updates, and any request code.
 - **Cards ship; progress stays.** The catalog is read-only data inside the app, and only
   the learner's progress is stored. Rules out seeding cards into the store, editing
   cards in the app, and an update that has to migrate progress because a card changed.
