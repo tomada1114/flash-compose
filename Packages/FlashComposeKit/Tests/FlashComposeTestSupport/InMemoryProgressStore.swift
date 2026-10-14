@@ -26,6 +26,7 @@ package actor InMemoryProgressStore: ProgressStore {
 
     private var progress: [CardID: CardProgress]
     private var failures: [Operation: ProgressStoreError] = [:]
+    private var beforeRecord: (@Sendable () async -> Void)?
 
     /// The progress held right now, ordered by card id — read without recording a call.
     package var snapshot: [CardProgress] {
@@ -68,12 +69,20 @@ package actor InMemoryProgressStore: ProgressStore {
         failures[operation] = nil
     }
 
+    /// Runs `hook` inside every later ``record(answer:progress:)``, before anything is
+    /// stored or a failure thrown — the seam a test uses to act while a save is in
+    /// flight, as a second tap would.
+    package func onRecord(_ hook: @escaping @Sendable () async -> Void) {
+        beforeRecord = hook
+    }
+
     package func loadProgress() throws(ProgressStoreError) -> [CardProgress] {
         try note(.loadProgress)
         return snapshot
     }
 
-    package func record(answer: Answer, progress: CardProgress) throws(ProgressStoreError) {
+    package func record(answer: Answer, progress: CardProgress) async throws(ProgressStoreError) {
+        await beforeRecord?()
         try note(.record)
         answers.append(answer)
         self.progress[progress.cardID] = progress

@@ -30,6 +30,10 @@ public enum AppLog {
     /// A new concern adds a `Logger` here instead of building one inline.
     public static let todos = Logger(subsystem: subsystem, category: "todos")
 
+    /// The drill concern: ``DrillViewModel`` failing to start or to save a grade. Only the
+    /// failure's Core case is logged, never a card's text or id.
+    public static let drill = Logger(subsystem: subsystem, category: "drill")
+
     /// The persistence concern: opening the store and the adapters that read and write it.
     public static let persistence = Logger(subsystem: subsystem, category: "persistence")
 

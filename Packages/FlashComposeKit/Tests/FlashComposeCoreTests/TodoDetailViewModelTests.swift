@@ -16,7 +16,11 @@ struct TodoDetailViewModelTests {
         of id: TodoItem.ID,
         over repository: InMemoryTodoRepository,
     ) -> (app: AppModel, detail: TodoDetailViewModel) {
-        let app = AppModel(repository: repository, preferences: InMemoryPreferences())
+        let app = AppModel(
+            repository: repository,
+            preferences: InMemoryPreferences(),
+            progressStore: InMemoryProgressStore(),
+        )
         return (app, app.makeTodoDetailViewModel(id: id))
     }
 

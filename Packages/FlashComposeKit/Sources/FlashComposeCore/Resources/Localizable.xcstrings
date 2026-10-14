@@ -1,6 +1,465 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "drill.alternatives" : {
+      "comment" : "Heading over the other acceptable answers, under the model answer.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alternatives"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "別解"
+          }
+        }
+      }
+    },
+    "drill.card.kindLine" : {
+      "comment" : "Small line above the prompt. The arguments are the card's kind (New, Review, or Again), its topic's name, and its level number.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %@ · L%lld"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ · %@ · L%lld"
+          }
+        }
+      }
+    },
+    "drill.done.changeScope" : {
+      "comment" : "Button on the done screen that opens the scope sheet.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change scope…"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "範囲を変える…"
+          }
+        }
+      }
+    },
+    "drill.done.nextReview" : {
+      "comment" : "Line on the done screen. The argument is the day the next review is due, such as \"Thu, Oct 15\" or \"Tomorrow\".",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next review: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "次の復習：%@"
+          }
+        }
+      }
+    },
+    "drill.done.outsideScope" : {
+      "comment" : "Line on the done screen. The argument is the number of never-seen cards in the topics and levels turned off, formatted with grouping.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unseen outside the scope: %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "範囲外の未出題カード：%@枚"
+          }
+        }
+      }
+    },
+    "drill.done.title" : {
+      "comment" : "Headline of the screen shown when no card is left today.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done for today"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今日の分は完了"
+          }
+        }
+      }
+    },
+    "drill.failure.save.message" : {
+      "comment" : "Message of the alert shown when a grade could not be saved.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap a grade again"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もう一度評価をタップ"
+          }
+        }
+      }
+    },
+    "drill.failure.save.title" : {
+      "comment" : "Title of the alert shown when a grade could not be saved.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't save your answer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "回答の保存に失敗"
+          }
+        }
+      }
+    },
+    "drill.grade.again" : {
+      "comment" : "Grade button: the learner could not produce the English.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forgot"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "忘れた"
+          }
+        }
+      }
+    },
+    "drill.grade.good" : {
+      "comment" : "Grade button: the learner produced the English.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Got it"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "覚えてた"
+          }
+        }
+      }
+    },
+    "drill.grade.hard" : {
+      "comment" : "Grade button: the learner produced the English with effort or only in part.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hard"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "微妙"
+          }
+        }
+      }
+    },
+    "drill.grade.spoken" : {
+      "comment" : "Spoken name of a grade button. The arguments are the grade's word and the interval until the card comes back, such as \"1 day\".",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@, next in %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@、次回%@後"
+          }
+        }
+      }
+    },
+    "drill.header.spoken.new" : {
+      "comment" : "Spoken drill header while a new card is on screen. The arguments are the New, Review, and Again counts, formatted with grouping.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New %@, Review %@, Again %@. This card is new"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規 %@、復習 %@、もう一度 %@。このカードは新規"
+          }
+        }
+      }
+    },
+    "drill.header.spoken.none" : {
+      "comment" : "Spoken drill header when no card is on screen. The arguments are the New, Review, and Again counts, formatted with grouping.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New %@, Review %@, Again %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規 %@、復習 %@、もう一度 %@"
+          }
+        }
+      }
+    },
+    "drill.header.spoken.reAsk" : {
+      "comment" : "Spoken drill header while a card shown again in this session is on screen. The arguments are the New, Review, and Again counts, formatted with grouping.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New %@, Review %@, Again %@. This card is an Again card"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規 %@、復習 %@、もう一度 %@。このカードはもう一度"
+          }
+        }
+      }
+    },
+    "drill.header.spoken.review" : {
+      "comment" : "Spoken drill header while a review is on screen. The arguments are the New, Review, and Again counts, formatted with grouping.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New %@, Review %@, Again %@. This card is a review"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規 %@、復習 %@、もう一度 %@。このカードは復習"
+          }
+        }
+      }
+    },
+    "drill.interval.days" : {
+      "comment" : "Interval on a grade button: the card comes back in this many days, from 2 to 29.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld days"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld日"
+          }
+        }
+      }
+    },
+    "drill.interval.months" : {
+      "comment" : "Interval on a grade button: the card comes back in about this many months, from 1 to 12.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈%lld mo"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "約%lldか月"
+          }
+        }
+      }
+    },
+    "drill.interval.oneDay" : {
+      "comment" : "Interval on a grade button: the card comes back in one day.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 day"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1日"
+          }
+        }
+      }
+    },
+    "drill.interval.oneYear" : {
+      "comment" : "Interval on a grade button: the card comes back in about a year.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈1 yr"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "約1年"
+          }
+        }
+      }
+    },
+    "drill.kind.new" : {
+      "comment" : "Kind of a card never seen before, and the header count of such cards.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新規"
+          }
+        }
+      }
+    },
+    "drill.kind.reAsk" : {
+      "comment" : "Kind of a card shown again in this session, and the header count of cards waiting to come back.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Again"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "もう一度"
+          }
+        }
+      }
+    },
+    "drill.kind.review" : {
+      "comment" : "Kind of a card due for review today, and the header count of such cards.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Review"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "復習"
+          }
+        }
+      }
+    },
+    "drill.showAnswer" : {
+      "comment" : "Button under the prompt that reveals the model answer.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show answer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "答えを見る"
+          }
+        }
+      }
+    },
+    "drill.startFailure.message" : {
+      "comment" : "Explanation under the start-up failure's headline.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn't load the cards or your progress"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードまたは学習記録の読み込みに失敗"
+          }
+        }
+      }
+    },
+    "drill.startFailure.retry" : {
+      "comment" : "Button that loads the cards and the progress again after a failure.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Try Again"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再試行"
+          }
+        }
+      }
+    },
+    "drill.startFailure.title" : {
+      "comment" : "Headline shown instead of the drill when the cards or the progress could not be loaded.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Can't open the data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データを開けません"
+          }
+        }
+      }
+    },
     "failure.dismiss" : {
       "comment" : "Button that dismisses the failure alert.",
       "localizations" : {
