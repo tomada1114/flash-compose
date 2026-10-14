@@ -240,11 +240,10 @@ the drill regulates itself.
 
 ## 6. Open questions
 
-- The catalog's format and how cards are edited in this repository from now on — recorded in
-  `docs/architecture.md`, within §3.1's constraint.
-- How often a build installed from Xcode must be reinstalled depends on whether the
-  owner's Apple account is in the paid Developer Program — the distribution decision in
-  `docs/architecture.md` checks the current limit against Apple's documentation.
+None. Both questions this section held are settled in `docs/architecture.md`: the
+catalog's format and how cards are edited (FlashCompose › Card catalog, Card identity),
+and how often a build from Xcode is reinstalled — weekly, under a free Personal Team
+(FlashCompose › Distribution).
 
 ## 7. Decision log
 

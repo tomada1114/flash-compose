@@ -1,13 +1,5 @@
 # Roadmap
 
-<!--
-The template ships this page as a skeleton, the way it ships AGENTS.md's `## Product`
-as one: an app cut from the template replaces every `TODO:` line below once its
-`## Product` section is written. Nothing checks this page for leftover markers; the
-`steering-the-roadmap` skill says who changes it, when, and from what. Delete this
-comment when the page is first filled in.
--->
-
 This page records the app's direction: the outcomes it is working toward now, the ones
 that come next, and the ones only intended for later. It sits between two other homes
 and repeats neither:
@@ -29,28 +21,65 @@ and linked from here. What has shipped is in
 The owner decides what the page says; an agent proposes a change to it in a pull
 request, and the change lands only once the owner has approved it.
 
-- **Last reviewed:** TODO: YYYY-MM-DD, the date this page was last checked against the
-  open issues
+- **Last reviewed:** 2026-10-13, written at the kickoff, before any issue was filed
 
 ## Now
 
 The outcomes being worked on, one to three of them. Each has its issues filed.
 
-- TODO: **[an outcome, as what a user can do]** — why it comes first, in one sentence.
-  Issues: #N, #N. Done when: [what can be observed — a launch, a `just` recipe, a
-  behavior in the running app — not a task that was finished].
+- **Drill the whole catalog, scheduled by FSRS-6 across launches** — the core
+  interaction; if this loop is not quick and quiet, nothing else matters. Issues: —.
+  Done when: on the owner's iPhone, installed with `just run-device`, the first card is
+  on screen within a second of a cold launch; reveal and a one-tap grade go straight to
+  the next card; due reviews come before new cards; and a card graded today comes back,
+  after a relaunch, on the day its grade button showed.
+- **Steer new cards by topic and level, and see when the day is done** — the owner
+  wanted the scope in the first version. Issues: —. Done when: turning topics and levels
+  on and off in the scope sheet changes the 新規 count and where the next new card comes
+  from, survives a relaunch, and never hides a due review; and exhausting a narrow scope
+  (旅行 × L1) shows 今日の分は完了 with the next review day.
+- **The app is FlashCompose, not the template** — iPhone only and portrait, the Japanese
+  UI, and the design lock, with the template's to-do and networking code gone. Issues:
+  —. Done when: `just check` passes with no to-do or HTTP code left; on an iPhone set to
+  Japanese every label is Japanese; and screenshots in light, dark, the largest text
+  size, and Increase Contrast match the design lock.
 
 ## Next
 
 The outcomes that follow once Now's are done. An issue may already exist for one, often
 parked as `on hold`; none is required.
 
-- TODO: **[an outcome]** — why it follows Now. Before it moves up: [a design change to make, an
-  outcome in Now to land, an open question for the owner]. Issues, if any: #N.
+None yet, on purpose: the owner chooses what follows the first version after using it,
+from the requests parked as `on hold` during daily use (`triaging-issues`' "Requests from
+daily use"). The simulator CI jobs, paused until the first version is built, come back
+on when Now's outcomes are done.
 
 ## Later
 
 Direction the app intends to take but has not ordered. No issue is filed for a line
 here, apart from a parked one that a line names.
 
-- TODO: **[an outcome]** — what would bring it forward.
+- **Subtopic and grammar-tag filters** — the 37 subtopics and 39 tags are on every card
+  already; brought forward when the five topics feel too coarse.
+- **Adaptive level** — the old app's placement and automatic level changes, new cards
+  drawn from a band around the level; when choosing levels by hand stops matching how
+  the drill feels.
+- **Daily goals and limits** — new-card and review quotas; if the endless drill turns
+  the next day's reviews into a burden.
+- **A per-card timer** and "fast" answers — if the drill feels too relaxed to be 瞬間.
+- **Hearing the model answer** — the device's own text-to-speech; no network, no
+  permission.
+- **Statistics** — streaks, counts, a calendar, mastery; the answer log already holds
+  what they need.
+- **Vocabulary cards** — the old repository's 340 word, idiom, phrasal-verb, and phrase
+  cards; when the sentence drill runs dry.
+- **Practise ahead** — cards not yet due, once the scope is done for the day.
+- **iCloud sync** — needs a second device, a capability, and so the paid Developer
+  Program (`docs/architecture.md` › Distribution); a design change.
+- **Reminders** — a daily notification, a privacy-gated permission; a design change.
+- **A review focus switch** — the scope limiting due reviews too, for cramming one topic
+  before a trip; one queue condition and one stored setting, no migration.
+- **Undoing a grade** — if mistaken taps prove common; the answer log keeps what undo
+  needs.
+- **Hiding a card**, with a list to bring hidden cards back — if a bad card turns up.
+- **A card browser, search, and favourites.**

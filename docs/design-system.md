@@ -1,14 +1,17 @@
 # Design system
 
-The template's default design system and the research it rests on. It fixes a small set
-of tokens every screen draws from — `DesignTokens` in
-`Packages/FlashComposeKit/Sources/FlashComposeUI/DesignSystem/DesignTokens.swift` — and leaves color
-and type to the system, so a screen built from the template is correct in light, dark,
-every Dynamic Type size, and Increase Contrast before anyone decides a brand. Every brand
-decision belongs to the app's own design lock — the "Design lock" section below, which
-the template ships as its reference lock and an app rewrites for itself after the
-bootstrap, as the `designing-ui` skill says (its `references/refero-workflow.md` is how an
-app researches one).
+FlashCompose's design system: the token scale every screen draws from — `DesignTokens`
+in `Packages/FlashComposeKit/Sources/FlashComposeUI/DesignSystem/DesignTokens.swift` —
+and the [Design lock](#design-lock), the visual decisions every screen obeys
+(`designing-ui`). The lock is FlashCompose's own; its research — the owner's "Lemon
+Arcade" colour roles set on iOS system components, the references, the decision
+ledger, and the measured contrast of every pair — is
+[`docs/design/design-direction.md`](design/design-direction.md).
+
+The sections from Brief through Template defaults vs. app decisions, and Visual QA, are
+the research behind the token scale, done for `tomada1114/ios-template`. They stay
+because FlashCompose keeps that scale unchanged; the to-do screens in them are the
+template's examples, not this app's.
 
 Researched 2026-09-30 with the owner's `/refero-design` skill and the Refero MCP tools
 (screens and flows on `platform: "ios"`; styles only as a check). Apple claims were
@@ -176,35 +179,91 @@ Token commitments: background — system (List default); type — system text st
 
 ## Design lock
 
-What every screen in this app looks like, one value per field
+What every screen in FlashCompose looks like, one value per field
 (`designing-ui`'s `references/design-lock.md` lists the fields and where each lands in
-code). This is the template's reference lock: system-first and unbranded, because the
-template is the neutral base every app departs from. An app cut from the template
-rewrites this section for itself after the bootstrap; changing a value later is an edit
-to this section in place, in the pull request that changes the code, with the reason in
-the sentence beside it — git history holds what it used to say.
+code). The alternatives each value beat, and the contrast of every pair below, are in
+[`docs/design/design-direction.md`](design/design-direction.md). Changing a value is an
+edit to this section in place, in the pull request that changes the code, with the
+reason in the sentence beside it — git history holds what it used to say.
 
-- Accent color: system default (`AccentColor` with no value). Nothing depends on its hue.
-- Custom colors: none; semantic system colors only.
-- Type: system font and text styles with Dynamic Type; a large navigation title.
-- Spacing and corner radius: the template scale in `DesignTokens`, unchanged.
-- Density: regular; the system `List` default style.
-- Symbols: SF Symbols only, default rendering.
-- Materials and Liquid Glass: standard components only.
-- Navigation structure: one `NavigationStack`; the Add button beside the draft field.
-- iPad layout: same as iPhone (the template targets both, `TARGETED_DEVICE_FAMILY: "1,2"`).
-- Haptics: none.
-- Motion: system transitions only (`.default`), none under Reduce Motion.
-- Copy style: title case for navigation titles and buttons; sentence case for alerts and
-  empty states. Voice: short and plain.
-- App icon: placeholder until distribution is decided.
+- **Accent color:** ink, not a hue — `AccentColor.colorset` Any `#2B2924`, Dark
+  `#F6F3EA`, increased contrast `#000000` (Any) and `#FFFFFF` (Dark). It tints
+  checkmarks, toolbar items, links, and the header's count underline. Why: selection is
+  ink; a violet tint would put the primary action's colour on every checkmark.
+- **Custom colors:** five Color Sets in `App/Assets.xcassets`, one role each.
+
+  | Name | Role | Any | Dark | Any, increased contrast | Dark, increased contrast |
+  |---|---|---|---|---|---|
+  | `Action` | Fill of the one primary action per screen (答えを見る, 範囲を変える…, 再試行); white text on it; never text, never a tint | `#6E00F5` | `#7B2BFF` | `#5A00C8` | `#6A1AF0` |
+  | `Good` | Fill of the ○ button only | `#21C6A9` | `#2ED3B4` | `#21C6A9` | `#2ED3B4` |
+  | `OnGood` | Text and glyph on `Good` | `#2B2924` | `#2B2924` | `#000000` | `#000000` |
+  | `GoodEdge` | 1 pt stroke around the ○ button, so its edge holds 3:1 on white | `#12917B` | clear | `#0E7A66` | clear |
+  | `InkSecondary` | All secondary text: the kind line, the small prompt on D2, alternatives, interval labels, notes | `#6B665A` | `#A9A6AF` | `#4A463D` | `#C9C6CF` |
+
+  Everything else is semantic: `label` for primary text, `systemBackground` behind the
+  drill, `secondarySystemBackground` for the card, `tertiarySystemBackground` for the
+  point box, `systemGray5` for the × and △ buttons, and the grouped backgrounds in S1.
+  System `secondaryLabel` is not used: it measures 3.44:1 on white, under the 4.5:1 text
+  rule, which is why `InkSecondary` exists. A miss is never red: no red or pink, and no
+  colour per topic or level. The owner's yellow "Energy" role is reserved for a later
+  streak or points and has no Color Set in this version.
+- **Type:** the system font (Japanese falls back to Hiragino Sans), text styles with
+  Dynamic Type; SF Rounded only for the header's figures.
+
+  | Element | Style |
+  |---|---|
+  | Header counts | `.subheadline`; figures `.semibold`, `.fontDesign(.rounded)`, `.monospacedDigit()`, in `label`; the words 新規 / 復習 / もう一度 regular in `InkSecondary` |
+  | Kind line (復習 · 仕事 · L5) | `.footnote`, `InkSecondary` |
+  | Prompt on D1 | `.title2` `.semibold`, centred |
+  | Prompt on D2 | `.body`, `InkSecondary` |
+  | Model answer | `.title3` `.semibold` |
+  | 別解 label, alternatives | `.footnote` / `.body`, `InkSecondary` |
+  | Point | `.callout` in `label`, after a `lightbulb` |
+  | Grade buttons | glyph `.title3`; label `.subheadline` `.semibold`; interval `.caption`, rounded, monospaced digits, `InkSecondary` (`OnGood` on ○) |
+  | Primary buttons | `.headline`, white on `Action` |
+  | D3 and E1 titles | `.title3` `.semibold` |
+
+- **Spacing:** the template scale, unchanged.
+- **Corner radius:** the template scale — the card `Radius.large` (20); the reveal,
+  primary, and grade buttons and the point box `Radius.medium` (12); all `.continuous`.
+- **Density:** regular. S1 is an `.insetGrouped` list. The reveal button is at least
+  50 pt tall and the grade buttons 64 pt at the default text size, growing with it.
+- **Symbols:** SF Symbols only — monochrome in buttons and toolbars, hierarchical for
+  the large D3 and E1 symbols. × `xmark`, △ `triangle`, ○ `circle`, a re-ask
+  `arrow.uturn.backward`, the scope `line.3.horizontal.decrease.circle`, the point
+  `lightbulb`, D3 `checkmark.circle`, E1 `exclamationmark.triangle`.
+- **Materials and Liquid Glass:** standard components only — the navigation bar, its
+  toolbar item, and the sheet take glass on their own. The bottom action bar is solid
+  fills (`Action`, `Good`, `systemGray5`) on the plain background, because its colours
+  carry the roles; no custom glass.
+- **Navigation structure:** one `NavigationStack` with no visible title, the drill as its
+  root; the scope a sheet at the large detent, opened from a symbol-only toolbar item
+  named 出題範囲; the per-card actions in a bottom `safeAreaInset`.
+- **iPad layout:** none — iPhone only (`TARGETED_DEVICE_FAMILY: "1"`), portrait only.
+- **Haptics:** `.sensoryFeedback(.selection, trigger:)` on every grade, the same for ×,
+  △, and ○; nothing else. Why: a grade is a choice, not a success or a failure.
+- **Motion:** system transitions through `DesignTokens.Motion` only — a cross-fade
+  between cards, the answer area fading in on reveal, and the numeric-text transition on
+  a changed count; none under Reduce Motion; no flip, slide, or celebration.
+- **Copy style:** Japanese terse — a noun ending (体言止め) or a fragment, です・ます only
+  where a sentence cannot be avoided; buttons are verbs in the dictionary form, ending
+  in … when they open more choices; the grade labels are the learner's own words
+  (忘れた, 微妙, 覚えてた); no exclamation marks or emoji. The English source is in
+  sentence case for every element type, in the second person. The glossary is
+  `docs/design/ux-guidelines.md` › Language and copy.
+- **App icon:** a placeholder generated in code — "FC" in SF Pro Rounded Black, white on
+  `Action` `#6E00F5` (Any), `#7B2BFF` on black (Dark), white on transparent (Tinted) —
+  1024 × 1024 in `AppIcon.appiconset`, for as long as the app is installed only from
+  Xcode.
 
 ## Visual QA
 
 The to-do list with two items and its empty state, on an iPhone 16e (the smallest iPhone
 device type offered, iOS 26.1), in light, dark, `accessibility-extra-extra-extra-large`,
 and Increase Contrast, taken with `running-the-app`'s `simctl` commands. The screenshots
-are the pull request's evidence, not files in the repository. Compared against the lock:
+are the pull request's evidence, not files in the repository. Compared against the
+template's reference lock above (FlashCompose's own screens are checked against the
+Design lock by the pull requests that build them):
 
 - Held: system grouped background and rows, large title, secondary gray for the empty
   state's text, accent only on the Add button, 44 pt or larger targets, text wrapping at

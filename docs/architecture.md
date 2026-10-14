@@ -1,32 +1,277 @@
 # Architecture
 
-This is the design document for the template: how an app cut from it is layered, which
-patterns it uses and why, and where a new piece of code goes. `AGENTS.md` holds the rules
-and the commands; this file holds the reasoning behind them. The worked example
-throughout is the to-do list the template ships — small enough to read in one sitting,
-but with every seam a real app needs: a domain value, a view model, a repository port,
-a SwiftData adapter, a fake, a contract test, and a UI test.
+This is FlashCompose's design document: how the app is layered, which patterns it uses
+and why, and where a new piece of code goes. `AGENTS.md` holds the rules and the
+commands; this file holds the reasoning behind them. [FlashCompose](#flashcompose) is
+the app's own design — its principles, data, scheduling, and flows. The sections after
+it are the patterns FlashCompose keeps from `tomada1114/ios-template`, still shown
+through the template's to-do list until the drill replaces it
+([Follow-ups](#follow-ups)): a domain value, a view model, a repository port, a
+SwiftData adapter, a fake, a contract test, and a UI test.
 
 ## Decisions at a glance
 
 | Decision | Choice | Why |
 |---|---|---|
-| Minimum OS | iOS 27 (`project.yml`, `Package.swift`), built with Xcode 27 (`.xcode-version`) | Apps cut from this template are built for their owner's own devices, which run the current iOS, so the floor is the current major release: every API the SDK ships, Liquid Glass included, is usable without an `#available` branch, and the one simulator runtime CI's Xcode ships is the floor itself. Lowering it is an app's design change, and rewrites this row |
+| Minimum OS | iOS 27 (`project.yml`, `Package.swift`), built with Xcode 27 (`.xcode-version`) | FlashCompose runs on its owner's own iPhone, which runs the current iOS, so the floor is the current major release: every API the SDK ships, Liquid Glass included, is usable without an `#available` branch, and the one simulator runtime CI's Xcode ships is the floor itself |
+| Device family | iPhone only (`TARGETED_DEVICE_FAMILY: "1"` on the app and UI-test targets), portrait only, one scene | One person's phone owes one family's layouts, and a one-question drill needs one orientation. On an iPad it runs as an iPhone app; iPad layouts are a Product non-goal |
+| Capabilities and permissions | None: no entitlements file, no capability, no privacy-gated permission | Nothing in the first version needs one: no network, no sync, no notifications (Product non-goals; reminders and iCloud sync are Later). A free Personal Team, which signs the app ([Distribution](#distribution)), cannot take the advanced capabilities anyway |
 | Presentation pattern | MVVM with `@MainActor @Observable` view models in Core | The view model is plain Swift that `swift test` drives in milliseconds, so every decision a screen makes is unit-tested and coverage-gated; the view stays a thin renderer |
-| Persistence | SwiftData, behind a Core-declared repository port | First-party (no dependency), migrations built in, and the port keeps it replaceable: Core never imports SwiftData |
-| Networking | `URLSession` behind a Core `HTTPClient` port | First-party, no dependency; the port keeps decisions about status codes and failures in Core, where tests see them |
-| Preferences | `UserDefaults` behind a synchronous Core `PreferencesStoring` port | First-party and synchronous; the port keeps key names in one Core file where a test pins them |
-| Navigation | One `NavigationStack(path:)`, in `FlashComposeUI`'s `RootView`, bound to a Core `NavigationModel`; a custom URL scheme (`flash-compose`, `project.yml`'s `info:` block) parsed by Core's `DeepLink` | Which screen shows is Core state a test drives, so a deep link and state restoration have something to hold on to. A custom scheme is an `Info.plist` entry, not an entitlement; universal links (Associated Domains) are an app's decision |
+| Card catalog | Read-only JSON inside `FlashComposeCore` (`Resources/Catalog/`), decoded by Core at launch; never copied into the store | Cards ship with the app and change only in this repository, so an update that adds, fixes, or removes cards migrates nothing; as a Core resource, the catalog's integrity test runs under `just test` ([Card catalog](#card-catalog)) |
+| Persistence | Progress — each card's FSRS state and the append-only answer log — in SwiftData, behind the Core `ProgressStore` port | First-party (no dependency), migrations built in, and the port keeps it replaceable: Core never imports SwiftData ([Progress store](#progress-store)) |
+| Scheduler | FSRS-6, ported into Core from the old app's port of ts-fsrs 5.4.2 | Reproduces the old app's results exactly, checked against its golden vectors, without the app's first dependency ([Scheduling](#scheduling)) |
+| Networking | None: FlashCompose sends no request, and the template's `HTTPClient` / `APIClient` layer is removed | No network access is a Product non-goal; an unused layer under the coverage floor would only invite a feature the non-goals forbid |
+| Preferences | `UserDefaults` behind a synchronous Core `PreferencesStoring` port; the scope is FlashCompose's one setting | First-party and synchronous; the port keeps key names in one Core file where a test pins them ([Scope](#scope)) |
+| Navigation | One `NavigationStack(path:)`, in `FlashComposeUI`'s `RootView`, bound to a Core `NavigationModel`; a custom URL scheme (`flash-compose`, `project.yml`'s `info:` block) parsed by Core's `DeepLink`. The drill is the root and the scope a sheet, so the path stays empty until a pushed screen exists | Which screen shows is Core state a test drives, so a deep link and state restoration have something to hold on to; the seam stays for the pushed screens Later brings (a card browser, statistics). A custom scheme is an `Info.plist` entry, not an entitlement; `flash-compose://` opens the app on the drill |
+| Shipped languages | English (the source) and Japanese, following the device's language | The owner's iPhone runs in Japanese, and English buttons around a Japanese prompt would read as two apps ([Localization](#localization)) |
+| Distribution | Installed on the owner's iPhone from Xcode (`just run-device`) only; no TestFlight, no App Store | One learner, one phone; store distribution is a Product non-goal for this version ([Distribution](#distribution)) |
 | Module layout | One local Swift package, `FlashComposeKit`, with `FlashComposeCore` / `FlashComposeUI` / `FlashComposePlatform` | Module boundaries the compiler enforces, and a package `swift test` can run without a simulator |
 | Project file | XcodeGen (`project.yml`); `FlashCompose.xcodeproj` is generated and gitignored | No merge conflicts in a `.pbxproj`, and the whole app target is reviewable as text |
 | Language mode | Swift 6, warnings as errors | Data-race safety is checked from the first line; there is never a "migrate later" |
-| Dependencies | None | Every third-party package is a supply-chain and upgrade cost; adding one is a human's decision (`AGENTS.md` › Security and human approval) |
+| Dependencies | None | Every third-party package is a supply-chain and upgrade cost; adding one is a human's decision (`AGENTS.md` › Security and human approval). FSRS-6 is ported rather than added for the same reason ([Scheduling](#scheduling)) |
 
 Patterns deliberately **not** adopted: The Composable Architecture (a dependency and a
 learning curve for what `@Observable` plus ports already give), Combine for state (the
 Observation framework replaces it), singletons or a global service locator (the
 composition root passes everything explicitly), and Core Data (SwiftData is its
 successor on this OS floor).
+
+## FlashCompose
+
+What the app is and is not: `AGENTS.md` › Product and
+[`docs/product/requirements.md`](product/requirements.md) (the § numbers below are its
+sections). Its screens and flows are [`docs/product/ux-flows.md`](product/ux-flows.md),
+its app-wide UX rules [`docs/design/ux-guidelines.md`](design/ux-guidelines.md), and how
+it looks the Design lock in [`docs/design-system.md`](design-system.md#design-lock).
+
+### Principles
+
+- **Offline and alone.** Everything runs on the phone, with no network, account, or
+  server, and no screen waits on anything but local storage. Rules out sync, remote card
+  updates, and the template's HTTP layer.
+- **Cards ship; progress stays.** The catalog is read-only data inside the app, and only
+  the learner's progress is stored. Rules out seeding cards into the store, editing
+  cards in the app, and an update that has to migrate progress because a card changed.
+- **A card's id is its identity.** Progress and the answer log are keyed by card id —
+  never by position, file, or text — and an id is never reused. Rules out a fix to a
+  card's wording silently resetting its schedule, and a new card inheriting an old one's.
+- **The schedule is Core's.** What comes next — the queue, FSRS-6, re-asks, the practice
+  day — is decided in `FlashComposeCore` against an injected clock, time zone, and random
+  number generator, and tested there. Rules out ordering in a view or a store query.
+- **The log is append-only.** Every grade is written once and never edited, because a
+  log cannot be rebuilt later (§3.6). Rules out undo by deleting an answer, and keeping
+  only the latest state.
+
+### Shape
+
+| Domain | Layer | Where |
+|---|---|---|
+| Card catalog — cards, topics, subtopics, levels, grammar tags, retired ids; decoding | Core | `FlashComposeCore/Catalog/`; the data in `FlashComposeCore/Resources/Catalog/` |
+| Scheduling — FSRS-6 memory and intervals, the Alea fuzz, the practice day | Core | `FlashComposeCore/Scheduling/` |
+| Drill — today's queue, re-asks, the header counts, the end of the day; `DrillViewModel` | Core | `FlashComposeCore/Drill/` |
+| Scope — the topics and levels turned off, the never-seen count; `ScopeViewModel` | Core | `FlashComposeCore/Scope/` |
+| Progress — `CardProgress`, `Answer`, the `ProgressStore` port | Core | `FlashComposeCore/Progress/` |
+| Progress adapter — the SwiftData models in `AppSchemaV1`, `SwiftDataProgressStore` | Platform | `FlashComposePlatform/Persistence/` |
+| Scope storage — two `PreferenceKeys` entries | Core keys, Platform adapter | the existing Preferences seam |
+| Screens D1–D3, S1, E1, E2 | UI | `FlashComposeUI/Drill/`, `FlashComposeUI/Scope/` |
+| `InMemoryProgressStore`, `ProgressStoreContract` | Test support | `Tests/FlashComposeTestSupport/` |
+
+What crosses each boundary: `CardProgress` and `Answer` values cross the
+`ProgressStore` port; nothing about the catalog does, because Core reads it itself from
+`Bundle.module`, as it reads its String Catalog — a resource the app ships, not storage
+or an OS service, so it needs no port. Toward the UI, view models expose state and
+`LocalizedStringResource` wording; card text reaches a view as a plain `String`, rendered
+with `Text(verbatim:)`.
+
+### Card catalog
+
+- **Files.** `Sources/FlashComposeCore/Resources/Catalog/` holds
+  `cards/<topic>/<subtopic>.json` (37 files, 1,952 cards), `taxonomy.json` (5 topics and
+  37 subtopics, their Japanese names and order), `levels.json` (10 levels, their TOEIC
+  and CEFR hints and Japanese summary), `grammar.json` (39 tags), and `retired-ids.json`.
+  All were copied once from `tomada1114/instant-composition` at `6fcefb2`; from then on
+  this repository is the cards' only home (§3.1). One file per subtopic keeps a card
+  edit a small diff, and two branches editing different subtopics never conflict.
+- **Fields.** A card is `id`, `ja`, `en`, `alternatives`, `point`, `topic`, `subtopic`,
+  `level`, and `grammar`, spelled as the old JSON spells them, so `Codable` reads them
+  with default keys. The old `createdAt` and `stamps` (its authoring pipeline's review
+  hashes) are not carried.
+- **Retired ids.** `retired-ids.json` lists every card id the old repository retired —
+  its 77 card tombstones, without the 10 vocabulary ones — each with its `replacedBy` id
+  when it has one, and every id this repository retires from now on.
+- **Loading.** At launch Core decodes every file — about 700 KB of JSON — into one
+  in-memory catalog value, off the main actor, while the progress store opens. A file
+  that cannot be read or decoded fails the start-up (E1); the app never runs on part of
+  the catalog.
+- **Integrity.** A Core test reads the real files under `just test` and holds every card
+  to the definitions: a known topic and subtopic, a level from 1 to 10, known grammar
+  tags, non-empty `ja`, `en`, and `point`, at least one alternative, and an id that
+  matches the format below, appears once, and is not retired.
+- **Editing.** Cards are edited in this repository only, by hand or by an agent, as JSON;
+  the integrity test is the gate, and the `editing-cards` skill holds the procedure
+  ([Follow-ups](#follow-ups)).
+
+### Card identity
+
+A card id is contract: it is the key the learner's progress and answers are stored
+under. Whether a change keeps it turns on one question, carried from the old
+repository's `content/guides/identity.md`: could the answers recorded before the change
+still be compared, as answers to the same question, with those recorded after it?
+
+- **Yes — edit in place, same id:** a typo or outright error; a more natural `ja` with
+  the same meaning; a word swap in `en` that keeps its skeleton; adding, removing, or
+  replacing alternatives; rewriting `point`; retagging `topic`, `subtopic`, `level`, or
+  `grammar`.
+- **No — a new id:** the meaning of `ja` changes; the skeleton of `en` changes (tense,
+  pattern, main clause); the main grammar item changes; or `en` grows to about 1.5 times
+  its words or shrinks to about two thirds. The old id goes into `retired-ids.json` with
+  `replacedBy`, and its progress is no longer read — the new card starts as new.
+- **Deleting** a card retires its id without `replacedBy`. An id is never reused.
+- **Format:** `c_` and four digit–letter pairs, `^c_(?:[2-9][a-hjkmnp-z]){4}$`
+  (`c_7k2m9x4q`). Digits and letters alternate so the `typos` spell check never meets a
+  run of letters it could flag, and `0`, `1`, `i`, `l`, and `o` are left out as easily
+  confused.
+
+Progress stored under an id the catalog no longer has is kept and ignored, and that
+card is never shown again (§3.1).
+
+### Progress store
+
+- **What is stored.** `CardProgress`, one per card that has moved: stability,
+  difficulty, repetitions, lapses, last practice day, due practice day, keyed by card id.
+  `Answer`, one per grade, re-asks included: card id, the instant it was graded, its
+  practice day, the grade, whether it was the day's first answer or a re-ask, the FSRS
+  state before (none for a new card) and after, and the seconds the card was on screen
+  before the reveal (§3.6).
+- **Where.** SwiftData, behind the Core `ProgressStore` port: two `@Model` entities in
+  the app's `AppSchemaV1`, in the one container `PersistenceStore` opens. That schema
+  replaces the template's to-do schema rather than following it as `AppSchemaV2`: no
+  build carrying the to-do schema has been installed outside the owner's Mac, so no
+  store on a device holds it.
+- **One grade, one save.** Recording a grade appends the answer and replaces the card's
+  progress in a single save, so the log and the state never disagree; a failed save
+  rolls back both and the card stays on screen (E2, save then advance).
+- **Read at launch, written per grade.** Start-up fetches every progress row — at most
+  one per card. Nothing in this version reads the log back except the tests.
+
+### Scope
+
+- Two `PreferenceKeys` entries over `PreferencesStoring` record the topic ids turned
+  **off** and the levels turned **off**, each as one `String`; empty means everything
+  on, the default. Recording what is off means a topic a later catalog adds starts on,
+  as everything does on first launch.
+- An id recorded as off that the catalog no longer has is ignored, and "at least one
+  topic and one level stay on" holds over the current catalog.
+- The key names are contract (`PreferenceKeysTests`).
+
+### Session
+
+Waiting re-asks, the card on screen, and which face it shows live in `DrillViewModel`
+and are never stored: a relaunch starts a new session and drops waiting re-asks (§3.2).
+
+### Scheduling
+
+- **The algorithm.** FSRS-6's long-term scheduler, ported into
+  `FlashComposeCore/Scheduling/` from `tomada1114/instant-composition`'s port of ts-fsrs
+  5.4.2 (`packages/domain/src/fsrs.ts`, `fsrs-memory.ts`, `fsrs-interval.ts`, with its
+  Alea generator), keeping ts-fsrs's MIT notice in each file it reaches. Grades are
+  again 1, hard 2, good 3; no easy.
+- **The parameters.** ts-fsrs's 21 default weights, desired retention 0.9, a longest
+  interval of 365 days, and interval fuzz seeded by the card id and its repetition count
+  — held in one `Tuning` type (`designing-core-logic`).
+- **The oracle.** The old repository's `tests/fixtures/fsrs-golden.json` (generated with
+  ts-fsrs 5.4.2) is a test resource here, and the port reproduces it exactly (§3.3).
+- **Not a package.** `open-spaced-repetition/swift-fsrs` (MIT) was considered and is not
+  used: its FSRS-6 support exists only on `main` (merged 2026-05-12; its latest tag,
+  `v5.0.0` of 2024-10-29, is FSRS-5), and its fuzz seed is fixed to the review time, the
+  repetition count, and difficulty × stability (`Sources/FSRS/Scheduler/AbstractScheduler.swift`),
+  so it can neither seed by card id nor reproduce the golden vectors — and it would be
+  the app's first dependency. Checked through the GitHub API on 2026-10-13.
+- **The practice day** is a calendar date, not an instant: the local date of the answer's
+  instant minus four hours, in the time zone current at that answer. Intervals and
+  elapsed days are differences of practice days, never of instants (§3.3, §4).
+- **What moves a card:** only its first answer of a practice day, never a re-ask (§3.3).
+
+### Core flows
+
+- **Cold launch** (F6). `App/` opens the container and the preferences and hands them to
+  `AppModel` → Core decodes the catalog and fetches every progress row → `DrillViewModel`
+  builds today's queue → D1 with the first card, or D3; E1 when either load fails.
+- **Grade** (F1, F2). A tap on D2 → `DrillViewModel` computes the new FSRS state when
+  this is the card's first answer today → `ProgressStore` records the answer and the
+  state in one save → the queue and re-asks update → D1 with the next card and the new
+  counts. A failed save → E2, with nothing recorded and nothing changed.
+- **Scope change** (F3). A row tap on S1 → `ScopeViewModel` writes the preference and
+  recounts never-seen cards → the next new card comes from the new scope; from D3, a
+  scope with never-seen cards turns the screen into D1.
+- **Coming back** (F5, F7). The scene becoming active, or 04:00 passing, makes Core
+  recompute today: due reviews turn D3 into D1, and from the next card the queue is the
+  new day's.
+
+### Quality targets
+
+| Target | Check |
+|---|---|
+| The first card on screen within 1 second of a cold launch on the owner's iPhone, and no visible loading between cards (§4) | Measured on the device at the first `just run-device` — `os_signpost` intervals around the catalog decode and the progress fetch — and recorded in that pull request; no gate |
+| FSRS results equal to the old app's for the same inputs | The golden-vector suite, `just test` |
+| Every card valid against the definitions; no id duplicated or reused | The catalog integrity test, `just test` |
+| The answer log and the progress never disagree; a failed save changes nothing | `ProgressStoreContract` against the fake and the SwiftData adapter, `just test` |
+| Nothing leaves the phone | No networking code and no capability; review only, no gate |
+| The UX targets in `docs/design/ux-guidelines.md` — the largest text size, VoiceOver, Increase Contrast, Reduce Motion | Screenshots and a VoiceOver pass per `running-the-app`, in the pull request that builds the screen |
+
+### Distribution
+
+FlashCompose is installed only on its owner's iPhone, from Xcode, with
+`just run-device`, signed by a free Personal Team. Apple's membership page says a
+personal team's provisioning profiles "expire 7 days from issuance", after which the app
+must be rebuilt and reinstalled, and that a personal team installs up to 3 apps per
+device and cannot build the advanced capabilities
+(<https://developer.apple.com/support/compare-memberships/>, checked 2026-10-13). So
+the owner runs `just run-device` at least once a week, and the empty capability set is
+also all a personal team allows. Deleting the app deletes all progress; there is no
+export (§3.6).
+
+### Open
+
+- **Whether reinstalling keeps the progress.** Installing over the expired build, with the
+  same bundle identifier and without deleting the app, should keep its data container —
+  stated only in Apple Developer Forums answers, unchecked against Apple's
+  documentation. Settled at the first weekly reinstall on the device; if the store does
+  not survive, distribution goes back to the owner (the paid program, or an export).
+- **What iOS needs to show the Japanese UI** — the package's `ja` catalog alone, or also
+  `CFBundleLocalizations` in `project.yml` (`localizing-the-app` › Adding a language).
+  Settled in the running app by the change that adds the Japanese values.
+- **The measured first-card time** on the device (Quality targets).
+
+### Follow-ups
+
+Code work these decisions imply; each becomes an issue.
+
+- iPhone only and portrait: `TARGETED_DEVICE_FAMILY: "1"` on both targets in
+  `project.yml`, the iPhone orientation list cut to portrait, and the iPad orientation
+  key deleted.
+- Remove the to-do sample — its code, tests, previews, launch-test steps, and the
+  passages that describe it here, in `docs/getting-started.md`, and in `README.md` — and
+  replace its `AppSchemaV1`.
+- Remove the networking layer — `HTTPClient`, `APIClient` and their values,
+  `URLSessionHTTPClient`, their fakes and contracts, the `network` log category, and
+  [The HTTP client port](#the-http-client-port) below.
+- Import the catalog into `Resources/Catalog/`, with its decoder and integrity test, and
+  add its row to `AGENTS.md`'s "Validating a change".
+- Add the `editing-cards` skill: the identity rule above, minting an id, and retiring
+  one.
+- Port FSRS-6 with the golden-vector suite.
+- The practice day and today's queue: due reviews by lowest retrievability, new cards
+  from the scope at random, re-asks.
+- The `ProgressStore` port, its fake and contract, and the SwiftData adapter.
+- The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
+  keys.
+- The Japanese values in `Localizable.xcstrings`, settling the open question above.
+- The design lock in code: the Color Sets, `AccentColor`, the "FC" placeholder icon, and
+  the screenshots `designing-ui` asks for.
+- The launch test driven through the drill instead of the to-do list.
+- CodeQL's Swift build, failing since the template (its "Build the package for analysis"
+  step).
 
 ## Layers
 
@@ -137,8 +382,9 @@ restoration have something to hold on to and a test can drive navigation without
   `popToRoot()` returns, `open(_:)` handles a deep link. It is owned per scene: `App/`'s
   scene root holds it in `@State` and hands it to the root view, while the shared view
   models it routes between stay app-level, in `AppModel`. It never moves into
-  `AppModel`: the app supports multiple scenes (two windows on iPad), so an app-level
-  path would move every window in lockstep and a deep link would move them all.
+  `AppModel`: a navigation path belongs to a scene, not to the app. FlashCompose is
+  iPhone only and runs one scene, but per-scene ownership keeps navigation correct
+  without depending on that.
 - **One `NavigationStack(path:)`, in `RootView`.** `FlashComposeUI`'s `RootView` binds the
   stack to `NavigationModel.path`, shows the root screen (`TodoListView`, a plain screen
   with no stack of its own), and declares every destination in one
@@ -255,6 +501,9 @@ No product exports it and `ArchitectureBoundaryTests` fails if a shipped module 
 it. Previews use their own small `PreviewTodoRepository` in `FlashComposeUI` (Debug only).
 
 ### The HTTP client port
+
+FlashCompose sends no request, so this layer is removed, and this section with it
+([Follow-ups](#follow-ups)); it describes the code until then.
 
 `HTTPClient` is the networking seam, shaped like the repository: a `Sendable` port in
 `FlashComposeCore/Networking`, the `URLSessionHTTPClient` adapter in `FlashComposePlatform/Networking`,
@@ -439,9 +688,16 @@ A log message is an autoclosure that needs an explicit `self`, which SwiftFormat
 
 Core owns every fixed string a reader sees, in `Sources/FlashComposeCore/Resources/Localizable.xcstrings`,
 through `LocalizedStringResource(_:defaultValue:bundle: .module, comment:)`. English is
-the only shipped language (`defaultLocalization: "en"`); adding one is an app's decision.
+the source language (`defaultLocalization: "en"`), and Japanese ships beside it: every
+string carries a `ja` value, and the app follows the device's language, so the owner's
+iPhone shows Japanese. The agent that adds a string writes its Japanese in the same pull
+request, following `docs/design/ux-guidelines.md`'s glossary and terse register; there is
+no separate translation review — the owner files an issue when a string reads wrong in
+use. Card content — the prompt, the answer, the alternatives, the point, and the topic
+names — is data, not wording: a view shows it with `Text(verbatim:)` in either language.
 `swift test` copies the catalog uncompiled, so tests resolve English from `defaultValue`
 (the `english` helper in `FlashComposeCoreTests`); `xcodebuild` compiles it into the app.
+Whether iOS offers Japanese from Core's catalog alone is [open](#open).
 
 ## Testing
 
@@ -451,6 +707,7 @@ the only shipped language (`defaultLocalization: "en"`); adding one is an app's 
 | Port promises | the contract function, against the fake | `Tests/FlashComposeCoreTests` | `just test`, CI `test` |
 | Adapters | the contract function, against the real adapter; adapter-only cases | `Tests/FlashComposePlatformTests` | `just test`, CI `test` — when the framework runs on the host |
 | Module boundaries | `ArchitectureBoundaryTests` | `Tests/FlashComposeCoreTests` | `just test`, CI `test` |
+| The bundled card catalog, FSRS-6 | the catalog integrity test over the real files; the golden-vector suite | `Tests/FlashComposeCoreTests` | `just test`, CI `test` |
 | Launch and the core interaction | XCUITest | `LaunchUITests/` | `just uitest`, CI `app` (iOS Simulator) |
 
 - **Where a test goes.** A decision is tested in Core. An adapter is tested only for its
@@ -479,6 +736,7 @@ device that ran an earlier build, or the user.
 | **The stored schema** (`AppSchemaV1` and its successors) | Every store already on a user's device | A new `VersionedSchema` plus an `AppMigrationPlan` stage, with a test that opens a store written by the previous version. Never edit a shipped schema version |
 | **The URL scheme** (`DeepLink.scheme`, registered in `project.yml`) | Links to the app in messages, notes, and other apps | Fixed once a build has left your machine: a renamed scheme breaks every link in the wild. `project.yml` and `DeepLink.scheme` change together (`DeepLinkTests`); a new link shape is a new `DeepLink` case with its tests, and an old shape keeps parsing |
 | **`UserDefaults` keys and file formats** | Saved preferences and files on a user's device | Read the old key or format and migrate it in Core, with a test that starts from the old value. Every key is a `PreferenceKeys` constant, pinned by `PreferenceKeysTests` |
+| **Card ids** (the catalog's `id`, and `retired-ids.json`) | The progress and the answer log on the owner's iPhone, keyed by card id | Keep the id when a fix leaves earlier answers comparable; otherwise mint a new id and retire the old one. An id is never reused ([Card identity](#card-identity)); the catalog integrity test refuses a duplicate or a reused id |
 
 Everything else is private: `internal` declarations, how an adapter talks to its
 framework, view structure, file and type layout, test helpers, log messages.

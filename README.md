@@ -81,15 +81,16 @@ app still launches. One contract function,
 [`TodoRepositoryContract`](Packages/FlashComposeKit/Tests/FlashComposeTestSupport/TodoRepositoryContract.swift),
 runs against both the in-memory fake and the real adapter, so the fake cannot drift.
 
-### Why one String Catalog in Core, and English only?
+### Why one String Catalog in Core, in English and Japanese?
 
 User-facing wording is a decision like any other, so it lives where the coverage
 floor sees it: Core view models return `LocalizedStringResource`, and the one
 [`Localizable.xcstrings`](Packages/FlashComposeKit/Sources/FlashComposeCore/Resources/Localizable.xcstrings)
 sits in `FlashComposeCore` beside them. Views render those resources and carry no literal of
-their own. The template ships English alone, since a second language makes every later
-string owe a translation and a reviewer; an app that wants one
-rewrites that sentence, and the reasoning behind it, in the same pull request.
+their own. English is the source the code is written in; Japanese ships beside it
+because the one learner's iPhone runs in Japanese, and English buttons around a
+Japanese prompt would read as two apps. So every new string owes a Japanese value in
+the pull request that adds it ([docs/architecture.md › Localization](docs/architecture.md#localization)).
 `LocalizationTests` holds Core's keys and English to the catalog.
 
 ### Why Swift Testing?

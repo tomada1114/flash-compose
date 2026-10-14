@@ -20,15 +20,23 @@ go, and what adding a language involves. **Does not own:** a view model's shape 
 injecting a `Locale` to format a number or date (`designing-core-logic`); how a view is
 wired to its model and its accessibility identifiers (`building-swiftui-screens`);
 capitalization and voice (`designing-ui`'s copy rules and design lock); which
-usage-description key a system API needs (`integrating-system-apis`); the English-only rule and its one
-exception (`AGENTS.md`'s "Important Reminders").
+usage-description key a system API needs (`integrating-system-apis`); the English-only rule and its two
+exceptions (`AGENTS.md`'s "Important Reminders").
 
 ## What the template decides
 
-- **English only.** `Package.swift` sets `defaultLocalization: "en"`, and the one
-  catalog's source language is `en`. Shipping a second language is an app's design
-  change (`AGENTS.md` › Before changing the architecture): every later string then owes a translation, and every translation
-  owes a reviewer.
+- **English source, Japanese beside it.** `Package.swift` sets
+  `defaultLocalization: "en"`, and the one catalog's source language is `en`.
+  FlashCompose also ships Japanese, the language its one learner's iPhone runs in, and
+  follows the device's language. Every string therefore owes a `ja` value in the same
+  pull request that adds it: the agent that adds the string writes it, following
+  `docs/design/ux-guidelines.md`'s glossary and terse register (noun endings, verb
+  buttons, no exclamation marks). There is no separate translation review — the owner
+  files an issue when a string reads wrong in use. A third language is a design change
+  (`AGENTS.md` › Before changing the architecture).
+- **Card content is not wording.** The prompt, the answer, the alternatives, the point,
+  and the topic names come from the card catalog and are shown with `Text(verbatim:)` in
+  either language; they never enter `Localizable.xcstrings`.
 - **Core owns the wording.** Core returns `LocalizedStringResource` (Foundation, which
   Core may import) and a view renders it. The wording then sits under the coverage floor,
   where a test asserts it; a Core API that handed out bare keys would leave the view to
@@ -171,8 +179,9 @@ which language, who translates, and who reviews. Then:
 
 - Add the language in Xcode's catalog editor, or import a translated `.xcloc` with
   `xcodebuild -importLocalizations`. Keys, comments, and the English stay English; the
-  translated values are the one non-English text the repository allows. An
-  `App/InfoPlist.xcstrings`, if the app has one, owes the same language.
+  translated values are, with the card catalog, the only non-English text the
+  repository allows. An `App/InfoPlist.xcstrings`, if the app has one, owes the same
+  language.
 - Unverified: whether iOS offers the app in that language from the package bundle's
   `.lproj` alone or also needs `CFBundleLocalizations` in `project.yml`. It stays an
   open question in the pull request until it is checked in the running app

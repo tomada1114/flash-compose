@@ -151,7 +151,8 @@ App/                        # Thin shell: @main entry point + resources, NO logi
                             #   hands it, as a port, to Core's AppModel
 Packages/FlashComposeKit/
 ├── Sources/FlashComposeCore/      # Domain values, view models, ports (protocols), wording,
-│                           #   logging — no UI, persistence, or OS-integration import
+│                           #   logging, the bundled card catalog (Resources/Catalog/) —
+│                           #   no UI, persistence, or OS-integration import
 │                           #   (enforced by lint and test); coverage-gated
 ├── Sources/FlashComposeUI/        # SwiftUI views — thin, render Core view models; shared
 │                           #   presentation values in `DesignSystem/DesignTokens.swift`
@@ -181,9 +182,20 @@ LaunchUITests/              # XCUITest on the iOS Simulator (XCTest by necessity
 - Shipped code logs through `AppLog` (`os.Logger`); `print`, `debugPrint`, and `NSLog`
   are rejected under `Packages/*/Sources/` and `App/` by `no_print_in_sources`.
 - `FlashCompose.xcodeproj` is generated — edit `project.yml` instead.
-- Four things are contract — Core's public API, the bundle identifier, the stored
-  SwiftData schema, and `UserDefaults` keys/file formats — and each changes only as
-  `docs/architecture.md` › What is contract says.
+- FlashCompose is iPhone only (`TARGETED_DEVICE_FAMILY: "1"`), portrait only, with one
+  scene. It takes no capability, entitlement, or privacy-gated permission and sends no
+  network request; it is installed on the owner's iPhone from Xcode (`just run-device`),
+  signed by a free Personal Team. `docs/architecture.md` › Decisions at a glance says why.
+- The card catalog is read-only JSON in `FlashComposeCore/Resources/Catalog/`, decoded by
+  Core; only the learner's progress is stored (SwiftData, behind the `ProgressStore`
+  port), keyed by card id. FSRS-6 is ported into Core and held to the old app's golden
+  vectors (`docs/architecture.md` › FlashCompose).
+- The UI ships in English, the source, and Japanese, following the device's language;
+  whoever adds a string writes its Japanese value in the same change
+  (`docs/architecture.md` › Localization).
+- Five things are contract — Core's public API, the bundle identifier, the stored
+  SwiftData schema, `UserDefaults` keys/file formats, and the catalog's card ids — and
+  each changes only as `docs/architecture.md` › What is contract says.
 
 ## Before changing the architecture
 
@@ -475,8 +487,9 @@ Before submitting a PR:
 
 ## Important Reminders
 
-- All code, docs, commits, issues, and PRs are written in English. The one exception
-  is a translated value in a `*.xcstrings` String Catalog.
+- All code, docs, commits, issues, and PRs are written in English. The two exceptions
+  are a translated value in a `*.xcstrings` String Catalog and the card catalog's
+  Japanese content under `FlashComposeCore/Resources/Catalog/`.
 - Do what has been asked; nothing more, nothing less.
 - Prefer editing an existing file to creating a new one; never create documentation
   files unless asked.
