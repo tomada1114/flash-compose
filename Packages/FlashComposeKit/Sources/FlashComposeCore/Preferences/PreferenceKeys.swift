@@ -6,12 +6,6 @@
 /// with a test that starts from the old key (`docs/architecture.md` › What is contract
 /// and what is private). `PreferenceKeysTests` pins each name and default.
 public enum PreferenceKeys {
-    /// Whether the to-do list hides items that are done. Off until the user turns it on.
-    public static let hideCompleted = PreferenceKey<Bool>(
-        name: "todoList.hideCompleted",
-        defaultValue: false,
-    )
-
     /// The topic ids turned off in the scope, sorted and joined by `,`
     /// (``ScopeSelection/encodedTopicsOff``). Empty, everything on, until the learner
     /// turns one off.

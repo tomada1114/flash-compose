@@ -1,12 +1,9 @@
 /// A screen the navigation stack can push, named by the value it shows.
 ///
-/// A route carries an identifier, never the item itself: the destination looks the item
-/// up in its view model when it renders, so a pushed screen shows the current state
-/// rather than a copy taken when the link was tapped, and a route parsed from a deep link
-/// (``DeepLink``) is the same value as one a row pushed. A new screen adds a case here,
-/// its branch in `RootView`'s `navigationDestination(for:)` switch, and — when the
-/// screen needs a view model of its own — an ``AppModel`` factory that builds it.
-public enum AppRoute: Hashable, Sendable {
-    /// The detail screen of one to-do item.
-    case todoDetail(TodoItem.ID)
-}
+/// It has no case: the drill is the root screen and the scope a sheet, so nothing is
+/// pushed yet and the path stays empty (`docs/architecture.md` › Navigation). The type
+/// stays because the stack binds to ``NavigationModel/path``. The first pushed screen — a
+/// card browser, statistics — adds its case here, carrying an identifier rather than the
+/// value it shows; its branch in `RootView`'s `navigationDestination(for:)`; and, when the
+/// screen needs a view model of its own, an ``AppModel`` factory that builds it.
+public enum AppRoute: Hashable, Sendable {}

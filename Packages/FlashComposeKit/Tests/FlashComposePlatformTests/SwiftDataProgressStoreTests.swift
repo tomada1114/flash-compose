@@ -5,7 +5,7 @@ import Foundation
 import SwiftData
 import Testing
 
-/// Fixed values for ``SwiftDataTodoRepositoryTests/SwiftDataProgressStoreTests``.
+/// Fixed values for ``SwiftDataStoreTests/SwiftDataProgressStoreTests``.
 private enum Fixture {
     static let gradedAtSeconds: TimeInterval = 813_621_600
     static let gradedAt = Date(timeIntervalSinceReferenceDate: gradedAtSeconds)
@@ -65,12 +65,12 @@ private enum Fixture {
     }
 }
 
-extension SwiftDataTodoRepositoryTests {
+extension SwiftDataStoreTests {
     /// The adapter half of the `ProgressStore` contract suite, plus what only the adapter
     /// can get wrong: the rollback of a failed save, reading a stored row back, and
     /// keeping progress across a reopen of the store file.
     ///
-    /// Nested in `SwiftDataTodoRepositoryTests` so its `.serialized` trait covers these
+    /// Nested in `SwiftDataStoreTests` so its `.serialized` trait covers these
     /// too: they open containers, and concurrent container creation is what that trait
     /// keeps out.
     @Suite("SwiftDataProgressStore")
@@ -161,24 +161,6 @@ extension SwiftDataTodoRepositoryTests {
             )
             #expect(try await reopened.loadProgress() == [CardProgress(cardID: card, state: state)])
             #expect(try await reopened.loggedAnswers() == [answer])
-        }
-
-        @Test
-        func `the progress store and the to-do repository share one container`() async throws {
-            let container = try PersistenceStore.makeContainer(storage: .inMemory)
-            let progress = SwiftDataProgressStore(modelContainer: container)
-            let todos = SwiftDataTodoRepository(modelContainer: container)
-            let card = try Fixture.card()
-            let state = try Fixture.state()
-
-            try await progress.record(
-                answer: Fixture.answer(card, to: state),
-                progress: CardProgress(cardID: card, state: state),
-            )
-            try await todos.save(TodoItem(id: UUID(), title: "Beside", createdAt: Fixture.gradedAt))
-
-            #expect(try await progress.loadProgress() == [CardProgress(cardID: card, state: state)])
-            #expect(try await todos.fetchAll().count == 1)
         }
     }
 }

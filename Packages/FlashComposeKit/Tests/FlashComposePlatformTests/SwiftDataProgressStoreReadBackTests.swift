@@ -63,14 +63,14 @@ enum AnswerRowDamage: CaseIterable, Sendable {
     }
 }
 
-extension SwiftDataTodoRepositoryTests {
+extension SwiftDataStoreTests {
     /// What the adapter reads back from a row: the stored day encoding, the grade and
     /// kind names, and a row that no longer makes a Core value — a progress row the load
     /// leaves out and keeps, so that card reads as never recorded, and an answer row the
     /// log read reports as ``FlashComposeCore/ProgressStoreError/corruptedRecord`` rather
     /// than crashing on.
     ///
-    /// Nested in `SwiftDataTodoRepositoryTests` for its `.serialized` trait, as every
+    /// Nested in `SwiftDataStoreTests` for its `.serialized` trait, as every
     /// suite that opens a container is.
     @Suite("SwiftDataProgressStore read-back")
     struct SwiftDataProgressStoreReadBackTests {

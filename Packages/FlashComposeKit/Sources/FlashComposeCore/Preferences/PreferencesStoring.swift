@@ -1,8 +1,9 @@
 /// The port for small user preferences — a setting that must survive a relaunch, such as
-/// ``PreferenceKeys/hideCompleted``. `UserDefaultsPreferences` in `FlashComposePlatform` is the
-/// adapter; `InMemoryPreferences` in `FlashComposeTestSupport` is the fake.
+/// the scope's ``PreferenceKeys/scopeTopicsOff``. `UserDefaultsPreferences` in
+/// `FlashComposePlatform` is the adapter; `InMemoryPreferences` in `FlashComposeTestSupport`
+/// is the fake.
 ///
-/// Synchronous and non-throwing, unlike the repositories' `async throws`: `UserDefaults`
+/// Synchronous and non-throwing, unlike ``ProgressStore``'s `async throws`: `UserDefaults`
 /// is synchronous and thread-safe, and an `async` port would only add suspension points
 /// — and the reentrancy they bring — to a `@MainActor` view model for nothing. Nothing to
 /// report can go wrong either: a missing or unreadable value is the default.

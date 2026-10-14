@@ -20,7 +20,7 @@ public enum DesignTokens {
         public static let xSmall: CGFloat = 4
         /// Between related controls in one row.
         public static let small: CGFloat = 8
-        /// Between a field and the action that submits it (the to-do list's add bar).
+        /// Between the blocks of one card face, and inside a grade button (`GradeBar`).
         public static let medium: CGFloat = 12
         /// Inside a custom container, from its edge to its content.
         public static let large: CGFloat = 16

@@ -25,16 +25,10 @@ private struct SceneRoot: View {
 /// This is also the composition root: the one place that knows both halves of a port.
 /// It opens the SwiftData store and the `UserDefaults` preferences through their
 /// `FlashComposePlatform` adapters and hands them, as ports, to Core's `AppModel`, which builds
-/// every view model over them — the to-do list over the to-do repository, the drill over
-/// the progress store — so nothing below `App/` depends on which store answers, and `App/`
+/// every view model over them — the drill over the progress store, the scope over the
+/// preferences — so nothing below `App/` depends on which store answers, and `App/`
 /// decides nothing but which adapter each port gets (`docs/architecture.md` › Composition
 /// root).
-/// The adapters built over the app's one container, as the ports `AppModel` takes.
-private struct Stores {
-    let todos: any TodoRepository
-    let progress: any ProgressStore
-}
-
 @main
 struct FlashComposeApp: App {
     /// The launch argument `LaunchUITests` passes: an in-memory store and a scratch
@@ -47,11 +41,6 @@ struct FlashComposeApp: App {
     }
 
     #if DEBUG
-        /// Debug-only fault injection: every save that replaces a stored item — a toggle —
-        /// fails (`UpdateFailingTodoRepository`), so a failure alert can be seen and
-        /// UI-tested. Release builds neither read the argument nor contain the type.
-        private static let failUpdatesArgument = "-failUpdates"
-
         /// Debug-only fault injection: every grade fails to save
         /// (`RecordFailingProgressStore`), so E2 can be seen and UI-tested while the
         /// start-up still loads. Release builds neither read the argument nor contain the
@@ -60,7 +49,7 @@ struct FlashComposeApp: App {
     #endif
 
     /// Owned here, in `@State`, so the model outlives any one scene's view tree and every
-    /// window shows the same items. Navigation is per window (`SceneRoot`).
+    /// window shows the same drill. Navigation is per window (`SceneRoot`).
     @State private var app = Self.makeAppModel()
 
     var body: some Scene {
@@ -69,61 +58,48 @@ struct FlashComposeApp: App {
         }
     }
 
-    /// The app model over the stores and the preferences, built once.
+    /// The app model over the progress store and the preferences, built once.
     private static func makeAppModel() -> AppModel {
-        let stores = makeStores()
-        return AppModel(
-            repository: stores.todos,
+        AppModel(
             preferences: makePreferences(),
-            progressStore: stores.progress,
+            progressStore: makeProgressStore(),
         )
     }
 
-    /// The stores the app runs on, over one container opened once: every SwiftData
-    /// adapter — the to-do repository and the progress store — is built over this one
-    /// container, never over one of its own. When the on-disk store cannot be opened, the
-    /// app still launches — over null objects that report every call as failed, so the
-    /// drill shows E1 — rather than crashing, or quietly keeping grades in memory that
-    /// would vanish on the next launch.
-    private static func makeStores() -> Stores {
+    /// The progress store the app runs on, over the one container opened once: every
+    /// SwiftData adapter is built over this container, never over one of its own. When the
+    /// on-disk store cannot be opened, the app still launches — over a null object that
+    /// reports every call as failed, so the drill shows E1 — rather than crashing, or
+    /// quietly keeping grades in memory that would vanish on the next launch.
+    private static func makeProgressStore() -> any ProgressStore {
         let storage: PersistenceStore.Storage = isUITesting ? .inMemory : .onDisk
         do {
             let container = try PersistenceStore.makeContainer(storage: storage)
-            let stores = Stores(
-                todos: SwiftDataTodoRepository(modelContainer: container),
-                progress: SwiftDataProgressStore(modelContainer: container),
-            )
+            let store = SwiftDataProgressStore(modelContainer: container)
             #if DEBUG
-                return faultInjected(stores)
+                return faultInjected(store)
             #else
-                return stores
+                return store
             #endif
         } catch {
-            // `makeContainer` has logged the failure; the null objects are the handling.
-            return Stores(todos: UnavailableTodoRepository(), progress: UnavailableProgressStore())
+            // `makeContainer` has logged the failure; the null object is the handling.
+            return UnavailableProgressStore()
         }
     }
 
     #if DEBUG
-        /// `stores`, each wrapped in its fault injection when its launch argument is
-        /// present.
-        private static func faultInjected(_ stores: Stores) -> Stores {
-            let arguments = ProcessInfo.processInfo.arguments
-            var todos = stores.todos
-            var progress = stores.progress
-            if arguments.contains(failUpdatesArgument) {
-                todos = UpdateFailingTodoRepository(wrapping: todos)
+        /// `store`, wrapped in its fault injection when its launch argument is present.
+        private static func faultInjected(_ store: any ProgressStore) -> any ProgressStore {
+            if ProcessInfo.processInfo.arguments.contains(failRecordsArgument) {
+                return RecordFailingProgressStore(wrapping: store)
             }
-            if arguments.contains(failRecordsArgument) {
-                progress = RecordFailingProgressStore(wrapping: progress)
-            }
-            return Stores(todos: todos, progress: progress)
+            return store
         }
     #endif
 
     /// The preferences the app runs on: the standard defaults, or — under UI testing — a
     /// suite of its own, cleared at launch. `just uitest` reuses the simulator, so without
-    /// the scratch suite one run's Hide Completed would still be on in the next.
+    /// the scratch suite one run's scope would still be narrowed in the next.
     private static func makePreferences() -> any PreferencesStoring {
         if isUITesting {
             return UserDefaultsPreferences.scratch(suiteName: "\(AppLog.subsystem).uiTesting")

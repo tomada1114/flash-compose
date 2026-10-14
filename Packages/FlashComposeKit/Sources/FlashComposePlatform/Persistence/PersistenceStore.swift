@@ -4,13 +4,13 @@ import SwiftData
 
 /// The app's one SwiftData store: the only place a `ModelContainer` is opened.
 ///
-/// Every SwiftData repository runs over the same container, built from the app-wide
-/// ``AppSchemaV1`` and ``AppMigrationPlan``. A repository that opened its own container
+/// Every SwiftData adapter runs over the same container, built from the app-wide
+/// ``AppSchemaV1`` and ``AppMigrationPlan``. An adapter that opened its own container
 /// would bring its own schema to the same default store file, and a container whose
 /// schema disagrees with what the file holds risks failing to open or damaging the
 /// store. So `App/` opens the container once, through
-/// ``makeContainer(storage:)``, and hands it to each repository's
-/// `init(modelContainer:)` — `SwiftDataTodoRepository` is the worked example.
+/// ``makeContainer(storage:)``, and hands it to each adapter's
+/// `init(modelContainer:)` — ``SwiftDataProgressStore`` is the worked example.
 public enum PersistenceStore {
     /// Where the store keeps its data.
     public enum Storage: Sendable {
@@ -28,7 +28,7 @@ public enum PersistenceStore {
     /// Throws whatever SwiftData threw — an unreadable file, or a migration that failed —
     /// after logging it, so the caller only decides what the app runs on instead
     /// (`App/` hands every port its unavailable null object, such as
-    /// ``FlashComposeCore/UnavailableTodoRepository``).
+    /// ``FlashComposeCore/UnavailableProgressStore``).
     public static func makeContainer(storage: Storage) throws -> ModelContainer {
         let schema = Schema(versionedSchema: AppSchemaV1.self)
         do {

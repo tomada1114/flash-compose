@@ -6,7 +6,7 @@ import SwiftData
 import Testing
 
 /// Fixed values and the pre-rename store writer for
-/// ``SwiftDataTodoRepositoryTests/PersistenceStoreTests``.
+/// ``SwiftDataStoreTests/PersistenceStoreTests``.
 private enum Fixture {
     /// What the store file says about the model that wrote it: the per-entity version
     /// hashes Core Data compares to decide on a migration, and the schema's version
@@ -70,31 +70,28 @@ private enum Fixture {
     }
 }
 
-extension SwiftDataTodoRepositoryTests {
-    /// The app's one container: shared by every repository, and able to reopen a store
-    /// file an earlier build wrote.
+extension SwiftDataStoreTests {
+    /// The app's one container: shared by every adapter, and able to reopen a store file
+    /// an earlier build wrote.
     ///
-    /// Nested in `SwiftDataTodoRepositoryTests` so its `.serialized` trait covers these
+    /// Nested in `SwiftDataStoreTests` so its `.serialized` trait covers these
     /// too — they open containers, and concurrent container creation is what that trait
     /// keeps out.
     @Suite("PersistenceStore")
     struct PersistenceStoreTests {
         @Test
-        func `two repositories over one container see each other's writes`() async throws {
+        func `two adapters over one container see each other's writes`() async throws {
             let container = try PersistenceStore.makeContainer(storage: .inMemory)
-            let writer = SwiftDataTodoRepository(modelContainer: container)
-            let reader = SwiftDataTodoRepository(modelContainer: container)
-            let item = try TodoItem(
-                id: Fixture.firstID,
-                title: "Shared",
-                createdAt: Fixture.firstCreatedAt,
+            let writer = SwiftDataProgressStore(modelContainer: container)
+            let reader = SwiftDataProgressStore(modelContainer: container)
+            let progress = try SwiftDataProgressStoreReadBackTests.progress()
+
+            try await writer.record(
+                answer: SwiftDataProgressStoreReadBackTests.answer(),
+                progress: progress,
             )
-
-            try await writer.save(item)
-            #expect(try await reader.fetchAll() == [item])
-
-            try await reader.delete(id: item.id)
-            #expect(try await writer.fetchAll().isEmpty)
+            #expect(try await reader.loadProgress() == [progress])
+            #expect(try await reader.loggedAnswers().count == 1)
         }
 
         @Test

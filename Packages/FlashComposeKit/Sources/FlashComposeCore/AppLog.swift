@@ -12,8 +12,8 @@ import os
 /// Never `print`, `debugPrint`, or `NSLog` under `Sources/` or `App/`: an app launched
 /// from the Home Screen has nowhere to send stdout, so those lines vanish exactly when
 /// they would matter. `.swiftlint.yml`'s `no_print_in_sources` rejects them. Anything
-/// user-derived that reaches a log message is interpolated `.private` — a to-do's title
-/// is the user's data; its identifier and a count are not.
+/// user-derived that reaches a log message is interpolated `.private`; an operation name
+/// and a count are `.public`.
 public enum AppLog {
     /// The subsystem every logger below is created with: this app's bundle identifier,
     /// and the value `just logs` filters the stream on.
@@ -23,15 +23,12 @@ public enum AppLog {
     /// equal `PRODUCT_BUNDLE_IDENTIFIER` in `project.yml`.
     public static let subsystem = "io.github.tomada1114.FlashCompose"
 
-    /// The to-do list concern: ``TodoListViewModel`` and what it asks of the repository.
-    ///
-    /// One category per concern, named for the concern rather than for a type, so
-    /// `log stream --predicate 'category == "todos"'` narrows the stream to one story.
-    /// A new concern adds a `Logger` here instead of building one inline.
-    public static let todos = Logger(subsystem: subsystem, category: "todos")
-
     /// The drill concern: ``DrillViewModel`` failing to start or to save a grade. Only the
     /// failure's Core case is logged, never a card's text or id.
+    ///
+    /// One category per concern, named for the concern rather than for a type, so
+    /// `log stream --predicate 'category == "drill"'` narrows the stream to one story.
+    /// A new concern adds a `Logger` here instead of building one inline.
     public static let drill = Logger(subsystem: subsystem, category: "drill")
 
     /// The persistence concern: opening the store and the adapters that read and write it.

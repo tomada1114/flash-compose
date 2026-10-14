@@ -2,8 +2,7 @@
     import FlashComposeCore
     import Synchronization
 
-    /// Preview-only preferences, so a `#Preview` can start with a setting already on and
-    /// never writes to the real `UserDefaults`.
+    /// Preview-only preferences, so a `#Preview` never writes to the real `UserDefaults`.
     ///
     /// `FlashComposeTestSupport`'s fake is test code no shipped module may import, and the
     /// `UserDefaults` adapter lives in `FlashComposePlatform`, which `FlashComposeUI` must not see
@@ -16,11 +15,6 @@
         /// Starts empty: every key answers its default.
         init() {
             storage = Mutex([:])
-        }
-
-        /// Starts with Hide Completed set to `hideCompleted`.
-        init(hideCompleted: Bool) {
-            storage = Mutex([PreferenceKeys.hideCompleted.name: hideCompleted])
         }
 
         func value<Value: PreferenceValue>(for key: PreferenceKey<Value>) -> Value {

@@ -1,7 +1,6 @@
 import SwiftData
 
 /// The record types the adapters use: always the newest schema version's.
-typealias TodoRecord = AppSchemaV1.TodoRecord
 typealias CardProgressRecord = AppSchemaV1.CardProgressRecord
 typealias AnswerRecord = AppSchemaV1.AnswerRecord
 
