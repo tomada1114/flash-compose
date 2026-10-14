@@ -65,6 +65,7 @@ public struct RootView: View {
                     "Water plants",
                 ]),
                 preferences: PreviewPreferences(),
+                progressStore: UnavailableProgressStore(),
             ),
             navigation: NavigationModel(),
         )

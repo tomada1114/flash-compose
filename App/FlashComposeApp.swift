@@ -25,9 +25,16 @@ private struct SceneRoot: View {
 /// This is also the composition root: the one place that knows both halves of a port.
 /// It opens the SwiftData store and the `UserDefaults` preferences through their
 /// `FlashComposePlatform` adapters and hands them, as ports, to Core's `AppModel`, which builds
-/// every view model over them — so nothing below `App/` depends on which store answers,
-/// and `App/` decides nothing but which adapter each port gets
-/// (`docs/architecture.md` › Composition root).
+/// every view model over them — the to-do list over the to-do repository, the drill over
+/// the progress store — so nothing below `App/` depends on which store answers, and `App/`
+/// decides nothing but which adapter each port gets (`docs/architecture.md` › Composition
+/// root).
+/// The adapters built over the app's one container, as the ports `AppModel` takes.
+private struct Stores {
+    let todos: any TodoRepository
+    let progress: any ProgressStore
+}
+
 @main
 struct FlashComposeApp: App {
     /// The launch argument `LaunchUITests` passes: an in-memory store and a scratch
@@ -48,10 +55,7 @@ struct FlashComposeApp: App {
 
     /// Owned here, in `@State`, so the model outlives any one scene's view tree and every
     /// window shows the same items. Navigation is per window (`SceneRoot`).
-    @State private var app = AppModel(
-        repository: Self.makeRepository(),
-        preferences: Self.makePreferences(),
-    )
+    @State private var app = Self.makeAppModel()
 
     var body: some Scene {
         WindowGroup {
@@ -59,26 +63,40 @@ struct FlashComposeApp: App {
         }
     }
 
-    /// The store the app runs on, opened once: every SwiftData repository is built over
-    /// this one container (a second one joins `SwiftDataTodoRepository` here, over the
-    /// same `container`), never over a container of its own. When the on-disk store
-    /// cannot be opened, the app still launches — over a repository that reports every
-    /// call as failed — rather than crashing, or quietly keeping edits in memory that
+    /// The app model over the stores and the preferences, built once.
+    private static func makeAppModel() -> AppModel {
+        let stores = makeStores()
+        return AppModel(
+            repository: stores.todos,
+            preferences: makePreferences(),
+            progressStore: stores.progress,
+        )
+    }
+
+    /// The stores the app runs on, over one container opened once: every SwiftData
+    /// adapter — the to-do repository and the progress store — is built over this one
+    /// container, never over one of its own. When the on-disk store cannot be opened, the
+    /// app still launches — over null objects that report every call as failed, so the
+    /// drill shows E1 — rather than crashing, or quietly keeping grades in memory that
     /// would vanish on the next launch.
-    private static func makeRepository() -> any TodoRepository {
+    private static func makeStores() -> Stores {
         let storage: PersistenceStore.Storage = isUITesting ? .inMemory : .onDisk
         do {
             let container = try PersistenceStore.makeContainer(storage: storage)
+            let progress = SwiftDataProgressStore(modelContainer: container)
             let repository = SwiftDataTodoRepository(modelContainer: container)
             #if DEBUG
                 if ProcessInfo.processInfo.arguments.contains(failUpdatesArgument) {
-                    return UpdateFailingTodoRepository(wrapping: repository)
+                    return Stores(
+                        todos: UpdateFailingTodoRepository(wrapping: repository),
+                        progress: progress,
+                    )
                 }
             #endif
-            return repository
+            return Stores(todos: repository, progress: progress)
         } catch {
-            // `makeContainer` has logged the failure; the null object is the handling.
-            return UnavailableTodoRepository()
+            // `makeContainer` has logged the failure; the null objects are the handling.
+            return Stores(todos: UnavailableTodoRepository(), progress: UnavailableProgressStore())
         }
     }
 

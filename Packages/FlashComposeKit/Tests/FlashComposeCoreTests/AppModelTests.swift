@@ -10,19 +10,27 @@ import Testing
 struct AppModelTests {
     typealias Fixture = TodoListViewModelFixture
 
-    /// An app model over `repository` and `preferences` whose clock and identifier source
-    /// are pinned to the fixture's.
+    /// An app model over `repository`, `preferences`, and `progressStore` whose clock and
+    /// identifier source are pinned to the fixture's, and whose drill reads `cards` as its
+    /// catalog.
     private static func appModel(
         over repository: some TodoRepository,
         preferences: some PreferencesStoring,
+        progressStore: some ProgressStore = InMemoryProgressStore(),
+        cards: [Card] = [],
     ) -> AppModel {
         let pinnedNow = Fixture.now
         let pinnedID = Fixture.fixedID
+        let catalog = DrillFixture.catalog(cards)
+        var environment = DrillEnvironment(locale: Locale(identifier: "en_US"))
+        environment.loadCatalog = { catalog }
         return AppModel(
             repository: repository,
             preferences: preferences,
+            progressStore: progressStore,
             now: { pinnedNow },
             makeID: { pinnedID },
+            drillEnvironment: environment,
         )
     }
 
@@ -82,6 +90,71 @@ struct AppModelTests {
         #expect(model.scope.selection == ScopeSelection(topicsOff: [ScopeFixture.tech]))
         model.scope.toggle(ScopeFixture.work)
         #expect(preferences.value(for: PreferenceKeys.scopeTopicsOff) == "tech,work")
+    }
+
+    // MARK: - The shared drill
+
+    @Test
+    func `building the app model reads nothing from the progress store`() async {
+        let store = InMemoryProgressStore()
+        let model = Self.appModel(
+            over: InMemoryTodoRepository(),
+            preferences: InMemoryPreferences(),
+            progressStore: store,
+        )
+        #expect(model.drill.phase == .starting)
+        #expect(await store.calls.isEmpty)
+    }
+
+    @Test
+    func `the drill starts over the progress store and the scope the app model holds`(
+    ) async throws {
+        let store = InMemoryProgressStore()
+        let preferences = InMemoryPreferences()
+        let cards = try DrillFixture.cards(3, from: 0)
+        let model = Self.appModel(
+            over: InMemoryTodoRepository(),
+            preferences: preferences,
+            progressStore: store,
+            cards: cards,
+        )
+        await model.drill.start()
+        #expect(model.drill.phase == .ready(.question))
+        #expect(await store.calls == [.loadProgress])
+        #expect(model.scope.counts == NeverSeenCounts(inScope: 3, outsideScope: 0))
+        model.drill.reveal()
+        await model.drill.grade(.good)
+        #expect(await store.answers.map(\.gradedAt) == [Fixture.now])
+        #expect(model.scope.counts == NeverSeenCounts(inScope: 2, outsideScope: 0))
+    }
+
+    @Test
+    func `a scope toggle on the app model steers the drill's new cards`() async throws {
+        let preferences = InMemoryPreferences()
+        let daily = try DrillFixture.cards(2, from: 0)
+        let work = try QueueFixture.card(10, topic: ScopeFixture.work, level: 1)
+        let model = Self.appModel(
+            over: InMemoryTodoRepository(),
+            preferences: preferences,
+            cards: daily + [work],
+        )
+        await model.drill.start()
+        model.scope.toggle(ScopeFixture.daily)
+        model.drill.scopeDidChange()
+        #expect(model.drill.counts.new == 1)
+        #expect(preferences.value(for: PreferenceKeys.scopeTopicsOff) == "daily")
+    }
+
+    /// The composition root's fallback: a store that cannot open shows E1.
+    @Test
+    func `an unavailable progress store leaves the drill on E1`() async {
+        let model = Self.appModel(
+            over: InMemoryTodoRepository(),
+            preferences: InMemoryPreferences(),
+            progressStore: UnavailableProgressStore(),
+        )
+        await model.drill.start()
+        #expect(model.drill.phase == .failed)
     }
 
     // MARK: - A route's view model

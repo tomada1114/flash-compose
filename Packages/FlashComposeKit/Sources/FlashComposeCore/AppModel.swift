@@ -30,17 +30,28 @@ public final class AppModel {
     /// value.
     public let scope: ScopeViewModel
 
-    /// Builds the shared view models over `repository` and `preferences`. Nothing is read
-    /// until a view model's own `load()`: construction stays free of side effects.
+    /// The drill every scene shows, built over `progressStore` and the shared ``scope``,
+    /// so its new cards come from the selection the sheet edits and the sheet's count
+    /// follows its grades.
+    public let drill: DrillViewModel
+
+    /// Builds the shared view models over `repository`, `preferences`, and
+    /// `progressStore`. Nothing is read until a view model's own `load()` or `start()`:
+    /// construction stays free of side effects.
     ///
     /// `now` and `makeID` reach every view model that stamps a new value, so a test pins
-    /// both here once. `preferences` has no default, for the reason
-    /// ``TodoListViewModel/init(repository:preferences:now:makeID:)`` gives.
+    /// both here once; `drillEnvironment` holds the rest of what the drill reads from the
+    /// world — the time zone, the locale the scope and the drill format in, the clock,
+    /// the random generator, and the catalog. `preferences` and `progressStore` have no
+    /// default, for the reason ``TodoListViewModel/init(repository:preferences:now:makeID:)``
+    /// gives.
     public init(
         repository: any TodoRepository,
         preferences: any PreferencesStoring,
+        progressStore: any ProgressStore,
         now: @escaping @Sendable () -> Date = { Date() },
         makeID: @escaping @Sendable () -> UUID = { UUID() },
+        drillEnvironment: DrillEnvironment = DrillEnvironment(),
     ) {
         todoList = TodoListViewModel(
             repository: repository,
@@ -48,7 +59,13 @@ public final class AppModel {
             now: now,
             makeID: makeID,
         )
-        scope = ScopeViewModel(preferences: preferences)
+        scope = ScopeViewModel(preferences: preferences, locale: drillEnvironment.locale)
+        drill = DrillViewModel(
+            store: progressStore,
+            scope: scope,
+            now: now,
+            environment: drillEnvironment,
+        )
     }
 
     /// The view model of the screen ``AppRoute/todoDetail(_:)`` pushes for `id`.

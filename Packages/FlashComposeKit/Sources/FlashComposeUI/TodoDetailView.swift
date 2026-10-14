@@ -85,6 +85,7 @@ public struct TodoDetailView: View {
         let app = AppModel(
             repository: PreviewTodoRepository(items: stored.map { [$0] } ?? []),
             preferences: PreviewPreferences(),
+            progressStore: UnavailableProgressStore(),
         )
         return NavigationStack {
             TodoDetailView(model: app.makeTodoDetailViewModel(id: stored?.id ?? UUID()))
