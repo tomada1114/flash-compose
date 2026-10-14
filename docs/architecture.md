@@ -93,9 +93,11 @@ with `Text(verbatim:)`.
   this repository is the cards' only home (§3.1). One file per subtopic keeps a card
   edit a small diff, and two branches editing different subtopics never conflict.
 - **Fields.** A card is `id`, `ja`, `en`, `alternatives`, `point`, `topic`, `subtopic`,
-  `level`, and `grammar`, spelled as the old JSON spells them, so `Codable` reads them
-  with default keys. The old `createdAt` and `stamps` (its authoring pipeline's review
-  hashes) are not carried.
+  `level`, and `grammar`, spelled as the old JSON spells them. `Card` keeps those names
+  except `ja` and `en`, which it calls `japanese` and `english` because SwiftLint's
+  `identifier_name` refuses a two-letter name, so the decoder maps those two keys and
+  reads the rest by default. The old `createdAt` and `stamps` (its authoring pipeline's
+  review hashes) are not carried.
 - **Retired ids.** `retired-ids.json` lists every card id the old repository retired —
   its 77 card tombstones, without the 10 vocabulary ones — each with its `replacedBy` id
   when it has one, and every id this repository retires from now on.
