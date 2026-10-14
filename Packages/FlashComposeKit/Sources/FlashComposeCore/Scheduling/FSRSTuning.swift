@@ -198,7 +198,9 @@ public struct FSRSTuning: Sendable, Equatable {
     /// The recall probability an interval aims for on its due day: 0.9 makes an interval
     /// equal to the card's stability.
     public let desiredRetention: Double
-    /// The longest interval: a card is seen at least once a year.
+    /// The longest interval each grade's own interval is capped to, before the grades are
+    /// spread at least a day apart. As in ts-fsrs, that spread can still put good one day
+    /// past the cap when hard sits on it: the golden vectors hold a 366-day good.
     public let maximumIntervalDays: Int
     /// The shortest interval: a card graded again today is due tomorrow at the earliest,
     /// and returns today only as a re-ask (requirements §3.3).
