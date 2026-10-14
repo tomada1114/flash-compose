@@ -627,8 +627,12 @@ model. `App/` chooses adapters and nothing else.
 `AppModel` (`Sources/FlashComposeCore/AppModel.swift`) is a `@MainActor @Observable final
 class` in Core that does the rest of the wiring:
 
-- **It holds the view models every scene shares** — today `todoList`, the one
-  `TodoListViewModel` every window shows — built once over the ports it was handed.
+- **It holds the view models every scene shares** — `todoList`, the one
+  `TodoListViewModel` every window shows; `scope`, the `ScopeViewModel` whose selection
+  the sheet edits; and `drill`, the `DrillViewModel` built over the `ProgressStore` port
+  and that same `scope` — built once over the ports it was handed. `App/` passes the
+  SwiftData progress store over the one container, or `UnavailableProgressStore` when the
+  container will not open, so the drill shows E1 rather than the app crashing.
 - **It has one `make…ViewModel(…)` factory per route whose screen needs a view model of
   its own** — today `makeTodoDetailViewModel(id:)`, which builds a
   `TodoDetailViewModel` over the shared list. A factory whose model needs a port builds
@@ -659,7 +663,7 @@ class` in Core that does the rest of the wiring:
 
 Shipped code logs through `AppLog` in Core — `os.Logger`, one subsystem (the bundle
 identifier, checked against `project.yml` by `AppLogTests`) and one category per concern
-(`todos`, `persistence`, `network`, `preferences`, `navigation`). `print`, `debugPrint`, and `NSLog` are
+(`todos`, `drill`, `persistence`, `network`, `preferences`, `navigation`). `print`, `debugPrint`, and `NSLog` are
 rejected under `Packages/*/Sources/` and `App/` by `.swiftlint.yml`'s
 `no_print_in_sources`: an app launched from the Home Screen has nowhere to send stdout. Anything user-derived is
 interpolated `.private`; identifiers, counts, and operation names are `.public`.
