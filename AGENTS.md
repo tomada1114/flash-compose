@@ -111,6 +111,7 @@ Run the narrowest check that can fail, then `just check` before you open a PR.
 | What you changed | The narrowest check that can fail |
 |---|---|
 | A Swift file under `Packages/FlashComposeKit/Sources/FlashComposeCore/` | `just test` |
+| A card file under `Packages/FlashComposeKit/Sources/FlashComposeCore/Resources/Catalog/` | `just test` (the catalog integrity suites); `just lint` (its `typos` spell-check) |
 | A test under `Packages/FlashComposeKit/Tests/` | `just test` |
 | An adapter under `Packages/FlashComposeKit/Sources/FlashComposePlatform/` | `just test` (its contract runs against the real framework on the host); `just build` if `App/` wires it |
 | A fake or a port contract under `Packages/FlashComposeKit/Tests/FlashComposeTestSupport/` | `just test` (the contract runs against both the fake and the adapter) |
@@ -264,6 +265,7 @@ into `.claude/skills/`, the only path Claude Code reads:
 | `designing-ui` | how a screen looks: HIG craft rules, `DesignTokens`, Liquid Glass with an iOS 27 floor, and the app's design lock in `docs/design-system.md`, researched with `/refero-design` |
 | `building-swiftui-screens` | a view in `FlashComposeUI`: a thin renderer over a `FlashComposeCore` `@Observable` view model, navigation, sheets and alerts, size classes, Dynamic Type, safe areas and the keyboard, touch targets, `#Preview` per state, accessibility identifiers and labels, and verifying a screen |
 | `updating-docs` | deciding whether a change owes a documentation update and which surface it lands on: `README.md`, `AGENTS.md`, `CHANGELOG.md`, `docs/architecture.md`, `docs/architecture/roadmap.md`, a skill, or a `///` comment |
+| `editing-cards` | a card in the bundled catalog: whether an edit keeps the card's id or mints a new one, minting an id, retiring one into `retired-ids.json` with `replacedBy`, deleting or adding a card in `cards/<topic>/<subtopic>.json`, and finding a card file that fails to load |
 | `localizing-the-app` | a string a person reads: the String Catalog `Localizable.xcstrings` in `FlashComposeCore`, `defaultLocalization`, Core returning `LocalizedStringResource` (`bundle: .module`), `Text(verbatim:)` in `FlashComposeUI`, keeping the catalog and `LocalizationTests` in step, `xcodebuild -exportLocalizations`, plurals, `InfoPlist.xcstrings`, and what adding a language involves |
 
 ### Rules

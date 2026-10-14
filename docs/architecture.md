@@ -110,8 +110,7 @@ with `Text(verbatim:)`.
   tags, non-empty `ja`, `en`, and `point`, at least one alternative, and an id that
   matches the format below, appears once, and is not retired.
 - **Editing.** Cards are edited in this repository only, by hand or by an agent, as JSON;
-  the integrity test is the gate, and the `editing-cards` skill holds the procedure
-  ([Follow-ups](#follow-ups)).
+  the integrity test is the gate, and the `editing-cards` skill holds the procedure.
 
 ### Card identity
 
@@ -255,10 +254,6 @@ Code work these decisions imply; each becomes an issue.
 - Remove the networking layer — `HTTPClient`, `APIClient` and their values,
   `URLSessionHTTPClient`, their fakes and contracts, the `network` log category, and
   [The HTTP client port](#the-http-client-port) below.
-- Import the catalog into `Resources/Catalog/`, with its decoder and integrity test, and
-  add its row to `AGENTS.md`'s "Validating a change".
-- Add the `editing-cards` skill: the identity rule above, minting an id, and retiring
-  one.
 - Port FSRS-6 with the golden-vector suite.
 - The practice day and today's queue: due reviews by lowest retrievability, new cards
   from the scope at random, re-asks.
