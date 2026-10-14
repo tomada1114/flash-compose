@@ -1,0 +1,781 @@
+[
+  {
+    "id": "c_2c4d2t5d",
+    "ja": "今は絶対に、再デプロイ禁止だ。",
+    "en": "Under no circumstances should we redeploy now.",
+    "alternatives": [
+      "On no account should we redeploy now.",
+      "We must not redeploy under any circumstances."
+    ],
+    "point": "否定の副詞句を文頭に出すと should we の倒置",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_2r2h5u4c",
+    "ja": "リリース、私が止めてればなあ。",
+    "en": "I wish I'd stopped that release.",
+    "alternatives": [
+      "If only I'd stopped that release.",
+      "I wish I'd held off on that release."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2u4a4n5z",
+    "ja": "止まったら私に知らせて。",
+    "en": "Tell me if it stops.",
+    "alternatives": ["Let me know if it stops.", "Alert me if it stops."],
+    "point": "これからの条件でも if 節は現在形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_2v9b4u3r",
+    "ja": "原因を、まだ追ってます。",
+    "en": "We're still tracking down the cause.",
+    "alternatives": [
+      "We're still hunting down the cause.",
+      "We're still trying to track down the cause."
+    ],
+    "point": "track down は「突き止める」。目的語は cause",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_3g9w8j7s",
+    "ja": "警報が鳴ってれば、気づけたのに。",
+    "en": "Had the alert fired, we'd have known.",
+    "alternatives": [
+      "If the alert had fired, we'd have known.",
+      "If the alert had gone off, we'd have known."
+    ],
+    "point": "過去の反実仮想は if + 過去完了、主節は would have",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_3j2v6u4j",
+    "ja": "証明書が期限切れだと判明した。",
+    "en": "It turned out the certificate had expired.",
+    "alternatives": [
+      "We found out the certificate had expired.",
+      "We discovered that the certificate had expired."
+    ],
+    "point": "turn out の後ろは that 節。先の出来事は過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_3n9v5t2u",
+    "ja": "何が動かない？",
+    "en": "What's not working?",
+    "alternatives": ["What isn't running?", "What's out of action?"],
+    "point": "what で動かないものを尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_3r3j5q8x",
+    "ja": "午前三時から、ずっと火消しです。",
+    "en": "We've been firefighting since 3 a.m.",
+    "alternatives": [
+      "We've been putting out fires since 3 a.m.",
+      "We've been working on the outage since 3 a.m."
+    ],
+    "point": "since + 起点で続く動作は have been -ing",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_3r4r6z7e",
+    "ja": "我々が退けた可能性は今は要注意だ。",
+    "en": "The possibility we dismissed now demands attention.",
+    "alternatives": [
+      "We can't ignore the possibility we dismissed anymore.",
+      "The possibility we rejected now demands our attention."
+    ],
+    "point": "we dismissed は我々の過去の判断、now は現在の要注意状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["relative-clauses", "tense-contrast"]
+  },
+  {
+    "id": "c_3s4f7h9d",
+    "ja": "何が起きたか、まだ不明です。",
+    "en": "We still don't know what happened.",
+    "alternatives": [
+      "We don't yet know what happened.",
+      "We're still unclear on what happened."
+    ],
+    "point": "know の後の what 節は平叙文の語順",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_4d4b2v7t",
+    "ja": "ロールバックを試して。",
+    "en": "Try a rollback.",
+    "alternatives": [
+      "Try rolling back.",
+      "Try rolling it back.",
+      "Please try a rollback."
+    ],
+    "point": "命令文は動詞から始める",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_4f3u4c5r",
+    "ja": "再起動して。",
+    "en": "Restart it.",
+    "alternatives": ["Please restart it.", "Reboot it."],
+    "point": "命令文は動詞で始める",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_4f7f4w2k",
+    "ja": "私たちは確認を終えた。",
+    "en": "We finished checking.",
+    "alternatives": ["We're done checking.", "We completed our checks."],
+    "point": "finish の後は checking の形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_4j4a5w7e",
+    "ja": "この障害の引き金は分かる？",
+    "en": "Any idea what triggered this outage?",
+    "alternatives": [
+      "Do you know what triggered this outage?",
+      "Any idea what caused this outage?"
+    ],
+    "point": "Any idea what で原因に心当たりがあるか尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_4j9z2s8d",
+    "ja": "チームに状況を伝えて。",
+    "en": "Update the team.",
+    "alternatives": ["Let the team know.", "Tell the team the status."],
+    "point": "update は人を目的語にできる",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_4p8a8d3k",
+    "ja": "障害は公開前に始まってた。",
+    "en": "The outage had started before release.",
+    "alternatives": [
+      "It had started before release.",
+      "The outage began before we released."
+    ],
+    "point": "「前から」の過去は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4r7v7v8f",
+    "ja": "設定変更が引き金だったかも。",
+    "en": "The config change may have triggered it.",
+    "alternatives": [
+      "It might have been the config change that triggered it.",
+      "Perhaps the config change triggered it."
+    ],
+    "point": "may have + 過去分詞で過去の可能性を柔らかく言う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["hedging-softening", "modal-perfect"]
+  },
+  {
+    "id": "c_4v2f9t3r",
+    "ja": "警報が壊れたら誰も気づかない。",
+    "en": "If alerts failed, nobody would know.",
+    "alternatives": [
+      "If the alerts broke, nobody would notice.",
+      "If alerts stopped working, nobody would know."
+    ],
+    "point": "仮定は if + 過去形、would + 原形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_4x4n8h8c",
+    "ja": "私が見てもいい？",
+    "en": "May I see it?",
+    "alternatives": ["Can I look at it?", "Could I check it?"],
+    "point": "May I で見る許可を求める。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4x4q9g9g",
+    "ja": "私はもう原因を特定した。",
+    "en": "I've already isolated the cause.",
+    "alternatives": [
+      "I've already identified the cause.",
+      "I've already tracked down the cause."
+    ],
+    "point": "isolate the cause は原因を他の要因から切り分ける。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_5b4c6n4y",
+    "ja": "私たちは運用担当に止めさせた。",
+    "en": "We had ops pull the plug.",
+    "alternatives": ["We got ops to shut it down.", "We had operations stop it."],
+    "point": "pull the plug は稼働中のものを停止させること。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5b8t8r9k",
+    "ja": "我々が早く気づけば今は後手でないのに。",
+    "en": "Had we noticed sooner, we wouldn't be playing catch-up.",
+    "alternatives": [
+      "If we'd noticed sooner, we wouldn't be behind now.",
+      "We wouldn't be playing catch-up had we noticed sooner."
+    ],
+    "point": "過去の発見と今の後手の状態を混合仮定法で結ぶ。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_5k3w9p2z",
+    "ja": "前より影響が小さいよ。",
+    "en": "The impact is smaller now.",
+    "alternatives": [
+      "The impact is lower than before.",
+      "The impact is less than before."
+    ],
+    "point": "比較は形容詞 + er",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5n4y4c5j",
+    "ja": "収まって見えても障害は未解決だ。",
+    "en": "Contained though it seems, this outage remains unresolved.",
+    "alternatives": [
+      "Although apparently contained, this outage still isn't resolved.",
+      "This outage remains unresolved despite seeming contained."
+    ],
+    "point": "contained は影響を抑えた状態で、解決済みとは限らない。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_5p6v5a6c",
+    "ja": "三時にアラートが鳴った。",
+    "en": "The alert fired at three.",
+    "alternatives": ["An alert went off at three.", "The alarm went off at three."],
+    "point": "アラートが鳴るは fire / go off",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_5r2v4u2p",
+    "ja": "落ちた原因は、設定変更でした。",
+    "en": "What took us down was a config change.",
+    "alternatives": [
+      "It was a config change that took us down.",
+      "A config change is what took us down."
+    ],
+    "point": "「原因は～」を強調するなら What ～ was の形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_5x8s8b4x",
+    "ja": "再発を恐れ我々は偽りの安心を疑った。",
+    "en": "Fearing recurrence, we questioned what passed for reassurance.",
+    "alternatives": [
+      "Fearing another occurrence, we challenged the supposedly reassuring statements.",
+      "We challenged what passed for reassurance, fearing another recurrence."
+    ],
+    "point": "pass for は本物でないのにそのものと見なされる含み。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["participle-clauses", "noun-clauses"]
+  },
+  {
+    "id": "c_6b6x7s5x",
+    "ja": "30分後にまた報告します。",
+    "en": "I'll update you in 30 minutes.",
+    "alternatives": [
+      "I'll post another update in 30 minutes.",
+      "I'll give you an update in 30 minutes."
+    ],
+    "point": "「〜後に」は in。after ではない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_6c5b7g4f",
+    "ja": "影響は東京ユーザーのみだった。",
+    "en": "Only users in Tokyo were affected.",
+    "alternatives": [
+      "Only Tokyo users were affected.",
+      "Only users in Tokyo were impacted."
+    ],
+    "point": "users in ~ と前置詞句で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_6g4j9m4r",
+    "ja": "落ちたのは中枢だと私たちは見ている。",
+    "en": "We suspect what crashed was the linchpin.",
+    "alternatives": [
+      "We think the core component crashed.",
+      "We suspect the central component failed."
+    ],
+    "point": "linchpin は全体を支える要の部分を指す。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_6m6n4w9q",
+    "ja": "我々のかつての油断が今災いになった。",
+    "en": "The complacency we displayed has come home to roost.",
+    "alternatives": [
+      "The complacency we showed has now brought unpleasant consequences.",
+      "Our earlier complacency has now brought bad consequences."
+    ],
+    "point": "come home to roost は過去の行いの悪い結果が戻る。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["relative-clauses", "phrasal-verbs"]
+  },
+  {
+    "id": "c_6p4s6j7a",
+    "ja": "先にロールバックすべき。",
+    "en": "We should roll back first.",
+    "alternatives": [
+      "I think we should roll back first.",
+      "We'd better roll back first."
+    ],
+    "point": "名詞は rollback、動詞は roll back と分ける",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"]
+  },
+  {
+    "id": "c_6t4f5r4q",
+    "ja": "原因を特定できなかった。",
+    "en": "We couldn't pinpoint the cause.",
+    "alternatives": [
+      "We weren't able to pinpoint the cause.",
+      "We couldn't identify the cause."
+    ],
+    "point": "pinpoint は原因を特定する定番語",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_6x9n2b3w",
+    "ja": "対象のユーザーには連絡済み。",
+    "en": "Affected users have been notified.",
+    "alternatives": [
+      "Affected users have already been notified.",
+      "We've notified the affected users."
+    ],
+    "point": "連絡済みは現在完了の受動 have been notified",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7a8b7x6g",
+    "ja": "問題はいつ始まった？",
+    "en": "When did it start?",
+    "alternatives": ["When did the problem begin?", "When did this problem start?"],
+    "point": "when と過去形で発生時刻を尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7c4h9n9c",
+    "ja": "私が閾値を早く見直してればなあ。",
+    "en": "I wish I'd revisited the thresholds sooner.",
+    "alternatives": [
+      "If only I'd reviewed the thresholds earlier.",
+      "I wish I had reviewed the thresholds sooner."
+    ],
+    "point": "wish + 過去完了。thresholds は複数形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7c5k2r5e",
+    "ja": "私は彼に確認を頼んだ。",
+    "en": "I asked him to check.",
+    "alternatives": ["I asked him to check it.", "I asked him to verify it."],
+    "point": "ask 人 to do で行動を頼む。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_7q2s3y3m",
+    "ja": "警告に従えば我々は余波を防げたのに。",
+    "en": "Had we heeded warnings, we'd have averted the fallout.",
+    "alternatives": [
+      "If we'd heeded warnings, we'd have prevented the fallout.",
+      "We'd have avoided the fallout had we heeded warnings."
+    ],
+    "point": "heed は警告を重く受け止めて従う。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_7q7m9q2z",
+    "ja": "エラー数が急増している。",
+    "en": "There's a spike in errors.",
+    "alternatives": ["There's been a spike in errors.", "Errors are spiking."],
+    "point": "急増は a spike in ~",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7v2j9y8h",
+    "ja": "サポートは直ったと言った。",
+    "en": "Support said it was fixed.",
+    "alternatives": [
+      "Support told us it was fixed.",
+      "Support said it had been fixed."
+    ],
+    "point": "said の後は時制を一つ過去側へ ずらす",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_7v4d9k9v",
+    "ja": "私は安全宣言には慎重でいたい。",
+    "en": "I'd be wary of declaring the coast clear.",
+    "alternatives": [
+      "I'd hesitate to announce we're in the clear.",
+      "I'd be cautious about saying the danger has passed."
+    ],
+    "point": "the coast is clear は危険が去ったという宣言。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7y8b9u3g",
+    "ja": "後で初めて我々は警告の重みを知った。",
+    "en": "Only in hindsight did we appreciate the warning.",
+    "alternatives": [
+      "We understood the warning's significance only in hindsight.",
+      "Only afterward did we grasp the warning's importance."
+    ],
+    "point": "only の句を先頭に出すと did が主語の前に来る。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_8a4x9e5w",
+    "ja": "我々は客に伝えなきゃ。",
+    "en": "We must tell customers.",
+    "alternatives": ["We have to tell customers.", "We need to tell customers."],
+    "point": "must で顧客への連絡が必要と伝える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_8g9c2a6e",
+    "ja": "原因を調べてるよ。",
+    "en": "I'm checking the cause.",
+    "alternatives": ["I'm investigating the cause.", "I'm looking into the cause."],
+    "point": "「調べる」は check。進行形で「今調べ中」",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8h9e4w5t",
+    "ja": "担当は見かけの復旧を一時しのぎと言った。",
+    "en": "Ops said the apparent recovery was a reprieve.",
+    "alternatives": [
+      "Ops said the seeming recovery was just temporary relief.",
+      "Ops said it only looked recovered for the moment."
+    ],
+    "point": "reprieve は問題が消えたのでなく一時的に逃れた状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_8j4z5g5u",
+    "ja": "客が困ってるよ。",
+    "en": "Customers are having trouble.",
+    "alternatives": [
+      "Customers are having problems.",
+      "Customers are struggling.",
+      "A customer is having trouble."
+    ],
+    "point": "複数名詞は冠詞なしで are",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["progressive-aspect", "articles-and-countability"]
+  },
+  {
+    "id": "c_8n8r5d6x",
+    "ja": "原因は設定ミスだったよ。",
+    "en": "It was a config error.",
+    "alternatives": ["The cause was a bad config.", "A config mistake caused it."],
+    "point": "過去の be は was",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["past-simple", "be-and-present-simple"]
+  },
+  {
+    "id": "c_8p2n5w7n",
+    "ja": "私たちは被害を抑えなきゃ。",
+    "en": "We need to contain the damage.",
+    "alternatives": ["We have to limit the damage.", "We must contain the damage."],
+    "point": "contain は被害が広がるのを抑える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_8q5q8s6u",
+    "ja": "パッチしてれば、今は落ちてない。",
+    "en": "If we'd patched, we'd be up now.",
+    "alternatives": [
+      "If we'd applied the patch, we'd be up now.",
+      "We wouldn't be down now if we'd patched it."
+    ],
+    "point": "過去の原因 + 今の結果は had done と would be",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_8q7q5q3d",
+    "ja": "これが効いた修正です。",
+    "en": "It's the fix that worked.",
+    "alternatives": ["It's the fix which worked.", "Here's the fix that worked."],
+    "point": "物を説明する関係代名詞は that",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_8y4w7b4e",
+    "ja": "昼からずっと止まってる。",
+    "en": "It's been down since noon.",
+    "alternatives": ["It has been down since noon.", "It's been offline since noon."],
+    "point": "since + 時点には現在完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_8y4z8v7y",
+    "ja": "今回のほうが深刻です。",
+    "en": "This one is worse.",
+    "alternatives": ["This outage is worse.", "This is worse than last time."],
+    "point": "bad の比較級は worse",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["comparatives-superlatives", "be-and-present-simple"]
+  },
+  {
+    "id": "c_9c3b7g3t",
+    "ja": "問題がある。",
+    "en": "There's a problem.",
+    "alternatives": ["Something is wrong.", "We've got a problem."],
+    "point": "there is で問題の存在を伝える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_9c7g3v4y",
+    "ja": "私が指揮するなら油断は許さないのに。",
+    "en": "Were I in charge, I'd tolerate no complacency.",
+    "alternatives": [
+      "If I led, I wouldn't tolerate any complacency.",
+      "I'd allow no complacency if I were in charge."
+    ],
+    "point": "tolerate no complacency は油断を一切容認しないことを表す。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_9d8h8n4w",
+    "ja": "我々の失敗は判断力を手順で代用した点だ。",
+    "en": "What failed us was substituting procedure for judgment.",
+    "alternatives": [
+      "It was substituting procedure for judgment that failed us.",
+      "We failed by substituting procedure for judgment."
+    ],
+    "point": "substitute A for B はBの代わりにAを使う。what の節で失敗の原因を強調する。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_9g5v8q6v",
+    "ja": "修正後もサーバーは延命状態だ。",
+    "en": "Though patched, the server's on borrowed time.",
+    "alternatives": [
+      "Even patched, the server's days are numbered.",
+      "Even patched, the server won't last long."
+    ],
+    "point": "on borrowed time はいつ終わってもおかしくない状態。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_9j7n3t6w",
+    "ja": "変更を戻したので、様子見です。",
+    "en": "Having rolled back the change, we're monitoring.",
+    "alternatives": [
+      "With the change rolled back, we're monitoring.",
+      "Since we rolled back the change, we're monitoring."
+    ],
+    "point": "Having + 過去分詞で「もう〜したので」を短く言う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_9t8n6t5f",
+    "ja": "一時しのぎで我々を油断させないで。",
+    "en": "Don't let a stopgap lull us into complacency.",
+    "alternatives": [
+      "Don't let a stopgap fix give us false confidence.",
+      "Don't allow a temporary fix to make us complacent."
+    ],
+    "point": "lull 人 into complacency は安心させて警戒心を失わせる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_9u5c5k9c",
+    "ja": "再起動していいですか？",
+    "en": "Can I restart it?",
+    "alternatives": ["May I restart it?", "Is it okay to restart it?"],
+    "point": "許可を求めるなら Can I / May I",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9u5m3q6a",
+    "ja": "私は直せるよ。",
+    "en": "I can fix it.",
+    "alternatives": ["I can repair it.", "I'm able to fix it."],
+    "point": "can の後は動詞の原形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  }
+]

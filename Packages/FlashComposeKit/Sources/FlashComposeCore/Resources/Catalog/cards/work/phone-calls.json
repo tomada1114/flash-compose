@@ -1,0 +1,537 @@
+[
+  {
+    "id": "c_2u9e5f2c",
+    "ja": "昼まで、彼は折り返さなかった。",
+    "en": "Not until noon did he call back.",
+    "alternatives": [
+      "He didn't call back until noon.",
+      "It wasn't until noon that he called back."
+    ],
+    "point": "Not until を前に出すと did + 主語 + 原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_2y3w4q8b",
+    "ja": "恐縮ですが、声が少し途切れています。",
+    "en": "I'm afraid you're breaking up a bit.",
+    "alternatives": [
+      "I'm afraid the line's breaking up a little.",
+      "Sorry, but you're breaking up a bit."
+    ],
+    "point": "I'm afraid と a bit で角を丸める。途切れる = break up",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_2z3p7q6u",
+    "ja": "君が早くかけてれば、彼は出たよ。",
+    "en": "If you'd called earlier, he'd have answered.",
+    "alternatives": [
+      "If you had called sooner, he'd have answered.",
+      "If you'd called sooner, he'd have picked up."
+    ],
+    "point": "過去の仮定は if + had 過去分詞, would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_2z4g4w9z",
+    "ja": "さっきまで、よく聞こえてたよ。",
+    "en": "You were coming through fine earlier.",
+    "alternatives": [
+      "I could hear you fine earlier.",
+      "Your audio was fine a minute ago."
+    ],
+    "point": "さっきまでは過去形、今との対比",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_3b2y3d6h",
+    "ja": "彼はすぐ折り返すと言ってた。",
+    "en": "He said he'd call right back.",
+    "alternatives": [
+      "He told me he'd call you back soon.",
+      "He said he would call you back shortly."
+    ],
+    "point": "said のあとは will が would になる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3d8e2e8h",
+    "ja": "彼、私の電話を無視したに違いない。",
+    "en": "He must have ignored my call.",
+    "alternatives": ["He must have screened my call.", "I'm sure he ignored my call."],
+    "point": "must have + 過去分詞で過去の強い推量",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_3g5g2g3p",
+    "ja": "あとで折り返します。",
+    "en": "I'll call you back later.",
+    "alternatives": ["I'll get back to you later.", "I'm going to call you back."],
+    "point": "折り返しは call back。目的語は間に入れる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_3h3x9h8u",
+    "ja": "私は彼にかけ直してほしい。",
+    "en": "I want him to call back.",
+    "alternatives": ["I'd like him to call back.", "I'd like a callback from him."],
+    "point": "want him to call back は彼に電話をかけ直してほしいという希望。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_3w2b4b9g",
+    "ja": "私は君を内線につなげられる。",
+    "en": "I can connect you to an extension.",
+    "alternatives": [
+      "I can transfer you to an extension.",
+      "I can put you through internally."
+    ],
+    "point": "extension は社内の内線番号や回線。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3w5n2w4v",
+    "ja": "受付にお客様がいます。",
+    "en": "There's a visitor at reception.",
+    "alternatives": ["There is a guest at reception.", "A visitor is at reception."],
+    "point": "いる は There's + 単数。a を忘れない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["there-is-are", "articles-and-countability"]
+  },
+  {
+    "id": "c_4g7a2b8u",
+    "ja": "雑音はあるが、だいたい聞き取れた。",
+    "en": "Despite the static, I caught most of it.",
+    "alternatives": [
+      "Even with the static, I caught most of it.",
+      "Although there was static, I caught most of it."
+    ],
+    "point": "Despite の後ろは名詞。節なら Although",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_4j3a7e5g",
+    "ja": "30分も保留のままです。",
+    "en": "I've been holding for 30 minutes.",
+    "alternatives": [
+      "I've been on hold for 30 minutes.",
+      "I've been on hold 30 minutes now."
+    ],
+    "point": "続いている動作は have been -ing",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_4k3d6x6e",
+    "ja": "君が電話してたら私は今手探りじゃない。",
+    "en": "Had you called, I wouldn't be flying blind.",
+    "alternatives": [
+      "If you'd called, I wouldn't be in the dark.",
+      "I'd have some clue now if you'd called."
+    ],
+    "point": "flying blind は必要な情報なしで手探りすること。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_4n3g5d6e",
+    "ja": "君は声を大きくすべき。",
+    "en": "You should speak louder.",
+    "alternatives": ["You ought to speak louder.", "You should raise your voice."],
+    "point": "louder は今より大きな声で。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_4q6y8h8b",
+    "ja": "詳しい者を呼びますね。",
+    "en": "I'll get someone who knows more.",
+    "alternatives": [
+      "Let me get someone who knows more.",
+      "I'll find someone who knows more."
+    ],
+    "point": "someone の後ろに who 節をつける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_4z2b6b2b",
+    "ja": "私は給与係とずっと電話が行き違う。",
+    "en": "I've been playing phone tag with payroll.",
+    "alternatives": [
+      "Payroll and I keep playing phone tag.",
+      "Payroll and I can't connect by phone."
+    ],
+    "point": "play phone tag は互いの折り返し電話が行き違うこと。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_4z6r8g3z",
+    "ja": "声が途切れて聞き取りにくいです。",
+    "en": "Breaking up, you're hard to follow.",
+    "alternatives": [
+      "You keep breaking up, so you're hard to follow.",
+      "Your voice is cutting out, so I can't follow.",
+      "You're breaking up, so I can't follow you."
+    ],
+    "point": "音声が途切れるは break up。分詞構文で理由を添える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5b8b6w9m",
+    "ja": "音声にラグがあります。",
+    "en": "There's a lag.",
+    "alternatives": ["There's a delay.", "There's audio lag.", "The audio is lagging."],
+    "point": "ラグは a lag。There's + 単数名詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_5d4p9p6c",
+    "ja": "今、担当者につながりました。",
+    "en": "I've just reached the right person.",
+    "alternatives": [
+      "I've just gotten through to the right person.",
+      "I've just been connected to the right person."
+    ],
+    "point": "今つながったところは現在完了 + just",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_6d2n4e2d",
+    "ja": "何度も途切れるのは、音声のほうです。",
+    "en": "It's the audio that keeps cutting out.",
+    "alternatives": [
+      "It's the audio that keeps dropping out.",
+      "The audio is what keeps cutting out."
+    ],
+    "point": "It's + 強調語 + that で「途切れるのは音声」を強調",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_6d6n3g9d",
+    "ja": "私は接続を確かめなきゃ。",
+    "en": "I need to check the connection.",
+    "alternatives": [
+      "I have to verify the connection.",
+      "I must check the connection."
+    ],
+    "point": "check the connection は通話の接続状態を確かめる。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_6k2c7g3h",
+    "ja": "恐縮ですが私にはお話が理解不能でした。",
+    "en": "I'm afraid what you said went over my head.",
+    "alternatives": [
+      "I'm afraid I couldn't understand what you said.",
+      "Sorry, what you said was beyond me."
+    ],
+    "point": "go over my head は難しくて理解できないこと。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_6q2c8g6q",
+    "ja": "さっきから声が途切れてるよ。",
+    "en": "You've been cutting out on me.",
+    "alternatives": ["You keep breaking up.", "Your audio keeps cutting out."],
+    "point": "声や音が途切れるは cut out / break up",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6r5h2a7g",
+    "ja": "電話した時、彼はもう帰っていた。",
+    "en": "He'd already left when I called.",
+    "alternatives": [
+      "He had already gone home when I called.",
+      "When I called, he'd already left."
+    ],
+    "point": "電話した時より前の出来事は過去完了",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_6t4z4z4t",
+    "ja": "もっとゆっくりお願い！",
+    "en": "Could you speak more slowly?",
+    "alternatives": ["Can you slow down a little?", "Please speak a bit slower."],
+    "point": "slowly の比較級は more slowly",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_6v8h4f5y",
+    "ja": "伝言、承ります。",
+    "en": "I'll take a message.",
+    "alternatives": ["Let me take a message.", "I can take a message."],
+    "point": "「伝言を預かる」は take a message",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6y3e3t8s",
+    "ja": "雑音が入ってます。",
+    "en": "There's some static.",
+    "alternatives": ["There's some noise.", "I'm hearing static."],
+    "point": "ある・入っている は There's。static は雑音",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"]
+  },
+  {
+    "id": "c_6y5a6a6g",
+    "ja": "今おつなぎしています。",
+    "en": "I'm connecting you now.",
+    "alternatives": ["I'm putting you through.", "I'm transferring your call."],
+    "point": "電話をつなぐは connect / put through",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_7j6g6x4b",
+    "ja": "もう一回言ってもらえる？",
+    "en": "Could you say that again?",
+    "alternatives": ["Could you repeat that?", "Can you say that again?"],
+    "point": "聞き返しの依頼は Could you〜？",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_7q6x4n2t",
+    "ja": "経理の者におつなぎします。",
+    "en": "I'll connect you to someone in accounting.",
+    "alternatives": [
+      "I'll put you through to someone in accounting.",
+      "Let me transfer you to someone in accounting."
+    ],
+    "point": "someone の後ろに in accounting を足して絞る",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_7u6u3d5z",
+    "ja": "お名前は何ですか？",
+    "en": "What's your name?",
+    "alternatives": ["Could I get your name?", "May I have your name?"],
+    "point": "電話で丁寧に聞くなら May I have〜？も使える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_8b8t4y8v",
+    "ja": "君の声が小さい。",
+    "en": "Your voice is quiet.",
+    "alternatives": ["Your voice is soft.", "You sound quiet."],
+    "point": "voice の状態を is で表す。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8h7h9v7u",
+    "ja": "通話は録音されています。",
+    "en": "This call is being recorded.",
+    "alternatives": ["This call is recorded.", "We're recording this call."],
+    "point": "「今〜されている」は be being＋過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_8p9h8d4n",
+    "ja": "戻ったら彼が電話します。",
+    "en": "He'll call when he's back.",
+    "alternatives": [
+      "He'll call you when he returns.",
+      "When he gets back, he'll call you."
+    ],
+    "point": "when 節は未来のことでも現在形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_8y9m8m9s",
+    "ja": "私が電話を切った。",
+    "en": "I ended the call.",
+    "alternatives": ["I hung up.", "I finished the call."],
+    "point": "ended で通話を終えた過去を表す。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_9e5w8d7q",
+    "ja": "回線が悪いと思います。",
+    "en": "I think the line's bad.",
+    "alternatives": [
+      "I think the connection is bad.",
+      "I think we have a bad connection."
+    ],
+    "point": "I think のあとの that 節は that を省ける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_9m3n8r8a",
+    "ja": "回線がもっと良ければいいのに。",
+    "en": "I wish the connection were better.",
+    "alternatives": [
+      "I wish we had a better connection.",
+      "If only the connection were better."
+    ],
+    "point": "今の願望は wish + 過去形、be は were",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_9p7a7p7k",
+    "ja": "彼から折り返し電話させます。",
+    "en": "I'll have him call you back.",
+    "alternatives": [
+      "I'll get him to call you back.",
+      "I'll make sure he calls you back."
+    ],
+    "point": "have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_9r2a6z2p",
+    "ja": "かけてきたのは田中でなく鈴木。",
+    "en": "It was Suzuki, not Tanaka, who called.",
+    "alternatives": [
+      "It was Suzuki who called, not Tanaka.",
+      "Suzuki called, not Tanaka."
+    ],
+    "point": "人が強調されるときは It was + 人 + who",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_9s4x7q6t",
+    "ja": "大きな声なら、聞き取れるのに。",
+    "en": "If you spoke louder, I could hear you.",
+    "alternatives": [
+      "If you spoke up, I could hear you.",
+      "I could hear you if you spoke louder."
+    ],
+    "point": "現在の仮定は if + 過去形, could + 原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_9s7q2y5d",
+    "ja": "ゆっくり話して。",
+    "en": "Please speak slowly.",
+    "alternatives": ["Speak slowly, please.", "Please slow down."],
+    "point": "命令文は動詞から始め、please で和らげる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_9z4p4h6u",
+    "ja": "お電話ですが、どなたですか？",
+    "en": "May I ask who's calling?",
+    "alternatives": ["Could you tell me who's calling?", "Can I ask who this is?"],
+    "point": "電話では Who are you? でなく who's calling",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  }
+]

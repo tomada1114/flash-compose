@@ -1,0 +1,648 @@
+[
+  {
+    "id": "c_2b7c9a6t",
+    "ja": "私はやっと風邪の峠を越えた。",
+    "en": "I've turned the corner with my cold.",
+    "alternatives": [
+      "My cold has finally started getting better.",
+      "I'm finally recovering from my cold."
+    ],
+    "point": "turn the corner は最悪の状態を越えて回復へ向かうこと。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2e3k7h6j",
+    "ja": "ちょっと熱がある気がします。",
+    "en": "I might have a fever.",
+    "alternatives": ["I think I have a slight fever.", "I might be running a fever."],
+    "point": "気がするは I think / may で言い切りを避ける",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_2g2m4p8b",
+    "ja": "ここが痛い。",
+    "en": "It hurts here.",
+    "alternatives": ["This spot hurts.", "I feel pain here."],
+    "point": "hurt は痛むという動詞。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_2m3d6d3d",
+    "ja": "昨日よりずっと体調がいい。",
+    "en": "I feel much better than yesterday.",
+    "alternatives": [
+      "I'm feeling a lot better than yesterday.",
+      "I feel way better than I did yesterday."
+    ],
+    "point": "better を強めるのは much / a lot。very は不可",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_2v3h3b4j",
+    "ja": "医者曰く、原因はストレスだ。",
+    "en": "The doctor says stress causes it.",
+    "alternatives": [
+      "The doctor says stress is behind it.",
+      "The doctor says it's caused by stress."
+    ],
+    "point": "「元は〜」は stress causes it や is behind it で言える",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_2z6p2q2h",
+    "ja": "私のは軽症だと、看護師が言った。",
+    "en": "The nurse said mine was mild.",
+    "alternatives": [
+      "The nurse told me mine wasn't serious.",
+      "The nurse said mine isn't serious."
+    ],
+    "point": "said の後ろの節は時制を過去にそろえる",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3b9a4e7z",
+    "ja": "頭が痛いんだ。",
+    "en": "I have a headache.",
+    "alternatives": ["My head hurts.", "I've got a headache."],
+    "point": "headache は数えられる名詞なので a",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3j8d7e8v",
+    "ja": "頭痛に効く薬はありますか？",
+    "en": "Do you have medicine for headaches?",
+    "alternatives": [
+      "Do you have anything for a headache?",
+      "Is there any medicine for headaches?"
+    ],
+    "point": "「〜に効く薬」は medicine for 〜",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3k5b8b8x",
+    "ja": "痛くてたまらないのは腰なんだ。",
+    "en": "It's my back that's killing me.",
+    "alternatives": ["My back is what's killing me.", "What's killing me is my back."],
+    "point": "It's ~ that で腰を強調。killing me は痛くてたまらない",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_3r8a6t9v",
+    "ja": "私は歩けるよ。",
+    "en": "I can walk.",
+    "alternatives": ["I'm able to walk.", "I'm capable of walking."],
+    "point": "can で歩ける能力を伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3u5e8j5b",
+    "ja": "彼女は私の発疹はうつらないと言う。",
+    "en": "She says my rash isn't contagious.",
+    "alternatives": [
+      "She told me my rash isn't contagious.",
+      "She says my rash isn't catching."
+    ],
+    "point": "She says の後ろは平叙の節。「うつる」は contagious",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_4c4t5t2v",
+    "ja": "腫れがいつまで続くか分かります？",
+    "en": "Any idea how long the swelling lasts?",
+    "alternatives": [
+      "Any idea how long the swelling will last?",
+      "Do you know how long the swelling lasts?"
+    ],
+    "point": "間接疑問は疑問詞のあとが平叙文の語順",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_4g8j2x4f",
+    "ja": "めまいがして、私は座り込んだ。",
+    "en": "Feeling dizzy, I sat down.",
+    "alternatives": [
+      "Because I felt dizzy, I sat down.",
+      "Since I felt dizzy, I sat down."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_4r4q6z9p",
+    "ja": "疲れてなければ私は運動するのに。",
+    "en": "Were I less run-down, I'd exercise.",
+    "alternatives": [
+      "If I weren't worn out, I'd exercise.",
+      "I'd work out if I weren't exhausted."
+    ],
+    "point": "Were I は If I were の if を省いた形。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_4t5e2b4s",
+    "ja": "スマホを見るのはやめたんだ。",
+    "en": "I've quit checking my phone.",
+    "alternatives": ["I stopped checking my phone.", "I gave up checking my phone."],
+    "point": "quit / stop の後は -ing",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_5n2q6n7h",
+    "ja": "私が前兆に対処してたら今は回復期なのに。",
+    "en": "Had I heeded warning signs, I'd be convalescing.",
+    "alternatives": [
+      "If I'd acted on the warning signs, I'd be recovering.",
+      "I'd be recuperating if I'd taken those signs seriously."
+    ],
+    "point": "過去の仮定から今の回復を表す、convalesce は病後回復する。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_5p9q8w9t",
+    "ja": "痛くなったら電話するよ。",
+    "en": "I'll call if it hurts.",
+    "alternatives": ["I'll phone you if it hurts.", "If it hurts, I'll call you."],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["future-forms", "time-and-if-clauses"]
+  },
+  {
+    "id": "c_5q8r7f6v",
+    "ja": "数週間ずっと肩がこってる。",
+    "en": "I've had stiff shoulders for weeks.",
+    "alternatives": [
+      "My shoulders have been stiff for weeks.",
+      "I've had tight shoulders for weeks."
+    ],
+    "point": "for + 期間の継続は現在完了",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_5t4x8u8p",
+    "ja": "食べたものが胃にもたれてる気がする。",
+    "en": "I think what I ate isn't sitting well.",
+    "alternatives": [
+      "I think what I ate disagrees with me.",
+      "I think something I ate disagrees with me."
+    ],
+    "point": "isn't sitting well は胃にもたれるの定番表現",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_5v7e6p5y",
+    "ja": "朝食を抜いて、めまいがした。",
+    "en": "Having skipped breakfast, I felt faint.",
+    "alternatives": [
+      "Since I'd skipped breakfast, I felt faint.",
+      "I felt faint because I'd skipped breakfast."
+    ],
+    "point": "先に起きたことは Having + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5x4y5k2b",
+    "ja": "病院で血圧を測ってもらったよ。",
+    "en": "I had my blood pressure taken.",
+    "alternatives": [
+      "I got my blood pressure checked.",
+      "I had my blood pressure checked."
+    ],
+    "point": "測ってもらうは have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_6a2m3d2s",
+    "ja": "近くに薬局があるよ。",
+    "en": "There's a pharmacy nearby.",
+    "alternatives": ["A pharmacy is nearby.", "There's a drugstore nearby."],
+    "point": "「〜がある」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6b6n7z4j",
+    "ja": "私、元気そうでも気力は底だ。",
+    "en": "Though outwardly chipper, I'm running on fumes.",
+    "alternatives": [
+      "I seem cheerful, though I'm completely spent.",
+      "Despite looking upbeat, I'm barely keeping going."
+    ],
+    "point": "chipper は快活な、run on fumes は気力が尽きかけた状態。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_6c7z4j5n",
+    "ja": "私、よく眠れた。",
+    "en": "I slept well.",
+    "alternatives": ["I had a good sleep.", "I slept soundly."],
+    "point": "slept は sleep の過去形。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6g5z7q7k",
+    "ja": "どこが痛みますか？",
+    "en": "Where does it hurt?",
+    "alternatives": ["Where is the pain?", "Where do you feel pain?"],
+    "point": "「痛む」は hurt。疑問詞＋ does it",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_6k4k5h6e",
+    "ja": "息子が咳き込んでる。",
+    "en": "My son is coughing.",
+    "alternatives": ["My son is coughing hard.", "My son keeps coughing."],
+    "point": "今起きていることは be + -ing",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6k6a6n4x",
+    "ja": "君は彼からうつされたに違いない。",
+    "en": "You must have caught it from him.",
+    "alternatives": [
+      "You must have picked it up from him.",
+      "You must have gotten it from him."
+    ],
+    "point": "過去への確信は must have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_6p5v5z6k",
+    "ja": "休んでれば、今ごろ回復してるのに。",
+    "en": "If I'd rested, I'd be better by now.",
+    "alternatives": [
+      "If I'd rested, I'd be on the mend now.",
+      "If I had rested, I'd be better by now."
+    ],
+    "point": "過去の if 節と今の結果：would be。better by now は「今ごろは回復」",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_6q4w4w3v",
+    "ja": "予約、明日に変えられますか？",
+    "en": "Can I reschedule for tomorrow?",
+    "alternatives": [
+      "Could I move my appointment to tomorrow?",
+      "Can I change it to tomorrow?"
+    ],
+    "point": "予約の変更は reschedule / move が定番",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_6q8m8b2c",
+    "ja": "休むように言われたよ。",
+    "en": "I was told to rest.",
+    "alternatives": ["They told me to rest.", "I was advised to rest."],
+    "point": "「言われた」は be told + to + 動詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_6r2c6r3w",
+    "ja": "医者に休養が必要だと言われた。",
+    "en": "The doctor said I needed rest.",
+    "alternatives": [
+      "The doctor told me I needed rest.",
+      "My doctor said I needed to rest."
+    ],
+    "point": "said の後は need も過去形に",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6r5r4v2g",
+    "ja": "この頭痛、早く治まってほしいな。",
+    "en": "I wish this headache would go away.",
+    "alternatives": [
+      "If only this headache would go away.",
+      "I wish this headache would just go away.",
+      "I hope this headache goes away soon."
+    ],
+    "point": "今への不満や願いは wish + would",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_6s3n4n4z",
+    "ja": "私の症状は一度も和らがなかった。",
+    "en": "Never once did my symptoms let up.",
+    "alternatives": ["My symptoms never eased up.", "My symptoms never subsided."],
+    "point": "let up は症状や強さが和らぐこと。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["inversion", "phrasal-verbs"]
+  },
+  {
+    "id": "c_6w2f3t3r",
+    "ja": "家に帰ったら休むよ。",
+    "en": "I'll rest once I'm home.",
+    "alternatives": ["I'll rest when I get home.", "When I get home, I'll rest."],
+    "point": "未来のことでも when / once 節は現在形",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_6z8h2v8y",
+    "ja": "薬局はもう閉まってた。",
+    "en": "The pharmacy had already closed.",
+    "alternatives": [
+      "The pharmacy was already closed.",
+      "The pharmacy had closed by then."
+    ],
+    "point": "過去のある時点より前は had ＋ 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_6z9h3q7j",
+    "ja": "私は忍耐と健康を混同してるかも。",
+    "en": "I may be conflating fortitude with wellness.",
+    "alternatives": [
+      "I might be confusing mental toughness with good health.",
+      "I may be mistaking endurance for being healthy."
+    ],
+    "point": "fortitude は苦痛に耐える強さ、健康そのものとは区別する。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7e4v4z2p",
+    "ja": "休んでたら、再発しなかったのに。",
+    "en": "If I'd rested, I wouldn't have relapsed.",
+    "alternatives": [
+      "If I'd taken it easy, I wouldn't have relapsed.",
+      "Had I rested, I wouldn't have relapsed."
+    ],
+    "point": "病気の「ぶり返す」は relapse",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_7f2p4k2t",
+    "ja": "今日は休んだほうがいいよ。",
+    "en": "You should rest today.",
+    "alternatives": ["You'd better rest today.", "You should take today off."],
+    "point": "アドバイスは should",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_7j5t8p8k",
+    "ja": "水をたくさん飲んで。",
+    "en": "Drink lots of water.",
+    "alternatives": ["Drink plenty of water.", "Drink a lot of water."],
+    "point": "water は数えられない。lots of を使う",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_7w8e7r6a",
+    "ja": "医者に診てもらうよ。",
+    "en": "I'll see a doctor.",
+    "alternatives": ["I'm going to see a doctor.", "I'll go see a doctor."],
+    "point": "「診てもらう」は see a doctor",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_7y7w5z7m",
+    "ja": "彼は私の症状は軽いと言った。",
+    "en": "He said my symptoms are mild.",
+    "alternatives": [
+      "He told me my symptoms were mild.",
+      "He said my condition is minor."
+    ],
+    "point": "said の後でも、今も本当なら現在形でよい",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_8a6k8z2a",
+    "ja": "昨日、熱が出たんだ。",
+    "en": "I had a fever yesterday.",
+    "alternatives": ["I got a fever yesterday.", "I ran a fever yesterday."],
+    "point": "熱が「ある・出る」は have / get a fever",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_8b3w9y3d",
+    "ja": "三日間ずっと咳が出てる。",
+    "en": "I've been coughing for three days.",
+    "alternatives": [
+      "I've had a cough for three days.",
+      "I've been coughing nonstop for three days."
+    ],
+    "point": "今も続く動作は have been ＋ -ing",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8f4n2e5g",
+    "ja": "私は水を飲む必要がある。",
+    "en": "I need to drink water.",
+    "alternatives": ["I have to drink water.", "I must drink some water."],
+    "point": "need to + 動詞で必要な行動を伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_8h8c8j4h",
+    "ja": "たっぷり寝たのに、ぐったりだ。",
+    "en": "Despite a full night's sleep, I'm wiped out.",
+    "alternatives": [
+      "Even though I slept well, I'm wiped out.",
+      "Although I slept well, I'm wiped out."
+    ],
+    "point": "Despite の後は名詞。「ぐったり」は wiped out",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8k7v9c7b",
+    "ja": "私の足が震えてる。",
+    "en": "My legs are shaking.",
+    "alternatives": ["My legs are trembling.", "My legs are shaky."],
+    "point": "are shaking で今震えていると伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8y2z9m6u",
+    "ja": "風邪をひきかけてるんだ。",
+    "en": "I'm coming down with a cold.",
+    "alternatives": ["I think I'm catching a cold.", "I feel a cold coming on."],
+    "point": "「かかりかけ」は come down with",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_8y4z2a4a",
+    "ja": "今日は具合が悪いんだ。",
+    "en": "I'm sick today.",
+    "alternatives": ["I'm not feeling well.", "I don't feel well today."],
+    "point": "「具合が悪い」は I'm sick",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_9d4k8y7k",
+    "ja": "水が必要です。",
+    "en": "I need water.",
+    "alternatives": ["I need some water.", "Water is what I need."],
+    "point": "water は数えないので a をつけない。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_9d7u6m2m",
+    "ja": "私は小康を回復と誤解したはず。",
+    "en": "I must've confused respite with recovery.",
+    "alternatives": [
+      "I must have mistaken temporary relief for recovery.",
+      "I must've taken a brief improvement for recovery."
+    ],
+    "point": "respite は一時の休息や軽快、recovery は回復。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_9r7g5z8q",
+    "ja": "もっと早く病院に行けばよかった。",
+    "en": "I wish I'd seen a doctor sooner.",
+    "alternatives": [
+      "If only I'd seen a doctor sooner.",
+      "I should have seen a doctor sooner."
+    ],
+    "point": "「医者にかかる」は see a doctor",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  }
+]

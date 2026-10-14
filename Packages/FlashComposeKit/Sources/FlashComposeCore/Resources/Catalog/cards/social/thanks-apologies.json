@@ -1,0 +1,772 @@
+[
+  {
+    "id": "c_2a6t7d7t",
+    "ja": "私の失言は寛大に見逃された。",
+    "en": "My slip was graciously overlooked.",
+    "alternatives": [
+      "You kindly let my slip pass.",
+      "My tactless remark was kindly excused."
+    ],
+    "point": "graciously は寛大に受け止めた好意を表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_2d2v5f5e",
+    "ja": "遅れてごめんね。",
+    "en": "Sorry I'm late.",
+    "alternatives": ["I'm sorry I'm late.", "Sorry for being late."],
+    "point": "謝るときは sorry で始めてよい",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_2d5f5h2x",
+    "ja": "もっと気遣えばよかったよ。",
+    "en": "I wish I'd been more considerate.",
+    "alternatives": [
+      "I wish I'd been more thoughtful.",
+      "I should have been more considerate.",
+      "If only I'd been more considerate."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2h7y9r4m",
+    "ja": "私が君なら、まだ怒ってるだろうな。",
+    "en": "In your shoes, I'd still be furious.",
+    "alternatives": [
+      "If I were you, I'd still be furious.",
+      "I'd still be angry if I were you."
+    ],
+    "point": "「私が君なら」は In your shoes / If I were you",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_2r8f3c8p",
+    "ja": "お礼に何を渡せるかな？",
+    "en": "What thank-you gift can I give?",
+    "alternatives": ["What gift could I give you?", "What could I offer as thanks?"],
+    "point": "what でお礼に渡せるものを尋ねる。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_2z2w7c5k",
+    "ja": "思ってた以上に助かったよ。",
+    "en": "That helped more than I expected.",
+    "alternatives": [
+      "It helped more than I expected.",
+      "That was more helpful than I expected."
+    ],
+    "point": "than の後ろは I expected。過去形で言う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_3a4m4z5b",
+    "ja": "次は遅刻しません。",
+    "en": "I won't be late again.",
+    "alternatives": ["I'll be on time next time.", "I won't be late next time."],
+    "point": "約束は will not(won't)",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_3b2b6d6u",
+    "ja": "ごめん、今遅れてるよ。",
+    "en": "Sorry, I'm running late.",
+    "alternatives": ["I'm running late, sorry.", "Sorry, I'm running behind."],
+    "point": "「遅れてる」は be running late",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_3b2p3d9j",
+    "ja": "君の手間を甘く見てた、ごめん。",
+    "en": "Sorry, I'd underestimated your efforts.",
+    "alternatives": [
+      "Sorry, I'd taken your efforts too lightly.",
+      "I'm sorry I'd undervalued your efforts."
+    ],
+    "point": "underestimate は手間や努力を少なく見積もること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_3c5k4w3a",
+    "ja": "お待たせしてすみません。",
+    "en": "Sorry to keep you waiting.",
+    "alternatives": [
+      "I'm sorry to keep you waiting.",
+      "I apologize for keeping you waiting."
+    ],
+    "point": "謝る理由は sorry to + 動詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3j5x2t6z",
+    "ja": "お礼のカードがある。",
+    "en": "There's a thank-you card.",
+    "alternatives": ["I have a thank-you card.", "A thank-you card is here."],
+    "point": "thank-you card は感謝を伝えるカード。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_3j8m3g6r",
+    "ja": "助けてくれてなきゃ、今困ってる。",
+    "en": "If you hadn't helped, I'd be lost.",
+    "alternatives": [
+      "I'd be lost now if you hadn't helped.",
+      "If you hadn't helped then, I'd be stuck now."
+    ],
+    "point": "過去の条件と今の結果は had + 過去分詞、would + 原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3m9g5u4r",
+    "ja": "私が感謝するのは君の口の堅さだ。",
+    "en": "It's your discretion that I appreciate.",
+    "alternatives": [
+      "What I appreciate is your discretion.",
+      "It's your confidentiality that I appreciate."
+    ],
+    "point": "discretion は秘密を漏らさない配慮も表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_3u9m7j6e",
+    "ja": "貸してくれた傘、ありがとう。",
+    "en": "Thanks for the umbrella you lent me.",
+    "alternatives": [
+      "Thanks for lending me your umbrella.",
+      "I appreciate the umbrella you lent me."
+    ],
+    "point": "the umbrella (that) you lent me と後ろから説明",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_3w6h5q2c",
+    "ja": "君の助けを受けるよ。",
+    "en": "I'll accept your help.",
+    "alternatives": ["I'll let you help me.", "I'll welcome your help."],
+    "point": "accept は差し出された助けを受け入れること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_4c3w4q5x",
+    "ja": "ささやかなお礼です。",
+    "en": "It's a small thank-you.",
+    "alternatives": ["Here's a little thank-you.", "Just a small thank-you."],
+    "point": "「お礼」は a thank-you と名詞にできる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_4k7t2t6a",
+    "ja": "気にしないでね。",
+    "en": "Don't worry about it.",
+    "alternatives": ["Don't worry.", "No worries."],
+    "point": "否定の命令文は Don't + 動詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_4m7j5a7t",
+    "ja": "君がいなければ、発表は大失敗だった。",
+    "en": "Without you, the presentation would've been a disaster.",
+    "alternatives": [
+      "Without you, I'd have bombed the presentation.",
+      "I'd have bombed the presentation without you."
+    ],
+    "point": "Without ~ は if 節の代わりにもなる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_4u4r9t6f",
+    "ja": "何かお返しできる？",
+    "en": "Can I repay you?",
+    "alternatives": ["Can I return the favor?", "Can I do something in return?"],
+    "point": "「お返しする」は repay や return the favor",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4v7s3k9q",
+    "ja": "君には本当に窮地を救ってもらったよ。",
+    "en": "You really bailed me out of a jam.",
+    "alternatives": ["You really bailed me out.", "You really got me out of a jam."],
+    "point": "bail out は窮地から救い出す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_4z8h6g7c",
+    "ja": "忙しいのに来てくれてどうも。",
+    "en": "Thanks for coming despite being busy.",
+    "alternatives": [
+      "Thanks for coming, even though you're busy.",
+      "Thank you for coming despite your busy schedule."
+    ],
+    "point": "despite の後ろは -ing か名詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_5b3c6x7u",
+    "ja": "ずっとお礼を言いたかった。",
+    "en": "I've been wanting to thank you.",
+    "alternatives": [
+      "I've always wanted to thank you.",
+      "I've been wanting to say thank you."
+    ],
+    "point": "続いている願望は have been wanting",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5c2p3f4a",
+    "ja": "私からお詫びしてもいい？",
+    "en": "May I offer an apology?",
+    "alternatives": ["Can I offer an apology?", "May I apologize?"],
+    "point": "offer an apology で丁寧にお詫びを申し出る。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_5d4a7b7k",
+    "ja": "夕飯おごってもいい？",
+    "en": "Can I buy you dinner?",
+    "alternatives": ["May I buy you dinner?", "Can I treat you to dinner?"],
+    "point": "「おごる」は buy 人 物 か treat",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_5f9b5u9p",
+    "ja": "君を当然の存在とは決して思わない。",
+    "en": "Never will I take you for granted.",
+    "alternatives": [
+      "I'll never take you for granted.",
+      "I'll always appreciate having you around."
+    ],
+    "point": "take you for granted は君のありがたみを忘れること。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_5g7k8r7x",
+    "ja": "ちゃんとお礼、言ってなかったよね。",
+    "en": "I never thanked you properly, did I?",
+    "alternatives": [
+      "I never did thank you properly, did I?",
+      "I don't think I ever thanked you properly."
+    ],
+    "point": "never + 過去形で「一度もしなかった」。否定文の付加疑問は did I?",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_5j9x2e7x",
+    "ja": "君は親切だね。",
+    "en": "You're kind.",
+    "alternatives": ["You're so kind.", "You're very nice."],
+    "point": "kind は相手の親切さを褒める。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5q2d9a9c",
+    "ja": "電話してれば、待たせなかった。",
+    "en": "If I'd called, you wouldn't have waited.",
+    "alternatives": [
+      "I wouldn't have kept you waiting if I'd called.",
+      "If I'd called, you wouldn't have had to wait."
+    ],
+    "point": "過去の仮定は had + 過去分詞、wouldn't have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_5v4f6k6g",
+    "ja": "ここにミスがあるよ。",
+    "en": "There's a mistake here.",
+    "alternatives": ["There's an error here.", "I see a mistake here."],
+    "point": "「ミス」は a mistake。a を忘れない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_5w3k2y9q",
+    "ja": "どれだけ嬉しいか言葉にできない。",
+    "en": "I can't express how happy I am.",
+    "alternatives": ["I can't tell you how happy I am.", "I can't say how glad I am."],
+    "point": "how happy の後ろは平叙文の語順（I am）",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_5x6v7a3t",
+    "ja": "お礼の品をもう選びました。",
+    "en": "I've picked a thank-you gift.",
+    "alternatives": [
+      "I've chosen a thank-you gift.",
+      "I've selected a thank-you gift."
+    ],
+    "point": "thank-you を名詞の前に置いてお礼用と伝える。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_5z8k3p6x",
+    "ja": "こまめに連絡すべきでした。",
+    "en": "I should have kept you posted.",
+    "alternatives": [
+      "I should have updated you more often.",
+      "I should have kept you in the loop."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_6d3w2n5z",
+    "ja": "一晩泊めてくれてありがとう。",
+    "en": "Thanks for letting me stay overnight.",
+    "alternatives": [
+      "Thank you for putting me up.",
+      "Thanks for letting me stay the night."
+    ],
+    "point": "「泊めてくれて」は letting me stay",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["causatives", "gerunds"]
+  },
+  {
+    "id": "c_6g8c7q3q",
+    "ja": "気づかず君の善意を利用し続けてる。",
+    "en": "I've unknowingly been trading on your goodwill.",
+    "alternatives": [
+      "I've been unknowingly taking advantage of your goodwill.",
+      "I've been unwittingly exploiting your generosity."
+    ],
+    "point": "trade on は相手の善意などを自分の利益に使う。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_6m8t3w6m",
+    "ja": "彼は私の判断ミスを見逃すと言った。",
+    "en": "He said he'd overlook my misjudgment.",
+    "alternatives": [
+      "He said he'd forgive my misjudgment.",
+      "He said he'd excuse my error in judgment."
+    ],
+    "point": "misjudgment は判断を誤ったことを指す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6w9e3s7g",
+    "ja": "君が犠牲にしたことを私は詫びる。",
+    "en": "I'm sorry for what you gave up.",
+    "alternatives": [
+      "I apologize for what you sacrificed.",
+      "I'm sorry about the sacrifices you made."
+    ],
+    "point": "what you gave up は相手が犠牲にしたことを表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["noun-clauses", "phrasal-verbs"]
+  },
+  {
+    "id": "c_6y7z3w6x",
+    "ja": "君のしてくれたことが、沁みたよ。",
+    "en": "What you did really touched me.",
+    "alternatives": [
+      "I was really touched by what you did.",
+      "What you did meant a lot to me."
+    ],
+    "point": "What you did が主語になる名詞節",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_6z8d2f6w",
+    "ja": "彼女に謝ったほうがいいな。",
+    "en": "I should apologize to her.",
+    "alternatives": ["I'd better apologize to her.", "I ought to apologize to her."],
+    "point": "「〜に謝る」は apologize to",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_6z9q2d7r",
+    "ja": "私が埋め合わせできれば喜んでするのに。",
+    "en": "Were I able, I'd gladly make amends.",
+    "alternatives": [
+      "If I could, I'd gladly make amends.",
+      "I'd gladly make amends if I were able."
+    ],
+    "point": "Were I able は自分が埋め合わせできるという仮定を倒置で表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_7c8t6w4t",
+    "ja": "アドバイスありがとう。",
+    "en": "Thanks for the advice.",
+    "alternatives": ["Thank you for the advice.", "I appreciate the advice."],
+    "point": "advice は数えられない名詞。a は付けない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_7n4q8p7u",
+    "ja": "頭が冷えたら私は謝るよ。",
+    "en": "I'll apologize once I cool off.",
+    "alternatives": [
+      "Once I'm calm, I'll apologize.",
+      "I'll apologize after cooling off."
+    ],
+    "point": "cool off は怒りが静まる、once 節は現在形。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"]
+  },
+  {
+    "id": "c_7r9e5e5g",
+    "ja": "お気遣いに感動しました。",
+    "en": "I was touched by your kindness.",
+    "alternatives": [
+      "Your kindness really touched me.",
+      "I was moved by your thoughtfulness."
+    ],
+    "point": "感動したは be touched(受け身)",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7u4v2b4f",
+    "ja": "君の厚意にどう報いるか分からない。",
+    "en": "I don't know how to reciprocate your generosity.",
+    "alternatives": [
+      "I'm unsure how I can repay your kindness.",
+      "I don't know how to repay your kindness."
+    ],
+    "point": "reciprocate は受けた厚意に応える。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_7w7g3z2x",
+    "ja": "君が見逃してくれて感謝してる。",
+    "en": "I'm grateful you looked the other way.",
+    "alternatives": [
+      "I appreciate that you chose to overlook it.",
+      "Thank you for letting it slide."
+    ],
+    "point": "look the other way はあえて見逃すこと。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_7y4a5r6d",
+    "ja": "調整してくれてありがとう。",
+    "en": "Thanks for ironing things out.",
+    "alternatives": [
+      "Thanks for sorting things out.",
+      "Thank you for resolving things."
+    ],
+    "point": "iron out は問題や行き違いを解決する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"]
+  },
+  {
+    "id": "c_7y6e2m5j",
+    "ja": "君が重大さを察してくれて私は感謝する。",
+    "en": "I'm grateful you knew what was at stake.",
+    "alternatives": [
+      "I'm grateful you grasped what was at stake.",
+      "Thank you for understanding what was at stake."
+    ],
+    "point": "at stake は結果次第で失われかねないものを表す。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_7z7s3z2n",
+    "ja": "私が弁償するよ。",
+    "en": "I'll pay for it.",
+    "alternatives": [
+      "I'll cover the cost.",
+      "I'm going to reimburse you.",
+      "I'll pay for the damage."
+    ],
+    "point": "pay for で壊したものなどの代金を負担する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8a6x3y2t",
+    "ja": "ちょっと出しゃばりすぎたかも。",
+    "en": "I may have overstepped a little.",
+    "alternatives": [
+      "I might have overstepped a bit.",
+      "I think I overstepped a little."
+    ],
+    "point": "may have + 過去分詞で断定を避ける",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["hedging-softening", "modal-perfect"]
+  },
+  {
+    "id": "c_8g6z2k8x",
+    "ja": "昨日は本当に助かったよ。",
+    "en": "You really helped me yesterday.",
+    "alternatives": [
+      "Thanks for helping me yesterday.",
+      "You were a big help yesterday."
+    ],
+    "point": "help の過去形は helped",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_8n9z2q4y",
+    "ja": "私が埋め合わせすべきです。",
+    "en": "I should make amends.",
+    "alternatives": ["I ought to make amends.", "I should make things right."],
+    "point": "make amends は過ちの埋め合わせをする。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_8s2u8v8r",
+    "ja": "彼女は一生恩に着ると言った。",
+    "en": "She said she'd be forever in my debt.",
+    "alternatives": [
+      "She told me she'd be forever in my debt.",
+      "She said she owed me big time."
+    ],
+    "point": "恩に着るは in one's debt。時制は said に合わせる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_8s8b2b7a",
+    "ja": "私への控えめな配慮に感謝します。",
+    "en": "I appreciate your discreet thoughtfulness.",
+    "alternatives": [
+      "I'm grateful for your discreet care.",
+      "Thank you for your unobtrusive thoughtfulness."
+    ],
+    "point": "discreet thoughtfulness は控えめな配慮。thoughtfulness は数えない。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_8x3a8t8e",
+    "ja": "君のような優しさは忘れないよ。",
+    "en": "I'll never forget kindness like yours.",
+    "alternatives": [
+      "I won't forget kindness like yours.",
+      "Kindness like yours won't be forgotten."
+    ],
+    "point": "like yours が kindness を後ろから修飾する",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_8y2c2w6h",
+    "ja": "新人なので、助かります。",
+    "en": "Being new, I appreciate the help.",
+    "alternatives": [
+      "As a newcomer, I appreciate your help.",
+      "Since I'm new, your help means a lot."
+    ],
+    "point": "Being ~ は「~なので」の分詞構文",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_9f5x2g6x",
+    "ja": "寝坊して、遅れてすみません。",
+    "en": "Sorry I'm late, having overslept.",
+    "alternatives": [
+      "Sorry for being late, having overslept.",
+      "I'm sorry to be late, having overslept.",
+      "Sorry I'm late because I overslept."
+    ],
+    "point": "先に起きたことは having + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_9h8y8b2r",
+    "ja": "救われたのは、君の辛抱強さだよ。",
+    "en": "It was your patience that saved me.",
+    "alternatives": [
+      "Your patience is what saved me.",
+      "What saved me was your patience."
+    ],
+    "point": "It was ~ that で感謝の中心を強調",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_9k6h7s6x",
+    "ja": "許してくれる？",
+    "en": "Can you forgive me?",
+    "alternatives": ["Will you forgive me?", "Could you forgive me?"],
+    "point": "許しを頼むときは Can you で始める",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_9k9v5d3k",
+    "ja": "誘ってくれてありがとう。",
+    "en": "Thanks for asking me to join.",
+    "alternatives": ["Thanks for inviting me along.", "Thank you for inviting me."],
+    "point": "ask 人 to do で参加するよう誘う。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "gerunds"]
+  },
+  {
+    "id": "c_9s4h8n6e",
+    "ja": "そこまで大変とは知らなかった。",
+    "en": "I hadn't realized it was that tough.",
+    "alternatives": [
+      "I didn't know it was that hard.",
+      "I had no idea it was that hard.",
+      "I hadn't realized how hard it was."
+    ],
+    "point": "知った時より前のことは過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["past-perfect"]
+  }
+]

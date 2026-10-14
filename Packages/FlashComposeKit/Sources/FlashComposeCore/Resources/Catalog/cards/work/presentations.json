@@ -1,0 +1,526 @@
+[
+  {
+    "id": "c_2j4f5f4h",
+    "ja": "練習してたら、乗り切れたのに。",
+    "en": "If I'd practiced, I'd have coped.",
+    "alternatives": [
+      "I'd have coped if I'd practiced.",
+      "If I'd practiced, I'd have gotten through it."
+    ],
+    "point": "過去の仮定は had + 過去分詞 と would have",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_2k8t7r5c",
+    "ja": "大事なのは価格ではなく速さです。",
+    "en": "It's speed, not price, that matters most.",
+    "alternatives": [
+      "It's speed rather than price that matters most.",
+      "What matters most is speed, not price."
+    ],
+    "point": "It's + 強調語 + that で強調したい語を挟む",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_2p3c9j9e",
+    "ja": "売上は昨年から伸びています。",
+    "en": "Sales have grown since last year.",
+    "alternatives": [
+      "Sales have been rising since last year.",
+      "Sales have increased since last year."
+    ],
+    "point": "since と現在完了、過去の一点なら過去形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2t8p6d6x",
+    "ja": "拡大したら私たちの利幅は薄まる。",
+    "en": "If we expanded, our margins would shrink.",
+    "alternatives": [
+      "Our margins would shrink if we expanded.",
+      "If we grew, our margins would narrow."
+    ],
+    "point": "margins は金額そのものではなく利幅。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_2w2d2x4h",
+    "ja": "これは何の図ですか？",
+    "en": "What is this chart?",
+    "alternatives": ["What does this chart show?", "What's this chart about?"],
+    "point": "疑問詞 what を文頭に。「図」は chart",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_3b4w9c4z",
+    "ja": "動画を流して。",
+    "en": "Start the video.",
+    "alternatives": ["Play the video.", "Put the video on."],
+    "point": "start は動画の再生を始める。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3b7d2n8s",
+    "ja": "私、結論を飛ばした。",
+    "en": "I skipped the conclusion.",
+    "alternatives": ["I left out the conclusion.", "I missed out the conclusion."],
+    "point": "skip は扱わずに飛ばす。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_3d8e3y6h",
+    "ja": "詳細は後で共有されます。",
+    "en": "Details will be shared later.",
+    "alternatives": ["We'll share the details later.", "You'll get the details later."],
+    "point": "未来の受け身は will be + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_3k4w7x8y",
+    "ja": "あの時投資してれば、今ごろ首位だよ。",
+    "en": "If we'd invested then, we'd be leading now.",
+    "alternatives": [
+      "If we had invested then, we'd be on top now.",
+      "Had we invested then, we'd be leading now."
+    ],
+    "point": "過去の仮定 + 今の結果は if + had 過去分詞, would + 原形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3r6q7j6d",
+    "ja": "この数字が何を隠すか分かりますか？",
+    "en": "Can you see what these figures obscure?",
+    "alternatives": [
+      "Can you tell what these figures hide?",
+      "Do you see what these numbers conceal?"
+    ],
+    "point": "obscure は大事なことを見えにくくすること。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3x2k2s9c",
+    "ja": "このグラフ見てください。",
+    "en": "Please look at this graph.",
+    "alternatives": ["Take a look at this graph.", "Have a look at this graph."],
+    "point": "「見る」は look at＋対象",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3x2p9y9m",
+    "ja": "これが当社製品です。",
+    "en": "This is our product.",
+    "alternatives": ["Here is our product.", "This is what we make."],
+    "point": "「弊社の」は our。this で手元のものを示す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_3y8z5y7p",
+    "ja": "上のグラフをご覧ください。",
+    "en": "Please see the chart above.",
+    "alternatives": [
+      "Please look at the graph above.",
+      "Please refer to the chart above.",
+      "Please see the graph above."
+    ],
+    "point": "「上の」は名詞のあとに above を置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_4f5g4b5k",
+    "ja": "この見積もりは、やや楽観的かも。",
+    "en": "That estimate might be a touch optimistic.",
+    "alternatives": [
+      "That estimate may be slightly optimistic.",
+      "That estimate could be a bit optimistic."
+    ],
+    "point": "a touch + 形容詞で言い切りを避ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4n2h3t7s",
+    "ja": "よく見ると、傾向が分かります。",
+    "en": "Looking closely, you'll see a trend.",
+    "alternatives": [
+      "If you look closely, you'll see a trend.",
+      "Look closely and you'll see a trend."
+    ],
+    "point": "「〜すると」は Looking closely の分詞構文",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_4t6g6a3u",
+    "ja": "終わったら質問を受けます。",
+    "en": "I'll field questions when I finish.",
+    "alternatives": [
+      "Once I'm done, I'll take questions.",
+      "I'll take questions after I've finished."
+    ],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_4y6m5j6k",
+    "ja": "ご清聴に感謝します。",
+    "en": "Thank you for listening.",
+    "alternatives": ["Thanks for listening.", "Thank you for your attention."],
+    "point": "for のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_4y6p9k2j",
+    "ja": "先に進んでもいい？",
+    "en": "Can I move on?",
+    "alternatives": ["May I move on?", "Is it okay to move on?"],
+    "point": "move on で「先へ進む」。許可は Can I / May I",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4y9c9p3g",
+    "ja": "それまでに試作品は仕上げてた。",
+    "en": "By then, we'd finished the prototype.",
+    "alternatives": [
+      "By then, we had completed the prototype.",
+      "We had already finished the prototype by then."
+    ],
+    "point": "「その時までに完了」は過去完了",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_5p2j6s9x",
+    "ja": "詳細を掘り下げる時間はないです。",
+    "en": "There's no time to delve into details.",
+    "alternatives": [
+      "We don't have time to go into detail.",
+      "We don't have time to dig into the details."
+    ],
+    "point": "「〜する時間」は time to do。「掘り下げる」は delve into",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5r9h2z9k",
+    "ja": "まず要点をざっと確認させてください。",
+    "en": "Let me run through the key points first.",
+    "alternatives": [
+      "Let me quickly go over the key points first.",
+      "Let me walk you through the key points first."
+    ],
+    "point": "run through は「ざっと確認する」の句動詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_5w9v7g8t",
+    "ja": "データ一点では、何も証明できません。",
+    "en": "A single data point proves nothing.",
+    "alternatives": [
+      "One data point proves nothing.",
+      "One data point can't prove anything."
+    ],
+    "point": "data point は数えられる名詞なので a が要る",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 10,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6k4u5g2g",
+    "ja": "同僚に資料を見てもらった。",
+    "en": "I had a coworker check my slides.",
+    "alternatives": [
+      "A coworker checked my slides for me.",
+      "I had a coworker check the slides."
+    ],
+    "point": "have＋人＋原形で「〜してもらう」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_6k9t7j8j",
+    "ja": "私が実演します。",
+    "en": "I'll demonstrate it.",
+    "alternatives": ["I'm going to demonstrate it.", "I'll show how it works."],
+    "point": "demonstrate は実際に動かして見せる。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_6n7p4r7g",
+    "ja": "君は図を省くべきだよ。",
+    "en": "You should omit diagrams.",
+    "alternatives": ["You should leave out diagrams.", "You should skip the diagrams."],
+    "point": "should は助言を表す。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_7b2y3n4k",
+    "ja": "部長に、発表を頼まれました。",
+    "en": "My director asked me to present.",
+    "alternatives": [
+      "I was asked by the director to present.",
+      "The director asked me to give the presentation."
+    ],
+    "point": "ask + 人 + to do",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_7b5d8k8z",
+    "ja": "背景の説明から始めます。",
+    "en": "I'll start by explaining the background.",
+    "alternatives": [
+      "Let me start by explaining the background.",
+      "I'll start with the background."
+    ],
+    "point": "by のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_7f4m2h2g",
+    "ja": "利点は二つあります。",
+    "en": "There are two advantages to this.",
+    "alternatives": ["This has two advantages.", "This plan has two benefits."],
+    "point": "利点が二つなので There are",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7j6e6p2p",
+    "ja": "これは写真です。",
+    "en": "This is a photo.",
+    "alternatives": ["It's a photo.", "This is a photograph."],
+    "point": "a photo は一枚の写真。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_7r2t8y5j",
+    "ja": "私は写真を見せられる。",
+    "en": "I can show photos.",
+    "alternatives": ["I can display pictures.", "I can present photographs."],
+    "point": "can は写真を見せられることを表す。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_7r6q7y7v",
+    "ja": "後で初めてリスクに気づいた。",
+    "en": "Only later did I notice the risk.",
+    "alternatives": [
+      "It was only later that I noticed the risk.",
+      "I didn't notice the risk until later."
+    ],
+    "point": "Only later を前に出すと did + 主語 + 原形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_7t6z2q3j",
+    "ja": "十分間の発表です。",
+    "en": "It's a ten-minute talk.",
+    "alternatives": ["The talk is ten minutes long.", "This talk takes ten minutes."],
+    "point": "ten-minute は単数形でハイフンでつなぐ",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_7y4m8k8m",
+    "ja": "ご質問のあった点を説明します。",
+    "en": "I'll explain the point you raised.",
+    "alternatives": [
+      "I'll go over the point you asked about.",
+      "I'll explain what you asked about."
+    ],
+    "point": "関係詞 that は目的語なら省ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_8c9a5q7r",
+    "ja": "今、資料を配ってます。",
+    "en": "I'm handing out copies.",
+    "alternatives": ["I'm passing out handouts.", "I'm handing out the materials."],
+    "point": "hand out は「配る」。今の動作は進行形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8f7p2e2u",
+    "ja": "大事なのは、拡張できることです。",
+    "en": "What matters is that it scales.",
+    "alternatives": [
+      "What's important is that it can scale.",
+      "The key point is that it scales."
+    ],
+    "point": "What matters is that 節で「大事なのは〜」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_8h4k8a6n",
+    "ja": "最近これを調べています。",
+    "en": "I've been studying this lately.",
+    "alternatives": [
+      "I've been looking into this lately.",
+      "Lately I've been researching this."
+    ],
+    "point": "今も続く動作は have been -ing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8u2p8h9b",
+    "ja": "データいつ集められたの？",
+    "en": "When was the data collected?",
+    "alternatives": ["When was the data gathered?", "When was that data collected?"],
+    "point": "「集めた」は受け身なら was collected",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["wh-questions", "passive-voice"]
+  },
+  {
+    "id": "c_9b6q3q6v",
+    "ja": "伸びが鈍った訳を彼は知らないと思う。",
+    "en": "I doubt he knows why growth tapered off.",
+    "alternatives": [
+      "I don't think he understands why growth lost momentum.",
+      "I doubt he understands why growth slowed down."
+    ],
+    "point": "taper off は伸びや勢いが徐々に弱まる。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_9d5c7z2p",
+    "ja": "予行してれば、うまくいった。",
+    "en": "If I'd rehearsed, it'd have worked.",
+    "alternatives": [
+      "It would've worked if I'd rehearsed.",
+      "If I had rehearsed, it would have worked."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_9n3f6y4k",
+    "ja": "画面を共有中です。",
+    "en": "I'm sharing my screen.",
+    "alternatives": ["I'm sharing the screen.", "I'm showing my screen."],
+    "point": "「〜中」は進行形。share は共有する",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_9z5r2j8j",
+    "ja": "彼は、こけたらどうするのかと聞いた。",
+    "en": "He asked what we'd do if it flopped.",
+    "alternatives": [
+      "He asked what we'd do if it bombed.",
+      "He asked us what we'd do if it flopped."
+    ],
+    "point": "間接疑問は平叙の語順。asked の後で would に下げる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  }
+]

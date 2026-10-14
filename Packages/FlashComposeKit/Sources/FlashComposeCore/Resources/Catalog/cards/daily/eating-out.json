@@ -1,0 +1,727 @@
+[
+  {
+    "id": "c_2a5d9v8h",
+    "ja": "先週、そこで食べたよ。",
+    "en": "I ate there last week.",
+    "alternatives": ["I had a meal there last week.", "I ate at that place last week."],
+    "point": "last week があれば過去形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_2f2x3v7x",
+    "ja": "量は少なめでも、お腹にたまった。",
+    "en": "Though small, the portion filled me up.",
+    "alternatives": [
+      "Small as the portion was, it filled me up.",
+      "Even though the portion was small, it filled me up."
+    ],
+    "point": "Though + 形容詞 で譲歩を短く言える",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_2j4r6s6k",
+    "ja": "食後、私は損した気分だった。",
+    "en": "I felt shortchanged after eating.",
+    "alternatives": [
+      "I felt ripped off after the meal.",
+      "I felt cheated after eating."
+    ],
+    "point": "shortchanged は十分な価値を得られず損した感じ。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2v5b2b3p",
+    "ja": "好きな店が潰れたと彼女が言った。",
+    "en": "She said my favorite place closed down.",
+    "alternatives": [
+      "She told me my favorite shop closed down.",
+      "She said my favorite place shut down."
+    ],
+    "point": "said の後は過去形。closed down で「閉店した」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_2y3e2p3k",
+    "ja": "席は空いてますか？",
+    "en": "Are there any seats?",
+    "alternatives": ["Do you have any seats?", "Are there any open seats?"],
+    "point": "疑問文で複数なら Are there any 〜?",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_3a2b9p5q",
+    "ja": "席を替えていいですか？",
+    "en": "Could I change seats?",
+    "alternatives": [
+      "Can I switch seats?",
+      "Can we change tables?",
+      "May I change seats?"
+    ],
+    "point": "許可を求めるなら Could I / Can I",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_3b4s4y6s",
+    "ja": "私たち、店を見切ればよかった。",
+    "en": "I wish we'd cut our losses.",
+    "alternatives": [
+      "I wish we'd given up on that restaurant.",
+      "If only we'd left that restaurant sooner."
+    ],
+    "point": "cut our losses はこれ以上の損を避けて撤退する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_3c3v8h5a",
+    "ja": "皿二枚持ってきてね。",
+    "en": "Please bring two plates.",
+    "alternatives": ["Bring me two plates.", "Get me two plates."],
+    "point": "bring は話し手の所へ持ってくる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3d3d4x5t",
+    "ja": "売ってるパンはいい香りだ。",
+    "en": "The bread for sale smells great.",
+    "alternatives": [
+      "The bread on sale smells wonderful.",
+      "The bread they sell smells good."
+    ],
+    "point": "for sale は売られているという後ろからの説明。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3d9g6a4f",
+    "ja": "私は魚を食べられる。",
+    "en": "I can eat fish.",
+    "alternatives": ["I'm able to eat fish.", "I can have fish."],
+    "point": "can eat で食べることに問題がないと伝える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3e7f8s3f",
+    "ja": "私は彼女に会計を頼んだ。",
+    "en": "I asked her to pay.",
+    "alternatives": ["I requested that she pay.", "I asked her to handle payment."],
+    "point": "ask 人 to do で人に行動を頼む。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_3g2g8u2w",
+    "ja": "接客はわざと上から目線に感じる。",
+    "en": "The service smacks of studied condescension.",
+    "alternatives": [
+      "The service feels deliberately patronizing.",
+      "The service comes across as calculated condescension."
+    ],
+    "point": "studied は計算された、condescension は見下す態度。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3j2w6j7m",
+    "ja": "何か食べるものが欲しいな。",
+    "en": "I want something to eat.",
+    "alternatives": ["I need something to eat.", "I'd like something to eat."],
+    "point": "something ＋ to 不定詞で「〜するもの」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3q2p3h7c",
+    "ja": "がっかりしたのは接客だった。",
+    "en": "It was the service that disappointed me.",
+    "alternatives": [
+      "What disappointed me was the service.",
+      "The service was what disappointed me."
+    ],
+    "point": "It was 〜 that 節で「〜だった」を強調",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_3q7d7t4c",
+    "ja": "私は軽い前菜にしておきます。",
+    "en": "I'll stick to a light appetizer.",
+    "alternatives": [
+      "I'll just have a light appetizer.",
+      "I'll just order a light appetizer."
+    ],
+    "point": "stick to はそれだけにとどめる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_3q8w4u9f",
+    "ja": "私は外で食べる方がいい。",
+    "en": "I prefer to eat outside.",
+    "alternatives": ["I'd rather eat outside.", "I prefer eating outdoors."],
+    "point": "prefer to はこちらの方がよいという選択。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3u4r6r6z",
+    "ja": "おすすめは何ですか？",
+    "en": "What do you recommend?",
+    "alternatives": ["What would you recommend?", "What's good here?"],
+    "point": "「何」は What で始め、do you + 動詞を続ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_3w4y4u5g",
+    "ja": "我々が折れてたら店の不手際分を払ってた。",
+    "en": "Had we capitulated, we'd have paid for their incompetence.",
+    "alternatives": [
+      "If we'd given in, we'd have paid for their mistakes.",
+      "We'd have paid for their incompetence had we capitulated."
+    ],
+    "point": "Had we capitulated は「我々が折れていたら」という過去の仮定。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_3y2e8n2p",
+    "ja": "この料理の方が腹にたまる。",
+    "en": "This dish is more filling.",
+    "alternatives": ["This dish fills you up more.", "You get fuller from this dish."],
+    "point": "filling は食べるとお腹が満たされる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_4b5j9c3q",
+    "ja": "この料理、何が入ってるか教えて？",
+    "en": "Can you tell me what's in it?",
+    "alternatives": [
+      "Could you tell me what's in it?",
+      "Can you let me know what's in it?"
+    ],
+    "point": "間接疑問は what's in it の語順（疑問文にしない）",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_4b8c2r8f",
+    "ja": "頼んだのは別の料理です。",
+    "en": "What I ordered was something else.",
+    "alternatives": [
+      "I ordered a different dish.",
+      "My order was for a different dish."
+    ],
+    "point": "what I ordered は私が注文したもの。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_4f5q7f3z",
+    "ja": "着いたら、もう閉店してた。",
+    "en": "The place had already closed.",
+    "alternatives": [
+      "The place had closed when we arrived.",
+      "When we got there, it had closed."
+    ],
+    "point": "到着より前に終わっていたことは過去完了",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4g3m5n8d",
+    "ja": "店は我々の予約を既に見落としてた。",
+    "en": "The restaurant had overlooked our reservation.",
+    "alternatives": [
+      "The restaurant had missed our booking.",
+      "Our reservation had escaped the restaurant's notice."
+    ],
+    "point": "had overlooked で過去のある時点より前の見落とし。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4n2s4p6j",
+    "ja": "ここに来たことある？",
+    "en": "Have you been here before?",
+    "alternatives": ["Have you ever been here?", "Have you ever been here before?"],
+    "point": "経験は Have you (ever) 〜?",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_4v3y9t9m",
+    "ja": "お水、もらえる？",
+    "en": "Can I have water?",
+    "alternatives": ["Can I get some water?", "Could I have some water?"],
+    "point": "頼むときは Can I have 〜?",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4x8w6r7n",
+    "ja": "我々がこんな料理に奮発するのは稀。",
+    "en": "Seldom do we splurge on such food.",
+    "alternatives": [
+      "We rarely splurge on food like this.",
+      "We rarely spend this much on food."
+    ],
+    "point": "Seldom を先頭に置くと do we の語順。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_5g5g6s8d",
+    "ja": "私なら、日替わりにするけどね。",
+    "en": "If I were you, I'd get the special.",
+    "alternatives": [
+      "I'd go for the special if I were you.",
+      "If I were in your shoes, I'd order the special."
+    ],
+    "point": "助言の仮定は If I were you, I'd 〜",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_5k2e9g2m",
+    "ja": "私たちもう注文できる？",
+    "en": "Can we order now?",
+    "alternatives": ["Can we order yet?", "May we order now?"],
+    "point": "can we で自分たちが注文してよいか聞く。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_5m4q7q7s",
+    "ja": "彼らは注文を取り違えたのかも。",
+    "en": "They might've mixed up the orders.",
+    "alternatives": [
+      "They may have confused the orders.",
+      "Perhaps they got the orders mixed up."
+    ],
+    "point": "might have done は過去の出来事への推測。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_5m9a7t2u",
+    "ja": "ランチは2時までだよ。",
+    "en": "Lunch is served until two.",
+    "alternatives": ["Lunch is available until two.", "They serve lunch until two."],
+    "point": "料理が「出される」は be served",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_5n4u7w4c",
+    "ja": "彼女はメニューを見て迷った。",
+    "en": "Reading the menu, she couldn't decide.",
+    "alternatives": [
+      "She was reading the menu, unable to decide.",
+      "She read the menu and couldn't decide."
+    ],
+    "point": "同時の動作は -ing の分詞構文で言う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5x5g4c8c",
+    "ja": "昼を抜いてたら、今ごろ腹ペコ。",
+    "en": "If I'd skipped lunch, I'd be starving.",
+    "alternatives": [
+      "If I hadn't had lunch, I'd be starving now.",
+      "If I'd skipped lunch, I'd be starving now."
+    ],
+    "point": "過去の仮定 if I'd + 今の結果 I'd be",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_5x9z4n2b",
+    "ja": "君はゆっくり食べるべきだ。",
+    "en": "You should eat slowly.",
+    "alternatives": ["You ought to eat slowly.", "You should take your time eating."],
+    "point": "should は相手への助言。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_5y3n9k3q",
+    "ja": "弟に注文を頼んだよ。",
+    "en": "I asked him to order.",
+    "alternatives": ["I asked my brother to order.", "I asked him to order it."],
+    "point": "ask + 人 + to + 動詞。人は目的格",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_5y9k5q5w",
+    "ja": "私は辛い料理を控えてる。",
+    "en": "I'm cutting back on spicy dishes.",
+    "alternatives": [
+      "I'm eating spicy food less often.",
+      "I'm having fewer spicy meals."
+    ],
+    "point": "cut back on は量や頻度を減らす。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6g3g4z2s",
+    "ja": "席が空き次第、お呼びします。",
+    "en": "We'll call once a table opens.",
+    "alternatives": [
+      "We'll call you once a table opens up.",
+      "We'll call you as soon as one opens."
+    ],
+    "point": "when の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_6u4t4t3q",
+    "ja": "残り、包んでもらえますか？",
+    "en": "Could you box this up, please?",
+    "alternatives": ["Could you wrap this up for me?", "Could I get this boxed up?"],
+    "point": "box up / wrap up は持ち帰りの定番句動詞",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6x7v8z7t",
+    "ja": "このソースは何？",
+    "en": "What's this sauce?",
+    "alternatives": ["What sauce is this?", "Which sauce is this?"],
+    "point": "what でソースの種類や名前を尋ねる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7d4r3r2m",
+    "ja": "請求額に私は頭に血が上った。",
+    "en": "The bill had me seeing red.",
+    "alternatives": ["The bill made me furious.", "The bill had me fuming."],
+    "point": "have 人 doing で状態を引き起こす、see red は激怒する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_7e5h5q4u",
+    "ja": "塩辛すぎるかもしれません。",
+    "en": "It might be too salty.",
+    "alternatives": ["It may be too salty.", "It could be a bit too salty."],
+    "point": "かもしれませんは might でやわらげる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7h4n7d2m",
+    "ja": "私たち、20分待ってる。",
+    "en": "We've been waiting for twenty minutes.",
+    "alternatives": [
+      "We've been waiting twenty minutes now.",
+      "We've waited twenty minutes already."
+    ],
+    "point": "待ち続けている時間は for ＋ 期間",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_7m6t9r6m",
+    "ja": "外のテーブルは予約済みだ。",
+    "en": "The table outside is reserved.",
+    "alternatives": [
+      "The outdoor table is booked.",
+      "Someone has reserved the outside table."
+    ],
+    "point": "outside は table を後ろから説明する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_7v2x9f8j",
+    "ja": "予約を受け付けてるか、知ってる？",
+    "en": "Do you know if they take reservations?",
+    "alternatives": [
+      "Do you know whether they take reservations?",
+      "Do you know if they're taking reservations?"
+    ],
+    "point": "間接疑問は if + 平叙文の語順",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_7z5c4f6v",
+    "ja": "料理は別々に出される。",
+    "en": "The dishes are served separately.",
+    "alternatives": [
+      "Each dish is served separately.",
+      "The dishes come out separately."
+    ],
+    "point": "are served は出されるという受動態。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_8c8j7h7d",
+    "ja": "このスープは塩辛い。",
+    "en": "This soup tastes salty.",
+    "alternatives": ["The soup is salty.", "It tastes salty."],
+    "point": "味の感想には taste と形容詞を使える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8m5x5h8h",
+    "ja": "このランチのほうが安いよ。",
+    "en": "This lunch is cheaper.",
+    "alternatives": ["This lunch costs less.", "This lunch is less expensive."],
+    "point": "安い → cheaper で比べる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_8n5n9h3y",
+    "ja": "窓際の席が空くのを待ってます。",
+    "en": "We're waiting for a window seat.",
+    "alternatives": [
+      "We're waiting for a table by the window.",
+      "We're waiting for a window table."
+    ],
+    "point": "今している最中は進行形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8q2q5v2g",
+    "ja": "頼んだものは品切れだと言われた。",
+    "en": "They said what I ordered was sold out.",
+    "alternatives": [
+      "They told me what I ordered was sold out.",
+      "I was told what I ordered was sold out."
+    ],
+    "point": "what 節が that 節の中の主語になる入れ子",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_8t8y4f5c",
+    "ja": "地味でもこの店は気取りが嫌だ。",
+    "en": "Though unassuming, this place reeks of pretension.",
+    "alternatives": [
+      "Though plain-looking, this place reeks of pretension.",
+      "Despite looking modest, this place feels pretentious."
+    ],
+    "point": "reek of は不快な印象を強く与える、pretension は気取り。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8x8x5s7g",
+    "ja": "メニューを見せて。",
+    "en": "Show me the menu.",
+    "alternatives": ["Let me see the menu.", "Can I see the menu?"],
+    "point": "「見せて」は Show me + 物",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_9f5w4h8h",
+    "ja": "私は注文を終えたよ。",
+    "en": "I finished ordering.",
+    "alternatives": ["I'm done ordering.", "I've finished placing my order."],
+    "point": "finish の後は ordering の形。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_9g8t3u5p",
+    "ja": "予約したほうがいいよ。",
+    "en": "You should book ahead.",
+    "alternatives": ["You should make a reservation.", "You should reserve a table."],
+    "point": "助言は should。「予約する」は book ahead でもよい",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9s5a3z6k",
+    "ja": "彼は我々の注文が抜けたと言った。",
+    "en": "He said our order got overlooked.",
+    "alternatives": [
+      "He said they missed our order.",
+      "He said our order was overlooked."
+    ],
+    "point": "said の後で過去の抜けを伝える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_9t3z5u2g",
+    "ja": "私は隠れた追加料金を調べてる。",
+    "en": "I'm checking for hidden surcharges.",
+    "alternatives": [
+      "I'm looking for undisclosed extra charges.",
+      "I'm checking whether there are hidden additional fees."
+    ],
+    "point": "surcharge は通常の代金に加えて請求される料金。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_9v3a9c7r",
+    "ja": "窓際の席をお願いします。",
+    "en": "A window seat, please.",
+    "alternatives": [
+      "A table by the window, please.",
+      "Could we sit by the window?",
+      "We'd like a window seat."
+    ],
+    "point": "「窓際の席」は a window seat と言える",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_9v8u8r7b",
+    "ja": "ここは上司が勧めてくれた店だよ。",
+    "en": "This is the place my boss recommended.",
+    "alternatives": [
+      "This is the restaurant my boss recommended.",
+      "This is the place that my boss recommended."
+    ],
+    "point": "目的格の関係詞は省ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_9x5t6q8h",
+    "ja": "ここで食べるの好きだよ。",
+    "en": "I like eating here.",
+    "alternatives": ["I enjoy eating here.", "I like to eat here."],
+    "point": "like のあとは -ing でも to 不定詞でもよい",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["gerunds"]
+  }
+]

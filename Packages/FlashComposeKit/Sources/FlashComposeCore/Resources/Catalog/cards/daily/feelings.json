@@ -1,0 +1,637 @@
+[
+  {
+    "id": "c_2m3c8c9u",
+    "ja": "彼は緊張してると思う。",
+    "en": "I think he's nervous.",
+    "alternatives": ["I guess he's nervous.", "I'd say he's nervous."],
+    "point": "「〜と思う」は I think ＋ 文",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_2m5a9v6e",
+    "ja": "この町は楽しい所が多い。",
+    "en": "There are many fun places here.",
+    "alternatives": [
+      "This town has lots of fun places.",
+      "This town has plenty of fun spots."
+    ],
+    "point": "「〜が多い」は There are many で言える",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_2r8d5j3n",
+    "ja": "彼はなぜ怒ってるのか分からない。",
+    "en": "I can't figure out why he's upset.",
+    "alternatives": [
+      "I don't get why he's so upset.",
+      "I have no idea why he's angry."
+    ],
+    "point": "間接疑問は why he's と平叙文の語順",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3c3z2d9a",
+    "ja": "私は少し安堵を感じる。",
+    "en": "I feel a little relief.",
+    "alternatives": ["I feel slightly relieved.", "I feel a bit relieved."],
+    "point": "気持ちとしての relief は数えず a little relief。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3d4u9f2y",
+    "ja": "あの一言、飲み込めばよかった。",
+    "en": "I wish I'd bitten my tongue.",
+    "alternatives": ["If only I'd bitten my tongue.", "I wish I'd kept my mouth shut."],
+    "point": "bite one's tongue は言葉をぐっと飲み込む",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_3f4v3u5m",
+    "ja": "彼が軽んじられたと思う訳は分かる。",
+    "en": "I get why he feels he's been slighted.",
+    "alternatives": [
+      "I understand why he thinks he's been disrespected.",
+      "I get why he feels slighted."
+    ],
+    "point": "slighted は軽んじられたと感じること。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_3h3f3q3b",
+    "ja": "君の立場なら控えめな賛辞で案をけなす。",
+    "en": "In your shoes, I'd damn it with faint praise.",
+    "alternatives": [
+      "In your place, I'd criticize it with faint praise.",
+      "I'd give it faint praise in your place."
+    ],
+    "point": "damn with faint praise は弱い賛辞で逆にけなす。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_3h8z7g4e",
+    "ja": "私はこんな恨みを抱くと思わなかった。",
+    "en": "Little did I imagine I'd harbor such resentment.",
+    "alternatives": [
+      "I never imagined I'd nurse such a grudge.",
+      "I never thought I'd resent it this much."
+    ],
+    "point": "harbor resentment は恨みを心に抱き続ける。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_3p7z6b4w",
+    "ja": "一人で歩くのは平気だよ。",
+    "en": "I don't mind walking alone.",
+    "alternatives": [
+      "I don't mind walking by myself.",
+      "Walking alone doesn't bother me."
+    ],
+    "point": "mind の後は -ing",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_3s8h6f7m",
+    "ja": "言い返してれば、今すっきりなのに。",
+    "en": "If I'd spoken up, I'd feel better now.",
+    "alternatives": [
+      "If I had spoken up, I would feel better now.",
+      "If I'd said something, I'd feel better now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done と would",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3u6b3h8j",
+    "ja": "君に考え直してほしい。",
+    "en": "I want you to reconsider.",
+    "alternatives": ["I want you to rethink it.", "I'd like you to think again."],
+    "point": "reconsider は一度決めたことを考え直す。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_4a5n5u4g",
+    "ja": "ひと言いいですか？",
+    "en": "May I say something?",
+    "alternatives": ["Could I say something?", "Is it okay to say something?"],
+    "point": "丁寧に許可を求める May I / Could I",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4e6w5s7b",
+    "ja": "一人になってもいい？",
+    "en": "Can I be alone?",
+    "alternatives": ["Can I have some time alone?", "Can I have a minute alone?"],
+    "point": "許可を求める Can I 〜? に be alone を続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4v3j4e2d",
+    "ja": "私、彼の気分を害したかもしれない。",
+    "en": "I might have hurt his feelings.",
+    "alternatives": ["I may have hurt his feelings.", "I might have offended him."],
+    "point": "might have + 過去分詞で「かもしれなかった」",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_4v9a4j8e",
+    "ja": "無理しないほうがいいよ。",
+    "en": "You shouldn't push yourself.",
+    "alternatives": ["You shouldn't overdo it.", "You'd better not push yourself."],
+    "point": "「〜しないほうがいい」は shouldn't",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_4x3s9d9c",
+    "ja": "彼が漏らした秘密が気がかりだ。",
+    "en": "The secret he spilled worries me.",
+    "alternatives": [
+      "I worry about the secret he revealed.",
+      "The secret he let slip concerns me."
+    ],
+    "point": "spill a secret は秘密を漏らす。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_4z6r6p5c",
+    "ja": "今、わくわくしてる！",
+    "en": "I'm feeling excited.",
+    "alternatives": ["I'm so excited!", "I'm really excited!"],
+    "point": "今の気持ちは進行形 I'm feeling 〜",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5a2b9t4h",
+    "ja": "私は怒ってない。",
+    "en": "I'm not angry.",
+    "alternatives": ["I don't feel angry.", "I'm not mad."],
+    "point": "not angry で怒っていないと伝える。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5a9a3b2h",
+    "ja": "会えてうれしいよ。",
+    "en": "I'm glad to see you.",
+    "alternatives": ["I'm happy to see you.", "It's nice to see you."],
+    "point": "気持ちの理由は形容詞 + to 不定詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["infinitives", "be-and-present-simple"]
+  },
+  {
+    "id": "c_5c2t3j9q",
+    "ja": "今週ずっと、彼が心配なんだ。",
+    "en": "I've been worrying about him all week.",
+    "alternatives": [
+      "I've been worried about him all week.",
+      "He's been on my mind all week."
+    ],
+    "point": "ずっと続く気持ちは現在完了進行形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5d2n7m3r",
+    "ja": "泣かないでね。",
+    "en": "Please don't cry.",
+    "alternatives": ["Don't cry, okay?", "Try not to cry."],
+    "point": "否定の命令文は Don't と動詞の原形。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_5k5w3s2s",
+    "ja": "君に私の話に合わせてほしい。",
+    "en": "I want you to humor me.",
+    "alternatives": ["I'd like you to indulge me.", "I'd like you to play along."],
+    "point": "humor は相手に合わせてあげること。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_5m6x9d9z",
+    "ja": "君が無視してたら私はすねてた。",
+    "en": "If you'd ignored me, I'd have sulked.",
+    "alternatives": [
+      "I'd have sulked if you'd ignored me.",
+      "I'd have pouted if you'd ignored me."
+    ],
+    "point": "過去に実現しなかった条件は had ignored、sulk はすねる。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_5n3s9g4y",
+    "ja": "言いたいことを言って、少し気が楽だ。",
+    "en": "Having said my piece, I feel lighter.",
+    "alternatives": [
+      "Having said my piece, I feel a bit better.",
+      "Having spoken my mind, I feel lighter."
+    ],
+    "point": "say one's piece は「言いたいことを言う」。Having + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5w9y6q8u",
+    "ja": "彼の言葉が、まだ吹っ切れない。",
+    "en": "I can't get over what he said.",
+    "alternatives": [
+      "I still can't shake what he said.",
+      "I still can't let go of what he said."
+    ],
+    "point": "get over は「乗り越える・立ち直る」",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_5x6t6w3m",
+    "ja": "私、君を信じられる。",
+    "en": "I can trust you.",
+    "alternatives": ["I can count on you.", "I can have faith in you."],
+    "point": "trust は相手を信頼する。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_5x6w8j8s",
+    "ja": "彼、ほっとしたって言ってたよ。",
+    "en": "He said he was relieved.",
+    "alternatives": ["He said he felt relieved.", "He told me he was relieved."],
+    "point": "said に合わせて was と過去形にずらす",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6b9d8q6w",
+    "ja": "私はだいぶ気が楽になった。",
+    "en": "I feel much more relaxed.",
+    "alternatives": [
+      "I'm feeling far less tense.",
+      "I feel a lot calmer.",
+      "I'm much more at ease."
+    ],
+    "point": "much は比較級の差を強める。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_6c6d5c7h",
+    "ja": "雨でも、私は楽しかったよ。",
+    "en": "Despite the rain, I had fun.",
+    "alternatives": [
+      "Even in the rain, I had fun.",
+      "I had fun even though it rained."
+    ],
+    "point": "despite の後ろは名詞。節なら even though",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["concession-contrast", "past-simple"]
+  },
+  {
+    "id": "c_6d9d7a2u",
+    "ja": "その案、あまり乗り気になれない。",
+    "en": "I'm not entirely sold on that idea.",
+    "alternatives": [
+      "I'm not sure I'm totally sold on that.",
+      "I can't say I'm fully sold on that idea."
+    ],
+    "point": "not entirely でやわらかく否定する",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_6n2k9e6b",
+    "ja": "傘があれば、濡れなかったのに。",
+    "en": "An umbrella would've kept me dry.",
+    "alternatives": [
+      "I'd have stayed dry with an umbrella.",
+      "I wouldn't have gotten wet with an umbrella."
+    ],
+    "point": "過去の仮定は would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_6v7k9m7b",
+    "ja": "私は不安をもう払拭した。",
+    "en": "I've put my fears to rest.",
+    "alternatives": [
+      "I've laid my worries to rest.",
+      "My fears have now been dispelled."
+    ],
+    "point": "put fears to rest は不安を解消する。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_7c4z9t7s",
+    "ja": "聞いた知らせ、嬉しかったよ。",
+    "en": "I loved the news I heard.",
+    "alternatives": [
+      "I was happy about the news I heard.",
+      "The news I heard made me happy."
+    ],
+    "point": "聞いた知らせは news の後ろに置く",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_7f2v2m4z",
+    "ja": "もう落ち着いたよ。",
+    "en": "I've calmed down now.",
+    "alternatives": ["I've settled down now.", "I'm calm now."],
+    "point": "今の状態につながる完了は現在完了",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_7v2b3k8z",
+    "ja": "彼の言葉に、傷ついたよ。",
+    "en": "I was hurt by his words.",
+    "alternatives": ["I was hurt by what he said.", "What he said hurt me."],
+    "point": "傷つけられたは受動態 be hurt",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7w2y9q3r",
+    "ja": "まだ望みはある。",
+    "en": "There's still hope.",
+    "alternatives": ["Hope still remains.", "There is hope yet."],
+    "point": "hope は数えないので there is。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7w3y4d5p",
+    "ja": "試験に受かってほっとした。",
+    "en": "I was relieved I passed.",
+    "alternatives": [
+      "I felt relieved after passing the exam.",
+      "I was relieved to pass the exam."
+    ],
+    "point": "ほっとした＝ relieved（過去の気持ち）",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_7w7p8f5g",
+    "ja": "一番こたえたのは、彼の無関心だった。",
+    "en": "It was his indifference that stung most.",
+    "alternatives": [
+      "What really got to me was his indifference.",
+      "It was his indifference that hurt the most."
+    ],
+    "point": "It was ～ that で強調。sting は心にこたえる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_8e3q4j9r",
+    "ja": "それを聞いて残念です。",
+    "en": "I'm sorry to hear that.",
+    "alternatives": ["I'm so sorry to hear that.", "Sorry to hear that."],
+    "point": "「〜して残念」は sorry + to 不定詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_8k7e8z8f",
+    "ja": "明日は絶対、緊張するだろうな。",
+    "en": "I'm going to be nervous tomorrow.",
+    "alternatives": [
+      "I'll be nervous tomorrow.",
+      "I'm sure I'll be nervous tomorrow.",
+      "I'll definitely be nervous tomorrow."
+    ],
+    "point": "見込みのある未来は be going to",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8k9v6s6v",
+    "ja": "私はもう自信を取り戻した。",
+    "en": "I've regained my confidence.",
+    "alternatives": ["My confidence has returned.", "I have my confidence back."],
+    "point": "regain は失ったものを取り戻す。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_8r6e7r8r",
+    "ja": "あの映画には、思わず泣かされた。",
+    "en": "That movie made me tear up.",
+    "alternatives": ["That movie made me cry.", "That movie got me all teary."],
+    "point": "make + 人 + 原形で「〜させる」。tear up は泣きそうになる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_8t8g5t4q",
+    "ja": "なんで泣いてるの？",
+    "en": "Why are you crying?",
+    "alternatives": ["How come you're crying?", "What are you crying for?"],
+    "point": "「今〜している理由」は Why + 進行形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_8v8w2c6d",
+    "ja": "早く言ってくれてもよかったのに。",
+    "en": "You could have told me sooner.",
+    "alternatives": [
+      "You should have told me sooner.",
+      "You might have told me sooner."
+    ],
+    "point": "could have + 過去分詞で「できたのに」",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_8x6x5b9n",
+    "ja": "いい日だね！",
+    "en": "It's a good day.",
+    "alternatives": ["It's a great day.", "Today is a good day."],
+    "point": "数えられる名詞 day には a を付ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_9a4x6y9t",
+    "ja": "終わったらほっとするよ。",
+    "en": "I'll be relieved when it's over.",
+    "alternatives": [
+      "I'll be relieved once it's over.",
+      "When it's over, I'll be so relieved."
+    ],
+    "point": "when の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_9b9h9v7a",
+    "ja": "どうしたの？",
+    "en": "What's wrong?",
+    "alternatives": ["What's the matter?", "What's the problem?"],
+    "point": "様子を尋ねる定番。What's wrong? は短くて便利",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_9d6x2y3t",
+    "ja": "私はもう悪い知らせに備えてた。",
+    "en": "I'd braced myself for bad news.",
+    "alternatives": [
+      "I'd prepared myself for bad news.",
+      "I'd been ready for unwelcome news."
+    ],
+    "point": "brace oneself は悪いことに備えて心を構える。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_9e5c2b9c",
+    "ja": "心配をやめてよ。",
+    "en": "Stop worrying, please.",
+    "alternatives": ["Please stop fretting.", "Please quit worrying."],
+    "point": "stop の後は worrying の形。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["imperatives", "gerunds"]
+  },
+  {
+    "id": "c_9p7w8h9a",
+    "ja": "私は今、悲しい。",
+    "en": "I'm feeling sad.",
+    "alternatives": ["I feel sad.", "I'm sad right now."],
+    "point": "feeling sad は今の悲しい気持ち。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_9x9p2r4r",
+    "ja": "もう歩けないよ。",
+    "en": "I can't walk anymore.",
+    "alternatives": ["I can't walk any further.", "I can't take another step."],
+    "point": "「もう〜できない」は can't + 動詞 + anymore",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  }
+]

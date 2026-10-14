@@ -1,0 +1,617 @@
+[
+  {
+    "id": "c_2c9t4t4t",
+    "ja": "この件、ずっと議論してるね。",
+    "en": "We've been debating this for ages.",
+    "alternatives": [
+      "We've been discussing this for ages.",
+      "We've been going back and forth on this."
+    ],
+    "point": "続いている動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_2s2t9t9z",
+    "ja": "この案の方が明確だ。",
+    "en": "This plan is clearer.",
+    "alternatives": [
+      "This plan is easier to understand.",
+      "This plan is less confusing."
+    ],
+    "point": "clearer は前の案などより分かりやすい。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_2t5h9y9g",
+    "ja": "我々は先に論点を整理すべき。",
+    "en": "We should clarify the issues first.",
+    "alternatives": [
+      "We ought to clarify the issues first.",
+      "We should sort out the points first."
+    ],
+    "point": "clarify は曖昧な論点を明確にする。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_2w3u5x6a",
+    "ja": "質問していいですか？",
+    "en": "May I ask a question?",
+    "alternatives": ["Can I ask a question?", "Could I ask a question?"],
+    "point": "許可を求めるなら May I / Can I。ask a question",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_3c8b4c3b",
+    "ja": "彼らは誰が裏で操るか知らなそう。",
+    "en": "I doubt they know who's pulling the strings.",
+    "alternatives": [
+      "They may not know who's pulling the strings.",
+      "I'm not sure they know who's in control."
+    ],
+    "point": "pull the strings は裏で実権を握り人を動かす。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_3e9r6x2t",
+    "ja": "我々が誰を不快にしてるか分かる？",
+    "en": "Any idea whose feathers we're ruffling?",
+    "alternatives": [
+      "Do you know who we are upsetting?",
+      "Do you know who is irritated by us?"
+    ],
+    "point": "ruffle feathers は人を不快にさせる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3f4s7j6t",
+    "ja": "彼女は我々に相違を整理させた。",
+    "en": "She had us reconcile our differences.",
+    "alternatives": [
+      "She made us resolve our disagreements.",
+      "She got us to settle our differences."
+    ],
+    "point": "reconcile differences は相違をすり合わせる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_3q2v6z6c",
+    "ja": "議事録は私が取ります？",
+    "en": "Shall I take the minutes?",
+    "alternatives": ["Should I take the minutes?", "Want me to take the minutes?"],
+    "point": "議事録は複数形 minutes で the を付ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3s7s2x8r",
+    "ja": "我々の意見は私が集約する。",
+    "en": "I'll consolidate our views.",
+    "alternatives": ["I'll bring our views together.", "I'll combine our opinions."],
+    "point": "consolidate は複数の意見を一つにまとめる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_3v3p9v2a",
+    "ja": "予算があれば増員するのに。",
+    "en": "If we had the budget, we'd hire.",
+    "alternatives": [
+      "We'd hire if we had the budget.",
+      "If we could afford it, we'd hire."
+    ],
+    "point": "if 節は過去形、主節は would＋原形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_3v7k9m4n",
+    "ja": "先に部長に確認すべきです。",
+    "en": "We should ask the director first.",
+    "alternatives": [
+      "We'd better check with the director first.",
+      "You should check with the director first.",
+      "We should check with the director first."
+    ],
+    "point": "should は「〜したほうがいい」という助言",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_3y3e2g3n",
+    "ja": "私は総括を頼まれた。",
+    "en": "I was asked to sum up.",
+    "alternatives": ["They asked me to recap.", "I've been asked to summarize."],
+    "point": "「頼まれた」は be asked to do",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice", "verb-object-to-do"]
+  },
+  {
+    "id": "c_3z6e9y9x",
+    "ja": "全員、これ見えます？",
+    "en": "Can everyone see this?",
+    "alternatives": ["Can you all see this?", "Can everybody see this?"],
+    "point": "「見える」は can see。see は進行形にしない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4e6w9b6v",
+    "ja": "私たちはもう懸念を解消した。",
+    "en": "We've already allayed the concerns.",
+    "alternatives": [
+      "We've already dispelled those concerns.",
+      "We've already put those concerns to rest."
+    ],
+    "point": "allay concerns は懸念を和らげて解消すること。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_4s7d5g5y",
+    "ja": "資料を読んだので、次に行こう。",
+    "en": "Having read the handout, let's move on.",
+    "alternatives": [
+      "We've read the handout, so let's move on.",
+      "Now that we've read the handout, let's move on."
+    ],
+    "point": "Having + 過去分詞で「済んだので」",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5c7b7p6x",
+    "ja": "決まり次第、全員にメールします。",
+    "en": "I'll email everyone once it's decided.",
+    "alternatives": [
+      "As soon as it's decided, I'll email everyone.",
+      "I'll email everyone as soon as it's settled."
+    ],
+    "point": "未来のことでも as soon as の後は現在形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_5f2q9c3a",
+    "ja": "その件は会議のあとで詰めましょう。",
+    "en": "Let's hash that out after the meeting.",
+    "alternatives": [
+      "Let's sort that out after the meeting.",
+      "Let's iron that out after the meeting."
+    ],
+    "point": "hash out は「議論して決着をつける」",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_5m2k8r4r",
+    "ja": "私は目標を決めなきゃ。",
+    "en": "I need to set goals.",
+    "alternatives": ["I have to choose goals.", "I must decide on goals."],
+    "point": "need to set は設定する必要がある。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5m9b6g4c",
+    "ja": "今コピー配ってるよ。",
+    "en": "I'm handing out copies.",
+    "alternatives": ["I'm passing out copies.", "I'm giving out copies."],
+    "point": "「今〜している」は am + -ing。hand out は「配る」",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5s2v9x5d",
+    "ja": "田中さんが今発表中です。",
+    "en": "Mr. Tanaka is presenting now.",
+    "alternatives": [
+      "Mr. Tanaka is speaking now.",
+      "Mr. Tanaka is presenting right now."
+    ],
+    "point": "「今〜している」は is + -ing。男性なら Mr.",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5v6e7w2x",
+    "ja": "3時に始めます。",
+    "en": "We start at three.",
+    "alternatives": [
+      "We begin at three.",
+      "We're starting at three.",
+      "We'll start at three."
+    ],
+    "point": "時刻の前は at。予定の開始は現在形でも言える",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6d9n6g2d",
+    "ja": "先ほど出た案に賛成です。",
+    "en": "I support the idea raised earlier.",
+    "alternatives": [
+      "I'm in favor of the idea mentioned earlier.",
+      "I agree with the idea brought up earlier."
+    ],
+    "point": "名詞のあとに過去分詞を置いて説明する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_6h3v2r3q",
+    "ja": "意見が三つあります。",
+    "en": "There are three opinions.",
+    "alternatives": ["We have three opinions.", "There are three different opinions."],
+    "point": "three の後は opinions と複数形。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6m5r2s3k",
+    "ja": "昨日彼が議題を送ったよ。",
+    "en": "He sent the agenda yesterday.",
+    "alternatives": [
+      "He emailed the agenda yesterday.",
+      "He sent us the agenda yesterday."
+    ],
+    "point": "send の過去形は sent。yesterday で過去とわかる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6n8q9r3f",
+    "ja": "時間がないので、先へ飛ばそう。",
+    "en": "Pressed for time, let's skip ahead.",
+    "alternatives": [
+      "Since we're pressed for time, let's skip ahead.",
+      "Short on time, let's skip ahead."
+    ],
+    "point": "Pressed for time で理由を軽く添える分詞構文",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7a5v8e6j",
+    "ja": "もっと早く発言すればよかった。",
+    "en": "I wish I'd spoken up sooner.",
+    "alternatives": [
+      "I wish I had said something earlier.",
+      "If only I'd spoken up sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7f2b4d4f",
+    "ja": "問題は、誰が責任を持つかです。",
+    "en": "The issue is who will take ownership.",
+    "alternatives": [
+      "What matters is who takes ownership.",
+      "The issue is who's going to own this."
+    ],
+    "point": "who 以下は名詞節。語順は主語+動詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_7h2k5w7a",
+    "ja": "我々が譲れば妥協点に達したのに。",
+    "en": "If we'd conceded, we'd have reached a compromise.",
+    "alternatives": [
+      "Had we conceded, we'd have reached a compromise.",
+      "We'd have found a compromise if we'd conceded."
+    ],
+    "point": "concede は争点について相手の言い分を認める。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_7h6n8z2r",
+    "ja": "会議は短くしてね。",
+    "en": "Keep the meeting short.",
+    "alternatives": ["Make the meeting short.", "Keep the meeting brief."],
+    "point": "keep 人や物 形容詞でその状態に保つ。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_7j3k3x7m",
+    "ja": "私は開始前に資料を送っていた。",
+    "en": "I'd sent the slides beforehand.",
+    "alternatives": [
+      "I'd already sent the slides beforehand.",
+      "I'd sent the slides before we started."
+    ],
+    "point": "「その前にすでに」は過去完了 had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_7x6h7k7u",
+    "ja": "議事録は後ほど回覧されます。",
+    "en": "The minutes will be circulated later.",
+    "alternatives": [
+      "The minutes will be sent around later.",
+      "The minutes will be shared afterward."
+    ],
+    "point": "議事録は minutes と複数形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7x9h8s9p",
+    "ja": "私は議論を脱線させたくない。",
+    "en": "I want to avoid derailing the discussion.",
+    "alternatives": [
+      "I don't want to derail the discussion.",
+      "I'd rather not derail the discussion."
+    ],
+    "point": "avoid の後は動名詞、derail は脱線させる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_7z3h6x8b",
+    "ja": "次の会議は私が進行します。",
+    "en": "I'll lead the next meeting.",
+    "alternatives": ["I'll run the next meeting.", "I'm going to chair the next one."],
+    "point": "その場で決めた申し出は will",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8f5p7j7g",
+    "ja": "彼女はあえて反対役だったはず。",
+    "en": "She must've been playing devil's advocate.",
+    "alternatives": [
+      "She must've deliberately argued the other side.",
+      "She must've argued against it to test us."
+    ],
+    "point": "play devil's advocate は議論を深めるため敢えて反対する。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_8f9u9g9u",
+    "ja": "私が進行役なら順番を変えるのに。",
+    "en": "If I chaired, I'd change the order.",
+    "alternatives": [
+      "I'd reorder things if I were chairing.",
+      "I'd change the order if I chaired."
+    ],
+    "point": "chair は会議の進行役を務める動詞。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_8m3s5s4j",
+    "ja": "議題は残り二つです。",
+    "en": "There are two items left.",
+    "alternatives": ["Two items are left.", "We have two items left."],
+    "point": "複数のものには There are",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_8n3n6r3j",
+    "ja": "昨日の会議は欠席した。",
+    "en": "I missed yesterday's meeting.",
+    "alternatives": [
+      "I missed the meeting yesterday.",
+      "I wasn't at yesterday's meeting."
+    ],
+    "point": "「欠席する」は miss。過去形は missed",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_8t9p7n4e",
+    "ja": "これが言っていた案です。",
+    "en": "Here's the plan I mentioned.",
+    "alternatives": [
+      "This is the plan I mentioned.",
+      "That's the plan I talked about."
+    ],
+    "point": "目的語の関係詞は省ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_8w7g2r5d",
+    "ja": "見解は違うが方針は支持します。",
+    "en": "Despite disagreeing, I support the approach.",
+    "alternatives": [
+      "Although I disagree, I back the approach.",
+      "I support the approach despite my disagreement."
+    ],
+    "point": "despite の後は名詞か動名詞。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8x5k7z2f",
+    "ja": "私たちいつ会った？",
+    "en": "When did we meet?",
+    "alternatives": ["When did we get together?", "When did we see each other?"],
+    "point": "過去の時点を尋ねるときは did we meet。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_9d5j3y7d",
+    "ja": "課長は来週で大丈夫と言ってた。",
+    "en": "Our manager said next week would work.",
+    "alternatives": [
+      "My boss said next week would be fine.",
+      "My manager said next week was fine."
+    ],
+    "point": "said の後は時制が一つ後ろにずれる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_9f5n2f9x",
+    "ja": "メモは私が取れますよ。",
+    "en": "I can take notes.",
+    "alternatives": ["I can take the notes.", "I'm happy to take notes."],
+    "point": "「メモを取る」は take notes。notes は複数形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_9j5z8g6h",
+    "ja": "私が先に話してもいい？",
+    "en": "Can I speak first?",
+    "alternatives": ["May I go first?", "Is it okay to speak first?"],
+    "point": "Can I で先に話す許可を求める。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9j8r4n5d",
+    "ja": "失礼ですが、一点よろしいですか？",
+    "en": "Might I raise one point?",
+    "alternatives": [
+      "May I raise one point, please?",
+      "If I may, I'd like to raise a point."
+    ],
+    "point": "Might I ～? で丁寧に切り出す",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_9j9t9u2a",
+    "ja": "間違いでなければ、延期でしたよね？",
+    "en": "If I'm not mistaken, it was postponed, right?",
+    "alternatives": [
+      "Wasn't it postponed, if I'm not mistaken?",
+      "If I remember correctly, it was postponed, right?"
+    ],
+    "point": "If I'm not mistaken で断定を和らげる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_9q4e6t9x",
+    "ja": "その案は先週、却下されましたよ。",
+    "en": "That proposal was shot down last week.",
+    "alternatives": [
+      "That proposal got shot down last week.",
+      "That proposal was turned down last week."
+    ],
+    "point": "last week があれば過去形。現在完了は不可",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_9x4m8r2r",
+    "ja": "部長は遅れています。",
+    "en": "The manager is late.",
+    "alternatives": ["The manager is running late.", "Our manager is late."],
+    "point": "「遅れている」は be late。is の後に動詞は不要",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  }
+]
