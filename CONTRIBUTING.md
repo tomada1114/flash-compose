@@ -61,7 +61,7 @@ just check-harness
 just test
 
 # Run only the tests matching FILTER, with no coverage floor
-just test-fast TodoItemTests
+just test-fast ScopeSelectionTests
 
 # Build the app (Debug) for the iOS Simulator
 just build
@@ -120,7 +120,7 @@ mise exec -- scripts/lint.sh          # just lint
 mise exec -- scripts/tests/run.sh     # just test-scripts
 mise exec -- scripts/checks/run-all.sh   # just check-harness
 scripts/coverage.sh                   # just test
-(cd Packages/FlashComposeKit && swift test --filter TodoItemTests)   # just test-fast TodoItemTests
+(cd Packages/FlashComposeKit && swift test --filter ScopeSelectionTests)   # just test-fast ScopeSelectionTests
 xcodebuild -project FlashCompose.xcodeproj -scheme FlashCompose -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath build/dev-derived-data build   # just build
 scripts/run-simulator.sh              # just run (after the build)
 scripts/run-device.sh                 # just run-device (after xcodegen generate)

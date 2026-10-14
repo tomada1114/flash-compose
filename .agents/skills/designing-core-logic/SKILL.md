@@ -26,8 +26,10 @@ Repositories); the module boundaries and import rules
 The 80% coverage floor on `FlashComposeCore` only means something if a test can reach every
 branch without waiting, without depending on the machine's clock, language, or luck.
 Anything Core would read from the world — the time, a fresh identifier, the locale, a
-random number — is therefore an input, the same way `TodoListViewModel` is handed an
-`any TodoRepository` instead of opening a store.
+random number — is therefore an input, the same way `DrillViewModel` is handed an
+`any ProgressStore` instead of opening a store. The drill's inputs travel together as a
+`DrillEnvironment` (time zone, locale, clock, random generator, catalog loader,
+`Tuning`), which `App/` leaves at its defaults and a test pins field by field.
 
 These are standard-library and Foundation values, not OS integrations, so they are
 injected as plain parameters. They do not need a port in `FlashComposePlatform`; add a port
@@ -65,18 +67,23 @@ only when the answer really comes from a framework Core may not import.
   readable.
 - **"Now"** (a timestamp, "is this older than a day", a date to format): a long-lived
   view model takes `now: @Sendable () -> Date` defaulting to `{ Date() }`, as
-  `TodoListViewModel.init` does; a pure function over a value takes the `Date` as an
-  argument (`TodoItem`'s initializer takes `createdAt`). Never call `Date()` or
-  `Date.now` inside a branch.
-- **Identity** travels the same way: `TodoListViewModel` takes
-  `makeID: @Sendable () -> UUID`, so a test knows the identifier a new item will get.
-- **Calendar and time zone** travel with "now": take a `Calendar` (which carries its
-  `timeZone`) rather than reading `Calendar.current`, because "today" depends on it.
-- **Tests:** pass fixed values — `TodoListViewModelFixture` pins `now` and `makeID` —
-  and a `Calendar(identifier: .gregorian)` with an explicit `TimeZone(identifier: "UTC")`.
-  For a clock, the test target defines its own manually advanced `Clock` (the standard
-  library ships none); keep it in `Tests/`, never in `Sources/`. Passing a zero
-  `Duration` through `Tuning` is often enough and needs no fake clock at all.
+  `DrillViewModel.init` does — `AppModel` hands the same `now` to every view model that
+  stamps a value, so a test pins it once; a pure function over a value takes the `Date`
+  as an argument (`PracticeDay(instant:timeZone:)`). Never call `Date()` or `Date.now`
+  inside a branch.
+- **Identity** travels the same way: a type that mints an identifier takes
+  `makeID: @Sendable () -> UUID`, so a test knows the identifier a new value will get.
+- **Calendar and time zone** travel with "now", because "today" depends on them: take
+  the time zone, or a `Calendar` carrying its `timeZone`, rather than reading
+  `TimeZone.current` or `Calendar.current`. `DrillEnvironment.timeZone` is a
+  `@Sendable () -> TimeZone` read at each answer, since the practice day follows the
+  phone's zone at that moment.
+- **Tests:** pass fixed values — `DrillSetup.build()` (`DrillFixture.swift`) pins `now`,
+  the time zone (`DrillFixture.tokyo`), the locale, the clock, the generator, and the
+  catalog. For a clock, the test target defines its own manually advanced `Clock` (the
+  standard library ships none) — `TestClock` over `TestTime`, which moves the wall clock
+  and the monotonic clock together; keep it in `Tests/`, never in `Sources/`. Passing a
+  zero `Duration` through `Tuning` is often enough and needs no fake clock at all.
 
 ## Inject locale
 
@@ -85,7 +92,7 @@ only when the answer really comes from a framework Core may not import.
   composition root or the initializer's default argument), and passes it on explicitly:
   `value.formatted(.number.locale(locale))`, `date.formatted(.dateTime.locale(locale))`.
 - Keep the user-visible *wording* in Core where the coverage floor sees it, as a
-  `LocalizedStringResource` like `TodoListStrings` and `TodoListFailure.message`; the
+  `LocalizedStringResource` like `DrillStrings` and `DrillFailure.message`; the
   view only renders it (`docs/architecture.md` › Localization).
 - **Tests:** `Locale(identifier: "en_US_POSIX")` for a stable expected string, plus a
   second locale (`"de_DE"`, `"ja_JP"`) when the behavior under test *is* the
@@ -95,18 +102,20 @@ only when the answer really comes from a framework Core may not import.
 
 - Take the generator as a parameter: a method that draws takes
   `using generator: inout some RandomNumberGenerator`, mirroring the standard library's
-  own `shuffled(using:)` and `Int.random(in:using:)`. A `@MainActor` view model that owns
-  one stores it as `private var generator: any RandomNumberGenerator`, defaulting to
+  own `shuffled(using:)` and `Int.random(in:using:)`, as `DrillSession.deal(for:using:)`
+  does. A `@MainActor` view model that owns one (`DrillViewModel`) stores it as
+  `private var generator: any RandomNumberGenerator`, defaulting to
   `SystemRandomNumberGenerator()`; the actor isolation already keeps it race-free.
 - **Tests:** Swift's standard library has no seeded generator, so the test target
-  defines one — a few lines of SplitMix64 conforming to `RandomNumberGenerator` — and
-  asserts on the exact sequence a given seed produces. It lives in `Tests/`; shipping
-  code never needs it.
+  defines one — `SeededGenerator`, a few lines of SplitMix64 conforming to
+  `RandomNumberGenerator` — and asserts on the exact sequence a given seed produces. It
+  lives in `Tests/`; shipping code never needs it.
 
 ## One `Tuning` type
 
 FlashCompose's `Tuning` is `Sources/FlashComposeCore/Scheduling/Tuning.swift` — the FSRS
-parameters as `fsrs`, the re-ask spacing as `reAsk`. A new tunable joins it as another
+parameters as `fsrs`, the re-ask spacing as `reAsk`, the start-up indicator's timing as
+`startupIndicator`. A new tunable joins it as another
 property; there is never a second tuning type. Its shape:
 
 - Every number someone might want to tweak — a delay, a threshold, a limit, a retry
@@ -117,9 +126,10 @@ property; there is never a second tuning type. Its shape:
   passes a tiny delay or a low limit to reach a boundary quickly.
 - Durations are `Duration`, not `TimeInterval`; counts are `Int`. A doc comment on each
   property says why it has that value.
-- A domain *invariant* is not a tunable: `TodoItem.normalizedTitle(_:)`'s rule that a
-  title is never blank is part of what the type means, enforced by its throwing
-  initializer, not a `Tuning` entry. The test: would changing it be a product tweak
+- A domain *invariant* is not a tunable: `CardID`'s format rule is part of what the
+  type means, enforced by its throwing initializer, and the 04:00 a practice day starts
+  at is `PracticeDay.boundaryHour`, a constant on its type — neither is a `Tuning`
+  entry. The test: would changing it be a product tweak
   (Tuning) or change what the type means (a parameter or a constant)?
 - Split `Tuning` into nested structs by feature once it grows past a screenful; keep it
   one root type so there is one place to look.
@@ -127,29 +137,32 @@ property; there is never a second tuning type. Its shape:
 ## Action-shaped view models
 
 - A view model is `@MainActor @Observable public final class`, importing `Observation`
-  and, for its wording, `Foundation` (`TodoListViewModel`). It is the one place a view
-  reads state from and sends intent to.
-- State is `public private(set) var`; derived state is a computed property (`canAdd`,
-  `showsEmptyState`). The only settable property is what a control binds to
-  (`draftTitle`). A view never mutates state directly.
-- Entry points are **actions named for what the user did or the app saw**: `load()`,
-  `addDraft()`, `toggle(_:)`, `delete(atOffsets:)` — not setters, and not a generic
-  `send(_ action:)` reducer. Each action is a method a test can call and then assert on
-  the resulting state.
+  and, for its wording, `Foundation` (`DrillViewModel`, `ScopeViewModel`). It is the one
+  place a view reads state from and sends intent to.
+- State is `public private(set) var` (`phase`, `card`, `counts`); derived state is a
+  computed property (`face`, `nextReviewText`, `ScopeViewModel.countText`). The only
+  settable property is one a control binds to, and neither model has one: a scope
+  switch calls `ScopeViewModel.toggle(_:)`. A view never mutates state directly.
+- Entry points are **actions named for what the user did or the app saw**: `start()`,
+  `reveal()`, `grade(_:)`, `sceneDidBecomeActive()`, `scopeDidChange()`, `toggle(_:)` —
+  not setters, and not a generic `send(_ action:)` reducer. Each action is a method a
+  test can call and then assert on the resulting state.
 - An action that waits is `async` and the view calls it from `.task` or `Task { }`;
   the view model does not spawn untracked tasks from an initializer. Construction has
-  no side effects (see `TodoListViewModel.init`: nothing is read until `load()`) —
+  no side effects (see `DrillViewModel.init`: nothing is read until `start()`) —
   which is also what lets a re-render build a pushed screen's model and discard it.
 - **Who builds a view model:** `AppModel`, never a view or `App/`. A model every scene
   shares is an `AppModel` stored property built in its initializer from the ports `App/`
-  passes (`todoList`); a pushed screen's own model is built by a named
-  `make…ViewModel(…)` method, one per route that needs it
-  (`makeTodoDetailViewModel(id:)`). A screen that shows what a shared model holds takes
-  that model, not a copy of the value — `TodoDetailViewModel` holds the list and an
-  identifier — so both screens show one state. `AppModelTests` builds each route's
-  model over the fakes (`docs/architecture.md` › Composition root).
-- Domain rules live in value types (`TodoItem`) that the view model holds and delegates
-  to; the view model translates between them and what the view shows.
+  passes (`scope`, `drill`, `startupIndicator`); a pushed screen's own model is built
+  by a named `make…ViewModel(…)` method, one per route that needs it — none exists
+  while `AppRoute` has no case. A model that reads what a shared model holds takes that
+  model, not a copy of the value — `DrillViewModel` holds the shared `ScopeViewModel`
+  and reads its `selection` — so the drill and the scope see one selection.
+  `AppModelTests` builds the models over the fakes (`docs/architecture.md` ›
+  Composition root).
+- Domain rules live in value types (`ScopeSelection`, the queue's `DrillSession`) that
+  the view model holds and delegates to; the view model translates between them and
+  what the view shows.
 
 ## Deliberately not adopted
 
@@ -161,8 +174,8 @@ reasoning lives in `docs/architecture.md`.
 | A third-party architecture framework (TCA, a Redux store, an MVVM kit) | Zero dependencies; `@Observable` plus actions already gives testable state | `docs/architecture.md` › Decisions at a glance |
 | A generic `send(_ action:)` reducer on every view model | Methods are discoverable, typed, and testable one at a time | `docs/architecture.md` › View models |
 | Use-case / interactor classes, presenters, per-layer DTOs | The view model's action *is* the use case; copies between layers add no consumer | `docs/architecture.md` › Layers |
-| A repository or protocol per type "for testability" | A port exists only where a storage or OS boundary does (`TodoRepository`); a pure rule (`TodoItem`) is tested directly | `docs/architecture.md` › Repositories |
-| A dependency-injection container or service locator | `App/` hands the ports to `AppModel`'s initializer, and `AppModel` builds each model by a named method — no registry, no lookup by type, no global | `docs/architecture.md` › Composition root |
+| A repository or protocol per type "for testability" | A port exists only where a storage or OS boundary does (`ProgressStore`); a pure rule (`ScopeSelection`) is tested directly | `docs/architecture.md` › Repositories |
+| A dependency-injection container or service locator | `App/` hands the ports to `AppModel`'s initializer, and `AppModel` builds each model itself — no registry, no lookup by type, no global | `docs/architecture.md` › Composition root |
 | Coordinators / routers as separate objects | SwiftUI's own navigation state, owned by a view model, suffices at this size | this skill |
 | An event bus or `NotificationCenter` between Core types | Direct calls; an OS notification is observed through a port instead | `docs/architecture.md` › Where new code goes |
 

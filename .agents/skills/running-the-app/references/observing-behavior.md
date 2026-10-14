@@ -12,7 +12,7 @@ belongs in a commit.
 
 ```bash
 mkdir -p build/screenshots
-xcrun simctl io booted screenshot build/screenshots/list-light.png
+xcrun simctl io booted screenshot build/screenshots/drill-light.png
 ```
 
 It writes a PNG of the device's display (`--type=jpeg` and others exist) and needs no
@@ -45,7 +45,7 @@ xcrun simctl status_bar booted clear
 ```bash
 xcrun simctl openurl booted https://example.com          # opens Safari
 xcrun simctl openurl booted unclaimed://item/1           # fails: no app claims the scheme
-xcrun simctl openurl booted "flash-compose://todo/<uuid>"       # opens that item's detail screen
+xcrun simctl openurl booted "flash-compose://"           # opens the app on the drill
 ```
 
 `openurl` hands the URL to the system exactly as a tap on a link would, so it exercises
@@ -60,10 +60,10 @@ claims its own custom scheme (`project.yml`'s `info:` block, parsed by Core's
   `XCUIDevice.shared.system.open(url)` and taps the prompt's button on
   `XCUIApplication(bundleIdentifier: "com.apple.springboard")` (its label follows the
   simulator's language). Once accepted, later `openurl` calls open the app directly.
-- The item's identifier is the suffix of its row toggle's `toggle-<uuid>` identifier,
-  and the `add:` line `just logs` streams in the `todos` category.
-- A link the app rejects is logged at error level in the `navigation` category, so
-  `log show` reaches it: `open: rejected scheme=… host=…`.
+- `flash-compose://` is the one link the app accepts: it pops to the drill, the root.
+  Any host, path, or query (`flash-compose://card`) is rejected rather than ignored,
+  leaves the screen as it is, and is logged at error level in the `navigation` category,
+  so `log show` reaches it: `open: rejected scheme=… host=…`.
 
 ```bash
 printf '{"aps":{"alert":{"title":"Probe","body":"Hello"}}}\n' > build/payload.apns
@@ -86,13 +86,15 @@ SIMCTL_CHILD_PROBE_STATE=known-state \
 ```
 
 - Everything after the bundle identifier becomes the process's arguments.
-  `App/FlashComposeApp.swift` reads `-uiTesting` and opens an in-memory store, so the list
-  starts empty and nothing touches the on-disk store; `LaunchTests` passes the same
-  argument through `XCUIApplication.launchArguments`.
-- `-failUpdates` (Debug builds only) wraps the store so every save that replaces a
-  stored item — a toggle — fails, while adds still succeed: add an item, toggle it, and
-  the failure alert shows over whichever screen is on top. `LaunchTests` uses it to
-  prove exactly that; a Release build ignores it.
+  `App/FlashComposeApp.swift` reads `-uiTesting` and opens an in-memory store and a
+  scratch preferences suite cleared at launch, so every card starts new, the scope
+  starts at its default, and nothing touches the on-disk store or the standard defaults;
+  `LaunchTests` passes the same argument through `XCUIApplication.launchArguments`.
+- `-failRecords` (Debug builds only) wraps the store in `RecordFailingProgressStore`,
+  so every grade fails to save while the start-up still loads: reveal a card, grade it,
+  and the failure alert (E2) shows over the drill with the same card's answer behind
+  it. `LaunchTests` uses it to prove exactly that; a Release build neither reads the
+  argument nor contains the type.
 - An environment variable reaches the app only with the `SIMCTL_CHILD_` prefix, which
   `simctl` strips: the line above starts the app with `PROBE_STATE=known-state`, which
   `ProcessInfo` reads. Nothing in the template reads it; it proves the channel.
@@ -109,10 +111,11 @@ composition root, and turned into one value a Core type takes, as `-uiTesting` i
 ## Drive a flow with a throwaway XCUITest
 
 `LaunchUITests/` is the one XCTest target (`project.yml`'s `FlashComposeLaunchUITests` takes
-the whole directory), so a probe is one file plus `just generate`. The screen already
-carries identifiers for what a test touches — `newItemField`, `addButton`,
-`retryButton`, `toggle-<uuid>` (`TodoListView.swift`) — and a new control needs one
-before it can be driven.
+the whole directory), so a probe is one file plus `just generate`. The drill already
+carries identifiers for what a test touches — `showAnswerButton`, `grade-again`,
+`grade-hard`, `grade-good`, `drillPrompt`, `modelAnswer`, `drillHeader`, `drillDone`,
+`retryButton`, `drillStartFailure` (`Sources/FlashComposeUI/Drill/`) — and a new control
+needs one before it can be driven.
 
 ```swift
 // LaunchUITests/ScratchProbeTests.swift — throwaway, never committed
@@ -124,14 +127,12 @@ final class ScratchProbeTests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-uiTesting"]
         app.launch()
-        let field = app.textFields["newItemField"]
-        XCTAssertTrue(field.waitForExistence(timeout: 20))
-        field.tap()
-        field.typeText("Water plants")
-        app.buttons["addButton"].tap()
-        XCTAssertTrue(app.staticTexts["Water plants"].waitForExistence(timeout: 5))
+        let reveal = app.buttons["showAnswerButton"]
+        XCTAssertTrue(reveal.waitForExistence(timeout: 20))
+        reveal.tap()
+        XCTAssertTrue(app.staticTexts["modelAnswer"].waitForExistence(timeout: 5))
         let shot = XCTAttachment(screenshot: app.screenshot())
-        shot.name = "after-adding-an-item"
+        shot.name = "after-revealing-the-answer"
         shot.lifetime = .keepAlways
         add(shot)
     }
@@ -152,7 +153,7 @@ xcrun xcresulttool export attachments --path build/Probe.xcresult \
 
 `xcodebuild` refuses to overwrite an existing result bundle, so move the old one aside
 first. The export writes each attachment under a UUID file name plus a `manifest.json`
-mapping it to its `suggestedHumanReadableName` (`after-adding-an-item_0_….png`) and the
+mapping it to its `suggestedHumanReadableName` (`after-revealing-the-answer_0_….png`) and the
 test it came from. `just uitest` runs the whole scheme, the launch guarantee included,
 into `build/LaunchUITests.xcresult`; use it when you want both.
 

@@ -51,9 +51,9 @@ another's content. An issue that creates a new document adds its line here.
   code standards, commit messages, and the changelog policy. The full recipe list lives
   here and in `AGENTS.md`'s Quick Reference only; a renamed or added recipe updates both.
 - `docs/getting-started.md` — the first run: setup, everyday commands, the simulator
-  and your own iPhone, removing the example code (every to-do file and wiring point,
-  what to keep, and an order that stays green), opening the project in Xcode, and the
-  app icon. A file the example adds, moves, or wires in updates its removal list.
+  and your own iPhone, the worked examples (the files that show each pattern a new
+  concern copies), opening the project in Xcode, and the app icon. A worked example that
+  moves or is renamed updates its list.
 - `AGENTS.md` — the agent-facing guide: the Quick Reference command index, "Validating a
   change", the Architecture, "Before changing the architecture", the Skills and Rules
   tables, "Security and human approval", "Repository scripts", "Enforcement

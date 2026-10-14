@@ -8,10 +8,12 @@ Arcade" colour roles set on iOS system components, the references, the decision
 ledger, and the measured contrast of every pair — is
 [`docs/design/design-direction.md`](design/design-direction.md).
 
-The sections from Brief through Template defaults vs. app decisions, and Visual QA, are
-the research behind the token scale, done for `tomada1114/ios-template`. They stay
-because FlashCompose keeps that scale unchanged; the to-do screens in them are the
-template's examples, not this app's.
+The sections from Brief through Template defaults vs. app decisions are the research
+behind the token scale, done for `tomada1114/ios-template`. They stay because
+FlashCompose keeps that scale unchanged; the list screens and components they review
+(an add bar, a draft field, an Add button) are the template's subjects, not this app's.
+The decision ledger's Rule / role column states each token's role, naming the drill's
+views where a role needs an example.
 
 Researched 2026-09-30 with the owner's `/refero-design` skill and the Refero MCP tools
 (screens and flows on `platform: "ios"`; styles only as a check). Apple claims were
@@ -143,26 +145,26 @@ Token commitments: background — system (List default); type — system text st
 |---|---|---|---|
 | Template stays unbranded | Brief constraint | Overrides the skill's push toward a distinctive direction | Every app departs from the template; a brand here is one every app must undo |
 | `Spacing.xxSmall = 2` | Brief (pre-decided scale); no reviewed screen contradicts | Glyph to a tightly bound caption | The smallest step that still reads as a gap |
-| `Spacing.xSmall = 4` | Brief; Rise and Todoist stack a title over metadata tightly | Lines of one block; `TodoRow`'s glyph box to its title | With the 44 pt glyph box centered, 4 more lands the title about 15 pt from the glyph — Brink's 12–16 |
+| `Spacing.xSmall = 4` | Brief; Rise and Todoist stack a title over metadata tightly | Lines of one block: the header's stacked counts and each count's word to its figure, the kind line's re-ask arrow to its text, the alternatives under their label | The step below `small`: lines this close read as one block |
 | `Spacing.small = 8` | Brief; SwiftUI's own default between related views is of this order | Related controls in one row | Keeps a row's controls reading as one group |
-| `Spacing.medium = 12` | Brink `768f87f2` (icon-to-label 12); the old `Layout.barSpacing` was 12 | Field to its submit action | Unchanged value, now shared |
+| `Spacing.medium = 12` | Brink `768f87f2` (icon-to-label 12); the old `Layout.barSpacing` was 12 | Between the blocks of the answer face (D2), of D3 and E1, and between the header and the card; inside a grade button (`GradeBar`) | Unchanged value, now shared |
 | `Spacing.large = 16` | Brink `768f87f2` and Weather mini `f5d2dddb` (inner padding 16–20); LookUp `f2da9d79` edge inset ≈ 16 | Inside a custom container | Matches the system's own inset, so custom and standard content align |
 | `Spacing.xLarge = 24` | Brink `768f87f2` (section gap 18–22); Weather mini `f5d2dddb` (pronounced section gaps) | Between groups | The next step that separates groups rather than items |
 | `Spacing.xxLarge = 32` | Brief; Apple Books `8482728f` and Superlist `02d61834` use generous space around headers | Between sections that stand apart | Doubles `large`, the scale's top |
 | Screen-edge inset is the system's, not a token | LookUp `f2da9d79`, Ivory `6e265b74` (≈ 16 pt, system-drawn); HIG Layout | `List`/`Form` insets and `.padding()` | The system varies it by device and size class; a token would freeze one value |
 | `Radius.small = 8` | Brief; Rise `c0c13aa0` rounded badges | Tags, thumbnails | Small elements need a visibly smaller radius than their container |
-| `Radius.medium = 12` | Rise `c0c13aa0` (rounded filled search field); LookUp `f2da9d79` (system card radius ≈ 10–12 by eye) | Control-sized containers — the draft field | Close to the system's control rounding, so a custom field sits beside system controls |
+| `Radius.medium = 12` | Rise `c0c13aa0` (rounded filled search field); LookUp `f2da9d79` (system card radius ≈ 10–12 by eye) | Control-sized containers — the reveal, primary, and grade buttons and the point box | Close to the system's control rounding, so a custom field sits beside system controls |
 | `Radius.large = 20` | Brink `768f87f2` (card radius 20); Weather mini `f5d2dddb` (large card radii) | Cards and grouped containers | The two custom-card references agree |
 | Radii are `.continuous` | HIG Layout and the system's own containers; RoundedRectangle docs | `RoundedRectangle(cornerRadius:style: .continuous)` | Matches the curvature the OS draws |
-| `Size.minimumHitTarget = 44` | HIG Buttons and Accessibility (44x44 pt on iOS); Brink `768f87f2` | Every tappable element, both dimensions | Measured in the simulator after the change: toggle 44x44, field 44 tall, Add 50 tall |
+| `Size.minimumHitTarget = 44` | HIG Buttons and Accessibility (44x44 pt on iOS); Brink `768f87f2` | Every tappable element, both dimensions | The HIG's floor; the drill's buttons are taller (`PrimaryActionButton` at least 50 pt, `GradeBar` at least 64 pt) |
 | `Motion.animation(reduceMotion:)` → `nil` or `.default` | HIG Motion ("make motion optional"); `accessibilityReduceMotion` docs | Every state-change animation | No custom durations; motion personality is an app's lock |
 | Color: semantic only | HIG Color, Dark Mode, Accessibility; Crouton `c470a16f` and LookUp `f2da9d79` use system colors | `.primary`, `.secondary`, `.tint`, `.background`, `.fill` styles | System colors carry light, dark, and increased-contrast variants for free |
 | Accent: `AccentColor` with no value (system blue) | HIG Color; build setting `ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME` (set in `project.yml`) | Tint of controls app-wide | The template does not brand |
-| Type: text styles, system font, Dynamic Type; `@ScaledMetric` for text-bound sizes | HIG Typography; LookUp `f2da9d79` (34/17 pt system styles) | `.font(.body)` and siblings | Verified to AX5 in the screenshots |
+| Type: text styles, system font, Dynamic Type; `@ScaledMetric` for text-bound sizes | HIG Typography; LookUp `f2da9d79` (34/17 pt system styles) | `.font(.body)` and siblings | Verified to AX5 in the template's screenshots |
 | Symbols: SF Symbols, default rendering | HIG SF Symbols; every reviewed screen uses glyphs, not images | `Image(systemName:)`, `Label` | Rendering mode per context is an app's lock |
 | Liquid Glass by standard components; no `UIDesignRequiresCompatibility` | Adopting Liquid Glass; `UIDesignRequiresCompatibility` docs | `NavigationStack`, `List`, bars, sheets | Built with the Xcode 27 SDK they take Liquid Glass |
 | Custom glass only via the documented `ViewModifier` pattern | `glassEffect(_:in:)` docs (iOS 26.0, macOS 26.0) | `designing-ui` › Materials and Liquid Glass | The floor is iOS 27 and `FlashComposeUI` builds for macOS 27, so no `#available` branch is needed; one modifier keeps the surface defined once |
-| Draft field: plain style on `.fill.tertiary` in `Radius.medium` | Rise `c0c13aa0`; measured: `.roundedBorder` stays 34 pt tall under a taller frame | The one custom-drawn container in `TodoListView`; the pill is a button that focuses the field | A plain field takes focus only from its text line, so taps 4 pt inside the pill's edges did not focus it until the pill forwarded them; with the forwarding, all five probe taps (corners, edges, center) focus it |
+| A custom-drawn control takes the tap on its whole shape | HIG Buttons (the hit region); measured on the template's draft field, whose fill missed taps off its text line | `.contentShape` on the `Radius.medium` shape of the primary buttons (`PrimaryActionButton`) and the grade buttons (`GradeBar`) | The hit region is the shape the eye sees; the template's field missed taps inside its fill until its whole shape took them |
 | Add button: `.borderedProminent` at `.controlSize(.large)` | HIG Buttons (44 pt); measured 50 pt tall | The primary action | The regular size falls under 44 pt |
 | App icon: placeholder stays | HIG App Icons; Icon Composer docs | `App/Assets.xcassets/AppIcon.appiconset` | Icon Composer `.icon` versus an asset catalog is an app decision |
 
@@ -258,21 +260,12 @@ reason in the sentence beside it — git history holds what it used to say.
 
 ## Visual QA
 
-The to-do list with two items and its empty state, on an iPhone 16e (the smallest iPhone
-device type offered, iOS 26.1), in light, dark, `accessibility-extra-extra-extra-large`,
-and Increase Contrast, taken with `running-the-app`'s `simctl` commands. The screenshots
-are the pull request's evidence, not files in the repository. Compared against the
-template's reference lock above (FlashCompose's own screens are checked against the
-Design lock by the pull requests that build them):
-
-- Held: system grouped background and rows, large title, secondary gray for the empty
-  state's text, accent only on the Add button, 44 pt or larger targets, text wrapping at
-  AX5 with nothing clipped, legible in dark and Increase Contrast.
-- Accepted: the done glyph sits about 11 pt inside the row's leading inset because its
-  44 pt hit box is centered on it; the field (44 pt) is shorter than the large Add button
-  (50 pt). Both are the cost of the hit-target rule on system components.
-- Not the template's to fix: the disabled Add button is faint — the system's disabled
-  style, shown while the draft is empty.
+FlashCompose's screens are held to the Design lock above, not to the template's
+reference lock. Their screenshot pass — the drill in light, dark,
+`accessibility-extra-extra-extra-large`, and Increase Contrast, taken with
+`running-the-app`'s `simctl` commands, the set `designing-ui` asks for — is an open
+follow-up in `docs/architecture.md` › Follow-ups. The screenshots are a pull request's
+evidence, not files in the repository.
 
 ## Sources
 

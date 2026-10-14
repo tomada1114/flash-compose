@@ -113,10 +113,12 @@ marker left, the reset, the origin, the retirement, and `product-section-filled.
 simulator `xcodebuild` on it. Its leftover grep is case-insensitive and allows a missing
 hyphen, so a spelling the literal replace does not cover fails that job.
 
-The rename leaves the example code in place: the to-do list — its `TodoRepository`
-port, the SwiftData adapter, the in-memory fake and the contract suite, the view, and
-the view model — is an illustration, not the app. Replace or remove it as one change,
-keeping the layers and a port's fake-plus-contract shape.
+The rename changes names, never code: everything under `Packages/` and `App/` stays as
+it is. In this repository that code is the app itself, FlashCompose — the drill and the
+scope over the `ProgressStore` and `PreferencesStoring` ports, the SwiftData and
+`UserDefaults` adapters, each port's in-memory fake and contract suite, and the bundled
+card catalog. An app cut from it replaces that code as one change, keeping the layers
+and a port's fake-plus-contract shape.
 
 ## Filling in the Product section
 

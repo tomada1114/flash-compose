@@ -31,7 +31,7 @@ SwiftFormat, XcodeGen, xcbeautify, actionlint, ShellCheck, typos — all pinned)
 ```bash
 just check     # the full local gate: verify-hooks → fmt → lint → test-scripts → check-harness → test → build
 just test      # Swift Testing suites on the host Mac + 80% line / 75% function coverage floors on FlashComposeCore
-just test-fast TodoItemTests   # only the matching tests, no coverage floor (while iterating)
+just test-fast ScopeSelectionTests   # only the matching tests, no coverage floor (while iterating)
 just uitest    # the XCUITest launch test on an iOS Simulator
 just test-ios  # every package test suite on an iOS Simulator (no coverage floor)
 just smoke     # Release build + "does it actually launch" assertion
@@ -65,143 +65,47 @@ It needs a one-time `Config/Local.xcconfig` holding your development team, which
 gitignored and never committed. [Running on your own iPhone](running-on-device.md)
 covers the setup, the bundle identifier, and a free Personal Team's limits.
 
-## Removing the example code
+## The worked examples
 
-The to-do list is an illustration for a new app to replace — example code in a skill
-or a doc is likewise a sketch of the pattern, never something the app must keep. Work
-through this list after `scripts/bootstrap.sh` (the paths below carry your app's name
-once it has run).
+Example code in a skill or a doc is a sketch of a pattern, never something the app must
+keep; the drill's files are the real instance of each pattern a new concern copies.
+Read these before adding one of your own:
 
-**Core:**
+- **A port, its adapter, its fake, and its contract:** the `Sendable` protocol
+  `Packages/FlashComposeKit/Sources/FlashComposeCore/Progress/ProgressStore.swift`, with its
+  null object `UnavailableProgressStore.swift` beside it; the adapter
+  `Packages/FlashComposeKit/Sources/FlashComposePlatform/Persistence/SwiftDataProgressStore.swift`
+  over the schema `AppSchemaV1.swift`, the plan `AppMigrationPlan.swift`, and the one
+  container `PersistenceStore.swift`; the fake
+  `Packages/FlashComposeKit/Tests/FlashComposeTestSupport/InMemoryProgressStore.swift` and the
+  contract `Packages/FlashComposeKit/Tests/FlashComposeTestSupport/ProgressStoreContract.swift`,
+  which `ProgressStoreContractTests` runs against the fake and
+  `SwiftDataProgressStoreTests` against the adapter
+- **Preferences:** `PreferencesStoring` —
+  `Packages/FlashComposeKit/Sources/FlashComposeCore/Preferences/PreferencesStoring.swift` —
+  and `Packages/FlashComposeKit/Sources/FlashComposePlatform/Preferences/UserDefaultsPreferences.swift`,
+  with the stored keys in `PreferenceKeys.swift`, pinned by `PreferenceKeysTests`
+- **View models:** `DrillViewModel` —
+  `Packages/FlashComposeKit/Sources/FlashComposeCore/Drill/DrillViewModel.swift` — and
+  `ScopeViewModel` in `Packages/FlashComposeKit/Sources/FlashComposeCore/Scope/`, with their
+  wording in `DrillStrings` and `ScopeStrings` and the catalog
+  `Packages/FlashComposeKit/Sources/FlashComposeCore/Resources/Localizable.xcstrings`
+- **The composition root:** `AppModel` —
+  `Packages/FlashComposeKit/Sources/FlashComposeCore/AppModel.swift`, the shared view models
+  built over the ports — `RootView` —
+  `Packages/FlashComposeKit/Sources/FlashComposeUI/RootView.swift`, the one navigation stack
+  and the one failure alert — and `App/FlashComposeApp.swift`, which picks each port's
+  adapter
+- **Navigation:** `NavigationModel` and `DeepLink` in
+  `Packages/FlashComposeKit/Sources/FlashComposeCore/Navigation/`
+- **`DesignTokens`:** `Packages/FlashComposeKit/Sources/FlashComposeUI/DesignSystem/DesignTokens.swift`
+- **`AppLog`:** `Packages/FlashComposeKit/Sources/FlashComposeCore/AppLog.swift` — one
+  `Logger` per concern
+- **The launch test:** `LaunchUITests/LaunchTests.swift`, which reveals and grades a card
 
-- [ ] `Packages/FlashComposeKit/Sources/FlashComposeCore/TodoItem.swift` — the domain value
-- [ ] `Packages/FlashComposeKit/Sources/FlashComposeCore/TodoRepository.swift` — the port and its
-      error type, and its null object
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/UnavailableTodoRepository.swift`
-- [ ] `Packages/FlashComposeKit/Sources/FlashComposeCore/TodoListViewModel.swift` and
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/TodoDetailViewModel.swift` — the view models
-- [ ] `AppModel.todoList` and `AppModel.makeTodoDetailViewModel(id:)` in
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/AppModel.swift` — put your own shared view
-      models and route factories there instead
-- [ ] `Packages/FlashComposeKit/Sources/FlashComposeCore/TodoListStrings.swift` and
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/TodoDetailStrings.swift` — the wording
-- [ ] The `todoList.*` and `todoDetail.*` keys in
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/Resources/Localizable.xcstrings`, and the
-      `TodoListStrings` and `TodoDetailStrings` cases in
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/LocalizationTests.swift`
-- [ ] `AppLog.todos`, the `todos` log category, in
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/AppLog.swift` — add a `Logger` for your own
-      concern instead
-- [ ] The Core tests: `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoItemTests.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoListViewModelTests.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoListViewModelEditingTests.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoListViewModelHideCompletedTests.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoListViewModelLookupTests.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoListViewModelFixture.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoDetailViewModelTests.swift`, the to-do
-      cases in `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/AppModelTests.swift`, and
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/TodoRepositoryContractTests.swift`
-
-**Platform:**
-
-- [ ] The adapter
-      `Packages/FlashComposeKit/Sources/FlashComposePlatform/Persistence/SwiftDataTodoRepository.swift`,
-      and `TodoRecord` in the schema
-      `Packages/FlashComposeKit/Sources/FlashComposePlatform/Persistence/AppSchemaV1.swift` with its
-      typealias in
-      `Packages/FlashComposeKit/Sources/FlashComposePlatform/Persistence/AppMigrationPlan.swift` — keep
-      the schema, the plan, and
-      `Packages/FlashComposeKit/Sources/FlashComposePlatform/Persistence/PersistenceStore.swift` for
-      your own `@Model` types (editing V1 is safe only while no build has shipped), or
-      remove the whole `Persistence/` directory, and the container in `App/`, if the app
-      keeps no SwiftData store
-- [ ] Its tests: `Packages/FlashComposeKit/Tests/FlashComposePlatformTests/SwiftDataTodoRepositoryTests.swift`,
-      `Packages/FlashComposeKit/Tests/FlashComposePlatformTests/PersistenceStoreTests.swift`, and the
-      frozen schema copy `Packages/FlashComposeKit/Tests/FlashComposePlatformTests/PreRenameSchemaV1.swift`
-
-**Test support:**
-
-- [ ] The fake `Packages/FlashComposeKit/Tests/FlashComposeTestSupport/InMemoryTodoRepository.swift`
-      and the contract `Packages/FlashComposeKit/Tests/FlashComposeTestSupport/TodoRepositoryContract.swift`
-
-**UI:**
-
-- [ ] `Packages/FlashComposeKit/Sources/FlashComposeUI/TodoListView.swift`,
-      `Packages/FlashComposeKit/Sources/FlashComposeUI/TodoDetailView.swift`, and
-      `Packages/FlashComposeKit/Sources/FlashComposeUI/TodoDoneToggle.swift`
-- [ ] The previews' repository: `Packages/FlashComposeKit/Sources/FlashComposeUI/PreviewTodoRepository.swift`
-
-**App:**
-
-- [ ] `makeRepository()` in `App/FlashComposeApp.swift`, and the `TodoRepository` it hands
-      to `AppModel` — wire your own port's adapter there
-- [ ] The `TodoListView` root screen and the `.todoDetail` branch of
-      `Packages/FlashComposeKit/Sources/FlashComposeUI/RootView.swift` — your first screen and your
-      routes' screens go there
-
-**UI tests:**
-
-- [ ] `LaunchUITests/LaunchTests.swift` — every test adds, opens, deletes, or hides a
-      to-do; point them at what your first screen shows
-
-**Routing:**
-
-- [ ] `AppRoute.todoDetail` in `Packages/FlashComposeKit/Sources/FlashComposeCore/Navigation/AppRoute.swift`,
-      the `todo` host `Packages/FlashComposeKit/Sources/FlashComposeCore/Navigation/DeepLink.swift`
-      parses, and the cases that use them in
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/DeepLinkTests.swift` and
-      `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/NavigationModelTests.swift`
-
-**Preferences:**
-
-- [ ] `PreferenceKeys.hideCompleted` in
-      `Packages/FlashComposeKit/Sources/FlashComposeCore/Preferences/PreferenceKeys.swift`, its
-      line in `Packages/FlashComposeKit/Tests/FlashComposeCoreTests/PreferenceKeysTests.swift`, and
-      the `init(hideCompleted:)` that reads it in
-      `Packages/FlashComposeKit/Sources/FlashComposeUI/PreviewPreferences.swift`
-
-**Keep, as the pattern your own code copies:**
-
-- The port/fake/contract shape: a `Sendable` protocol in Core, its adapter in
-  `FlashComposePlatform`, one fake and one contract function in `FlashComposeTestSupport` — the
-  `TodoRepository` files above are the worked example until your first port exists
-- `PreferencesStoring` — `Packages/FlashComposeKit/Sources/FlashComposeCore/Preferences/PreferencesStoring.swift`
-  and `Packages/FlashComposeKit/Sources/FlashComposePlatform/Preferences/UserDefaultsPreferences.swift`
-- `NavigationModel` — `Packages/FlashComposeKit/Sources/FlashComposeCore/Navigation/NavigationModel.swift`
-- `AppModel` — `Packages/FlashComposeKit/Sources/FlashComposeCore/AppModel.swift` — and `RootView` —
-  `Packages/FlashComposeKit/Sources/FlashComposeUI/RootView.swift`: the shared view models, the route
-  factories, and the one navigation stack
-- `DesignTokens` — `Packages/FlashComposeKit/Sources/FlashComposeUI/DesignSystem/DesignTokens.swift`
-- `AppLog` — `Packages/FlashComposeKit/Sources/FlashComposeCore/AppLog.swift`
-
-**An order that keeps `just check` green at each step:**
-
-1. Add your own Core model, view model, and their tests beside the example, so the
-   coverage floor always has something to measure.
-2. Put your first screen's view model on `AppModel` and the screen at the root of
-   `RootView`, in place of `todoList` and `TodoListView`; wire your adapter in
-   `App/FlashComposeApp.swift` in place of `makeRepository()`; and point
-   `LaunchUITests/LaunchTests.swift` at it (`just uitest`).
-3. Delete the UI files and the previews' repository.
-4. Replace `AppRoute.todoDetail` and the `todo` deep link with a route of your own,
-   updating `DeepLinkTests` and `NavigationModelTests` in the same step, and replace
-   `AppModel.makeTodoDetailViewModel(id:)` and `RootView`'s `.todoDetail` branch with
-   your route's factory and screen.
-5. Delete `TodoListViewModel` and `TodoDetailViewModel` with their tests (the four
-   `TodoListViewModel*Tests.swift` files, `TodoDetailViewModelTests.swift`, the to-do
-   cases in `AppModelTests.swift`, and `TodoListViewModelFixture.swift`), the two
-   strings files, their catalog keys, and their `LocalizationTests` cases together.
-6. Delete `PreferenceKeys.hideCompleted` with its `PreferenceKeysTests` line and
-   `PreviewPreferences`' `init(hideCompleted:)` in
-   `Packages/FlashComposeKit/Sources/FlashComposeUI/PreviewPreferences.swift` — a stored key's
-   removal is a migration for any app already installed, so do it before you ship.
-7. Delete the Platform persistence files and their test, then the fake, the contract,
-   and `TodoRepositoryContractTests`, then `TodoRepository`,
-   `UnavailableTodoRepository`, `TodoItem` with `TodoItemTests`, and `AppLog.todos`.
-
-`rg -i 'todo'` then lists anything left — including the mentions in `AGENTS.md`,
-`docs/architecture.md`, `.claude/rules/`, and the skills that cite the to-do list as
-the worked example (skills are edited under `.agents/skills/`, then `just agents-sync`).
+When new code replaces old, add it and its tests beside the old code first, so the
+coverage floor always has something to measure, and keep `just check` green at each
+step. A stored preference key's removal is a migration for any app already installed.
 
 ## Open in Xcode
 

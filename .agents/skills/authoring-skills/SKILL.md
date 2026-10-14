@@ -116,8 +116,8 @@ the same commit, and widening a skill's subject means widening its row. Enforced
   that only names an owner — the ownership block, a scope note, an attribution such as
   "(`changing-gates`)" — stays bare, with no marker and no "see".
 - **Deletable illustrations.** Example code in a skill is an illustration no build or
-  test depends on, and a reader may delete it or replace it with their own; the
-  template's worked example a skill points to (the to-do list) is replaced by an app,
+  test depends on, and a reader may delete it or replace it with their own; the app's
+  worked example a skill points to (the drill, `ProgressStore`) is replaced in time,
   too. State the rule in its own sentence and the example in the next, so the rule still
   reads once the example is gone.
 - **Platform skills.** A skill about an iOS or Apple API surface holds only what this

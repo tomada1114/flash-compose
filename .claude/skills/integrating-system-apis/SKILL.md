@@ -35,11 +35,11 @@ Every integration is the same pieces, and the template ships one of each to copy
 
 | Piece | Where | Worked example |
 |---|---|---|
-| Port: a `Sendable` protocol, Core value types in and out, and the decision it serves | `Sources/FlashComposeCore/` | `TodoRepository.swift`, and `TodoListViewModel` deciding what to show |
-| Adapter: the framework import, translation only | `Sources/FlashComposePlatform/` | `Persistence/SwiftDataTodoRepository.swift` |
-| Fake: a real implementation answering from test data | `Tests/FlashComposeTestSupport/` | `InMemoryTodoRepository.swift` |
-| Contract: the port's promises, run against the fake and the adapter | `Tests/FlashComposeTestSupport/` | `TodoRepositoryContract.swift` |
-| Wiring: which adapter each port gets | `App/` | `FlashComposeApp.makeRepository()` |
+| Port: a `Sendable` protocol, Core value types in and out, and the decision it serves | `Sources/FlashComposeCore/` | `Progress/ProgressStore.swift`, and `DrillViewModel` deciding that a grade is saved before the next card is dealt, and what a failed load (E1) or a failed save (E2) shows |
+| Adapter: the framework import, translation only | `Sources/FlashComposePlatform/` | `Persistence/SwiftDataProgressStore.swift` |
+| Fake: a real implementation answering from test data | `Tests/FlashComposeTestSupport/` | `InMemoryProgressStore.swift` |
+| Contract: the port's promises, run against the fake and the adapter | `Tests/FlashComposeTestSupport/` | `ProgressStoreContract.swift` |
+| Wiring: which adapter each port gets | `App/` | `FlashComposeApp.makeProgressStore()` |
 
 Write the port first. Its signature is where you decide what the framework type
 collapses into, and an adapter written before its port almost always leaks one:

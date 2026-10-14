@@ -4,10 +4,10 @@ This is FlashCompose's design document: how the app is layered, which patterns i
 and why, and where a new piece of code goes. `AGENTS.md` holds the rules and the
 commands; this file holds the reasoning behind them. [FlashCompose](#flashcompose) is
 the app's own design — its principles, data, scheduling, and flows. The sections after
-it are the patterns FlashCompose keeps from `tomada1114/ios-template`, still shown
-through the template's to-do list until the drill replaces it
-([Follow-ups](#follow-ups)): a domain value, a view model, a repository port, a
-SwiftData adapter, a fake, a contract test, and a UI test.
+it are the patterns FlashCompose keeps from `tomada1114/ios-template`, each shown
+through FlashCompose's own code — the drill, the scope, and the progress store: a domain
+value, a view model, a storage port, a SwiftData adapter, a fake, a contract test, and a
+UI test.
 
 ## Decisions at a glance
 
@@ -145,10 +145,11 @@ card is never shown again (§3.1).
   state before (none for a new card) and after, and the seconds the card was on screen
   before the reveal (§3.6).
 - **Where.** SwiftData, behind the Core `ProgressStore` port: two `@Model` entities in
-  the app's `AppSchemaV1`, in the one container `PersistenceStore` opens. That schema
-  replaces the template's to-do schema rather than following it as `AppSchemaV2`: no
-  build carrying the to-do schema has been installed outside the owner's Mac, so no
-  store on a device holds it.
+  the app's `AppSchemaV1` — `CardProgressRecord` and `AnswerRecord`, and nothing else —
+  in the one container `PersistenceStore` opens. V1 is still edited in place: no build
+  carrying it has been installed outside the owner's Mac, so no store on a device holds
+  an older shape. From the first such install, the next change adds `AppSchemaV2` and a
+  migration stage instead ([The SwiftData adapter](#the-swiftdata-adapter)).
 - **One grade, one save.** Recording a grade appends the answer and replaces the card's
   progress in a single save, so the log and the state never disagree; a failed save
   rolls back both and the card stays on screen (E2, save then advance).
@@ -260,13 +261,11 @@ export (§3.6).
 
 Code work these decisions imply; each becomes an issue.
 
-- Remove the to-do sample — its code, tests, previews, launch-test steps, and the
-  passages that describe it here, in `docs/getting-started.md`, and in `README.md` — and
-  replace its `AppSchemaV1`.
-- The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
-  keys.
-- The design-lock screenshots `designing-ui` asks for.
-- The launch test driven through the drill instead of the to-do list.
+- The scope sheet (S1): its view in `FlashComposeUI/Scope/`, rendering the existing
+  `ScopeViewModel` over the scope keys `PreferenceKeys` already holds; the drill's way
+  into it; and the drill following its changes (`DrillViewModel.scopeDidChange()`, which
+  no view calls yet).
+- The design-lock screenshots `designing-ui` asks for, of FlashCompose's own screens.
 
 ## Layers
 
@@ -304,107 +303,124 @@ Simulator, and CI's `app` job proves it compiles and launches there.
 
 ## View models
 
-A view model is a `@MainActor @Observable final class` in Core. The template's is
-`TodoListViewModel`.
+A view model is a `@MainActor @Observable final class` in Core. FlashCompose's are
+`DrillViewModel`, the drill's, and `ScopeViewModel`, the scope sheet's.
 
-- **Action-shaped.** The view calls one method per user intent — `addDraft()`,
-  `toggle(_:)`, `delete(atOffsets:)` — and never mutates published state itself. State is
-  `public private(set)`; the only settable property is what a control binds to
-  (`draftTitle`).
-- **Derived state lives here.** `canAdd`, `showsEmptyState`, `showsLoadFailure`,
-  `showsProgress` are computed in Core so the view has no `if` of its own worth testing.
+- **Action-shaped.** The view calls one method per user intent — `start()`, `reveal()`,
+  `grade(_:)`, `retry()`, and `dismissFailure()` on the drill, `toggle(_:)` on the scope
+  — and never mutates published state itself. State is `public private(set)`; a view
+  model has a settable property only for what a control binds to, and neither of these
+  has one.
+- **Derived state lives here.** `face`, `header`, `nextReviewText`, and
+  `outsideScopeText` on the drill, and `topicRows`, `levelRows`, `topicsNote`, and
+  `countText` on the scope, are computed in Core so the view has no `if` of its own worth
+  testing.
 - **Wording lives here.** Core returns `LocalizedStringResource` from its String Catalog
-  (`TodoListStrings`, `TodoListFailure.message`); a view renders it with `Text(_:)` and
-  shows user data with `Text(verbatim:)`.
-- **Time and identity are injected** (`now: () -> Date`, `makeID: () -> UUID`) so a test
-  pins both. The same goes for anything nondeterministic an app adds: a `Clock`, a
-  `Locale`, a random number generator.
-- **Construction has no side effects.** Nothing is read until `load()`; the view calls it
-  from `.task` on first appearance.
-- **Ownership.** A view model every scene shares (`TodoListViewModel`) is built once by
-  Core's `AppModel`, which `App/` creates in `@State` (so it outlives any one view tree);
-  the view holds it with `@Bindable` only to bind controls. A pushed screen's own view
-  model (`TodoDetailViewModel`) is built by an `AppModel` factory when the route is
-  pushed, and the screen keeps it in `@State` for as long as it is shown (Composition
-  root, below).
+  (`DrillStrings`, `ScopeStrings`, `DrillFailure.message`); a view renders it with
+  `Text(_:)` and shows card text with `Text(verbatim:)`.
+- **The world is injected.** `DrillViewModel` takes `now: () -> Date` and a
+  `DrillEnvironment` — the time zone, the locale, a `Clock`, a random number generator,
+  the catalog loader, and `Tuning` — and `ScopeViewModel` takes its `locale`, so a test
+  pins every one of them (`designing-core-logic`).
+- **Construction has no side effects.** The drill reads nothing until `start()`, which
+  `DrillView` calls from `.task` on first appearance; the scope reads nothing until
+  `load(catalog:seenCardIDs:)`, which the drill's start-up calls once the catalog and
+  the progress are in (`building the drill reads nothing`, `building the app model reads
+  no preference`).
+- **Ownership.** A view model every scene shares — `drill`, `scope`, and
+  `startupIndicator` — is built once by Core's `AppModel`, which `App/` creates in
+  `@State` (so it outlives any one view tree); a view holds it as a plain `let`
+  (`DrillView`), and with `@Bindable` only to bind a control to it. A pushed screen's own
+  view model is built by an `AppModel` factory when its route is pushed, and the screen
+  keeps it in `@State` for as long as it is shown; nothing is pushed yet, so no factory
+  exists (Composition root, below).
 
 ### Reentrancy
 
 A `@MainActor` method that `await`s can be re-entered by the next tap before it resumes.
-The view model is written for that:
+`DrillViewModel` awaits in two places a tap can reach — the start-up's loads and a
+grade's save — and is written for both. `ScopeViewModel`'s actions are synchronous over
+a synchronous port, so nothing re-enters them.
 
-- An in-flight add sets `isAdding`, which disables Add, so a double tap stores one item.
-- After an `await`, a row is found again by identifier rather than by a remembered index —
-  the list may have changed in between (`toggle(_:)`).
-- The draft is cleared only if it still holds what was submitted, so text typed while a
-  save was in flight survives (`addDraft()`).
-- Loads overlap — the list's `.task`, pull-to-refresh, Retry, and the detail screen's
-  `.task` all call `load()` — and the newest one wins. Each load takes a generation
-  number; one that returns after a newer load started drops its result, success or
-  failure, so a slow, stale fetch never overwrites a newer one.
-- A load replaces `items` wholesale, so a write that finished while it was in flight
-  could vanish: the fetch may have read the store before the write landed. Every add,
-  toggle, and delete the repository acknowledges during the newest load is recorded and
-  replayed over the loaded items — a save replaces or adds by identifier, a delete
-  removes — which changes nothing when the fetch already saw the write. Replaying, rather
-  than loading again after the edit, costs no second fetch and cannot loop.
-- A cancelled load is a no-op: no failure, `items` untouched, and `phase` back to what it
-  was before the load, so a first load cancelled when its screen left leaves the list
-  `idle` and the next appearance asks again. The view model reads `Task.isCancelled`
-  after the fetch rather than a port case: `TodoRepositoryError` has no cancellation
-  case, so a store that sees its caller cancel can only report a failure, which the
-  cancelled caller no longer wants (the `designing-errors` skill, Cancellation
-  propagates).
+- **A grade is taken once.** From a `grade(_:)` call until the next card is on screen,
+  `isGrading` is set and every other grade returns at once, so a double tap records one
+  answer; `reveal()` does nothing off the question face, so a tap during the save cannot
+  time the card again. `DrillView` also stops the grade bar's hit-testing while
+  `isGrading`, but only to spare a second haptic: the guard is in the model, so it holds
+  whatever the view does (`doubleTapIgnored`, `the model is grading while the save is in
+  flight`).
+- **A saved grade lands on the deck as it is then.** The grade is applied by card id
+  once the save returns, and the queue's practice day only moves forward, so 04:00
+  passing while a save is in flight never moves the queue back a day (`a save in flight
+  across 04:00 never moves the queue back a day`).
+- **Start-ups overlap, and the newest wins.** `DrillView`'s `.task` and E1's Retry both
+  reach `start()`. Each start-up takes a generation number; one that returns after a
+  newer one began drops its result, success or failure, so the session is dealt once
+  (`overlapping start-ups deal one session`). Once the drill has started, `start()` does
+  nothing, so a view appearing again keeps the session (`a second start keeps the
+  session`).
+- **A cancelled start-up is a no-op.** No failure shows, and `phase` goes back to what
+  it was before the first start-up in flight: `starting`, so the next appearance asks
+  again, or E1, so Retry still works (`a cancelled start-up changes nothing`, `a
+  cancelled retry goes back to E1 without a failure`, `a cancelled start-up over a retry
+  in flight goes back to E1`). The model reads `Task.isCancelled` after the loads rather
+  than a port case: neither `ProgressStoreError` nor `CatalogError` has a cancellation
+  case, so a load whose caller cancelled can only report a failure, which the cancelled
+  caller no longer wants (the `designing-errors` skill, Cancellation propagates).
+- **A cancelled grade whose save fails shows no failure:** nothing changes and no alert
+  presents (`a cancelled grade whose save fails shows no failure`).
+- **The practice-day watch ends with its task.** `watchPracticeDay()` sleeps on the
+  injected clock to each 04:00 and returns once the sleep throws on cancellation (`the
+  watch sleeps to each 04:00 and stops when cancelled`).
 
-Each of these has a test in `TodoListViewModelTests` that drives the interleaving through
-the fake's `onSave` hook, or its `onFetch` hook, which runs after a fetch has read the
-store and before it returns — the window in which a fetch's answer goes stale.
+The tests drive these interleavings through the fake's `onRecord(_:)` hook, which runs
+inside a record before anything is stored — the window a second tap lands in — and hold
+a start-up in flight through a catalog loader they inject (`DrillStartupTests`).
 
 ## Navigation
 
 Which screen shows is Core state, not `@State` inside a view, so a deep link and state
 restoration have something to hold on to and a test can drive navigation without a view.
 
-- **Routes are a Core enum.** `AppRoute` (`Sources/FlashComposeCore/Navigation/`) has one case
-  per pushable screen, carrying an identifier rather than the value it shows:
-  `.todoDetail(TodoItem.ID)`. The destination's view model looks the item up when the
-  screen renders (`TodoDetailViewModel.content`, through
-  `TodoListViewModel.item(withID:)`, which searches every item, not only the visible
-  ones), so a pushed screen shows the current state, and an identifier nothing holds
-  shows a not-found state.
+- **Routes are a Core enum.** `AppRoute` (`Sources/FlashComposeCore/Navigation/`) has
+  one case per pushable screen, and none today: the drill is the root and the scope a
+  sheet, so nothing is pushed and the path stays empty. The first pushed screen — a card
+  browser, statistics — adds its case, carrying an identifier rather than the value it
+  shows, so the screen looks the value up when it renders: it shows the current state,
+  and an identifier nothing holds shows a not-found state.
 - **The path is a Core view model.** `NavigationModel` is a `@MainActor @Observable`
-  class holding `path: [AppRoute]`, with one action per intent: `show(_:)` pushes,
-  `popToRoot()` returns, `open(_:)` handles a deep link. It is owned per scene: `App/`'s
-  scene root holds it in `@State` and hands it to the root view, while the shared view
-  models it routes between stay app-level, in `AppModel`. It never moves into
-  `AppModel`: a navigation path belongs to a scene, not to the app. FlashCompose is
-  iPhone only and runs one scene, but per-scene ownership keeps navigation correct
-  without depending on that.
-- **One `NavigationStack(path:)`, in `RootView`.** `FlashComposeUI`'s `RootView` binds the
-  stack to `NavigationModel.path`, shows the root screen (`DrillView`, a plain screen
-  with no stack of its own), and declares every destination in one
-  `navigationDestination(for: AppRoute.self)` switch; a `NavigationLink(value:)`
-  pushes a route. The back button writes the path back, which is why `path` is the one
-  settable property. A new screen therefore adds an `AppRoute` case and a branch of that
-  switch, and edits no other screen.
+  class holding `path: [AppRoute]`, with one action per intent: `popToRoot()` returns,
+  `open(_:)` handles a deep link, and the first pushed screen adds the action that
+  pushes it. It is owned per scene: `App/`'s scene root holds it in `@State` and hands
+  it to the root view, while the shared view models stay app-level, in `AppModel`. It
+  never moves into `AppModel`: a navigation path belongs to a scene, not to the app.
+  FlashCompose is iPhone only and runs one scene, but per-scene ownership keeps
+  navigation correct without depending on that.
+- **One `NavigationStack(path:)`, in `RootView`.** `FlashComposeUI`'s `RootView` binds
+  the stack to `NavigationModel.path` and shows the root screen (`DrillView`, a plain
+  screen with no stack of its own). The back button writes the path back, which is why
+  `path` is the one settable property. `RootView` declares no destination yet: the first
+  pushed screen adds one `navigationDestination(for: AppRoute.self)` switch there, a
+  `NavigationLink(value:)` pushes a route, and every later screen adds an `AppRoute` case
+  and a branch of that switch, and edits no other screen.
 - **A pushed screen with a view model of its own gets it from `AppModel`.** The switch
-  cannot build one over a port itself — `FlashComposeUI` may not import `FlashComposePlatform` — so it
-  calls the route's factory: `.todoDetail(id)` renders
-  `TodoDetailView(model: app.makeTodoDetailViewModel(id: id))`. The screen keeps the
-  first model it is handed in `@State`, so the fresh model a later re-render builds is
-  discarded unused (which is why construction has no side effects), and each
-  destination is identified by its route, so a deep link that swaps one pushed item for
-  another gets a fresh screen and model.
-- **Deep links are parsed in Core.** `DeepLink.route(for:)` accepts exactly
-  `flash-compose://todo/<uuid>` — the scheme in any case, the host `todo`, one `UUID` path
-  component — and rejects every other shape rather than guessing; `DeepLink.url(for:)`
-  is its inverse. The scene root forwards `.onOpenURL` to its `NavigationModel.open(_:)`,
-  which replaces the path with the parsed route or logs the rejected link's scheme and
-  host in the `navigation` category. The scheme is registered under `project.yml`'s `info:` block
-  (XcodeGen writes the gitignored `App/Info.plist` from it on every `just generate`, and
-  the build merges it with the `INFOPLIST_KEY_*` settings); `DeepLinkTests` fails when
-  the scheme Core parses and the one `project.yml` registers differ, and
-  `scripts/bootstrap.sh` rewrites both together.
+  cannot build one over a port itself — `FlashComposeUI` may not import
+  `FlashComposePlatform` — so the route's branch calls a `make…ViewModel(…)` factory the
+  screen adds to `AppModel`. The screen keeps the first model it is handed in `@State`,
+  so the fresh model a later re-render builds is discarded unused (which is why
+  construction has no side effects), and each destination is identified by its route,
+  so a deep link that swaps one pushed value for another gets a fresh screen and model.
+- **Deep links are parsed in Core.** `DeepLink.destination(for:)` accepts exactly
+  `flash-compose://` — the scheme in any case, and no other URL component — and answers `.drill`; it rejects every other shape rather than guessing. The
+  scene root forwards `.onOpenURL` to its `NavigationModel.open(_:)`, which pops to the
+  root for `.drill`, or leaves the path alone and logs the rejected link's scheme and
+  host in the `navigation` category (`DeepLinkTests`, `NavigationModelTests`). A pushed
+  screen's link shape arrives with its `AppRoute` case, as a `DeepLink.Destination` case
+  of its own. The scheme is registered under `project.yml`'s `info:` block (XcodeGen
+  writes the gitignored `App/Info.plist` from it on every `just generate`, and the build
+  merges it with the `INFOPLIST_KEY_*` settings); `DeepLinkTests` fails when the scheme
+  Core parses and the one `project.yml` registers differ, and `scripts/bootstrap.sh`
+  rewrites both together.
 - **Tabs are an app's decision.** A tab-based app keeps one `NavigationModel` per tab, one
   stack each; tabs versus a single stack is the design lock's navigation field
   (`designing-ui`). `NavigationSplitView` and state restoration (`@SceneStorage` over
@@ -413,89 +429,101 @@ restoration have something to hold on to and a test can drive navigation without
 ## Repositories
 
 A repository is a **port**: a `Sendable` protocol Core declares, in Core's vocabulary.
-`TodoRepository` is the worked example.
+`ProgressStore` is the worked example.
 
 ```swift
-public protocol TodoRepository: Sendable {
-    func fetchAll() async throws(TodoRepositoryError) -> [TodoItem]
-    func save(_ item: TodoItem) async throws(TodoRepositoryError)
-    func delete(id: TodoItem.ID) async throws(TodoRepositoryError)
+public protocol ProgressStore: Sendable {
+    func loadProgress() async throws(ProgressStoreError) -> [CardProgress]
+    func record(answer: Answer, progress: CardProgress) async throws(ProgressStoreError)
 }
 ```
 
-- **Value types only across the port.** `TodoItem` is a Core struct; the SwiftData
-  `@Model` (`TodoRecord`) is internal to `FlashComposePlatform` and never crosses. That is what
-  keeps SwiftData's non-`Sendable` model objects on the adapter's actor and lets every
-  Core test run without SwiftData.
+- **Value types only across the port.** `CardProgress` and `Answer` are Core structs;
+  the SwiftData `@Model`s (`CardProgressRecord`, `AnswerRecord`) are internal to
+  `FlashComposePlatform` and never cross. That is what keeps SwiftData's non-`Sendable`
+  model objects on the adapter's actor and lets every Core test run without SwiftData.
 - **`async` everywhere**, because an implementation is an actor with its own executor
   (SwiftData's `@ModelActor`, or the fake), and crossing into it is a suspension point.
-- **Typed throws with a closed Core error enum.** `TodoRepositoryError` has three cases;
-  the adapter maps every SwiftData error into one of them and logs the detail
-  (`.private`), so Core handles a closed set and never learns which store failed. Error
-  payloads carry identifiers, never titles — an error can reach a log or a crash report.
-- **The ordering is Core's.** `TodoItem.isOrderedBefore(_:_:)` defines display order and
-  every implementation sorts by it, so a store's query language never decides behavior.
+- **Typed throws with a closed Core error enum.** `ProgressStoreError` has three cases —
+  `corruptedRecord`, `storageFailure`, `unavailable` — and the adapter maps every
+  SwiftData error into one of them and logs the detail (`.private`), so Core handles a
+  closed set and never learns which store failed. No case carries a payload: the drill
+  does the same thing whichever card a failure touched, and a row the store cannot read
+  back may not even hold a valid card id.
+- **The order is Core's.** `loadProgress()` returns its rows in no particular order, and
+  the queue (`Drill/Queue/`'s `DrillSession`) decides what comes next, so a store's query
+  language never decides behavior (Principles, above: the schedule is Core's).
 - **A null object for "no store".** When the on-disk store cannot be opened, `App/` hands
-  the view model `UnavailableTodoRepository`, which fails every call. The app launches,
-  shows its load failure with a retry, and never pretends an edit was saved. The
-  alternatives — crashing, or silently falling back to an in-memory store whose edits
-  vanish on relaunch — are both worse for the user.
+  `AppModel` `UnavailableProgressStore`, which throws `unavailable` from every call. The
+  app launches, the drill shows E1, and nothing pretends a grade was saved. The
+  alternatives — crashing, or silently falling back to an in-memory store whose grades
+  vanish on relaunch — are both worse for the learner.
 
 ### The SwiftData adapter
 
-`SwiftDataTodoRepository` is an `actor` annotated `@ModelActor`: SwiftData gives it a
+`SwiftDataProgressStore` is an `actor` annotated `@ModelActor`: SwiftData gives it a
 `ModelContext` bound to its own serial executor, so no model object leaves the actor and
 the main actor never waits on a write it did not ask for.
 
-- **One store, one container, for the whole app.** `PersistenceStore.makeContainer(storage:)`
-  is the only place a `ModelContainer` is opened, from the app-wide `AppSchemaV1` and
-  `AppMigrationPlan`. `App/` opens it once and hands it to every repository's
-  `init(modelContainer:)` (the initializer `@ModelActor` generates); no repository opens a
-  container of its own, because a second container with a different schema over the same
-  default store file risks failing to open or damaging the store. Each repository is its
-  own actor with its own `ModelContext` over the shared container, so two of them see each
-  other's saved writes (`PersistenceStoreTests`).
+- **One store, one container, for the whole app.**
+  `PersistenceStore.makeContainer(storage:)` is the only place a `ModelContainer` is
+  opened, from the app-wide `AppSchemaV1` and `AppMigrationPlan`. `App/` opens it once
+  and hands it to every adapter's `init(modelContainer:)` (the initializer `@ModelActor`
+  generates); no adapter opens a container of its own, because a second container with a
+  different schema over the same default store file risks failing to open or damaging
+  the store. Each adapter is its own actor with its own `ModelContext` over the shared
+  container, so two of them see each other's saved writes (`PersistenceStoreTests`).
 - **`Storage`** picks the file: `.onDisk` (SwiftData's default store, for the app),
   `.inMemory` (UI tests under `-uiTesting`, and host tests), or `.file(URL)` (a test that
   must close a store and reopen the same file, as a migration test does).
 - **A failed open is logged, then rethrown.** `makeContainer` logs SwiftData's error as a
   fault (`.private`: it can quote a path) and throws it unchanged; `App/` answers with
-  `UnavailableTodoRepository` for every port the store would have served.
+  `UnavailableProgressStore`, the null object of the one port the store serves.
 - **A failed save rolls the context back**, or the pending change would be written by
-  the next successful save.
+  the next successful save (`a failed save is rolled back and never written by the next
+  one`).
 - **The schema is versioned from day one** (`AppSchemaV1`, `AppMigrationPlan`), and it
-  is the whole app's, not one entity's: `TodoRecord` beside `SwiftDataProgressStore`'s
-  `CardProgressRecord` and `AnswerRecord`. V1 is edited in place while no build carrying
-  it has been installed outside the owner's Mac ([Progress store](#progress-store)).
-  The stored shape is contract (below): from the first such install, the next change to
-  a record, or another entity, adds `AppSchemaV2` and a migration stage instead of
-  editing V1, and a repository over the shared container. The store records the
-  model's entities, attributes, and version identifier — never the Swift names of the
-  schema or the plan — so a store written before both were renamed to their `App`
-  names opens unchanged (`PersistenceStoreTests` reopens one written by a frozen copy of
-  the old schema, `PreRenameSchemaV1`).
-- **`@Attribute(.unique)` on the identifier** makes a save with a known id an update.
-  CloudKit sync does not allow unique constraints; an app that turns sync on replaces it
-  with a fetch-before-insert in a new schema version, and that choice is a design change that rewrites this entry.
+  is the whole app's, not one entity's: today `CardProgressRecord` and `AnswerRecord`.
+  V1 is still edited in place, because no build carrying it has been installed outside
+  the owner's Mac ([Progress store](#progress-store)). The stored shape is contract
+  (below): from the first such install, the next change to a record, or another entity,
+  adds `AppSchemaV2` and a migration stage instead of editing V1, and a new entity's
+  adapter runs over the shared container. The store records the model's entities,
+  attributes, and version identifier — never the Swift names of the schema or the plan
+  — so renaming them does not stop a store from opening (`PersistenceStoreTests`
+  reopens a store written by a frozen copy of the old schema, `PreRenameSchemaV1`).
+- **`@Attribute(.unique)` on `CardProgressRecord.cardID`** keeps a second row for a card
+  from ever being written, whatever the adapter does; the adapter itself finds the
+  card's row by its id and updates it. `AnswerRecord` has no unique attribute: every
+  answer is a new row. CloudKit sync does not allow unique constraints; an app that turns
+  sync on replaces the constraint with a fetch-before-insert in a new schema version,
+  and that choice is a design change that rewrites this entry.
 
 ### Fakes and contracts
 
 Every port has exactly one fake and one contract function, both in
 `Tests/FlashComposeTestSupport`:
 
-- **`InMemoryTodoRepository`** — a real conforming actor, not a mock: tests hand it data
-  and failures (`fail(_:with:)`), then read what happened (`calls`, `snapshot`). No
-  expectations are declared up front.
-- **`TodoRepositoryContract.check(_:)`** — every promise the port's `///` makes, written
-  once over the protocol. `FlashComposeCoreTests` runs it against the fake and
-  `FlashComposePlatformTests` against the SwiftData adapter with an in-memory store, both under
+- **`InMemoryProgressStore`** — a real conforming actor, not a mock: tests hand it data
+  and failures (`init(progress:)`, `fail(_:with:)`, `storeUnreadableRow(for:)`), then
+  read what happened (`calls`, `answers`, `snapshot`). No expectations are declared up
+  front.
+- **`ProgressStoreContract.check(_:probe:)`** — every promise the port's `///` makes,
+  written once over the protocol. The port has no way to read the log back, make a save
+  fail, or store a row it cannot read back, so each implementation hands the contract a
+  `Probe` for those three. `FlashComposeCoreTests` runs it against the fake
+  (`ProgressStoreContractTests`) and `FlashComposePlatformTests` against the SwiftData
+  adapter with an in-memory store (`SwiftDataProgressStoreTests`), both under
   `just test` and in CI. A fake stands in for the adapter only while both keep the same
-  promises; this is what checks it. The contract has its own oracle tests — deliberately
-  broken implementations it must reject — so it cannot pass vacuously.
+  promises; this is what checks it. The contract has its own oracle tests — a
+  `FlawedProgressStore` per broken promise, which
+  `ProgressStoreContract.violations(of:probe:)` must report — so it cannot pass
+  vacuously.
 
 `FlashComposeTestSupport` is a library target only because a test target cannot be depended on.
 No product exports it and `ArchitectureBoundaryTests` fails if a shipped module imports
-it. Previews use their own small `PreviewTodoRepository` in `FlashComposeUI` (Debug only).
+it. Previews use their own small `PreviewProgressStore` and `PreviewPreferences` in
+`FlashComposeUI` (Debug only).
 
 ### Preferences
 
@@ -503,7 +531,9 @@ it. Previews use their own small `PreviewTodoRepository` in `FlashComposeUI` (De
 relaunch but are not the user's data. The port and its keys are in
 `FlashComposeCore/Preferences`, the `UserDefaultsPreferences` adapter in
 `FlashComposePlatform/Preferences`, and `InMemoryPreferences` plus `PreferencesContract` in
-`Tests/FlashComposeTestSupport`. The worked example is Hide Completed on the to-do list.
+`Tests/FlashComposeTestSupport`. The worked example is the scope:
+`PreferenceKeys.scopeTopicsOff` and `scopeLevelsOff`, which `ScopeViewModel` reads and
+writes.
 
 ```swift
 public protocol PreferencesStoring: Sendable {
@@ -522,13 +552,16 @@ public protocol PreferencesStoring: Sendable {
 - **A key carries its type and default.** `PreferenceKey<Value>` pairs a name with a
   default, and `PreferenceValue` admits only `Bool`, `Int`, `Double`, and `String` —
   types `UserDefaults` stores natively. A richer setting is stored as one of these and
-  converted in Core.
+  converted in Core: the topic ids and the levels turned off are each one comma-joined
+  `String` (`ScopeSelection.encodedTopicsOff`, `encodedLevelsOff`).
 - **Key names are contract.** Every key is a constant in `PreferenceKeys`, and
   `PreferenceKeysTests` pins each name and default. A renamed key reads as unset, so a
   rename silently resets every user's setting: it is a migration in Core, not an edit
   to that test (What is contract and what is private, below).
-- **Read on load, not in `init`.** `TodoListViewModel` reads `hideCompleted` at the
-  start of `load()`, so constructing a view model still touches no storage.
+- **Read on load, not in `init`.** `ScopeViewModel` reads the scope keys in
+  `load(catalog:seenCardIDs:)`, which the drill's start-up calls, and writes one when a
+  `toggle(_:)` changes the selection, so constructing a view model still touches no
+  storage (`building the app model reads no preference`).
 - **UI tests start clean.** `UserDefaultsPreferences.scratch(suiteName:)` removes a
   suite's domain before handing back an adapter over it. Under `-uiTesting`, `App/` uses
   a scratch suite named after `AppLog.subsystem`, because `just uitest` reuses the
@@ -537,37 +570,39 @@ public protocol PreferencesStoring: Sendable {
 
 ## Composition root
 
-`App/FlashComposeApp.swift` is the one place that knows both halves of every port. It picks the
-storage and the preferences suite from the launch arguments, opens the one SwiftData
-container (`PersistenceStore`) and builds every SwiftData repository over it, falls back
-to the null object when the container will not open, and builds one `AppModel` in
-`@State`, handing it the adapters as ports through its initializer. Each scene's root
-(`SceneRoot`) owns that scene's `NavigationModel`, forwards opened URLs to it
-(`.onOpenURL`), and renders `FlashComposeUI`'s `RootView` over the app model and the navigation
-model. `App/` chooses adapters and nothing else.
+`App/FlashComposeApp.swift` is the one place that knows both halves of every port. It
+picks the storage and the preferences suite from the launch arguments, opens the one
+SwiftData container (`PersistenceStore`) and builds `SwiftDataProgressStore` over it —
+wrapped in `RecordFailingProgressStore` under the Debug-only `-failRecords` argument —
+falls back to `UnavailableProgressStore` when the container will not open, and builds
+one `AppModel` in `@State`, handing it the adapters as ports through its initializer.
+Each scene's root (`SceneRoot`) owns that scene's `NavigationModel`, forwards opened
+URLs to it (`.onOpenURL`), and renders `FlashComposeUI`'s `RootView` over the app model
+and the navigation model. `App/` chooses adapters and nothing else.
 
 `AppModel` (`Sources/FlashComposeCore/AppModel.swift`) is a `@MainActor @Observable final
 class` in Core that does the rest of the wiring:
 
-- **It holds the view models every scene shares** — `todoList`, the one
-  `TodoListViewModel` every window shows; `scope`, the `ScopeViewModel` whose selection
-  the sheet edits; `drill`, the `DrillViewModel` built over the `ProgressStore` port
-  and that same `scope`; and `startupIndicator`, which watches the drill's start-up —
-  built once over the ports it was handed. `App/` passes the
-  SwiftData progress store over the one container, or `UnavailableProgressStore` when the
-  container will not open, so the drill shows E1 rather than the app crashing.
-- **It has one `make…ViewModel(…)` factory per route whose screen needs a view model of
-  its own** — today `makeTodoDetailViewModel(id:)`, which builds a
-  `TodoDetailViewModel` over the shared list. A factory whose model needs a port builds
-  it over a port `AppModel`'s initializer was handed and keeps as a named stored
-  property.
+- **It holds the view models every scene shares** — `scope`, the `ScopeViewModel` whose
+  selection the sheet edits; `drill`, the `DrillViewModel` built over the
+  `ProgressStore` port and that same `scope`; and `startupIndicator`, which watches the
+  drill's start-up — built once over the ports it was handed. `App/` passes the
+  SwiftData progress store over the one container, or `UnavailableProgressStore` when
+  the container will not open, so the drill shows E1 rather than the app crashing.
+- **A pushed screen's own view model gets a `make…ViewModel(…)` factory.** None exists
+  today, because nothing is pushed. A factory whose model needs a port builds it over a
+  port `AppModel`'s initializer was handed, which `AppModel` then keeps as a named
+  stored property.
 - **It is not a service locator.** There is no registry, no lookup by type, and no
   global: every dependency is a named initializer parameter `App/` passes, and every
-  model is built by a named method. A second port is a new initializer parameter.
-- **It is in Core, not `App/`,** so `AppModelTests` builds a route's view model over the
-  fakes in `FlashComposeTestSupport` and the coverage floor sees the wiring. Factory closures
-  assembled in `App/` were the alternative: they would leave the wiring where no
-  coverage-gated test reaches it.
+  model is a named stored property or built by a named method. A second port is a new
+  initializer parameter.
+- **It is in Core, not `App/`,** so `AppModelTests` builds the shared models over the
+  fakes in `FlashComposeTestSupport` and Core's null object — the drill and the scope
+  over one selection, `UnavailableProgressStore` leaving the drill on E1 — and the
+  coverage floor sees the wiring.
+  Factory closures assembled in `App/` were the alternative: they would leave the
+  wiring where no coverage-gated test reaches it.
 - **It is app-level, never per scene.** Per-window state — the navigation path — stays
   in the scene's own `NavigationModel` (Navigation, above).
 
@@ -576,25 +611,27 @@ class` in Core that does the rest of the wiring:
 - Swift 6 language mode, complete checking, warnings as errors.
 - View models are `@MainActor`; ports are `Sendable` and `async`; adapters and fakes are
   actors. `PreferencesStoring` is the one synchronous port (Preferences, above), so its
-  adapter is a struct and its fake a final class over a `Mutex`. Values crossing actors are `Sendable` structs and enums.
+  adapter is a struct and its fake a final class over a `Mutex`. Values crossing actors
+  are `Sendable` structs and enums.
 - `@unchecked Sendable` and `nonisolated(unsafe)` are not used to silence a diagnostic —
   doing so needs human sign-off (`AGENTS.md`).
-- A closure a test injects (`now`, `makeID`, the fake's `onSave` and `onFetch`) is
-  `@Sendable`; capture values, not a `@MainActor` static.
+- A closure a test injects (`now`, the drill environment's `timeZone` and
+  `loadCatalog`, the fake's `onRecord(_:)` hook) is `@Sendable`; capture values, not a
+  `@MainActor` static.
 
 ## Logging
 
 Shipped code logs through `AppLog` in Core — `os.Logger`, one subsystem (the bundle
 identifier, checked against `project.yml` by `AppLogTests`) and one category per concern
-(`todos`, `drill`, `persistence`, `preferences`, `navigation`). `print`, `debugPrint`, and `NSLog` are
-rejected under `Packages/*/Sources/` and `App/` by `.swiftlint.yml`'s
-`no_print_in_sources`: an app launched from the Home Screen has nowhere to send stdout. Anything user-derived is
-interpolated `.private`; identifiers, counts, and operation names are `.public`.
-`just logs` streams the subsystem from the booted simulator.
+(`drill`, `persistence`, `preferences`, `navigation`). `print`, `debugPrint`, and
+`NSLog` are rejected under `Packages/*/Sources/` and `App/` by `.swiftlint.yml`'s
+`no_print_in_sources`: an app launched from the Home Screen has nowhere to send stdout.
+Anything user-derived is interpolated `.private`; identifiers, counts, and operation
+names are `.public`. `just logs` streams the subsystem from the booted simulator.
 
 A log message is an autoclosure that needs an explicit `self`, which SwiftFormat's
 `redundantSelf` rule strips — log a local constant instead of a `self.` property
-(`TodoListViewModel.load()`).
+(`NavigationModel.open(_:)` binds `scheme` and `host` to locals, then logs them).
 
 ## Localization
 
@@ -635,7 +672,7 @@ the app runs in English on a Japanese iPhone and never reaches Core's `ja` catal
   is raised, never lowered.
 - **Swift Testing everywhere except UI automation**, which Apple still offers only in
   XCTest. Test names are backticked sentences; error paths assert the thrown error's
-  payload.
+  case.
 - **Fakes, not mocks.** One fake per port in `FlashComposeTestSupport`, held to the contract.
 
 ## What is contract and what is private
@@ -664,13 +701,15 @@ framework, view structure, file and type layout, test helpers, log messages.
    contract in `Tests/FlashComposeTestSupport`.
 3. A `@MainActor @Observable` view model in `FlashComposeCore`, tested against the fake. A
    model every scene shares is a stored property of `AppModel`; a pushed screen's own
-   model gets a `make…ViewModel(…)` factory on `AppModel`, tested in `AppModelTests`.
+   model gets a `make…ViewModel(…)` factory on `AppModel`, tested in `AppModelTests` —
+   none exists while nothing is pushed.
 4. The adapter in `FlashComposePlatform`, with the contract run against it in
    `Tests/FlashComposePlatformTests`.
 5. The view in `FlashComposeUI`, rendering the view model; `#Preview` per state; accessibility
    identifiers on what a UI test touches.
-6. A case in `AppRoute`, and its branch in `RootView`'s `navigationDestination`
-   switch, which builds the screen's model through its `AppModel` factory (Navigation,
+6. For a pushed screen, a case in `AppRoute` and its branch in `RootView`'s
+   `navigationDestination(for: AppRoute.self)` switch — which the first pushed screen
+   adds — building the screen's model through its `AppModel` factory (Navigation,
    above).
 7. The wiring in `App/` — only when the feature brings a new port: its adapter, passed
    to `AppModel`'s initializer (Composition root, above).

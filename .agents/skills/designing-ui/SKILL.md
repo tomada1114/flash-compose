@@ -71,7 +71,8 @@ per-screen one.
   their own; a custom color owes all three variants.
 - Text contrast is at least 4.5:1; 7:1 is the target for small text on a custom color.
 - Never convey state by color alone: pair it with a shape, a symbol, or text —
-  `TodoRow` strikes through a done item and swaps its glyph as well as dimming it.
+  `GradeBar` gives each grade a symbol (×, △, ○) and a word, and only ○ a color, and
+  `DrillHeaderView` marks the current pile's count with an underline, a shape.
 - Check it rather than trust it — `xcrun simctl ui <udid> appearance dark`,
   `xcrun simctl ui <udid> increase_contrast enabled` (`xcrun simctl help ui` lists the
   spelling), and `content_size accessibility-extra-extra-extra-large`; each without an
@@ -86,7 +87,8 @@ per-screen one.
 - Every tappable element is at least `DesignTokens.Size.minimumHitTarget` in both
   dimensions. A small glyph gets a framed `contentShape`, not a bigger glyph; a control
   whose system style stays under 44 pt gets a larger control size or a plain style on a
-  token-sized container (`TodoListView`'s field and Add button).
+  container at least that tall (`PrimaryActionButton` at 50 pt, `GradeBar`'s buttons at
+  64 pt).
 - Align to the spacing scale, and let alignment and grouping carry hierarchy before
   color or weight does.
 

@@ -11,8 +11,7 @@ and is not: `AGENTS.md` › Product and [`docs/product/requirements.md`](docs/pr
 It is built from [tomada1114/ios-template](https://github.com/tomada1114/ios-template):
 an iOS 27+ SwiftUI app with XcodeGen and a local Swift package, SwiftData behind a
 repository port, and quality gates and an agent harness (Claude Code, Codex CLI) from
-the first commit. The template's to-do example stays in place until the drill replaces
-it.
+the first commit.
 
 
 ## Quickstart
@@ -63,8 +62,8 @@ Precedent: pointfreeco's isowords.
 `FlashComposeCore` holds all logic and never imports a UI, persistence, or OS-integration
 framework (the list is in [`.swiftlint.yml`](.swiftlint.yml)'s `no_ui_import_in_core`,
 and `ArchitectureBoundaryTests` holds it a second time); `FlashComposeUI` holds thin views;
-`FlashComposePlatform` holds the adapters that talk to the OS — the SwiftData repository is
-the worked example — each behind a protocol Core declares, so a test substitutes a
+`FlashComposePlatform` holds the adapters that talk to the OS — the SwiftData progress store
+is the worked example — each behind a protocol Core declares, so a test substitutes a
 fake and `App/` decides which implementation the app gets. The 80% line and 75%
 function coverage floors ([`scripts/coverage.sh`](scripts/coverage.sh)) apply to Core
 only, which is what makes a strict numeric gate honest for a UI app instead of an
@@ -74,11 +73,11 @@ invitation to write meaningless view tests.
 
 SwiftData is first-party, so persistence costs no dependency, and it ships with a
 versioned schema and a migration plan from day one, so the first model change is a
-migration rather than a data loss. Core never sees it: `TodoRepository` is a port in
-Core's vocabulary, `SwiftDataTodoRepository` is its adapter, and when the store will not
-open `App/` hands the view model `UnavailableTodoRepository`, a null object, so the
-app still launches. One contract function,
-[`TodoRepositoryContract`](Packages/FlashComposeKit/Tests/FlashComposeTestSupport/TodoRepositoryContract.swift),
+migration rather than a data loss. Core never sees it: `ProgressStore` is a port in
+Core's vocabulary, `SwiftDataProgressStore` is its adapter, and when the store will not
+open `App/` hands `AppModel` `UnavailableProgressStore`, a null object, so the app still
+launches and the drill shows its start-up failure. One contract,
+[`ProgressStoreContract`](Packages/FlashComposeKit/Tests/FlashComposeTestSupport/ProgressStoreContract.swift),
 runs against both the in-memory fake and the real adapter, so the fake cannot drift.
 
 ### Why one String Catalog in Core, in English and Japanese?
@@ -177,7 +176,7 @@ run each without Just.
 - [CONTRIBUTING.md](CONTRIBUTING.md) — setup, every `just` recipe, and the pull
   request process
 - [Getting Started](docs/getting-started.md) — first run, the simulator and your
-  iPhone, and removing the example code
+  iPhone, and the worked examples
 - [Architecture](docs/architecture.md) — the layers, ports and adapters, and the
   reasoning behind them
 - [Roadmap](docs/architecture/roadmap.md) — the app's Now / Next / Later direction
@@ -227,10 +226,9 @@ run each without Just.
    `CODE_OF_CONDUCT.md` for your app (the conduct-reporting contact stays
    `you@example.com` if `--email` was omitted, so check it), and review
    `LICENSE`'s copyright line (`CHANGELOG.md` is reset automatically)
-7. Replace or remove the example code — the to-do list: its `TodoRepository`
-   port, the SwiftData adapter, the in-memory fake and contract suite, the views,
-   and the view model — following the checklist in
-   [docs/getting-started.md › Removing the example code](docs/getting-started.md#removing-the-example-code);
+7. Replace the app's own code — the drill, its card catalog, and the scope — with
+   yours, copying the patterns listed in
+   [docs/getting-started.md › The worked examples](docs/getting-started.md#the-worked-examples);
    keep the Core/UI/Platform split and the tests
 8. Optional, repository admin only: once the bootstrap commit is on `main`,
    protect it with `just ruleset` (`.github/rulesets/main.json`; it requires

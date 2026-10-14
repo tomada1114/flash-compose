@@ -22,29 +22,32 @@ error mapping at the adapter boundary. **Does not own:** writing the failing tes
 ## Where an error type lives
 
 - Declare every error a caller can observe in `FlashComposeCore`, next to the port or model
-  that throws it — `TodoRepository.swift` holds `TodoRepositoryError`. A Core view model
-  switches on it, and the fake in `Tests/FlashComposeTestSupport` throws it, so it cannot live
+  that throws it — `ProgressStore.swift` holds `ProgressStoreError`. A Core view model
+  catches it, and the fake in `Tests/FlashComposeTestSupport` throws it, so it cannot live
   in `FlashComposePlatform` (Core never imports Platform).
 - One `enum` per failure domain, `Error, Equatable, Sendable`. Cases name what went
-  wrong for the caller (`.notFound`, `.storageFailure`), not which API failed.
-- Payloads carry only what a caller needs to decide, and are `Sendable` values:
-  identifiers (`TodoItem.ID`), small enums, durations. Never an `NSError` or an
-  underlying `any Error` — those are not `Equatable`, often not `Sendable`, and leak the
-  adapter's mechanism into Core.
+  wrong for the caller (`.unavailable`, `.storageFailure`), not which API failed.
+- A case carries a payload only when a caller needs it to decide, and the payload is a
+  `Sendable` value: an identifier, a small enum, a count, a duration —
+  `FSRSWeightsError.wrongCount(Int)` carries how many weights were given. Never an
+  `NSError` or an underlying `any Error` — those are not `Equatable`, often not
+  `Sendable`, and leak the adapter's mechanism into Core.
 
-The worked example, as `TodoRepository.swift` declares it (doc comments trimmed):
+The worked example, as `ProgressStore.swift` declares it (doc comments trimmed). No case
+carries a payload: the drill does the same thing whichever card a failure touched, so
+the detail stays in the adapter's log.
 
 ```swift
-public enum TodoRepositoryError: Error, Equatable, Sendable {
-    case corruptedRecord(TodoItem.ID)
-    case notFound(TodoItem.ID)
+public enum ProgressStoreError: Error, Equatable, Sendable {
+    case corruptedRecord
     case storageFailure
+    case unavailable
 }
 ```
 
 ## Typed throws or plain throws
 
-Typed throws (`throws(TodoRepositoryError)`, SE-0413) needs Swift 6.0
+Typed throws (`throws(ProgressStoreError)`, SE-0413) needs Swift 6.0
 (<https://github.com/swiftlang/swift-evolution/blob/main/proposals/0413-typed-throws.md>,
 "Implemented (Swift 6.0)", checked 2026-09-30); this package is
 `swift-tools-version: 6.4` in Swift 6 language mode, so it is available everywhere.
@@ -59,31 +62,34 @@ Typed throws (`throws(TodoRepositoryError)`, SE-0413) needs Swift 6.0
 - Never `throws(any Error)` (it is plain `throws`) and never a catch-all case such as
   `.unknown(any Error)` to make a typed throw compile — map to a real case instead.
 
-`TodoRepository` throws `TodoRepositoryError` from every method, and
-`TodoListViewModel.delete(_:)` decides on one case by pattern:
+`ProgressStore` throws `ProgressStoreError` from both methods, so a caller handles a
+closed set of cases and never learns which store failed. `DrillStartup` keeps the type
+without a cast — the `catch` binds `error` as `ProgressStoreError`:
 
 ```swift
 do {
-    try await repository.delete(id: id)
-} catch .notFound {
-    // Already gone: what the user asked for is true, so the row goes too.
+    return try await .success(store.loadProgress())
 } catch {
-    report(.deleteFailed, error)  // error is a TodoRepositoryError here
-    return
+    return .failure(error)  // error is a ProgressStoreError here
 }
 ```
 
-An empty result is not a failure: `fetchAll()` on an empty store returns `[]`, and an
-error is for "could not find out". Absence becomes a throw only where the port promises
-the caller must hear about it — `delete(id:)` reports `.notFound` so a caller whose list
-is stale finds out, and the caller then decides it is harmless.
+`PersistenceStore.makeContainer(storage:)` stays on plain `throws`: its one caller,
+`App/`, only falls back to `UnavailableProgressStore` whatever SwiftData threw.
+
+An empty result is not a failure: `loadProgress()` on a first launch returns `[]`, and an
+error is for "could not find out". A part that cannot be read is not a failure of the
+whole either, where the port says so: `loadProgress()` leaves out a stored row it cannot
+read back and throws only when the store as a whole cannot be read, so one damaged row
+never costs the learner every other card.
 
 ## No user data in errors or logs
 
-- An error payload never holds user content: no to-do titles, typed text, file paths,
+- An error payload never holds user content: no card text, typed text, file paths,
   URLs, or identifiers of the user's documents outside the app. Errors travel — into
-  logs, crash reports, test output, and `String(describing:)`. `TodoRepositoryError`
-  carries an item's identifier, never its title.
+  logs, crash reports, test output, and `String(describing:)`. `CardIDError` names the
+  rule that failed and carries nothing of the rejected string; `CatalogError` carries no
+  path, key, or decoder message, which can quote card text.
 - Log lines follow `.claude/rules/swift.md` › Logging: `AppLog`'s `os.Logger` only.
   Interpolate an error code or an enum case with `privacy: .public`; anything that came
   from the user with `privacy: .private` — or leave it out. `os.Logger` redacts dynamic
@@ -105,7 +111,7 @@ do {
 } catch let error as CancellationError {
     throw error  // cancellation is not a failure: never log or map it
 } catch {
-    AppLog.todos.error("refresh failed")
+    AppLog.drill.error("refresh failed")
 }
 ```
 
@@ -117,13 +123,13 @@ do {
   the cancellation on the floor.
 - A port that cannot observe cancellation gets no `.cancelled` case. A local store does
   its work on its own actor without checking for cancellation, so
-  `TodoRepositoryError` has none. A `@MainActor` view-model action that awaits such a
+  `ProgressStoreError` has none. A `@MainActor` view-model action that awaits such a
   port reads `Task.isCancelled` after the `await`, whatever the call returned or threw,
   and treats it as a no-op — no failure reported, no error state, nothing logged — since
   a store that saw its caller cancel can only answer with a failure case.
-  `TodoListViewModel.load()` is the worked example, and puts `phase` back to what it
-  was before the load. A port that can observe it declares a `.cancelled` case
-  instead, and its caller switches on it.
+  `DrillViewModel.start()` is the worked example: it reads `Task.isCancelled` after both
+  loads and puts `phase` back to what it was before the start-up. A port that can
+  observe it declares a `.cancelled` case instead, and its caller switches on it.
 - A test asserts cancellation with `#expect(throws: CancellationError.self)`.
 
 ## Mapping framework errors in an adapter
@@ -133,27 +139,30 @@ error to a Core case is translation; choosing what the app does about it is Core
 
 - Convert at the call site, inside `FlashComposePlatform`, into the Core enum the port
   declares. Nothing framework-typed crosses the port.
-- **SwiftData.** `ModelContext.save()` and `fetch(_:)` throw. `SwiftDataTodoRepository`
-  catches at the call site and maps to `TodoRepositoryError.storageFailure`, or to
-  `.notFound`/`.corruptedRecord` where the adapter itself decides the case (a fetch that
-  found no record, a stored record `TodoItem`'s initializer rejects). Its `save(_:)`:
+- **SwiftData.** `ModelContext.save()` and `fetch(_:)` throw. `SwiftDataProgressStore`
+  catches at the call site and maps to `ProgressStoreError.storageFailure`, or to
+  `.corruptedRecord` where the adapter itself decides the case (a stored row whose card
+  id, practice day, or answer kind no longer makes a Core value: `CardProgressRecord`'s
+  `progress()`, `StoredDay`, `StoredKind`). Its `record(answer:progress:)`, with the
+  test-only fault seam trimmed:
 
 ```swift
 do {
-    if let existing = try record(id: item.id) {
-        existing.update(from: item)
+    if let existing = try progressRecord(cardID: progress.cardID.rawValue) {
+        existing.update(from: progress)
     } else {
-        modelContext.insert(TodoRecord(item))
+        modelContext.insert(CardProgressRecord(progress))
     }
+    modelContext.insert(AnswerRecord(answer))
     try modelContext.save()
 } catch {
-    // A failed save leaves the change pending in the context; drop it, or the
-    // next successful save would write it after all.
     modelContext.rollback()
-    throw Self.storageFailure(error, during: "save")
+    throw Self.storageFailure(error, during: "record")
 }
 ```
 
+  A failed save leaves the change pending in the context, so the `catch` rolls it back;
+  otherwise the next successful save would write it after all.
   `storageFailure(_:during:)` logs the framework error `.private` (SwiftData's messages
   can quote stored values) under `AppLog.persistence` and returns `.storageFailure`.
 - **Foundation.** An `NSError` or `CocoaError` is mapped by its `code` to a Core case
@@ -171,16 +180,17 @@ AppLog.persistence.error(
 
 A Platform test checks the mapping under plain `swift test` (`just test`) when the
 framework runs on the host — SwiftData with an in-memory store does
-(`SwiftDataTodoRepositoryTests` asserts `.corruptedRecord` for a record that breaks the
-title invariant). A Core test checks the decision with the fake, which throws each Core
-case on demand (`fail(_:with:)`).
+(`SwiftDataProgressStoreReadBackTests` asserts `.corruptedRecord` for a stored day that
+names no date and for a damaged answer row). A Core test checks the decision with the
+fake, which throws each Core case on demand (`InMemoryProgressStore.fail(_:with:)`).
 
 ## Checklist
 
-- The error enum is in `FlashComposeCore`, `Error, Equatable, Sendable`, with value payloads.
+- The error enum is in `FlashComposeCore`, `Error, Equatable, Sendable`, and any payload
+  is a `Sendable` value.
 - `throws(E)` only where a caller decides on `E`; plain `throws` otherwise.
 - No user content in a payload; logs use `AppLog` with explicit privacy.
 - `CancellationError` is rethrown, never logged or mapped to a failure.
 - The adapter maps every framework error to a Core case; nothing framework-typed
   crosses the port.
-- Each case has an error-path test asserting the case and payload.
+- Each case has an error-path test asserting the case and any payload.
