@@ -112,8 +112,8 @@ present-state section of [docs/design-system.md](docs/design-system.md) it rewri
 ### Why zero dependencies?
 
 An app template should not impose opinions about networking, persistence, or analytics
-frameworks. `Package.swift` declares no package dependency: SwiftData, `URLSession`,
-and `UserDefaults` sit behind ports, and you add what you need — a new dependency
+frameworks. `Package.swift` declares no package dependency: SwiftData and
+`UserDefaults` sit behind ports, and you add what you need — a new dependency
 needs a human's sign-off and a rewritten design description ([`AGENTS.md`](AGENTS.md)).
 
 ### Why Just?
