@@ -41,7 +41,11 @@ jobs:
       - name: Build the package for analysis
         # App/ is a thin @main shell; all logic lives in the local package
         # (docs/architecture.md), so building it covers every analyzable line.
-        run: swift build --package-path Packages/FlashComposeKit
+        # --disable-sandbox: under CodeQL's tracer SwiftPM cannot spawn
+        # /usr/bin/sandbox-exec for the manifest build ("posix_spawn error: Bad CPU
+        # type in executable (86)"). It turns off only the manifest and plugin
+        # sandbox; every source file is still compiled, and so still analyzed.
+        run: swift build --disable-sandbox --package-path Packages/FlashComposeKit
 
       - name: Analyze
         uses: github/codeql-action/analyze@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
