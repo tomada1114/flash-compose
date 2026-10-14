@@ -36,14 +36,15 @@ public enum ProgressStoreError: Error, Equatable, Sendable {
 /// stated here first, then added there.
 public protocol ProgressStore: Sendable {
     /// Every stored ``CardProgress``, in no particular order: exactly one per card that
-    /// has ever been recorded, including cards the catalog no longer has, and none for a
-    /// card never recorded. An empty store — a first launch — returns an empty array.
+    /// has ever been recorded and whose row reads back, including cards the catalog no
+    /// longer has, and none for a card never recorded. An empty store — a first launch —
+    /// returns an empty array.
     ///
     /// A stored row the store cannot read back is left out and logged, and the load still
     /// succeeds: that card reads as never recorded, so it comes back as a new card, and
-    /// every other card keeps its schedule. The row is not removed; the card's next
-    /// ``record(answer:progress:)`` replaces it. The load throws only when the store as a
-    /// whole cannot be read.
+    /// every other card keeps its schedule. The row is not removed; when its card id still
+    /// names the card, the card's next ``record(answer:progress:)`` replaces it. The load
+    /// throws only when the store as a whole cannot be read.
     func loadProgress() async throws(ProgressStoreError) -> [CardProgress]
 
     /// Appends `answer` to the log and replaces the progress stored for
