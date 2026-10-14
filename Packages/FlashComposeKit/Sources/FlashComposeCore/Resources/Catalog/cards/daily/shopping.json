@@ -1,0 +1,606 @@
+[
+  {
+    "id": "c_2a6z2w4g",
+    "ja": "私はこれを運べる。",
+    "en": "I can carry this.",
+    "alternatives": ["I can move this.", "I'm able to carry this."],
+    "point": "can carry で持って運べると伝える。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_2g9z5s9f",
+    "ja": "3月からずっとこれ狙ってたんだ。",
+    "en": "I've been eyeing it since March.",
+    "alternatives": [
+      "I've had my eye on it since March.",
+      "I've been after it since March."
+    ],
+    "point": "eye は「狙う」。since と現在完了進行形で「3月からずっと」",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2r4z8r6n",
+    "ja": "彼女はこの靴は長持ちすると言った。",
+    "en": "She said these shoes would wear well.",
+    "alternatives": [
+      "She said these shoes would last.",
+      "She said these shoes would hold up."
+    ],
+    "point": "wear well は使い続けても傷みにくいこと。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3b3u4z8h",
+    "ja": "このシャツは安いよ。",
+    "en": "This shirt is cheap.",
+    "alternatives": ["This shirt is inexpensive.", "This shirt is a bargain."],
+    "point": "「安い」は cheap。this は近くの物",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_3k5h5s5f",
+    "ja": "ジャケットを返品したよ。",
+    "en": "I returned the jacket.",
+    "alternatives": ["I took the jacket back.", "I brought the jacket back."],
+    "point": "返品する＝ return / take back",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_3k8r7y9m",
+    "ja": "ネットで買うのが好きだ。",
+    "en": "I like buying things online.",
+    "alternatives": ["I like shopping online.", "I enjoy buying stuff online."],
+    "point": "like の後ろは -ing で「〜するのが好き」",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_3m8c5u7t",
+    "ja": "ズボンの丈を詰めてもらった。",
+    "en": "I had my pants taken up.",
+    "alternatives": ["I got my pants shortened.", "I had my pants shortened."],
+    "point": "してもらうは have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_3n4p7z6z",
+    "ja": "彼らの売り物が本物だとは思えない。",
+    "en": "I doubt what they're selling is the real McCoy.",
+    "alternatives": [
+      "I doubt their goods are genuine.",
+      "I don't think they're selling the genuine article."
+    ],
+    "point": "the real McCoy は偽物でない本物のこと。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_3n5w2s4h",
+    "ja": "いいのは、返品が簡単なことだ。",
+    "en": "What's great is that returns are easy.",
+    "alternatives": [
+      "The best part is that returns are easy.",
+      "The nice thing is that returns are easy."
+    ],
+    "point": "What's great is that 節 で名詞節を作る",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_3t2b6u3h",
+    "ja": "もう一つ見せて。",
+    "en": "Show me another one.",
+    "alternatives": ["Let me see another.", "Please show another one."],
+    "point": "another one で同じ種類の別の商品。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3w7k6w9t",
+    "ja": "もっと安いのはありますか？",
+    "en": "Do you have a cheaper one?",
+    "alternatives": ["Do you have anything cheaper?", "Is there a cheaper one?"],
+    "point": "「もっと安いの」は a cheaper one",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_3z2p3p5a",
+    "ja": "私は現金で払うよ。",
+    "en": "I'll pay cash.",
+    "alternatives": ["I'll pay in cash.", "I'll use cash to pay."],
+    "point": "pay cash は現金で支払う。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_4a4p8g3g",
+    "ja": "試したほうがいいよ。",
+    "en": "You should try it.",
+    "alternatives": [
+      "You should give it a try.",
+      "You should try it out.",
+      "I'd try it."
+    ],
+    "point": "「〜したほうがいい」は should + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_4g7e7f4n",
+    "ja": "私は靴を探してるの。",
+    "en": "I'm looking for shoes.",
+    "alternatives": ["I'm shopping for shoes.", "I'm looking for some shoes."],
+    "point": "「探している」は be looking for",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_4m7u3h7m",
+    "ja": "もうあの店では二度と買わない。",
+    "en": "Never again will I shop there.",
+    "alternatives": [
+      "I'll never buy from that store again.",
+      "I will never shop at that store again."
+    ],
+    "point": "Never again の後ろは will I の倒置",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_4p3m2x8b",
+    "ja": "紙袋はレジ袋より丈夫です。",
+    "en": "Paper bags are stronger than plastic.",
+    "alternatives": [
+      "Paper bags are sturdier than plastic.",
+      "Paper bags are tougher than plastic ones."
+    ],
+    "point": "一般論は無冠詞の複数形で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_4p8v6t8k",
+    "ja": "散財してなきゃ、貯金があるのに。",
+    "en": "If I hadn't splurged, I'd have savings.",
+    "alternatives": [
+      "If I hadn't overspent, I'd have savings now.",
+      "If I hadn't splurged, I'd have money saved now."
+    ],
+    "point": "過去の原因と今の結果は if had + would 原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_4x3r9z8x",
+    "ja": "青いほうを買っておけばよかった。",
+    "en": "I wish I'd bought the blue one.",
+    "alternatives": [
+      "If only I'd bought the blue one.",
+      "I should have bought the blue one."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_5b2r9u5e",
+    "ja": "もう荷物を受け取ったよ。",
+    "en": "I've already received the package.",
+    "alternatives": [
+      "I've already gotten the package.",
+      "I've already got the package."
+    ],
+    "point": "「もう〜した」は have + 過去分詞 + already",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_5e8x2j7z",
+    "ja": "レシートを残せばよかった。",
+    "en": "I should have kept the receipt.",
+    "alternatives": [
+      "I should've held on to the receipt.",
+      "I wish I'd kept the receipt."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_5g9r3z5q",
+    "ja": "君は何色を選んだ？",
+    "en": "Which color did you choose?",
+    "alternatives": ["What color did you pick?", "Which color was your choice?"],
+    "point": "which color で選んだ色を尋ねる。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_5p5t8b8k",
+    "ja": "私は代金を払ってる。",
+    "en": "I'm paying now.",
+    "alternatives": ["I'm making a payment.", "I'm paying for this."],
+    "point": "am paying で今支払い中だと伝える。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5y6e9y9d",
+    "ja": "いつ再入荷するか分かりますか？",
+    "en": "Do you know when it'll restock?",
+    "alternatives": [
+      "Could you tell me when it restocks?",
+      "Do you know when they'll restock?"
+    ],
+    "point": "間接疑問は when の後が平叙文の語順",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_6h6j9s4x",
+    "ja": "レシート、取っといて。",
+    "en": "Keep the receipt.",
+    "alternatives": ["Hold on to the receipt.", "Save the receipt."],
+    "point": "「取っておく」は keep。命令文は動詞から始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_6n3v5k9x",
+    "ja": "もっと安ければ、買うのに。",
+    "en": "If it were cheaper, I'd buy it.",
+    "alternatives": [
+      "If it were any cheaper, I'd buy it.",
+      "Were it cheaper, I'd buy it."
+    ],
+    "point": "現在の仮定は if + 過去形、would + 原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_6p2q5h6a",
+    "ja": "この店は近い。",
+    "en": "This store is nearby.",
+    "alternatives": ["This shop is close.", "This store's near here."],
+    "point": "nearby は近くにある。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6r7e6m2t",
+    "ja": "お得な話はもう消えていた。",
+    "en": "The bargain had already evaporated.",
+    "alternatives": [
+      "The deal had already vanished.",
+      "The offer had already disappeared."
+    ],
+    "point": "evaporate は比喩的に消えてなくなること。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_6t5q7d4p",
+    "ja": "値引きなら私たちは奮発する。",
+    "en": "We'll splurge if it's discounted.",
+    "alternatives": [
+      "We'll treat ourselves if it's discounted.",
+      "If it's marked down, we'll splurge."
+    ],
+    "point": "splurge はぜいたくにお金を使う。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_6v5y9u7v",
+    "ja": "これ、試してもいい？",
+    "en": "Can I try this?",
+    "alternatives": ["May I try this?", "Can I try this out?"],
+    "point": "「〜していい？」は Can I + 動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_6z6d3r4g",
+    "ja": "決め手は、レビューの評価だった。",
+    "en": "It was the reviews that sealed it.",
+    "alternatives": [
+      "What sealed the deal was the reviews.",
+      "It was the reviews that clinched it."
+    ],
+    "point": "It was ～ that で決め手を強調。seal the deal は決着させる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_7f4f4b9p",
+    "ja": "セールで靴を買ったよ。",
+    "en": "I bought shoes on sale.",
+    "alternatives": ["I got some shoes on sale.", "I picked up shoes on sale."],
+    "point": "「セールで」は on sale",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["past-simple", "articles-and-countability"]
+  },
+  {
+    "id": "c_7h7q9g5s",
+    "ja": "これの黒って、ありますでしょうか？",
+    "en": "I was wondering if this comes in black.",
+    "alternatives": [
+      "Would you happen to have this in black?",
+      "Do you by any chance have this in black?"
+    ],
+    "point": "I was wondering if で押しつけがましさを和らげる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7n7b6n7r",
+    "ja": "私はこれを交換すべき？",
+    "en": "Should I exchange this?",
+    "alternatives": ["Should I swap this item?", "Would exchanging this be better?"],
+    "point": "should I で交換する方がよいか相談する。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_7t5j2j9d",
+    "ja": "私にはこれはちょっと高すぎるかな。",
+    "en": "This feels a shade too steep for me.",
+    "alternatives": [
+      "This seems a little too expensive for me.",
+      "It's a touch too pricey for me."
+    ],
+    "point": "a shade too steep はほんの少し高すぎるという言い方。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7u2q6n7a",
+    "ja": "この服は値下げされた。",
+    "en": "This item was marked down.",
+    "alternatives": ["This piece was discounted.", "This item's price was reduced."],
+    "point": "was marked down はその服が値下げされたことを表す。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_8a9m5c8s",
+    "ja": "手数料を免除してもらえる？",
+    "en": "Could you waive handling fees?",
+    "alternatives": [
+      "Could you drop the handling fees?",
+      "Could you remove the handling charges?"
+    ],
+    "point": "waive a fee は支払う義務を免除する。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_8d4h6d4q",
+    "ja": "知ってたら、買わなかったのに。",
+    "en": "If I'd known, I'd have skipped it.",
+    "alternatives": [
+      "If I'd known, I wouldn't have bought it.",
+      "Had I known, I wouldn't have bought it."
+    ],
+    "point": "過去の仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_8g6j3g6m",
+    "ja": "Mはまだ残ってますか？",
+    "en": "Are there any mediums left?",
+    "alternatives": ["Do you still have any mediums?", "Is size M still available?"],
+    "point": "「残っている」は there are ～ left",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_8h9r9p6c",
+    "ja": "これ、ずっと探してたんだ。",
+    "en": "I've been looking for this.",
+    "alternatives": [
+      "I've been searching for this one.",
+      "I've been looking for this for ages."
+    ],
+    "point": "「ずっと〜してた」は have been ～ing",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_9e7x4u6a",
+    "ja": "セールを見に行ってきたよ。",
+    "en": "I went to browse the sale.",
+    "alternatives": ["I went to check out the sale.", "I went to look at the sale."],
+    "point": "目的の「〜しに」は to + 動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9g2n9s5s",
+    "ja": "高くても、その価値はある。",
+    "en": "Although it's expensive, it's worth it.",
+    "alternatives": [
+      "Even though it's pricey, it's worth it.",
+      "Even if it's pricey, it's worth it."
+    ],
+    "point": "譲歩は although / even though。but は不要",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_9h9n5h8f",
+    "ja": "売り切れだと店員が言ってた。",
+    "en": "The clerk said it was sold out.",
+    "alternatives": [
+      "They said it was sold out.",
+      "The clerk told me it was sold out."
+    ],
+    "point": "said の後は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_9j5z8x2m",
+    "ja": "彼女は在庫があるか見てくると言った。",
+    "en": "She said she'd check if it's in stock.",
+    "alternatives": [
+      "She said she'd see if it's in stock.",
+      "She told me she'd check whether it's in stock."
+    ],
+    "point": "節の中に節。if は「かどうか」で語順は平叙文",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_9n5g7f9w",
+    "ja": "返品の期限はいつですか？",
+    "en": "When is the return deadline?",
+    "alternatives": ["What's the deadline for returns?", "What's the return deadline?"],
+    "point": "「いつ」は when、期限は deadline",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["wh-questions", "articles-and-countability"]
+  },
+  {
+    "id": "c_9p9a2k6r",
+    "ja": "私は君に選んでほしい。",
+    "en": "I want you to choose.",
+    "alternatives": ["I'd like you to pick.", "I want you to decide."],
+    "point": "want + 人 + to で選択を頼む。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_9r7c4f4x",
+    "ja": "これにするよ。",
+    "en": "I'll take this one.",
+    "alternatives": ["I'll go with this one.", "I'll get this one."],
+    "point": "その場で決めたことは I'll。買うは take もよく使う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9u2b6u9m",
+    "ja": "サイズが見つからず、私は出た。",
+    "en": "Unable to find my size, I left.",
+    "alternatives": [
+      "Not finding my size, I left the store.",
+      "Since I couldn't find my size, I left."
+    ],
+    "point": "分詞構文は主語を省き、否定は Not / Unable to",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_9z7m5f2b",
+    "ja": "これ、返品したいんですが。",
+    "en": "I'd like to send this back.",
+    "alternatives": ["I'd like to return this.", "I'd like to take this back."],
+    "point": "返品は send back / take back の句動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  }
+]

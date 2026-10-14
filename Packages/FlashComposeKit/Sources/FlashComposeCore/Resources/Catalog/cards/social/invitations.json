@@ -1,0 +1,755 @@
+[
+  {
+    "id": "c_2a5g4m9t",
+    "ja": "来られるかどうか、分かる？",
+    "en": "Do you know if you can come?",
+    "alternatives": [
+      "Do you know whether you can make it?",
+      "Have you figured out if you can come?"
+    ],
+    "point": "間接疑問の if 節は平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_2a8f9r3m",
+    "ja": "私が伏せた事情が今は誘いの支障だ。",
+    "en": "What I concealed now complicates the invitation.",
+    "alternatives": [
+      "My undisclosed circumstances now complicate the invitation.",
+      "The facts I withheld now complicate the invitation."
+    ],
+    "point": "what I concealed で、私が過去に伏せた事情を指す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["noun-clauses", "tense-contrast"]
+  },
+  {
+    "id": "c_2h3z4d2j",
+    "ja": "ねえ、無理に誘わせないでよ。",
+    "en": "Don't make me twist your arm.",
+    "alternatives": [
+      "Don't make me beg you to come.",
+      "Don't make me pressure you into coming."
+    ],
+    "point": "make + 人 + 原形。twist one's arm は強引に説得する",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_2j2s8y6v",
+    "ja": "まだ席があるよ。",
+    "en": "There are still seats.",
+    "alternatives": ["There are seats left.", "We still have seats."],
+    "point": "数えられる複数なら there are",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_2j5u6y9h",
+    "ja": "ずっと誘おうと思ってた。",
+    "en": "I've been meaning to invite you.",
+    "alternatives": [
+      "I've been meaning to ask you out.",
+      "I've been meaning to invite you over."
+    ],
+    "point": "「ずっと〜しようと思ってた」は have been meaning to",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_2m5s8a9n",
+    "ja": "出かける気分じゃないんだ。",
+    "en": "I don't feel like going out.",
+    "alternatives": [
+      "I'm not really up for going out.",
+      "I'm not in the mood to go out."
+    ],
+    "point": "feel like の後ろは -ing",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_2w5c5n9u",
+    "ja": "昨日カイを誘ったよ。",
+    "en": "I invited Kai yesterday.",
+    "alternatives": ["Yesterday I invited Kai.", "I asked Kai to come yesterday."],
+    "point": "invite は規則動詞で過去形は invited",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_3a6a9b5e",
+    "ja": "みんな、遊びに来て。",
+    "en": "Everyone, come visit me.",
+    "alternatives": ["Everyone, come over.", "Everyone, come see me."],
+    "point": "come visit me は私に会いに来てという誘い。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3d7x9r3m",
+    "ja": "私は今回は遠慮したいんだけど。",
+    "en": "I'd rather bow out this time.",
+    "alternatives": [
+      "I'd prefer to decline this time.",
+      "I'd rather sit this one out."
+    ],
+    "point": "would rather と bow out で辞退の希望を柔らかく伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3k3x3g9v",
+    "ja": "来るかどうか教えて。",
+    "en": "Tell me if you're coming.",
+    "alternatives": [
+      "Let me know if you can come.",
+      "Let me know whether you're coming."
+    ],
+    "point": "「かどうか」は if か whether",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_3k4q7c3k",
+    "ja": "今夜、空いてる？",
+    "en": "Are you free tonight?",
+    "alternatives": ["Are you free this evening?", "Do you have plans tonight?"],
+    "point": "「空いてる」は be free",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_3p2j4r6x",
+    "ja": "今夜は友達と外食するんだ。",
+    "en": "I'm eating out with friends tonight.",
+    "alternatives": [
+      "I'm dining out with friends tonight.",
+      "I'm meeting friends for dinner tonight."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["progressive-aspect", "future-forms"]
+  },
+  {
+    "id": "c_3q2d6w2s",
+    "ja": "私はその誘いを見送るよ。",
+    "en": "I'll pass on that invitation.",
+    "alternatives": [
+      "I'll decline that invitation.",
+      "I'll turn down that invitation."
+    ],
+    "point": "pass on an invitation は誘いを見送る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3q7g4c3d",
+    "ja": "私と一緒に来てよ。",
+    "en": "Come with me.",
+    "alternatives": ["Come along with me.", "Join me."],
+    "point": "命令文は主語を付けず動詞から始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3r8s5g6w",
+    "ja": "時間が許せば、あとで合流するよ。",
+    "en": "Time permitting, I'll join you later.",
+    "alternatives": [
+      "If time allows, I'll join you later.",
+      "If I have time, I'll join you later."
+    ],
+    "point": "Time permitting は「時間が許せば」の分詞構文",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_3s2v2n5k",
+    "ja": "日曜にパーティーだよ。",
+    "en": "There's a party Sunday.",
+    "alternatives": ["We're having a party Sunday.", "A party is on Sunday."],
+    "point": "「〜がある」は there is",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_3x2h9q5p",
+    "ja": "私はもう出席すると伝えた。",
+    "en": "I've already confirmed my attendance.",
+    "alternatives": [
+      "I've already said that I'll attend.",
+      "I've already confirmed that I'm coming."
+    ],
+    "point": "現在完了で参加の意思を伝え済みと表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_3x9j3s3d",
+    "ja": "カイに来てと頼まれた。",
+    "en": "Kai asked me to come.",
+    "alternatives": ["Kai asked me to come over.", "I was asked by Kai to come."],
+    "point": "ask 人 to do で「人に〜するよう頼む」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_4a6z4q8t",
+    "ja": "断ってたら私は今ごろ仲間外れだ。",
+    "en": "Had I declined, I'd be left out now.",
+    "alternatives": [
+      "If I'd declined, I'd be excluded now.",
+      "I'd be excluded now if I'd declined."
+    ],
+    "point": "過去の辞退が今の仲間外れにつながる仮定。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_4b4p6v9g",
+    "ja": "先週、彼に誘われたよ。",
+    "en": "He invited me last week.",
+    "alternatives": ["Last week he invited me.", "He invited me out last week."],
+    "point": "日本語は受け身でも英語は he を主語に",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_4j9q9m5w",
+    "ja": "君は誰を誘ってる？",
+    "en": "Who are you inviting?",
+    "alternatives": ["Who are you asking along?", "Who are you inviting over?"],
+    "point": "who で招待する相手を尋ねる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["wh-questions", "progressive-aspect"]
+  },
+  {
+    "id": "c_4q4m9v4m",
+    "ja": "彼が来るか、ミカは知ってると思う？",
+    "en": "Do you think Mika knows if he's coming?",
+    "alternatives": [
+      "Do you think Mika knows whether he's coming?",
+      "Would Mika know if he's coming, do you think?"
+    ],
+    "point": "Do you think の後は平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_4s4n3b8p",
+    "ja": "どこで会おうか？",
+    "en": "Where should we meet?",
+    "alternatives": ["Where shall we meet?", "Where can we meet?"],
+    "point": "場所を聞くなら where で始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_4w5q2z6b",
+    "ja": "今夜、うちに遊びに来ない？",
+    "en": "Why don't you come over tonight?",
+    "alternatives": ["Do you want to come over tonight?", "Want to come over tonight?"],
+    "point": "come over は「家に来る」。Why don't you ~? は誘い",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_4z3y6s7p",
+    "ja": "雨が降っても、私は行くよ。",
+    "en": "I'll go even if it rains.",
+    "alternatives": ["Even if it rains, I'll go.", "I'll come even if it's raining."],
+    "point": "未来のことでも even if の後ろは現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["concession-contrast", "time-and-if-clauses"]
+  },
+  {
+    "id": "c_4z9w8a7p",
+    "ja": "電話の時には、もう食べてた。",
+    "en": "I'd already eaten when you called.",
+    "alternatives": [
+      "I had already eaten when you called.",
+      "You called after I'd already eaten."
+    ],
+    "point": "電話より前のことは過去完了",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_5a6t6q6g",
+    "ja": "来てくれたらと思ってたんだ。",
+    "en": "I was hoping you'd come along.",
+    "alternatives": [
+      "I was hoping you could join us.",
+      "I was wondering if you'd come along."
+    ],
+    "point": "was hoping で控えめな誘いになる",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_5b7e5f3a",
+    "ja": "ミカが、君も誘えって言ってたよ。",
+    "en": "Mika told me to invite you too.",
+    "alternatives": [
+      "Mika asked me to invite you too.",
+      "Mika wanted me to invite you as well."
+    ],
+    "point": "tell + 人 + to do で言われた内容を伝える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_5c7p3u5q",
+    "ja": "この招待で私の複雑な思いが蘇る。",
+    "en": "This invitation brings back my mixed feelings.",
+    "alternatives": [
+      "This invitation revives my mixed feelings.",
+      "This invitation stirs up my old mixed feelings."
+    ],
+    "point": "bring back my mixed feelings は以前の複雑な思いが再び湧くことを表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_5d9w8b2q",
+    "ja": "行けたらいいのになあ。",
+    "en": "I wish I could make it.",
+    "alternatives": ["If only I could make it.", "I wish I were able to come."],
+    "point": "現実と違う願いは wish + could。make it は「行ける」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_5n2s6b6t",
+    "ja": "参加費は会費に含まれる。",
+    "en": "Admission's included in membership fees.",
+    "alternatives": [
+      "Membership fees cover admission.",
+      "The membership fee includes admission."
+    ],
+    "point": "is included で費用に含まれると伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_5n5k5c6d",
+    "ja": "私が断ってたら今の気まずさはないのに。",
+    "en": "Had I declined, I wouldn't feel awkward now.",
+    "alternatives": [
+      "If I'd declined, I wouldn't feel uncomfortable now.",
+      "I wouldn't feel awkward now if I'd declined."
+    ],
+    "point": "Had I declined は過去に断っていた場合を置き、今の気まずさがない結果と結ぶ。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_5q7k2t8g",
+    "ja": "ぜひ行きたいです。",
+    "en": "I'd love to go.",
+    "alternatives": ["I'd love to come.", "I'd like to go."],
+    "point": "「行きたい」は would love to + 動詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_6h6r5c7h",
+    "ja": "私、車で送れるよ。",
+    "en": "I can drive you there.",
+    "alternatives": ["I can give you a ride.", "I can take you by car."],
+    "point": "can で可能な手助けを申し出る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_6m8f3z4v",
+    "ja": "空いていれば、ぜひ行くんだけど。",
+    "en": "I'd love to, if I were free.",
+    "alternatives": [
+      "If I were free, I'd love to come.",
+      "If I weren't busy, I'd love to."
+    ],
+    "point": "現実と違う仮定は if + were、主節は would",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_6q7q2b7g",
+    "ja": "誘ってくれてたら、行けたのに。",
+    "en": "If you'd asked, I could've gone.",
+    "alternatives": [
+      "I could have gone if you'd asked.",
+      "Had you asked, I could have gone.",
+      "If you'd invited me, I could have gone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、could have + 過去分詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_6r8y5u9m",
+    "ja": "君を誘い忘れなければよかった。",
+    "en": "I wish I hadn't overlooked you.",
+    "alternatives": [
+      "I wish I'd remembered to invite you.",
+      "If only I'd remembered to invite you."
+    ],
+    "point": "wish + 過去完了で、招待し忘れた過去を悔やむ。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_6s9x5w9b",
+    "ja": "彼が丁寧に断れないと思ってるか気になる。",
+    "en": "I wonder whether he feels he can't graciously decline.",
+    "alternatives": [
+      "I wonder if he feels unable to decline politely.",
+      "I'm wondering whether he feels he can't tactfully refuse."
+    ],
+    "point": "相手が感じている内容を whether の節の中に入れる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_6w4n5x5n",
+    "ja": "私の沈黙は同意扱いだと彼女は言った。",
+    "en": "She said my silence would pass for tacit consent.",
+    "alternatives": [
+      "She said my silence would be taken as consent.",
+      "She said silence would be interpreted as my consent."
+    ],
+    "point": "tacit consent は言葉にせず示した同意。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6x2k6u6v",
+    "ja": "一番来てほしいのは、君なんだよ。",
+    "en": "It's you I most want to come.",
+    "alternatives": [
+      "You're the one I most want to come.",
+      "You're the one I'd most love to see there."
+    ],
+    "point": "It's you (that) で人を強調。that は省ける",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_6x5s9h9r",
+    "ja": "同伴者もいいですか？",
+    "en": "May I bring a guest?",
+    "alternatives": ["Could I bring someone along?", "Would bringing a guest be okay?"],
+    "point": "May I は丁寧に許可を求める。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_6x7a3j7h",
+    "ja": "私の返事は参加を濁してたかも。",
+    "en": "My reply might've sounded evasive about coming.",
+    "alternatives": [
+      "My response may have sounded noncommittal about coming.",
+      "My answer might have seemed evasive about attending."
+    ],
+    "point": "evasive は返事をはぐらかす感じを表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_7b9d2e5w",
+    "ja": "終わったら合流するよ。",
+    "en": "I'll join you when I'm done.",
+    "alternatives": [
+      "I'll meet you once I'm done.",
+      "I'll join you once I finish work."
+    ],
+    "point": "未来のことでも when 節は現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_7c3n2j4y",
+    "ja": "私は誘いを滅多に見送らない。",
+    "en": "Rarely do I pass up an invitation.",
+    "alternatives": [
+      "I rarely turn down an invitation.",
+      "I seldom decline an invitation."
+    ],
+    "point": "rarely を先頭に出すと do が主語の前。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_7c5y6d2h",
+    "ja": "断れそうもない誘いを私に断らせないで。",
+    "en": "Don't make me decline what feels impossible to refuse.",
+    "alternatives": [
+      "Don't force me to reject what I can't refuse.",
+      "Don't make me refuse an invitation I can't decline."
+    ],
+    "point": "make me decline と what の節で断れない圧力を表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["causatives", "noun-clauses"]
+  },
+  {
+    "id": "c_7t2b3s2p",
+    "ja": "前に話したバンド、観に行こう。",
+    "en": "Let's see the band I mentioned.",
+    "alternatives": [
+      "Let's go see the band I mentioned.",
+      "Let's see that band I told you about."
+    ],
+    "point": "the band の後ろに I mentioned を続ける",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_7z9k6s6a",
+    "ja": "私なら、その誘いは受けるよ。",
+    "en": "If I were you, I'd say yes.",
+    "alternatives": [
+      "I'd say yes if I were you.",
+      "I'd accept the invitation if I were you."
+    ],
+    "point": "If I were you で「私なら」とアドバイス",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_8j3p3k8d",
+    "ja": "私、招待客の意向を探り続けてる。",
+    "en": "I've been sounding out guests.",
+    "alternatives": [
+      "I've been gauging guests' wishes.",
+      "I've been asking guests what they want."
+    ],
+    "point": "sound out は相手の意向を探る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"]
+  },
+  {
+    "id": "c_8j7p9n4s",
+    "ja": "断ると関係を損なうか私は知りたい。",
+    "en": "I want to know if refusing hurts relations.",
+    "alternatives": [
+      "I'd like to know if refusing hurts relations.",
+      "I'm wondering whether refusing harms relationships."
+    ],
+    "point": "if の節で、断ることが関係を損なうかを尋ねる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_8p3p3h2k",
+    "ja": "雨でなければ、みんなを誘ったのに。",
+    "en": "If it hadn't rained, I'd have invited everyone.",
+    "alternatives": [
+      "I'd have invited everyone if it hadn't rained.",
+      "Had it not rained, I would've invited everyone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_8v8d5f7m",
+    "ja": "もう夕飯は食べたの？",
+    "en": "Have you had dinner yet?",
+    "alternatives": ["Have you eaten yet?", "Have you eaten dinner yet?"],
+    "point": "「もう〜した？」は現在完了 + yet",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"]
+  },
+  {
+    "id": "c_8w9j9n5j",
+    "ja": "私は彼を昼食に誘い込んだ。",
+    "en": "I roped him into lunch.",
+    "alternatives": ["I talked him into lunch.", "I persuaded him to come to lunch."],
+    "point": "rope 人 into はうまく誘って参加させる。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_8y5y3a5s",
+    "ja": "君の招待では本音を言う余地はほぼない。",
+    "en": "Your invitation leaves me little room for candor.",
+    "alternatives": [
+      "Your invitation gives me little scope for frankness.",
+      "Your invitation leaves me hardly any room for honesty."
+    ],
+    "point": "candor は遠慮せず率直に話すことを表し数えない。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_9b3t9g3m",
+    "ja": "私はぜひ君に一緒に来てほしい。",
+    "en": "I'm keen to have you along.",
+    "alternatives": ["I'd love you to come along.", "I'm keen for you to join me."],
+    "point": "keen to はぜひしたいという気持ち。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9t5g4w9v",
+    "ja": "氷とレモン一個、持ってきてくれる？",
+    "en": "Could you bring some ice and a lemon?",
+    "alternatives": [
+      "Can you bring ice and a lemon?",
+      "Could you bring a bit of ice and a lemon?"
+    ],
+    "point": "氷は数えられず、レモンは a lemon",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_9u8x3q3v",
+    "ja": "夕食より昼食が都合いい。",
+    "en": "Lunch works better than dinner.",
+    "alternatives": [
+      "Lunch is more convenient than dinner.",
+      "Lunch suits me better than dinner."
+    ],
+    "point": "works better は予定の都合がよりよい。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_9w3z8t7m",
+    "ja": "駅前のあの店、行ってみようよ。",
+    "en": "Let's try the place by the station.",
+    "alternatives": [
+      "How about trying the place by the station?",
+      "Want to try the place by the station?"
+    ],
+    "point": "名詞の後ろに前置詞句を置いて修飾",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_9y7p5c5d",
+    "ja": "早く来たほうがいいよ。",
+    "en": "You should come early.",
+    "alternatives": ["You should get here early.", "It's best to come early."],
+    "point": "「〜したほうがいい」は should",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  }
+]

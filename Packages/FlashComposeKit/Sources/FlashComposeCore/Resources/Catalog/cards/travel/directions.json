@@ -1,0 +1,629 @@
+[
+  {
+    "id": "c_2d5y9r3g",
+    "ja": "迷っても、川沿いに歩けば大丈夫。",
+    "en": "Even if you're lost, follow the river.",
+    "alternatives": [
+      "Even if you get lost, follow the river.",
+      "Even if you're turned around, follow the river."
+    ],
+    "point": "Even if の後は現在形。lost は「道に迷った」状態",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_2d7x6p5x",
+    "ja": "地図を持ってくればよかった。",
+    "en": "I wish I'd brought a map.",
+    "alternatives": ["I should have brought a map.", "If only I'd brought a map."],
+    "point": "過去の後悔は wish + had done",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2e2d4b4k",
+    "ja": "道を間違えたと気づいた。",
+    "en": "I realized I'd gone wrong.",
+    "alternatives": [
+      "I realized I had taken a wrong turn.",
+      "I realized I'd gone the wrong way.",
+      "I realized I'd taken the wrong road."
+    ],
+    "point": "気づく前の出来事は過去完了（I'd taken）",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_2f6f7y3b",
+    "ja": "10分歩きました。",
+    "en": "I walked for ten minutes.",
+    "alternatives": ["I walked ten minutes.", "It took me ten minutes to walk."],
+    "point": "歩いた時間は for + 時間",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_2h6j3v6f",
+    "ja": "道路工事の場所をご存じですか？",
+    "en": "Do you know where the roadwork is?",
+    "alternatives": [
+      "Do you know where they're doing roadwork?",
+      "Do you know where construction's happening?"
+    ],
+    "point": "where の後は疑問文ではなく主語と動詞の順。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_2n5p2u7v",
+    "ja": "信号までまっすぐ行って。",
+    "en": "Go straight to the light.",
+    "alternatives": [
+      "Go straight until the light.",
+      "Keep going to the traffic light."
+    ],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_2p7r4f2x",
+    "ja": "ここは行き止まりです。",
+    "en": "It's a dead end.",
+    "alternatives": ["This is a dead end.", "This road doesn't go through."],
+    "point": "行き止まりは a dead end",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_2t6u4b7z",
+    "ja": "私は北に向かってる。",
+    "en": "I'm going north.",
+    "alternatives": ["I'm heading north.", "I'm traveling north."],
+    "point": "north は北へという方向。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_2u3z7u8f",
+    "ja": "私は道を間違えた。",
+    "en": "I took the wrong street.",
+    "alternatives": ["I went down the wrong street.", "I chose the wrong street."],
+    "point": "take a street はその道を通る。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_2y7x7h2y",
+    "ja": "北へ進めば、目と鼻の先ですよ。",
+    "en": "Heading north, you'll be a stone's throw away.",
+    "alternatives": [
+      "If you head north, it's a stone's throw away.",
+      "Going north, it's just a stone's throw.",
+      "Head north and it's a stone's throw from there."
+    ],
+    "point": "「目と鼻の先」は a stone's throw",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_3b5z3h4b",
+    "ja": "裏道は避けたほうがいい。",
+    "en": "You should steer clear of backstreets.",
+    "alternatives": [
+      "You ought to avoid the backstreets.",
+      "It's best to keep off the backstreets."
+    ],
+    "point": "steer clear of は近づかず避ける。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_3q2c5z6w",
+    "ja": "標識がもっとあれば、見つかるのに。",
+    "en": "If there were more signs, I'd find it.",
+    "alternatives": [
+      "I'd find it if there were more signs.",
+      "If it were better signposted, I'd find it."
+    ],
+    "point": "現在の仮定は If + were, would + 動詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_3q3z6m8j",
+    "ja": "銀行の隣の店です。",
+    "en": "The shop by the bank.",
+    "alternatives": [
+      "It's the shop next to the bank.",
+      "It's the store beside the bank."
+    ],
+    "point": "場所は前置詞句で名詞の後ろに置く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3r6d8q7s",
+    "ja": "あれが私の泊まるホテルです。",
+    "en": "That's the hotel where I'm staying.",
+    "alternatives": [
+      "That's the hotel I'm staying at.",
+      "That's the hotel that I'm staying at.",
+      "That's where I'm staying."
+    ],
+    "point": "場所を説明する where 節",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_3w2v6t2j",
+    "ja": "歩いて行けるよ。",
+    "en": "You can walk there.",
+    "alternatives": [
+      "You can go on foot.",
+      "We can walk there.",
+      "It's within walking distance."
+    ],
+    "point": "「行ける」は can + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3w9u7x5v",
+    "ja": "ここ、来たことある？",
+    "en": "Have you been here before?",
+    "alternatives": ["Have you ever been here?", "Have you been to this place before?"],
+    "point": "経験は現在完了 + before",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_3z5r6x9c",
+    "ja": "道を聞いていれば、着けたのに。",
+    "en": "If I'd asked, I'd have arrived.",
+    "alternatives": [
+      "If I had asked, I'd have made it.",
+      "I'd have made it if I'd asked.",
+      "If I'd asked, I'd have gotten there."
+    ],
+    "point": "過去の仮定は had done と would have done",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_4a8v9v6d",
+    "ja": "一日中、この地図と格闘してる。",
+    "en": "I've been wrestling with this map all day.",
+    "alternatives": [
+      "I've been struggling with this map all day.",
+      "I've been fighting with this map all day."
+    ],
+    "point": "格闘は wrestle。現在完了進行形で継続を表す",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_4b9e7d4q",
+    "ja": "この先に何があるか誰も知らない。",
+    "en": "What lies ahead is anyone's guess.",
+    "alternatives": [
+      "Nobody knows what lies ahead.",
+      "What we'll find ahead is a mystery."
+    ],
+    "point": "anyone's guess は誰にも分からないこと。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_4e2y2z9u",
+    "ja": "彼女は、駅はすぐそこだと言った。",
+    "en": "She said the station was right there.",
+    "alternatives": [
+      "She told me the station was right there.",
+      "She said the station was just around the corner."
+    ],
+    "point": "said の後は時制を過去側にずらす",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_4h3z6z3w",
+    "ja": "もう一度お願いします。",
+    "en": "Could you repeat that?",
+    "alternatives": ["Can you say that again?", "One more time, please."],
+    "point": "聞き返す丁寧な依頼は Could you 〜?",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4q4y3g5j",
+    "ja": "私、左に曲がるよ。",
+    "en": "I'll turn left.",
+    "alternatives": ["I'm going to turn left.", "I'll make a left turn."],
+    "point": "will でこれから曲がる向きを伝える。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_4s3q2v7g",
+    "ja": "人が戸惑うのは道の急な曲がりだ。",
+    "en": "It's the dogleg that throws people.",
+    "alternatives": [
+      "What confuses people is the sharp bend.",
+      "It's the sharp bend that throws people off."
+    ],
+    "point": "dogleg は道などの急な折れ曲がりを指す。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4x4g7e8g",
+    "ja": "地下鉄の入口はどこ？",
+    "en": "Where is the subway entrance?",
+    "alternatives": [
+      "Which way is the subway entrance?",
+      "Where's the entrance to the subway?"
+    ],
+    "point": "入口は entrance。場所は Where で聞く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["wh-questions", "articles-and-countability"]
+  },
+  {
+    "id": "c_4x4t7c4n",
+    "ja": "橋の下の道を通って。",
+    "en": "Take the road under the bridge.",
+    "alternatives": [
+      "Follow the road beneath the bridge.",
+      "Use the road below the bridge."
+    ],
+    "point": "under the bridge で道の場所を後ろから説明する。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_4x5a7h8z",
+    "ja": "道案内お願いできる？",
+    "en": "Could you guide me?",
+    "alternatives": ["Could you give me directions?", "Could you point the way?"],
+    "point": "Could you は道案内を頼む柔らかい言い方。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4y8q4c8s",
+    "ja": "彼に、案内してくれるよう頼んだ。",
+    "en": "I asked him to guide me.",
+    "alternatives": [
+      "I asked him to show me the way.",
+      "I asked him to take me there."
+    ],
+    "point": "ask + 人 + to do で「人に〜するよう頼む」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_5c9a4b7x",
+    "ja": "あの店は見つけにくいですよ。",
+    "en": "That shop's hard to spot.",
+    "alternatives": [
+      "That shop is hard to find.",
+      "That shop isn't easy to find.",
+      "It's hard to spot that shop."
+    ],
+    "point": "形容詞 + to do。主語は to の後ろに繰り返さない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5g4c6k9k",
+    "ja": "私はもう橋を渡りました。",
+    "en": "I've already crossed the bridge.",
+    "alternatives": [
+      "I've already gone across the bridge.",
+      "I've already made it across."
+    ],
+    "point": "cross は橋などを渡る動詞。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_5h4a2p3m",
+    "ja": "駅は近いですよ。",
+    "en": "The station is close.",
+    "alternatives": ["The station is near.", "It's close by."],
+    "point": "「近い」は close か near で言える",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5j4e6u9t",
+    "ja": "彼に、地図を描いてもらった。",
+    "en": "I had him draw a map.",
+    "alternatives": ["I got him to draw me a map.", "He drew me a map."],
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5k2b3q4p",
+    "ja": "駅への道を教えていただけませんか？",
+    "en": "Could you possibly point me to the station?",
+    "alternatives": [
+      "Would you mind pointing me to the station?",
+      "Sorry, could you tell me the way to the station?"
+    ],
+    "point": "possibly を足すと依頼がさらに丁寧になる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_5q9c7u3b",
+    "ja": "次の角を右に曲がって。",
+    "en": "Take the next right.",
+    "alternatives": ["Turn right at the next corner.", "Make the next right turn."],
+    "point": "「次の角を右」は the next right",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["imperatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_5r9a2r8t",
+    "ja": "ATMはある？",
+    "en": "Is there an ATM?",
+    "alternatives": ["Is there an ATM nearby?", "Do you have an ATM?"],
+    "point": "「〜はありますか」は Is there 〜?",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_5s9x2g4r",
+    "ja": "係の人に、地図に印をつけてもらった。",
+    "en": "I got the clerk to mark my map.",
+    "alternatives": ["I had the clerk mark my map.", "The clerk marked my map for me."],
+    "point": "get + 人 + to do で「人に〜してもらう」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5t9e8x8p",
+    "ja": "探してる店は、パン屋があった所です。",
+    "en": "The shop you want is where the bakery was.",
+    "alternatives": [
+      "The shop you're after is where the bakery was.",
+      "You want the shop where the bakery was."
+    ],
+    "point": "The place you want の中に where 節がつながる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_5v5w8k9p",
+    "ja": "入口は隠れた所にある。",
+    "en": "The entrance is tucked away.",
+    "alternatives": [
+      "The entrance is hidden from view.",
+      "The entrance is out of sight."
+    ],
+    "point": "tucked away は目につかない所にある。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_5w7c8t2e",
+    "ja": "この歩道の方が空いてる。",
+    "en": "This sidewalk is less crowded.",
+    "alternatives": [
+      "This sidewalk has fewer people.",
+      "This sidewalk isn't as crowded."
+    ],
+    "point": "less crowded は人がより少なく混雑していない。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_6h7e7s9y",
+    "ja": "この店、もう二回通ったね。",
+    "en": "We've walked past this shop twice.",
+    "alternatives": [
+      "We've already passed this store twice.",
+      "We've gone by this shop twice."
+    ],
+    "point": "回数を言う「もう〜回」は現在完了",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_6q5u2k7b",
+    "ja": "信号に着いたら、左に曲がって。",
+    "en": "Turn left when you reach the light.",
+    "alternatives": [
+      "When you get to the light, turn left.",
+      "Turn left once you reach the light."
+    ],
+    "point": "when 節は未来でも現在形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_6r3r7e5t",
+    "ja": "地図を見ています。",
+    "en": "I'm checking the map.",
+    "alternatives": ["I'm looking at the map.", "I'm reading the map."],
+    "point": "今の動作は am + -ing",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6x4s7v2t",
+    "ja": "ずっとぐるぐる回ってるんです。",
+    "en": "I've been going in circles for ages.",
+    "alternatives": [
+      "I've been walking in circles for ages.",
+      "I've been going around in circles for a while."
+    ],
+    "point": "現在完了進行形で「ずっと〜している」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_7h6r5u2m",
+    "ja": "この道はどこに続く？",
+    "en": "Where does this road lead?",
+    "alternatives": ["Where does this road go?", "Where will this road take me?"],
+    "point": "lead は道がある場所へ続くこと。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7y5r9g5z",
+    "ja": "バスに乗るほうが早いよ。",
+    "en": "Taking the bus is faster.",
+    "alternatives": ["It's faster to take the bus.", "It's quicker to go by bus."],
+    "point": "「〜するほうが」は動名詞を主語にできる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["gerunds", "comparatives-superlatives"]
+  },
+  {
+    "id": "c_8q3k4m6c",
+    "ja": "左へそれてたら私たちは今楽勝なのに。",
+    "en": "Had we veered left, we'd be home free.",
+    "alternatives": [
+      "If we'd gone left, we'd have it easy now.",
+      "We'd be home and dry if we'd turned left."
+    ],
+    "point": "home free は難所を越えて成功が確実な状態。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_9c2k5k2b",
+    "ja": "まっすぐ行けば、すぐ分かるよ。",
+    "en": "Go straight and you'll spot it.",
+    "alternatives": [
+      "Keep going and you can't miss it.",
+      "Just go straight and you'll find it."
+    ],
+    "point": "「〜すれば」は命令文 + and で言える",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9t3x8t8e",
+    "ja": "この先は封鎖されています。",
+    "en": "The road ahead is blocked off.",
+    "alternatives": [
+      "The road up ahead is closed.",
+      "The road ahead has been closed off."
+    ],
+    "point": "「封鎖されている」は be + 過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_9x9w9u7e",
+    "ja": "引き返した方が、早いですよ。",
+    "en": "You'd be better off doubling back.",
+    "alternatives": [
+      "It'd be quicker to turn back.",
+      "You're better off turning back."
+    ],
+    "point": "「引き返す」は double back / turn back",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  }
+]

@@ -1,0 +1,784 @@
+[
+  {
+    "id": "c_2e7e8v8d",
+    "ja": "町は工事で孤立してる。",
+    "en": "The town's isolated by roadwork.",
+    "alternatives": [
+      "Roadwork has left the town isolated.",
+      "The town has been isolated by construction."
+    ],
+    "point": "isolated は交通などを断たれて孤立した状態。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_2k5s5d3f",
+    "ja": "週末は、家でのんびりしてたよ。",
+    "en": "I spent the weekend just lounging around.",
+    "alternatives": [
+      "I just lounged around at home all weekend.",
+      "I spent the weekend relaxing at home."
+    ],
+    "point": "spend + 時間 + 〜ing の形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_2n7u8p8h",
+    "ja": "明日は雨だって聞いたよ。",
+    "en": "I heard it'll rain tomorrow.",
+    "alternatives": [
+      "I heard it's going to rain tomorrow.",
+      "I heard it's supposed to rain tomorrow."
+    ],
+    "point": "heard の後ろの that は省略できる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_2s2j4q8w",
+    "ja": "自転車を買ったんだ。",
+    "en": "I got a bike.",
+    "alternatives": ["I bought a bike.", "I bought myself a bike."],
+    "point": "数えられる名詞には a を付ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["articles-and-countability", "past-simple"]
+  },
+  {
+    "id": "c_2u9w9z5q",
+    "ja": "君、最近何を読んだ？",
+    "en": "What have you read lately?",
+    "alternatives": [
+      "What did you read recently?",
+      "What books have you read recently?"
+    ],
+    "point": "lately と現在完了で最近の読書を尋ねる。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["wh-questions", "present-perfect"]
+  },
+  {
+    "id": "c_2v4y4d7e",
+    "ja": "今週末、花火大会があるよ。",
+    "en": "There's a fireworks show this weekend.",
+    "alternatives": [
+      "There's a fireworks festival this weekend.",
+      "They're having a fireworks show this weekend."
+    ],
+    "point": "「花火大会」は fireworks show / festival",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_3d2b3f8n",
+    "ja": "彼が引っ越してたら今は心の支えがない。",
+    "en": "If he'd moved, he'd feel unmoored now.",
+    "alternatives": [
+      "Had he relocated, he'd feel adrift now.",
+      "If he'd moved, he'd feel emotionally unanchored now."
+    ],
+    "point": "unmoored は心のよりどころを失った比喩。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3e5s2m7j",
+    "ja": "帰ったら私に電話して。",
+    "en": "Call me when you return.",
+    "alternatives": ["Phone me when you get back.", "Call me once you get home."],
+    "point": "未来の帰宅でも when 節は現在形。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_3g9s3f8x",
+    "ja": "気乗りしなくても私も行くよ。",
+    "en": "Reluctant or not, I'll tag along.",
+    "alternatives": [
+      "I'll come along even if I'm reluctant.",
+      "I'll come along despite not feeling keen."
+    ],
+    "point": "tag along は他の人について一緒に行く。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["concession-contrast", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3j6e6m3j",
+    "ja": "ここに人が来る理由、分かる？",
+    "en": "Do you know what draws people here?",
+    "alternatives": [
+      "Do you know why people come here?",
+      "Any idea what attracts people here?"
+    ],
+    "point": "間接疑問は what draws の語順。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3m5n4m7k",
+    "ja": "うちの犬は雨が嫌いなの。",
+    "en": "My dog hates the rain.",
+    "alternatives": ["My dog doesn't like rain.", "My dog hates rain."],
+    "point": "三人称単数の現在形は動詞に s",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_3p5x8b2v",
+    "ja": "晴れたら散歩しようよ。",
+    "en": "If it's sunny, let's walk.",
+    "alternatives": ["Let's walk if it's sunny.", "If it's sunny, let's go walking."],
+    "point": "if 節の中は未来でも現在形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_3t5u8m7y",
+    "ja": "私が雑談を切り上げていい？",
+    "en": "Could I wrap up our conversation?",
+    "alternatives": ["Could I end our chat?", "May I finish our conversation?"],
+    "point": "wrap up は話を終わりにする。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["requests-permission", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3v3v6z4u",
+    "ja": "私が気になるのは隣人たちの冷淡さ。",
+    "en": "What bothers me is the neighbors' aloofness.",
+    "alternatives": [
+      "The neighbors' aloofness is what concerns me.",
+      "I'm bothered by how distant the neighbors seem."
+    ],
+    "point": "aloofness は距離を置いて打ち解けない様子。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_3x8s6n7y",
+    "ja": "偶然会ったのは、同級生なんだ。",
+    "en": "It was a classmate I bumped into.",
+    "alternatives": [
+      "It was a classmate that I ran into.",
+      "The person I ran into was a classmate."
+    ],
+    "point": "It was ～ that 型。that は省略可。bump into は偶然会う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4k8y9b3w",
+    "ja": "知ってたら、行ったのに。",
+    "en": "If I'd known, I'd have come.",
+    "alternatives": [
+      "I'd have come if I'd known.",
+      "Had I known, I'd have come.",
+      "If I had known, I would have come."
+    ],
+    "point": "過去の仮定は would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_4m9c8r7f",
+    "ja": "土曜は映画を観たよ。",
+    "en": "I saw a movie Saturday.",
+    "alternatives": ["I saw a movie on Saturday.", "I watched a movie on Saturday."],
+    "point": "過去の日付が分かれば過去形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_4p3w4t2f",
+    "ja": "君が言ってたお店、閉店したらしいよ。",
+    "en": "I hear the place you mentioned closed down.",
+    "alternatives": [
+      "Apparently the place you mentioned has closed.",
+      "I heard the restaurant you told me about closed."
+    ],
+    "point": "名詞の後の that は省略できる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_4r8n4q5e",
+    "ja": "隣人は私に騒音を我慢してほしい。",
+    "en": "My neighbor wants me to tolerate the racket.",
+    "alternatives": [
+      "My neighbor wants me to endure the noise.",
+      "My neighbor wants me to bear the racket."
+    ],
+    "point": "racket は迷惑な大きな音。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_4x3j3p7r",
+    "ja": "今日、ちょっと蒸し暑くない？",
+    "en": "Doesn't it feel a bit muggy today?",
+    "alternatives": [
+      "Isn't it a little humid today?",
+      "Don't you think it's kind of muggy?"
+    ],
+    "point": "a bit と否定疑問で柔らかく同意を誘う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4x4p9d6k",
+    "ja": "今日は天気がいいね。",
+    "en": "It's a nice day.",
+    "alternatives": ["The weather is nice today.", "It's nice out today."],
+    "point": "天気は it を主語にして言う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_4x9t9h9e",
+    "ja": "今日の暑さは昨日よりずっとまし。",
+    "en": "Today's heat is far more bearable than yesterday's.",
+    "alternatives": [
+      "Today's heat is much more tolerable than yesterday's.",
+      "Yesterday's heat was far less bearable than today's."
+    ],
+    "point": "bearable は暑さなどが我慢できる程度という意味。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_4z6t7m3b",
+    "ja": "見て、虹だよ！",
+    "en": "Look at the rainbow!",
+    "alternatives": [
+      "Look at that rainbow!",
+      "Look, a rainbow!",
+      "Check out the rainbow!"
+    ],
+    "point": "「見て」は look at。see ではない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"]
+  },
+  {
+    "id": "c_5c9y3u7f",
+    "ja": "傘は持っていくといいよ。",
+    "en": "You should take an umbrella.",
+    "alternatives": [
+      "You might want to take an umbrella.",
+      "You should bring an umbrella with you."
+    ],
+    "point": "助言は should。had better は強め",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_5f2u2c7d",
+    "ja": "暖かければ、外で食べるのに。",
+    "en": "If it were warmer, we'd eat outside.",
+    "alternatives": [
+      "We'd have lunch outside if it were warmer.",
+      "If it were any warmer, we'd eat outside."
+    ],
+    "point": "if 節は were、主節は would + 動詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_5g4k7a8f",
+    "ja": "私はこの週末にくつろげばよかった。",
+    "en": "I wish I'd unwound this weekend.",
+    "alternatives": [
+      "I wish I'd relaxed this weekend.",
+      "If only I'd relaxed this weekend."
+    ],
+    "point": "unwind は緊張を解いてくつろぐ。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_5g9d9r4d",
+    "ja": "我々が粘れば雨をやり過ごせたのに。",
+    "en": "If we'd persisted, we'd have weathered the rain.",
+    "alternatives": [
+      "Had we persisted, we'd have weathered the rain.",
+      "We'd have weathered the rain had we persisted."
+    ],
+    "point": "weather the rain は雨が収まるまで持ちこたえる。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_5h6n2h9m",
+    "ja": "私たちが座った途端、雨が降り出した。",
+    "en": "Hardly had we sat down when it poured.",
+    "alternatives": [
+      "No sooner had we sat down than it poured.",
+      "As soon as we sat down, it began to pour."
+    ],
+    "point": "Hardly のあとは had we の倒置。when が続く",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_5k4d9b3u",
+    "ja": "私は明日体を休めるよ。",
+    "en": "I'll rest tomorrow.",
+    "alternatives": ["I'm going to rest tomorrow.", "I plan to rest tomorrow."],
+    "point": "will でこれから休む予定を伝える。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_5x7s5p3h",
+    "ja": "花火、見ればよかったなあ。",
+    "en": "I wish I'd seen the fireworks.",
+    "alternatives": [
+      "If only I'd seen the fireworks.",
+      "I wish I had watched the fireworks."
+    ],
+    "point": "過去への後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_6a3r9v3p",
+    "ja": "私、泳ぎは得意だよ。",
+    "en": "I can swim well.",
+    "alternatives": ["I'm a good swimmer.", "I'm good at swimming.", "I swim well."],
+    "point": "「得意」は can + 動詞 + well で言える",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_6m9h6s7e",
+    "ja": "私は気まぐれに出かけ続けてる。",
+    "en": "I've been venturing out spontaneously.",
+    "alternatives": [
+      "I've been going out on a whim.",
+      "I've been making spontaneous outings."
+    ],
+    "point": "spontaneously は思いつくままに、その場の気持ちで。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_6s7f3m4d",
+    "ja": "私はその頃もう社交に疲れ切ってた。",
+    "en": "I'd burned out socially by then.",
+    "alternatives": [
+      "I'd exhausted myself socializing by then.",
+      "I'd worn myself out socially by then."
+    ],
+    "point": "burn out は消耗し切って気力を失う。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_6w6u7s6d",
+    "ja": "予報だと、晴れると言っていた。",
+    "en": "The forecast said it'd clear up.",
+    "alternatives": [
+      "The weatherman said it would clear up.",
+      "The forecast said it would be sunny."
+    ],
+    "point": "said に合わせて will は would、clear up は「晴れる」",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6z3u5e5d",
+    "ja": "彼は料理が上手なんだ。",
+    "en": "He's a good cook.",
+    "alternatives": ["He cooks well.", "He's good at cooking."],
+    "point": "「上手」は a good cook か good at -ing",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_7a7n7k6e",
+    "ja": "ケンに遊びに来いと言われた。",
+    "en": "Ken told me to drop by.",
+    "alternatives": ["Ken told me to come by.", "Ken told me to come over."],
+    "point": "tell + 人 + to do。drop by は「ちょっと寄る」",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_7c6a4n5a",
+    "ja": "今日は昨日より暖かい。",
+    "en": "Today's warmer than yesterday.",
+    "alternatives": [
+      "It's warmer today than yesterday.",
+      "Yesterday was colder than today."
+    ],
+    "point": "warmer than で昨日より暖かいと比べる。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_7h9g6y3g",
+    "ja": "週末はどこへ行ったの？",
+    "en": "Where'd you go this weekend?",
+    "alternatives": ["Where did you go last weekend?", "Where'd you go last weekend?"],
+    "point": "where + did + 主語 + 動詞の原形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7m2d4g9y",
+    "ja": "昼ごろにやっと雨が上がった。",
+    "en": "The rain finally let up around noon.",
+    "alternatives": [
+      "The rain finally eased off around noon.",
+      "The rain finally stopped around noon."
+    ],
+    "point": "let up は雨や勢いが弱まる・やむ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_7p5t5b7v",
+    "ja": "私は最近、近所づきあいを控えてる。",
+    "en": "I've been socializing less with neighbors lately.",
+    "alternatives": [
+      "I've been cutting back on neighborhood socializing.",
+      "I've been keeping neighborly socializing to a minimum."
+    ],
+    "point": "socializing less は付き合いをやめず、量を控えること。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_7y4k2u5t",
+    "ja": "やっと髪を切ってもらった。",
+    "en": "I finally had my hair cut.",
+    "alternatives": ["I finally got my hair cut.", "I finally got a haircut."],
+    "point": "have + 物 + 過去分詞「〜してもらう」",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_8a3g2g3s",
+    "ja": "私を驚かせたのは町の活気だ。",
+    "en": "What surprised me was the town's vibrancy.",
+    "alternatives": [
+      "The town's liveliness was what surprised me.",
+      "I was surprised by the town's energy."
+    ],
+    "point": "What surprised me was で町の活気が意外で驚いた点を強調する。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_8a5j8f3p",
+    "ja": "彼女は人の動機が分かると言う。",
+    "en": "She says she knows what makes people tick.",
+    "alternatives": [
+      "She says she understands what motivates people.",
+      "She says she grasps what drives people."
+    ],
+    "point": "what makes people tick は人を動かす心理。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_8b3a8p5v",
+    "ja": "京都はお寺で有名だよね。",
+    "en": "Kyoto is known for its temples.",
+    "alternatives": [
+      "Kyoto is famous for its temples.",
+      "Kyoto is well known for its temples."
+    ],
+    "point": "「〜で知られている」は known for",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_8k3p4k9z",
+    "ja": "雨が降ってきたね。",
+    "en": "It's starting to rain.",
+    "alternatives": ["It's beginning to rain.", "It started raining."],
+    "point": "降り始めは be starting to で言う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8r7w5b6p",
+    "ja": "暑くても、夏が好きなんだ。",
+    "en": "I love summer despite the heat.",
+    "alternatives": [
+      "I love summer, even though it's hot.",
+      "Even with the heat, I love summer."
+    ],
+    "point": "despite の後ろは名詞。文にするなら even though",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8s4z9g9v",
+    "ja": "お昼までには、雨は止んでいたよ。",
+    "en": "The rain had stopped by noon.",
+    "alternatives": [
+      "By noon, the rain had stopped.",
+      "It had stopped raining by noon."
+    ],
+    "point": "「〜までには」の時点より前は過去完了",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_8t5z4n7h",
+    "ja": "近くに公園があるよ。",
+    "en": "There's a park nearby.",
+    "alternatives": ["There's a park near here.", "There's a park close by."],
+    "point": "「〜がある」は there is / there's",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_8u2r9n5t",
+    "ja": "ここに座ってもいい？",
+    "en": "Can I sit here?",
+    "alternatives": ["May I sit here?", "Can I take this seat?"],
+    "point": "can I で座る許可を求める。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_8u9x5e9k",
+    "ja": "今週はずっと暑いね。",
+    "en": "It's been hot all week.",
+    "alternatives": ["This week has been really hot.", "It's been so hot this week."],
+    "point": "今週まで続く状態は現在完了",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"]
+  },
+  {
+    "id": "c_9b7a9g6x",
+    "ja": "予報で私は予定を決めずにいた。",
+    "en": "The forecast had me hedging my bets.",
+    "alternatives": [
+      "The forecast kept me from making plans.",
+      "The forecast made me keep my options open."
+    ],
+    "point": "hedge my bets は一つに賭けず選択肢を残す。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_9c4h9n8u",
+    "ja": "週末はハイキングでもと思ってて。",
+    "en": "I was thinking of hiking this weekend.",
+    "alternatives": [
+      "I thought I might go hiking this weekend.",
+      "I'm thinking about maybe going hiking this weekend."
+    ],
+    "point": "was thinking で決めつけずに柔らかく言う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_9d8n3t8d",
+    "ja": "電車で、週末の計画を立てたよ。",
+    "en": "Riding the train, I planned my weekend.",
+    "alternatives": [
+      "I planned my weekend while riding the train.",
+      "While on the train, I planned out my weekend."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_9f6m9t4t",
+    "ja": "私、朝寝坊が楽しみだ。",
+    "en": "I'm excited to sleep in.",
+    "alternatives": [
+      "I can't wait to sleep in.",
+      "I'm looking forward to sleeping in."
+    ],
+    "point": "sleep in はいつもより遅くまで寝る。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["infinitives", "phrasal-verbs"]
+  },
+  {
+    "id": "c_9n7d3b8y",
+    "ja": "私、波を眺めたいな。",
+    "en": "I want to watch the waves.",
+    "alternatives": ["I'd like to watch the waves.", "I feel like watching waves."],
+    "point": "want to do で希望を表す。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9q9a6y3n",
+    "ja": "二人で行ったカフェ、良かった。",
+    "en": "The café we visited was great.",
+    "alternatives": [
+      "The café we went to was great.",
+      "The café that we went to was great."
+    ],
+    "point": "関係詞 that は省略できる。visited は前置詞不要",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_9r8x8t8m",
+    "ja": "近くの人に見覚えがある。",
+    "en": "Someone nearby seems familiar.",
+    "alternatives": ["Someone close by looks familiar.", "I recognize someone nearby."],
+    "point": "nearby で someone を後ろから説明する。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_9u7y6h5z",
+    "ja": "君はラッシュを避けるべき。",
+    "en": "You should avoid rush hour.",
+    "alternatives": ["You ought to avoid rush hour.", "You should skip rush hour."],
+    "point": "rush hour は通勤などで混雑する時間帯。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9v6f5d8j",
+    "ja": "傘なしで、きっとびしょ濡れだったね。",
+    "en": "You must have gotten soaked without an umbrella.",
+    "alternatives": [
+      "You must have been drenched without an umbrella.",
+      "Without an umbrella, you must have been soaked."
+    ],
+    "point": "過去の強い推量は must have + 過去分詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_9y3f6r6s",
+    "ja": "私はずっと日差しが恋しい。",
+    "en": "I've been craving sunshine.",
+    "alternatives": [
+      "I've been longing for sunshine.",
+      "I've been missing the sunshine."
+    ],
+    "point": "have been craving はずっと欲しい気持ちが続いている。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"]
+  }
+]

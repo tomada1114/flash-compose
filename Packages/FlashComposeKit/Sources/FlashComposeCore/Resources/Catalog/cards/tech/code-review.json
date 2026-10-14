@@ -1,0 +1,799 @@
+[
+  {
+    "id": "c_2b3j6p3e",
+    "ja": "処理を切り出すのはどう？",
+    "en": "How about extracting the logic?",
+    "alternatives": ["What about extracting the logic?", "Why not extract the logic?"],
+    "point": "How about の後は -ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_2d4h6x7u",
+    "ja": "君が反対してたら我々は見送ってた。",
+    "en": "Had you pushed back, we'd have shelved it.",
+    "alternatives": [
+      "If you'd objected, we'd have shelved it.",
+      "We'd have shelved it if you'd pushed back."
+    ],
+    "point": "Had you は if を使わない過去の仮定。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_2h4h2z6x",
+    "ja": "命名が紛らわしいと思った。",
+    "en": "I found the naming confusing.",
+    "alternatives": ["I thought the naming was confusing.", "The naming confused me."],
+    "point": "find + 目的語 + 形容詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_2m5x7p4c",
+    "ja": "出す前に、テストは直した。",
+    "en": "I'd fixed the tests before submitting.",
+    "alternatives": [
+      "I had fixed the tests before I submitted.",
+      "I fixed the tests before submitting."
+    ],
+    "point": "先に起きたことは過去完了 had fixed",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_2m6g7f7p",
+    "ja": "なぜこの名を変える？",
+    "en": "Why change this name?",
+    "alternatives": ["Why rename this?", "Why use another name?"],
+    "point": "Why と動詞の原形で変更の理由を尋ねる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_2p5t9w4m",
+    "ja": "今日中に直せる？",
+    "en": "Can you fix this today?",
+    "alternatives": ["Could you fix this today?", "Can you fix it today?"],
+    "point": "「直せる？」は Can you〜?",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_2p9m5w4s",
+    "ja": "API を分けてれば、今は平気なのに。",
+    "en": "If we'd split the API, we'd be fine.",
+    "alternatives": [
+      "Had we split the API, we'd be fine now.",
+      "If we'd split it back then, we'd be fine now."
+    ],
+    "point": "過去の仮定+今の結果。主節は would be",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_2r8u4z7b",
+    "ja": "これが壊れた関数だよ。",
+    "en": "This is the function that broke.",
+    "alternatives": [
+      "This is the function that failed.",
+      "This is the function which broke."
+    ],
+    "point": "物を受ける関係詞は that か which。who は人だけ",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_2r9w4b4b",
+    "ja": "我々は重複処理を省くべきだ。",
+    "en": "We should weed out duplicate logic.",
+    "alternatives": [
+      "We should eliminate duplicate logic.",
+      "We should remove the redundant logic."
+    ],
+    "point": "weed out は不要なものを選んで取り除く。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"]
+  },
+  {
+    "id": "c_2x2c4f3w",
+    "ja": "この変更の暗黙の点を濁さず話そう。",
+    "en": "Let's not gloss over what this change leaves implicit.",
+    "alternatives": [
+      "Let's address what's implicit in this change without evasion.",
+      "Let's not sidestep what's left implicit by this change."
+    ],
+    "point": "gloss over は難しい点を軽く扱って通り過ぎる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "noun-clauses"]
+  },
+  {
+    "id": "c_2y6f8r3h",
+    "ja": "ここに誤字があるよ。",
+    "en": "There's a typo here.",
+    "alternatives": ["I see a typo here.", "There's a spelling mistake here."],
+    "point": "「〜がある」は There's + 単数名詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_2z7t8n5j",
+    "ja": "我々は命名を揃えるべきだった。",
+    "en": "We should've standardized the naming.",
+    "alternatives": [
+      "We should've kept the naming consistent.",
+      "We should've used consistent names."
+    ],
+    "point": "should have done は過去の行動への反省。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_3a2w2t7x",
+    "ja": "ケンに名前変更を頼んで。",
+    "en": "Ask Ken to rename it.",
+    "alternatives": ["Please ask Ken to rename it.", "Ask Ken to change the name."],
+    "point": "ask + 人 + to 動詞の形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_3n3c5d5x",
+    "ja": "私たちは行間を読むべきだった。",
+    "en": "We should've read between the lines.",
+    "alternatives": [
+      "We should've picked up the unspoken meaning.",
+      "We should've noticed what wasn't said."
+    ],
+    "point": "read between the lines は言外の意味を読む。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_3r9b7u5b",
+    "ja": "私が推した安全策が今我々に災いしてる。",
+    "en": "The safeguard I backed now haunts us.",
+    "alternatives": [
+      "We're now haunted by the safeguard I backed.",
+      "The safeguard I supported is now hurting us."
+    ],
+    "point": "I backed は私が推した安全策を限定し、now haunts us は今その判断が我々に災いしていることを表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["relative-clauses", "tense-contrast"]
+  },
+  {
+    "id": "c_3s3g8q3j",
+    "ja": "この変更で私は前提を再考した。",
+    "en": "This change made me rethink my assumptions.",
+    "alternatives": [
+      "This change prompted me to reconsider my assumptions.",
+      "This change led me to revisit my assumptions."
+    ],
+    "point": "make + 人 + 動詞の原形で再考させたと伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_3y8j9k4h",
+    "ja": "PR は前より小さい。",
+    "en": "It's smaller than before.",
+    "alternatives": ["The PR is smaller than before.", "This PR is smaller now."],
+    "point": "比較は形容詞 + er",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["comparatives-superlatives", "be-and-present-simple"]
+  },
+  {
+    "id": "c_4g9v6e3n",
+    "ja": "コードを読んでるよ。",
+    "en": "I'm reading the code.",
+    "alternatives": ["I'm looking at the code.", "I'm reviewing the code."],
+    "point": "今していることは be + 動詞ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_4h3h6v2e",
+    "ja": "長くても私は明快な名がいい。",
+    "en": "Length aside, I prefer self-explanatory names.",
+    "alternatives": [
+      "I favor clear names despite their length.",
+      "I prefer self-explanatory names despite their length."
+    ],
+    "point": "self-explanatory は追加説明なしで意味が分かる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_4k8r9p2x",
+    "ja": "彼が責任者を知ってるか私は疑問だ。",
+    "en": "I doubt he knows who is responsible.",
+    "alternatives": [
+      "I'm not sure he knows who's in charge.",
+      "I doubt he knows who bears responsibility."
+    ],
+    "point": "doubt の中に knows、その中に where 節がある。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_4n3w3p9x",
+    "ja": "この変更は不要かもしれません。",
+    "en": "This change may be unnecessary.",
+    "alternatives": [
+      "Perhaps this change is unnecessary.",
+      "This change might not be needed."
+    ],
+    "point": "may be で不要という指摘を断定せず伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4q4h8m5d",
+    "ja": "静的検査なら我々は見抜けたのに。",
+    "en": "If we'd linted, we'd have caught it.",
+    "alternatives": [
+      "If we'd run lint, we'd have spotted it.",
+      "We'd have caught it if we'd linted."
+    ],
+    "point": "過去に実現しなかった条件は if と had done。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_4v4t7r4d",
+    "ja": "引っかかるのは、この命名です。",
+    "en": "What bothers me is this naming.",
+    "alternatives": [
+      "It's the naming that bothers me.",
+      "The naming is what bothers me."
+    ],
+    "point": "What 節を主語にして「気になるのは」を強調",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4x6m6c5y",
+    "ja": "指摘された行を直した。",
+    "en": "I fixed the flagged lines.",
+    "alternatives": [
+      "I fixed the lines you flagged.",
+      "I fixed the lines you pointed out."
+    ],
+    "point": "過去分詞で名詞を後ろから修飾",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_4z6x7t7p",
+    "ja": "私、名前を確認中。",
+    "en": "I'm checking names.",
+    "alternatives": ["I'm checking the names.", "I'm looking over the names."],
+    "point": "進行形で今名前を確認していると伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5d7n8g4f",
+    "ja": "この関数は他でも使われる。",
+    "en": "This function is used elsewhere.",
+    "alternatives": [
+      "This function is used in other places.",
+      "This function is also used elsewhere."
+    ],
+    "point": "「使われる」は is used",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_5f7q6a9a",
+    "ja": "これを読んで、懸念が二つある。",
+    "en": "Having read this, I have two concerns.",
+    "alternatives": [
+      "After reading this, I have two concerns.",
+      "Having gone through this, I have two concerns."
+    ],
+    "point": "Having + 過去分詞で「読んだ後で」を前置き",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5n6u7s8w",
+    "ja": "この PR、朝からずっと見てる。",
+    "en": "I've been reviewing this since morning.",
+    "alternatives": [
+      "I've been on this PR since morning.",
+      "I've been looking at this since this morning."
+    ],
+    "point": "続いている動作は現在完了進行形 + since",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5w6q7d9e",
+    "ja": "何を直すのか、説明して？",
+    "en": "Can you explain what this fixes?",
+    "alternatives": [
+      "Could you tell me what this fixes?",
+      "Can you walk me through what this fixes?"
+    ],
+    "point": "what 節の中は平叙文の語順で fixes",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_5x6q4x8n",
+    "ja": "テスト通ったらマージする。",
+    "en": "I'll merge when tests pass.",
+    "alternatives": [
+      "I'll merge once the tests pass.",
+      "I'll merge if the tests pass."
+    ],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_5y7f4m5n",
+    "ja": "名前が紛らわしい。",
+    "en": "The name is confusing.",
+    "alternatives": ["The name is unclear.", "This name isn't clear."],
+    "point": "「分かりにくい」は unclear / confusing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6c7q3f7n",
+    "ja": "テストあったら、今は安心なのに。",
+    "en": "If we'd had tests, I'd feel safer.",
+    "alternatives": [
+      "I'd feel safer now if we'd had tests.",
+      "If there had been tests, I'd feel safer now."
+    ],
+    "point": "過去の仮定+今の結果。if 節は過去完了、主節は would",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_6h9d7b7a",
+    "ja": "彼は修正が責任をぼかすだけと言った。",
+    "en": "He said the fix merely blurred who's accountable.",
+    "alternatives": [
+      "He said the fix only obscured who was responsible.",
+      "He said the change just made responsibility less clear."
+    ],
+    "point": "accountable は結果について説明責任を負う。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["reported-speech", "nested-clauses"]
+  },
+  {
+    "id": "c_6n4e6x9f",
+    "ja": "私はこの修正が十分とは到底言えない。",
+    "en": "I couldn't possibly call this fix sufficient.",
+    "alternatives": [
+      "I can't possibly say this fix is sufficient.",
+      "I couldn't call this fix sufficient at all."
+    ],
+    "point": "couldn’t possibly call で、その評価は到底できないと強く述べる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_6p9s7x8d",
+    "ja": "ブランチ、リベースしてもいい？",
+    "en": "Mind if I rebase this branch?",
+    "alternatives": [
+      "Would you mind if I rebased this branch?",
+      "Is it okay if I rebase this branch?"
+    ],
+    "point": "Mind if I は Do you mind if I の省略。許可を求める",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_6q5p8n5z",
+    "ja": "私がその名前を変える。",
+    "en": "I'll change the name.",
+    "alternatives": ["I'll pick another name.", "I'll use a different name."],
+    "point": "will で修正を引き受ける意思を表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_6v9w2u8n",
+    "ja": "変更点を見せて。",
+    "en": "Show me the changes.",
+    "alternatives": ["Show me your changes.", "Let me see the changes."],
+    "point": "changes は変えた箇所。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_6y8d6t8a",
+    "ja": "私は処理が遅いと思う。",
+    "en": "I think processing is slow.",
+    "alternatives": ["I believe processing is slow.", "Processing seems slow to me."],
+    "point": "think の後の節で処理への評価を伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_7h6q2d9w",
+    "ja": "嫌なのはこれが責任の所在を隠す点だ。",
+    "en": "What bothers me is how this obscures accountability.",
+    "alternatives": [
+      "It's this concealing accountability that bothers me.",
+      "What concerns me is this hiding who's responsible."
+    ],
+    "point": "What bothers me で不満の焦点を示し、accountability は責任の所在を指す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "nested-clauses"]
+  },
+  {
+    "id": "c_7p9g2z9w",
+    "ja": "マージ前に誰か気づいてたらなあ。",
+    "en": "I wish someone had caught this before merging.",
+    "alternatives": [
+      "If only someone had caught this before the merge.",
+      "I wish this had been caught before merging."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7r3v7b6s",
+    "ja": "私は機能追加時にテストする。",
+    "en": "I test when adding features.",
+    "alternatives": [
+      "I run tests when adding features.",
+      "I test when I add features."
+    ],
+    "point": "when の後で機能を追加する時のテスト習慣を表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_7r6q3p2m",
+    "ja": "これ、テストも説明もない。",
+    "en": "Not only is it untested, it's undocumented.",
+    "alternatives": [
+      "Not only does it lack tests, it lacks docs.",
+      "It's untested, and undocumented on top of that."
+    ],
+    "point": "Not only を文頭に出すと is it の倒置になる",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_7w8d5t7t",
+    "ja": "これ、月曜から変わってないよ。",
+    "en": "This hasn't changed since Monday.",
+    "alternatives": [
+      "This has stayed the same since Monday.",
+      "Nothing has changed here since Monday."
+    ],
+    "point": "起点 since には現在完了。過去形にしない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_8d7x6k2n",
+    "ja": "安全策の頼りなさを知っておけばな。",
+    "en": "If only I'd known that safeguard was unreliable.",
+    "alternatives": [
+      "I wish I'd known that safeguard was unreliable.",
+      "I wish I'd realized that safeguard wasn't reliable."
+    ],
+    "point": "If only I’d known は安全策が頼りないと過去に知っておけばよかったという後悔。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["wishes-regrets", "noun-clauses"]
+  },
+  {
+    "id": "c_8e5y3g3c",
+    "ja": "こんな微妙な差なら私は保留にするのに。",
+    "en": "Were the distinction so fine, I'd reserve judgment.",
+    "alternatives": [
+      "If the difference were that subtle, I'd withhold judgment.",
+      "I'd withhold judgment if the distinction were so subtle."
+    ],
+    "point": "reserve judgment は判断を急がず差し控える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_8e7c8z4d",
+    "ja": "彼女は我々の修正が表面的だと言った。",
+    "en": "She said what we'd fixed was merely cosmetic.",
+    "alternatives": [
+      "She said our fixes were only superficial.",
+      "She said we'd made nothing more than cosmetic fixes."
+    ],
+    "point": "cosmetic は見た目だけで根本に届かない修正。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["reported-speech", "nested-clauses"]
+  },
+  {
+    "id": "c_8f7k9z4n",
+    "ja": "その行を残して。",
+    "en": "Keep that line.",
+    "alternatives": ["Leave that line in.", "Don't remove that line."],
+    "point": "keep でコードの行を消さずに残す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_8f8x2n8k",
+    "ja": "もうテストを直したよ。",
+    "en": "I've fixed the tests.",
+    "alternatives": ["I already fixed the tests.", "I already fixed the test."],
+    "point": "完了は have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_8m7q5r5m",
+    "ja": "便利でもこの近道は意図をぼかす。",
+    "en": "Though handy, this shortcut obscures intent.",
+    "alternatives": [
+      "Although handy, this shortcut makes the intent unclear.",
+      "This shortcut obscures intent despite being convenient."
+    ],
+    "point": "Though handy で便利さを認めつつ、この近道が意図を曖昧にする点を述べる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8q4z3r8y",
+    "ja": "こんな大幅変更の根拠はほぼ見えない。",
+    "en": "I see little justification for so sweeping a change.",
+    "alternatives": [
+      "I see little basis for this sweeping change.",
+      "I see almost no grounds for this extensive change."
+    ],
+    "point": "so sweeping a change は so + 形容詞 + a + 名詞の語順。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_8r6j2p7s",
+    "ja": "ご指摘を受けて、作り直しました。",
+    "en": "Taking your feedback on board, I reworked it.",
+    "alternatives": [
+      "Based on your feedback, I reworked it.",
+      "After considering your feedback, I reworked it."
+    ],
+    "point": "take ~ on board は「受け入れて反映する」",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_8t2g6a2j",
+    "ja": "これ、私には追えない。",
+    "en": "I can't follow this.",
+    "alternatives": ["I can't keep up with this.", "I can't follow it."],
+    "point": "「追う」は follow を使う",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_8z6r9f4h",
+    "ja": "君の説明拒否を私に弁護させないで。",
+    "en": "Don't make me defend your refusal to explain.",
+    "alternatives": [
+      "Don't have me justify your refusal to explain.",
+      "Don't make me defend your unwillingness to explain."
+    ],
+    "point": "make me defend は私に弁護させる。your refusal は君の説明拒否。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["causatives", "infinitives"]
+  },
+  {
+    "id": "c_8z8u5x3c",
+    "ja": "私が決めるならその主張に留保を付ける。",
+    "en": "Were it my call, I'd qualify that claim.",
+    "alternatives": [
+      "If it were my call, I'd qualify that claim.",
+      "If I decided, I'd qualify that claim."
+    ],
+    "point": "qualify a claim は条件や留保を添えて断定を弱める。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_9a5g3e9x",
+    "ja": "このコード、エラー処理がないよ。",
+    "en": "This code is missing error handling.",
+    "alternatives": [
+      "There's no error handling in this code.",
+      "This code doesn't handle errors."
+    ],
+    "point": "error handling は数えない名詞。a は付けない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_9h8z5w2d",
+    "ja": "これ、マージしていい？",
+    "en": "Can I merge this?",
+    "alternatives": ["Is it okay to merge this?", "Is it OK to merge?"],
+    "point": "許可を求めるときは Can I / May I",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9j5e2g3p",
+    "ja": "私ならもっと速くできる。",
+    "en": "I can make it faster.",
+    "alternatives": ["I can speed it up.", "I can do it faster."],
+    "point": "「速くできる」は can make it faster",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["can-could-ability", "comparatives-superlatives"]
+  },
+  {
+    "id": "c_9k4k6r2e",
+    "ja": "今夜、PR を更新するね。",
+    "en": "I'll update the PR tonight.",
+    "alternatives": [
+      "I'm going to update the PR tonight.",
+      "I'm updating the PR tonight."
+    ],
+    "point": "今夜 → tonight（this night ではない）",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9t4c7p5x",
+    "ja": "この PR、分けたい。",
+    "en": "I want to split this PR.",
+    "alternatives": ["I'd like to split this PR up.", "I want to break this PR up."],
+    "point": "split は「分ける」。want to + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9v4u4w2c",
+    "ja": "この名前にした理由、教えて？",
+    "en": "Mind explaining why you chose this name?",
+    "alternatives": [
+      "Can you tell me why you chose this name?",
+      "Could you explain why you went with this name?"
+    ],
+    "point": "間接疑問は why + 主語 + 動詞の語順",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_9z4h6u2f",
+    "ja": "この値は自動設定される。",
+    "en": "This value is set automatically.",
+    "alternatives": [
+      "The system sets this value automatically.",
+      "This value gets set automatically."
+    ],
+    "point": "is set は値が設定される受動態。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  }
+]

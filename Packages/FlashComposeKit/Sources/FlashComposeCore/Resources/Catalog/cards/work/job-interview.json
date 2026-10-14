@@ -1,0 +1,655 @@
+[
+  {
+    "id": "c_2c3a4u4g",
+    "ja": "私はもっと責任を担いたい。",
+    "en": "I'm eager to shoulder more responsibility.",
+    "alternatives": [
+      "I'm keen to take on more responsibility.",
+      "I'd like to assume greater responsibility."
+    ],
+    "point": "shoulder responsibility は責任を担う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_2f5t4y4e",
+    "ja": "私は別の部署に移された。",
+    "en": "I was transferred to another department.",
+    "alternatives": [
+      "I was moved to another department.",
+      "They transferred me to another department."
+    ],
+    "point": "was transferred は部署などを異動させられた。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_2q4q6w2f",
+    "ja": "何でも聞いて。",
+    "en": "Ask me anything.",
+    "alternatives": ["Please ask me anything.", "Feel free to ask me."],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_2r7s2n3w",
+    "ja": "私は現実派と言えるかも。",
+    "en": "I'd describe myself as pragmatic.",
+    "alternatives": ["I'd say I'm pragmatic.", "I'd call myself a pragmatist."],
+    "point": "I'd describe myself で自己評価を控えめにする。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_3c3a2q4d",
+    "ja": "学歴はないが、成果は出してきました。",
+    "en": "Though I lack a degree, I've delivered results.",
+    "alternatives": [
+      "Although I don't have a degree, I've delivered results.",
+      "I lack a degree, but I've delivered results."
+    ],
+    "point": "Though 節と主節を対比させる",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_3m6n9q8j",
+    "ja": "採用なら、すぐに戦力になります。",
+    "en": "If hired, I'll hit the ground running.",
+    "alternatives": [
+      "If I'm hired, I'll hit the ground running.",
+      "Once hired, I'll hit the ground running."
+    ],
+    "point": "hit the ground running は「すぐ全力で動く」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_3r3w8m2k",
+    "ja": "視野を広げたくて応募しました。",
+    "en": "I applied to broaden my horizons.",
+    "alternatives": [
+      "I applied in order to broaden my horizons.",
+      "I applied hoping to broaden my horizons."
+    ],
+    "point": "目的は to + 動詞。「視野を広げる」は broaden one's horizons",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3r6w5x2b",
+    "ja": "即断が要る仕事に惹かれます。",
+    "en": "I'm drawn to jobs demanding snap decisions.",
+    "alternatives": [
+      "I'm attracted to roles that demand quick decisions.",
+      "I'm drawn to roles requiring split-second decisions."
+    ],
+    "point": "jobs の後ろに -ing で修飾。惹かれる = be drawn to",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3u8b9n5s",
+    "ja": "私は引っ越す予定です。",
+    "en": "I'm planning to move.",
+    "alternatives": ["I'm going to move.", "I plan to move."],
+    "point": "planning to move で引っ越しを計画していると伝える。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_4c7e9b2h",
+    "ja": "営業の経験者です。",
+    "en": "I'm experienced in sales.",
+    "alternatives": ["I have sales experience.", "I've done sales work."],
+    "point": "経験者は experienced。前置詞は in",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_4e3g9c9r",
+    "ja": "私は、着任してすぐ動ける人間です。",
+    "en": "I'm someone who hits the ground running.",
+    "alternatives": [
+      "I'm a person who can hit the ground running.",
+      "I'm the type who hits the ground running.",
+      "I'm someone who can start contributing right away."
+    ],
+    "point": "「すぐ動き出す」は hit the ground running",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_4k3a4y4e",
+    "ja": "当時すでにチームを率いてた。",
+    "en": "By then, I'd led a team.",
+    "alternatives": [
+      "I'd already led a team by then.",
+      "By that point, I'd already led a team."
+    ],
+    "point": "「その時までに」は過去完了",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4m6x4g8h",
+    "ja": "営業で、交渉力を学びました。",
+    "en": "Working in sales, I learned to negotiate.",
+    "alternatives": [
+      "Working in sales taught me to negotiate.",
+      "Through working in sales, I learned to negotiate."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_4u7e3s9x",
+    "ja": "私が活きるのはここだと思う。",
+    "en": "I think this is where I'll thrive.",
+    "alternatives": [
+      "I believe this is where I'll thrive.",
+      "I think this is the place where I'll thrive."
+    ],
+    "point": "I think の中に where 節を入れ子にする",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_4v2c8p6a",
+    "ja": "残業はありますか？",
+    "en": "Is there any overtime?",
+    "alternatives": ["Do people work overtime here?", "Will there be any overtime?"],
+    "point": "「残業」は数えない名詞なので any overtime",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_4v8a6d2x",
+    "ja": "私は接客経験がある。",
+    "en": "I've served customers.",
+    "alternatives": [
+      "I have experience serving customers.",
+      "I've done customer service work."
+    ],
+    "point": "現在完了で接客の経験を伝える。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_4y4e6z7a",
+    "ja": "私、通勤しなきゃ。",
+    "en": "I have to commute.",
+    "alternatives": ["I must commute.", "I need to commute."],
+    "point": "have to は必要性を表す。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_4y9z2z9a",
+    "ja": "もっと早く転職すればよかった。",
+    "en": "I wish I'd changed jobs sooner.",
+    "alternatives": [
+      "I wish I had switched jobs earlier.",
+      "I should have changed jobs sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_5d5w5c3u",
+    "ja": "私の一番の強みは聞く力です。",
+    "en": "My greatest strength is listening.",
+    "alternatives": [
+      "My biggest strength is listening.",
+      "Listening is my greatest strength."
+    ],
+    "point": "「一番の強み」は最上級 greatest / biggest",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5n7w8k7x",
+    "ja": "転職するなら、教師になりたい。",
+    "en": "If I changed careers, I'd teach.",
+    "alternatives": [
+      "If I switched careers, I'd teach.",
+      "If I changed careers, I'd become a teacher."
+    ],
+    "point": "現実味の薄い仮定は if + 過去形、would で受ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_5v3q4a8x",
+    "ja": "メモしてもいいですか？",
+    "en": "May I take notes?",
+    "alternatives": ["Can I take notes?", "Is it okay to take notes?"],
+    "point": "「メモを取る」は take notes と複数形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_5y9q6v6d",
+    "ja": "昨年、売上を倍にしました。",
+    "en": "I doubled our sales last year.",
+    "alternatives": [
+      "Last year, I doubled our sales.",
+      "I increased our sales twofold last year."
+    ],
+    "point": "last year があるので過去形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6c2r6b6a",
+    "ja": "上司は私なら重責も担えると言った。",
+    "en": "My boss said I could shoulder serious responsibility.",
+    "alternatives": [
+      "My boss said I could handle major responsibilities.",
+      "My manager said I could take on heavy responsibilities."
+    ],
+    "point": "shoulder responsibility は責任を引き受け担う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6c4c6a3k",
+    "ja": "独立してたら今は私が采配を振るう。",
+    "en": "Had I gone independent, I'd call the shots.",
+    "alternatives": [
+      "If I'd become self-employed, I'd be in charge now.",
+      "I'd make the decisions now had I gone independent."
+    ],
+    "point": "call the shots は決定権を握る。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_6f7x6v3w",
+    "ja": "怒ったお客様をなだめるのが得意です。",
+    "en": "I have a knack for calming upset clients.",
+    "alternatives": [
+      "I'm good at calming upset clients.",
+      "Calming upset clients is my forte.",
+      "I have a gift for soothing angry clients."
+    ],
+    "point": "「得意」は a knack for。冠詞 a を忘れない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6j6k7d2t",
+    "ja": "案件を担当して、次は統括したい。",
+    "en": "Having managed projects, I'd like to lead.",
+    "alternatives": [
+      "Having run projects, I'd like to take the lead.",
+      "Having managed projects, I now want to lead."
+    ],
+    "point": "Having + 過去分詞で「〜した経験を経て」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_6s4a5h6f",
+    "ja": "私は車を持ってる。",
+    "en": "I have a car.",
+    "alternatives": ["I own a car.", "I've got a car."],
+    "point": "数える名詞 car が一つなので a を付ける。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6u2p2r4a",
+    "ja": "英語でメールが書けます。",
+    "en": "I can write English emails.",
+    "alternatives": [
+      "I can write emails in English.",
+      "I'm able to write English emails."
+    ],
+    "point": "「英語のメール」は English emails と前に置ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_7d7a4h7f",
+    "ja": "私は新卒です。",
+    "en": "I'm a new graduate.",
+    "alternatives": ["I'm a recent graduate.", "I just graduated."],
+    "point": "新卒は new / recent graduate。a を付ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_7e5z9p7u",
+    "ja": "私、営業を学んでる。",
+    "en": "I'm learning sales.",
+    "alternatives": ["I'm studying sales.", "I'm learning how to sell."],
+    "point": "進行形で現在取り組んでいることを表す。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_7j6g3g7r",
+    "ja": "人に教えるのが得意です。",
+    "en": "I'm good at teaching others.",
+    "alternatives": [
+      "I'm good at teaching people.",
+      "Teaching others is one of my strengths."
+    ],
+    "point": "be good at のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_7p6y2e6c",
+    "ja": "初日はいつですか？",
+    "en": "When's my first day?",
+    "alternatives": ["When do I start?", "When is the first day?"],
+    "point": "疑問詞 when を文頭に置く",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"]
+  },
+  {
+    "id": "c_7p7w2f9u",
+    "ja": "私を動かすのは、成長できる機会です。",
+    "en": "It's the chance to grow that drives me.",
+    "alternatives": [
+      "What drives me is the chance to grow.",
+      "What motivates me is the opportunity to grow."
+    ],
+    "point": "「～こそが」は It is ～ that で強調",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_7u2m8x2p",
+    "ja": "今、転職活動中です。",
+    "en": "I'm job hunting.",
+    "alternatives": ["I'm looking for a new job.", "I'm searching for a new job."],
+    "point": "今の状態は進行形。活動中は look for",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_7x4g9x8h",
+    "ja": "辞めてから、フリーで働いてる。",
+    "en": "I've been freelancing since I quit.",
+    "alternatives": [
+      "I've freelanced since I quit my job.",
+      "I've been freelancing since I left my job."
+    ],
+    "point": "since の後は過去形、主節は現在完了（進行形）",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_7y9p9z7a",
+    "ja": "給料はどのくらい？",
+    "en": "What's the pay?",
+    "alternatives": ["How much is the pay?", "What does it pay?"],
+    "point": "pay は仕事への報酬。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_8e7k8e4v",
+    "ja": "来月から働き始めます。",
+    "en": "I'll start next month.",
+    "alternatives": [
+      "I'm starting next month.",
+      "I'm going to start next month.",
+      "I'll start working next month."
+    ],
+    "point": "これからの意思は will。next に前置詞は不要",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8p5c6g6x",
+    "ja": "私の話を聞いて。",
+    "en": "Listen to my story.",
+    "alternatives": ["Hear my story.", "Please hear me out."],
+    "point": "listen の後に相手の話を置くときは to を使う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_8q7g5v3n",
+    "ja": "リーダーに抜擢されたんです。",
+    "en": "I was tapped to lead the team.",
+    "alternatives": [
+      "I was picked to lead the team.",
+      "They chose me to lead the team."
+    ],
+    "point": "be tapped to do で「抜擢される」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_8r5c4r7t",
+    "ja": "勤務地を教えてください。",
+    "en": "Please tell me where I'd work.",
+    "alternatives": [
+      "Could you tell me where I'd work?",
+      "Could you tell me the work location?",
+      "I'd like to know where I'd work."
+    ],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_8r5u6t4g",
+    "ja": "私はチームで最年少でした。",
+    "en": "I was the team's youngest member.",
+    "alternatives": [
+      "I was the youngest on the team.",
+      "I was the youngest person on the team."
+    ],
+    "point": "最年少は the youngest。the を忘れずに",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_8r7j6f5d",
+    "ja": "リーダー経験があります。",
+    "en": "I've been a team leader.",
+    "alternatives": ["I have leadership experience.", "I've led teams before."],
+    "point": "経験は現在完了 have + 過去分詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_8t6y9x7g",
+    "ja": "もっと強く異を唱えるべきだった。",
+    "en": "I should have pushed back harder.",
+    "alternatives": [
+      "I ought to have pushed back harder.",
+      "I should've objected more strongly."
+    ],
+    "point": "「反対する」は push back。後悔は should have done",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_8u4a9p7p",
+    "ja": "私はずっと事業拡大を率いてる。",
+    "en": "I've been spearheading our expansion.",
+    "alternatives": [
+      "I've been leading our expansion efforts.",
+      "I've been heading up our business expansion."
+    ],
+    "point": "spearhead は先頭に立って推進する。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8w9w7e5j",
+    "ja": "大事なのは、信頼です。",
+    "en": "What matters most is trust.",
+    "alternatives": [
+      "Trust is what matters most.",
+      "The most important thing is trust."
+    ],
+    "point": "「〜なのは」は What ～ is の形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_9a2t4y2t",
+    "ja": "その経験が私を強くしました。",
+    "en": "That experience made me stronger.",
+    "alternatives": [
+      "That experience toughened me up.",
+      "I became stronger because of that experience."
+    ],
+    "point": "make + 人 + 形容詞「人を〜にする」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_9c8n4c3x",
+    "ja": "上司に応募を勧められた。",
+    "en": "My boss encouraged me to apply.",
+    "alternatives": ["My boss suggested I apply.", "My boss urged me to apply."],
+    "point": "encourage 人 to do の形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_9e4x2u6j",
+    "ja": "プロダクト管理に領域を広げたいです。",
+    "en": "I want to branch out into product management.",
+    "alternatives": [
+      "I'd like to branch out into product management.",
+      "I want to expand into product management."
+    ],
+    "point": "branch out (into) は「領域を広げる」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_9n6x7e2x",
+    "ja": "楽してたら私のキャリアは停滞してた。",
+    "en": "Had I coasted, I'd have stalled professionally.",
+    "alternatives": [
+      "If I'd coasted, my career would have stagnated.",
+      "My career would've stalled had I taken it easy."
+    ],
+    "point": "coast は努力せず惰性で進むこと。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_9x7m9r6s",
+    "ja": "研修はありますか？",
+    "en": "Is there training?",
+    "alternatives": ["Is training available?", "Do you offer training?"],
+    "point": "training は数えないので there is を使う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  }
+]

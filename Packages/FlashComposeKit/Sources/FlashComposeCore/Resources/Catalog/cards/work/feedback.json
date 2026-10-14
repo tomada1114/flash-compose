@@ -1,0 +1,671 @@
+[
+  {
+    "id": "c_2c8p5u3x",
+    "ja": "私は音読を勧めます。",
+    "en": "I recommend reading aloud.",
+    "alternatives": ["I suggest reading out loud.", "My advice is to read aloud."],
+    "point": "recommend の後の行動は動名詞。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_2g9j8e2g",
+    "ja": "私たちに嫌味な褒め言葉は不要だった。",
+    "en": "You could've spared us that backhanded compliment.",
+    "alternatives": [
+      "You didn't need to give us that backhanded compliment.",
+      "You could've kept that backhanded compliment to yourself."
+    ],
+    "point": "could have spared は避けてほしかったという遠回しな非難。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_2j9w8c6f",
+    "ja": "早く言ってくれたら手伝ったよ。",
+    "en": "I'd have helped if you'd asked.",
+    "alternatives": [
+      "If you'd told me earlier, I'd have helped.",
+      "If you'd said something, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_2m3e5w6m",
+    "ja": "今、指摘を読み返してる。",
+    "en": "I'm rereading your comments.",
+    "alternatives": [
+      "I'm going over your comments now.",
+      "I'm reading your comments again."
+    ],
+    "point": "今している最中は be + 動詞ing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_2p9y3r6n",
+    "ja": "これが私の資料なら、無駄を削るのに。",
+    "en": "If this were mine, I'd cut the fluff.",
+    "alternatives": [
+      "If this were my report, I'd trim the fat.",
+      "If it were my document, I'd cut the fluff.",
+      "If this were mine, I'd trim the fat."
+    ],
+    "point": "「無駄を削る」は cut the fluff / trim the fat",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_2r9b2m2r",
+    "ja": "部長は、企画が性急だと言ってたよ。",
+    "en": "Our director said the plan felt rushed.",
+    "alternatives": [
+      "The director told me the plan felt rushed.",
+      "Our director said the plan was rushed."
+    ],
+    "point": "said の後は過去形に合わせる（時制の一致）",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3g9d4t5c",
+    "ja": "その写真を使って。",
+    "en": "Use that photo.",
+    "alternatives": ["Put that photo in.", "Include that photo."],
+    "point": "use の命令形で使うよう依頼する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3g9n4n3a",
+    "ja": "君が入れた例は適切だ。",
+    "en": "The example you added is appropriate.",
+    "alternatives": [
+      "The example you included is appropriate.",
+      "The example you added fits well."
+    ],
+    "point": "you added がどの例かを説明する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_3m2x3b7s",
+    "ja": "構成は見直した方がいいかもね。",
+    "en": "You might want to rethink the structure.",
+    "alternatives": [
+      "You might want to rework the structure.",
+      "Maybe you could rethink the structure a bit."
+    ],
+    "point": "might want to で提案を柔らかくする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_3q5x6t3m",
+    "ja": "コメント送ってもいい？",
+    "en": "Can I send you comments?",
+    "alternatives": ["Could I send you comments?", "May I send you my comments?"],
+    "point": "send + 人 + 物 の語順。人は you",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_3s9s6e4x",
+    "ja": "印象的だったのは、君の冷静さだ。",
+    "en": "What struck me was your composure.",
+    "alternatives": [
+      "What impressed me was how calm you stayed.",
+      "What stood out to me was your composure."
+    ],
+    "point": "「印象に残った」は strike / stand out",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_4h8e9b9p",
+    "ja": "ここ、少し分かりにくいかも。",
+    "en": "This part might be a bit unclear.",
+    "alternatives": [
+      "This part may be a little hard to follow.",
+      "This bit could be a little unclear."
+    ],
+    "point": "might と a bit で指摘を和らげる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4m6f2p9m",
+    "ja": "感心するのは、発想でなくやり切る力です。",
+    "en": "It's the follow-through, not the idea, that impresses me.",
+    "alternatives": [
+      "What impresses me is the follow-through, not the idea.",
+      "It's your follow-through, not your idea, that impresses me.",
+      "The follow-through impresses me more than the idea."
+    ],
+    "point": "It's〜that で強調。「やり切る力」は follow-through",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4q5f5f9x",
+    "ja": "君の説明は私を助けた。",
+    "en": "Your explanation helped me.",
+    "alternatives": [
+      "You helped me with your explanation.",
+      "I benefited from your explanation."
+    ],
+    "point": "helped me は私の理解を助けた。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_4w9z3c2r",
+    "ja": "こんな完成度の下書き、初めて見たよ。",
+    "en": "Never have I seen such a polished draft.",
+    "alternatives": [
+      "I've never seen such a polished draft.",
+      "Never have I seen a draft this polished."
+    ],
+    "point": "Never を前に出すと助動詞が主語の前に来る",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_5d9b8j2t",
+    "ja": "すばらしい発表だったよ。",
+    "en": "That was a great presentation.",
+    "alternatives": [
+      "That was an excellent presentation.",
+      "That was a really great presentation."
+    ],
+    "point": "単数の可算名詞には a が必要",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_5h2v2m2v",
+    "ja": "君がいなければ失敗してた。",
+    "en": "I'd have failed without you.",
+    "alternatives": [
+      "Without you, I would have failed.",
+      "If not for you, I'd have failed."
+    ],
+    "point": "If not for you は過去の仮定の言い方",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_5h5e3u3g",
+    "ja": "君の指摘で、やり方を見直したよ。",
+    "en": "Your comment made me rethink my approach.",
+    "alternatives": [
+      "Your feedback got me to rethink my approach.",
+      "Your point made me reconsider my approach."
+    ],
+    "point": "make + 人 + 原形で「〜させた」",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5p5m5e7y",
+    "ja": "君の声は前より明瞭。",
+    "en": "Your voice is clearer.",
+    "alternatives": ["Your voice sounds clearer.", "You sound clearer now."],
+    "point": "clearer は clear の比較級。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5r8u4a4b",
+    "ja": "君の見出しは褒められた。",
+    "en": "Your heading was praised.",
+    "alternatives": ["Your heading received praise.", "People praised your heading."],
+    "point": "was praised で褒められた側を主語にする。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_5y2v9r6s",
+    "ja": "レイアウト、君の話で納得した。",
+    "en": "You've won me over on the layout.",
+    "alternatives": [
+      "Your argument won me over on the layout.",
+      "You've convinced me about the layout."
+    ],
+    "point": "「納得させる」は win 人 over",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6d9m4z4j",
+    "ja": "もっと早く指摘してほしかった。",
+    "en": "I wish you'd flagged that earlier.",
+    "alternatives": [
+      "I wish you'd pointed it out sooner.",
+      "I wish you had raised that earlier."
+    ],
+    "point": "過去の残念さは wish + 過去完了",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_6j9f9h8c",
+    "ja": "冒頭がすごくよかったよ。",
+    "en": "Your opening was really good.",
+    "alternatives": ["I really liked your opening.", "Your opening was great."],
+    "point": "過去の評価は was で言う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6k9s4k2p",
+    "ja": "やや長いものの、いい出来。",
+    "en": "It's good, though a bit long.",
+    "alternatives": [
+      "It's good, although it's a bit long.",
+      "It's a bit long, but it's good."
+    ],
+    "point": "though は文末や途中に添えて対比を出せる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_6n5z3z9h",
+    "ja": "いい点が二つあるよ。",
+    "en": "There are two good points.",
+    "alternatives": ["I see two good points.", "Two points are good."],
+    "point": "複数は There are。point は複数形 points",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6n8r5e9m",
+    "ja": "最近、ずいぶん上達したね。",
+    "en": "You've improved a lot lately.",
+    "alternatives": [
+      "You've gotten a lot better lately.",
+      "You've improved so much lately."
+    ],
+    "point": "最近の変化は現在完了で言う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_6q8n3m3t",
+    "ja": "もっと短くできるよ。",
+    "en": "You can shorten it.",
+    "alternatives": ["You can make it shorter.", "You could shorten it."],
+    "point": "「できる」は can + 動詞の原形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_7c5q3b8n",
+    "ja": "例を足すといいよ。",
+    "en": "You should add examples.",
+    "alternatives": ["I'd add some examples.", "Try adding some examples."],
+    "point": "軽い助言は should。must は強すぎる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_7f3m4n4f",
+    "ja": "例がもっとあるといいんだけど。",
+    "en": "I wish there were more examples.",
+    "alternatives": [
+      "I wish there were a few more examples.",
+      "I'd like to see more examples."
+    ],
+    "point": "今の希望は wish + 過去形。were を使う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7j4y4q4q",
+    "ja": "読んで、気になる点が一つあるよ。",
+    "en": "Having read it, I have one concern.",
+    "alternatives": [
+      "Having gone through it, I have one concern.",
+      "Having read it, there's one thing that concerns me."
+    ],
+    "point": "Having + 過去分詞で「読み終えて」を先に置く",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7k5x5w8e",
+    "ja": "具体例を足してほしいんだけど。",
+    "en": "I'd like you to add examples.",
+    "alternatives": [
+      "Could you add some examples?",
+      "I'd like you to include more examples."
+    ],
+    "point": "want + 人 + to do の形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_7m3n9r6b",
+    "ja": "君の案、採用されたよ。",
+    "en": "Your idea was accepted.",
+    "alternatives": ["Your proposal was approved.", "Your idea got accepted."],
+    "point": "された は was + 過去分詞で受け身にする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7s7t7h5w",
+    "ja": "よくやってるね。",
+    "en": "You're doing great.",
+    "alternatives": ["You're doing well.", "You're doing a great job."],
+    "point": "「今うまくやっている」は You're doing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_7w8a2r5m",
+    "ja": "私なら、潔く受け止めるのに。",
+    "en": "Were it me, I'd take it on the chin.",
+    "alternatives": [
+      "If it were me, I'd take it on the chin.",
+      "If I were you, I'd take it on the chin.",
+      "If I were in your position, I'd just accept it."
+    ],
+    "point": "「潔く受け止める」は take it on the chin",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_8a6r9d8a",
+    "ja": "何を直せばいいですか？",
+    "en": "What should I fix?",
+    "alternatives": ["What do I need to fix?", "What should I change?"],
+    "point": "「どうすれば」でなく what + should + 主語",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["wh-questions", "modal-obligation-advice"]
+  },
+  {
+    "id": "c_8a9e7h6d",
+    "ja": "指摘の点、すぐ直します。",
+    "en": "I'll fix that right away.",
+    "alternatives": ["I'll fix that immediately.", "I'll correct that right away."],
+    "point": "その場で決めた対応は will",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8m2d3j8t",
+    "ja": "君の文章は前より滑らかだ。",
+    "en": "Your prose flows more smoothly.",
+    "alternatives": [
+      "Your writing flows more smoothly.",
+      "Your prose reads more smoothly."
+    ],
+    "point": "flows more smoothly は文章の流れが更に自然なこと。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_8r5u6y4m",
+    "ja": "私は色の使い方を見直すよ。",
+    "en": "I'll reconsider the color scheme.",
+    "alternatives": [
+      "I'll rethink the color scheme.",
+      "I'll review how colors are used."
+    ],
+    "point": "reconsider は一度決めた選択を考え直す。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_8t8w9r6j",
+    "ja": "君の図は役に立つ。",
+    "en": "Your chart helps.",
+    "alternatives": ["Your chart is helpful.", "Your chart is useful."],
+    "point": "helps は図が理解を助けるという意味。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8x3r6w3y",
+    "ja": "原稿、見てくれてありがと。",
+    "en": "Thanks for reviewing my draft.",
+    "alternatives": [
+      "Thank you for reviewing my draft.",
+      "Thanks for looking over my draft."
+    ],
+    "point": "for の後ろは ~ing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_8x7j9t3k",
+    "ja": "表の下の注記が役立つ。",
+    "en": "The note below the table helps.",
+    "alternatives": [
+      "The note beneath the table is useful.",
+      "The note under the table is helpful."
+    ],
+    "point": "below the table で注記の場所を後ろから修飾する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_8x7x2p5a",
+    "ja": "君が直した所、まだ変だと彼は言う。",
+    "en": "He says what you fixed still looks off.",
+    "alternatives": [
+      "He says the part you fixed is still off.",
+      "He's saying the bit you fixed still looks off."
+    ],
+    "point": "says の後ろの節の中にさらに what 節が入る",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_9b8k2d7t",
+    "ja": "私が言葉を濁してたら君は今も気づかない。",
+    "en": "Had I equivocated, you'd be none the wiser.",
+    "alternatives": [
+      "If I'd been evasive, you still wouldn't know.",
+      "You'd still be unaware if I'd been evasive."
+    ],
+    "point": "equivocate は言葉を濁す、none the wiser は分からないまま。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_9d7a3k8f",
+    "ja": "感想をもらえますか？",
+    "en": "Could I get feedback?",
+    "alternatives": ["Can I get some feedback?", "Could you give me feedback?"],
+    "point": "feedback は数えられない名詞。a は付けない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["requests-permission", "articles-and-countability"]
+  },
+  {
+    "id": "c_9f7m5s3k",
+    "ja": "君は数か月、本当に頑張ってるね。",
+    "en": "You've been working really hard for months.",
+    "alternatives": [
+      "You've been putting in the effort for months.",
+      "You've been working so hard these past months."
+    ],
+    "point": "続いている努力は現在完了進行形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_9j6w3p3q",
+    "ja": "君の締めは磨く余地がある。",
+    "en": "Your closing has room to improve.",
+    "alternatives": [
+      "There's room to improve your closing.",
+      "Your closing could use some improvement."
+    ],
+    "point": "room to improve は改善の余地を表す。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9k5h9e5t",
+    "ja": "彼女は私の褒め方が少し偉そうと言った。",
+    "en": "She said my praise sounded faintly patronizing.",
+    "alternatives": [
+      "She said my compliments sounded slightly condescending.",
+      "She said my praise sounded a little patronizing."
+    ],
+    "point": "faintly patronizing はかすかに上から目線の。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_9p8q6g6r",
+    "ja": "要点を絞れと言われた。",
+    "en": "I was told to be concise.",
+    "alternatives": ["I was told to be brief.", "They asked me to keep it short."],
+    "point": "tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_9v4j6w8t",
+    "ja": "要点が埋もれたら私が言う。",
+    "en": "I'll flag points if they're buried.",
+    "alternatives": [
+      "I'll highlight key points if they're buried.",
+      "I'll mention key points if they're buried."
+    ],
+    "point": "if 節は未来の条件でも現在形にする。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_9w8u9g3a",
+    "ja": "前回の点、直してくれたね。",
+    "en": "You fixed what I flagged last time.",
+    "alternatives": [
+      "You fixed the points I raised last time.",
+      "You fixed what I pointed out last time."
+    ],
+    "point": "last time と一緒なら過去形。現在完了は使えない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_9z9z3m3k",
+    "ja": "何がまずかったか、教えて？",
+    "en": "Can you tell me what went wrong?",
+    "alternatives": [
+      "Could you tell me what went wrong?",
+      "Can you tell me what was wrong?"
+    ],
+    "point": "間接疑問は主語動詞の語順のまま",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["indirect-questions"]
+  }
+]

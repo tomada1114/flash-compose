@@ -1,0 +1,700 @@
+[
+  {
+    "id": "c_2f2n2n2m",
+    "ja": "彼らに無理やり署名させられないで。",
+    "en": "Don't let them railroad you into signing.",
+    "alternatives": [
+      "Don't allow them to pressure you into signing.",
+      "Don't let them strong-arm you into signing."
+    ],
+    "point": "railroad 人 into は強引に承諾させる。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_2k3g9z2c",
+    "ja": "財布は昨日なくなりました。",
+    "en": "My wallet went missing yesterday.",
+    "alternatives": ["I lost my wallet yesterday.", "My wallet disappeared yesterday."],
+    "point": "yesterday があれば過去形（has は使えない）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2m3x9t7s",
+    "ja": "私の荷物はどこ？",
+    "en": "Where's my luggage?",
+    "alternatives": ["Where is my baggage?", "Where are my bags?"],
+    "point": "luggage は数えないので is を使う。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_2n8w7a9f",
+    "ja": "タクシー運転手に、ぼられた。",
+    "en": "A taxi driver ripped me off.",
+    "alternatives": ["I got ripped off by a taxi driver.", "The cabbie ripped me off."],
+    "point": "「ぼられる」は get ripped off",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_2u8n8r8e",
+    "ja": "運転手に止まるよう言って！",
+    "en": "Tell the driver to stop!",
+    "alternatives": [
+      "Please tell the driver to stop!",
+      "Tell the driver to pull over!"
+    ],
+    "point": "「人に〜するよう言う」は tell + 人 + to do",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_2v4e8y4r",
+    "ja": "彼が旅の危うさを分かるとは思えない。",
+    "en": "I doubt he grasps how precarious travel is.",
+    "alternatives": [
+      "I'm unsure he understands how risky travel is.",
+      "He may not grasp how precarious this trip is."
+    ],
+    "point": "doubt の中に grasps、その中に how 節、precarious は危うい。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_2x8m7e6r",
+    "ja": "私が疑ってるのは相手の誠意だ。",
+    "en": "It's their sincerity I'm calling into question.",
+    "alternatives": [
+      "What I'm questioning is their good faith.",
+      "It's their sincerity that I'm questioning."
+    ],
+    "point": "call into question は信頼性を疑問に付す。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_2y7y5k4n",
+    "ja": "カードを止めてもらいたいです。",
+    "en": "I need my card blocked.",
+    "alternatives": [
+      "I'd like to have my card blocked.",
+      "I want my card frozen.",
+      "I need to get my card blocked."
+    ],
+    "point": "have/get/need + 物 + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_2z4r8z2f",
+    "ja": "足止めでも私は卑屈にならない。",
+    "en": "Though stranded, I won't grovel.",
+    "alternatives": [
+      "I won't grovel, even though I'm stranded.",
+      "I refuse to grovel, though I'm stranded."
+    ],
+    "point": "grovel は卑屈に振る舞って頼む。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_3m8g6f3j",
+    "ja": "席の下の鞄がなくなった。",
+    "en": "The bag under my seat's gone.",
+    "alternatives": [
+      "My bag under the seat is gone.",
+      "The bag beneath my seat is missing."
+    ],
+    "point": "名詞の後ろに前置詞句を置いて説明する",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3s4d8z4g",
+    "ja": "私、家に電話したい。",
+    "en": "I want to call home.",
+    "alternatives": ["I'd like to phone home.", "I want to phone my family."],
+    "point": "want to do は行動の希望。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3t4t4v7q",
+    "ja": "バッグがなくなったみたいです。",
+    "en": "It seems my bag's gone missing.",
+    "alternatives": [
+      "I think my bag has gone missing.",
+      "It looks like my bag's missing."
+    ],
+    "point": "It seems で断定を避け、やわらかく伝える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_3u6a8t5z",
+    "ja": "私、領事館へ行くよ。",
+    "en": "I'll visit the consulate.",
+    "alternatives": ["I'm going to the consulate.", "I'll go to the consulate."],
+    "point": "consulate は領事館。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_3w9t2t2m",
+    "ja": "パスポートが、どこにもなかった。",
+    "en": "Nowhere could I find my passport.",
+    "alternatives": [
+      "I couldn't find my passport anywhere.",
+      "My passport was nowhere to be found."
+    ],
+    "point": "Nowhere を文頭に出すと could I の語順に倒置",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_3x4f6d6c",
+    "ja": "荷物が見つかったら知らせて。",
+    "en": "Tell me when it turns up.",
+    "alternatives": ["Tell me when it's found.", "Let me know when it shows up."],
+    "point": "turn up は探していた物が見つかること。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_4c5b3q8m",
+    "ja": "私は既に口上を鵜呑みにしてた。",
+    "en": "I'd already swallowed their spiel.",
+    "alternatives": [
+      "I'd already bought their sales pitch.",
+      "I'd already taken their pitch at face value."
+    ],
+    "point": "swallow a spiel は口上を鵜呑みにする。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4d5j4t4z",
+    "ja": "次の電車の方が早いです。",
+    "en": "The next train is faster.",
+    "alternatives": ["The next train is quicker.", "The next one is faster."],
+    "point": "「〜の方が早い」は faster の一語",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_4g2y6n8f",
+    "ja": "少し助けが必要です。",
+    "en": "I need a little help.",
+    "alternatives": ["I need some help.", "I could use a little help."],
+    "point": "help は数えない名詞なので a help とは言わない",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_4j4v4c2y",
+    "ja": "カードを今日再発行できる？",
+    "en": "Can you reissue my card today?",
+    "alternatives": [
+      "Could you reissue my card today?",
+      "Can I get my card reissued today?"
+    ],
+    "point": "「できますか」は Can you で相手の可否を聞く",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4j5d5p2t",
+    "ja": "今どこにいるか、わからない。",
+    "en": "I don't know where I am.",
+    "alternatives": ["I have no idea where I am.", "I'm not sure where I am."],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_4k6m6e6h",
+    "ja": "私は紛失の届け出を終えた。",
+    "en": "I finished reporting the loss.",
+    "alternatives": ["I've finished filing a loss report.", "I filed the loss report."],
+    "point": "finish の後には動名詞。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_4n7j2g5d",
+    "ja": "予約にミスがあります。",
+    "en": "There's a booking error.",
+    "alternatives": ["There's a mistake in my booking.", "My booking has a mistake."],
+    "point": "「〜がある」は There's + 名詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_4p4f7x2r",
+    "ja": "財布をなくさなければよかった。",
+    "en": "Wish I hadn't lost my wallet.",
+    "alternatives": [
+      "I wish I hadn't lost my wallet.",
+      "If only I hadn't lost my wallet.",
+      "I shouldn't have lost my wallet."
+    ],
+    "point": "過去の後悔は wish + had (not) done",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_4z9b2m8f",
+    "ja": "私が急げば、間に合ったのに。",
+    "en": "If I'd hurried, I'd have made it.",
+    "alternatives": [
+      "I'd have made it if I'd hurried.",
+      "If I had hurried, I would have made it."
+    ],
+    "point": "make it は「間に合う」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_5c2a8j8w",
+    "ja": "私は助けを待ってる。",
+    "en": "I'm waiting for help.",
+    "alternatives": ["I'm waiting for some help.", "I'm still waiting for help."],
+    "point": "am waiting で助けを待っている最中と伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5d5v8z5x",
+    "ja": "ここで止まって。",
+    "en": "Stop here, please.",
+    "alternatives": ["Please stop right here.", "Please stop at this spot."],
+    "point": "stop here でその場で止まるよう頼む。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_5d9a9y5j",
+    "ja": "確認メールが、まだ届いてません。",
+    "en": "My confirmation email hasn't arrived yet.",
+    "alternatives": [
+      "I still haven't received the confirmation email.",
+      "The confirmation email still hasn't arrived."
+    ],
+    "point": "yet は否定文で「まだ〜ない」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_5h4x8u8x",
+    "ja": "私が領収書を残してたら今争えるのに。",
+    "en": "Had I kept receipts, I'd have recourse.",
+    "alternatives": [
+      "If I'd kept receipts, I'd have recourse now.",
+      "Keeping the receipts would've given me recourse."
+    ],
+    "point": "Had I kept は if を省く倒置で、今の対抗手段を仮定する。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_5q8q6k3r",
+    "ja": "財布がなくなった。",
+    "en": "My wallet is gone.",
+    "alternatives": ["My wallet is missing.", "I lost my wallet."],
+    "point": "なくなった は is gone か is missing",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6p9w9a6w",
+    "ja": "私なら予約の証拠を見せる。",
+    "en": "I'd show proof of booking.",
+    "alternatives": [
+      "In your shoes, I'd show booking confirmation.",
+      "I'd show reservation confirmation in your place."
+    ],
+    "point": "I'd は相手の立場ならそうするという助言。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_6u4y7m6f",
+    "ja": "係員が荷物を探しています。",
+    "en": "They're looking for my luggage.",
+    "alternatives": [
+      "Someone is looking for my luggage.",
+      "The staff are searching for my bag."
+    ],
+    "point": "探している最中は現在進行形",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6u8b4g6c",
+    "ja": "私は歩けない。",
+    "en": "I can't walk.",
+    "alternatives": ["I'm not able to walk.", "Walking is impossible for me."],
+    "point": "cannot walk で歩くことができないと伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_6y5r8r6s",
+    "ja": "私たちは宿へ戻るよ。",
+    "en": "We'll return to the hotel.",
+    "alternatives": ["We're going back to the hotel.", "We'll head back to the hotel."],
+    "point": "will はこれからの行動を伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_7c4f3a3n",
+    "ja": "荷物が別の空港に回されました。",
+    "en": "My bag was rerouted to another airport.",
+    "alternatives": [
+      "My luggage was sent to a different airport.",
+      "My bag has been sent to another airport."
+    ],
+    "point": "「回された」は受け身。reroute が自然",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7f6g4y8w",
+    "ja": "パスポート、タクシーに忘れたかも。",
+    "en": "I might've left my passport in the taxi.",
+    "alternatives": [
+      "I may have left my passport in the cab.",
+      "Maybe I left my passport in the taxi."
+    ],
+    "point": "過去の可能性は might have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_7g4f7m3f",
+    "ja": "一文なしで立ち往生、助けて！",
+    "en": "Stranded without a cent, I need help.",
+    "alternatives": [
+      "I'm stranded without a cent and need help.",
+      "Stranded and penniless, I need your help.",
+      "Stranded and broke, please help me."
+    ],
+    "point": "「一文なし」は without a cent。分詞構文で状況を添える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7j4w5p9q",
+    "ja": "予約に手違いがあったようです。",
+    "en": "There seems to be a booking mix-up.",
+    "alternatives": [
+      "It looks like there's a mix-up with my booking.",
+      "I think there's been a mix-up with my booking."
+    ],
+    "point": "seems to be で断定を避け、柔らかく切り出す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7j7y8s2d",
+    "ja": "問題があります。",
+    "en": "There's a problem.",
+    "alternatives": ["Something is wrong.", "We have a problem."],
+    "point": "「問題がある」は There's a problem",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7m4e9q2s",
+    "ja": "午前中ずっと、保留にされてる。",
+    "en": "I've been on hold all morning.",
+    "alternatives": [
+      "I've been on hold since this morning.",
+      "I've been stuck on hold all morning.",
+      "I've been waiting on hold all morning."
+    ],
+    "point": "all morning と続く状態は have been",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_7t3w4x9v",
+    "ja": "私の鍵が効かなくなった。",
+    "en": "My key stopped working.",
+    "alternatives": ["My key no longer worked.", "My key quit working."],
+    "point": "stopped working は使えなくなった過去。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["gerunds", "past-simple"]
+  },
+  {
+    "id": "c_7y2x4u4h",
+    "ja": "別の便に振り替えは可能ですか？",
+    "en": "Would it be possible to rebook me?",
+    "alternatives": [
+      "Is there any chance you could rebook me?",
+      "Could I possibly be rebooked on another flight?"
+    ],
+    "point": "Would it be possible to 〜 で丁寧に頼む",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_8b6w3e6n",
+    "ja": "警察を呼んでください。",
+    "en": "Please call the police.",
+    "alternatives": ["Could you call the police?", "Can you call the police?"],
+    "point": "「警察」は the police と the をつける",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_8h7e9y7s",
+    "ja": "なくしたのは鞄でなくパスポート。",
+    "en": "It's my passport I lost, not my bag.",
+    "alternatives": [
+      "It was my passport I lost, not my bag.",
+      "What I lost was my passport, not my bag."
+    ],
+    "point": "It is 〜 that 〜 で「〜なのは」を強調する",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_8j5t2p4n",
+    "ja": "私はあの保証を鵜呑みにすべきでなかった。",
+    "en": "I shouldn't have taken that assurance at face value.",
+    "alternatives": [
+      "I shouldn't have accepted that assurance without question.",
+      "I should've questioned that assurance instead of trusting it."
+    ],
+    "point": "take at face value は言われたことを疑わず受け取る。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_8m7t5w8p",
+    "ja": "預けた荷物が届いていません。",
+    "en": "The bag I checked hasn't arrived.",
+    "alternatives": [
+      "My checked bag still hasn't arrived.",
+      "The bag I checked in hasn't arrived."
+    ],
+    "point": "目的格の that は省略できる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_8q7g5m7r",
+    "ja": "電話を貸して！",
+    "en": "Lend me your phone.",
+    "alternatives": ["Let me use your phone.", "Can I borrow your phone?"],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_8r3s2a9j",
+    "ja": "もっと早い便はありますか？",
+    "en": "Is there an earlier flight?",
+    "alternatives": [
+      "Do you have an earlier flight?",
+      "Is there an earlier flight available?"
+    ],
+    "point": "「もっと早い」は earlier、前に an",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "there-is-are"]
+  },
+  {
+    "id": "c_8v8t4m3s",
+    "ja": "運転手にぼられて、返金してほしい。",
+    "en": "Fleeced by a cabbie, I want a refund.",
+    "alternatives": [
+      "Having been fleeced by a cabbie, I want a refund.",
+      "A cabbie fleeced me, so I want a refund.",
+      "Overcharged by a cabbie, I'd like a refund."
+    ],
+    "point": "「ぼられる」は be fleeced。分詞で理由を添える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_8w5g4w8q",
+    "ja": "私、宿を探さなきゃ。",
+    "en": "I must find accommodation.",
+    "alternatives": ["I have to find accommodation.", "I need somewhere to stay."],
+    "point": "accommodation は宿泊先を表す。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9c5c5w2h",
+    "ja": "荷物は明日届くと言われました。",
+    "en": "They said it would arrive tomorrow.",
+    "alternatives": [
+      "I was told it would arrive tomorrow.",
+      "They told me it would arrive tomorrow.",
+      "They said it'd be here tomorrow."
+    ],
+    "point": "said の後は will が would に変わる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_9c9m9y3w",
+    "ja": "パスポートがないです。",
+    "en": "My passport is missing.",
+    "alternatives": [
+      "My passport's gone.",
+      "I can't find my passport.",
+      "I don't have my passport."
+    ],
+    "point": "「ない」は missing でも言える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_9n4d5f7p",
+    "ja": "私たち、急いでいれば間に合ったのに。",
+    "en": "If we'd hurried, we'd have made it.",
+    "alternatives": [
+      "We'd have made it if we'd hurried.",
+      "Had we hurried, we'd have made it."
+    ],
+    "point": "「間に合う」は make it。過去の仮定は had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_9y2d7b6w",
+    "ja": "財布をなくした。",
+    "en": "I lost my wallet.",
+    "alternatives": ["I've lost my wallet.", "I lost my wallet somewhere."],
+    "point": "「なくした」は lose の過去形 lost",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_9y8t2v5s",
+    "ja": "確かにここに置いたんです。",
+    "en": "I'm sure I left it here.",
+    "alternatives": [
+      "I know I left it here.",
+      "I'm positive I left it here.",
+      "I'm certain I left it here."
+    ],
+    "point": "sure の後は that を省略して節をつなぐ",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["noun-clauses"]
+  }
+]

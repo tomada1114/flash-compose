@@ -1,0 +1,582 @@
+[
+  {
+    "id": "c_2b2t3t4g",
+    "ja": "家の鍵、かけ忘れたかも。",
+    "en": "I may have left it unlocked.",
+    "alternatives": [
+      "I might have left the door unlocked.",
+      "I may have forgotten to lock up."
+    ],
+    "point": "かも＝may have＋過去分詞。忘れた過去の推量",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_2e5x7f6r",
+    "ja": "父に手伝ってと頼んだよ。",
+    "en": "I asked Dad to help.",
+    "alternatives": ["I asked my dad to help.", "I asked Dad for help."],
+    "point": "ask + 人 + to + 動詞。to の位置に注意",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_2f3z5y2c",
+    "ja": "散らかしたのはケンだよ。",
+    "en": "It was Ken who made the mess.",
+    "alternatives": [
+      "Ken's the one who made the mess.",
+      "Ken is the one who left this mess."
+    ],
+    "point": "「〜したのは」は It was 〜 who の形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_2j4n5r7v",
+    "ja": "夕飯なら作れるよ。",
+    "en": "I can cook dinner.",
+    "alternatives": ["I can make dinner.", "I can make supper."],
+    "point": "「作れる」は can + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3b9g6w7j",
+    "ja": "タオルを一枚取って。",
+    "en": "Get me a towel.",
+    "alternatives": ["Grab me a towel.", "Pass me a towel."],
+    "point": "「一枚の」は a。数えられる単数には冠詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"]
+  },
+  {
+    "id": "c_3q9n4z8t",
+    "ja": "早く始めてたら、もう終わり。",
+    "en": "If I'd started sooner, I'd be done.",
+    "alternatives": [
+      "If I had started earlier, I'd be done now.",
+      "If I'd begun earlier, I'd be finished now."
+    ],
+    "point": "過去の仮定 if I'd + 今の結果 I'd be",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3s5w7x5s",
+    "ja": "何か飲むものある？",
+    "en": "Is there anything to drink?",
+    "alternatives": ["Is there something to drink?", "Do we have anything to drink?"],
+    "point": "「〜するもの」は something to + 動詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["infinitives", "there-is-are"]
+  },
+  {
+    "id": "c_3s8f4c6p",
+    "ja": "洗濯機は前から壊れてたと彼は言い張った。",
+    "en": "He swore the washer had died ages ago.",
+    "alternatives": [
+      "He insisted the washer had broken down ages ago.",
+      "He swore the washer had broken ages ago."
+    ],
+    "point": "言った時点より前の出来事は過去完了。swear は言い張る",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_4k8t3p8s",
+    "ja": "うちに石鹸が少しある。",
+    "en": "We have some soap at home.",
+    "alternatives": ["There's some soap at home.", "We've got some soap at home."],
+    "point": "soap は量として数えず some を付ける。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_4m6q9n3s",
+    "ja": "弟は掃除機をかけてる。",
+    "en": "My brother is vacuuming.",
+    "alternatives": [
+      "My little brother is vacuuming.",
+      "My brother is using the vacuum."
+    ],
+    "point": "「掃除機をかける」は vacuum を動詞で使える",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_4n4a5p3j",
+    "ja": "洗濯ならもう終わったよ。",
+    "en": "I've already done the laundry.",
+    "alternatives": ["The laundry's already done.", "I already did the laundry."],
+    "point": "今の結果に関わる完了は現在完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["tense-contrast", "present-perfect"]
+  },
+  {
+    "id": "c_4y4j3f6m",
+    "ja": "嫌いとはいえ、アイロンはかける。",
+    "en": "Much as I hate ironing, I do.",
+    "alternatives": [
+      "Even though I hate ironing, I do it.",
+      "Much as I hate it, I iron."
+    ],
+    "point": "Much as 〜 は「〜だけれども」の譲歩",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_5c6f3d9k",
+    "ja": "私たちは家事を分担する。",
+    "en": "We share the chores.",
+    "alternatives": ["We divide the household tasks.", "We split the housework."],
+    "point": "chores は日々の家事。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6b7z3d3h",
+    "ja": "結局、皿は全部私が洗った。",
+    "en": "I ended up washing all the dishes.",
+    "alternatives": [
+      "I wound up washing all the dishes.",
+      "In the end, I washed all the dishes myself."
+    ],
+    "point": "「結局〜することになった」は end up + -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_6e5f5q4s",
+    "ja": "庭に犬がいるよ。",
+    "en": "There's a dog outside.",
+    "alternatives": ["A dog's in the yard.", "There's a dog out back."],
+    "point": "「〜がいる」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6g9k4w6z",
+    "ja": "この棚は空だ。",
+    "en": "This shelf is empty.",
+    "alternatives": ["There's nothing on this shelf.", "Nothing's on this shelf."],
+    "point": "empty は物が置かれていない。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6h5x6z5z",
+    "ja": "私が窓を閉めていい？",
+    "en": "May I close the window?",
+    "alternatives": ["Can I shut the window?", "Is closing the window okay?"],
+    "point": "May I で窓を閉める許可を求める。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_6m6j2b7p",
+    "ja": "卵が全然ないよ。",
+    "en": "There are no eggs.",
+    "alternatives": ["We have no eggs.", "We're out of eggs."],
+    "point": "卵は複数形。「全然ない」は no + 複数形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7a7u8k3s",
+    "ja": "ゴミを出さなきゃいけない。",
+    "en": "I have to take out the trash.",
+    "alternatives": [
+      "I need to take out the trash.",
+      "I've got to take out the trash."
+    ],
+    "point": "義務は have to、ゴミを出すは take out",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_7f2a7g8u",
+    "ja": "台所がもっと広ければなあ。",
+    "en": "I wish our kitchen were bigger.",
+    "alternatives": [
+      "If only our kitchen were bigger.",
+      "I wish we had a bigger kitchen."
+    ],
+    "point": "今の願望は wish + 過去形（be は were）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7k9b4e3j",
+    "ja": "家事が公平なら私も分担を果たすのに。",
+    "en": "Were chores split fairly, I'd pull my weight.",
+    "alternatives": [
+      "If chores were split fairly, I'd do my share.",
+      "I'd do my bit if chores were shared fairly."
+    ],
+    "point": "pull my weight は自分の分担を果たすこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_7k9t9w5j",
+    "ja": "腹が立つのは、流しが汚いことだ。",
+    "en": "What annoys me is the dirty sink.",
+    "alternatives": [
+      "What bugs me is the dirty sink.",
+      "The thing that annoys me is the dirty sink."
+    ],
+    "point": "What 節が主語。「腹が立つのは」= What annoys me",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_7m6s6r7c",
+    "ja": "皿洗いが大嫌いなんだ。",
+    "en": "I hate doing the dishes.",
+    "alternatives": ["I can't stand washing dishes.", "I hate washing the dishes."],
+    "point": "hate の後は -ing 形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_7n8z4q3z",
+    "ja": "この部屋の方が湿度が高い。",
+    "en": "This room is more humid.",
+    "alternatives": [
+      "This room has higher humidity.",
+      "Humidity is higher in this room."
+    ],
+    "point": "more humid は湿度がより高い。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_7p4q7j9y",
+    "ja": "掃除したのに、まだ埃っぽい。",
+    "en": "Although I cleaned, it's still dusty.",
+    "alternatives": [
+      "Even though I cleaned, it's still dusty.",
+      "Despite cleaning, it's still dusty."
+    ],
+    "point": "「のに」は although。but とは並べない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7p9w3w5m",
+    "ja": "父は片付けで私たちをビクビクさせる。",
+    "en": "Dad has us walking on eggshells about clutter.",
+    "alternatives": [
+      "Dad keeps us on edge about clutter.",
+      "Dad makes us nervous about leaving a mess."
+    ],
+    "point": "walk on eggshells は相手を怒らせぬよう気を遣うこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_7q6g3z4j",
+    "ja": "今夜、私が皿を洗うよ。",
+    "en": "I'll do the dishes tonight.",
+    "alternatives": ["I'll wash the dishes tonight.", "Tonight I'll do the dishes."],
+    "point": "「洗い物をする」は do the dishes。その場の申し出は will",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_7r3v3e9w",
+    "ja": "手伝ってくれれば終わったのに。",
+    "en": "If you'd helped, I'd have finished.",
+    "alternatives": [
+      "I'd have finished if you'd helped.",
+      "Had you helped, I'd have finished."
+    ],
+    "point": "過去の後悔は If + had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_7r9f7c8x",
+    "ja": "私はやっと散らかりを減らせた。",
+    "en": "I've finally made a dent in clutter.",
+    "alternatives": [
+      "I've finally made headway with the clutter.",
+      "I've finally cleared some of the clutter."
+    ],
+    "point": "make a dent in は大きな課題を少しでも減らすこと。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_8k2c6u7z",
+    "ja": "昨日ゴミを出しておけばよかった。",
+    "en": "I wish I'd taken the trash out yesterday.",
+    "alternatives": [
+      "If only I'd taken the trash out yesterday.",
+      "I should have taken the trash out yesterday."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_8p9a9m2t",
+    "ja": "誰が洗濯物を畳んだ？",
+    "en": "Who folded the laundry?",
+    "alternatives": ["Who folded the clothes?", "Who did the folding?"],
+    "point": "fold the laundry は洗濯物を畳む。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_8q3d2d5r",
+    "ja": "水漏れ直したの、彼は気づいてないと思う。",
+    "en": "I doubt he noticed I'd fixed the leak.",
+    "alternatives": [
+      "I doubt he noticed that I fixed the leak.",
+      "I don't think he noticed I fixed the leak.",
+      "I doubt he realized I'd fixed the leak."
+    ],
+    "point": "doubt の後の that は省け、節の中に節が入る",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_8q7q9f9p",
+    "ja": "結局、片付けるのは私なんだよ。",
+    "en": "I'm the one who ends up cleaning.",
+    "alternatives": [
+      "I'm always the one who ends up tidying.",
+      "I'm the one who has to clean up."
+    ],
+    "point": "the one who で「結局私が〜する」。end up -ing が自然",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_8t2j5e9g",
+    "ja": "朝からずっと片付けてるんだ。",
+    "en": "I've been tidying since this morning.",
+    "alternatives": [
+      "I've been tidying up since this morning.",
+      "I've been cleaning up all morning."
+    ],
+    "point": "since と継続中の動作は現在完了進行形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8t5s7m3q",
+    "ja": "誰が割ったのか教えて。",
+    "en": "Tell me who broke it.",
+    "alternatives": ["Let me know who broke it.", "I want to know who broke it."],
+    "point": "「誰が〜したか」は疑問詞の後に普通の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_8t5w9e7g",
+    "ja": "うちの洗剤、切れるかも。",
+    "en": "We might run out of detergent.",
+    "alternatives": [
+      "We may run out of detergent soon.",
+      "We might be running out of detergent."
+    ],
+    "point": "かもは might / may でやわらげる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_8w4k2t2f",
+    "ja": "母は皿を洗いながら電話に出た。",
+    "en": "Washing dishes, Mom answered the phone.",
+    "alternatives": [
+      "Mom answered the phone while washing dishes.",
+      "While washing dishes, Mom took the call."
+    ],
+    "point": "ながらは分詞構文。主語は母のまま",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_8x7n3r6c",
+    "ja": "粗大ゴミは水曜に回収されるよ。",
+    "en": "Bulky trash is collected Wednesdays.",
+    "alternatives": [
+      "They collect bulky trash on Wednesdays.",
+      "Bulky garbage gets picked up Wednesdays."
+    ],
+    "point": "回収するのは人ではなくゴミ。受動態で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_9c3a5a7w",
+    "ja": "うちは食卓でまず食べない。",
+    "en": "Seldom do we eat at the table.",
+    "alternatives": [
+      "We seldom eat at the table.",
+      "Hardly ever do we eat at the table."
+    ],
+    "point": "Seldom を文頭に出すと do we の倒置になる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_9c4e8j3t",
+    "ja": "昨日、お風呂を掃除したよ。",
+    "en": "I cleaned the bathroom yesterday.",
+    "alternatives": [
+      "I cleaned the bath yesterday.",
+      "I scrubbed the bathroom yesterday."
+    ],
+    "point": "yesterday があれば過去形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_9d8m7w8m",
+    "ja": "窓を開けてもいい？",
+    "en": "Can I open the window?",
+    "alternatives": ["May I open the window?", "Could I open the window?"],
+    "point": "許可を求めるときは Can / May I 〜?",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9e6b7h8b",
+    "ja": "食べ終わったら皿を洗うよ。",
+    "en": "I'll do dishes once I've eaten.",
+    "alternatives": [
+      "I'll do the dishes when I'm done.",
+      "I'll wash the dishes after I eat."
+    ],
+    "point": "once の後は未来でも現在形（完了形も可）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_9j7a6h3t",
+    "ja": "母は夕飯を作ってる。",
+    "en": "Mom is making dinner.",
+    "alternatives": ["My mom is cooking dinner.", "Mom is cooking dinner."],
+    "point": "今やっている最中は be + -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_9j7y9t2u",
+    "ja": "うちに必要なのは大きい冷蔵庫だ。",
+    "en": "What we need is a big fridge.",
+    "alternatives": [
+      "What we need is a bigger fridge.",
+      "The thing we need is a big fridge."
+    ],
+    "point": "What we need is 〜 で「必要なのは〜」を強調",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_9p5s5q9g",
+    "ja": "弟は一度も皿を洗ったことがない。",
+    "en": "Never has my brother washed a dish.",
+    "alternatives": [
+      "My brother has never once washed a dish.",
+      "My brother has never washed a single dish."
+    ],
+    "point": "Never を前に出すと、has my brother の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["inversion"]
+  }
+]
