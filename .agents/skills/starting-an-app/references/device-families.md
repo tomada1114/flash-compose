@@ -17,8 +17,8 @@ and adapters, the coverage floor, signing, and every gate.
 
 ## `project.yml`
 
-`project.yml` is the only place these settings live; `MyApp.xcodeproj` is generated
-(`just generate`) and never edited. Change the app target and the `MyAppLaunchUITests`
+`project.yml` is the only place these settings live; `FlashCompose.xcodeproj` is generated
+(`just generate`) and never edited. Change the app target and the `FlashComposeLaunchUITests`
 target together — the UI-test bundle declares its own `TARGETED_DEVICE_FAMILY`, and the
 two should name the same families.
 
@@ -68,7 +68,7 @@ are unchanged. That was checked with `plutil -p` on the Debug simulator build's
 it. `App/Info.plist` is then a generated file XcodeGen rewrites on every
 `just generate`, so the `properties:` block is the source of truth, never the file.
 
-## `App/MyAppApp.swift`
+## `App/FlashComposeApp.swift`
 
 The device family changes nothing in the entry point: one `WindowGroup` serves iPhone
 and iPad alike. Multiple windows do change what it means. The template holds its view

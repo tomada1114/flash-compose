@@ -2,13 +2,13 @@
 name: integrating-system-apis
 description: >
   Covers reaching an iOS system API from this app through a Core port under Swift 6
-  strict concurrency - where the port, the MyAppPlatform adapter, the fake, the contract,
+  strict concurrency - where the port, the Platform adapter, the fake, the contract,
   and the App/ wiring go; a permission status as a Core enum; Info.plist usage
   descriptions (INFOPLIST_KEY_NSCameraUsageDescription and friends), UIBackgroundModes,
   BGTaskSchedulerPermittedIdentifiers and PrivacyInfo.xcprivacy in project.yml;
   UserNotifications authorization and scheduling, PhotosPicker and loadTransferable,
   BGTaskScheduler background tasks, simctl privacy grant, revoke and reset; #if os(iOS)
-  in MyAppPlatform and what just test, just test-ios, and a human on a device each
+  in FlashComposePlatform and what just test, just test-ios, and a human on a device each
   prove. Use when adding a notification, photo, camera, location, background-task, or
   other framework integration, when a permission prompt or a denied permission is
   involved, when the app crashes at a missing usage-description string, when a
@@ -35,16 +35,16 @@ Every integration is the same pieces, and the template ships one of each to copy
 
 | Piece | Where | Worked example |
 |---|---|---|
-| Port: a `Sendable` protocol, Core value types in and out, and the decision it serves | `Sources/MyAppCore/` | `TodoRepository.swift`, and `TodoListViewModel` deciding what to show |
-| Adapter: the framework import, translation only | `Sources/MyAppPlatform/` | `Persistence/SwiftDataTodoRepository.swift` |
-| Fake: a real implementation answering from test data | `Tests/MyAppTestSupport/` | `InMemoryTodoRepository.swift` |
-| Contract: the port's promises, run against the fake and the adapter | `Tests/MyAppTestSupport/` | `TodoRepositoryContract.swift` |
-| Wiring: which adapter each port gets | `App/` | `MyAppApp.makeRepository()` |
+| Port: a `Sendable` protocol, Core value types in and out, and the decision it serves | `Sources/FlashComposeCore/` | `TodoRepository.swift`, and `TodoListViewModel` deciding what to show |
+| Adapter: the framework import, translation only | `Sources/FlashComposePlatform/` | `Persistence/SwiftDataTodoRepository.swift` |
+| Fake: a real implementation answering from test data | `Tests/FlashComposeTestSupport/` | `InMemoryTodoRepository.swift` |
+| Contract: the port's promises, run against the fake and the adapter | `Tests/FlashComposeTestSupport/` | `TodoRepositoryContract.swift` |
+| Wiring: which adapter each port gets | `App/` | `FlashComposeApp.makeRepository()` |
 
 Write the port first. Its signature is where you decide what the framework type
 collapses into, and an adapter written before its port almost always leaks one:
 `UNNotificationSettings`, `PHAsset`, `BGTask`, and `CLLocation` are framework types a
-Core test cannot build, and their frameworks are banned from `MyAppCore` by
+Core test cannot build, and their frameworks are banned from `FlashComposeCore` by
 `.swiftlint.yml`'s `no_ui_import_in_core` and `ArchitectureBoundaryTests`.
 
 ## Permission as Core state
@@ -98,9 +98,9 @@ rather than a paraphrase (all checked 2026-09-30).
 
 | You need | Where the code goes | Port? |
 |---|---|---|
-| Notification authorization and scheduling — [`UNUserNotificationCenter`](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter) | adapter in `MyAppPlatform` (the async `requestAuthorization(options:)`, `notificationSettings()`, `add(_:)`); delegate wiring in `App/` | yes |
-| The user picks a photo — [`PhotosPicker`](https://developer.apple.com/documentation/photosui/photospicker) | a SwiftUI control in `MyAppUI`; it hands Core `Data` from [`loadTransferable(type:)`](https://developer.apple.com/documentation/photosui/photospickeritem/loadtransferable(type:)) through a view-model action | no — the picker runs out of process and needs no photo-library permission ([PhotoKit privacy](https://developer.apple.com/documentation/photokit/delivering-an-enhanced-privacy-experience-in-your-photos-app)) |
-| Reading the photo library itself — [`PHPhotoLibrary`](https://developer.apple.com/documentation/photos/phphotolibrary/authorizationstatus(for:)) | adapter in `MyAppPlatform` | yes, with a permission |
+| Notification authorization and scheduling — [`UNUserNotificationCenter`](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter) | adapter in `FlashComposePlatform` (the async `requestAuthorization(options:)`, `notificationSettings()`, `add(_:)`); delegate wiring in `App/` | yes |
+| The user picks a photo — [`PhotosPicker`](https://developer.apple.com/documentation/photosui/photospicker) | a SwiftUI control in `FlashComposeUI`; it hands Core `Data` from [`loadTransferable(type:)`](https://developer.apple.com/documentation/photosui/photospickeritem/loadtransferable(type:)) through a view-model action | no — the picker runs out of process and needs no photo-library permission ([PhotoKit privacy](https://developer.apple.com/documentation/photokit/delivering-an-enhanced-privacy-experience-in-your-photos-app)) |
+| Reading the photo library itself — [`PHPhotoLibrary`](https://developer.apple.com/documentation/photos/phphotolibrary/authorizationstatus(for:)) | adapter in `FlashComposePlatform` | yes, with a permission |
 | Work while suspended — [`BGTaskScheduler`](https://developer.apple.com/documentation/backgroundtasks/bgtaskscheduler) | registration in `App/` (in SwiftUI, the [`backgroundTask(_:action:)`](https://developer.apple.com/documentation/swiftui/scene/backgroundtask(_:action:)) scene modifier); submitting a request behind a port; the task's work a Core action | yes, for scheduling |
 
 A notification is observed on the Simulator with `xcrun simctl push`; a background task
@@ -111,7 +111,7 @@ signing change (`AGENTS.md` › "Security and human approval").
 
 ## Two platforms at compile time
 
-`MyAppPlatform` also builds for macOS, because `swift test` runs the package on the host
+`FlashComposePlatform` also builds for macOS, because `swift test` runs the package on the host
 (`docs/architecture.md` › Why the package also builds for macOS). An iOS-only framework
 call — `BGTaskScheduler`, a UIKit type, `UIApplication.openSettingsURLString` — sits
 inside `#if os(iOS)`, and so does its test; `just test-ios` runs that test on the iOS
@@ -133,7 +133,7 @@ proves what.
 
 `.swiftlint.yml`'s `no_ui_import_in_core` and `ArchitectureBoundaryTests.forbiddenModules`
 already ban UserNotifications, CoreLocation, Photos, PhotosUI, StoreKit, and WidgetKit
-from `MyAppCore`. An app that adopts a framework neither list names yet — BackgroundTasks,
+from `FlashComposeCore`. An app that adopts a framework neither list names yet — BackgroundTasks,
 AVFoundation, HealthKit — adds it to both in the same pull request as the adapter;
 `scripts/checks/core-ban-lists-agree.sh` (`just check-harness`) fails while they differ.
 
@@ -153,13 +153,13 @@ nowhere; using either to silence a diagnostic needs a human's sign-off (`AGENTS.
 
 ## Before you call it done
 
-- [ ] The port takes and returns Core value types only; `MyAppCore` imports no framework
+- [ ] The port takes and returns Core value types only; `FlashComposeCore` imports no framework
       (`just lint` runs `no_ui_import_in_core`, `just test` runs
       `ArchitectureBoundaryTests`).
 - [ ] The permission is a Core enum, the adapter maps it one to one, and every decision
       about it has a Core test against the fake.
-- [ ] The fake and one contract function live in `Tests/MyAppTestSupport`, run against
-      the fake in `MyAppCoreTests` and against the adapter where it can run.
+- [ ] The fake and one contract function live in `Tests/FlashComposeTestSupport`, run against
+      the fake in `FlashComposeCoreTests` and against the adapter where it can run.
 - [ ] Every usage description and `Info.plist` key is in `project.yml`, and the same pull
       request rewrites the present-state description of the permission or capability
       (`AGENTS.md` › Architecture, `docs/architecture.md`).

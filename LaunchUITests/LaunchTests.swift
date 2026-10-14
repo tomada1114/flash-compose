@@ -7,7 +7,7 @@ import XCTest
 /// is not the only way to delete.
 ///
 /// XCTest by necessity — Apple has not ported UI automation to Swift Testing.
-/// All other tests use Swift Testing in Packages/MyAppKit.
+/// All other tests use Swift Testing in Packages/FlashComposeKit.
 final class LaunchTests: XCTestCase {
     private enum Timeout {
         static let launch: TimeInterval = 20
@@ -56,7 +56,7 @@ final class LaunchTests: XCTestCase {
         // through the remaining waits against a dead app or a wrong screen.
         continueAfterFailure = false
         let app = XCUIApplication()
-        // An in-memory store and scratch preferences (App/MyAppApp.swift), so the list
+        // An in-memory store and scratch preferences (App/FlashComposeApp.swift), so the list
         // starts empty, and Hide Completed off, on every run. English, whatever the
         // simulator's language, because the tests find system controls ("Delete") by label.
         app.launchArguments = ["-uiTesting", "-AppleLanguages", "(en)", "-AppleLocale", "en_US"]
@@ -85,7 +85,7 @@ final class LaunchTests: XCTestCase {
     /// the pushed detail screen shows its alert there, and dismissing it leaves the
     /// detail screen showing the item unchanged.
     ///
-    /// A launch of its own, because `-failUpdates` (Debug-only, `App/MyAppApp.swift`)
+    /// A launch of its own, because `-failUpdates` (Debug-only, `App/FlashComposeApp.swift`)
     /// fails every toggle for the whole launch, and the walk above needs one to succeed.
     @MainActor
     func testAFailedToggleOnTheDetailScreenPresentsTheFailureThere() {

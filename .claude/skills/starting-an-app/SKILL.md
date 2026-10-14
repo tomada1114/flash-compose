@@ -146,7 +146,7 @@ while iPad stays, whether the iPad build supports multiple windows
 (`UIApplicationSupportsMultipleScenes`), before the first feature: retrofitting a second
 family, or a second window, costs far more than deciding it now.
 [references/device-families.md](references/device-families.md) holds what changes in
-`project.yml`, in `App/MyAppApp.swift`, and in `LaunchUITests` for each choice. How a
+`project.yml`, in `App/FlashComposeApp.swift`, and in `LaunchUITests` for each choice. How a
 screen adapts to size classes is `building-swiftui-screens`'s subject, not this one.
 
 ## Capabilities and entitlements

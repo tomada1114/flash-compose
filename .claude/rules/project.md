@@ -24,7 +24,7 @@ paths:
   - **Build-time code** — whether it ships a binary target or a build/command plugin (code
     that runs at build time); either needs explicit human approval
   - **Platforms** — its platform floor is at or below **both** of this package's
-    `.iOS(.v27)` and `.macOS(.v27)` (`platforms:` in `Packages/MyAppKit/Package.swift`):
+    `.iOS(.v27)` and `.macOS(.v27)` (`platforms:` in `Packages/FlashComposeKit/Package.swift`):
     the package also builds on the host for `swift test`
     (`docs/architecture.md` › Why the package also builds for macOS)
   - **Advisories** — no open security advisory against the version being added
@@ -40,18 +40,18 @@ paths:
   `Package.resolved` pins the exact version, so a range plus the resolved file reproduces
   the build
 - Add or bump one by editing `Package.swift` and running `swift package resolve` (or
-  `swift package update <Name>`) inside `Packages/MyAppKit` — never hand-edit
+  `swift package update <Name>`) inside `Packages/FlashComposeKit` — never hand-edit
   `Package.resolved`: a hand-written entry states a revision nobody verified
 - Verify with `just check`
 
 ## Gates
 
-- NEVER lower a coverage floor (currently 80% of lines and 75% of functions on MyAppCore)
+- NEVER lower a coverage floor (currently 80% of lines and 75% of functions on FlashComposeCore)
 - NEVER remove SwiftLint rules without explicit user approval
 
 ## Project Generation
 
-- `project.yml` is the source of truth; `MyApp.xcodeproj` is generated and gitignored —
+- `project.yml` is the source of truth; `FlashCompose.xcodeproj` is generated and gitignored —
   never hand-edit or commit it
 - After changing `project.yml`, run `just generate` and build to verify
 
@@ -78,7 +78,7 @@ paths:
   `changing-gates` skill, and `check-pr-title.yml` point here rather than restate it
 - A `mise.toml` pin is an exact version: never use `latest`, never bump by hand
 - Bot-bumped pins arrive as bot PRs, never by hand: Dependabot (`.github/dependabot.yml`)
-  for SwiftPM (`Packages/MyAppKit/Package.resolved`, prefix `deps:`) and GitHub Actions
+  for SwiftPM (`Packages/FlashComposeKit/Package.resolved`, prefix `deps:`) and GitHub Actions
   (prefix `ci:`), Renovate (`.github/renovate.json`, `enabledManagers` `mise` and
   `custom.regex`, prefix `deps:`) for `mise.toml` and `GITLEAKS_VERSION` in
   `.github/workflows/gitleaks.yml` — Renovate cannot rewrite `GITLEAKS_SHA256`, so a

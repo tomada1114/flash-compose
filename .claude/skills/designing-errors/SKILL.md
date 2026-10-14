@@ -2,9 +2,9 @@
 name: designing-errors
 description: >
   Covers how errors are designed in this Swift 6 repository: error enums declared in
-  MyAppCore, typed throws(SomeError) versus plain throws, what an error payload and an
+  FlashComposeCore, typed throws(SomeError) versus plain throws, what an error payload and an
   AppLog (os.Logger) message may carry, propagating CancellationError instead of
-  swallowing it, and how a MyAppPlatform adapter maps a SwiftData or Foundation error
+  swallowing it, and how a FlashComposePlatform adapter maps a SwiftData or Foundation error
   (NSError, CocoaError) into a Core error. Use when adding or changing an Error type, a
   throwing function or port, a do/catch, a Task that can be cancelled, or an adapter
   that calls a failing framework API.
@@ -21,10 +21,10 @@ error mapping at the adapter boundary. **Does not own:** writing the failing tes
 
 ## Where an error type lives
 
-- Declare every error a caller can observe in `MyAppCore`, next to the port or model
+- Declare every error a caller can observe in `FlashComposeCore`, next to the port or model
   that throws it — `TodoRepository.swift` holds `TodoRepositoryError`. A Core view model
-  switches on it, and the fake in `Tests/MyAppTestSupport` throws it, so it cannot live
-  in `MyAppPlatform` (Core never imports Platform).
+  switches on it, and the fake in `Tests/FlashComposeTestSupport` throws it, so it cannot live
+  in `FlashComposePlatform` (Core never imports Platform).
 - One `enum` per failure domain, `Error, Equatable, Sendable`. Cases name what went
   wrong for the caller (`.notFound`, `.storageFailure`), not which API failed.
 - Payloads carry only what a caller needs to decide, and are `Sendable` values:
@@ -131,7 +131,7 @@ do {
 The adapter translates, never decides (`AGENTS.md` › Architecture). Mapping a framework
 error to a Core case is translation; choosing what the app does about it is Core's.
 
-- Convert at the call site, inside `MyAppPlatform`, into the Core enum the port
+- Convert at the call site, inside `FlashComposePlatform`, into the Core enum the port
   declares. Nothing framework-typed crosses the port.
 - **SwiftData.** `ModelContext.save()` and `fetch(_:)` throw. `SwiftDataTodoRepository`
   catches at the call site and maps to `TodoRepositoryError.storageFailure`, or to
@@ -184,7 +184,7 @@ case on demand (`fail(_:with:)`).
 
 ## Checklist
 
-- The error enum is in `MyAppCore`, `Error, Equatable, Sendable`, with value payloads.
+- The error enum is in `FlashComposeCore`, `Error, Equatable, Sendable`, with value payloads.
 - `throws(E)` only where a caller decides on `E`; plain `throws` otherwise.
 - No user content in a payload; logs use `AppLog` with explicit privacy.
 - `CancellationError` is rethrown, never logged or mapped to a failure.

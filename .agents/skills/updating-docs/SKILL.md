@@ -125,7 +125,7 @@ stays silent.
 
 That leaves a discipline instead. Keep a fenced example to something a reader can check
 by eye — a command, a path, a short snippet. When the example has to be runnable, put the
-runnable thing where a test already calls it — `Sources/MyAppCore/`
+runnable thing where a test already calls it — `Sources/FlashComposeCore/`
 under `just test`, or a script under `scripts/` with its `scripts/tests/` file — and have
 the document point at it rather than copy it.
 
@@ -134,5 +134,5 @@ the document point at it rather than copy it.
 `.claude/skills/` is a generated mirror of `.agents/skills/` (`scripts/sync-agents.sh`,
 run as `just agents-sync`) — never hand-edit it, and never include it in a documentation
 sweep. Edit the authored file and re-run the sync; `authoring-skills` owns the rest.
-`MyApp.xcodeproj` is generated from `project.yml` the same way and is never documented
+`FlashCompose.xcodeproj` is generated from `project.yml` the same way and is never documented
 as if it were a source file.

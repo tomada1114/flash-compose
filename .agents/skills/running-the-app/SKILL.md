@@ -23,7 +23,7 @@ behavior belongs in a test at all (`.claude/rules/testing.md`, `tdd`); how a sys
 is structured behind a port (`integrating-system-apis`); how a view is written
 (`building-swiftui-screens`); what a pull request looks like (`create-pr`).
 
-Running the app proves wiring, not logic. Every decision is owned by `MyAppCore` and
+Running the app proves wiring, not logic. Every decision is owned by `FlashComposeCore` and
 gated by `just test`; `just build`, `just uitest`, and `just smoke` prove the app
 compiles, launches, and stays alive. None of them shows what a person sees — the view
 that renders nothing, the empty state behind a denied permission, the log line that
@@ -50,12 +50,12 @@ replaces this one silently:
 
 ```bash
 app="$(xcrun simctl get_app_container booted "$(scripts/bundle-id.sh)")"
-diff -rq "$app" build/dev-derived-data/Build/Products/Debug-iphonesimulator/MyApp.app \
+diff -rq "$app" build/dev-derived-data/Build/Products/Debug-iphonesimulator/FlashCompose.app \
   && echo "installed bundle matches this checkout's build"
 ```
 
-Compare the whole bundle, not the `MyApp` executable: a Debug build keeps its code in
-`MyApp.debug.dylib`, and the executable beside it is a small stub that barely changes
+Compare the whole bundle, not the `FlashCompose` executable: a Debug build keeps its code in
+`FlashCompose.debug.dylib`, and the executable beside it is a small stub that barely changes
 between builds. A log line the change adds is the other proof — see it in the stream.
 
 ## Read what it says
@@ -77,14 +77,14 @@ Four things cost time if you guess them:
   ```bash
   mkdir -p build/logs
   xcrun simctl spawn booted log stream --level debug \
-    --predicate 'subsystem == "com.example.MyApp"' > build/logs/stream.log 2>&1 &
+    --predicate 'subsystem == "io.github.tomada1114.FlashCompose"' > build/logs/stream.log 2>&1 &
   stream_pid=$!
-  xcrun simctl launch --terminate-running-process booted com.example.MyApp
+  xcrun simctl launch --terminate-running-process booted io.github.tomada1114.FlashCompose
   kill "$stream_pid"; cat build/logs/stream.log
   ```
 
 - **`log show` reaches only what was persisted.** `xcrun simctl spawn booted log show
-  --last 5m --predicate 'subsystem == "com.example.MyApp"'` prints an empty table for
+  --last 5m --predicate 'subsystem == "io.github.tomada1114.FlashCompose"'` prints an empty table for
   `.debug` lines such as `load: 0 items`, even with `--debug --info`; it sees `.notice`
   (Default) and above. Stream for anything lower.
 - **Anything user-derived is redacted.** `title=<private>` is the design
@@ -93,7 +93,7 @@ Four things cost time if you guess them:
 - **`getpwuid_r did not find a match for uid 501`** on the first line is the simulator's
   noise, not your app's.
 
-Swap `com.example.MyApp` for `"$(scripts/bundle-id.sh)"` in a script; a renamed app has
+Swap `io.github.tomada1114.FlashCompose` for `"$(scripts/bundle-id.sh)"` in a script; a renamed app has
 its own identifier.
 
 ## See it without a human at the keyboard

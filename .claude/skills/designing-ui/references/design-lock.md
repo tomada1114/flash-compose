@@ -21,8 +21,8 @@ it as an open question in the pull request until it is decided.
 | Corner radius | "Template scale", or the values for tags, controls, and cards | `DesignTokens.Radius`, always `.continuous` |
 | Density | Regular or compact; list style (`.insetGrouped`, `.plain`) and control size if not the default | A modifier on the root view in `App/`, so every screen inherits it |
 | Symbols | SF Symbols only, or where custom images are allowed; the rendering mode (monochrome, hierarchical, palette, multicolor) per context | `Image(systemName:)`, `Label`, `.symbolRenderingMode(...)` |
-| Materials and Liquid Glass | "Standard components only", or where a custom glass or material surface appears | One `ViewModifier` in `MyAppUI`, as `designing-ui` › Materials and Liquid Glass sets out |
-| Navigation structure | A single `NavigationStack`, or a `TabView` with its tabs named; where the primary action lives (toolbar, bottom bar, inline) | The root view in `MyAppUI`, handed its models by `App/` |
+| Materials and Liquid Glass | "Standard components only", or where a custom glass or material surface appears | One `ViewModifier` in `FlashComposeUI`, as `designing-ui` › Materials and Liquid Glass sets out |
+| Navigation structure | A single `NavigationStack`, or a `TabView` with its tabs named; where the primary action lives (toolbar, bottom bar, inline) | The root view in `FlashComposeUI`, handed its models by `App/` |
 | iPad layout | "Same as iPhone, readable width", or a `NavigationSplitView` at regular width — or "iPhone only" when the device family is | The root view, switching on `horizontalSizeClass`; `TARGETED_DEVICE_FAMILY` in `project.yml` |
 | Haptics | "None", or which actions play which system pattern | `.sensoryFeedback(_:trigger:)` at those call sites only |
 | Motion | "System transitions only", or which custom animations exist and what each says; always none under Reduce Motion | `DesignTokens.Motion`, extended if the lock adds curves |
@@ -33,7 +33,7 @@ it as an open question in the pull request until it is decided.
 
 `DesignTokens` is where a value two views share lives, and the lock is what sets its
 numbers: changing a value there changes every screen at once, which is the point. It
-stays in `MyAppUI` — presentation, never `MyAppCore`, which does not import SwiftUI. A
+stays in `FlashComposeUI` — presentation, never `FlashComposeCore`, which does not import SwiftUI. A
 value only one view needs, that the scale does not cover, stays in that view's
 `private enum Layout` (`no_magic_numbers`, on through `.swiftlint.yml`'s
 `opt_in_rules: all`, rejects a bare number in a view body). Color and type get no token:

@@ -45,7 +45,7 @@ xcrun simctl status_bar booted clear
 ```bash
 xcrun simctl openurl booted https://example.com          # opens Safari
 xcrun simctl openurl booted unclaimed://item/1           # fails: no app claims the scheme
-xcrun simctl openurl booted "my-app://todo/<uuid>"       # opens that item's detail screen
+xcrun simctl openurl booted "flash-compose://todo/<uuid>"       # opens that item's detail screen
 ```
 
 `openurl` hands the URL to the system exactly as a tap on a link would, so it exercises
@@ -54,7 +54,7 @@ unclaimed scheme fails with `LSApplicationWorkspaceErrorDomain, code=115`. The t
 claims its own custom scheme (`project.yml`'s `info:` block, parsed by Core's
 `DeepLink`); an associated domain is an entitlement and an app's decision.
 
-- The first `openurl` of the scheme on a simulator shows the system's "Open in MyApp?"
+- The first `openurl` of the scheme on a simulator shows the system's "Open in FlashCompose?"
   prompt over the current app, and nothing reaches the app until it is accepted — by a
   person, a Simulator control tool, or a throwaway XCUITest that calls
   `XCUIDevice.shared.system.open(url)` and taps the prompt's button on
@@ -80,13 +80,13 @@ APNs configuration — that is a device, and a human.
 ## Start the app in a known state
 
 ```bash
-xcrun simctl launch --terminate-running-process booted com.example.MyApp -uiTesting
+xcrun simctl launch --terminate-running-process booted io.github.tomada1114.FlashCompose -uiTesting
 SIMCTL_CHILD_PROBE_STATE=known-state \
-  xcrun simctl launch --terminate-running-process booted com.example.MyApp -uiTesting
+  xcrun simctl launch --terminate-running-process booted io.github.tomada1114.FlashCompose -uiTesting
 ```
 
 - Everything after the bundle identifier becomes the process's arguments.
-  `App/MyAppApp.swift` reads `-uiTesting` and opens an in-memory store, so the list
+  `App/FlashComposeApp.swift` reads `-uiTesting` and opens an in-memory store, so the list
   starts empty and nothing touches the on-disk store; `LaunchTests` passes the same
   argument through `XCUIApplication.launchArguments`.
 - `-failUpdates` (Debug builds only) wraps the store so every save that replaces a
@@ -108,7 +108,7 @@ composition root, and turned into one value a Core type takes, as `-uiTesting` i
 
 ## Drive a flow with a throwaway XCUITest
 
-`LaunchUITests/` is the one XCTest target (`project.yml`'s `MyAppLaunchUITests` takes
+`LaunchUITests/` is the one XCTest target (`project.yml`'s `FlashComposeLaunchUITests` takes
 the whole directory), so a probe is one file plus `just generate`. The screen already
 carries identifiers for what a test touches — `newItemField`, `addButton`,
 `retryButton`, `toggle-<uuid>` (`TodoListView.swift`) — and a new control needs one
@@ -142,10 +142,10 @@ Run only that test, into a result bundle of its own, and export the screenshot:
 
 ```bash
 mise exec -- xcodegen generate
-xcodebuild test -project MyApp.xcodeproj -scheme MyApp \
+xcodebuild test -project FlashCompose.xcodeproj -scheme FlashCompose \
   -destination "$(scripts/simulator-destination.sh)" \
   -derivedDataPath build/dev-derived-data -resultBundlePath build/Probe.xcresult \
-  -only-testing:MyAppLaunchUITests/ScratchProbeTests
+  -only-testing:FlashComposeLaunchUITests/ScratchProbeTests
 xcrun xcresulttool export attachments --path build/Probe.xcresult \
   --output-path build/probe-attachments
 ```

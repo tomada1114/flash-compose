@@ -14,8 +14,8 @@ set -euo pipefail
 . "$(dirname "$0")/lib.sh"
 trap cleanup_temp EXIT
 
-APP_RELATIVE_PATH="build/smoke-derived-data/Build/Products/Release-iphonesimulator/MyApp.app"
-BUNDLE_ID="com.example.MyApp"
+APP_RELATIVE_PATH="build/smoke-derived-data/Build/Products/Release-iphonesimulator/FlashCompose.app"
+BUNDLE_ID="io.github.tomada1114.FlashCompose"
 UDID="NEW-IPHONE-17"
 unset SIMULATOR_DEVICE
 
@@ -72,7 +72,7 @@ EOF
         stub_command xcodebuild 'echo "stub xcodebuild output"; exit "${XCODEBUILD_EXIT}"'
         stub_command xcbeautify 'cat'
         stub_command plutil 'if [ -n "${PLUTIL_FAIL}" ]; then echo "plutil: stubbed: no value" >&2; exit 1; fi
-echo com.example.MyApp'
+echo io.github.tomada1114.FlashCompose'
         stub_command codesign 'if [ -n "${CODESIGN_FAIL}" ]; then echo "codesign: stubbed: invalid signature" >&2; exit 1; fi'
         stub_command sleep 'exit 0'
         stub_command xcrun 'case "$2" in
@@ -82,7 +82,7 @@ echo com.example.MyApp'
             echo "simctl $2: stubbed failure" >&2
             exit 1
         fi
-        if [ "$2" = launch ]; then echo "com.example.MyApp: 4242"; fi
+        if [ "$2" = launch ]; then echo "io.github.tomada1114.FlashCompose: 4242"; fi
         ;;
     getenv) echo "iPhone 17" ;;
     spawn)
@@ -90,9 +90,9 @@ echo com.example.MyApp'
         echo "${n}" >"${SPAWN_COUNT}"
         printf "PID\tStatus\tLabel\n"
         printf "101\t0\tcom.apple.springboard\n"
-        printf "999\t0\tUIKitApplication:com.example.MyAppWidget[1a2b][rb-legacy]\n"
+        printf "999\t0\tUIKitApplication:io.github.tomada1114.FlashComposeWidget[1a2b][rb-legacy]\n"
         if [ -z "${JOB_GONE_AT}" ] || [ "${n}" -lt "${JOB_GONE_AT}" ]; then
-            printf "%s\t0\tUIKitApplication:com.example.MyApp[5c3d][rb-legacy]\n" "${JOB_PID}"
+            printf "%s\t0\tUIKitApplication:io.github.tomada1114.FlashCompose[5c3d][rb-legacy]\n" "${JOB_PID}"
         fi
         ;;
     terminate) ;;
@@ -147,7 +147,7 @@ case_builds_launches_and_watches() {
     capture "${BASH}" "${root}/scripts/smoke_launch.sh"
     assert_exit 0
     [ "$(cat "${STUB_BIN}/xcodegen.log")" = "generate" ] || _fail "xcodegen was not run as \`xcodegen generate\`"
-    grep -qxF -- "-project MyApp.xcodeproj -scheme MyApp -configuration Release -sdk iphonesimulator -destination platform=iOS Simulator,id=${UDID} -derivedDataPath build/smoke-derived-data build" \
+    grep -qxF -- "-project FlashCompose.xcodeproj -scheme FlashCompose -configuration Release -sdk iphonesimulator -destination platform=iOS Simulator,id=${UDID} -derivedDataPath build/smoke-derived-data build" \
         "${STUB_BIN}/xcodebuild.log" || _fail "xcodebuild was not a Release simulator build: $(cat "${STUB_BIN}/xcodebuild.log")"
     [ "$(cat "${STUB_BIN}/xcbeautify.log")" = "--quiet" ] || _fail "the build was not piped through \`xcbeautify --quiet\`"
     grep -qxF -- "CFBundleIdentifier raw ${APP_RELATIVE_PATH}/Info.plist" <<<"$(sed 's/^-extract //' "${STUB_BIN}/plutil.log")" ||
@@ -157,7 +157,7 @@ case_builds_launches_and_watches() {
     [ "$(simctl_calls_after_list)" = "$(expected_calls "${APP_RELATIVE_PATH}" 10 --terminate)" ] ||
         _fail "the simctl calls were not boot, install, launch, ten polls, terminate: $(cat "${STUB_BIN}/xcrun.log")"
     [ "$(grep -c '^1$' "${STUB_BIN}/sleep.log")" = 10 ] || _fail "the alive window was not ten one-second polls"
-    assert_stdout_contains "SMOKE OK: MyApp launched and stayed alive on iPhone 17"
+    assert_stdout_contains "SMOKE OK: FlashCompose launched and stayed alive on iPhone 17"
 }
 
 case_prebuilt_app_skips_the_build() {

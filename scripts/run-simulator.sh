@@ -29,7 +29,7 @@
 #   ERR_RUN_LAUNCH_FAILED  simctl refused to launch the app
 set -euo pipefail
 
-APP_NAME="MyApp"
+APP_NAME="FlashCompose"
 APP_RELATIVE_PATH="build/dev-derived-data/Build/Products/Debug-iphonesimulator/${APP_NAME}.app"
 USAGE="usage: scripts/run-simulator.sh [--root DIR]"
 

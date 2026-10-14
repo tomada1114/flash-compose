@@ -1,19 +1,19 @@
 ---
 name: designing-core-logic
 description: >
-  Covers how logic in MyAppCore is shaped: time, the current date, identifiers, Locale,
+  Covers how logic in FlashComposeCore is shaped: time, the current date, identifiers, Locale,
   and randomness injected rather than read (Clock, any Clock<Duration>, Date(), UUID(),
   Locale.current, SystemRandomNumberGenerator), tunable numbers gathered in one Tuning
   type, action-shaped methods on @MainActor @Observable view models, and the patterns
   this template deliberately does not adopt. Use when adding a type, a view model, a
   timer, a debounce, a delay, a formatted string, a threshold, or anything random to
-  MyAppCore, or when reaching for a coordinator, a use-case class, a DI container, a
+  FlashComposeCore, or when reaching for a coordinator, a use-case class, a DI container, a
   reducer, or an event bus.
 ---
 
 # Designing Core Logic
 
-**Owns:** how a type or view model in `MyAppCore` is shaped so its logic stays
+**Owns:** how a type or view model in `FlashComposeCore` is shaped so its logic stays
 deterministic under `swift test` — what it is handed rather than reads, where tunable
 numbers live, what its entry points look like, and which patterns are not adopted.
 **Does not own:** the test-first loop itself (`tdd`); error types and `throws`
@@ -23,14 +23,14 @@ Repositories); the module boundaries and import rules
 
 ## Why this exists
 
-The 80% coverage floor on `MyAppCore` only means something if a test can reach every
+The 80% coverage floor on `FlashComposeCore` only means something if a test can reach every
 branch without waiting, without depending on the machine's clock, language, or luck.
 Anything Core would read from the world — the time, a fresh identifier, the locale, a
 random number — is therefore an input, the same way `TodoListViewModel` is handed an
 `any TodoRepository` instead of opening a store.
 
 These are standard-library and Foundation values, not OS integrations, so they are
-injected as plain parameters. They do not need a port in `MyAppPlatform`; add a port
+injected as plain parameters. They do not need a port in `FlashComposePlatform`; add a port
 only when the answer really comes from a framework Core may not import.
 
 ## Inject time
@@ -109,7 +109,7 @@ The template has no tunable yet, so there is no `Tuning` type to copy; the first
 an app wants to tweak creates it, in this shape:
 
 - Every number someone might want to tweak — a delay, a threshold, a limit, a retry
-  count — lives in one `public struct Tuning: Sendable, Equatable` in `MyAppCore` with a
+  count — lives in one `public struct Tuning: Sendable, Equatable` in `FlashComposeCore` with a
   `` static let `default` `` (the backticks are required: `default` is a keyword), never
   as a literal scattered through method bodies.
 - Types take a `Tuning` in their initializer (defaulting to `.default`), so a test

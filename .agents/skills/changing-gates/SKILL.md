@@ -68,7 +68,7 @@ a reason when only one site needs the exception — a global disable widens the 
 every future file; either, used to make a failing check pass, still needs sign-off.
 Repository-specific rules live under `custom_rules:`; there are two.
 
-`no_ui_import_in_core` keeps `MyAppCore` from importing a UI, persistence, or
+`no_ui_import_in_core` keeps `FlashComposeCore` from importing a UI, persistence, or
 OS-integration framework, and its module list changes together with
 `ArchitectureBoundaryTests`' `forbiddenModules` in one commit
 (`scripts/checks/core-ban-lists-agree.sh` fails while they differ);
@@ -99,7 +99,7 @@ for the `scripts/tests/lint_test.sh` case that fails if the pinned tools drift.
 
 `strictSettings` holds `.swiftLanguageMode(.v6)` and `.treatAllWarnings(as: .error)`.
 It is not inherited: each target passes `swiftSettings: strictSettings` itself, so a new
-target — source, test, or a test-support library like `MyAppTestSupport` — must opt in
+target — source, test, or a test-support library like `FlashComposeTestSupport` — must opt in
 explicitly, or it compiles without Swift 6 data-race errors and with warnings allowed.
 Removing an entry, or adding an `unsafeFlags` or a per-target exception, is weakening a
 gate. A new target is also an architecture decision (`AGENTS.md`'s "Before changing the
@@ -120,8 +120,8 @@ every macOS job reads through `.github/actions/select-xcode`.
 
 ## `scripts/coverage.sh`
 
-It gates line and function coverage of `Sources/MyAppCore/` only, filtered by path, so
-`MyAppUI` and `MyAppPlatform` tests add nothing to the floor. The floors are
+It gates line and function coverage of `Sources/FlashComposeCore/` only, filtered by path, so
+`FlashComposeUI` and `FlashComposePlatform` tests add nothing to the floor. The floors are
 `readonly COVERAGE_FLOOR=80` (lines) and `FUNCTION_COVERAGE_FLOOR=75` in the script and
 nothing else — no environment variable or flag moves either, so every change is a
 reviewed diff of this file, and only ever a raise. The script rejects its removed
@@ -193,7 +193,7 @@ A Release build is only launched, not exercised: `just smoke` asserts that it st
 and stays alive for ten seconds on a simulator, and nothing more. The one XCUITest,
 `LaunchUITests/LaunchTests.swift`'s `testAddingAnItemShowsItInTheList` (`just uitest`),
 asserts only that the app launches and that one added item appears in the list, on the
-one simulator runtime CI's Xcode ships. Any other UI behavior, and every `MyAppUI` code
+one simulator runtime CI's Xcode ships. Any other UI behavior, and every `FlashComposeUI` code
 path, is outside the coverage floor and asserted by no gate. Code under `#if os(iOS)` in
 the Swift package is tested only by `just test-ios` (CI's `ios-tests` job) — `swift test`
 builds the package for the host Mac — and the coverage floor never sees it. Nothing runs

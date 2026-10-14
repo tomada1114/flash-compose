@@ -6,7 +6,7 @@
 # stubbed in every case. The script finds scripts/bundle-id.sh and
 # scripts/simulator-destination.sh next to itself, so each case copies all three into
 # a fixture root's scripts/ and runs that copy with --root pointing at the fixture: a
-# project.yml declaring com.example.MyApp and a fake .app at the Debug simulator
+# project.yml declaring io.github.tomada1114.FlashCompose and a fake .app at the Debug simulator
 # products path. The real simulator-destination.sh and bundle-id.sh run against it.
 set -euo pipefail
 
@@ -14,7 +14,7 @@ set -euo pipefail
 . "$(dirname "$0")/lib.sh"
 trap cleanup_temp EXIT
 
-APP_RELATIVE_PATH="build/dev-derived-data/Build/Products/Debug-iphonesimulator/MyApp.app"
+APP_RELATIVE_PATH="build/dev-derived-data/Build/Products/Debug-iphonesimulator/FlashCompose.app"
 UDID="NEW-IPHONE-17"
 unset SIMULATOR_DEVICE
 
@@ -30,14 +30,14 @@ make_fixture_root() {
         chmod +x "${root}/scripts/${name}"
     done
     cat >"${root}/project.yml" <<'EOF'
-name: MyApp
+name: FlashCompose
 targets:
-  MyApp:
+  FlashCompose:
     type: application
     platform: iOS
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.MyApp
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.tomada1114.FlashCompose
 EOF
     if [ "${1:-}" != "--no-app" ]; then
         mkdir -p "${root}/${APP_RELATIVE_PATH}"
@@ -64,7 +64,7 @@ EOF
             echo "simctl $2: stubbed failure" >&2
             exit 1
         fi
-        if [ "$2" = launch ]; then echo "com.example.MyApp: 4242"; fi
+        if [ "$2" = launch ]; then echo "io.github.tomada1114.FlashCompose: 4242"; fi
         ;;
     *)
         echo "unexpected xcrun call: $*" >&2
@@ -97,12 +97,12 @@ case_boots_installs_then_launches() {
     assert_exit 0
     expected="simctl bootstatus ${UDID} -b
 simctl install ${UDID} ${root}/${APP_RELATIVE_PATH}
-simctl launch --terminate-running-process ${UDID} com.example.MyApp"
+simctl launch --terminate-running-process ${UDID} io.github.tomada1114.FlashCompose"
     [ "$(simctl_calls_after_list)" = "${expected}" ] ||
         _fail "the simctl calls were not bootstatus, install, launch, in that order: $(cat "${STUB_BIN}/xcrun.log")"
     grep -qxF -- "-b com.apple.dt.Devices" "${STUB_BIN}/open.log" ||
         _fail "Device Hub was not opened"
-    assert_stdout_contains "run: com.example.MyApp launched on simulator ${UDID}"
+    assert_stdout_contains "run: io.github.tomada1114.FlashCompose launched on simulator ${UDID}"
 }
 
 case_device_hub_unavailable_still_launches() {
@@ -114,7 +114,7 @@ case_device_hub_unavailable_still_launches() {
     assert_stderr_contains "run: could not open Device Hub"
     grep -q '^simctl launch ' "${STUB_BIN}/xcrun.log" ||
         _fail "simctl launch did not run after Device Hub failed to open"
-    assert_stdout_contains "run: com.example.MyApp launched on simulator ${UDID}"
+    assert_stdout_contains "run: io.github.tomada1114.FlashCompose launched on simulator ${UDID}"
 }
 
 case_unknown_argument() {
@@ -185,7 +185,7 @@ case_launch_failure() {
     capture "${BASH}" "${root}/scripts/run-simulator.sh" --root "${root}"
     assert_exit 1
     assert_first_stderr_line ERR_RUN_LAUNCH_FAILED
-    assert_stderr_contains "simctl could not launch com.example.MyApp"
+    assert_stderr_contains "simctl could not launch io.github.tomada1114.FlashCompose"
     assert_stderr_contains "simctl launch: stubbed failure"
     assert_stdout_not_contains "launched on simulator" "a success line"
 }

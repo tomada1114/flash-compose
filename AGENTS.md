@@ -12,7 +12,7 @@ belongs to its config (`.swiftlint.yml`, `.swiftformat`, `Package.swift`,
 
 This is an iOS SwiftUI app built from a strict template: XcodeGen generates the Xcode
 project from `project.yml`, all real code lives in a local Swift package
-(`Packages/MyAppKit`), and quality gates (SwiftLint strict, SwiftFormat, Swift 6
+(`Packages/FlashComposeKit`), and quality gates (SwiftLint strict, SwiftFormat, Swift 6
 language mode, an 80% line-coverage and a 75% function-coverage floor on the Core
 module) are enforced from day one. It ships a small worked example — a to-do list —
 that exercises every seam an app needs: MVVM with `@Observable` view models, a
@@ -20,34 +20,63 @@ repository port with a SwiftData adapter, a fake and a contract test, and an XCU
 
 ## Product
 
-**TODO: in the template this section is a placeholder.** It is the one part of this
-file about the application rather than the harness, so every repository cut from the
-template writes its own: without it an agent implementing an issue here has no in-repo
-answer to "is this in scope?". Fill in every `TODO:` below right after the rename
-(`README.md`'s "Using This Template", step 3) — once `scripts/bootstrap.sh` has run,
-`just check-harness` fails while one is left (`scripts/checks/product-section-filled.sh`).
+- **What it is, and who it is for** — FlashCompose is a 瞬間英作文 (instant English
+  composition) drill for one person: its owner, a Japanese speaker practising spoken
+  English on their own iPhone. It shows a short Japanese sentence; the learner says the
+  English out loud or in their head, reveals the model answer with its alternatives and
+  a one-line point, and grades themselves ×忘れた / △微妙 / ○覚えてた. An FSRS-6
+  scheduler brings each card back on the right day. The 1,952 reviewed cards come from
+  the owner's earlier web app, `instant-composition`, which is retired: this repository
+  is now the cards' only home.
+- **The core interaction** — see the Japanese → say the English → reveal → grade with
+  one tap → the next card, without end: every due review first, from every topic and
+  level, then new cards from the topics and levels the learner chose. If this loop is
+  not quick and quiet, nothing else about the app matters.
+- **Non-goals** — what this app deliberately does not do, even where it would be easy.
+  Moving anything from here to a goal is a human's decision, not an implementer's:
+  - **Accounts, sign-in, any server, any network access** — the app is one person's, on
+    one phone.
+  - **LLM features** — no conversation, no answer checking, no card generation.
+  - **Typed or spoken answers checked by the app** — the learner grades themselves; that
+    is the method.
+  - **Adding, editing, or deleting cards in the app** — cards are edited in this
+    repository and ship with the app.
+  - **Importing progress from the web app** — the iPhone app starts fresh.
+  - **Resetting progress from inside the app** — deleting the app resets it.
+  - **Tooling from the old repository** — its card lint, LLM review stamps, statistics
+    scripts, and vocabulary pipeline stay behind.
+  - **iPad layouts** — iPhone only; on an iPad it runs as an iPhone app.
+  - **TestFlight or App Store distribution** in this version — and so no store listing,
+    privacy policy page, or onboarding written for strangers.
+  - **Analytics, crash reporting to a third party, ads, payments.**
 
-- **What it is, and who it is for** — TODO: one paragraph. The problem it solves, and
-  whose problem that is.
-- **The core interaction** — TODO: the one thing a user does most. If the app does not
-  do this well, nothing else about it matters.
-- **Non-goals** — TODO: what this app deliberately does not do, even where it would be
-  easy. Moving anything from here to a goal is a human's decision, not an implementer's.
-- **Why it is shaped this way** — TODO: the reasoning behind the three entries above,
-  in the present tense — why this audience, why this interaction comes first, and why
-  each non-goal stays out — so a reader finds why and not only what. It is rewritten
-  when the reasoning changes, not appended to ("Before changing the architecture").
+  What waits rather than never comes — subtopic and grammar filters, a timer, speech,
+  statistics, sync, reminders, undoing a grade, hiding a card — is listed in
+  `docs/product/requirements.md` § 2 Later and the roadmap; none of it is a goal of the
+  current version either.
+- **Why it is shaped this way** — The owner's web app grew into a full service — sign-in,
+  an AWS backend, LLM conversation, vocabulary decks, daily quotas and settings — and that
+  weight is what stood between the owner and a few minutes of practice on the phone; its
+  1,952 reviewed cards and its review logic are the part worth keeping, so this app keeps
+  only those, offline, for one learner, with no settings beyond the scope. Self-grading
+  is the 瞬間英作文 method, so the app never judges an answer and a miss is never shown
+  as a penalty. Reviews always come from every topic and level because a scope that hid
+  reviews would later release them in a burst; the scope only steers which new cards
+  come next. The cards ship read-only inside the app, apart from the learner's progress,
+  so an update can add, fix, or remove cards without migrating anything. The signed-off
+  detail is in `docs/product/requirements.md`, `docs/product/ux-flows.md`, and
+  `docs/design/ux-guidelines.md`.
 
 ## Quick Reference
 
 ```bash
 just install       # Install pinned tools (mise), git hooks, and generate the Xcode project
-just generate      # Regenerate MyApp.xcodeproj from project.yml
+just generate      # Regenerate FlashCompose.xcodeproj from project.yml
 just fmt           # Format code (swiftformat)
 just fix           # Format, auto-fix SwiftLint violations, then run just lint
 just lint          # Lint (scripts/lint.sh: swiftformat --lint + swiftlint --strict + shellcheck + actionlint + typos + skills mirror)
 just verify-hooks  # Verify the git hooks are installed and executable (scripts/verify-hooks.sh)
-just test          # Run the package tests on the host Mac with the 80% line / 75% function floors on MyAppCore
+just test          # Run the package tests on the host Mac with the 80% line / 75% function floors on FlashComposeCore
 just test-fast TodoItemTests  # Run only the matching tests, no coverage floor (iteration only)
 just test-scripts  # Run the plain-bash tests for scripts/ and the skills' Python suites (scripts/tests/run.sh)
 just check-harness # Re-assert the harness's claims about itself (scripts/checks/run-all.sh)
@@ -81,11 +110,11 @@ Run the narrowest check that can fail, then `just check` before you open a PR.
 
 | What you changed | The narrowest check that can fail |
 |---|---|
-| A Swift file under `Packages/MyAppKit/Sources/MyAppCore/` | `just test` |
-| A test under `Packages/MyAppKit/Tests/` | `just test` |
-| An adapter under `Packages/MyAppKit/Sources/MyAppPlatform/` | `just test` (its contract runs against the real framework on the host); `just build` if `App/` wires it |
-| A fake or a port contract under `Packages/MyAppKit/Tests/MyAppTestSupport/` | `just test` (the contract runs against both the fake and the adapter) |
-| A view under `Packages/MyAppKit/Sources/MyAppUI/`, or anything under `App/` | `just build`; `just uitest` if it changes what the launch test touches |
+| A Swift file under `Packages/FlashComposeKit/Sources/FlashComposeCore/` | `just test` |
+| A test under `Packages/FlashComposeKit/Tests/` | `just test` |
+| An adapter under `Packages/FlashComposeKit/Sources/FlashComposePlatform/` | `just test` (its contract runs against the real framework on the host); `just build` if `App/` wires it |
+| A fake or a port contract under `Packages/FlashComposeKit/Tests/FlashComposeTestSupport/` | `just test` (the contract runs against both the fake and the adapter) |
+| A view under `Packages/FlashComposeKit/Sources/FlashComposeUI/`, or anything under `App/` | `just build`; `just uitest` if it changes what the launch test touches |
 | How a screen looks (`DesignTokens`, colors, type, the design lock) | `just build`, then screenshots per `designing-ui`'s review pass (light, dark, largest Dynamic Type, Increase Contrast) |
 | Formatting or style of any Swift file | `just lint` (`just fix` for what is auto-fixable) |
 | One Core suite, while iterating | `just test-fast <filter>` — no coverage floor, so finish with `just test` |
@@ -94,7 +123,7 @@ Run the narrowest check that can fail, then `just check` before you open a PR.
 | `project.yml` | `just generate && just build` |
 | A route, a deep link, or the URL scheme | `just test` (`DeepLinkTests` holds Core's scheme to `project.yml`); `just uitest` |
 | A test under `LaunchUITests/`, or launch behavior | `just uitest` |
-| Code behind `#if os(iOS)` in `MyAppKit`, or behavior that differs on the iOS runtime | `just test-ios` |
+| Code behind `#if os(iOS)` in `FlashComposeKit`, or behavior that differs on the iOS runtime | `just test-ios` |
 | The Release configuration, or anything only a Release launch shows | `just smoke` |
 | Behavior only the running app shows | `just run`, then `just logs` — no gate asserts it, so the PR carries the evidence (a screenshot: `xcrun simctl io booted screenshot shot.png`; the `running-the-app` skill) |
 | `Config/Debug.xcconfig` | `just generate && just build`; `just run-device` on a connected phone (owner-run) |
@@ -120,38 +149,38 @@ Config/                     # Debug.xcconfig; optionally includes the gitignored
 App/                        # Thin shell: @main entry point + resources, NO logic.
                             #   The composition root: opens the SwiftData adapter and
                             #   hands it, as a port, to Core's AppModel
-Packages/MyAppKit/
-├── Sources/MyAppCore/      # Domain values, view models, ports (protocols), wording,
+Packages/FlashComposeKit/
+├── Sources/FlashComposeCore/      # Domain values, view models, ports (protocols), wording,
 │                           #   logging — no UI, persistence, or OS-integration import
 │                           #   (enforced by lint and test); coverage-gated
-├── Sources/MyAppUI/        # SwiftUI views — thin, render Core view models; shared
+├── Sources/FlashComposeUI/        # SwiftUI views — thin, render Core view models; shared
 │                           #   presentation values in `DesignSystem/DesignTokens.swift`
-├── Sources/MyAppPlatform/  # Adapters behind Core ports (SwiftData, URLSession, UserDefaults) — translation
+├── Sources/FlashComposePlatform/  # Adapters behind Core ports (SwiftData, URLSession, UserDefaults) — translation
 │                           #   only, no domain logic, outside the coverage floor
-├── Tests/MyAppTestSupport/ # Each port's fake and contract function — test code no
+├── Tests/FlashComposeTestSupport/ # Each port's fake and contract function — test code no
 │                           #   shipped module imports (enforced by test)
-├── Tests/MyAppCoreTests/   # Swift Testing suites — coverage-gated
-└── Tests/MyAppPlatformTests/  # Adapters against the real framework, on the host
+├── Tests/FlashComposeCoreTests/   # Swift Testing suites — coverage-gated
+└── Tests/FlashComposePlatformTests/  # Adapters against the real framework, on the host
 LaunchUITests/              # XCUITest on the iOS Simulator (XCTest by necessity)
 ```
 
-- New logic goes in `MyAppCore` with tests; views only render Core state.
+- New logic goes in `FlashComposeCore` with tests; views only render Core state.
 - The dependency direction is one-way: Core ← UI and Core ← Platform, both ← App.
-  `MyAppUI` and `MyAppPlatform` are siblings and never import each other.
-- Storage and OS services go in `MyAppPlatform` as an adapter behind a `Sendable` port
-  Core declares, with one fake and one contract function in `Tests/MyAppTestSupport`.
+  `FlashComposeUI` and `FlashComposePlatform` are siblings and never import each other.
+- Storage and OS services go in `FlashComposePlatform` as an adapter behind a `Sendable` port
+  Core declares, with one fake and one contract function in `Tests/FlashComposeTestSupport`.
   The worked example is `TodoRepository` / `SwiftDataTodoRepository`; networking
   included: `HTTPClient` / `URLSessionHTTPClient`; preferences included:
   `PreferencesStoring` / `UserDefaultsPreferences`.
-- `MyAppCore` never imports SwiftUI, UIKit, AppKit, Cocoa, SwiftData, CoreData, CloudKit,
+- `FlashComposeCore` never imports SwiftUI, UIKit, AppKit, Cocoa, SwiftData, CoreData, CloudKit,
   UserNotifications, CoreLocation, Photos, PhotosUI, StoreKit, or WidgetKit — in any
   spelling. Enforced twice: `.swiftlint.yml`'s `no_ui_import_in_core` and
   `ArchitectureBoundaryTests`; their module lists change together.
 - The package also builds for macOS so `swift test` runs on the host; an iOS-only API in
-  `MyAppUI` or `MyAppPlatform` goes behind `#if os(iOS)`.
+  `FlashComposeUI` or `FlashComposePlatform` goes behind `#if os(iOS)`.
 - Shipped code logs through `AppLog` (`os.Logger`); `print`, `debugPrint`, and `NSLog`
   are rejected under `Packages/*/Sources/` and `App/` by `no_print_in_sources`.
-- `MyApp.xcodeproj` is generated — edit `project.yml` instead.
+- `FlashCompose.xcodeproj` is generated — edit `project.yml` instead.
 - Four things are contract — Core's public API, the bundle identifier, the stored
   SwiftData schema, and `UserDefaults` keys/file formats — and each changes only as
   `docs/architecture.md` › What is contract says.
@@ -207,7 +236,7 @@ into `.claude/skills/`, the only path Claude Code reads:
 |---|---|
 | `shipping-issues` | shipping the open issue backlog: ranking issues by `priority: P0`-`P3`, implementing the top one, reviewing it with `/code-review`, and taking its PR through CI to merge |
 | `triaging-issues` | filing or triaging an issue: the labels in `.github/labels.yml`, priority tiers, the `Depends on #N` convention, and what an issue body must contain |
-| `tdd` | a behavior change in `MyAppCore`: writing a failing Swift Testing test before the implementation |
+| `tdd` | a behavior change in `FlashComposeCore`: writing a failing Swift Testing test before the implementation |
 | `create-pr` | opening or updating a pull request: the `just check` pre-check, title, template, and checklist |
 | `smart-commit` | committing and pushing changes: grouping them into Conventional Commits, excluding sensitive files |
 | `changing-gates` | a file that enforces rather than implements: `.swiftlint.yml`, `.swiftformat`, `Package.swift`'s `strictSettings`, `mise.toml`, `.githooks/pre-commit`, `scripts/lint.sh`, `scripts/coverage.sh`, the `scripts/guard/` commit-time guard, a `scripts/checks/` harness check, or a workflow — and which gate would catch a change |
@@ -215,15 +244,15 @@ into `.claude/skills/`, the only path Claude Code reads:
 | `authoring-skills` | adding, editing, or reviewing a skill: authoring under `.agents/skills/`, the `just agents-sync` mirror, frontmatter, layout, and size limits |
 | `writing-repo-scripts` | writing or testing a shell script under `scripts/`, `.githooks/pre-commit`, or `scripts/tests/`: why bash, refusing or skipping outside a git checkout, the stderr contract by example, and `scripts/tests/lib.sh` |
 | `designing-errors` | an `Error` type, a `throws`/`throws(E)` signature, a `do`/`catch`, or cancellation: Core error enums, typed throws, no user data in errors or logs, `CancellationError`, and mapping a SwiftData or Foundation (`NSError`/`CocoaError`) error in an adapter |
-| `designing-core-logic` | shaping logic in `MyAppCore`: injecting time (`Clock`, a `() -> Date`), identifiers, `Locale`, and a `RandomNumberGenerator`; one `Tuning` type for tunables; action-shaped `@Observable` view models; and the patterns deliberately not adopted |
+| `designing-core-logic` | shaping logic in `FlashComposeCore`: injecting time (`Clock`, a `() -> Date`), identifiers, `Locale`, and a `RandomNumberGenerator`; one `Tuning` type for tunables; action-shaped `@Observable` view models; and the patterns deliberately not adopted |
 | `steering-the-roadmap` | the app's direction in `docs/architecture/roadmap.md`: its Now / Next / Later horizons, who changes it and when, how the backlog and parked `on hold` issues feed it, and answering "what is next?" before `shipping-issues` |
 | `starting-an-app` | turning this template into a new app: `scripts/bootstrap.sh`'s rename, the template-only passages it removes, what the new repository keeps, its `just labels` and `just ruleset` setup, choosing the device family (iPhone only or iPhone and iPad), and deciding which capabilities and entitlements it takes |
 | `running-the-app` | seeing a change work on the iOS Simulator: `just run` and confirming the installed app is the fresh build, reading `just logs`, `simctl` screenshots in dark mode and at large Dynamic Type sizes, deep links, simulated pushes, launch arguments, a throwaway XCUITest, `just reset-permissions`, and the evidence a PR then carries |
-| `integrating-system-apis` | reaching an iOS system API through a Core port: the adapter in `MyAppPlatform`, a permission as a Core enum, usage descriptions and `Info.plist` keys in `project.yml`, `PrivacyInfo.xcprivacy`, notifications, PhotosPicker, background tasks, `simctl privacy`, `#if os(iOS)`, and what `just test`, `just test-ios`, and a device each prove |
+| `integrating-system-apis` | reaching an iOS system API through a Core port: the adapter in `FlashComposePlatform`, a permission as a Core enum, usage descriptions and `Info.plist` keys in `project.yml`, `PrivacyInfo.xcprivacy`, notifications, PhotosPicker, background tasks, `simctl privacy`, `#if os(iOS)`, and what `just test`, `just test-ios`, and a device each prove |
 | `designing-ui` | how a screen looks: HIG craft rules, `DesignTokens`, Liquid Glass with an iOS 27 floor, and the app's design lock in `docs/design-system.md`, researched with `/refero-design` |
-| `building-swiftui-screens` | a view in `MyAppUI`: a thin renderer over a `MyAppCore` `@Observable` view model, navigation, sheets and alerts, size classes, Dynamic Type, safe areas and the keyboard, touch targets, `#Preview` per state, accessibility identifiers and labels, and verifying a screen |
+| `building-swiftui-screens` | a view in `FlashComposeUI`: a thin renderer over a `FlashComposeCore` `@Observable` view model, navigation, sheets and alerts, size classes, Dynamic Type, safe areas and the keyboard, touch targets, `#Preview` per state, accessibility identifiers and labels, and verifying a screen |
 | `updating-docs` | deciding whether a change owes a documentation update and which surface it lands on: `README.md`, `AGENTS.md`, `CHANGELOG.md`, `docs/architecture.md`, `docs/architecture/roadmap.md`, a skill, or a `///` comment |
-| `localizing-the-app` | a string a person reads: the String Catalog `Localizable.xcstrings` in `MyAppCore`, `defaultLocalization`, Core returning `LocalizedStringResource` (`bundle: .module`), `Text(verbatim:)` in `MyAppUI`, keeping the catalog and `LocalizationTests` in step, `xcodebuild -exportLocalizations`, plurals, `InfoPlist.xcstrings`, and what adding a language involves |
+| `localizing-the-app` | a string a person reads: the String Catalog `Localizable.xcstrings` in `FlashComposeCore`, `defaultLocalization`, Core returning `LocalizedStringResource` (`bundle: .module`), `Text(verbatim:)` in `FlashComposeUI`, keeping the catalog and `LocalizationTests` in step, `xcodebuild -exportLocalizations`, plurals, `InfoPlist.xcstrings`, and what adding a language involves |
 
 ### Rules
 
@@ -389,9 +418,9 @@ libraries are sourced, so they carry no shebang or `set` line of their own):
 | `.githooks/pre-commit` (installed by `just install`) | `git commit` | `scripts/lint.sh --staged-tree` on the staged Swift files; the skills-mirror check when a staged path is under `.agents/skills/` or `.claude/skills/`; the staged guard (`scripts/check-staged.sh`, rules in `scripts/guard/`) on every commit that stages a change — no secret-shaped path or credential-shaped content lands in a commit, and a staged deletion is never inspected |
 | `scripts/verify-hooks.sh` (`just install`'s last step, and `just check`'s first) | `just install`, `just check` | git resolves the hooks directory to `.githooks/` and `.githooks/pre-commit` is executable — skips under CI or the `ALLOW_MISSING_GIT_HOOKS` opt-out |
 | `scripts/checks/run-all.sh` (`just check-harness`, part of `just check` before `just test`) | `just check-harness`, `just check`, CI `lint` | the harness's claims about itself stay true — every `just <recipe>` in this file exists and every `Bash(just <recipe>…)` rule in a committed `.claude/settings.json`, if one is added, names a recipe the justfile defines, every workflow has a top-level `permissions:` and every non-local `uses:` (workflows and composite actions) is pinned to a full SHA with a `# v…` comment, no workflow grants a `write` scope or a `read-all`/`write-all` shorthand at the top level (a write goes on the job that needs it, and no job takes a shorthand), every workflow triggered on `pull_request` declares a top-level `concurrency:`, and every declared group varies per run, is unique to its workflow unless it names `github.workflow`, and never cancels in progress on a `push` except through a `github.event_name` expression, every `run:` step (composite actions included) resolves to `shell: bash` (`-eo pipefail`) or opens with a `set` carrying `-e` and `pipefail`, every Dependabot entry's and Renovate's commit prefix is set to a type the PR-title check's `types` accepts and their release cooldowns are set and agree, every skill's frontmatter is exactly a matching `name` and a `description`, no `SKILL.md` sits below a skill's top directory and every skill's `description` is printable ASCII, at most 1,024 characters, and free of unquoted values Codex CLI's YAML parser rejects, the Skills table matches `.agents/skills/`, every required status-check context in `.github/rulesets/main.json` matches a job `name:` (or id) in a workflow triggered on `pull_request`, `.swiftlint.yml`'s `no_ui_import_in_core` regex and `ArchitectureBoundaryTests.forbiddenModules` ban the same modules, the gates `just check` runs and the `run:` steps of `.github/workflows/ci.yml` match in both directions apart from the reasoned exception list in `scripts/checks/just-check-matches-ci.sh`, and every label an issue form, a workflow, a dependency bot (Dependabot's implied `dependencies`, Renovate's `labels`), or `scripts/label-pr.sh`'s type-to-label mapping applies is declared in `.github/labels.yml` and no label is declared there twice, and the `## Product` section above stays a `TODO:` skeleton here while `project.yml` still names the template's app-name placeholder and holds no `TODO:` marker once `scripts/bootstrap.sh` has renamed this into an app |
-| `.swiftlint.yml`'s `no_ui_import_in_core` + `ArchitectureBoundaryTests` | the hook, `just lint`, CI `lint`; `just test`, CI `test` | Core's import ban; Core never names `URLSession` or `UserDefaults` (Foundation types no import ban sees); UI and Platform never import each other; no shipped module imports `MyAppTestSupport` |
+| `.swiftlint.yml`'s `no_ui_import_in_core` + `ArchitectureBoundaryTests` | the hook, `just lint`, CI `lint`; `just test`, CI `test` | Core's import ban; Core never names `URLSession` or `UserDefaults` (Foundation types no import ban sees); UI and Platform never import each other; no shipped module imports `FlashComposeTestSupport` |
 | `.swiftlint.yml`'s `no_print_in_sources` | the hook, `just lint`, CI `lint` | no `print`/`debugPrint`/`NSLog` in shipped code |
-| `scripts/coverage.sh` | `just test`, CI `test` | 80% line / 75% function coverage on `MyAppCore` |
+| `scripts/coverage.sh` | `just test`, CI `test` | 80% line / 75% function coverage on `FlashComposeCore` |
 | `AppLogTests` | `just test`, CI `test` | `AppLog.subsystem` equals the bundle identifier in `project.yml` |
 | `DeepLinkTests` | `just test`, CI `test` | the scheme Core parses is the one `project.yml` registers |
 | `PreferenceKeysTests` | `just test`, CI `test` | stored preference key names and defaults never change silently |

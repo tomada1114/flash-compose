@@ -5,7 +5,7 @@
 # No phone, no Apple account, and no real build are ever touched: `xcodebuild`,
 # `xcrun`, and `mise` are stubbed in every case. Each case copies run-device.sh and
 # bundle-id.sh into a fixture root's scripts/ and runs that copy with --root pointing
-# at a fixture project.yml declaring com.example.MyApp.
+# at a fixture project.yml declaring io.github.tomada1114.FlashCompose.
 set -euo pipefail
 
 # shellcheck source=scripts/tests/lib.sh
@@ -26,14 +26,14 @@ make_fixture_root() {
         chmod +x "${root}/scripts/${name}"
     done
     cat >"${root}/project.yml" <<'EOF'
-name: MyApp
+name: FlashCompose
 targets:
-  MyApp:
+  FlashCompose:
     type: application
     platform: iOS
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.MyApp
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.tomada1114.FlashCompose
 EOF
     echo "${root}"
 }
@@ -61,7 +61,7 @@ EOF
     stub_command xcodebuild 'case " $* " in
     *" -showBuildSettings "*)
         if [ "${STUB_FAIL}" = settings ]; then echo "xcodebuild: error: iOS is not installed" >&2; exit 70; fi
-        echo "Build settings for action build and target MyApp:"
+        echo "Build settings for action build and target FlashCompose:"
         echo "    CODE_SIGN_STYLE = Automatic"
         echo "    DEVELOPMENT_TEAM = ${STUB_TEAM}"
         ;;
@@ -196,13 +196,13 @@ case_happy_path() {
     stub_tools "${TEAM}" phone
     capture "${BASH}" "${root}/scripts/run-device.sh" --root "${root}"
     assert_exit 0
-    grep -qxF -- "build -project MyApp.xcodeproj -scheme MyApp -configuration Debug -destination id=${UDID} -derivedDataPath build/device-derived-data -allowProvisioningUpdates -allowProvisioningDeviceRegistration" \
+    grep -qxF -- "build -project FlashCompose.xcodeproj -scheme FlashCompose -configuration Debug -destination id=${UDID} -derivedDataPath build/device-derived-data -allowProvisioningUpdates -allowProvisioningDeviceRegistration" \
         "${STUB_BIN}/xcodebuild.log" || _fail "the build call was not as expected: $(cat "${STUB_BIN}/xcodebuild.log")"
-    expected="devicectl device install app --device ${UDID} ${root}/build/device-derived-data/Build/Products/Debug-iphoneos/MyApp.app
-devicectl device process launch --terminate-existing --device ${UDID} com.example.MyApp"
+    expected="devicectl device install app --device ${UDID} ${root}/build/device-derived-data/Build/Products/Debug-iphoneos/FlashCompose.app
+devicectl device process launch --terminate-existing --device ${UDID} io.github.tomada1114.FlashCompose"
     [ "$(grep -v '^devicectl list ' "${STUB_BIN}/xcrun.log")" = "${expected}" ] ||
         _fail "devicectl calls were not install, then launch: $(cat "${STUB_BIN}/xcrun.log")"
-    assert_stdout_contains "run-device: com.example.MyApp launched on device ${UDID}"
+    assert_stdout_contains "run-device: io.github.tomada1114.FlashCompose launched on device ${UDID}"
     assert_team_never_printed
 }
 

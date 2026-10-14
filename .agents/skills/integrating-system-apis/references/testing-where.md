@@ -6,10 +6,10 @@ states the four kinds; this is the same split applied to a system API.
 
 | What is under test | The test | Where | Runs in |
 |---|---|---|---|
-| A decision — when to ask, what a denied state shows, what a delivered notification changes | Swift Testing against the port's fake | `Tests/MyAppCoreTests` | `just test`, CI `test` — inside the coverage floor |
-| The port's promises | the contract function, against the fake | `Tests/MyAppCoreTests` | `just test`, CI `test` |
-| Translation over a framework that runs on the host (SwiftData, Foundation) | the contract function and adapter-only cases, against the real adapter | `Tests/MyAppPlatformTests` | `just test`, CI `test` |
-| Translation through an iOS-only API, or one that needs an app process | the same, inside `#if os(iOS)` | `Tests/MyAppPlatformTests` | `just test-ios`, CI `Package Tests (iOS Simulator)` — compiled away under `swift test` |
+| A decision — when to ask, what a denied state shows, what a delivered notification changes | Swift Testing against the port's fake | `Tests/FlashComposeCoreTests` | `just test`, CI `test` — inside the coverage floor |
+| The port's promises | the contract function, against the fake | `Tests/FlashComposeCoreTests` | `just test`, CI `test` |
+| Translation over a framework that runs on the host (SwiftData, Foundation) | the contract function and adapter-only cases, against the real adapter | `Tests/FlashComposePlatformTests` | `just test`, CI `test` |
+| Translation through an iOS-only API, or one that needs an app process | the same, inside `#if os(iOS)` | `Tests/FlashComposePlatformTests` | `just test-ios`, CI `Package Tests (iOS Simulator)` — compiled away under `swift test` |
 | The wiring in `App/` — the adapter handed over, a delegate or task handler registered | the launch test, when that wiring is what could break | `LaunchUITests/` | `just uitest`, CI `app` |
 | A real prompt, a delivered push, the camera, a background launch | none — a person on the Simulator or a device | the pull request | nowhere; the evidence is a screenshot or a log excerpt (`running-the-app`) |
 
@@ -39,7 +39,7 @@ states the four kinds; this is the same split applied to a system API.
 
 ## The fake for a permission
 
-A permission port's fake is an actor in `Tests/MyAppTestSupport` that starts in the
+A permission port's fake is an actor in `Tests/FlashComposeTestSupport` that starts in the
 state a test hands it and records what it was asked, like `InMemoryTodoRepository`:
 
 ```swift

@@ -32,7 +32,7 @@ planned.
 
 ## The bundle identifier
 
-The template's `com.example.MyApp` may be refused, because an App ID is unique across
+The template's `io.github.tomada1114.FlashCompose` may be refused, because an App ID is unique across
 all teams. Run `just run-device` in an app cut from the template, after
 `scripts/bootstrap.sh` has given it your own prefix. Never work around this by
 overriding `PRODUCT_BUNDLE_IDENTIFIER` in `Local.xcconfig`: the bundle identifier is

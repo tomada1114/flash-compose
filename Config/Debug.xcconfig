@@ -1,4 +1,4 @@
-// Debug build settings for the MyApp target, wired in by project.yml's configFiles.
+// Debug build settings for the FlashCompose target, wired in by project.yml's configFiles.
 //
 // A build for your own iPhone (`just run-device`) needs a development team. It lives
 // only in Config/Local.xcconfig, which you create yourself, holding one line:

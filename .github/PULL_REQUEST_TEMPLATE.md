@@ -10,7 +10,7 @@
 ## Checklist
 
 - [ ] All checks pass (`just check`)
-- [ ] New logic lives in MyAppCore and is covered by Swift Testing tests
+- [ ] New logic lives in FlashComposeCore and is covered by Swift Testing tests
 - [ ] Behavior only the running app shows: `just uitest` output or a simulator screenshot is in the Test Plan
 - [ ] Documentation updated (if applicable)
 - [ ] No breaking changes (or documented in description)

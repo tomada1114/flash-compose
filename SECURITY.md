@@ -5,7 +5,7 @@
 **Do NOT open a public issue for security vulnerabilities.**
 
 Please report security vulnerabilities through
-[GitHub Security Advisories](https://github.com/your-username/my-app/security/advisories/new).
+[GitHub Security Advisories](https://github.com/tomada1114/flash-compose/security/advisories/new).
 
 Include:
 
@@ -20,11 +20,6 @@ This project is maintained on a best-effort basis and makes no guaranteed respon
 time. Reports are acknowledged and assessed as maintainer time allows, and a fix
 ships in the next release once one is ready.
 
-<!-- bootstrap:template-only-begin -->
-A repository created from this template should replace this section with the
-commitments its own maintainers can keep.
-
-<!-- bootstrap:template-only-end -->
 ## Supported Versions
 
 | Version | Supported |
@@ -41,8 +36,8 @@ Packaging checks legitimately read N/A for an iOS app, which ships no
 installable package.
 
 CodeQL (`.github/workflows/codeql.yml`) builds the Swift package with
-`swift build --package-path Packages/MyAppKit`. It analyzes `MyAppCore`,
-`MyAppUI`, and `MyAppPlatform` as compiled for the macOS host (`Package.swift`
+`swift build --package-path Packages/FlashComposeKit`. It analyzes `FlashComposeCore`,
+`FlashComposeUI`, and `FlashComposePlatform` as compiled for the macOS host (`Package.swift`
 declares `.macOS(.v27)`); `App/` (the thin composition root) and code under
 `#if os(iOS)` are not analyzed.
 
@@ -53,11 +48,6 @@ green, no force-push or deletion) and applied by a repository admin running
 this repository is visible only via `gh api repos/{owner}/{repo}/rulesets`, not
 from the checkout — rulesets are server-side configuration.
 
-<!-- bootstrap:template-only-begin -->
-"Use this template" does not copy rulesets, so a repository created from this
-template needs its own admin to apply it.
-
-<!-- bootstrap:template-only-end -->
 ## Responsible Disclosure
 
 We follow a coordinated disclosure process. We ask that you:

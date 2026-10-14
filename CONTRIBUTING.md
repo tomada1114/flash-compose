@@ -36,7 +36,7 @@ just
 # Install pinned tools, git hooks, and generate the Xcode project
 just install
 
-# Regenerate MyApp.xcodeproj from project.yml
+# Regenerate FlashCompose.xcodeproj from project.yml
 just generate
 
 # Format code
@@ -57,7 +57,7 @@ just test-scripts
 # Re-assert the harness's claims about itself (scripts/checks/)
 just check-harness
 
-# Run the package tests on the host Mac with the 80% line / 75% function coverage floors on MyAppCore
+# Run the package tests on the host Mac with the 80% line / 75% function coverage floors on FlashComposeCore
 just test
 
 # Run only the tests matching FILTER, with no coverage floor
@@ -120,17 +120,17 @@ mise exec -- scripts/lint.sh          # just lint
 mise exec -- scripts/tests/run.sh     # just test-scripts
 mise exec -- scripts/checks/run-all.sh   # just check-harness
 scripts/coverage.sh                   # just test
-(cd Packages/MyAppKit && swift test --filter TodoItemTests)   # just test-fast TodoItemTests
-xcodebuild -project MyApp.xcodeproj -scheme MyApp -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath build/dev-derived-data build   # just build
+(cd Packages/FlashComposeKit && swift test --filter TodoItemTests)   # just test-fast TodoItemTests
+xcodebuild -project FlashCompose.xcodeproj -scheme FlashCompose -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath build/dev-derived-data build   # just build
 scripts/run-simulator.sh              # just run (after the build)
 scripts/run-device.sh                 # just run-device (after xcodegen generate)
 xcrun simctl spawn booted log stream --level debug --predicate "subsystem == \"$(scripts/bundle-id.sh)\""   # just logs
 scripts/reset-permissions.sh          # just reset-permissions
-xcodebuild build-for-testing -project MyApp.xcodeproj -scheme MyApp -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data   # just uitest-build (after xcodegen generate)
+xcodebuild build-for-testing -project FlashCompose.xcodeproj -scheme FlashCompose -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data   # just uitest-build (after xcodegen generate)
 rm -rf build/LaunchUITests.xcresult
 xcrun simctl bootstatus "$(scripts/simulator-destination.sh --udid)" -b
-xcodebuild test-without-building -project MyApp.xcodeproj -scheme MyApp -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data -resultBundlePath build/LaunchUITests.xcresult   # just uitest-run (just uitest runs both)
-(cd Packages/MyAppKit && xcodebuild test -scheme MyAppKit-Package -destination "$(../../scripts/simulator-destination.sh)" -derivedDataPath ../../build/ios-test-derived-data -resultBundlePath ../../build/MyAppKitTests-iOS.xcresult)   # just test-ios
+xcodebuild test-without-building -project FlashCompose.xcodeproj -scheme FlashCompose -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data -resultBundlePath build/LaunchUITests.xcresult   # just uitest-run (just uitest runs both)
+(cd Packages/FlashComposeKit && xcodebuild test -scheme FlashComposeKit-Package -destination "$(../../scripts/simulator-destination.sh)" -derivedDataPath ../../build/ios-test-derived-data -resultBundlePath ../../build/FlashComposeKitTests-iOS.xcresult)   # just test-ios
 mise exec -- scripts/smoke_launch.sh  # just smoke
 scripts/sync-agents.sh                # just agents-sync
 scripts/sync-agents.sh --check        # just agents-check
@@ -149,9 +149,9 @@ scripts/apply-ruleset.sh              # just ruleset — admin-only
 
 ### Code Standards
 
-- New logic lives in `MyAppCore` with Swift Testing coverage (happy + error path)
+- New logic lives in `FlashComposeCore` with Swift Testing coverage (happy + error path)
 - SwiftLint strict and SwiftFormat must pass with no warnings
-- Maintain or improve the 80% line-coverage and 75% function-coverage floors on `MyAppCore`
+- Maintain or improve the 80% line-coverage and 75% function-coverage floors on `FlashComposeCore`
 - Public API carries `///` doc comments that explain *why*
 
 ### Commit Messages

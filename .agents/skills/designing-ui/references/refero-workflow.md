@@ -21,7 +21,7 @@ to copy — its brief, query table, reviewed screens, reference lock, and ledger
    `## Product`: what the app is and for whom goes in the first line, the core
    interaction in Goal, the non-goals under Constraints. Replace Tone and "Must remember"
    with the app's own; keep the platform constraints (iOS 27 floor, Xcode 27 SDK,
-   `MyAppUI` also builds for macOS). The template's "stay unbranded" override does not
+   `FlashComposeUI` also builds for macOS). The template's "stay unbranded" override does not
    carry over: an app's lock is where brand is decided.
 2. **Research screens and flows on `platform: "ios"`.** Refero's styles cover web pages,
    not iOS app screens, so they are a secondary check at most.

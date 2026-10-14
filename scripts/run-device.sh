@@ -41,7 +41,7 @@
 #   ERR_DEVICE_LAUNCH_FAILED   devicectl refused to launch the app
 set -euo pipefail
 
-APP_NAME="MyApp"
+APP_NAME="FlashCompose"
 DERIVED_DATA="build/device-derived-data"
 APP_RELATIVE_PATH="${DERIVED_DATA}/Build/Products/Debug-iphoneos/${APP_NAME}.app"
 USAGE="usage: scripts/run-device.sh [--root DIR]"

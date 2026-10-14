@@ -14,7 +14,7 @@ install:
     @if command -v xcodebuild >/dev/null 2>&1; then xcode_local="$(xcodebuild -version | head -n1 | awk '{print $2}')"; xcode_pinned="$(cat .xcode-version)"; if [ "$xcode_local" != "$xcode_pinned" ]; then echo "warning: local Xcode $xcode_local differs from the CI-pinned $xcode_pinned — results may diverge from CI"; fi; fi
     just verify-hooks
 
-# Regenerate MyApp.xcodeproj from project.yml
+# Regenerate FlashCompose.xcodeproj from project.yml
 generate:
     mise exec -- xcodegen generate
 
@@ -50,7 +50,7 @@ test-scripts:
 check-harness:
     mise exec -- scripts/checks/run-all.sh
 
-# Run the MyAppKit tests on the host Mac with the 80% line / 75% function coverage floors on MyAppCore
+# Run the FlashComposeKit tests on the host Mac with the 80% line / 75% function coverage floors on FlashComposeCore
 test:
     scripts/coverage.sh
 
@@ -58,13 +58,13 @@ test:
 # for fast local iteration; `just test` is still the gate
 [doc("Run only the tests matching FILTER, with no coverage floor")]
 test-fast filter:
-    cd Packages/MyAppKit && swift test --filter '{{filter}}'
+    cd Packages/FlashComposeKit && swift test --filter '{{filter}}'
 
 # Build the app (Debug) for the iOS Simulator. The generic destination needs no
 # particular device installed, and its product installs on any simulator (`just run`).
 build:
     mise exec -- xcodegen generate
-    set -o pipefail && xcodebuild -project MyApp.xcodeproj -scheme MyApp -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath build/dev-derived-data build | mise exec -- xcbeautify --quiet
+    set -o pipefail && xcodebuild -project FlashCompose.xcodeproj -scheme FlashCompose -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath build/dev-derived-data build | mise exec -- xcbeautify --quiet
 
 # Build (Debug), then install and launch it on an iOS Simulator, replacing any
 # running instance (scripts/run-simulator.sh; SIMULATOR_DEVICE picks the device)
@@ -102,7 +102,7 @@ uitest: uitest-build uitest-run
 [doc("Build the app and the launch UI test for an iOS Simulator, without running it")]
 uitest-build:
     mise exec -- xcodegen generate
-    set -o pipefail && xcodebuild build-for-testing -project MyApp.xcodeproj -scheme MyApp -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data | mise exec -- xcbeautify
+    set -o pipefail && xcodebuild build-for-testing -project FlashCompose.xcodeproj -scheme FlashCompose -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data | mise exec -- xcbeautify
 
 # Run the launch UI test that uitest-build compiled, without building it again
 [doc("Run the launch UI test uitest-build compiled, without rebuilding")]
@@ -111,14 +111,14 @@ uitest-run:
     # Boot the simulator and wait for it to finish first: a cold boot inside
     # xcodebuild's launch window is what timed out on CI (#32).
     xcrun simctl bootstatus "$(scripts/simulator-destination.sh --udid)" -b
-    set -o pipefail && xcodebuild test-without-building -project MyApp.xcodeproj -scheme MyApp -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data -resultBundlePath build/LaunchUITests.xcresult | mise exec -- xcbeautify
+    set -o pipefail && xcodebuild test-without-building -project FlashCompose.xcodeproj -scheme FlashCompose -destination "$(scripts/simulator-destination.sh)" -derivedDataPath build/dev-derived-data -resultBundlePath build/LaunchUITests.xcresult | mise exec -- xcbeautify
 
-# Run every MyAppKit test suite on an iOS Simulator, with no coverage floor (`just test`
+# Run every FlashComposeKit test suite on an iOS Simulator, with no coverage floor (`just test`
 # holds the floor on the host). Exercises code behind `#if os(iOS)` and the iOS runtime.
 [doc("Run the package tests on an iOS Simulator (no coverage floor)")]
 test-ios:
-    rm -rf build/MyAppKitTests-iOS.xcresult
-    set -o pipefail && cd Packages/MyAppKit && xcodebuild test -scheme MyAppKit-Package -destination "$(../../scripts/simulator-destination.sh)" -derivedDataPath ../../build/ios-test-derived-data -resultBundlePath ../../build/MyAppKitTests-iOS.xcresult | mise exec -- xcbeautify
+    rm -rf build/FlashComposeKitTests-iOS.xcresult
+    set -o pipefail && cd Packages/FlashComposeKit && xcodebuild test -scheme FlashComposeKit-Package -destination "$(../../scripts/simulator-destination.sh)" -derivedDataPath ../../build/ios-test-derived-data -resultBundlePath ../../build/FlashComposeKitTests-iOS.xcresult | mise exec -- xcbeautify
 
 # Build Release, then assert the app launches and stays alive on an iOS Simulator
 # (scripts/smoke_launch.sh; SIMULATOR_DEVICE picks the device)
@@ -141,7 +141,7 @@ agents-check:
 
 # Remove build artifacts and the generated project
 clean:
-    rm -rf build Packages/MyAppKit/.build MyApp.xcodeproj
+    rm -rf build Packages/FlashComposeKit/.build FlashCompose.xcodeproj
 
 # Create or update this repository's GitHub labels from .github/labels.yml
 # (never deletes). Requires `gh`, authenticated against this repository: it is

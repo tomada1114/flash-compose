@@ -20,7 +20,7 @@ the app target:
 
 ```yaml
 targets:
-  MyApp:
+  FlashCompose:
     settings:
       base:
         INFOPLIST_KEY_NSCameraUsageDescription: "Scans a document you choose to add."
@@ -39,16 +39,16 @@ target's `info:` block, which XcodeGen writes to the named file on every
 
 ```yaml
 targets:
-  MyApp:
+  FlashCompose:
     info:
       path: App/Info.plist
       properties:
         UIBackgroundModes: [processing]
-        BGTaskSchedulerPermittedIdentifiers: [com.example.MyApp.refresh]
+        BGTaskSchedulerPermittedIdentifiers: [io.github.tomada1114.FlashCompose.refresh]
 ```
 
 Verified by building with both blocks and reading the product
-(`plutil -p build/dev-derived-data/Build/Products/Debug-iphonesimulator/MyApp.app/Info.plist`):
+(`plutil -p build/dev-derived-data/Build/Products/Debug-iphonesimulator/FlashCompose.app/Info.plist`):
 the camera string, both arrays, and the generated keys were all present. XcodeGen
 rewrites `App/Info.plist` on every `just generate`, so edit `project.yml`, never that
 file. Apple's pages:
@@ -93,9 +93,9 @@ which needs the owner's sign-off.
 ## Exercising a permission on the Simulator
 
 ```bash
-xcrun simctl privacy booted grant photos com.example.MyApp
-xcrun simctl privacy booted revoke photos com.example.MyApp
-xcrun simctl privacy booted reset all com.example.MyApp    # what just reset-permissions runs
+xcrun simctl privacy booted grant photos io.github.tomada1114.FlashCompose
+xcrun simctl privacy booted revoke photos io.github.tomada1114.FlashCompose
+xcrun simctl privacy booted reset all io.github.tomada1114.FlashCompose    # what just reset-permissions runs
 ```
 
 `grant` answers the prompt before it appears, `revoke` puts the app in its denied state,

@@ -3,14 +3,14 @@
 The detail behind `changing-gates`' `.swiftlint.yml` section: what each of the two
 `custom_rules:` holds and which parts of it are load-bearing.
 
-`no_ui_import_in_core` keeps `MyAppCore` from importing a UI, persistence, or
+`no_ui_import_in_core` keeps `FlashComposeCore` from importing a UI, persistence, or
 OS-integration framework, attributed and kind-qualified spellings included. The list
 is the module alternation in the rule's `regex:`, thirteen modules today: the UI
 frameworks (SwiftUI, UIKit, and the two Mac UI modules the host build could otherwise
 reach, Cocoa and the one beneath it), persistence (SwiftData, CoreData, CloudKit), and
 OS services (UserNotifications, CoreLocation, Photos, PhotosUI, StoreKit, WidgetKit).
 Read the regex itself for the exact spelling. `ArchitectureBoundaryTests` in
-`MyAppCoreTests` enforces the same boundary a second way, and its `forbiddenModules`
+`FlashComposeCoreTests` enforces the same boundary a second way, and its `forbiddenModules`
 and the regex change together, in one commit — adding a framework to one and not the
 other leaves the boundary enforced once, and `scripts/checks/core-ban-lists-agree.sh`
 (`just check-harness`) fails while the two sets differ. Adding to that list strengthens
@@ -18,13 +18,13 @@ the gate and is the routine direction; removing from it is weakening one. `os` a
 `OSLog` are deliberately not on it, so Core can log (`docs/architecture.md` › Logging);
 a test case pins their absence. Its `included` regex names the package and module, so a
 new Core-like target means widening it and the test's path. The sibling boundary —
-`MyAppUI` and `MyAppPlatform` never importing each other — and the rule that no shipped
-module imports `MyAppTestSupport` are held by `ArchitectureBoundaryTests` alone, with
+`FlashComposeUI` and `FlashComposePlatform` never importing each other — and the rule that no shipped
+module imports `FlashComposeTestSupport` are held by `ArchitectureBoundaryTests` alone, with
 no lint-rule twin.
 
 `no_print_in_sources` rejects `print(`, `debugPrint(`, and `NSLog(` under
 `Packages/*/Sources/` and `App/`, because an app launched from the Home Screen has
-nowhere to send stdout: shipped code logs through `MyAppCore`'s `AppLog` instead
+nowhere to send stdout: shipped code logs through `FlashComposeCore`'s `AppLog` instead
 (`docs/architecture.md` › Logging). Four parts of it are load-bearing, and a widening
 edit usually breaks one:
 

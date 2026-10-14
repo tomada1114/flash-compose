@@ -16,9 +16,9 @@ a SwiftData adapter, a fake, a contract test, and a UI test.
 | Persistence | SwiftData, behind a Core-declared repository port | First-party (no dependency), migrations built in, and the port keeps it replaceable: Core never imports SwiftData |
 | Networking | `URLSession` behind a Core `HTTPClient` port | First-party, no dependency; the port keeps decisions about status codes and failures in Core, where tests see them |
 | Preferences | `UserDefaults` behind a synchronous Core `PreferencesStoring` port | First-party and synchronous; the port keeps key names in one Core file where a test pins them |
-| Navigation | One `NavigationStack(path:)`, in `MyAppUI`'s `RootView`, bound to a Core `NavigationModel`; a custom URL scheme (`my-app`, `project.yml`'s `info:` block) parsed by Core's `DeepLink` | Which screen shows is Core state a test drives, so a deep link and state restoration have something to hold on to. A custom scheme is an `Info.plist` entry, not an entitlement; universal links (Associated Domains) are an app's decision |
-| Module layout | One local Swift package, `MyAppKit`, with `MyAppCore` / `MyAppUI` / `MyAppPlatform` | Module boundaries the compiler enforces, and a package `swift test` can run without a simulator |
-| Project file | XcodeGen (`project.yml`); `MyApp.xcodeproj` is generated and gitignored | No merge conflicts in a `.pbxproj`, and the whole app target is reviewable as text |
+| Navigation | One `NavigationStack(path:)`, in `FlashComposeUI`'s `RootView`, bound to a Core `NavigationModel`; a custom URL scheme (`flash-compose`, `project.yml`'s `info:` block) parsed by Core's `DeepLink` | Which screen shows is Core state a test drives, so a deep link and state restoration have something to hold on to. A custom scheme is an `Info.plist` entry, not an entitlement; universal links (Associated Domains) are an app's decision |
+| Module layout | One local Swift package, `FlashComposeKit`, with `FlashComposeCore` / `FlashComposeUI` / `FlashComposePlatform` | Module boundaries the compiler enforces, and a package `swift test` can run without a simulator |
+| Project file | XcodeGen (`project.yml`); `FlashCompose.xcodeproj` is generated and gitignored | No merge conflicts in a `.pbxproj`, and the whole app target is reviewable as text |
 | Language mode | Swift 6, warnings as errors | Data-race safety is checked from the first line; there is never a "migrate later" |
 | Dependencies | None | Every third-party package is a supply-chain and upgrade cost; adding one is a human's decision (`AGENTS.md` › Security and human approval) |
 
@@ -32,14 +32,14 @@ successor on this OS floor).
 
 ```
 App/                         composition root — @main, builds adapters, hands them to Core
- ├─ MyAppUI                  SwiftUI views: render Core state, forward user intents
- │   └─ MyAppCore            domain values, view models, ports (protocols), wording, logging
- └─ MyAppPlatform            adapters behind Core ports: SwiftData, URLSession, UserDefaults
-     └─ MyAppCore
-Tests/MyAppTestSupport       each port's fake and contract function (test code only)
+ ├─ FlashComposeUI                  SwiftUI views: render Core state, forward user intents
+ │   └─ FlashComposeCore            domain values, view models, ports (protocols), wording, logging
+ └─ FlashComposePlatform            adapters behind Core ports: SwiftData, URLSession, UserDefaults
+     └─ FlashComposeCore
+Tests/FlashComposeTestSupport       each port's fake and contract function (test code only)
 ```
 
-- **Core ← UI** and **Core ← Platform**; both ← `App/`. `MyAppUI` and `MyAppPlatform`
+- **Core ← UI** and **Core ← Platform**; both ← `App/`. `FlashComposeUI` and `FlashComposePlatform`
   are siblings and never import each other. A view therefore cannot reach SwiftData, and
   an adapter cannot reach a view — the only place both halves meet is `App/`.
 - **Core imports no UI, persistence, or OS-integration framework** — SwiftUI, UIKit,
@@ -48,7 +48,7 @@ Tests/MyAppTestSupport       each port's fake and contract function (test code o
   `no_ui_import_in_core` and `ArchitectureBoundaryTests`, whose lists change together.
   `Foundation`, `Observation`, and `os` are allowed.
 - **`App/` holds no logic.** It decides which adapter each port gets, and nothing else.
-- **Shared presentation values live in `MyAppUI`**, in `DesignSystem/DesignTokens.swift`
+- **Shared presentation values live in `FlashComposeUI`**, in `DesignSystem/DesignTokens.swift`
   (spacing, radius, hit target, motion), never in Core; `docs/design-system.md` records
   why each has its value.
 
@@ -57,7 +57,7 @@ Tests/MyAppTestSupport       each port's fake and contract function (test code o
 `Package.swift` lists `.macOS(.v27)` next to `.iOS(.v27)` so `swift test` runs the whole
 package on the host Mac: seconds instead of a simulator boot, and the only way
 `scripts/coverage.sh` can read coverage from `swift test`. The cost is that every target
-must compile for macOS too. Core does by construction; in `MyAppUI` and `MyAppPlatform`
+must compile for macOS too. Core does by construction; in `FlashComposeUI` and `FlashComposePlatform`
 an iOS-only API (`.navigationBarTitleDisplayMode`, `UIApplication`, a `UIKit` type) goes
 behind `#if os(iOS)`. The app itself is iOS-only — `project.yml` builds it for the iOS
 Simulator, and CI's `app` job proves it compiles and launches there.
@@ -125,7 +125,7 @@ store and before it returns — the window in which a fetch's answer goes stale.
 Which screen shows is Core state, not `@State` inside a view, so a deep link and state
 restoration have something to hold on to and a test can drive navigation without a view.
 
-- **Routes are a Core enum.** `AppRoute` (`Sources/MyAppCore/Navigation/`) has one case
+- **Routes are a Core enum.** `AppRoute` (`Sources/FlashComposeCore/Navigation/`) has one case
   per pushable screen, carrying an identifier rather than the value it shows:
   `.todoDetail(TodoItem.ID)`. The destination's view model looks the item up when the
   screen renders (`TodoDetailViewModel.content`, through
@@ -139,7 +139,7 @@ restoration have something to hold on to and a test can drive navigation without
   models it routes between stay app-level, in `AppModel`. It never moves into
   `AppModel`: the app supports multiple scenes (two windows on iPad), so an app-level
   path would move every window in lockstep and a deep link would move them all.
-- **One `NavigationStack(path:)`, in `RootView`.** `MyAppUI`'s `RootView` binds the
+- **One `NavigationStack(path:)`, in `RootView`.** `FlashComposeUI`'s `RootView` binds the
   stack to `NavigationModel.path`, shows the root screen (`TodoListView`, a plain screen
   with no stack of its own), and declares every destination in one
   `navigationDestination(for: AppRoute.self)` switch; a row's `NavigationLink(value:)`
@@ -147,7 +147,7 @@ restoration have something to hold on to and a test can drive navigation without
   settable property. A new screen therefore adds an `AppRoute` case and a branch of that
   switch, and edits no other screen.
 - **A pushed screen with a view model of its own gets it from `AppModel`.** The switch
-  cannot build one over a port itself — `MyAppUI` may not import `MyAppPlatform` — so it
+  cannot build one over a port itself — `FlashComposeUI` may not import `FlashComposePlatform` — so it
   calls the route's factory: `.todoDetail(id)` renders
   `TodoDetailView(model: app.makeTodoDetailViewModel(id: id))`. The screen keeps the
   first model it is handed in `@State`, so the fresh model a later re-render builds is
@@ -155,7 +155,7 @@ restoration have something to hold on to and a test can drive navigation without
   destination is identified by its route, so a deep link that swaps one pushed item for
   another gets a fresh screen and model.
 - **Deep links are parsed in Core.** `DeepLink.route(for:)` accepts exactly
-  `my-app://todo/<uuid>` — the scheme in any case, the host `todo`, one `UUID` path
+  `flash-compose://todo/<uuid>` — the scheme in any case, the host `todo`, one `UUID` path
   component — and rejects every other shape rather than guessing; `DeepLink.url(for:)`
   is its inverse. The scene root forwards `.onOpenURL` to its `NavigationModel.open(_:)`,
   which replaces the path with the parsed route or logs the rejected link's scheme and
@@ -183,7 +183,7 @@ public protocol TodoRepository: Sendable {
 ```
 
 - **Value types only across the port.** `TodoItem` is a Core struct; the SwiftData
-  `@Model` (`TodoRecord`) is internal to `MyAppPlatform` and never crosses. That is what
+  `@Model` (`TodoRecord`) is internal to `FlashComposePlatform` and never crosses. That is what
   keeps SwiftData's non-`Sendable` model objects on the adapter's actor and lets every
   Core test run without SwiftData.
 - **`async` everywhere**, because an implementation is an actor with its own executor
@@ -238,27 +238,27 @@ the main actor never waits on a write it did not ask for.
 ### Fakes and contracts
 
 Every port has exactly one fake and one contract function, both in
-`Tests/MyAppTestSupport`:
+`Tests/FlashComposeTestSupport`:
 
 - **`InMemoryTodoRepository`** — a real conforming actor, not a mock: tests hand it data
   and failures (`fail(_:with:)`), then read what happened (`calls`, `snapshot`). No
   expectations are declared up front.
 - **`TodoRepositoryContract.check(_:)`** — every promise the port's `///` makes, written
-  once over the protocol. `MyAppCoreTests` runs it against the fake and
-  `MyAppPlatformTests` against the SwiftData adapter with an in-memory store, both under
+  once over the protocol. `FlashComposeCoreTests` runs it against the fake and
+  `FlashComposePlatformTests` against the SwiftData adapter with an in-memory store, both under
   `just test` and in CI. A fake stands in for the adapter only while both keep the same
   promises; this is what checks it. The contract has its own oracle tests — deliberately
   broken implementations it must reject — so it cannot pass vacuously.
 
-`MyAppTestSupport` is a library target only because a test target cannot be depended on.
+`FlashComposeTestSupport` is a library target only because a test target cannot be depended on.
 No product exports it and `ArchitectureBoundaryTests` fails if a shipped module imports
-it. Previews use their own small `PreviewTodoRepository` in `MyAppUI` (Debug only).
+it. Previews use their own small `PreviewTodoRepository` in `FlashComposeUI` (Debug only).
 
 ### The HTTP client port
 
 `HTTPClient` is the networking seam, shaped like the repository: a `Sendable` port in
-`MyAppCore/Networking`, the `URLSessionHTTPClient` adapter in `MyAppPlatform/Networking`,
-and `FakeHTTPClient` plus `HTTPClientContract` in `Tests/MyAppTestSupport`.
+`FlashComposeCore/Networking`, the `URLSessionHTTPClient` adapter in `FlashComposePlatform/Networking`,
+and `FakeHTTPClient` plus `HTTPClientContract` in `Tests/FlashComposeTestSupport`.
 
 ```swift
 public protocol HTTPClient: Sendable {
@@ -279,8 +279,8 @@ public protocol HTTPClient: Sendable {
   logged.
 - **One contract, two runs, no network.** The contract takes a harness — something that
   makes a client whose server answers as told and reports what that server received —
-  so it is written once over the port. `MyAppCoreTests` runs it against the fake, and
-  against deliberately broken clients it must reject; `MyAppPlatformTests` runs it
+  so it is written once over the port. `FlashComposeCoreTests` runs it against the fake, and
+  against deliberately broken clients it must reject; `FlashComposePlatformTests` runs it
   against `URLSessionHTTPClient` over a `URLProtocol` stub that answers on a `.invalid`
   host unique to each test. Both run under `just test` and in CI, and no test touches
   the real network.
@@ -289,7 +289,7 @@ public protocol HTTPClient: Sendable {
 
 #### A worked API service
 
-`APIClient` in `MyAppCore/Networking` is the Core service every JSON API goes through —
+`APIClient` in `FlashComposeCore/Networking` is the Core service every JSON API goes through —
 not a port, since the transport is already behind one. A feature describes each call
 as an `Endpoint<Response>` value (method, path, query items, an optional `Encodable`
 body, extra headers) and sends it; the client resolves the path below its base URL,
@@ -345,9 +345,9 @@ func loadItem(using client: APIClient) async {
 
 `PreferencesStoring` is the seam for small user settings — the ones that must survive a
 relaunch but are not the user's data. The port and its keys are in
-`MyAppCore/Preferences`, the `UserDefaultsPreferences` adapter in
-`MyAppPlatform/Preferences`, and `InMemoryPreferences` plus `PreferencesContract` in
-`Tests/MyAppTestSupport`. The worked example is Hide Completed on the to-do list.
+`FlashComposeCore/Preferences`, the `UserDefaultsPreferences` adapter in
+`FlashComposePlatform/Preferences`, and `InMemoryPreferences` plus `PreferencesContract` in
+`Tests/FlashComposeTestSupport`. The worked example is Hide Completed on the to-do list.
 
 ```swift
 public protocol PreferencesStoring: Sendable {
@@ -381,16 +381,16 @@ public protocol PreferencesStoring: Sendable {
 
 ## Composition root
 
-`App/MyAppApp.swift` is the one place that knows both halves of every port. It picks the
+`App/FlashComposeApp.swift` is the one place that knows both halves of every port. It picks the
 storage and the preferences suite from the launch arguments, opens the one SwiftData
 container (`PersistenceStore`) and builds every SwiftData repository over it, falls back
 to the null object when the container will not open, and builds one `AppModel` in
 `@State`, handing it the adapters as ports through its initializer. Each scene's root
 (`SceneRoot`) owns that scene's `NavigationModel`, forwards opened URLs to it
-(`.onOpenURL`), and renders `MyAppUI`'s `RootView` over the app model and the navigation
+(`.onOpenURL`), and renders `FlashComposeUI`'s `RootView` over the app model and the navigation
 model. `App/` chooses adapters and nothing else.
 
-`AppModel` (`Sources/MyAppCore/AppModel.swift`) is a `@MainActor @Observable final
+`AppModel` (`Sources/FlashComposeCore/AppModel.swift`) is a `@MainActor @Observable final
 class` in Core that does the rest of the wiring:
 
 - **It holds the view models every scene shares** — today `todoList`, the one
@@ -404,7 +404,7 @@ class` in Core that does the rest of the wiring:
   global: every dependency is a named initializer parameter `App/` passes, and every
   model is built by a named method. A second port is a new initializer parameter.
 - **It is in Core, not `App/`,** so `AppModelTests` builds a route's view model over the
-  fakes in `MyAppTestSupport` and the coverage floor sees the wiring. Factory closures
+  fakes in `FlashComposeTestSupport` and the coverage floor sees the wiring. Factory closures
   assembled in `App/` were the alternative: they would leave the wiring where no
   coverage-gated test reaches it.
 - **It is app-level, never per scene.** Per-window state — the navigation path — stays
@@ -437,20 +437,20 @@ A log message is an autoclosure that needs an explicit `self`, which SwiftFormat
 
 ## Localization
 
-Core owns every fixed string a reader sees, in `Sources/MyAppCore/Resources/Localizable.xcstrings`,
+Core owns every fixed string a reader sees, in `Sources/FlashComposeCore/Resources/Localizable.xcstrings`,
 through `LocalizedStringResource(_:defaultValue:bundle: .module, comment:)`. English is
 the only shipped language (`defaultLocalization: "en"`); adding one is an app's decision.
 `swift test` copies the catalog uncompiled, so tests resolve English from `defaultValue`
-(the `english` helper in `MyAppCoreTests`); `xcodebuild` compiles it into the app.
+(the `english` helper in `FlashComposeCoreTests`); `xcodebuild` compiles it into the app.
 
 ## Testing
 
 | Layer | Test | Where | Runs in |
 |---|---|---|---|
-| Domain values, view models | Swift Testing suites against fakes | `Tests/MyAppCoreTests` | `just test`, CI `test` (coverage-gated) |
-| Port promises | the contract function, against the fake | `Tests/MyAppCoreTests` | `just test`, CI `test` |
-| Adapters | the contract function, against the real adapter; adapter-only cases | `Tests/MyAppPlatformTests` | `just test`, CI `test` — when the framework runs on the host |
-| Module boundaries | `ArchitectureBoundaryTests` | `Tests/MyAppCoreTests` | `just test`, CI `test` |
+| Domain values, view models | Swift Testing suites against fakes | `Tests/FlashComposeCoreTests` | `just test`, CI `test` (coverage-gated) |
+| Port promises | the contract function, against the fake | `Tests/FlashComposeCoreTests` | `just test`, CI `test` |
+| Adapters | the contract function, against the real adapter; adapter-only cases | `Tests/FlashComposePlatformTests` | `just test`, CI `test` — when the framework runs on the host |
+| Module boundaries | `ArchitectureBoundaryTests` | `Tests/FlashComposeCoreTests` | `just test`, CI `test` |
 | Launch and the core interaction | XCUITest | `LaunchUITests/` | `just uitest`, CI `app` (iOS Simulator) |
 
 - **Where a test goes.** A decision is tested in Core. An adapter is tested only for its
@@ -458,14 +458,14 @@ the only shipped language (`defaultLocalization: "en"`); adding one is an app's 
   or a permission prompt (notifications, location, photos) cannot run under `swift test`
   on the host; its contract run happens on a simulator or device, and its output goes in
   the pull request.
-- **Coverage floor.** `scripts/coverage.sh` gates `Sources/MyAppCore` at 80% of lines and
-  75% of functions. `MyAppUI` and `MyAppPlatform` are outside it by design: views render
+- **Coverage floor.** `scripts/coverage.sh` gates `Sources/FlashComposeCore` at 80% of lines and
+  75% of functions. `FlashComposeUI` and `FlashComposePlatform` are outside it by design: views render
   and adapters translate, so neither holds a decision a unit test could catch. The floor
   is raised, never lowered.
 - **Swift Testing everywhere except UI automation**, which Apple still offers only in
   XCTest. Test names are backticked sentences; error paths assert the thrown error's
   payload.
-- **Fakes, not mocks.** One fake per port in `MyAppTestSupport`, held to the contract.
+- **Fakes, not mocks.** One fake per port in `FlashComposeTestSupport`, held to the contract.
 
 ## What is contract and what is private
 
@@ -474,7 +474,7 @@ device that ran an earlier build, or the user.
 
 | Contract | What depends on it | What changing it requires |
 |---|---|---|
-| **Core's public API** | `MyAppUI`, `MyAppPlatform`, `App/`, the tests | Update every caller in the same pull request; a new public declaration carries a `///` saying why; a new port is a design change (`AGENTS.md` › Before changing the architecture) |
+| **Core's public API** | `FlashComposeUI`, `FlashComposePlatform`, `App/`, the tests | Update every caller in the same pull request; a new public declaration carries a `///` saying why; a new port is a design change (`AGENTS.md` › Before changing the architecture) |
 | **The bundle identifier** (`PRODUCT_BUNDLE_IDENTIFIER` in `project.yml`) | The app's data container and Keychain items on every device, App Store Connect, push and other capabilities, `AppLog.subsystem`, `just run`/`just logs` | Fixed once a build has left your machine: a new identifier is a new app, and the user's data stays behind. `project.yml` and `AppLog.subsystem` change together (`AppLogTests`) |
 | **The stored schema** (`AppSchemaV1` and its successors) | Every store already on a user's device | A new `VersionedSchema` plus an `AppMigrationPlan` stage, with a test that opens a store written by the previous version. Never edit a shipped schema version |
 | **The URL scheme** (`DeepLink.scheme`, registered in `project.yml`) | Links to the app in messages, notes, and other apps | Fixed once a build has left your machine: a renamed scheme breaks every link in the wild. `project.yml` and `DeepLink.scheme` change together (`DeepLinkTests`); a new link shape is a new `DeepLink` case with its tests, and an old shape keeps parsing |
@@ -487,15 +487,15 @@ framework, view structure, file and type layout, test helpers, log messages.
 
 **A new screen or feature**
 
-1. Domain values and their invariants in `MyAppCore` (TDD — the `tdd` skill).
-2. A port in `MyAppCore` if the feature needs storage or an OS service; its fake and
-   contract in `Tests/MyAppTestSupport`.
-3. A `@MainActor @Observable` view model in `MyAppCore`, tested against the fake. A
+1. Domain values and their invariants in `FlashComposeCore` (TDD — the `tdd` skill).
+2. A port in `FlashComposeCore` if the feature needs storage or an OS service; its fake and
+   contract in `Tests/FlashComposeTestSupport`.
+3. A `@MainActor @Observable` view model in `FlashComposeCore`, tested against the fake. A
    model every scene shares is a stored property of `AppModel`; a pushed screen's own
    model gets a `make…ViewModel(…)` factory on `AppModel`, tested in `AppModelTests`.
-4. The adapter in `MyAppPlatform`, with the contract run against it in
-   `Tests/MyAppPlatformTests`.
-5. The view in `MyAppUI`, rendering the view model; `#Preview` per state; accessibility
+4. The adapter in `FlashComposePlatform`, with the contract run against it in
+   `Tests/FlashComposePlatformTests`.
+5. The view in `FlashComposeUI`, rendering the view model; `#Preview` per state; accessibility
    identifiers on what a UI test touches.
 6. A case in `AppRoute`, and its branch in `RootView`'s `navigationDestination`
    switch, which builds the screen's model through its `AppModel` factory (Navigation,
@@ -504,7 +504,7 @@ framework, view structure, file and type layout, test helpers, log messages.
    to `AppModel`'s initializer (Composition root, above).
 
 **A new OS integration** (notifications, location, photos, purchases): the same port and
-adapter shape. The framework import lives only in `MyAppPlatform`; the permission's
+adapter shape. The framework import lives only in `FlashComposePlatform`; the permission's
 usage-description string goes in `project.yml` as an `INFOPLIST_KEY_…` setting; the
 decision of when to ask lives in Core.
 

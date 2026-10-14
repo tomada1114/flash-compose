@@ -49,7 +49,7 @@ sequentially (the justfile's `check` recipe is the source of truth).
 **If any step fails, abort PR creation** and report the failure.
 
 On success, the "All checks pass (`just check`)" checklist item is verified:
-formatting, SwiftLint strict, tests with the 80% coverage floor on MyAppCore,
+formatting, SwiftLint strict, tests with the 80% coverage floor on FlashComposeCore,
 and a Debug build.
 
 ## Step 3: Additional Verification
@@ -57,13 +57,13 @@ and a Debug build.
 Analyze `git diff main..HEAD` to determine:
 
 **Logic placement and coverage:**
-- New/changed logic must live in `Packages/MyAppKit/Sources/MyAppCore` with
-  matching tests in `Tests/MyAppCoreTests`
-- If logic was added to `MyAppUI` or `App/`: mark the "New logic lives in
-  MyAppCore" checklist item unchecked and warn
+- New/changed logic must live in `Packages/FlashComposeKit/Sources/FlashComposeCore` with
+  matching tests in `Tests/FlashComposeCoreTests`
+- If logic was added to `FlashComposeUI` or `App/`: mark the "New logic lives in
+  FlashComposeCore" checklist item unchecked and warn
 
 **Public API changes:**
-- Check if `public` declarations in `Packages/MyAppKit/Sources/` were added,
+- Check if `public` declarations in `Packages/FlashComposeKit/Sources/` were added,
   removed, or changed
 - If changes found: verify docs/ or README was updated where relevant
   - If not updated: mark "Documentation updated" as unchecked and warn
@@ -122,7 +122,7 @@ Fill each item based on verification results from Steps 2-3:
 | Item | Criteria |
 |------|----------|
 | All checks pass | `just check` passed (every step of the justfile's `check` recipe) |
-| New logic lives in MyAppCore and is covered | Verified in Step 3; no-logic changes = checked |
+| New logic lives in FlashComposeCore and is covered | Verified in Step 3; no-logic changes = checked |
 | Behavior only the running app shows: evidence in the Test Plan | Required only when the change is visible only in the running app (a view's wiring, an OS integration) — `just uitest` output or a simulator screenshot from `just run`. No such change = checked |
 | Documentation updated | Required only when public API or behavior changed. No change = checked |
 | No breaking changes | No breaking changes, or documented in Summary = checked |

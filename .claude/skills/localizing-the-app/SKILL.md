@@ -2,9 +2,9 @@
 name: localizing-the-app
 description: >
   Covers every string a person reads and its translation, meaning the String Catalog
-  Localizable.xcstrings under Sources/MyAppCore/Resources, defaultLocalization in
+  Localizable.xcstrings under Sources/FlashComposeCore/Resources, defaultLocalization in
   Package.swift, Core returning LocalizedStringResource with bundle .module,
-  Text(verbatim:) in MyAppUI, LocalizationTests, xcodebuild -exportLocalizations, and an
+  Text(verbatim:) in FlashComposeUI, LocalizationTests, xcodebuild -exportLocalizations, and an
   app-target InfoPlist.xcstrings for Info.plist strings. Use when adding or changing
   user-facing wording, a Text or Button title, a catalog key, comment, plural, or
   translation; when a string shows its key, reads right in English but never translates,
@@ -33,8 +33,8 @@ exception (`AGENTS.md`'s "Important Reminders").
   Core may import) and a view renders it. The wording then sits under the coverage floor,
   where a test asserts it; a Core API that handed out bare keys would leave the view to
   know the key, the bundle, and the fallback, none of it tested.
-- **One catalog, in Core.** `MyAppCore` declares `resources: [.process(...)]` for it;
-  `MyAppUI` has no catalog and no resources. The one exception is the app target's own
+- **One catalog, in Core.** `FlashComposeCore` declares `resources: [.process(...)]` for it;
+  `FlashComposeUI` has no catalog and no resources. The one exception is the app target's own
   `Info.plist` strings ("Strings outside Core" below).
 
 ## Declaring a string
@@ -75,11 +75,11 @@ Every part is there for a reason:
   but SwiftPM's native build does not, so code that names one fails to compile under
   `just test`.
 
-## In `MyAppUI`
+## In `FlashComposeUI`
 
 - A view has no localizable literal. `Text("…")` and `Button("…")` take a
   `LocalizedStringKey` that is looked up in the app's main bundle, not the package's, and
-  `-exportLocalizations` exports it under a `MyAppUI` strings file that has nowhere to
+  `-exportLocalizations` exports it under a `FlashComposeUI` strings file that has nowhere to
   ship. Render a Core resource instead, as `TodoListView` does:
   `Text(TodoListStrings.emptyTitle)`, `Button(TodoListStrings.add) { … }`,
   `.accessibilityLabel(Text(toggleLabel))`.
@@ -99,14 +99,14 @@ Every part is there for a reason:
 - That catalog is exempt from `LocalizationTests` — the suite scans Core only — and is
   reviewed by hand: every key has a `comment` and an `en` value.
 - The export below already carries the generated `Info.plist`'s `CFBundleName` as a
-  synthesized `App/en.lproj/MyApp-InfoPlist.strings`; no file by that name exists in the
+  synthesized `App/en.lproj/FlashCompose-InfoPlist.strings`; no file by that name exists in the
   repository.
 
 ## Keeping the catalog in step
 
 - A new or changed key lands in the Core code, `Localizable.xcstrings`, and
   `LocalizationTests.everyCase()` in the same change. The suite scans every
-  `LocalizedStringResource(…)` call in `Sources/MyAppCore` (`ResourceDeclarationScan`)
+  `LocalizedStringResource(…)` call in `Sources/FlashComposeCore` (`ResourceDeclarationScan`)
   and fails until all three agree: a call without an explicit key, a `defaultValue`, or
   `bundle: .module`; a declared key the catalog or `everyCase()` lacks; a catalog key
   declared nowhere; or catalog English that differs from `defaultValue`. It reads the
@@ -115,7 +115,7 @@ Every part is there for a reason:
   source-scan test until `everyCase()` lists it. That is intended.
 - The scan is text, not a parser. It does not see a resource made from a bare literal
   (`let title: LocalizedStringResource = "Add"`, which also lands in the main bundle),
-  `String(localized:)`, or anything in `MyAppUI` — review catches those.
+  `String(localized:)`, or anything in `FlashComposeUI` — review catches those.
 - Edit the catalog in Xcode's editor, or by hand in the format Xcode writes: two-space
   indent, `" : "` separators, keys sorted, no trailing newline (`.editorconfig`'s
   `[*.xcstrings]` section keeps an editor from fighting that). A key the code uses has a
@@ -125,7 +125,7 @@ Every part is there for a reason:
 
   ```bash
   just generate
-  xcodebuild -exportLocalizations -project MyApp.xcodeproj -localizationPath build/localizations -exportLanguage en
+  xcodebuild -exportLocalizations -project FlashCompose.xcodeproj -localizationPath build/localizations -exportLanguage en
   ```
 
   Checked on Xcode 26.5 (17F42), 2026-09-30: it exits 0 without `-sdk` (it builds for
@@ -144,14 +144,14 @@ Checked on Xcode 26.5 (17F42) with Swift 6.3.2, 2026-09-30:
 
 | | `swift build` / `swift test` (`just test`) | `xcodebuild` (`just build`, the app) |
 |---|---|---|
-| The catalog in Core's resource bundle (`*_MyAppCore.bundle`) | copied as `Localizable.xcstrings`, uncompiled | compiled to `en.lproj/Localizable.strings` |
+| The catalog in Core's resource bundle (`*_FlashComposeCore.bundle`) | copied as `Localizable.xcstrings`, uncompiled | compiled to `en.lproj/Localizable.strings` |
 | Where English comes from at run time | each resource's `defaultValue` | the catalog |
 
-An iOS app bundle is flat: Core's resource bundle sits directly inside `MyApp.app/`, with
+An iOS app bundle is flat: Core's resource bundle sits directly inside `FlashCompose.app/`, with
 no `Contents/`. `swift build --build-system swiftbuild` (a preview) compiles the
 catalog too, but `scripts/coverage.sh` uses the native build. No gate looks inside the
 app: after `just build`,
-`find build -path '*MyApp.app/*' -name 'Localizable.strings*'` finds the compiled
+`find build -path '*FlashCompose.app/*' -name 'Localizable.strings*'` finds the compiled
 strings, and `plutil -p` on that file shows what shipped.
 
 ## Plurals

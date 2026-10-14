@@ -2,7 +2,7 @@
 
 The template's default design system and the research it rests on. It fixes a small set
 of tokens every screen draws from — `DesignTokens` in
-`Packages/MyAppKit/Sources/MyAppUI/DesignSystem/DesignTokens.swift` — and leaves color
+`Packages/FlashComposeKit/Sources/FlashComposeUI/DesignSystem/DesignTokens.swift` — and leaves color
 and type to the system, so a screen built from the template is correct in light, dark,
 every Dynamic Type size, and Increase Contrast before anyone decides a brand. Every brand
 decision belongs to the app's own design lock — the "Design lock" section below, which
@@ -22,7 +22,7 @@ Goal: every screen built from the template is correct by default — light/dark,
 Tone: neutral, native, unbranded. The template must not impose a brand; brand belongs to each app's design lock.
 Main objection/risk: a template default that fights the platform, or a brand look every app then has to undo.
 Must remember: system first, custom by exception — tokens are a scale, not a style.
-Constraints: SwiftUI only; iOS 27 deployment floor built with the Xcode 27 SDK; no custom fonts; semantic system colors only; MyAppUI also compiles for macOS.
+Constraints: SwiftUI only; iOS 27 deployment floor built with the Xcode 27 SDK; no custom fonts; semantic system colors only; FlashComposeUI also compiles for macOS.
 Research needed: screens and flows (platform ios); styles only as a secondary check.
 Path: direct build.
 ```
@@ -158,7 +158,7 @@ Token commitments: background — system (List default); type — system text st
 | Type: text styles, system font, Dynamic Type; `@ScaledMetric` for text-bound sizes | HIG Typography; LookUp `f2da9d79` (34/17 pt system styles) | `.font(.body)` and siblings | Verified to AX5 in the screenshots |
 | Symbols: SF Symbols, default rendering | HIG SF Symbols; every reviewed screen uses glyphs, not images | `Image(systemName:)`, `Label` | Rendering mode per context is an app's lock |
 | Liquid Glass by standard components; no `UIDesignRequiresCompatibility` | Adopting Liquid Glass; `UIDesignRequiresCompatibility` docs | `NavigationStack`, `List`, bars, sheets | Built with the Xcode 27 SDK they take Liquid Glass |
-| Custom glass only via the documented `ViewModifier` pattern | `glassEffect(_:in:)` docs (iOS 26.0, macOS 26.0) | `designing-ui` › Materials and Liquid Glass | The floor is iOS 27 and `MyAppUI` builds for macOS 27, so no `#available` branch is needed; one modifier keeps the surface defined once |
+| Custom glass only via the documented `ViewModifier` pattern | `glassEffect(_:in:)` docs (iOS 26.0, macOS 26.0) | `designing-ui` › Materials and Liquid Glass | The floor is iOS 27 and `FlashComposeUI` builds for macOS 27, so no `#available` branch is needed; one modifier keeps the surface defined once |
 | Draft field: plain style on `.fill.tertiary` in `Radius.medium` | Rise `c0c13aa0`; measured: `.roundedBorder` stays 34 pt tall under a taller frame | The one custom-drawn container in `TodoListView`; the pill is a button that focuses the field | A plain field takes focus only from its text line, so taps 4 pt inside the pill's edges did not focus it until the pill forwarded them; with the forwarding, all five probe taps (corners, edges, center) focus it |
 | Add button: `.borderedProminent` at `.controlSize(.large)` | HIG Buttons (44 pt); measured 50 pt tall | The primary action | The regular size falls under 44 pt |
 | App icon: placeholder stays | HIG App Icons; Icon Composer docs | `App/Assets.xcassets/AppIcon.appiconset` | Icon Composer `.icon` versus an asset catalog is an app decision |

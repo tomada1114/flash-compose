@@ -14,10 +14,10 @@ set -euo pipefail
 trap cleanup_temp EXIT
 
 # make_fixture_root [IDENTIFIER] — a checkout-shaped directory holding copies of the two
-# scripts and a project.yml declaring IDENTIFIER (com.example.MyApp by default); with
+# scripts and a project.yml declaring IDENTIFIER (io.github.tomada1114.FlashCompose by default); with
 # the empty string, no identifier at all.
 make_fixture_root() {
-    local root name identifier="${1-com.example.MyApp}"
+    local root name identifier="${1-io.github.tomada1114.FlashCompose}"
     # Normalized (no doubled slash from TMPDIR), the way the script resolves --root.
     root=$(cd "$(make_temp_dir)" && pwd)
     mkdir "${root}/scripts"
@@ -26,9 +26,9 @@ make_fixture_root() {
         chmod +x "${root}/scripts/${name}"
     done
     {
-        echo "name: MyApp"
+        echo "name: FlashCompose"
         echo "targets:"
-        echo "  MyApp:"
+        echo "  FlashCompose:"
         echo "    type: application"
         echo "    platform: iOS"
         echo "    settings:"
@@ -82,9 +82,9 @@ case_resets_the_declared_identifier() {
     stub_simctl booted
     capture "${BASH}" "${root}/scripts/reset-permissions.sh" --root "${root}"
     assert_exit 0
-    [ "$(privacy_calls)" = "simctl privacy booted reset all com.example.MyApp" ] ||
-        _fail "simctl privacy was not called once with reset all com.example.MyApp: $(privacy_calls)"
-    assert_stdout_contains "reset-permissions: com.example.MyApp will be asked"
+    [ "$(privacy_calls)" = "simctl privacy booted reset all io.github.tomada1114.FlashCompose" ] ||
+        _fail "simctl privacy was not called once with reset all io.github.tomada1114.FlashCompose: $(privacy_calls)"
+    assert_stdout_contains "reset-permissions: io.github.tomada1114.FlashCompose will be asked"
 }
 
 # The identifier comes from the manifest, so a bootstrapped app resets its own.

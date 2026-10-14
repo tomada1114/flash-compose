@@ -5,7 +5,7 @@ description: >
   Guidelines (semantic and accent colors, text styles and Dynamic Type, light and dark
   appearance, Increase Contrast, SF Symbols, safe areas, size classes, 44-point targets,
   toolbars, haptics, swipe actions, Liquid Glass with an iOS 27 floor), the
-  DesignTokens scale in MyAppUI/DesignSystem, and the per-app design lock, the present-state
+  DesignTokens scale in FlashComposeUI/DesignSystem, and the per-app design lock, the present-state
   section of docs/design-system.md researched with /refero-design. Use when choosing a color, font,
   spacing, radius, symbol, material, or animation, adding or changing a DesignTokens
   value, touching AccentColor.colorset or AppIcon.appiconset, adding glassEffect or
@@ -16,7 +16,7 @@ description: >
 # Designing UI
 
 **Owns:** what a screen in this app looks like — the craft rules below, `DesignTokens`
-(`MyAppUI/DesignSystem/DesignTokens.swift` in the local package), and the app's
+(`FlashComposeUI/DesignSystem/DesignTokens.swift` in the local package), and the app's
 design lock: the short set of visual decisions every screen obeys, and where they are
 recorded. **Does not own:** how a view is written in SwiftUI, its previews, and its
 accessibility wiring (`building-swiftui-screens`); the device family and scene model
@@ -61,7 +61,7 @@ per-screen one.
   `.padding()` give the system's, which follows the device and size class.
 - A radius is always `RoundedRectangle(cornerRadius:style: .continuous)`. A standard
   component keeps its own radius; the tokens are for containers the system does not draw.
-- The tokens never move into `MyAppCore`: they are presentation, and Core does not
+- The tokens never move into `FlashComposeCore`: they are presentation, and Core does not
   import SwiftUI. Changing a value is a lock decision, and every screen inherits it.
 
 ## Appearance and contrast
@@ -111,9 +111,9 @@ sheets, `TabView` — take Liquid Glass. That is the template's whole adoption.
 
 - Never set `UIDesignRequiresCompatibility`: the system ignores it once the app builds
   for iOS 27, which this template always does.
-- The floor is iOS 27 and `MyAppUI` builds for macOS 27, so `glassEffect(_:in:)` and
+- The floor is iOS 27 and `FlashComposeUI` builds for macOS 27, so `glassEffect(_:in:)` and
   every other API the SDK ships needs no `#available` branch.
-- An app whose lock asks for custom glass puts it in one `ViewModifier` in `MyAppUI`
+- An app whose lock asks for custom glass puts it in one `ViewModifier` in `FlashComposeUI`
   (`content.glassEffect(.regular, in: shape)`), so the surface is defined once. Glass
   belongs to controls and navigation that float above content, never to the content
   itself.

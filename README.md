@@ -1,20 +1,19 @@
-# my-app
+# flash-compose
 
 [![CI][ci-badge]][ci-workflow]
 [![License: MIT][license-mit]](LICENSE)
 
-An iOS 27+ SwiftUI app built with XcodeGen and a local Swift package, with SwiftData
-behind a repository port, and quality gates and an agent harness (Claude Code, Codex
-CLI) from the first commit. It ships a small to-do list that exercises every seam an
-app needs: `@Observable` view models, a port with a SwiftData adapter, a fake and a
-contract suite run against both, typed navigation with deep links, and an XCUITest.
+FlashCompose is a 瞬間英作文 (instant English composition) drill for iPhone: it shows a
+short Japanese sentence, you say the English, reveal the model answer, and grade
+yourself ×/△/○; an FSRS-6 scheduler brings each card back on the right day. What it is
+and is not: `AGENTS.md` › Product and [`docs/product/requirements.md`](docs/product/requirements.md).
 
-<!-- bootstrap:template-only-begin -->
-This repository is a template: cut your own app from it with "Use this template" and
-`scripts/bootstrap.sh` — jump to [Using This Template](#using-this-template). It is the
-iOS sibling of [macos-app-template][macos-app-template],
-whose harness it shares.
-<!-- bootstrap:template-only-end -->
+It is built from [tomada1114/ios-template](https://github.com/tomada1114/ios-template):
+an iOS 27+ SwiftUI app with XcodeGen and a local Swift package, SwiftData behind a
+repository port, and quality gates and an agent harness (Claude Code, Codex CLI) from
+the first commit. The template's to-do example stays in place until the drill replaces
+it.
+
 
 ## Quickstart
 
@@ -23,8 +22,8 @@ installed** (Xcode › Settings › Components), [mise][mise], and
 [Just][just] (`brew install mise just`).
 
 ```bash
-git clone https://github.com/your-username/my-app.git
-cd my-app
+git clone https://github.com/tomada1114/flash-compose.git
+cd flash-compose
 mise trust     # approve mise.toml once — mise refuses untrusted configs
 just install   # pinned tools via mise + git hooks + xcodegen generate
 just check     # verify-hooks → fmt → lint → test-scripts → check-harness → test → build
@@ -51,7 +50,7 @@ manifest is simple enough to migrate away from if that ever matters.
 
 ### Why a thin app shell + local Swift package?
 
-[`App/`](App/MyAppApp.swift) contains only the `@main` entry point, the composition
+[`App/`](App/FlashComposeApp.swift) contains only the `@main` entry point, the composition
 root, and resources. Everything real lives in the local package under
 [`Packages/`](Packages), so its tests run with plain `swift test`. The package also
 builds for macOS for exactly that reason: `swift test` runs on the host in seconds,
@@ -61,10 +60,10 @@ Precedent: pointfreeco's isowords.
 
 ### Why the Core/UI/Platform split and a coverage floor on Core only?
 
-`MyAppCore` holds all logic and never imports a UI, persistence, or OS-integration
+`FlashComposeCore` holds all logic and never imports a UI, persistence, or OS-integration
 framework (the list is in [`.swiftlint.yml`](.swiftlint.yml)'s `no_ui_import_in_core`,
-and `ArchitectureBoundaryTests` holds it a second time); `MyAppUI` holds thin views;
-`MyAppPlatform` holds the adapters that talk to the OS — the SwiftData repository is
+and `ArchitectureBoundaryTests` holds it a second time); `FlashComposeUI` holds thin views;
+`FlashComposePlatform` holds the adapters that talk to the OS — the SwiftData repository is
 the worked example — each behind a protocol Core declares, so a test substitutes a
 fake and `App/` decides which implementation the app gets. The 80% line and 75%
 function coverage floors ([`scripts/coverage.sh`](scripts/coverage.sh)) apply to Core
@@ -79,15 +78,15 @@ migration rather than a data loss. Core never sees it: `TodoRepository` is a por
 Core's vocabulary, `SwiftDataTodoRepository` is its adapter, and when the store will not
 open `App/` hands the view model `UnavailableTodoRepository`, a null object, so the
 app still launches. One contract function,
-[`TodoRepositoryContract`](Packages/MyAppKit/Tests/MyAppTestSupport/TodoRepositoryContract.swift),
+[`TodoRepositoryContract`](Packages/FlashComposeKit/Tests/FlashComposeTestSupport/TodoRepositoryContract.swift),
 runs against both the in-memory fake and the real adapter, so the fake cannot drift.
 
 ### Why one String Catalog in Core, and English only?
 
 User-facing wording is a decision like any other, so it lives where the coverage
 floor sees it: Core view models return `LocalizedStringResource`, and the one
-[`Localizable.xcstrings`](Packages/MyAppKit/Sources/MyAppCore/Resources/Localizable.xcstrings)
-sits in `MyAppCore` beside them. Views render those resources and carry no literal of
+[`Localizable.xcstrings`](Packages/FlashComposeKit/Sources/FlashComposeCore/Resources/Localizable.xcstrings)
+sits in `FlashComposeCore` beside them. Views render those resources and carry no literal of
 their own. The template ships English alone, since a second language makes every later
 string owe a translation and a reviewer; an app that wants one
 rewrites that sentence, and the reasoning behind it, in the same pull request.
@@ -103,7 +102,7 @@ because Apple has not ported UI automation to Swift Testing.
 ### Why system-first design tokens?
 
 The template must not impose a brand, so its default is neutral:
-[`DesignTokens`](Packages/MyAppKit/Sources/MyAppUI/DesignSystem/DesignTokens.swift) is a
+[`DesignTokens`](Packages/FlashComposeKit/Sources/FlashComposeUI/DesignSystem/DesignTokens.swift) is a
 small spacing and size scale, while color and type come from the system — semantic
 colors and text styles that are right in light, dark, every Dynamic Type size, and
 Increase Contrast. Liquid Glass arrives through standard components with no custom glass. Brand belongs to each app's own design lock, the
@@ -163,7 +162,7 @@ run each without Just.
 | Recipe | What it does |
 |---|---|
 | `just install` | Install pinned tools, git hooks, and generate the Xcode project |
-| `just test` | Package tests on the host Mac, with the coverage floor on `MyAppCore` |
+| `just test` | Package tests on the host Mac, with the coverage floor on `FlashComposeCore` |
 | `just lint` | SwiftFormat, SwiftLint, ShellCheck, actionlint, typos, and the skills mirror |
 | `just run` | Build, then launch in the iOS Simulator |
 | `just run-device` | Build, then launch on your connected iPhone |
@@ -282,8 +281,8 @@ not a dependency — adopt the changes that earn their place.
 
 [MIT](LICENSE)
 
-[ci-badge]: https://github.com/your-username/my-app/actions/workflows/ci.yml/badge.svg
-[ci-workflow]: https://github.com/your-username/my-app/actions/workflows/ci.yml
+[ci-badge]: https://github.com/tomada1114/flash-compose/actions/workflows/ci.yml/badge.svg
+[ci-workflow]: https://github.com/tomada1114/flash-compose/actions/workflows/ci.yml
 [license-mit]: https://img.shields.io/badge/license-MIT-blue.svg
 [macos-app-template]: https://github.com/tomada1114/macos-app-template
 [mise]: https://mise.jdx.dev/

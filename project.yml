@@ -1,21 +1,21 @@
 # XcodeGen manifest — the SOURCE OF TRUTH for the app target.
-# MyApp.xcodeproj is generated (`just generate`) and gitignored; never hand-edit it.
-name: MyApp
+# FlashCompose.xcodeproj is generated (`just generate`) and gitignored; never hand-edit it.
+name: FlashCompose
 options:
-  bundleIdPrefix: com.example
+  bundleIdPrefix: io.github.tomada1114
   deploymentTarget:
     iOS: "27.0"
   createIntermediateGroups: true
 packages:
-  MyAppKit:
-    path: Packages/MyAppKit
+  FlashComposeKit:
+    path: Packages/FlashComposeKit
 settings:
   base:
     SWIFT_VERSION: "6.0"
     MARKETING_VERSION: "0.1.0"
     CURRENT_PROJECT_VERSION: "1"
 targets:
-  MyApp:
+  FlashCompose:
     type: application
     platform: iOS
     sources: [App]
@@ -25,24 +25,24 @@ targets:
     configFiles:
       Debug: Config/Debug.xcconfig
     dependencies:
-      - package: MyAppKit
-        product: MyAppUI
+      - package: FlashComposeKit
+        product: FlashComposeUI
       # The app shell is the composition root: it is the only target that links the
-      # adapters (MyAppPlatform) and hands them to Core view models as ports.
-      - package: MyAppKit
-        product: MyAppPlatform
+      # adapters (FlashComposePlatform) and hands them to Core view models as ports.
+      - package: FlashComposeKit
+        product: FlashComposePlatform
     # XcodeGen writes App/Info.plist from these properties on every `just generate`, and
     # the build merges it with the INFOPLIST_KEY_* settings below. The URL scheme is
-    # DeepLink.scheme in MyAppCore; DeepLinkTests fails when the two differ.
+    # DeepLink.scheme in FlashComposeCore; DeepLinkTests fails when the two differ.
     info:
       path: App/Info.plist
       properties:
         CFBundleURLTypes:
-          - CFBundleURLName: com.example.MyApp
-            CFBundleURLSchemes: [my-app]
+          - CFBundleURLName: io.github.tomada1114.FlashCompose
+            CFBundleURLSchemes: [flash-compose]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.MyApp
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.tomada1114.FlashCompose
         GENERATE_INFOPLIST_FILE: YES
         # iPhone and iPad. Dropping iPad is an app's decision (TARGETED_DEVICE_FAMILY: "1").
         TARGETED_DEVICE_FAMILY: "1,2"
@@ -61,19 +61,19 @@ targets:
         # DEVELOPMENT_TEAM from Config/Debug.xcconfig's optional Local.xcconfig
         # (docs/running-on-device.md), never from this file.
         CODE_SIGN_STYLE: Automatic
-  MyAppLaunchUITests:
+  FlashComposeLaunchUITests:
     type: bundle.ui-testing
     platform: iOS
     sources: [LaunchUITests]
     dependencies:
-      - target: MyApp
+      - target: FlashCompose
     settings:
       base:
         GENERATE_INFOPLIST_FILE: YES
         TARGETED_DEVICE_FAMILY: "1,2"
 schemes:
-  MyApp:
+  FlashCompose:
     build:
-      targets: { MyApp: all }
+      targets: { FlashCompose: all }
     test:
-      targets: [MyAppLaunchUITests]
+      targets: [FlashComposeLaunchUITests]

@@ -3,10 +3,10 @@
 Read from [SKILL.md's `scripts/coverage.sh` section](../SKILL.md#scriptscoveragesh)
 before touching what `scripts/coverage.sh` measures or how its floors are set.
 
-It gates on line and function coverage of `Sources/MyAppCore/` only, by filtering
-llvm-cov's report to that path. `MyAppUI` and `MyAppPlatform` are outside it because a
+It gates on line and function coverage of `Sources/FlashComposeCore/` only, by filtering
+llvm-cov's report to that path. `FlashComposeUI` and `FlashComposePlatform` are outside it because a
 view or an adapter holds translation rather than a decision (`AGENTS.md`'s
-"Architecture") — not because nothing exercises them: `MyAppPlatformTests` runs under
+"Architecture") — not because nothing exercises them: `FlashComposePlatformTests` runs under
 plain `swift test`, so under `just test` and CI's `test` job, against an in-memory
 SwiftData store that needs no device and no permission. The filter is a path, not a
 target list, so those tests add nothing to the floor. The floors are `readonly COVERAGE_FLOOR=80` (lines) and

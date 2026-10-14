@@ -9,20 +9,20 @@ paths:
 Four kinds of test, split by what is under test (`docs/architecture.md` › Testing):
 
 1. **A decision → a Core test with the fake.** Anything that branches, clamps, formats,
-   orders, or remembers lives in `MyAppCore` and is tested in `Tests/MyAppCoreTests`
+   orders, or remembers lives in `FlashComposeCore` and is tested in `Tests/FlashComposeCoreTests`
    against the port's fake, `InMemoryTodoRepository` (see "Fakes, not mocks" below).
    These run under `just test` and in CI's `test` job on every push, and are what the 80%
    line- and 75% function-coverage floors measure. This is the default: if an adapter
    looks like it needs a test for a decision, move the decision into Core instead.
 2. **Translation over a framework that runs on the host → a Platform test under plain
    `swift test`.** SwiftData and Foundation run on the host Mac, so an adapter over them
-   is tested in `Tests/MyAppPlatformTests`, run by `just test` and CI's `test` job like
+   is tested in `Tests/FlashComposePlatformTests`, run by `just test` and CI's `test` job like
    any other suite — SwiftData with an in-memory store (`.inMemory`), never the on-disk
    one; a test that must reopen a store uses `.file(URL)` in its own temporary directory
    (Hygiene, below). There is no opt-in trait and no separate human-run recipe here: a
    Platform test is a gated test.
 3. **Translation through an iOS-only API → a test inside `#if os(iOS)` in
-   `Tests/MyAppPlatformTests`.** `swift test` builds the package for macOS, where that
+   `Tests/FlashComposePlatformTests`.** `swift test` builds the package for macOS, where that
    test compiles away; `just test-ios` runs it on the iOS Simulator (CI's
    `Package Tests (iOS Simulator)` job). What only a real permission prompt, a
    device, or push delivery shows is not a test at all: the pull request carries the
@@ -53,11 +53,11 @@ translation-only, and outside the coverage floor, precisely so that stays true.
   — `TodoListViewModelFixture` is the worked example: fixed dates and identifiers, and a
   view model whose clock and identifier source are pinned
 - TDD is required: write the failing test first, then implement to green (the `tdd` skill)
-- A Core test uses plain `import MyAppCore`, never `@testable import`: it exercises the
+- A Core test uses plain `import FlashComposeCore`, never `@testable import`: it exercises the
   public API the rest of the app calls, so an internal can be renamed without touching a
   test. A test that seems to need an internal is either testing a detail (test the
   behavior it produces) or has found a declaration another module legitimately needs —
-  make that `package`, which every target in `Packages/MyAppKit` sees (`swift.md` ›
+  make that `package`, which every target in `Packages/FlashComposeKit` sees (`swift.md` ›
   Access Control)
 
 ## What to Test
@@ -80,9 +80,9 @@ does not.
 
 ## Fakes, not mocks
 
-A port declared in `MyAppCore` (a `Sendable` protocol whose adapter lives in
-`MyAppPlatform`) is substituted in tests by a **fake**, never a mock. A fake is a real,
-working implementation of the protocol that lives in `Tests/MyAppTestSupport`, answers
+A port declared in `FlashComposeCore` (a `Sendable` protocol whose adapter lives in
+`FlashComposePlatform`) is substituted in tests by a **fake**, never a mock. A fake is a real,
+working implementation of the protocol that lives in `Tests/FlashComposeTestSupport`, answers
 from data the test hands it, and records what it was asked in a plain value — the calls
 it received — which the test reads afterwards with `#expect`. It declares no
 expectations up front, verifies nothing itself, and needs no framework:
@@ -106,8 +106,8 @@ protocol, not over either implementation, and every clause it checks is one the 
 `///` states (add the clause there first). `TodoRepository` is the worked example
 (`docs/architecture.md` › Repositories):
 
-- The fakes and one contract function per port live in the `MyAppTestSupport` target
-  (`Tests/MyAppTestSupport`), which both test targets depend on — never one test target
+- The fakes and one contract function per port live in the `FlashComposeTestSupport` target
+  (`Tests/FlashComposeTestSupport`), which both test targets depend on — never one test target
   depending on another. It is test code: no product exports it, and
   `ArchitectureBoundaryTests` fails if a shipped module imports it.
 - `TodoRepositoryContract.check(_:)` takes `some TodoRepository` that starts empty and
@@ -115,10 +115,10 @@ protocol, not over either implementation, and every clause it checks is one the 
   replace, delete, and `notFound` for a missing identifier. Its `violations(of:)` returns
   what `check(_:)` asserts on, so a Core test hands it an implementation that breaks a
   clause and sees the contract report it — the proof the contract is not vacuous.
-- `MyAppCoreTests/TodoRepositoryContractTests.swift` runs it against
+- `FlashComposeCoreTests/TodoRepositoryContractTests.swift` runs it against
   `InMemoryTodoRepository`, and against the deliberately broken implementations: CI runs
   it, so the fake cannot drift from the port.
-- `MyAppPlatformTests/SwiftDataTodoRepositoryTests.swift` runs the same function against
+- `FlashComposePlatformTests/SwiftDataTodoRepositoryTests.swift` runs the same function against
   `SwiftDataTodoRepository` with an in-memory store, beside the adapter-only cases, under
   `just test` and in CI.
 
@@ -145,7 +145,7 @@ protocol, not over either implementation, and every clause it checks is one the 
   value, a zero `Duration`, or a manually advanced test clock — never `Task.sleep` to
   wait for something to happen
 - A test that touches the file system gets its own directory:
-  `FileManager.default.temporaryDirectory.appending(path: "MyAppTests-\(UUID().uuidString)")`,
+  `FileManager.default.temporaryDirectory.appending(path: "FlashComposeTests-\(UUID().uuidString)")`,
   created in the test and removed in a `defer`. Never a fixed shared path, the checkout,
   or the home directory — parallel tests would collide, and a leftover file changes the
   next run

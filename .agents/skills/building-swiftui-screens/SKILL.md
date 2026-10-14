@@ -1,7 +1,7 @@
 ---
 name: building-swiftui-screens
 description: >
-  Covers writing an iOS SwiftUI view in MyAppUI as a thin renderer over a MyAppCore
+  Covers writing an iOS SwiftUI view in FlashComposeUI as a thin renderer over a FlashComposeCore
   @Observable view model - how the view receives and holds its model (@State, a plain
   property, @Bindable, a Binding built from an action), what may sit in body,
   NavigationStack and navigationDestination, sheets and alerts driven by view-model
@@ -10,14 +10,14 @@ description: >
   FocusState, submitLabel and onSubmit, 44-point touch targets, iOS-only modifiers
   behind #if os(iOS), #Preview per state, accessibility identifiers for LaunchUITests,
   accessibility labels, Reduce Motion, and how a screen is verified. Use when adding or
-  changing a view, a subview, or a preview under the local package's Sources/MyAppUI,
+  changing a view, a subview, or a preview under the local package's Sources/FlashComposeUI,
   wiring a view to a view model in App/, adding an accessibilityIdentifier, or fixing an
   accessibility_label_for_image or no_magic_numbers violation in a view.
 ---
 
 # Building SwiftUI Screens
 
-**Owns:** how a view in `MyAppUI` is written — how it gets its view model, what it may
+**Owns:** how a view in `FlashComposeUI` is written — how it gets its view model, what it may
 contain, how it navigates and presents, how it adapts to size class, text size, and the
 keyboard, its previews, and its accessibility wiring. **Does not own:** the view model's
 shape, state, and actions (`designing-core-logic`); what the screen looks like — color,
@@ -28,21 +28,21 @@ launching the app and the evidence a pull request carries (`running-the-app`).
 ## The rule, and why
 
 A view renders Core state and forwards user intent to a Core action; it decides nothing.
-`MyAppUI` is outside the coverage floor — `scripts/coverage.sh` measures `MyAppCore`
+`FlashComposeUI` is outside the coverage floor — `scripts/coverage.sh` measures `FlashComposeCore`
 only — so any branch that lives in a view is a branch no gate tests. `TodoListView` over
 `TodoListViewModel` is the worked example; copy its shape.
 
-- A view is a `struct` in `MyAppUI` importing `SwiftUI` and `MyAppCore`, never
-  `MyAppPlatform`. Enforced by: `ArchitectureBoundaryTests`' sibling-import tests.
+- A view is a `struct` in `FlashComposeUI` importing `SwiftUI` and `FlashComposeCore`, never
+  `FlashComposePlatform`. Enforced by: `ArchitectureBoundaryTests`' sibling-import tests.
 - It is `public` only when `App/` constructs it; a subview (`TodoRow`) stays `private`
   or internal.
 
 ## Getting the view model
 
 - **A model with a port is built by Core's `AppModel`**, never in a view: the adapter
-  lives in `MyAppPlatform`, which this module must not import, so `App/` hands the
+  lives in `FlashComposePlatform`, which this module must not import, so `App/` hands the
   adapters to `AppModel` as ports and `AppModel` builds the models over them
-  (`docs/architecture.md` › Composition root). `MyAppApp` keeps the `AppModel` in
+  (`docs/architecture.md` › Composition root). `FlashComposeApp` keeps the `AppModel` in
   `@State` for the whole app; its private `SceneRoot` keeps a `NavigationModel` in
   `@State` per scene, so each window navigates on its own, and passes both to
   `RootView(app:navigation:)`.
@@ -79,7 +79,7 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
 
 - An action that waits is `async`; call it from `.task` (cancelled with the view) or a
   `Task { }` in a button's closure.
-- Spacing, radius, and hit-target numbers come from `DesignTokens` in `MyAppUI`
+- Spacing, radius, and hit-target numbers come from `DesignTokens` in `FlashComposeUI`
   (`DesignTokens.Spacing.medium`), whose values the design lock sets (`designing-ui`); a
   number only one view needs goes in a `private enum Layout` in that view's file.
   Enforced by: `opt_in_rules: all`, which turns on `no_magic_numbers`.
@@ -152,7 +152,7 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
   mislead VoiceOver). Draw the fill with a `.plain` `Button` in `.background { … }` that
   sets a `@FocusState`, marked `.accessibilityHidden(true)` so VoiceOver still reaches
   the field — `TodoListView`'s `addBar` is the worked example.
-- `MyAppUI` also compiles for macOS under `swift build`, so an iOS-only modifier —
+- `FlashComposeUI` also compiles for macOS under `swift build`, so an iOS-only modifier —
   `.navigationBarTitleDisplayMode`, `.keyboardType`, `.textInputAutocapitalization` —
   sits inside `#if os(iOS)`. `TodoListView` needs none today: `.submitLabel`,
   `.refreshable`, and `.safeAreaInset` exist on both platforms. `swift build` fails when
@@ -163,7 +163,7 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
 - One `#Preview("Name")` per state worth seeing, built by injecting a view model already
   in it — `TodoListView`'s "Items", "Empty", and "Load failed", over the Debug-only
   `PreviewTodoRepository` or Core's `UnavailableTodoRepository`. Previews sit under
-  `#if DEBUG` and never construct a `MyAppPlatform` adapter.
+  `#if DEBUG` and never construct a `FlashComposePlatform` adapter.
 - Add a dark preview (`.preferredColorScheme(.dark)`), a regular-width one for an iPad
   layout, and an accessibility-size one for a screen that shows text.
 - No `try!` or force unwrap in a preview (`.claude/rules/swift.md`).

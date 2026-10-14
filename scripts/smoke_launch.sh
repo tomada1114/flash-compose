@@ -30,7 +30,7 @@
 #   ERR_SMOKE_EXITED_EARLY       the app stopped running before ALIVE_SECONDS passed
 set -euo pipefail
 
-APP_NAME="MyApp"
+APP_NAME="FlashCompose"
 DERIVED_DATA="build/smoke-derived-data"
 ALIVE_SECONDS=10
 USAGE="usage: scripts/smoke_launch.sh [path/to/An.app]"

@@ -1,0 +1,8 @@
+1b909864d0765cc93733bb0de7ee4b7b0f36fe5a
+https://github.com/tomada1114/ios-template.git
+# Written once by scripts/bootstrap.sh; a re-run leaves this file alone.
+# Line 1: the template commit this app was created from. Line 2: its repository.
+# Filled in by hand: GitHub's "Use this template" gave this repository a fresh root, so
+# bootstrap.sh recorded "unknown"; the template commit whose tree is this repository's
+# first tree (24fb726774b5ec6ada051fa151cc155b50273996) is the one on line 1.
+# See README.md, "Keeping up with template updates".

@@ -54,7 +54,7 @@ If both lists are empty, say so and stop. Expected shapes:
 
 | Bot | Ecosystem | Touches | Title prefix |
 |---|---|---|---|
-| Dependabot | SwiftPM | `Packages/MyAppKit/Package.resolved` (and `Package.swift` for a range change) | `deps:` |
+| Dependabot | SwiftPM | `Packages/FlashComposeKit/Package.resolved` (and `Package.swift` for a range change) | `deps:` |
 | Dependabot | GitHub Actions | `.github/workflows/*.yml`, `.github/actions/**` | `ci:` |
 | Renovate | mise | `mise.toml` | `deps:` |
 | Renovate | regex (gitleaks) | `GITLEAKS_VERSION` in `.github/workflows/gitleaks.yml` | `deps:` |
@@ -69,7 +69,7 @@ title is only as precise as the bot made it.
   (treat it as a major). Note removed APIs, a raised Swift tools version or
   `platforms:` minimum, and new SwiftLint rules.
 - **Platform floor:** a SwiftPM bump whose package raises its `platforms:` above this
-  package's `.iOS(.v27)` or `.macOS(.v27)` (`Packages/MyAppKit/Package.swift`) is not
+  package's `.iOS(.v27)` or `.macOS(.v27)` (`Packages/FlashComposeKit/Package.swift`) is not
   mergeable: taking it means raising the deployment floor, a design change
   (AGENTS.md "Before changing the architecture"). Hold it with that reason, green or not.
 - **gitleaks checksum:** a Renovate gitleaks bump cannot rewrite `GITLEAKS_SHA256`, so
@@ -135,7 +135,7 @@ git switch -c deps/combined-<yyyy-mm-dd> origin/main
 Apply each PR's version change by hand, not by merging bot branches:
 
 - **SwiftPM:** edit `Package.swift` only if a PR changed a range, then
-  `swift package resolve --package-path Packages/MyAppKit` to regenerate
+  `swift package resolve --package-path Packages/FlashComposeKit` to regenerate
   `Package.resolved`. Commit `Package.resolved` with the change (the `smart-commit`
   skill bundles it).
 - **mise:** edit `mise.toml`, then `mise install` so the pinned version actually exists.
