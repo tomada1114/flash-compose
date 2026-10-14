@@ -182,9 +182,9 @@ which language, who translates, and who reviews. Then:
   translated values are, with the card catalog, the only non-English text the
   repository allows. An `App/InfoPlist.xcstrings`, if the app has one, owes the same
   language.
-- Unverified: whether iOS offers the app in that language from the package bundle's
-  `.lproj` alone or also needs `CFBundleLocalizations` in `project.yml`. It stays an
-  open question in the pull request until it is checked in the running app
-  (`running-the-app`); the answer then replaces this line.
+- Add the language to `CFBundleLocalizations` in `project.yml`'s `info:` properties.
+  iOS picks the app's language from the main bundle, which has no `.lproj` of its own;
+  without the key the running app stays in English on a device in that language —
+  system labels included — and never reaches the package bundle's catalog.
 - Unverified: how `typos` (`just lint`) treats translated values; that pull request
   decides whether an exclusion is warranted, which is a gate change (`changing-gates`).
