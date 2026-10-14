@@ -105,8 +105,9 @@ only when the answer really comes from a framework Core may not import.
 
 ## One `Tuning` type
 
-The template has no tunable yet, so there is no `Tuning` type to copy; the first number
-an app wants to tweak creates it, in this shape:
+FlashCompose's `Tuning` is `Sources/FlashComposeCore/Scheduling/Tuning.swift` — the FSRS
+parameters as `fsrs`, the re-ask spacing as `reAsk`. A new tunable joins it as another
+property; there is never a second tuning type. Its shape:
 
 - Every number someone might want to tweak — a delay, a threshold, a limit, a retry
   count — lives in one `public struct Tuning: Sendable, Equatable` in `FlashComposeCore` with a
