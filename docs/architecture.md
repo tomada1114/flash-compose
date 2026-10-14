@@ -251,15 +251,10 @@ Code work these decisions imply; each becomes an issue.
 - Remove the networking layer — `HTTPClient`, `APIClient` and their values,
   `URLSessionHTTPClient`, their fakes and contracts, the `network` log category, and
   [The HTTP client port](#the-http-client-port) below.
-- Port FSRS-6 with the golden-vector suite.
-- The practice day and today's queue: due reviews by lowest retrievability, new cards
-  from the scope at random, re-asks.
 - The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
   keys.
 - The design-lock screenshots `designing-ui` asks for.
 - The launch test driven through the drill instead of the to-do list.
-- CodeQL's Swift build, failing since the template (its "Build the package for analysis"
-  step).
 
 ## Layers
 
