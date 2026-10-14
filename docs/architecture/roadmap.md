@@ -21,26 +21,27 @@ and linked from here. What has shipped is in
 The owner decides what the page says; an agent proposes a change to it in a pull
 request, and the change lands only once the owner has approved it.
 
-- **Last reviewed:** 2026-10-13, written at the kickoff, before any issue was filed
+- **Last reviewed:** 2026-10-13, at the kickoff, when the first issues were filed
 
 ## Now
 
 The outcomes being worked on, one to three of them. Each has its issues filed.
 
 - **Drill the whole catalog, scheduled by FSRS-6 across launches** — the core
-  interaction; if this loop is not quick and quiet, nothing else matters. Issues: —.
+  interaction; if this loop is not quick and quiet, nothing else matters. Issues: #3
+  (tracking): #6, #12, #13, #14, #16, #18, #19, #22.
   Done when: on the owner's iPhone, installed with `just run-device`, the first card is
   on screen within a second of a cold launch; reveal and a one-tap grade go straight to
   the next card; due reviews come before new cards; and a card graded today comes back,
   after a relaunch, on the day its grade button showed.
 - **Steer new cards by topic and level, and see when the day is done** — the owner
-  wanted the scope in the first version. Issues: —. Done when: turning topics and levels
-  on and off in the scope sheet changes the 新規 count and where the next new card comes
-  from, survives a relaunch, and never hides a due review; and exhausting a narrow scope
-  (旅行 × L1) shows 今日の分は完了 with the next review day.
+  wanted the scope in the first version. Issues: #4 (tracking): #15, #20. Done when:
+  turning topics and levels on and off in the scope sheet changes the 新規 count and
+  where the next new card comes from, survives a relaunch, and never hides a due review;
+  and exhausting a narrow scope (旅行 × L1) shows 今日の分は完了 with the next review day.
 - **The app is FlashCompose, not the template** — iPhone only and portrait, the Japanese
   UI, and the design lock, with the template's to-do and networking code gone. Issues:
-  —. Done when: `just check` passes with no to-do or HTTP code left; on an iPhone set to
+  #5 (tracking): #7, #8, #9, #21. Done when: `just check` passes with no to-do or HTTP code left; on an iPhone set to
   Japanese every label is Japanese; and screenshots in light, dark, the largest text
   size, and Increase Contrast match the design lock.
 
@@ -52,7 +53,7 @@ parked as `on hold`; none is required.
 None yet, on purpose: the owner chooses what follows the first version after using it,
 from the requests parked as `on hold` during daily use (`triaging-issues`' "Requests from
 daily use"). The simulator CI jobs, paused until the first version is built, come back
-on when Now's outcomes are done.
+on when Now's outcomes are done (#11, parked as `on hold`).
 
 ## Later
 
