@@ -31,6 +31,19 @@ public struct ScopeCatalog: Hashable, Sendable {
         self.cards = cards
     }
 
+    /// The scope's view of the shipped catalog: its topics in taxonomy order with their
+    /// Japanese names, its levels labelled `TOEIC ` plus the score `levels.json` holds
+    /// (`300`, `990+`), and every card. The drill builds the scope from this once the
+    /// catalog has loaded.
+    public init(_ catalog: CardCatalog) {
+        self.init(
+            topics: catalog.topics.map { ScopeTopic(id: $0.id, name: $0.name) },
+            levels: catalog.levels
+                .map { ScopeLevel(level: $0.level, toeicLabel: "TOEIC \($0.toeic)") },
+            cards: catalog.cards,
+        )
+    }
+
     /// How many cards nobody has seen yet, inside `selection` and outside it.
     ///
     /// A card is never-seen when `seenCardIDs` — the ids that have a progress row — does
