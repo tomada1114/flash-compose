@@ -9,11 +9,17 @@ private struct GradeButton: View {
         static let minimumHeight: CGFloat = 64
         /// The ○ button's edge stroke.
         static let edgeWidth: CGFloat = 1
+        /// The square every grade glyph sits in at the default text size, so ×, △, and ○
+        /// — drawn at different sizes — leave their words on one line across the bar.
+        static let glyphSide: CGFloat = 28
     }
 
     let option: GradeOption
     let isStacked: Bool
     let action: () -> Void
+
+    @ScaledMetric(relativeTo: .title3)
+    private var glyphSide = Layout.glyphSide
 
     private var shape: RoundedRectangle {
         RoundedRectangle(cornerRadius: DesignTokens.Radius.medium, style: .continuous)
@@ -37,7 +43,7 @@ private struct GradeButton: View {
 
     @ViewBuilder private var label: some View {
         if isStacked {
-            HStack(alignment: .firstTextBaseline, spacing: DesignTokens.Spacing.medium) {
+            HStack(alignment: .center, spacing: DesignTokens.Spacing.medium) {
                 glyph
                 title
                 Spacer(minLength: DesignTokens.Spacing.small)
@@ -56,6 +62,7 @@ private struct GradeButton: View {
     private var glyph: some View {
         Image(systemName: style.symbol)
             .font(.title3)
+            .frame(width: glyphSide, height: glyphSide)
             .accessibilityHidden(true)
     }
 
