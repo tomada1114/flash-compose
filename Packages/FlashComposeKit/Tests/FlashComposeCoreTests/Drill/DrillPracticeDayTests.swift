@@ -63,6 +63,25 @@ struct DrillPracticeDayTests {
         #expect(drill.model.card?.pile == .review)
     }
 
+    /// A grade tapped before 04:00 whose save is still in flight when the day rolls keeps
+    /// the queue on the new day: the save never moves it back.
+    @Test
+    func `a save in flight across 04:00 never moves the queue back a day`() async throws {
+        let drill = try await Self.beforeFour().started()
+        let model = drill.model
+        let time = drill.time
+        await drill.store.onRecord {
+            time.advance(by: .seconds(180))
+            await model.sceneDidBecomeActive()
+        }
+        await drill.answer(.good)
+        let answer = try #require(await drill.answers.first)
+        #expect(try answer.practiceDay == Fixture.day(Fixture.today))
+        #expect(try drill.model.practiceDay == Fixture.day(Fixture.tomorrow))
+        #expect(try drill.model.card?.card.id == QueueFixture.card(1).id)
+        #expect(drill.model.counts.review == 1)
+    }
+
     /// F5: the done face, re-read after 04:00 when the scene becomes active.
     @Test
     func `scene activation after 04:00 turns the done face into a review`() async throws {

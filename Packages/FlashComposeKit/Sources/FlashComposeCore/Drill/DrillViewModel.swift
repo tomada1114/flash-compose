@@ -72,6 +72,8 @@ public final class DrillViewModel {
     /// How many start-ups have begun; one that returns after a newer one began drops its
     /// result.
     @ObservationIgnored private var startGeneration = 0
+    /// The phase before the first start-up in flight, which a cancelled one restores.
+    @ObservationIgnored private var phaseBeforeStart: Phase?
     /// Measures the time since the card on screen was dealt.
     @ObservationIgnored private var stopwatch: (@Sendable () -> Duration)?
     /// The seconds the question was on screen before the reveal, kept for the grade.
@@ -122,7 +124,7 @@ public final class DrillViewModel {
         if case .ready = phase {
             return
         }
-        let before = phase
+        phaseBeforeStart = phaseBeforeStart ?? phase
         phase = .starting
         startGeneration += 1
         let generation = startGeneration
@@ -130,8 +132,9 @@ public final class DrillViewModel {
         guard generation == startGeneration else {
             return
         }
+        defer { phaseBeforeStart = nil }
         guard !Task.isCancelled else {
-            phase = before
+            phase = phaseBeforeStart ?? .starting
             return
         }
         switch outcome {
@@ -319,18 +322,20 @@ public final class DrillViewModel {
         )
     }
 
-    /// Applies a saved grade: the queue moves to the grade's practice day if 04:00 has
-    /// passed, the moved card's progress and today's answers follow, the queue records
-    /// the grade, the scope recounts a card it no longer finds unseen, and the next card
-    /// is dealt.
+    /// Applies a saved grade: the queue moves forward (never back) to its practice day, a
+    /// moved card's progress follows (and today's answers, if it was today's), the queue
+    /// records it, the scope recounts a card no longer unseen, and the next card is dealt.
     private func apply(_ graded: DrillGrading.GradedAnswer, grade: Grade) {
         let id = graded.answer.cardID
-        if deck?.today != graded.answer.practiceDay {
-            startDay(graded.answer.practiceDay)
+        let day = graded.answer.practiceDay
+        if let today = deck?.today, today < day {
+            startDay(day)
         }
         if graded.moved {
             deck?.progress[id] = graded.progress
-            deck?.answeredToday.insert(id)
+            if deck?.today == day {
+                deck?.answeredToday.insert(id)
+            }
         }
         deck?.session.record(grade)
         if graded.wasUnseen, let current = deck {

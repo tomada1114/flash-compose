@@ -3,6 +3,48 @@ import FlashComposeTestSupport
 import Foundation
 import Testing
 
+/// A catalog loader whose first call fails (E1), whose second call waits until
+/// ``release()``, and whose later calls return at once.
+private actor StartupGate {
+    private let catalog: CardCatalog
+    private var hasFailed = false
+    private var hasHeld = false
+    private var held: CheckedContinuation<Void, Never>?
+    private var heldWaiter: CheckedContinuation<Void, Never>?
+
+    init(_ catalog: CardCatalog) {
+        self.catalog = catalog
+    }
+
+    func load() async throws(CatalogError) -> CardCatalog {
+        if !hasFailed {
+            hasFailed = true
+            throw .decodeFailed
+        }
+        if !hasHeld {
+            hasHeld = true
+            await withCheckedContinuation { continuation in
+                held = continuation
+                heldWaiter?.resume()
+                heldWaiter = nil
+            }
+        }
+        return catalog
+    }
+
+    func waitUntilHeld() async {
+        guard held == nil else {
+            return
+        }
+        await withCheckedContinuation { heldWaiter = $0 }
+    }
+
+    func release() {
+        held?.resume()
+        held = nil
+    }
+}
+
 /// REQ-001: the start-up decodes the catalog and loads the progress, then shows D1 or
 /// D3; either load failing is E1, which a retry leaves.
 @MainActor
@@ -155,5 +197,31 @@ struct DrillStartupTests {
         _ = await (older, newer)
         #expect(drill.model.phase == .ready(.question))
         #expect(drill.model.counts == HeaderCounts(new: 2, review: 0, reAsk: 0, currentPile: .new))
+    }
+
+    /// From E1, a retry in flight and a second start-up that is cancelled: the cancelled
+    /// one goes back to E1, not to the blank start-up, so the retry button still works.
+    @Test
+    func `a cancelled start-up over a retry in flight goes back to E1`() async throws {
+        let cards = try Fixture.cards(2, from: 0)
+        let gate = StartupGate(DrillFixture.catalog(cards))
+        var setup = DrillSetup(cards: cards)
+        setup.catalog = { () async throws(CatalogError) -> CardCatalog in
+            try await gate.load()
+        }
+        let drill = try setup.build()
+        await drill.model.start()
+        #expect(drill.model.phase == .failed)
+        let retry = Task { await drill.model.retry() }
+        await gate.waitUntilHeld()
+        let cancelled = Task { await drill.model.start() }
+        cancelled.cancel()
+        await cancelled.value
+        await gate.release()
+        await retry.value
+        #expect(drill.model.phase == .failed)
+        #expect(drill.model.failure == nil)
+        await drill.model.retry()
+        #expect(drill.model.phase == .ready(.question))
     }
 }
