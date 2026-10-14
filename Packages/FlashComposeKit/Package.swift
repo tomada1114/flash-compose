@@ -66,9 +66,13 @@ let package = Package(
             path: "Tests/FlashComposeTestSupport",
             swiftSettings: strictSettings,
         ),
+        // The FSRS golden vectors ts-fsrs 5.4.2 computed, copied unchanged from the old app
+        // (docs/architecture.md › Scheduling): the oracle the scheduler port is held to,
+        // and test data only, so it ships in no product's bundle.
         .testTarget(
             name: "FlashComposeCoreTests",
             dependencies: ["FlashComposeCore", "FlashComposeTestSupport"],
+            resources: [.copy("Scheduling/fsrs-golden.json")],
             swiftSettings: strictSettings,
         ),
         // The adapters against the real frameworks they wrap. SwiftData runs on the host
