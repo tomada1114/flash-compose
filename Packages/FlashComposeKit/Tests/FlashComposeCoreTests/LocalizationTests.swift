@@ -65,6 +65,20 @@ struct LocalizationTests {
         .deletingLastPathComponent()
         .appending(path: "Sources/FlashComposeCore")
 
+    /// The Japanese the scope sheet ships, held to the catalog's source: `swift test` never
+    /// compiles the catalog, so resolving a resource in `ja` would only return English.
+    static let scopeJapanese = [
+        "scope.title": "出題範囲",
+        "scope.done": "完了",
+        "scope.note.newCards": "新規カードの出題範囲。",
+        "scope.note.reviews": "復習は範囲に関係なく出題。",
+        "scope.topics": "トピック",
+        "scope.levels": "レベル",
+        "scope.pickAtLeastOne": "1つ以上を選択",
+        "scope.unseenCount": "この範囲の未出題：%@枚",
+        "scope.allShown": "この範囲は全カード出題済み",
+    ]
+
     /// Every resource Core returns, once per state that picks a different key, with the
     /// arguments its English takes. Adding a key to Core means adding it here: the
     /// source-scan tests fail until this list names every key Core's sources declare.
@@ -78,10 +92,14 @@ struct LocalizationTests {
             TodoListStrings.allDoneDescription,
             TodoDetailStrings.created, TodoDetailStrings.notFoundTitle,
             TodoDetailStrings.notFoundDescription,
+            ScopeStrings.title, ScopeStrings.done, ScopeStrings.noteNewCards,
+            ScopeStrings.noteReviews, ScopeStrings.topicsHeader, ScopeStrings.levelsHeader,
+            ScopeStrings.pickAtLeastOne, ScopeStrings.allShown,
         ]
         let failures: [TodoListFailure] = [.deleteFailed, .loadFailed, .saveFailed]
         return strings.map { Case(resource: $0, arguments: []) }
             + failures.map { Case(resource: $0.message, arguments: []) }
+            + [Case(resource: ScopeStrings.unseenCount("1,402"), arguments: ["1,402"])]
     }
 
     /// `Sources/FlashComposeCore/Resources/Localizable.xcstrings`.
@@ -167,6 +185,19 @@ struct LocalizationTests {
             )
             let formatted = String(format: english, arguments: testCase.arguments)
             #expect(formatted == testCase.resource.resolved(in: .english), "\(key)")
+        }
+    }
+
+    @Test
+    func `every scope key has its Japanese value`() throws {
+        let catalog = try Self.catalog()
+        let scopeKeys = Set(catalog.strings.keys.filter { $0.hasPrefix("scope.") })
+        #expect(scopeKeys == Set(Self.scopeJapanese.keys))
+        for (key, japanese) in Self.scopeJapanese {
+            #expect(
+                catalog.strings[key]?.localizations["ja"]?.stringUnit?.value == japanese,
+                "\(key)",
+            )
         }
     }
 

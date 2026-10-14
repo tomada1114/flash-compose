@@ -11,4 +11,20 @@ public enum PreferenceKeys {
         name: "todoList.hideCompleted",
         defaultValue: false,
     )
+
+    /// The topic ids turned off in the scope, sorted and joined by `,`
+    /// (``ScopeSelection/encodedTopicsOff``). Empty, everything on, until the learner
+    /// turns one off.
+    public static let scopeTopicsOff = PreferenceKey<String>(
+        name: "scope.topicsOff",
+        defaultValue: "",
+    )
+
+    /// The levels turned off in the scope, sorted numerically and joined by `,`
+    /// (``ScopeSelection/encodedLevelsOff``). Empty, everything on, until the learner
+    /// turns one off.
+    public static let scopeLevelsOff = PreferenceKey<String>(
+        name: "scope.levelsOff",
+        defaultValue: "",
+    )
 }

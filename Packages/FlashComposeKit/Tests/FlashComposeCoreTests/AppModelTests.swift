@@ -62,6 +62,28 @@ struct AppModelTests {
         #expect(await repository.snapshot == [expected])
     }
 
+    // MARK: - The shared scope
+
+    @Test
+    func `building the app model reads no preference`() {
+        let preferences = CountingPreferences()
+        let model = Self.appModel(over: InMemoryTodoRepository(), preferences: preferences)
+        #expect(preferences.reads == 0)
+        #expect(preferences.writes == 0)
+        #expect(model.scope.selection == ScopeSelection())
+    }
+
+    @Test
+    func `the scope reads and writes the preferences it was built over`() throws {
+        let preferences = InMemoryPreferences()
+        preferences.set("tech", for: PreferenceKeys.scopeTopicsOff)
+        let model = Self.appModel(over: InMemoryTodoRepository(), preferences: preferences)
+        try model.scope.load(catalog: ScopeFixture.smallCatalog(), seenCardIDs: [])
+        #expect(model.scope.selection == ScopeSelection(topicsOff: [ScopeFixture.tech]))
+        model.scope.toggle(ScopeFixture.work)
+        #expect(preferences.value(for: PreferenceKeys.scopeTopicsOff) == "tech,work")
+    }
+
     // MARK: - A route's view model
 
     @Test
