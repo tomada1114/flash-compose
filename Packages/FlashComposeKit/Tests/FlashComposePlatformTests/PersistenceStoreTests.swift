@@ -94,8 +94,13 @@ extension SwiftDataStoreTests {
             #expect(try await reader.loggedAnswers().count == 1)
         }
 
+        /// The template's `TodoRecord` is no longer in `AppSchemaV1`, so a store that held
+        /// only it reopens without that table (the owner agreed to this in #21: no build ever
+        /// shipped it). What the case still proves is that the store never
+        /// recorded the Swift names of the schema and the plan: the file opens, keeps its
+        /// version identifier, and serves the progress store.
         @Test
-        func `a store written with the pre-rename schema reopens without data loss`() async throws {
+        func `a store written with the pre-rename schema still opens`() async throws {
             let directory = try Fixture.scratchDirectory()
             defer { try? FileManager.default.removeItem(at: directory) }
             let url = directory.appending(path: "pre-rename.store")
@@ -104,30 +109,17 @@ extension SwiftDataStoreTests {
             let written = try Fixture.modelVersion(of: url)
 
             let reopened = try PersistenceStore.makeContainer(storage: .file(url))
-            let items = try await SwiftDataTodoRepository(modelContainer: reopened).fetchAll()
+            let store = SwiftDataProgressStore(modelContainer: reopened)
+            #expect(try await store.loadProgress().isEmpty)
+            let progress = try SwiftDataProgressStoreReadBackTests.progress()
+            try await store.record(
+                answer: SwiftDataProgressStoreReadBackTests.answer(),
+                progress: progress,
+            )
+            #expect(try await store.loadProgress() == [progress])
 
-            // Oldest first, as every repository returns them: "Open", then "Done" a
-            // minute later.
-            #expect(try items == [
-                TodoItem(id: Fixture.firstID, title: "Open", createdAt: Fixture.firstCreatedAt),
-                TodoItem(
-                    id: Fixture.secondID,
-                    title: "Done",
-                    createdAt: Fixture.secondCreatedAt,
-                    isDone: true,
-                ),
-            ])
-            // V1, installed nowhere yet, has since gained the progress entities, so the
-            // reopen adds their tables and the stored hash set grows. The entity the old
-            // store held must come through unchanged: an equal `TodoRecord` hash means
-            // the rename did not touch its stored shape.
             let reopenedVersion = try Fixture.modelVersion(of: url)
-            #expect(reopenedVersion.hashes["TodoRecord"] == written.hashes["TodoRecord"])
-            #expect(reopenedVersion.entities == [
-                "AnswerRecord",
-                "CardProgressRecord",
-                "TodoRecord",
-            ])
+            #expect(reopenedVersion.entities == ["AnswerRecord", "CardProgressRecord"])
             #expect(reopenedVersion.identifiers == written.identifiers)
             #expect(written.identifiers == ["1.0.0"])
             #expect(written.entities == ["TodoRecord"])
