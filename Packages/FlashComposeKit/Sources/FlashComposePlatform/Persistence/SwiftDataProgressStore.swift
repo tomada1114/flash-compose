@@ -35,6 +35,10 @@ public actor SwiftDataProgressStore: ProgressStore {
         return .storageFailure
     }
 
+    /// Leaves out a row that no longer reads back, keeping it stored, and logs how many it
+    /// left out: only the count, since a damaged row's card id is arbitrary stored text.
+    /// The card's next ``record(answer:progress:)`` overwrites the row, found by its card
+    /// id; a row whose card id itself is damaged stays, left out of every load.
     public func loadProgress() throws(ProgressStoreError) -> [CardProgress] {
         let records: [CardProgressRecord]
         do {
@@ -42,12 +46,14 @@ public actor SwiftDataProgressStore: ProgressStore {
         } catch {
             throw Self.storageFailure(error, during: "loadProgress")
         }
-        do throws(ProgressStoreError) {
-            return try records.map { record throws(ProgressStoreError) in try record.progress() }
-        } catch {
-            AppLog.persistence.error("loadProgress found a progress row it cannot read back")
-            throw error
+        let progress = records.compactMap { try? $0.progress() }
+        let skipped = records.count - progress.count
+        if skipped > 0 {
+            AppLog.persistence.error(
+                "loadProgress left out \(skipped, privacy: .public) progress rows it cannot read back",
+            )
         }
+        return progress
     }
 
     /// Stages the card's new progress — an update of its row, or a new row — and the
