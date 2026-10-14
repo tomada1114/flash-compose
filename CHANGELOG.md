@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial project scaffold from [ios-template](https://github.com/tomada1114/ios-template)
 - The design lock's colors (ink accent, `Action`, `Good`, `OnGood`, `GoodEdge`,
   `InkSecondary`) and the "FC" placeholder app icon (Any, Dark, Tinted)
+- Japanese beside English: on an iPhone set to Japanese every label is Japanese
 
 ### Changed
 
