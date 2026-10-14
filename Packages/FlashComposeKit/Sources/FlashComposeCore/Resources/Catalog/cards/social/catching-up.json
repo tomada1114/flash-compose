@@ -1,0 +1,836 @@
+[
+  {
+    "id": "c_2e5g3x9f",
+    "ja": "弟が転職するって言ってたよ。",
+    "en": "My brother said he was changing jobs.",
+    "alternatives": [
+      "My brother told me he was changing jobs.",
+      "My brother said he was switching jobs."
+    ],
+    "point": "said の後は時制を一つ過去にずらす（is→was）",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_2h5s9c3s",
+    "ja": "引っ越すことにしたんだ。",
+    "en": "I decided to move.",
+    "alternatives": ["I've decided to move.", "I decided to move out."],
+    "point": "「〜することにした」は decide to do",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_2h7n3d9e",
+    "ja": "また連絡してね。",
+    "en": "Keep in touch.",
+    "alternatives": ["Stay in touch.", "Let's keep in touch."],
+    "point": "「連絡を取り合う」は keep in touch",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_2j3e5p9m",
+    "ja": "最近、何にハマってるの？",
+    "en": "What are you into lately?",
+    "alternatives": [
+      "What have you been into lately?",
+      "What are you into these days?"
+    ],
+    "point": "「ハマってる」は be into ～",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_2s6s9d8k",
+    "ja": "忙しいけど、元気にやってるよ。",
+    "en": "Although I'm busy, I'm doing well.",
+    "alternatives": [
+      "Even though I'm busy, I'm doing fine.",
+      "I'm doing well, even though I'm busy."
+    ],
+    "point": "although の後ろも文の形。but とは重ねない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_2w3e5v8q",
+    "ja": "最近、ジムに全然行けてない。",
+    "en": "I haven't been to the gym lately.",
+    "alternatives": [
+      "I haven't gone to the gym at all lately.",
+      "I haven't made it to the gym lately."
+    ],
+    "point": "lately とは現在完了を使う",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_2y2e3x8g",
+    "ja": "私が独立してなければ今も周囲に従う。",
+    "en": "Without going independent, I'd still toe the line.",
+    "alternatives": [
+      "I'd still conform if I hadn't gone independent.",
+      "Without becoming independent, I'd still conform to others."
+    ],
+    "point": "独立しなかった過去の仮定と、今も周囲に従う結果を結ぶ。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_2y8z3f3f",
+    "ja": "君が慣れたら私が訪ねるよ。",
+    "en": "I'll visit once you've settled in.",
+    "alternatives": [
+      "I'll come by once you've settled in.",
+      "I'll visit after you've adjusted."
+    ],
+    "point": "settle in は新しい環境に慣れて落ち着く。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3b4w6e8y",
+    "ja": "残っていたら、今ごろ結婚してたかも。",
+    "en": "If I'd stayed, I might be married now.",
+    "alternatives": [
+      "If I had stayed, I might be married by now.",
+      "Had I stayed, I might be married now."
+    ],
+    "point": "過去の仮定 + 今の結果は if I'd + might be",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3c3a5v9c",
+    "ja": "また連絡してね。",
+    "en": "Keep in touch.",
+    "alternatives": ["Stay in touch.", "Keep in touch, okay?"],
+    "point": "「連絡を保つ」は keep in touch",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_3d4h7p7k",
+    "ja": "前に話してた仕事、決まったよ。",
+    "en": "The job I mentioned came through.",
+    "alternatives": [
+      "I got the job I mentioned.",
+      "I landed the job I told you about."
+    ],
+    "point": "come through は「うまく決まる」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_3g4v7q4z",
+    "ja": "近々、会わないとね。",
+    "en": "We should get together soon.",
+    "alternatives": ["We need to meet up soon.", "We have to get together soon."],
+    "point": "「会う」は get together / meet up",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3h4g4v3j",
+    "ja": "忙しくなきゃもっと電話するのに。",
+    "en": "If I weren't swamped, I'd call more.",
+    "alternatives": [
+      "I'd call more if I weren't swamped.",
+      "If I weren't busy, I'd call more."
+    ],
+    "point": "現在の仮定は were。swamped は忙殺されている",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_3j2b3n4g",
+    "ja": "彼女は私の平気なふりを見抜いたと言った。",
+    "en": "She said she'd seen through my calm facade.",
+    "alternatives": [
+      "She said she'd spotted my pretense of calm.",
+      "She said my calmness hadn't fooled her."
+    ],
+    "point": "seen through my calm facade は私の平気なふりを見抜いたことを表す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_3s2e2u3q",
+    "ja": "こんなに忙しいのは初めてだよ。",
+    "en": "Never have I been this busy.",
+    "alternatives": [
+      "I've never been this busy.",
+      "This is the busiest I've ever been."
+    ],
+    "point": "Never を文頭に出すと have I been の語順になる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_3s2e5q7q",
+    "ja": "今、何してるの？",
+    "en": "What are you doing?",
+    "alternatives": ["What are you up to?", "What are you doing now?"],
+    "point": "今していることは現在進行形で聞く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect", "wh-questions"]
+  },
+  {
+    "id": "c_3s9g7k7n",
+    "ja": "私は最近、人脈を作り直してる。",
+    "en": "I've been rebuilding my network lately.",
+    "alternatives": [
+      "I've been rebuilding my connections recently.",
+      "I've been reestablishing my contacts lately."
+    ],
+    "point": "rebuild my network は人とのつながりを築き直す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_3u2f6b6h",
+    "ja": "私、家を買ったよ。",
+    "en": "I bought a house.",
+    "alternatives": ["I purchased a house.", "I bought my own house."],
+    "point": "bought は buy の過去形。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_3w3a9f2c",
+    "ja": "最近どうしてたか教えて。",
+    "en": "Tell me how you've been.",
+    "alternatives": ["Let me know how you've been.", "Tell me what you've been up to."],
+    "point": "how の後ろは疑問文の語順にしない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_3z6j8y6t",
+    "ja": "私が面子に固執しなければ謝れたのに。",
+    "en": "Had I swallowed my pride, I could've apologized.",
+    "alternatives": [
+      "If I'd swallowed my pride, I could've said sorry.",
+      "I could've apologized had I set my pride aside."
+    ],
+    "point": "swallow my pride は面子を捨てて行動する。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_3z7h8h6w",
+    "ja": "私が辛かったのは努力を無視されたことだ。",
+    "en": "What stung was having my efforts brushed aside.",
+    "alternatives": [
+      "It was the dismissal of my efforts that hurt.",
+      "What hurt was having my hard work disregarded."
+    ],
+    "point": "what stung で心に刺さった出来事を際立たせる。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4f2m9b6u",
+    "ja": "私が選べるなら過去を水に流すのに。",
+    "en": "Were it my call, I'd let bygones be bygones.",
+    "alternatives": [
+      "If I could choose, I'd leave the past behind.",
+      "If it were my choice, I'd forget past grievances."
+    ],
+    "point": "let bygones be bygones は過去のわだかまりを水に流す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_4j9z2s7j",
+    "ja": "母は私に引き継ぎを頼んだ。",
+    "en": "Mom asked me to take over.",
+    "alternatives": ["Mom asked me to assume control.", "Mom asked me to take charge."],
+    "point": "take over は責任や仕事を引き継ぐ。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"]
+  },
+  {
+    "id": "c_4m3d7c8s",
+    "ja": "どうやって成し遂げたのか教えてよ。",
+    "en": "Tell me how you pulled it off.",
+    "alternatives": [
+      "I'm curious how you pulled it off.",
+      "I want to know how you pulled it off."
+    ],
+    "point": "how の後ろは平叙の語順(you pulled)",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_4m6j7e3z",
+    "ja": "母は私に言いたくないことを認めさせた。",
+    "en": "Mom made me admit what I'd rather conceal.",
+    "alternatives": [
+      "Mom made me admit something I'd rather hide.",
+      "Mom forced an admission I'd rather have avoided."
+    ],
+    "point": "would rather leave unsaid は口にせずにおきたいという含み。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["causatives", "nested-clauses"]
+  },
+  {
+    "id": "c_4r3t5g8p",
+    "ja": "私は異動で脇に追いやられた。",
+    "en": "I was sidelined by the transfer.",
+    "alternatives": [
+      "The transfer pushed me to the sidelines.",
+      "I was marginalized through the transfer."
+    ],
+    "point": "sidelined は中心的な仕事や役割から外される。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_4r8a7h2c",
+    "ja": "私は親切に見せた干渉を見抜けばな。",
+    "en": "I wish I'd recognized that kindness as meddling.",
+    "alternatives": [
+      "I wish I'd seen that kindness was really meddling.",
+      "If only I'd realized that kindness was unwanted interference."
+    ],
+    "point": "meddling は親切に見せても望まれていない干渉を指す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_4s6h2z5n",
+    "ja": "その頃は大変だったでしょうね。",
+    "en": "That must have been hard back then.",
+    "alternatives": [
+      "It must have been tough back then.",
+      "Things must have been hard back then."
+    ],
+    "point": "過去の推量は must have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_4t9u4h8v",
+    "ja": "君、少し痩せた気がするんだけど。",
+    "en": "You seem to have lost some weight.",
+    "alternatives": [
+      "You look like you've lost some weight.",
+      "I feel like you've lost a little weight."
+    ],
+    "point": "seem to で断定を避けて柔らかく伝える",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_4x8k4w6c",
+    "ja": "私は今話せるよ。",
+    "en": "I can talk now.",
+    "alternatives": ["I can chat now.", "I'm free to talk now."],
+    "point": "can で今話せる状況を伝える。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4y2z8a2u",
+    "ja": "今、猫を飼ってるよ。",
+    "en": "I have a cat.",
+    "alternatives": ["I've got a cat.", "I have a pet cat."],
+    "point": "数えられる名詞には a を付ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_5b2j7v6x",
+    "ja": "最近、仕事はどう？",
+    "en": "How's work these days?",
+    "alternatives": ["How's work going?", "How is work lately?"],
+    "point": "調子を聞くときは How で始める",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_5e6n8j7r",
+    "ja": "その頃には私は就職してた。",
+    "en": "I'd landed a job by then.",
+    "alternatives": ["I'd found a job by then.", "I'd secured a job by that point."],
+    "point": "land a job は仕事を得る。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_5f8a4s9t",
+    "ja": "私の成功は君には受け入れ難かったかも。",
+    "en": "My success might've been a bitter pill for you.",
+    "alternatives": [
+      "You may have struggled to accept my success.",
+      "You might've found my success hard to swallow."
+    ],
+    "point": "a bitter pill は受け入れるのが苦しい出来事。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_5h9z5m4r",
+    "ja": "私、犬を飼うよ。",
+    "en": "I'll get a dog.",
+    "alternatives": ["I'm going to get a dog.", "I'm getting a dog."],
+    "point": "will でこれからの予定を話す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_5k8q4w7q",
+    "ja": "燃え尽きて、のんびりやってる。",
+    "en": "Burned out, I'm taking it easy.",
+    "alternatives": [
+      "Having burned out, I'm taking it easy.",
+      "Having burned out, I've been relaxing lately."
+    ],
+    "point": "Having + 過去分詞で先に起きた理由を示す",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5m7q4c8y",
+    "ja": "今は10キロ走れるんだ。",
+    "en": "I can run 10K now.",
+    "alternatives": ["I can run 10 kilometers now.", "These days I can run 10K."],
+    "point": "今できることは can",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_5n4f6m3x",
+    "ja": "今はここに住んでる。",
+    "en": "I live here now.",
+    "alternatives": ["I'm living here now.", "Now I live here."],
+    "point": "住んでいる状態は現在形 live",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5t9y5x7z",
+    "ja": "私の転職は手放しで成功とは言えない。",
+    "en": "I can't call my job change an unqualified success.",
+    "alternatives": [
+      "My job change wasn't a complete success.",
+      "Calling my job change wholly successful would be misleading."
+    ],
+    "point": "unqualified success は留保のない全面的な成功。転職は job change。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_5u5c2m7x",
+    "ja": "驚いたのは、彼女が辞めてたこと。",
+    "en": "What floored me was that she'd quit.",
+    "alternatives": [
+      "What surprised me was that she'd quit.",
+      "What shocked me was that she'd quit."
+    ],
+    "point": "What ～ was that で強調。floor は仰天させる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_5w2j4y6h",
+    "ja": "私はまだ峠を越えたとは言えない。",
+    "en": "I wouldn't say I'm out of the woods.",
+    "alternatives": [
+      "I wouldn't say I'm in the clear.",
+      "I can't say my troubles are over."
+    ],
+    "point": "out of the woods は危険や問題を脱した状態。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_5z3b7r7r",
+    "ja": "残ってたら、今ごろ課長だよ。",
+    "en": "If I'd stayed, I'd be manager now.",
+    "alternatives": [
+      "I'd be manager now if I'd stayed.",
+      "If I'd stayed on, I'd be manager by now."
+    ],
+    "point": "過去の条件は had + 過去分詞、今の結果は would + 原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_6d7k2v4g",
+    "ja": "新しい子犬がいるよ。",
+    "en": "There's a new puppy.",
+    "alternatives": ["We have a new puppy.", "I have a new puppy."],
+    "point": "There's の後の名詞が新情報。a を忘れない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6f6s3u9h",
+    "ja": "あの旅行がなければ燃え尽きてた。",
+    "en": "Without that trip, I'd have burned out.",
+    "alternatives": [
+      "I'd have burned out without that trip.",
+      "But for that trip, I'd have burned out."
+    ],
+    "point": "「〜がなければ」の過去の話は would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_6f8z5v8j",
+    "ja": "最後に会ったの、去年の夏？",
+    "en": "Haven't seen you since last summer?",
+    "alternatives": [
+      "We haven't met since last summer, right?",
+      "Was the last time last summer?",
+      "Last time we met was last summer, right?"
+    ],
+    "point": "since で起点を言うなら現在完了",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_6h6m9d9n",
+    "ja": "京都にいる弟は、元気だよ。",
+    "en": "My brother in Kyoto is fine.",
+    "alternatives": [
+      "My brother in Kyoto is doing well.",
+      "My brother who's in Kyoto is doing fine."
+    ],
+    "point": "名詞の後ろに in Kyoto を置いて説明する",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_6k6e6z4e",
+    "ja": "音沙汰なくて、最悪を覚悟してた。",
+    "en": "Hearing nothing, I feared the worst.",
+    "alternatives": [
+      "Not hearing from you, I feared the worst.",
+      "When I heard nothing, I feared the worst."
+    ],
+    "point": "否定の分詞構文は Not hearing",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_6p7n2v3q",
+    "ja": "子どもに振り回されっぱなしだよ。",
+    "en": "The kids have me running around nonstop.",
+    "alternatives": [
+      "My kids have me running around all the time.",
+      "The kids keep me running around nonstop."
+    ],
+    "point": "have + 人 + -ing で「〜させられている」感じ",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_6q8z7n2p",
+    "ja": "ちょっと聞いてもいい？",
+    "en": "Can I ask you something?",
+    "alternatives": ["Could I ask you something?", "Can I ask you a question?"],
+    "point": "許可は Can I ～? で軽く聞ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_7f8s7c6b",
+    "ja": "まさか君がベルリンに落ち着くとはね。",
+    "en": "Who'd have thought you'd end up in Berlin?",
+    "alternatives": [
+      "Who would have imagined you'd end up in Berlin?",
+      "Who'd have guessed you'd end up in Berlin?"
+    ],
+    "point": "Who'd have thought 〜? は「誰が思っただろう」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_7j7q4p3h",
+    "ja": "私たちは早く仲直りすればよかった。",
+    "en": "I wish we'd buried the hatchet sooner.",
+    "alternatives": [
+      "I wish we'd made peace sooner.",
+      "If only we'd settled our differences sooner."
+    ],
+    "point": "bury the hatchet はけんかを終わりにして仲直りすること。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_7m5r8g3d",
+    "ja": "昇進したの君だって噂だよ。",
+    "en": "Word is you're the one who got promoted.",
+    "alternatives": [
+      "Word has it you're the one who got promoted.",
+      "I hear you're the one who got promoted."
+    ],
+    "point": "Word is 〜 は「噂では」。that は省ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_7p7w7p5w",
+    "ja": "傍目には成功でも私は達成感が薄い。",
+    "en": "Though seemingly successful, I feel little fulfillment.",
+    "alternatives": [
+      "Though I seem successful, I feel scarcely fulfilled.",
+      "I feel little satisfaction despite appearing successful."
+    ],
+    "point": "fulfillment は自分の生き方や達成に満足する感覚。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7v9p5a2q",
+    "ja": "私は今歩いてる。",
+    "en": "I'm walking now.",
+    "alternatives": ["I'm walking right now.", "I'm walking at the moment."],
+    "point": "今進んでいる動作は am + walking。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_7y5x7k6w",
+    "ja": "新しい友達が数人いる。",
+    "en": "I've got new friends.",
+    "alternatives": ["I have new friends.", "I've made some new friends."],
+    "point": "複数の友達には friends を使う。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_8a9b4g2x",
+    "ja": "前よりずっと元気そうだね。",
+    "en": "You look much better than before.",
+    "alternatives": [
+      "You look way better than last time.",
+      "You look a lot better than before."
+    ],
+    "point": "比較を強めるのは much / a lot / way",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_8z8e6g7g",
+    "ja": "私が耐えた失望は今は距離感になった。",
+    "en": "The disillusionment I endured has since become detachment.",
+    "alternatives": [
+      "The disappointment I lived through has become emotional distance.",
+      "My earlier disillusionment has now turned into detachment."
+    ],
+    "point": "disillusionment は理想が崩れた失望、detachment は心の距離。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["relative-clauses", "tense-contrast"]
+  },
+  {
+    "id": "c_9b2a9x6d",
+    "ja": "何か変わったことある？",
+    "en": "Is there anything new with you?",
+    "alternatives": [
+      "Has anything new happened lately?",
+      "Is anything new going on with you?"
+    ],
+    "point": "疑問文の「何か」は anything",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_9c6z7z3w",
+    "ja": "元気でよかった。",
+    "en": "I'm glad you're doing well.",
+    "alternatives": [
+      "I'm happy you're doing well.",
+      "It's good to hear you're doing well."
+    ],
+    "point": "glad の後ろの that は省略できる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_9h2g3d4j",
+    "ja": "写真を見てもいい？",
+    "en": "Can I see photos?",
+    "alternatives": ["Could I look at the photos?", "Can you show me the photos?"],
+    "point": "Can I で許可を求める。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9h6p5b8a",
+    "ja": "誘ってくれていれば、行ったのに。",
+    "en": "If you'd invited me, I'd have gone.",
+    "alternatives": [
+      "I'd have gone if you'd invited me.",
+      "Had you invited me, I would have gone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、結果は would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_9j6c2b8j",
+    "ja": "会社のそばの店、閉店したよ。",
+    "en": "The shop by my office closed.",
+    "alternatives": [
+      "The store near my office closed down.",
+      "The place near my office has closed."
+    ],
+    "point": "名詞のすぐ後ろに前置詞句で場所を足す",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_9r7k4t6s",
+    "ja": "最近ジョギングを始めた。",
+    "en": "I started jogging recently.",
+    "alternatives": ["I recently started jogging.", "I've taken up jogging lately."],
+    "point": "start のあとは ～ing でも to でもよい",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_9u8j3a8w",
+    "ja": "私は最近、家を探してる。",
+    "en": "I've been house hunting lately.",
+    "alternatives": [
+      "I've been looking for a home lately.",
+      "I've been searching for a house recently."
+    ],
+    "point": "have been hunting で最近続けている家探し。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"]
+  }
+]

@@ -1,0 +1,673 @@
+[
+  {
+    "id": "c_2d8s2s4u",
+    "ja": "私もちょっと騒音に閉口してます。",
+    "en": "I'm slightly put out by the noise too.",
+    "alternatives": [
+      "The noise is bothering me a little too.",
+      "I find the noise a little irritating too."
+    ],
+    "point": "put out はここでは軽い不満や迷惑を表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_2k9z9r3x",
+    "ja": "清掃係にシーツを替えてもらった。",
+    "en": "I got housekeeping to change the sheets.",
+    "alternatives": [
+      "I had housekeeping change the sheets.",
+      "I had the sheets changed by housekeeping."
+    ],
+    "point": "get + 人 + to do / have + 人 + 動詞で依頼の結果",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_2r9t2s7p",
+    "ja": "私は駐車料を確認しとけばな。",
+    "en": "I wish I'd checked parking fees.",
+    "alternatives": [
+      "I wish I'd checked the parking charges.",
+      "If only I'd asked about parking charges."
+    ],
+    "point": "wish + 過去完了で、料金を確認しなかったことを悔やむ。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2t5j8k9c",
+    "ja": "私の朝食はまだ届かない。",
+    "en": "My breakfast hasn't arrived yet.",
+    "alternatives": [
+      "My breakfast hasn't come yet.",
+      "I haven't received my breakfast yet."
+    ],
+    "point": "否定の現在完了に yet を添える。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_2z5q8b2j",
+    "ja": "高いとはいえ、この眺めなら納得です。",
+    "en": "Pricey as it is, the view justifies it.",
+    "alternatives": [
+      "Even though it's pricey, the view is worth it.",
+      "Expensive though it is, the view is worth it."
+    ],
+    "point": "形容詞 + as it is で「〜ではあるが」",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_3b5p3u9w",
+    "ja": "朝食の時間を教えてもらえますか？",
+    "en": "Could you tell me when breakfast starts?",
+    "alternatives": [
+      "Do you know what time breakfast starts?",
+      "Could you tell me what time breakfast is?"
+    ],
+    "point": "間接疑問は when breakfast starts と平叙文の語順",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_3g2s6n4y",
+    "ja": "私は追加料金を払わないよ。",
+    "en": "I won't cough up extra fees.",
+    "alternatives": ["I'm not paying extra fees.", "I refuse to pay extra charges."],
+    "point": "cough up は渋々お金を出す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["future-forms", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3h2d5m8w",
+    "ja": "宿が私たちに二重請求したかも。",
+    "en": "The hotel might have double-billed us.",
+    "alternatives": [
+      "The hotel may have charged us twice.",
+      "We may have been double-billed by the hotel."
+    ],
+    "point": "double-bill は同じ料金を二重に請求する。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_3p8d7c2j",
+    "ja": "もっと静かなら、昨夜眠れたのに。",
+    "en": "If it were quieter, I'd have slept.",
+    "alternatives": [
+      "If it were quieter, I'd have slept last night.",
+      "I'd have slept if it were quieter."
+    ],
+    "point": "今の状態 were と過去の結果 would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3w8g7b8x",
+    "ja": "違う鍵をもらったに違いない。",
+    "en": "I must've gotten the wrong key.",
+    "alternatives": [
+      "I must have been given the wrong key.",
+      "They must have given me the wrong key."
+    ],
+    "point": "過去の確信は must have done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_3w8r8a6w",
+    "ja": "Wi-Fi使える？",
+    "en": "Can I use Wi-Fi?",
+    "alternatives": [
+      "Is Wi-Fi available?",
+      "Can I connect to Wi-Fi?",
+      "Do you have Wi-Fi?"
+    ],
+    "point": "「〜できますか」は Can I 〜?",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4a2m5q5e",
+    "ja": "入るとエアコンの故障に気づいた。",
+    "en": "Walking in, I noticed the broken AC.",
+    "alternatives": [
+      "Entering the room, I noticed the AC was broken.",
+      "As I walked in, I noticed the broken AC."
+    ],
+    "point": "Walking in, で同時の動作を分詞構文にする",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_4d2c8c3g",
+    "ja": "予約したのは禁煙室でした。",
+    "en": "The room I booked was non-smoking.",
+    "alternatives": [
+      "I booked a non-smoking room.",
+      "What I booked was a non-smoking room.",
+      "The one I reserved was non-smoking."
+    ],
+    "point": "room の後ろに I booked を直接つなぐ",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_4j3u3k7x",
+    "ja": "私は鍵をなくした。",
+    "en": "I lost my key.",
+    "alternatives": ["My key went missing.", "I misplaced my key."],
+    "point": "lost は lose の過去形。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_4s9j3w4z",
+    "ja": "宿は私たちを自力で対処させた。",
+    "en": "The hotel made us fend for ourselves.",
+    "alternatives": [
+      "The hotel made us manage without help.",
+      "The hotel left us to manage without help."
+    ],
+    "point": "fend for ourselves は助けなしに自力で対処する。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_4t5c9h2j",
+    "ja": "隣の部屋がうるさいです。",
+    "en": "The next room is noisy.",
+    "alternatives": ["It's noisy next door.", "The room next door is loud."],
+    "point": "「隣の部屋」は the next room か next door",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_4z6x9x8m",
+    "ja": "隣の部屋の騒音がひどいんです。",
+    "en": "The noise from next door is awful.",
+    "alternatives": [
+      "The noise coming from next door is terrible.",
+      "The noise from the next room is awful."
+    ],
+    "point": "from next door を名詞の後ろに置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_4z7j8v9f",
+    "ja": "今日は掃除は結構です。",
+    "en": "Please skip cleaning today.",
+    "alternatives": ["Please don't clean my room today.", "No cleaning today, thanks."],
+    "point": "「しないで」は Don't か skip で言える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_5a6m7t9s",
+    "ja": "部屋が思ったより狭い。",
+    "en": "The room's smaller than I expected.",
+    "alternatives": [
+      "This room is smaller than I thought.",
+      "The room is smaller than I'd expected."
+    ],
+    "point": "than の後は I expected で十分（it は不要）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5f2n7g8d",
+    "ja": "私の到着前に宿は埋まってた。",
+    "en": "It'd filled up before I arrived.",
+    "alternatives": [
+      "The hotel had filled up before I arrived.",
+      "It'd become fully booked before I arrived."
+    ],
+    "point": "had filled up は到着より前に満室になったこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"]
+  },
+  {
+    "id": "c_5j9b9r8g",
+    "ja": "タオル数枚ください。",
+    "en": "Some towels, please.",
+    "alternatives": ["Can I have some towels?", "I need some towels."],
+    "point": "数が決まらない複数は some towels",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_5m2u5n6k",
+    "ja": "昨日、予約を変更しました。",
+    "en": "I changed my reservation yesterday.",
+    "alternatives": [
+      "I modified my reservation yesterday.",
+      "I changed my booking yesterday."
+    ],
+    "point": "yesterday があるので過去形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_5m4v2q7n",
+    "ja": "部屋が綺麗なら私は大金も払うのに。",
+    "en": "Were the room clean, I'd pay through the nose.",
+    "alternatives": [
+      "If the room were clean, I'd pay a fortune.",
+      "I'd pay big money if the room were clean."
+    ],
+    "point": "pay through the nose は法外な大金を払うこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["second-conditional", "inversion"]
+  },
+  {
+    "id": "c_5t5d8z8m",
+    "ja": "私は苦情を正式に申し立てたい。",
+    "en": "I'd like to file a complaint.",
+    "alternatives": [
+      "I'd like to lodge a complaint.",
+      "I'd like to make an official complaint."
+    ],
+    "point": "file a complaint は正式に苦情を申し立てる。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5w3s6g4p",
+    "ja": "私は食い違う案内を整理してる。",
+    "en": "I'm reconciling conflicting directions.",
+    "alternatives": [
+      "I'm sorting out conflicting directions.",
+      "I'm resolving inconsistencies in the directions."
+    ],
+    "point": "reconcile は食い違う案内を整理して一致させる。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5x6y2k5u",
+    "ja": "エアコン昨日から壊れてる。",
+    "en": "The AC's been broken since yesterday.",
+    "alternatives": [
+      "The AC hasn't worked since yesterday.",
+      "The AC has been out since yesterday."
+    ],
+    "point": "since と継続は現在完了",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_5y5b5b6e",
+    "ja": "予約した部屋と、ずいぶん違いますね。",
+    "en": "It's a far cry from what we booked.",
+    "alternatives": [
+      "This room is nothing like what we booked.",
+      "This is not at all what we booked."
+    ],
+    "point": "a far cry from = 大違い。what 節が前置詞の目的語",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_5y6r5r9j",
+    "ja": "天井から水が漏れています。",
+    "en": "Water's leaking from the ceiling.",
+    "alternatives": ["The ceiling is leaking.", "Water is coming from the ceiling."],
+    "point": "今起きている最中は進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6c3c8q4g",
+    "ja": "少し待ってもらえますか？",
+    "en": "Do you mind waiting?",
+    "alternatives": ["Would you mind waiting a moment?", "Could you wait a moment?"],
+    "point": "mind の後ろは -ing 形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["gerunds", "requests-permission"]
+  },
+  {
+    "id": "c_6e6k3j3y",
+    "ja": "こんなに狭い部屋は、見たことがない。",
+    "en": "Never have I seen such a tiny room.",
+    "alternatives": [
+      "I've never seen such a tiny room.",
+      "I've never seen a room this small."
+    ],
+    "point": "Never を前に出すと助動詞が主語の前に来る",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_6h6g5p7p",
+    "ja": "この部屋は禁煙ですか？",
+    "en": "Is this room nonsmoking?",
+    "alternatives": ["Is this a no-smoking room?", "Is this room smoke-free?"],
+    "point": "「禁煙の」は nonsmoking か no-smoking",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6j6b9a9t",
+    "ja": "私は今払わなきゃ。",
+    "en": "I must pay now.",
+    "alternatives": ["I have to pay now.", "I need to pay now."],
+    "point": "must で支払いの必要を表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_6j6p4a6p",
+    "ja": "遅く着いたので、夕食を逃した。",
+    "en": "Arriving late, I missed dinner.",
+    "alternatives": [
+      "Since I arrived late, I missed dinner.",
+      "I arrived late, so I missed dinner."
+    ],
+    "point": "分詞構文の主語は主節と同じ。Arriving で理由を示す",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_6m2j8y6a",
+    "ja": "立地はいいが、部屋が古びている。",
+    "en": "Although it's well located, the room's dated.",
+    "alternatives": [
+      "The location's great, though the room's dated.",
+      "Although the location is great, the room is run-down."
+    ],
+    "point": "Although 節は but を重ねず、1文に収める",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_6p2e8b9x",
+    "ja": "私の予約は勝手に取り消された。",
+    "en": "My reservation was canceled without permission.",
+    "alternatives": [
+      "My booking was canceled without my consent.",
+      "They canceled my reservation without asking me."
+    ],
+    "point": "without authorization は許可なく。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_7g6j8h2g",
+    "ja": "遅れるようなら、連絡します。",
+    "en": "I'll call if I'm running late.",
+    "alternatives": [
+      "I'll let you know if I'm late.",
+      "If I'm running late, I'll call you.",
+      "I'll give you a call if I'm delayed."
+    ],
+    "point": "if 節は未来のことでも現在形（I'm）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_7g8s4v3r",
+    "ja": "朝食は無料ですか？",
+    "en": "Is breakfast free?",
+    "alternatives": ["Is breakfast included?", "Is the breakfast free?"],
+    "point": "無料は free。食事名に冠詞は付けない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_7n8e6t5h",
+    "ja": "ここに虫がいます。",
+    "en": "There's a bug here.",
+    "alternatives": ["There's an insect here.", "We have a bug here."],
+    "point": "虫が一匹いるなら there is a bug。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7t6t7r8j",
+    "ja": "隣が一晩中うるさいんです。",
+    "en": "Next door's been noisy all night.",
+    "alternatives": [
+      "The neighbors have been noisy all night.",
+      "It's been noisy next door all night."
+    ],
+    "point": "「一晩中ずっと」は現在完了進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8b6t2x7k",
+    "ja": "予約していれば、泊まれたのに。",
+    "en": "If I'd booked, I could've stayed.",
+    "alternatives": [
+      "If I had booked, I could have stayed.",
+      "I could've stayed if I'd booked."
+    ],
+    "point": "過去の仮定は had done と could have done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_8b8m8c9q",
+    "ja": "ドライヤーください。",
+    "en": "A hair dryer, please.",
+    "alternatives": ["Could I get a hair dryer?", "I'd like a hair dryer."],
+    "point": "数えられる単数の物には a を付ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_8n6u4n2q",
+    "ja": "フロントは朝食を無料にすると言った。",
+    "en": "The front desk said they'd comp my breakfast.",
+    "alternatives": [
+      "They said breakfast would be on the house.",
+      "They said they'd give me breakfast on the house.",
+      "The front desk told me they'd comp my breakfast."
+    ],
+    "point": "「無料にする」は comp。said に合わせ will は would",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_8r6v7v8z",
+    "ja": "朝食は何時からですか？",
+    "en": "What time does breakfast start?",
+    "alternatives": ["What time is breakfast served?", "When does breakfast start?"],
+    "point": "「何時」は What time で始める",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_8y2p2q3j",
+    "ja": "窓を開けてもいいですか？",
+    "en": "May I open the window?",
+    "alternatives": ["Can I open the window?", "Could I open the window?"],
+    "point": "許可を求めるなら May I 〜?",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9h2a6c9k",
+    "ja": "金庫を使うといいですよ。",
+    "en": "You should use the safe.",
+    "alternatives": ["You'd better use the safe.", "Using the safe is a good idea."],
+    "point": "「〜するといい」は should",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9h4m6j3u",
+    "ja": "問題は、お湯が出ないことなんです。",
+    "en": "It's the hot water that isn't working.",
+    "alternatives": [
+      "What's not working is the hot water.",
+      "What's wrong is that the hot water isn't working."
+    ],
+    "point": "問題の的を絞るなら It's ～ that の形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_9n3f5u5z",
+    "ja": "私は預けた荷物を受け取ってない。",
+    "en": "I haven't retrieved the bags I left.",
+    "alternatives": [
+      "I haven't gotten my bags back yet.",
+      "I haven't collected the bags I left."
+    ],
+    "point": "預けた動作は過去形、未返却は現在完了で表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["tense-contrast", "relative-clauses"]
+  },
+  {
+    "id": "c_9p5q8y8k",
+    "ja": "もっと静かな宿がよかった。",
+    "en": "I wish I'd chosen somewhere quieter.",
+    "alternatives": [
+      "I should have picked a quieter hotel.",
+      "If only I'd chosen a quieter hotel.",
+      "I wish I'd chosen a quieter place."
+    ],
+    "point": "過去の後悔は wish + had done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["wishes-regrets", "comparatives-superlatives"]
+  },
+  {
+    "id": "c_9r4x3w5q",
+    "ja": "ホテル側は券で私をあしらった。",
+    "en": "The hotel fobbed me off with a voucher.",
+    "alternatives": [
+      "The hotel brushed me off with a voucher.",
+      "The hotel offered a voucher to dismiss me."
+    ],
+    "point": "fob someone off は適当な対応で相手をあしらうこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_9t7f8g3x",
+    "ja": "もう一泊したいのですが。",
+    "en": "I'd like to stay another night.",
+    "alternatives": [
+      "I'd like to stay one more night.",
+      "Could I stay one more night?"
+    ],
+    "point": "I'd like to + 動詞で丁寧に希望を伝える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_9x9f4x4c",
+    "ja": "私は係員に来てほしい。",
+    "en": "I want an attendant to come.",
+    "alternatives": ["I'd like an attendant to come.", "I want an attendant here."],
+    "point": "want + 人 + to come で係員に来てほしいと伝える。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  }
+]

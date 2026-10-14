@@ -1,0 +1,561 @@
+[
+  {
+    "id": "c_2e8h8u6f",
+    "ja": "もう一日あればいいのに。",
+    "en": "I wish I had another day.",
+    "alternatives": ["I wish I had one more day.", "If only I had another day."],
+    "point": "今の願望は wish + 過去形。had にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2f5h9h6s",
+    "ja": "移行は順調に進めてきました。",
+    "en": "I've made good progress on the migration.",
+    "alternatives": [
+      "I've made solid progress on the migration.",
+      "I've made a lot of headway on the migration."
+    ],
+    "point": "progress は数えない名詞。a progress は不可",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["articles-and-countability", "present-perfect"]
+  },
+  {
+    "id": "c_2k3p3b6m",
+    "ja": "彼は我々の業務削減が必要と言った。",
+    "en": "He said we needed to trim scope.",
+    "alternatives": [
+      "He said we had to reduce the scope.",
+      "He said we needed to scale back the work."
+    ],
+    "point": "trim scope は取り組む範囲を絞る。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_2p2c9s8q",
+    "ja": "私は今日、変更を戻すよ。",
+    "en": "I'll roll back the changes today.",
+    "alternatives": ["I'll undo the changes today.", "I'll revert the changes today."],
+    "point": "roll back は変更を以前の状態に戻す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"]
+  },
+  {
+    "id": "c_3j8v3k2p",
+    "ja": "今日はブロッカー一つある。",
+    "en": "There's one blocker today.",
+    "alternatives": ["I've got one blocker today.", "I have one blocker today."],
+    "point": "「〜がある」は There is + 単数",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_3p8a9p4w",
+    "ja": "相談してたら我々は今迷わないのに。",
+    "en": "Had we sought advice, we'd have clarity.",
+    "alternatives": [
+      "If we'd sought advice, we'd have clarity now.",
+      "We'd have clarity had we sought advice."
+    ],
+    "point": "clarity は曖昧さが消え、見通しがつくこと。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_3r3j5t5x",
+    "ja": "PR はサムに見てもらう。",
+    "en": "I'll have Sam review my PR.",
+    "alternatives": ["I'll get Sam to review my PR.", "I'm having Sam review my PR."],
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_3v7b3r4b",
+    "ja": "今日は、ほぼ会議で潰れました。",
+    "en": "Meetings ate up most of my day.",
+    "alternatives": [
+      "Most of my day went on meetings.",
+      "I lost most of the day to meetings."
+    ],
+    "point": "meetings は複数で無冠詞。ate up で時間を奪う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_3z6b2g3y",
+    "ja": "私は仕様を確認しなきゃ。",
+    "en": "I need to check specs.",
+    "alternatives": ["I have to verify the specifications.", "I must check the specs."],
+    "point": "check specs は仕様を確認する。specs は specifications の略。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_4m4r8a9h",
+    "ja": "バグの原因、まだつかめてません。",
+    "en": "I haven't found the cause yet.",
+    "alternatives": [
+      "I still haven't found the cause.",
+      "I still haven't figured out the cause."
+    ],
+    "point": "否定の現在完了は yet を文末に置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_4u7b5f5t",
+    "ja": "バグを直してるよ。",
+    "en": "I'm fixing a bug.",
+    "alternatives": ["I'm working on a bug.", "I'm fixing a bug now."],
+    "point": "今していることは be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_4x2c3y9b",
+    "ja": "私、ケンを手伝える。",
+    "en": "I can help Ken.",
+    "alternatives": ["I can help Ken out.", "I'm able to help Ken."],
+    "point": "できるは can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4z4x9f4f",
+    "ja": "背景を、少し教えてほしいです。",
+    "en": "I could use a bit of context.",
+    "alternatives": ["I'd like a little context.", "Could I get some context?"],
+    "point": "context は数えない名詞。a bit of / some を使う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_5m3r2e5z",
+    "ja": "私の作業は予想より厄介。",
+    "en": "My task is trickier than expected.",
+    "alternatives": [
+      "My task is harder than anticipated.",
+      "My task is tougher than expected."
+    ],
+    "point": "trickier than expected は予想より扱いが難しい。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_5m5t9k5u",
+    "ja": "昨日テストを三つ足した。",
+    "en": "I added three tests yesterday.",
+    "alternatives": [
+      "I added three new tests yesterday.",
+      "Yesterday I added three tests."
+    ],
+    "point": "yesterday があれば過去形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_5w7g4s7j",
+    "ja": "今日ケンはリモート。",
+    "en": "Ken is remote today.",
+    "alternatives": ["Ken is working remotely today.", "Ken is working from home."],
+    "point": "三人称単数は is",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_6h2v7r4n",
+    "ja": "誰か、なぜ落ちるか分かる？",
+    "en": "Does anyone know why it's crashing?",
+    "alternatives": [
+      "Does anybody know why it keeps crashing?",
+      "Anyone know why it's failing?"
+    ],
+    "point": "間接疑問は why + 主語 + 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_6n2r3w2e",
+    "ja": "QA のせいで足止めされてる。",
+    "en": "We're being held up by QA.",
+    "alternatives": ["We're being held up because of QA.", "QA is holding us up."],
+    "point": "進行中の受動は being + 過去分詞 held up",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["passive-voice", "phrasal-verbs"]
+  },
+  {
+    "id": "c_6s5r8u6y",
+    "ja": "あと一日あれば、テストも終わるのに。",
+    "en": "If I had another day, I'd finish testing.",
+    "alternatives": [
+      "If I had one more day, I'd wrap up testing.",
+      "I'd finish testing if I had another day."
+    ],
+    "point": "現在の非現実は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_6s8r9m5z",
+    "ja": "詰まったら、聞くね。",
+    "en": "I'll ask if I get stuck.",
+    "alternatives": ["If I get stuck, I'll ask.", "I'll ask when I'm stuck."],
+    "point": "if 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_6t9g2u2d",
+    "ja": "今日ほしいのは、レビューだ。",
+    "en": "What I need today is a review.",
+    "alternatives": [
+      "A review is what I need today.",
+      "What I want today is a review."
+    ],
+    "point": "What 節が主語。be 動詞の後に名詞が来る",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_7a5f6t9u",
+    "ja": "ログインのバグを直した。",
+    "en": "I fixed a bug in login.",
+    "alternatives": ["I fixed a login bug.", "I fixed a bug in the login."],
+    "point": "「〜の」は前置詞句で後ろから足す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_7p5b9q4j",
+    "ja": "私は文書整理に集中してる。",
+    "en": "I'm focused on organizing documentation.",
+    "alternatives": [
+      "I'm concentrating on organizing the documents.",
+      "My focus is organizing the documentation."
+    ],
+    "point": "on の後の動作は organizing のように動名詞。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_7r9a5a8b",
+    "ja": "遅いけど、形になってきたよ。",
+    "en": "Slow as it is, it's coming together.",
+    "alternatives": [
+      "It's slow, but it's coming together.",
+      "Although it's slow going, it's coming together.",
+      "Slow though it is, it's taking shape."
+    ],
+    "point": "「形になる」は come together。Slow as it is で譲歩",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7s9k6v6s",
+    "ja": "もう移行を終わらせました。",
+    "en": "I've finished the migration.",
+    "alternatives": ["I've already finished the migration.", "The migration's done."],
+    "point": "「もう」の完了は現在完了",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_7s9x7j2s",
+    "ja": "知っていたら、手伝ったのに。",
+    "en": "If I'd known, I'd have helped.",
+    "alternatives": [
+      "If I had known, I would have helped.",
+      "Had I known, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、would have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_7w8w4h4r",
+    "ja": "我々が必要と決めつける修正に疑問だ。",
+    "en": "I question which fixes we assume are necessary.",
+    "alternatives": [
+      "I question the fixes we assume are needed.",
+      "I'm questioning which fixes we believe are necessary."
+    ],
+    "point": "which fixes we assume are necessary で我々が必要と思い込む修正を問う。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_7x4b3j2q",
+    "ja": "いつ見てもらえる？",
+    "en": "When can you review it?",
+    "alternatives": ["When could you review it?", "When can you look at it?"],
+    "point": "時は When で始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7z6k5a7u",
+    "ja": "レビュー待ちで進めません。",
+    "en": "Blocked on review, I can't proceed.",
+    "alternatives": [
+      "Waiting on review, I can't move on.",
+      "I'm stuck waiting on a review."
+    ],
+    "point": "分詞構文で理由を前に出す。主語は後ろと同じ",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7z7g9c9z",
+    "ja": "今朝、私の PR がマージされた。",
+    "en": "My PR was merged this morning.",
+    "alternatives": ["My PR got merged this morning.", "My PR went in this morning."],
+    "point": "された側が主役なら受動態 was merged",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_8j5a2t4d",
+    "ja": "今日は在宅でもいいですか？",
+    "en": "May I work from home today?",
+    "alternatives": ["Could I work from home today?", "Can I work from home today?"],
+    "point": "May I 〜? は丁寧な許可。from home に冠詞はいらない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_8p8u8b5v",
+    "ja": "あのバグ、引き続き調べます。",
+    "en": "I'll keep looking into that bug.",
+    "alternatives": [
+      "I'll continue looking into that bug.",
+      "I'll keep investigating that bug."
+    ],
+    "point": "look into は「調べる」。keep + 動名詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_8q6n9t7k",
+    "ja": "私は作業を終えなきゃ。",
+    "en": "I must finish this.",
+    "alternatives": ["I have to finish the work.", "I need to finish the task."],
+    "point": "must で作業を終える必要を示す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_8r3y5q5h",
+    "ja": "私はずっとレビュー待ち。",
+    "en": "I've been waiting for a review.",
+    "alternatives": [
+      "I've been waiting to be reviewed.",
+      "I've been waiting on a review."
+    ],
+    "point": "have been waiting はレビューを待ち続けていることを表す。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8t7c9k8a",
+    "ja": "私が嫌なのは対策に見せかけた忙しさだ。",
+    "en": "What bothers me is busyness masquerading as mitigation.",
+    "alternatives": [
+      "It's activity posing as mitigation that bothers me.",
+      "What troubles me is activity presented as a remedy."
+    ],
+    "point": "masquerading as は実態と違うものに見せかける。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_8u3s5f5t",
+    "ja": "ミアの PR を見てます。",
+    "en": "I'm reviewing Mia's PR.",
+    "alternatives": ["I'm looking at Mia's PR.", "I'm reviewing a PR from Mia."],
+    "point": "今の動作は be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["progressive-aspect", "be-and-present-simple"]
+  },
+  {
+    "id": "c_8v3k2q5c",
+    "ja": "今、何の作業中？",
+    "en": "What are you working on?",
+    "alternatives": ["What are you doing now?", "What are you up to?"],
+    "point": "「何の作業中？」は What are you working on? 前置詞 on は最後に残す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["wh-questions", "progressive-aspect"]
+  },
+  {
+    "id": "c_9d7k3n4m",
+    "ja": "私がもっと早く共有すべきだった。",
+    "en": "I should have flagged this sooner.",
+    "alternatives": [
+      "I should've raised this earlier.",
+      "I should have shared this sooner."
+    ],
+    "point": "should have + 過去分詞で過去の後悔",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_9e8d6w2f",
+    "ja": "今日中に終わるかは微妙ですね。",
+    "en": "I wouldn't bet on finishing today.",
+    "alternatives": [
+      "I wouldn't count on finishing today.",
+      "It's touch and go whether I'll finish today."
+    ],
+    "point": "「微妙」は would を使い断定を避ける",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_9h3j5t8e",
+    "ja": "デプロイしなきゃ。",
+    "en": "I have to deploy.",
+    "alternatives": ["I need to deploy.", "I've got to deploy."],
+    "point": "「しなきゃ」は have to",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9h3t2b9s",
+    "ja": "私が休んでもいい？",
+    "en": "May I take a break?",
+    "alternatives": ["Can I rest?", "Is taking a break okay?"],
+    "point": "May I で休憩の許可を求める。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9h9h4q3d",
+    "ja": "頼まれた修正が遅れた理由、話します。",
+    "en": "I'll explain why the fix you requested slipped.",
+    "alternatives": [
+      "Let me explain why the requested fix is late.",
+      "I'll explain why the fix you asked for is late."
+    ],
+    "point": "why 節の中に、さらに関係節が入る形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_9p9x4j8g",
+    "ja": "ケンに手伝ってほしい。",
+    "en": "I want Ken to help.",
+    "alternatives": ["I'd like Ken to help.", "I want Ken to help me."],
+    "point": "want + 人 + to 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_9t5r3v4k",
+    "ja": "詰まったら聞いてね。",
+    "en": "Ask if you're stuck.",
+    "alternatives": ["Ask me if you're stuck.", "If you're stuck, just ask."],
+    "point": "「〜したら」は if 節。命令文は動詞から始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_9v2a8u3g",
+    "ja": "私が直した不具合が再発した。",
+    "en": "The bug I fixed resurfaced.",
+    "alternatives": ["The bug I fixed returned.", "The issue I fixed came back."],
+    "point": "resurface は消えた問題が再び現れる。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["relative-clauses"]
+  }
+]

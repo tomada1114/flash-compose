@@ -1,0 +1,642 @@
+[
+  {
+    "id": "c_2e5j3g5m",
+    "ja": "金曜まで、彼女は返信しなかった。",
+    "en": "Not until Friday did she reply.",
+    "alternatives": ["Only on Friday did she reply.", "She didn't reply until Friday."],
+    "point": "Not until を前に出すと did she reply の倒置",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_2h8a9x5m",
+    "ja": "皆で決めた日が私は心配だ。",
+    "en": "The date everyone agreed on troubles me.",
+    "alternatives": [
+      "I'm troubled by the date everyone chose.",
+      "The agreed date worries me."
+    ],
+    "point": "agreed on で具体的な日について合意する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_2j8k6j3j",
+    "ja": "君の懸念で私は旅行を再考中。",
+    "en": "Your reservations have me second-guessing the trip.",
+    "alternatives": [
+      "Your doubts have me reconsidering the trip.",
+      "Your misgivings have me questioning the trip."
+    ],
+    "point": "reservation はここでは懸念、second-guess は判断を疑い直す。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_2s2f8f9b",
+    "ja": "まだ何も予定を立ててないよ。",
+    "en": "I haven't made any plans yet.",
+    "alternatives": [
+      "I haven't planned anything yet.",
+      "I still haven't made any plans."
+    ],
+    "point": "まだ〜ないは yet と現在完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_2y9u4h7j",
+    "ja": "約束してなきゃ、家にいるのに。",
+    "en": "If I hadn't promised, I'd be home.",
+    "alternatives": [
+      "If I hadn't made plans, I'd be home now.",
+      "I'd be home now if I hadn't promised."
+    ],
+    "point": "過去の仮定 had + 今の結果 would be",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_3c3w6z6v",
+    "ja": "雨が降ったら、中止だよ。",
+    "en": "If it rains, it's canceled.",
+    "alternatives": ["It's canceled if it rains.", "If it rains, we'll cancel."],
+    "point": "if 節は現在形。canceled は米式の綴り",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_3f4g3y2q",
+    "ja": "食事会、金曜になったよ。",
+    "en": "The dinner was moved to Friday.",
+    "alternatives": [
+      "The dinner has been moved to Friday.",
+      "The dinner got moved to Friday."
+    ],
+    "point": "変更された、は was moved",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_3h2u3x4x",
+    "ja": "直前のキャンセルでごめんね。",
+    "en": "Sorry to cancel at the last minute.",
+    "alternatives": [
+      "I'm sorry to cancel at the last minute.",
+      "Sorry to bail at the last minute."
+    ],
+    "point": "謝る理由は Sorry to + 動詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_3n5c8u3s",
+    "ja": "我々が断ってたら大失敗を免れてた。",
+    "en": "Had we declined, we'd have dodged disaster.",
+    "alternatives": [
+      "If we'd refused, we would've avoided disaster.",
+      "We'd have avoided disaster if we'd declined."
+    ],
+    "point": "Had we は過去の仮定、dodge disaster は惨事を免れる。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_3q7p6p8k",
+    "ja": "私は再会が楽しみ。",
+    "en": "I'm excited about our reunion.",
+    "alternatives": ["I look forward to our reunion.", "I'm eager for our reunion."],
+    "point": "look forward to の to の後には名詞や動名詞。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_3t9j6j6z",
+    "ja": "今週末はひまだよ。",
+    "en": "I'm free this weekend.",
+    "alternatives": ["I'm not busy this weekend.", "I'm available this weekend."],
+    "point": "「ひま」は free。this weekend に前置詞は不要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_3u8p2m9d",
+    "ja": "何時に集合しようか？",
+    "en": "What time should we meet?",
+    "alternatives": ["What time shall we meet?", "What time do you want to meet?"],
+    "point": "時刻は What time で始める",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_3v9m8q7k",
+    "ja": "来週のほうが都合がいいよ。",
+    "en": "Next week works better.",
+    "alternatives": ["Next week works better for me.", "Next week is better for me."],
+    "point": "「〜のほうが」は比較級 better",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_4a9b5q8q",
+    "ja": "その日は忙しいんだ。",
+    "en": "I'm busy that day.",
+    "alternatives": ["I'm booked that day.", "I'm tied up that day."],
+    "point": "that day に前置詞は不要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_4b3w7z9h",
+    "ja": "土曜日に来てね。",
+    "en": "Come on Saturday.",
+    "alternatives": ["Come over Saturday.", "Please come on Saturday."],
+    "point": "曜日の前は on。命令文は動詞から",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_4m7t6v2c",
+    "ja": "映画を見に行こう。",
+    "en": "Let's see a movie.",
+    "alternatives": ["Let's go see a movie.", "Let's go to a movie."],
+    "point": "誘うときは Let's + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"]
+  },
+  {
+    "id": "c_4q6f5x4a",
+    "ja": "彼女、来られるといいな。",
+    "en": "I hope she can come.",
+    "alternatives": ["I hope she can make it.", "I hope she'll be able to come."],
+    "point": "hope の後ろの that は省ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["noun-clauses", "can-could-ability"]
+  },
+  {
+    "id": "c_4q8n8r6b",
+    "ja": "彼女は予定を見て誘いを断った。",
+    "en": "Checking her calendar, she declined.",
+    "alternatives": [
+      "She checked her calendar and declined.",
+      "After checking her calendar, she declined."
+    ],
+    "point": "先にした動作は -ing で文頭に置ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_4w4f2d8t",
+    "ja": "私が時間を決めるよ。",
+    "en": "I'll choose the time.",
+    "alternatives": ["I'll pick the time.", "I'll decide on a time."],
+    "point": "will はその場で引き受ける意思にも使う。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_4x9h7w9g",
+    "ja": "早く言ってくれればよかったのに。",
+    "en": "You could have told me sooner.",
+    "alternatives": [
+      "You should have told me sooner.",
+      "You might have told me sooner."
+    ],
+    "point": "「〜できたのに」は could have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_5c7x4y2q",
+    "ja": "私は予定の中止を考えてる。",
+    "en": "I'm considering scrapping our plans.",
+    "alternatives": [
+      "I'm thinking about abandoning our plans.",
+      "I'm considering calling off our plans."
+    ],
+    "point": "scrap は計画を取りやめて白紙に戻す。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_5h8n9h6b",
+    "ja": "私は家族と予定を調整する。",
+    "en": "I'll coordinate plans with my family.",
+    "alternatives": [
+      "I'll work out plans with my family.",
+      "I'll arrange plans with my family."
+    ],
+    "point": "coordinate は複数人の予定を調整する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_5n2y2p4f",
+    "ja": "彼はいつも私たちを待たせる。",
+    "en": "He always makes us wait.",
+    "alternatives": ["He always keeps us waiting.", "He's always making us wait."],
+    "point": "make + 人 + 原形で「〜させる」",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5r4p6y7r",
+    "ja": "彼女が条件を変え続ける理由分かる？",
+    "en": "Know why she keeps moving the goalposts?",
+    "alternatives": [
+      "Do you know why she keeps changing the conditions?",
+      "Any idea why she continually changes the requirements?"
+    ],
+    "point": "move the goalposts は途中で条件を変える。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_5s3a8d8e",
+    "ja": "行けないなら教えてね。",
+    "en": "Tell me if you can't.",
+    "alternatives": ["Let me know if you can't.", "Please tell me if you can't."],
+    "point": "if 節の中は現在形。can't のあとは省略できる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["imperatives", "time-and-if-clauses"]
+  },
+  {
+    "id": "c_6g3b4s4c",
+    "ja": "土曜は行けないんだ。",
+    "en": "I can't make it Saturday.",
+    "alternatives": ["I can't come on Saturday.", "I can't go on Saturday."],
+    "point": "予定に「行ける」は can make it でも言える",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_6h6v3t3h",
+    "ja": "友達が予定を変えたんだ。",
+    "en": "My friend changed plans.",
+    "alternatives": ["My friend changed the plan.", "A friend of mine changed plans."],
+    "point": "change plans は複数形。特定の予定なら the plan",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6m2m3r9n",
+    "ja": "私に都合がいいのは金曜だよ。",
+    "en": "It's Friday that works best for me.",
+    "alternatives": [
+      "Friday is the day that works best for me.",
+      "It's Friday that suits me best."
+    ],
+    "point": "It's 〜 that 節で「金曜こそ」を強調",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_6m3h6j8q",
+    "ja": "私、空気を読んでおけばよかった。",
+    "en": "I wish I'd read the room.",
+    "alternatives": [
+      "I wish I'd picked up on everyone's mood.",
+      "If only I'd sensed how everyone felt."
+    ],
+    "point": "read the room は場の雰囲気や相手の気持ちを察する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_6n9p4b3x",
+    "ja": "その時はもう皆帰っていた。",
+    "en": "Everyone had left by then.",
+    "alternatives": [
+      "Everyone had already gone by then.",
+      "Everyone had gone home by then."
+    ],
+    "point": "過去より前のことは had ＋ 過去分詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_6x7m7g3p",
+    "ja": "旅行を計画したんだ。",
+    "en": "I planned a trip.",
+    "alternatives": ["I planned a vacation.", "I organized a trip."],
+    "point": "過去の出来事は動詞を過去形に",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6y8k7n9j",
+    "ja": "彼女は誰が水を差すか知らないかも。",
+    "en": "I doubt she knows who's playing spoilsport.",
+    "alternatives": [
+      "I'm not sure she knows who is spoiling things.",
+      "She may not know who is ruining the fun."
+    ],
+    "point": "spoilsport は人の楽しみに水を差す人。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_7b9v5s8r",
+    "ja": "駅前のカフェでいいよ。",
+    "en": "The café by the station works.",
+    "alternatives": [
+      "The café near the station is fine.",
+      "The café by the station is okay."
+    ],
+    "point": "名詞の後ろに前置詞句を置いて説明する",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_7d3h3y3n",
+    "ja": "病気しなかったら、今ごろ行けたのに。",
+    "en": "If I hadn't gotten sick, I'd be there now.",
+    "alternatives": [
+      "If I hadn't fallen ill, I'd be there now.",
+      "If I hadn't been sick, I'd be there now."
+    ],
+    "point": "過去の仮定 had + 今の結果 would be",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_7d5x2r4v",
+    "ja": "彼女は金曜は望み薄だと言った。",
+    "en": "She said Friday was a long shot.",
+    "alternatives": [
+      "She said Friday was unlikely to work.",
+      "She said Friday had little chance of working."
+    ],
+    "point": "a long shot は実現する見込みが低いこと。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_7k5b8d3a",
+    "ja": "時間があれば、行くのに。",
+    "en": "If I had time, I'd go.",
+    "alternatives": ["I'd go if I had time.", "If I had the time, I would go."],
+    "point": "現実と違う仮定は If + 過去形、would",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_7m8m4s4r",
+    "ja": "日程がかち合ってる。",
+    "en": "There's a scheduling clash.",
+    "alternatives": ["The schedules clash.", "The schedules conflict."],
+    "point": "a scheduling clash は日程が重なること。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_7t7r9d5q",
+    "ja": "うちは空いた週末などめったにない。",
+    "en": "Rarely do we get a free weekend.",
+    "alternatives": [
+      "Seldom do we have a free weekend.",
+      "We rarely get a free weekend."
+    ],
+    "point": "Rarely を前に出すと do we get の倒置",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_7v9f8u5n",
+    "ja": "私は代替の予定を残したい。",
+    "en": "I want to keep a fallback.",
+    "alternatives": [
+      "I'd like to keep a backup plan.",
+      "I want to retain an alternative plan."
+    ],
+    "point": "fallback は予定が無理なときに使える代案。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_7w6t8z5w",
+    "ja": "その約束、金曜に延期できる？",
+    "en": "Can we push it back to Friday?",
+    "alternatives": [
+      "Can we put it off until Friday?",
+      "Could we reschedule for Friday?"
+    ],
+    "point": "「延期する」は push back / put off",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_7y7s8k9x",
+    "ja": "私は最後通告を誘いと呼びかねる。",
+    "en": "I'd hesitate to call ultimatums invitations.",
+    "alternatives": [
+      "I'd be reluctant to call ultimatums invitations.",
+      "I'd balk at calling ultimatums invitations."
+    ],
+    "point": "hesitate to で断定を控える、ultimatum は最後通告。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_7y8z3z4j",
+    "ja": "表向き任意でもこの外出は強制に感じる。",
+    "en": "Though ostensibly optional, this outing feels coercive.",
+    "alternatives": [
+      "Though supposedly optional, this outing feels forced.",
+      "Despite being nominally optional, this outing feels coercive."
+    ],
+    "point": "ostensibly は表向きには、coercive は強制的な。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_8b4x4e3m",
+    "ja": "私は皆の週末の予定を詰めてる。",
+    "en": "I'm sorting out our weekend plans.",
+    "alternatives": [
+      "I'm finalizing our weekend plans.",
+      "I'm working out our weekend plans."
+    ],
+    "point": "sort out は予定を整理して決める。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["progressive-aspect", "phrasal-verbs"]
+  },
+  {
+    "id": "c_8d2a5e4k",
+    "ja": "もう彼には行けないと伝えたよ。",
+    "en": "I've already told him I can't come.",
+    "alternatives": [
+      "I've already let him know I can't come.",
+      "I already told him I can't make it."
+    ],
+    "point": "「もう〜した」は現在完了 + already",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["tense-contrast", "noun-clauses"]
+  },
+  {
+    "id": "c_8g5r8f5b",
+    "ja": "私は君に決めてほしい。",
+    "en": "I want you to decide.",
+    "alternatives": ["I'd like you to decide.", "I want you to choose."],
+    "point": "want + 人 + to で相手にしてほしいことを言う。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_8j7v4v6p",
+    "ja": "急かされ私は日取りを確定した。",
+    "en": "Pressed, I nailed down a date.",
+    "alternatives": [
+      "Under pressure, I finalized a date.",
+      "Feeling rushed, I fixed a date."
+    ],
+    "point": "nail down は日取りを曖昧なままにせず確定する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_8q8p2b7z",
+    "ja": "彼女は旅行をずっと決めかねてる。",
+    "en": "She's been vacillating over the trip.",
+    "alternatives": [
+      "She's been wavering about the trip.",
+      "She's been unable to decide about the trip."
+    ],
+    "point": "vacillate は決められず気持ちが揺れ動く。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_8x2v6k8x",
+    "ja": "私たち、決めなきゃ。",
+    "en": "We have to decide.",
+    "alternatives": ["We need to decide.", "We must decide."],
+    "point": "「〜しなきゃ」は have to",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_9p7g7r8v",
+    "ja": "我々は金曜を仮予定にしていい？",
+    "en": "Could we pencil in Friday?",
+    "alternatives": [
+      "Can we tentatively schedule Friday?",
+      "Can we put Friday down provisionally?"
+    ],
+    "point": "pencil in は変更の余地を残して予定に入れる。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["requests-permission", "phrasal-verbs"]
+  },
+  {
+    "id": "c_9v9n5a7e",
+    "ja": "話してた旅行、なくなったよ。",
+    "en": "The trip we discussed fell through.",
+    "alternatives": [
+      "The trip we talked about fell through.",
+      "The trip we were talking about fell through."
+    ],
+    "point": "that を省いた関係詞節で名詞を修飾",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["relative-clauses"]
+  }
+]

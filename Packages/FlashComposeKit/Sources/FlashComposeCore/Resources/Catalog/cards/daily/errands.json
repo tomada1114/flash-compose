@@ -1,0 +1,667 @@
+[
+  {
+    "id": "c_2a5s4e7f",
+    "ja": "この窓口は月曜休みです。",
+    "en": "This counter is closed Mondays.",
+    "alternatives": [
+      "This counter is closed on Mondays.",
+      "This window is closed on Mondays."
+    ],
+    "point": "曜日の習慣は複数形 Mondays で言える",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_2d4w3w6q",
+    "ja": "数日かかるかもしれません。",
+    "en": "It may take a few days.",
+    "alternatives": ["It might take a few days.", "It could take a couple of days."],
+    "point": "見込みは may / could でやわらげる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_2f5x4q3f",
+    "ja": "私が腹立つのは彼らの後出しの条件変更だ。",
+    "en": "What rankles me is how they moved the goalposts.",
+    "alternatives": [
+      "What annoys me is their changing the rules afterward.",
+      "I'm irritated that they changed the requirements after the fact."
+    ],
+    "point": "move the goalposts は途中で条件や基準を変える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["noun-clauses", "nested-clauses"]
+  },
+  {
+    "id": "c_2j2w6m7c",
+    "ja": "窓口の人が、郵送でいいと言ってた。",
+    "en": "The clerk said mailing it would be fine.",
+    "alternatives": [
+      "The clerk said mailing it would be okay.",
+      "The clerk told me mailing it would be fine."
+    ],
+    "point": "said の後は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_2n5f2k9b",
+    "ja": "私に何の書類が要る？",
+    "en": "What documents do I need?",
+    "alternatives": ["Which papers do I need?", "What documents must I provide?"],
+    "point": "What documents do I need は自分に必要な書類を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_2u4c8r7x",
+    "ja": "私は彼らが書面の約束を守るか疑ってる。",
+    "en": "I doubt they'll honor what's down in writing.",
+    "alternatives": [
+      "I doubt they'll stand by their written promise.",
+      "I doubt they'll honor what they promised in writing."
+    ],
+    "point": "honor は約束を正式に履行するという意味。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_2u7y7j6h",
+    "ja": "昨日来てれば、もう済んでたのに。",
+    "en": "If I'd come yesterday, I'd be done.",
+    "alternatives": [
+      "If I'd come yesterday, I'd be done by now.",
+      "Had I come yesterday, I'd be done now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done と would be",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_2x3w9b6r",
+    "ja": "これに記入してください。",
+    "en": "Please fill this out.",
+    "alternatives": ["Please fill this in.", "Fill this out, please."],
+    "point": "「記入する」は fill out / fill in",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_2y5w6n7a",
+    "ja": "銀行カードをなくしました。",
+    "en": "I've lost my bank card.",
+    "alternatives": ["I've lost my debit card.", "I seem to have lost my bank card."],
+    "point": "今も困っている過去の出来事は現在完了",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_2y7s6s5d",
+    "ja": "書類がそろったら、また来ます。",
+    "en": "I'll return once I have them.",
+    "alternatives": [
+      "I'll come back once I have the documents.",
+      "Once I have them, I'll be back."
+    ],
+    "point": "once の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_2z8q3h2r",
+    "ja": "私、煩雑な手続きを甘く見たかも。",
+    "en": "I might've underestimated the red tape.",
+    "alternatives": [
+      "I may have misjudged the bureaucratic hurdles.",
+      "I might've underestimated the paperwork involved."
+    ],
+    "point": "red tape は煩雑な手続き。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_3a9p9b4x",
+    "ja": "私は郵便を転送できる。",
+    "en": "I can forward my mail.",
+    "alternatives": ["I can have my mail forwarded.", "I'm able to forward my mail."],
+    "point": "forward my mail は郵便を別の住所へ転送する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3d2w6x4x",
+    "ja": "身分証が必要です。",
+    "en": "You'll need an ID.",
+    "alternatives": ["You need an ID.", "You have to bring an ID."],
+    "point": "ID は母音で始まる発音なので an ID",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["articles-and-countability", "modal-obligation-advice"]
+  },
+  {
+    "id": "c_3d3q6g9e",
+    "ja": "土曜に受け取れますか？",
+    "en": "Can I pick it up Saturday?",
+    "alternatives": ["Could I pick it up Saturday?", "Can I get it on Saturday?"],
+    "point": "「受け取る」は pick up",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_3e4p3g9a",
+    "ja": "知ってたら、身分証を持ってきたのに。",
+    "en": "Had I known, I'd have brought ID.",
+    "alternatives": [
+      "If I'd known, I'd have brought ID.",
+      "If I had known, I would have brought ID."
+    ],
+    "point": "If を省いて Had I known と倒置できる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_3n6b6v4k",
+    "ja": "お待ちの方は番号札をどうぞ。",
+    "en": "Anyone waiting can take a number.",
+    "alternatives": [
+      "If you're waiting, take a number.",
+      "Please take a number if you're waiting."
+    ],
+    "point": "waiting を後ろから Anyone に付ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_3t2y4t9p",
+    "ja": "私は申込書を書き直した。",
+    "en": "I filled out the form again.",
+    "alternatives": ["I completed the form a second time.", "I redid the form."],
+    "point": "fill out は書類の空欄を記入する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_4a3h4t5w",
+    "ja": "手間取ったのは本人確認だった。",
+    "en": "What took so long was the ID check.",
+    "alternatives": [
+      "It was the ID check that took so long.",
+      "The ID check was what took the longest."
+    ],
+    "point": "What 〜 is で「〜なのは、だ」と強調",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4d9f7a4k",
+    "ja": "今日は列がないね。",
+    "en": "There's no line today.",
+    "alternatives": ["There isn't a line today.", "There's no wait today."],
+    "point": "「〜がない」は There's no + 名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_4e5y6r2k",
+    "ja": "これ、送ってもらえます？",
+    "en": "Could you send this?",
+    "alternatives": ["Can you send this?", "Would you send this for me?"],
+    "point": "丁寧な依頼は Could you 〜?",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4j5e6a7w",
+    "ja": "ここに判を押してくれる？",
+    "en": "Could you stamp here?",
+    "alternatives": ["Could you put your stamp here?", "Would you stamp right here?"],
+    "point": "stamp は判を押すという動詞でも使う。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_4r2a9z2s",
+    "ja": "今、列に並んでるよ。",
+    "en": "I'm standing in line now.",
+    "alternatives": ["I'm waiting in line right now.", "I'm in line right now."],
+    "point": "「並ぶ」は stand in line",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_4v5c9y4m",
+    "ja": "ペンが二本ある。",
+    "en": "There are two pens.",
+    "alternatives": ["We have two pens.", "Two pens are here."],
+    "point": "two の後は pens と複数形。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_5a9p7a8p",
+    "ja": "私は書類を揃えている。",
+    "en": "I'm gathering the documents.",
+    "alternatives": [
+      "I'm putting the documents together.",
+      "I'm assembling the paperwork."
+    ],
+    "point": "gather は必要なものを集める。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_5k3b4d9b",
+    "ja": "パスポート更新しなきゃ。",
+    "en": "I need to renew my passport.",
+    "alternatives": ["I have to renew my passport.", "My passport needs renewing."],
+    "point": "必要なことは need to + 動詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5m9m9z3c",
+    "ja": "明日、荷物を受け取る予定です。",
+    "en": "I'm picking up the package tomorrow.",
+    "alternatives": [
+      "I'm going to pick up the package tomorrow.",
+      "I'm collecting the package tomorrow."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_5r6n8a9j",
+    "ja": "慣例でも私はこの手数料に反対だ。",
+    "en": "Despite convention, I take issue with this fee.",
+    "alternatives": [
+      "Despite the custom, I object to this fee.",
+      "Despite convention, I object to this fee."
+    ],
+    "point": "take issue with は問題があるとして異議を唱える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_5x9f6k3u",
+    "ja": "頼んで、延滞料を免除してもらった。",
+    "en": "I got them to waive the late fee.",
+    "alternatives": [
+      "I had them waive the late fee.",
+      "I managed to get the late fee waived."
+    ],
+    "point": "get + 人 + to do で「頼んでしてもらう」",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_5x9v6x2q",
+    "ja": "荷物は明日届けられます。",
+    "en": "It'll be delivered tomorrow.",
+    "alternatives": [
+      "The package will be delivered tomorrow.",
+      "They'll deliver it tomorrow."
+    ],
+    "point": "「届けられる」は will be + 過去分詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_6d4m5b2j",
+    "ja": "私は住所を変更した。",
+    "en": "I changed my address.",
+    "alternatives": ["I updated my address.", "I made an address change."],
+    "point": "changed は住所を変更したという過去形。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6e6a6k6n",
+    "ja": "これ、どの窓口かご存じですか？",
+    "en": "Do you know which window handles this?",
+    "alternatives": [
+      "Could you tell me which window handles this?",
+      "Any idea which window handles this?"
+    ],
+    "point": "間接疑問。which の後ろは平叙文の語順",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_7a9y9a5t",
+    "ja": "係員は異議はもう拒むと言い張った。",
+    "en": "The clerk insisted they'd reject further objections.",
+    "alternatives": [
+      "The clerk insisted they'd refuse further objections.",
+      "The clerk insisted they'd reject any further objections."
+    ],
+    "point": "insisted は異議を拒むと強く言い張ったことを伝える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_7e7v8x4g",
+    "ja": "手数料がかかっても、今日済ませたい。",
+    "en": "Even with a fee, I'd rather finish today.",
+    "alternatives": [
+      "Even if there's a fee, I want to finish today.",
+      "I'd rather get it done today, fee or not."
+    ],
+    "point": "Even if / Even with で譲歩を表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7f2c6m9v",
+    "ja": "何時に閉まる？",
+    "en": "When does it close?",
+    "alternatives": ["What time does it close?", "When's closing time?"],
+    "point": "when で閉まる時刻を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_7f4b2z3x",
+    "ja": "必要なのは、身分証明書ですね。",
+    "en": "What you need is an ID.",
+    "alternatives": ["What you need is some ID.", "What you'll need is ID."],
+    "point": "What で始めて「必要なのは〜」と言う",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_7r4k6y4p",
+    "ja": "私はずっと窓口でたらい回しだ。",
+    "en": "I've been getting the runaround.",
+    "alternatives": [
+      "They've been sending me from one counter to another.",
+      "I've been passed around between offices."
+    ],
+    "point": "get the runaround はまともに対応されずたらい回しに遭う。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_7u5x9p7q",
+    "ja": "署名を済ませて、列に並んだ。",
+    "en": "Having signed, I got in line.",
+    "alternatives": [
+      "After signing, I got in line.",
+      "Having signed it, I got in line."
+    ],
+    "point": "分詞構文 Having + 過去分詞は「済ませてから」",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_7w8s3y9b",
+    "ja": "役所が夜も開いてたら助かるのに。",
+    "en": "It'd help if they stayed open late.",
+    "alternatives": [
+      "It'd help if city hall stayed open late.",
+      "It'd be great if city hall were open late.",
+      "I wish city hall were open at night."
+    ],
+    "point": "現在の願望は if + 過去形、would help",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_8e3a2h6z",
+    "ja": "パスポートは更新済みだよ。",
+    "en": "I've already renewed my passport.",
+    "alternatives": [
+      "I already renewed my passport.",
+      "I've renewed my passport already."
+    ],
+    "point": "「もう」は already ＋ 現在完了",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_8f2m5w7d",
+    "ja": "列に並んでください。",
+    "en": "Please wait in line.",
+    "alternatives": ["Please line up.", "Please stand in line."],
+    "point": "「並ぶ」は wait in line。丁寧な命令は Please を付ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_8f4u2j5m",
+    "ja": "係員にここで待つよう頼まれた。",
+    "en": "They asked me to wait here.",
+    "alternatives": ["I was asked to wait here.", "They asked me to wait over here."],
+    "point": "ask 人 to do。asked me waiting は不可",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_8h2u4w5d",
+    "ja": "番号札を取ってね。",
+    "en": "Take a number, please.",
+    "alternatives": ["Please take a number.", "Please get a ticket."],
+    "point": "「番号札」は a number。数えられる名詞なので a が要る",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_8s9y7e9s",
+    "ja": "修理は金曜だと言われた。",
+    "en": "They said it'd be ready Friday.",
+    "alternatives": [
+      "They told me it'd be ready Friday.",
+      "I was told it'd be done Friday."
+    ],
+    "point": "言われた内容は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_8t7q4a8d",
+    "ja": "私はもう申請書を出した。",
+    "en": "I've already submitted the application.",
+    "alternatives": [
+      "I've already handed in the application.",
+      "I've already filed the application."
+    ],
+    "point": "submit は窓口などに正式に提出する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_8t8r2q7f",
+    "ja": "契約のごまかしを見抜けばよかった。",
+    "en": "I wish I'd seen through the contract's tricks.",
+    "alternatives": [
+      "I wish I'd spotted the contract's tricks.",
+      "If only I'd recognized the contract's trickery."
+    ],
+    "point": "see through は巧妙なごまかしの本質を見抜く。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_8y3w4m3q",
+    "ja": "ここに窓口があるよ。",
+    "en": "There's a counter here.",
+    "alternatives": ["There's a window here.", "There's a service desk here."],
+    "point": "「〜がある」は There's + a + 単数名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_9a7p6r2u",
+    "ja": "コートの修理をしてもらった。",
+    "en": "I had my coat repaired.",
+    "alternatives": ["I got my coat fixed.", "I had my coat mended."],
+    "point": "have + 物 + 過去分詞で「してもらう」",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_9c7a4z9k",
+    "ja": "並ぶのは苦手なんだ。",
+    "en": "I hate waiting in line.",
+    "alternatives": ["I can't stand waiting in line.", "I don't like waiting in line."],
+    "point": "hate の後は -ing。「〜するのが苦手」は hate + 動名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_9f8f3h6x",
+    "ja": "この封筒を開けて。",
+    "en": "Open this envelope.",
+    "alternatives": ["Open up this envelope.", "Get this envelope open."],
+    "point": "open の命令形で封筒を開けるよう頼む。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_9n2b4g2e",
+    "ja": "君が求めた書類は筋違いだ。",
+    "en": "The document you requested is beside the point.",
+    "alternatives": [
+      "The document you asked for is irrelevant.",
+      "That document you requested isn't relevant."
+    ],
+    "point": "beside the point は問題の本筋と関係がない。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_9n5q5t4e",
+    "ja": "私は口座を既に解約してた。",
+    "en": "I'd already closed the account.",
+    "alternatives": [
+      "I'd already shut down the account.",
+      "I'd already canceled the account."
+    ],
+    "point": "had already closed で過去の時点より前の完了。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_9p2s8f9t",
+    "ja": "こっちの配達が安い。",
+    "en": "This delivery is cheaper.",
+    "alternatives": ["This shipping option is cheaper.", "This delivery costs less."],
+    "point": "cheaper は料金がより安いこと。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_9s6p7r5u",
+    "ja": "銀行は閉まってるよ。",
+    "en": "The bank is closed.",
+    "alternatives": ["The bank isn't open.", "The bank is shut."],
+    "point": "「閉まっている」は状態なので is closed",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  }
+]

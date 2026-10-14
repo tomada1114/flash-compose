@@ -1,0 +1,642 @@
+[
+  {
+    "id": "c_2f3t7g5q",
+    "ja": "空席があるよ。",
+    "en": "There's an empty seat.",
+    "alternatives": ["One seat is free.", "A seat is available."],
+    "point": "an empty seat は空いている席。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_2h3v2r5e",
+    "ja": "追加の運賃がかかる。",
+    "en": "There's an extra fare.",
+    "alternatives": ["An extra fare applies.", "You pay an extra fare."],
+    "point": "an extra fare は追加の運賃。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_2n4h3y9f",
+    "ja": "私がタクシーを呼ぶよ。",
+    "en": "I'll call a taxi.",
+    "alternatives": ["I'm going to call a taxi.", "I'll get us a taxi."],
+    "point": "その場で決めた申し出は I'll 〜",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_2n4p6t6f",
+    "ja": "バスを待つのは嫌いです。",
+    "en": "I hate waiting for buses.",
+    "alternatives": ["I hate waiting for the bus.", "I can't stand waiting for buses."],
+    "point": "hate の後は -ing。待つは wait for",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_2u7n3m2d",
+    "ja": "私が疲れるのは、乗り換えの多さです。",
+    "en": "It's all the transfers that wear me out.",
+    "alternatives": [
+      "What wears me out is all the transfers.",
+      "The transfers are what wear me out."
+    ],
+    "point": "It's と that で挟んで強調。wear out はへとへとにする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_2y7v3z3c",
+    "ja": "乗り換えが私には難関だ。",
+    "en": "What stumps me is changing trains.",
+    "alternatives": [
+      "Changing trains is what confuses me.",
+      "What confuses me is switching trains."
+    ],
+    "point": "stump は困らせて分からなくさせる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_3j2h5n9z",
+    "ja": "電車は遅れた上に、運休になった。",
+    "en": "Not only was it late, it was canceled.",
+    "alternatives": [
+      "The train was not only late but also canceled.",
+      "On top of being late, it was canceled."
+    ],
+    "point": "Not only を前に出すと was が主語の前に来る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_3k7z9v8k",
+    "ja": "運転手は休んでいい？",
+    "en": "Can the driver rest?",
+    "alternatives": ["May the driver rest?", "Can the driver take a break?"],
+    "point": "Can はここでは休む許可を求める。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_3s3f8n8q",
+    "ja": "席にいてね。",
+    "en": "Stay in your seat.",
+    "alternatives": ["Remain in your seat.", "Don't leave your seat."],
+    "point": "stay はその場所にとどまる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_4d4d7u2a",
+    "ja": "切符を二枚ください。",
+    "en": "Two tickets, please.",
+    "alternatives": ["Can I have two tickets?", "I'd like two tickets, please."],
+    "point": "数字の後は複数形の tickets",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_4h5h5s9k",
+    "ja": "乗車にはカードが必要です。",
+    "en": "You need a card to board.",
+    "alternatives": [
+      "You need a card to ride.",
+      "A card is needed to board.",
+      "You can't board without a card."
+    ],
+    "point": "目的の to do「〜するために」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_4q8c8j9u",
+    "ja": "もう電車は出ていた。",
+    "en": "The train had already left.",
+    "alternatives": ["The train had left already.", "The train had already gone."],
+    "point": "到着より前に済んでいたことは過去完了",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_4v5h9u9k",
+    "ja": "電車が十分も止まってる。",
+    "en": "We've been stopped for ten minutes.",
+    "alternatives": [
+      "We've been stuck here for ten minutes.",
+      "The train's been stopped for ten minutes."
+    ],
+    "point": "「〜分も」続いている状態は現在完了進行形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_4z2z6e9j",
+    "ja": "私はもうカードに入金した。",
+    "en": "I've already topped up my card.",
+    "alternatives": [
+      "I've already reloaded my card.",
+      "I've already recharged my transit card."
+    ],
+    "point": "top up は残高を追加する。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect", "phrasal-verbs"]
+  },
+  {
+    "id": "c_5f9d2u3t",
+    "ja": "この時刻表は頼れない。",
+    "en": "This timetable isn't reliable.",
+    "alternatives": [
+      "You can't rely on this timetable.",
+      "This timetable isn't dependable."
+    ],
+    "point": "reliable は当てにできる、信頼できる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5g4x3w5w",
+    "ja": "往復を一枚ください。",
+    "en": "A round-trip ticket, please.",
+    "alternatives": ["One round-trip ticket, please.", "I'd like a round-trip ticket."],
+    "point": "一枚は a か one。往復は round-trip",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_5n4c7q3e",
+    "ja": "外を見ていれば、降りられたのに。",
+    "en": "If I'd looked, I'd have gotten off.",
+    "alternatives": [
+      "I'd have gotten off if I'd looked.",
+      "If I'd looked up, I'd have made my stop."
+    ],
+    "point": "if + had + 過去分詞, would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["third-conditional"]
+  },
+  {
+    "id": "c_5q3q2a6s",
+    "ja": "これは京都に行きますか？",
+    "en": "Does this go to Kyoto?",
+    "alternatives": ["Does this train go to Kyoto?", "Is this the train for Kyoto?"],
+    "point": "行き先は go to、疑問は Does で始める",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_5q8n8k3p",
+    "ja": "私たちはタクシーを避けるべき。",
+    "en": "We should steer clear of taxis.",
+    "alternatives": ["We ought to avoid taxis.", "We should keep away from taxis."],
+    "point": "steer clear of は関わらないよう避ける。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_5r5v8p9d",
+    "ja": "バスがいつ出るか、わかる？",
+    "en": "Do you know when it leaves?",
+    "alternatives": [
+      "Do you know when the bus leaves?",
+      "Can you tell me when it leaves?"
+    ],
+    "point": "間接疑問は when のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_5s3q6n5b",
+    "ja": "電車に乗り遅れました。",
+    "en": "I missed my train.",
+    "alternatives": ["I missed the train.", "I couldn't catch my train."],
+    "point": "乗り遅れるは miss。過去形は missed",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_5w8m2k5f",
+    "ja": "あの運転手、いつ出発か知ってるかな。",
+    "en": "I wonder if he knows when we're leaving.",
+    "alternatives": [
+      "I wonder whether the driver knows when we leave.",
+      "I wonder if the driver knows when we're leaving."
+    ],
+    "point": "wonder if の中に when 節が入る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_6b8m2k8k",
+    "ja": "駅はどこですか？",
+    "en": "Where is the station?",
+    "alternatives": ["Which way is the station?", "Which way to the station?"],
+    "point": "場所は Where is 〜? で聞く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_6m8c6u4h",
+    "ja": "私なら、もう電車には見切りをつけるよ。",
+    "en": "If I were you, I'd bail on the train.",
+    "alternatives": [
+      "If I were you, I'd ditch the train.",
+      "If I were you, I'd give up on it.",
+      "If I were you, I'd cut my losses now."
+    ],
+    "point": "「見切りをつける」は bail on / give up on",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_6n8j8x9z",
+    "ja": "私、彼女に乗り換えを頼んだ。",
+    "en": "I asked her to change trains.",
+    "alternatives": ["I asked her to switch trains.", "I requested she change trains."],
+    "point": "ask 人 to do は行動を頼む。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_6t5a7q5r",
+    "ja": "駅員は、この電車は運休と言った。",
+    "en": "The staff said this train was canceled.",
+    "alternatives": [
+      "A staff member said this train was canceled.",
+      "The attendant told me this train had been canceled."
+    ],
+    "point": "said の後は時制を一つ過去側にずらす",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_6v2u8q8x",
+    "ja": "市内に行くバスはどこ？",
+    "en": "Where's the bus that goes downtown?",
+    "alternatives": ["Where's the bus going downtown?", "Where's the bus to downtown?"],
+    "point": "「〜するバス」は the bus that + 動詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["relative-clauses"]
+  },
+  {
+    "id": "c_6w5s2p6m",
+    "ja": "昨日、電車が遅れました。",
+    "en": "The train was late yesterday.",
+    "alternatives": [
+      "The train ran late yesterday.",
+      "My train was delayed yesterday."
+    ],
+    "point": "「遅れた」は was late か ran late",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_6x5n4d4e",
+    "ja": "私が迷ってたら今も鉄道路線を検討中だ。",
+    "en": "Had I vacillated, I'd still be weighing rail routes.",
+    "alternatives": [
+      "If I'd wavered, I'd still be considering rail routes.",
+      "I'd still be weighing rail routes had I hesitated."
+    ],
+    "point": "過去の仮定で今の迷いを表す、vacillate は決めかねる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_6y4c9d7y",
+    "ja": "今必要なのは、タクシーです。",
+    "en": "What I need now is a taxi.",
+    "alternatives": [
+      "A taxi is what I need right now.",
+      "What I need right now is a cab."
+    ],
+    "point": "What I need is に続けて「必要なのは〜」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_7b2k5n5c",
+    "ja": "遅いものの、バスのほうが安い。",
+    "en": "Though slower, the bus is cheaper.",
+    "alternatives": [
+      "Although it's slower, the bus is cheaper.",
+      "The bus is cheaper, although it's slower.",
+      "The bus is slower, but cheaper."
+    ],
+    "point": "though は「〜だが」、but は不要",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["concession-contrast", "comparatives-superlatives"]
+  },
+  {
+    "id": "c_7s5a5q2b",
+    "ja": "急行の方が速いですか？",
+    "en": "Is the express faster?",
+    "alternatives": ["Is the express train quicker?", "Does the express go faster?"],
+    "point": "速い の比較級は faster。than は不要",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_7u5v4r3w",
+    "ja": "カードで払えますか？",
+    "en": "Can I pay by card?",
+    "alternatives": ["Can I use a card?", "Do you take cards?"],
+    "point": "支払い手段は by card で言う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_7x4u9h5t",
+    "ja": "終バス逃してタクシーで帰った。",
+    "en": "Having missed the last bus, I cabbed home.",
+    "alternatives": [
+      "Missing the last bus, I took a cab.",
+      "After missing the last bus, I cabbed."
+    ],
+    "point": "先に起きたことは having done で表す",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_8e2z4m3d",
+    "ja": "私の定期はもう失効した。",
+    "en": "My pass has already lapsed.",
+    "alternatives": ["My pass has already expired.", "My pass is no longer valid."],
+    "point": "has lapsed は失効して今も使えない状態。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_8f3u7z7u",
+    "ja": "バスが遅れたら、歩いて行きます。",
+    "en": "If the bus is late, I'll walk.",
+    "alternatives": [
+      "I'll walk if the bus is late.",
+      "If the bus runs late, I'll walk."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_8k9m2r5h",
+    "ja": "奈良行きのバスは満席です。",
+    "en": "The bus to Nara is full.",
+    "alternatives": [
+      "The Nara bus is full.",
+      "The bus heading to Nara is full.",
+      "The bus bound for Nara is fully booked."
+    ],
+    "point": "名詞の後ろに前置詞句 to Nara を置く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_8m3v3y7a",
+    "ja": "ここに座ってもかまいませんか？",
+    "en": "Mind if I sit here?",
+    "alternatives": [
+      "Do you mind if I sit here?",
+      "Is it okay if I sit here?",
+      "Would you mind if I sat here?"
+    ],
+    "point": "mind は「いい」なら No で答える",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_8t2v5g6t",
+    "ja": "バスはもう発車していた。",
+    "en": "The bus had already pulled away.",
+    "alternatives": [
+      "The bus had already departed.",
+      "The bus had already driven off."
+    ],
+    "point": "had pulled away はその時より前に発車したこと。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"]
+  },
+  {
+    "id": "c_8x3u4t6n",
+    "ja": "切符はすぐ出せるように。",
+    "en": "Keep your ticket handy.",
+    "alternatives": ["Have your ticket ready.", "Keep your ticket within reach."],
+    "point": "handy はすぐ使える場所にある。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_8x6k2d4w",
+    "ja": "私が信じた路線は一度も当てになってない。",
+    "en": "Never has the route I trusted proved reliable.",
+    "alternatives": [
+      "The route I trusted has never proved reliable.",
+      "The route I trusted has never been dependable."
+    ],
+    "point": "never を先頭に出すと has が主語より前に出る。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["relative-clauses", "inversion"]
+  },
+  {
+    "id": "c_8x7n5n6u",
+    "ja": "電車が来ています。",
+    "en": "The train is coming.",
+    "alternatives": ["Our train is coming.", "The train's arriving now."],
+    "point": "今近づいている最中は進行形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_8z6k2s8n",
+    "ja": "電車を間違えたかもしれません。",
+    "en": "I may have taken the wrong train.",
+    "alternatives": [
+      "I might've gotten on the wrong train.",
+      "I think I got on the wrong train."
+    ],
+    "point": "may have + 過去分詞で過去の推測をやわらげる",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["hedging-softening", "modal-perfect"]
+  },
+  {
+    "id": "c_9a4b8w8h",
+    "ja": "私が確認してれば立ち往生せず済んだ。",
+    "en": "Had I checked, I wouldn't have been stranded.",
+    "alternatives": [
+      "If I'd checked, I wouldn't have been stranded.",
+      "I wouldn't have been stranded if I'd checked."
+    ],
+    "point": "had I で過去の反実仮想を倒置して表す。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_9d3s9c7q",
+    "ja": "駅を乗り過ごしたかも。",
+    "en": "I might have missed my stop.",
+    "alternatives": [
+      "I may have missed my stop.",
+      "I could have missed my stop.",
+      "I think I missed my stop."
+    ],
+    "point": "過去の可能性は might have done",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_9k5n5q8c",
+    "ja": "終電に間に合えばよかった。",
+    "en": "I wish I'd caught the last train.",
+    "alternatives": [
+      "If only I'd caught the last train.",
+      "I wish I hadn't missed the last train."
+    ],
+    "point": "過去の後悔は wish + had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_9u6m2r3w",
+    "ja": "点検のため、運転見合わせ中です。",
+    "en": "Service is suspended pending an inspection.",
+    "alternatives": [
+      "Service has been suspended for an inspection.",
+      "Service has been halted pending an inspection."
+    ],
+    "point": "「運転見合わせ」は service is suspended",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_9u9k6g2c",
+    "ja": "バスが動いてる。",
+    "en": "The bus is moving.",
+    "alternatives": ["The bus is rolling.", "The bus is traveling."],
+    "point": "進行形でバスが今動いていると伝える。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_9v5k3a8y",
+    "ja": "運転手に待ってもらった。",
+    "en": "I got the driver to wait.",
+    "alternatives": ["I had the driver wait.", "I asked the driver to wait."],
+    "point": "get + 人 + to do、have + 人 + 原形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_9y4k3a7v",
+    "ja": "車掌は推測を確かな案内と偽った。",
+    "en": "The conductor palmed off conjecture as authoritative guidance.",
+    "alternatives": [
+      "The conductor passed off guesses as reliable guidance.",
+      "The conductor passed off conjecture as authoritative guidance."
+    ],
+    "point": "palm off は偽って渡す、conjecture は推測、authoritative は信頼できる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["phrasal-verbs"]
+  }
+]

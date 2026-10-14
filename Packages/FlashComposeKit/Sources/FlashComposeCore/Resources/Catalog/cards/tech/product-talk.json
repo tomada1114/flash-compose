@@ -1,0 +1,644 @@
+[
+  {
+    "id": "c_2b4x7g7u",
+    "ja": "うちの新機能を、ユーザーは知らないよ。",
+    "en": "Users have no idea what we've launched.",
+    "alternatives": [
+      "Users don't know what we've launched.",
+      "Users haven't a clue what we've launched.",
+      "Users have no clue what we've launched."
+    ],
+    "point": "「知らない」は have no idea で強める。what 節は肯定の語順",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["nested-clauses"]
+  },
+  {
+    "id": "c_2c8y3p5d",
+    "ja": "機能を少し減らそう。",
+    "en": "Let's cut some features.",
+    "alternatives": ["Let's trim a few features.", "Let's reduce the features a bit."],
+    "point": "「〜しよう」は Let's + 動詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_2e3c7y4r",
+    "ja": "我々が出すのは試作品です。",
+    "en": "What we're shipping is a prototype.",
+    "alternatives": [
+      "We're releasing a prototype.",
+      "Our upcoming release is a prototype."
+    ],
+    "point": "what 節で出すものをひとまとまりにする。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_2n4d8c7a",
+    "ja": "ユーザーに試すよう頼んで。",
+    "en": "Ask users to try it.",
+    "alternatives": ["Get users to try it.", "Ask users to test it."],
+    "point": "ask + 人 + to 動詞。命令文でも同じ形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"]
+  },
+  {
+    "id": "c_2n5y5v4b",
+    "ja": "我々は公開を遅らせるべき。",
+    "en": "We should delay the release.",
+    "alternatives": ["We should wait before releasing.", "We should hold the release."],
+    "point": "should で公開を急がず待つべきだと伝える。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_2r2h9b5a",
+    "ja": "この機能は、削るべきだった。",
+    "en": "We should have cut this feature.",
+    "alternatives": [
+      "We should've dropped this feature.",
+      "We should have removed this feature."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["modal-perfect"]
+  },
+  {
+    "id": "c_2r5u7f6w",
+    "ja": "これは優先度が少し低いかも。",
+    "en": "This might be a slightly lower priority.",
+    "alternatives": [
+      "This may be a bit lower priority.",
+      "I think this could be a slightly lower priority."
+    ],
+    "point": "might / slightly で断定をやわらげる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_2s6t8z9v",
+    "ja": "あの機能、早く切ればよかった。",
+    "en": "I wish we'd axed that feature sooner.",
+    "alternatives": [
+      "I wish we'd killed that feature earlier.",
+      "I wish we'd cut that feature sooner."
+    ],
+    "point": "「切る」は axe。過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["wishes-regrets"]
+  },
+  {
+    "id": "c_2x7s5m5n",
+    "ja": "その機能、いつ出るかわかる？",
+    "en": "Do you know when that feature ships?",
+    "alternatives": [
+      "Do you know when that feature is released?",
+      "Do you know when that feature will launch?"
+    ],
+    "point": "間接疑問は when + 主語 + 動詞の語順",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["indirect-questions"]
+  },
+  {
+    "id": "c_2z4y9x8d",
+    "ja": "私が決めるなら、それは廃止するね。",
+    "en": "If it were my call, I'd scrap it.",
+    "alternatives": ["If I decided, I'd scrap it.", "If I had the say, I'd scrap it."],
+    "point": "「私が決めるなら」は If it were up to me",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["second-conditional"]
+  },
+  {
+    "id": "c_3g9h4g4q",
+    "ja": "通知を減らすのはどうかな？",
+    "en": "How about reducing notifications?",
+    "alternatives": [
+      "What about reducing notifications?",
+      "Why not reduce notifications?"
+    ],
+    "point": "How about の後は -ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["gerunds"]
+  },
+  {
+    "id": "c_3h8d8b3d",
+    "ja": "このボタンの方が大きい。",
+    "en": "This button is bigger.",
+    "alternatives": ["This button's larger.", "This is the larger button."],
+    "point": "bigger でボタンのサイズを比較する。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_3k3d3t4u",
+    "ja": "もうリリースした？",
+    "en": "Have you released it yet?",
+    "alternatives": ["Have you shipped it yet?", "Have you already released it?"],
+    "point": "「もう〜した？」は Have you ～ yet?",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["present-perfect"]
+  },
+  {
+    "id": "c_3k6d4e4t",
+    "ja": "こっちのほうが安い。",
+    "en": "This one is cheaper.",
+    "alternatives": ["This one costs less.", "This one is less expensive."],
+    "point": "短い形容詞は cheaper のように er",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"]
+  },
+  {
+    "id": "c_3s8y7q7r",
+    "ja": "ユーザーが増えてるよ。",
+    "en": "Users are increasing.",
+    "alternatives": ["We're getting more users.", "The number of users is growing."],
+    "point": "変化の途中は進行形 are ～ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_3w6k4x7b",
+    "ja": "我々は利用者の感想が必要。",
+    "en": "We need user feedback.",
+    "alternatives": ["We need feedback from users.", "We need users' opinions."],
+    "point": "feedback は数えないので a をつけない。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_4f8e8j7m",
+    "ja": "不満なのは登録の流れだよ。",
+    "en": "It's the sign-up flow users complain about.",
+    "alternatives": [
+      "It's the sign-up flow that users dislike.",
+      "The sign-up flow is what users complain about."
+    ],
+    "point": "It is 〜 that 〜 で不満の対象を強調する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"]
+  },
+  {
+    "id": "c_4p8q5n7w",
+    "ja": "結局、誰向けの機能？",
+    "en": "Who is this feature actually for?",
+    "alternatives": [
+      "Who's this feature really for?",
+      "Who is this feature meant for?"
+    ],
+    "point": "前置詞 for は文末に残せる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["wh-questions"]
+  },
+  {
+    "id": "c_4t4a7m7t",
+    "ja": "オフラインでも使えるよ。",
+    "en": "You can use it offline.",
+    "alternatives": ["It works offline too.", "You can even use it offline."],
+    "point": "「できる」は can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_4v2k2d8j",
+    "ja": "公開後、利用者が倍増した。",
+    "en": "Users have doubled since launch.",
+    "alternatives": [
+      "Our user count has doubled since launch.",
+      "The number of users has doubled since launch.",
+      "Users doubled after the launch."
+    ],
+    "point": "since と結果の今への影響は現在完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["tense-contrast"]
+  },
+  {
+    "id": "c_4v8h4b4q",
+    "ja": "手軽でも登録は暗黙の強制に当たる。",
+    "en": "Though frictionless, sign-up amounts to tacit coercion.",
+    "alternatives": [
+      "Despite its ease, signing up involves implicit coercion.",
+      "Though easy, sign-up is effectively subtle coercion."
+    ],
+    "point": "tacit は暗黙の、coercion は強制。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_5h8a6d8f",
+    "ja": "先にユーザーに聞くべき。",
+    "en": "We should ask users first.",
+    "alternatives": ["We should ask the users first.", "We ought to ask users first."],
+    "point": "「〜すべき」は should + 動詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"]
+  },
+  {
+    "id": "c_5n5s5y8j",
+    "ja": "皆ずっとダークモードを求めてる。",
+    "en": "Everyone's been clamoring for dark mode.",
+    "alternatives": [
+      "Everyone's been begging for dark mode.",
+      "Everyone's been asking for dark mode for ages."
+    ],
+    "point": "「ずっと〜してる」は have been doing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"]
+  },
+  {
+    "id": "c_5u4m4z5z",
+    "ja": "彼女は注目と需要を混同するなと言った。",
+    "en": "She said not to conflate attention with demand.",
+    "alternatives": [
+      "She said not to confuse attention with demand.",
+      "She said not to mistake attention for demand."
+    ],
+    "point": "conflate A with B は別のものを混同する。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_5w6x5t3z",
+    "ja": "離脱防止のために作った。",
+    "en": "We built it to prevent churn.",
+    "alternatives": ["We made it to prevent churn.", "We built this to reduce churn."],
+    "point": "目的は to + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["infinitives"]
+  },
+  {
+    "id": "c_5x2p3c8p",
+    "ja": "資金難で私たちは新機能を見送る。",
+    "en": "Lacking funds, we're shelving extra features.",
+    "alternatives": [
+      "Short of funds, we're postponing extra features.",
+      "We're shelving extra features because money's tight."
+    ],
+    "point": "shelve は計画などの実行を見送ること。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["participle-clauses"]
+  },
+  {
+    "id": "c_5y2x7f3g",
+    "ja": "今回は見送ったほうが無難かも。",
+    "en": "We might be better off skipping it.",
+    "alternatives": [
+      "We may be better off skipping this one.",
+      "Maybe we should skip this one for now."
+    ],
+    "point": "might be better off で控えめに提案する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["hedging-softening"]
+  },
+  {
+    "id": "c_5y8b9r9q",
+    "ja": "私たちがケチってたら駄作を出してた。",
+    "en": "Had we skimped, we'd have shipped a dud.",
+    "alternatives": [
+      "If we'd skimped, we'd have shipped a dud.",
+      "We'd have released a dud if we'd cut corners."
+    ],
+    "point": "skimp は必要な手間や費用まで切り詰めること。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"]
+  },
+  {
+    "id": "c_6c4w6w4r",
+    "ja": "これでユーザーはうちに夢中になる。",
+    "en": "That'll get users hooked on us.",
+    "alternatives": [
+      "That'll have users hooked on us.",
+      "That'll make users obsessed with us."
+    ],
+    "point": "「夢中にさせる」は get / have + 人 + hooked",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["causatives"]
+  },
+  {
+    "id": "c_6f6a7q6d",
+    "ja": "今、テストしてるよ。",
+    "en": "I'm testing it now.",
+    "alternatives": ["I'm testing it right now.", "I'm testing this now."],
+    "point": "「〜してる」は be + ～ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["progressive-aspect"]
+  },
+  {
+    "id": "c_6u6v7v6n",
+    "ja": "ボタンが二つあるよ。",
+    "en": "There are two buttons.",
+    "alternatives": ["We have two buttons.", "It has two buttons."],
+    "point": "複数は There are + 複数名詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["there-is-are"]
+  },
+  {
+    "id": "c_6v2x8k9v",
+    "ja": "この通知を消して。",
+    "en": "Remove this notice.",
+    "alternatives": ["Delete this notification.", "Get rid of this notice."],
+    "point": "remove は表示や機能を取り除く。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["imperatives"]
+  },
+  {
+    "id": "c_6y4m9v2p",
+    "ja": "その時初めて解約理由に納得した。",
+    "en": "Only then did churn make sense.",
+    "alternatives": [
+      "Only then did I understand the churn.",
+      "The reason for churn finally clicked then."
+    ],
+    "point": "Only then did は「その時初めて」を強める倒置。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["inversion"]
+  },
+  {
+    "id": "c_6y5p6n7y",
+    "ja": "バグは金曜に修正されます。",
+    "en": "The bug will be fixed Friday.",
+    "alternatives": ["They'll fix the bug on Friday.", "The bug gets fixed on Friday."],
+    "point": "修正「される」は受動態。行為者は言わない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["passive-voice"]
+  },
+  {
+    "id": "c_6y7b2x2j",
+    "ja": "これ、いい案だね。",
+    "en": "It's a good idea.",
+    "alternatives": ["That's a good idea.", "This is a good idea."],
+    "point": "idea は数えられるので a をつける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability"]
+  },
+  {
+    "id": "c_6z7q9s4x",
+    "ja": "先に出せていれば、解約は少ない。",
+    "en": "If we'd shipped first, churn would be lower.",
+    "alternatives": [
+      "If we had shipped it first, churn would be lower.",
+      "If we'd shipped sooner, churn would be lower."
+    ],
+    "point": "過去の仮定 + 今の結果は if had + would be",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"]
+  },
+  {
+    "id": "c_7j3t9v8p",
+    "ja": "地味なのに人気の機能だ。",
+    "en": "Although it's unglamorous, it's popular.",
+    "alternatives": [
+      "Even though it's plain, it's popular.",
+      "It's a plain feature, but it's popular."
+    ],
+    "point": "「〜なのに」は although / even though",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["concession-contrast"]
+  },
+  {
+    "id": "c_7t4r7f7x",
+    "ja": "君、これ使える？",
+    "en": "Can you use this?",
+    "alternatives": ["Can you work with this?", "Can you operate this?"],
+    "point": "Can you で可能かを尋ねる。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["can-could-ability"]
+  },
+  {
+    "id": "c_7x8w3s9j",
+    "ja": "先月、ダークモードを出した。",
+    "en": "We shipped dark mode last month.",
+    "alternatives": [
+      "We released dark mode last month.",
+      "We launched dark mode last month."
+    ],
+    "point": "last month があれば過去形 shipped",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["past-simple"]
+  },
+  {
+    "id": "c_8n6q2f5h",
+    "ja": "CEO は来期モバイル優先と言った。",
+    "en": "The CEO said mobile comes first next quarter.",
+    "alternatives": [
+      "The CEO said mobile is the priority next quarter.",
+      "The CEO said mobile would come first next quarter."
+    ],
+    "point": "said の後は時制をずらすか、変わらない事実なら現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["reported-speech"]
+  },
+  {
+    "id": "c_8p9g5j6p",
+    "ja": "公開前に我々は需要を測ってた。",
+    "en": "We'd gauged demand before launch.",
+    "alternatives": [
+      "Before launch, we'd assessed demand.",
+      "We'd measured demand before releasing it."
+    ],
+    "point": "had gauged で公開より前の判断を表す。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["past-perfect"]
+  },
+  {
+    "id": "c_8r2b7e5m",
+    "ja": "この画面は新しい。",
+    "en": "This screen is new.",
+    "alternatives": ["This is a new screen.", "The screen is new."],
+    "point": "new はこれまでなかったもの。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple"]
+  },
+  {
+    "id": "c_8x7u4k4p",
+    "ja": "私たちが折れてたら今は客が激減だ。",
+    "en": "Had we capitulated, we'd now be hemorrhaging customers.",
+    "alternatives": [
+      "If we'd given in, we'd now be hemorrhaging customers.",
+      "We'd be hemorrhaging customers now had we capitulated."
+    ],
+    "point": "過去の仮定で今の結果を表す、hemorrhage は大量に失う。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"]
+  },
+  {
+    "id": "c_8y7m7r5b",
+    "ja": "ユーザーが望むのは速い検索。",
+    "en": "What users want is fast search.",
+    "alternatives": [
+      "What users want is faster search.",
+      "Users want fast search, above all."
+    ],
+    "point": "What 節が主語。want の目的語は抜ける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"]
+  },
+  {
+    "id": "c_9c3a7f2m",
+    "ja": "月曜に新プランを公開する。",
+    "en": "We're launching the new plan Monday.",
+    "alternatives": [
+      "We're releasing the new plan Monday.",
+      "The new plan goes live Monday."
+    ],
+    "point": "決まった予定は進行形で言える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["future-forms"]
+  },
+  {
+    "id": "c_9d9d9y8d",
+    "ja": "公開したら教えて。",
+    "en": "Tell me when it's released.",
+    "alternatives": ["Let me know when it ships.", "Tell me once it's released."],
+    "point": "when 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"]
+  },
+  {
+    "id": "c_9f3g4h9x",
+    "ja": "この機能は一か月先送りにしよう。",
+    "en": "Let's push this feature back a month.",
+    "alternatives": [
+      "Let's delay this feature by a month.",
+      "Let's put this feature off for a month."
+    ],
+    "point": "「先送りする」は push back / put off",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["phrasal-verbs"]
+  },
+  {
+    "id": "c_9j4s6f4p",
+    "ja": "先週届いた要望を整理しよう。",
+    "en": "Let's sort the requests received last week.",
+    "alternatives": [
+      "Let's go through the requests we received last week.",
+      "Let's sort through last week's requests."
+    ],
+    "point": "requests の後ろに received を置いて説明を足す",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["post-modification"]
+  },
+  {
+    "id": "c_9w5k9j2d",
+    "ja": "新機能を試してもらえますか？",
+    "en": "Mind giving the new feature a whirl?",
+    "alternatives": [
+      "Could you try the new feature?",
+      "Could you give the new feature a try?"
+    ],
+    "point": "give something a whirl は気軽に試す。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["requests-permission"]
+  },
+  {
+    "id": "c_9x9g4h4c",
+    "ja": "画面を簡単に、と彼に頼んだ。",
+    "en": "I asked him to simplify the screen.",
+    "alternatives": [
+      "I asked him to simplify this screen.",
+      "I asked him to make the screen simpler."
+    ],
+    "point": "ask + 人 + to 動詞。that 節にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["verb-object-to-do"]
+  }
+]
