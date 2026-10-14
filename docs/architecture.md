@@ -262,7 +262,6 @@ Code work these decisions imply; each becomes an issue.
 - Port FSRS-6 with the golden-vector suite.
 - The practice day and today's queue: due reviews by lowest retrievability, new cards
   from the scope at random, re-asks.
-- The `ProgressStore` port, its fake and contract, and the SwiftData adapter.
 - The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
   keys.
 - The Japanese values in `Localizable.xcstrings`, settling the open question above.
@@ -467,10 +466,12 @@ the main actor never waits on a write it did not ask for.
 - **A failed save rolls the context back**, or the pending change would be written by
   the next successful save.
 - **The schema is versioned from day one** (`AppSchemaV1`, `AppMigrationPlan`), and it
-  is the whole app's, not one entity's. The stored shape is contract (below): the next
-  change to `TodoRecord` adds `AppSchemaV2` and a migration stage instead of editing V1.
-  Adding a second entity is the same move: a `@Model` in `AppSchemaV2` plus a stage in
-  `AppMigrationPlan`, and a repository over the shared container. The store records the
+  is the whole app's, not one entity's: `TodoRecord` beside `SwiftDataProgressStore`'s
+  `CardProgressRecord` and `AnswerRecord`. V1 is edited in place while no build carrying
+  it has been installed outside the owner's Mac ([Progress store](#progress-store)).
+  The stored shape is contract (below): from the first such install, the next change to
+  a record, or another entity, adds `AppSchemaV2` and a migration stage instead of
+  editing V1, and a repository over the shared container. The store records the
   model's entities, attributes, and version identifier — never the Swift names of the
   schema or the plan — so a store written before both were renamed to their `App`
   names opens unchanged (`PersistenceStoreTests` reopens one written by a frozen copy of
