@@ -40,3 +40,6 @@ Config/Local.xcconfig
 .DS_Store
 Thumbs.db
 __pycache__/
+
+# Personal Codex CLI rules for this checkout (configuring-project-permissions); never committed.
+/.codex/rules/local.rules
