@@ -20,7 +20,7 @@ SwiftData adapter, a fake, a contract test, and a UI test.
 | Card catalog | Read-only JSON inside `FlashComposeCore` (`Resources/Catalog/`), decoded by Core at launch; never copied into the store | Cards ship with the app and change only in this repository, so an update that adds, fixes, or removes cards migrates nothing; as a Core resource, the catalog's integrity test runs under `just test` ([Card catalog](#card-catalog)) |
 | Persistence | Progress — each card's FSRS state and the append-only answer log — in SwiftData, behind the Core `ProgressStore` port | First-party (no dependency), migrations built in, and the port keeps it replaceable: Core never imports SwiftData ([Progress store](#progress-store)) |
 | Scheduler | FSRS-6, ported into Core from the old app's port of ts-fsrs 5.4.2 | Reproduces the old app's results exactly, checked against its golden vectors, without the app's first dependency ([Scheduling](#scheduling)) |
-| Networking | None: FlashCompose sends no request, and the template's `HTTPClient` / `APIClient` layer is removed | No network access is a Product non-goal; an unused layer under the coverage floor would only invite a feature the non-goals forbid |
+| Networking | None: FlashCompose sends no request, and the package holds no request code, transport adapter, or `network` log category | No network access is a Product non-goal; an unused layer under the coverage floor would only invite a feature the non-goals forbid |
 | Preferences | `UserDefaults` behind a synchronous Core `PreferencesStoring` port; the scope is FlashCompose's one setting | First-party and synchronous; the port keeps key names in one Core file where a test pins them ([Scope](#scope)) |
 | Navigation | One `NavigationStack(path:)`, in `FlashComposeUI`'s `RootView`, bound to a Core `NavigationModel`; a custom URL scheme (`flash-compose`, `project.yml`'s `info:` block) parsed by Core's `DeepLink`. The drill is the root and the scope a sheet, so the path stays empty until a pushed screen exists | Which screen shows is Core state a test drives, so a deep link and state restoration have something to hold on to; the seam stays for the pushed screens Later brings (a card browser, statistics). A custom scheme is an `Info.plist` entry, not an entitlement; `flash-compose://` opens the app on the drill |
 | Shipped languages | English (the source) and Japanese, following the device's language | The owner's iPhone runs in Japanese, and English buttons around a Japanese prompt would read as two apps ([Localization](#localization)) |
@@ -48,7 +48,7 @@ it looks the Design lock in [`docs/design-system.md`](design-system.md#design-lo
 
 - **Offline and alone.** Everything runs on the phone, with no network, account, or
   server, and no screen waits on anything but local storage. Rules out sync, remote card
-  updates, and the template's HTTP layer.
+  updates, and any request code.
 - **Cards ship; progress stays.** The catalog is read-only data inside the app, and only
   the learner's progress is stored. Rules out seeding cards into the store, editing
   cards in the app, and an update that has to migrate progress because a card changed.
@@ -260,9 +260,6 @@ Code work these decisions imply; each becomes an issue.
 - Remove the to-do sample — its code, tests, previews, launch-test steps, and the
   passages that describe it here, in `docs/getting-started.md`, and in `README.md` — and
   replace its `AppSchemaV1`.
-- Remove the networking layer — `HTTPClient`, `APIClient` and their values,
-  `URLSessionHTTPClient`, their fakes and contracts, the `network` log category, and
-  [The HTTP client port](#the-http-client-port) below.
 - The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
   keys.
 - The design-lock screenshots `designing-ui` asks for.
@@ -274,7 +271,7 @@ Code work these decisions imply; each becomes an issue.
 App/                         composition root — @main, builds adapters, hands them to Core
  ├─ FlashComposeUI                  SwiftUI views: render Core state, forward user intents
  │   └─ FlashComposeCore            domain values, view models, ports (protocols), wording, logging
- └─ FlashComposePlatform            adapters behind Core ports: SwiftData, URLSession, UserDefaults
+ └─ FlashComposePlatform            adapters behind Core ports: SwiftData, UserDefaults
      └─ FlashComposeCore
 Tests/FlashComposeTestSupport       each port's fake and contract function (test code only)
 ```
@@ -497,96 +494,6 @@ Every port has exactly one fake and one contract function, both in
 No product exports it and `ArchitectureBoundaryTests` fails if a shipped module imports
 it. Previews use their own small `PreviewTodoRepository` in `FlashComposeUI` (Debug only).
 
-### The HTTP client port
-
-FlashCompose sends no request, so this layer is removed, and this section with it
-([Follow-ups](#follow-ups)); it describes the code until then.
-
-`HTTPClient` is the networking seam, shaped like the repository: a `Sendable` port in
-`FlashComposeCore/Networking`, the `URLSessionHTTPClient` adapter in `FlashComposePlatform/Networking`,
-and `FakeHTTPClient` plus `HTTPClientContract` in `Tests/FlashComposeTestSupport`.
-
-```swift
-public protocol HTTPClient: Sendable {
-    func send(_ request: HTTPRequest) async throws(HTTPClientError) -> HTTPResponse
-}
-```
-
-- **Status codes are data.** A 404 or a 503 comes back as an `HTTPResponse`, not an
-  error, so the decision about it ("gone", "retry later", "show the server's message")
-  stays in the Core service that made the request, where a test hands it the status and
-  sees what it does. `isSuccess` answers the one question every caller asks first.
-- **A closed error set.** `HTTPClientError` covers only the ways a request ends without a
-  response: `cancelled`, `notConnected`, `timedOut`, `nonHTTPResponse`, and
-  `transport(code:)` for the rest. The adapter maps each `URLError` code into one of
-  them and logs the detail under `AppLog.network` — method and host `.public`, path and
-  error text `.private` — because the framework's error text can quote a URL that
-  carries user data. Cancellation is not a failure: it maps to `cancelled` and is not
-  logged.
-- **One contract, two runs, no network.** The contract takes a harness — something that
-  makes a client whose server answers as told and reports what that server received —
-  so it is written once over the port. `FlashComposeCoreTests` runs it against the fake, and
-  against deliberately broken clients it must reject; `FlashComposePlatformTests` runs it
-  against `URLSessionHTTPClient` over a `URLProtocol` stub that answers on a `.invalid`
-  host unique to each test. Both run under `just test` and in CI, and no test touches
-  the real network.
-- **Not wired yet.** No feature calls an API, so `App/` does not create a client. The
-  first feature that needs one follows "A worked API service", below.
-
-#### A worked API service
-
-`APIClient` in `FlashComposeCore/Networking` is the Core service every JSON API goes through —
-not a port, since the transport is already behind one. A feature describes each call
-as an `Endpoint<Response>` value (method, path, query items, an optional `Encodable`
-body, extra headers) and sends it; the client resolves the path below its base URL,
-encodes, decodes, and answers with the 2xx body or a closed `APIError`:
-
-```swift
-struct Item: Decodable, Sendable {
-    var id: Int
-    var title: String
-    var createdAt: Date
-}
-
-enum ItemsAPI {
-    static func item(id: Int) -> Endpoint<Item> {
-        Endpoint(method: .get, path: "items/\(id)")
-    }
-}
-
-func loadItem(using client: APIClient) async {
-    do {
-        let item = try await client.send(ItemsAPI.item(id: 42))
-        // Show `item`.
-    } catch .cancelled {
-        // Not a failure: the caller no longer wants the answer.
-    } catch {
-        // `error` is an `APIError`: `.offline`, `.unauthorized`, `.rateLimited(retryAfter:)`…
-    }
-}
-```
-
-- **One set of coders.** The client configures its `JSONDecoder` and `JSONEncoder` once:
-  ISO 8601 dates both ways, and keys as the type spells them (`useDefaultKeys`). A wire
-  name that differs — `created_at` for `createdAt` — goes in that type's `CodingKeys`,
-  where the mapping is visible and exact; `convertFromSnakeCase` would read `image_url`
-  as `imageUrl`, never `imageURL`. Encoded keys are sorted, so a body is the same bytes
-  every time and a test compares it with a literal.
-- **Every outcome is a case.** 401, 403, 404, and 429 have cases of their own; a 5xx is
-  `server(status:)`, any other status `unexpectedStatus(_:)`. A body that does not decode
-  is `decoding` — logged under `AppLog.network` by the response type's name, never the
-  body — and one that cannot be encoded is `encoding`, sent nowhere. `HTTPClientError`
-  maps across: `notConnected` to `offline`, `timedOut`, `cancelled`, and the rest to
-  `transport`. A 429's `Retry-After` is read as delta-seconds or an HTTP-date, the date
-  measured from the `now` the client is handed so a test pins it.
-- **Cancellation is a no-op.** A cancelled task ends the call with `cancelled`, which the
-  caller drops quietly, as it would the port's own `cancelled`.
-- **Wiring.** The composition root makes the client —
-  `APIClient(httpClient: URLSessionHTTPClient(), baseURL: …)` — and hands it to the Core
-  services it builds; a test makes one over `FakeHTTPClient` (`APIClientTests`).
-  Auth, retries, caching, and pagination are services or decisions over this one, not
-  options inside it.
-
 ### Preferences
 
 `PreferencesStoring` is the seam for small user settings — the ones that must survive a
@@ -675,7 +582,7 @@ class` in Core that does the rest of the wiring:
 
 Shipped code logs through `AppLog` in Core — `os.Logger`, one subsystem (the bundle
 identifier, checked against `project.yml` by `AppLogTests`) and one category per concern
-(`todos`, `drill`, `persistence`, `network`, `preferences`, `navigation`). `print`, `debugPrint`, and `NSLog` are
+(`todos`, `drill`, `persistence`, `preferences`, `navigation`). `print`, `debugPrint`, and `NSLog` are
 rejected under `Packages/*/Sources/` and `App/` by `.swiftlint.yml`'s
 `no_print_in_sources`: an app launched from the Home Screen has nowhere to send stdout. Anything user-derived is
 interpolated `.private`; identifiers, counts, and operation names are `.public`.
@@ -768,11 +675,6 @@ framework, view structure, file and type layout, test helpers, log messages.
 adapter shape. The framework import lives only in `FlashComposePlatform`; the permission's
 usage-description string goes in `project.yml` as an `INFOPLIST_KEY_…` setting; the
 decision of when to ask lives in Core.
-
-**A new remote API**: its calls as `Endpoint` values, sent through an `APIClient`, and a
-Core service over that client deciding what each `APIError` case means for the feature —
-tested against `FakeHTTPClient` (The HTTP client port › A worked API service). Not a new
-port: the transport is already behind one.
 
 **A new stored model**: a new `@Model` in the next schema version, never an edit to a
 shipped one.
