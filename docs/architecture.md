@@ -198,6 +198,9 @@ and are never stored: a relaunch starts a new session and drops waiting re-asks 
 - **Cold launch** (F6). `App/` opens the container and the preferences and hands them to
   `AppModel` → Core decodes the catalog and fetches every progress row → `DrillViewModel`
   builds today's queue → D1 with the first card, or D3; E1 when either load fails.
+  Until then the root shows its plain background; `StartupIndicator` puts a centred
+  progress indicator over it only when the start-up runs past 300 ms, and keeps it at
+  least 500 ms (`Tuning.startupIndicator`).
 - **Grade** (F1, F2). A tap on D2 → `DrillViewModel` computes the new FSRS state when
   this is the card's first answer today → `ProgressStore` records the answer and the
   state in one save → the queue and re-asks update → D1 with the next card and the new
@@ -369,9 +372,9 @@ restoration have something to hold on to and a test can drive navigation without
   iPhone only and runs one scene, but per-scene ownership keeps navigation correct
   without depending on that.
 - **One `NavigationStack(path:)`, in `RootView`.** `FlashComposeUI`'s `RootView` binds the
-  stack to `NavigationModel.path`, shows the root screen (`TodoListView`, a plain screen
+  stack to `NavigationModel.path`, shows the root screen (`DrillView`, a plain screen
   with no stack of its own), and declares every destination in one
-  `navigationDestination(for: AppRoute.self)` switch; a row's `NavigationLink(value:)`
+  `navigationDestination(for: AppRoute.self)` switch; a `NavigationLink(value:)`
   pushes a route. The back button writes the path back, which is why `path` is the one
   settable property. A new screen therefore adds an `AppRoute` case and a branch of that
   switch, and edits no other screen.
@@ -629,8 +632,9 @@ class` in Core that does the rest of the wiring:
 
 - **It holds the view models every scene shares** — `todoList`, the one
   `TodoListViewModel` every window shows; `scope`, the `ScopeViewModel` whose selection
-  the sheet edits; and `drill`, the `DrillViewModel` built over the `ProgressStore` port
-  and that same `scope` — built once over the ports it was handed. `App/` passes the
+  the sheet edits; `drill`, the `DrillViewModel` built over the `ProgressStore` port
+  and that same `scope`; and `startupIndicator`, which watches the drill's start-up —
+  built once over the ports it was handed. `App/` passes the
   SwiftData progress store over the one container, or `UnavailableProgressStore` when the
   container will not open, so the drill shows E1 rather than the app crashing.
 - **It has one `make…ViewModel(…)` factory per route whose screen needs a view model of
