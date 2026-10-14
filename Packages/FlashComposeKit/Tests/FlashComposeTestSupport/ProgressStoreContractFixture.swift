@@ -35,6 +35,13 @@ struct ProgressStoreContractFixture {
         static let reAskSeconds = 3.0
         static let failedSeconds = 2.25
         static let laterSeconds = 8.5
+        static let unreadableStability = 3.75
+        static let unreadableDifficulty = 4.5
+        static let revivedStability = 0.4072
+        static let revivedDifficulty = 5.3
+        static let revivedSeconds = 5.25
+        static let fourReps = 4
+        static let twoLapses = 2
     }
 
     /// One grade's own facts, apart from the card and its states.
@@ -90,6 +97,13 @@ struct ProgressStoreContractFixture {
             kind: .firstOfDay,
             secondsToReveal: Value.laterSeconds,
         )
+        static let revived = Grading(
+            instant: "2026-10-18T07:05:00+09:00",
+            day: "2026-10-18",
+            grade: .hard,
+            kind: .firstOfDay,
+            secondsToReveal: Value.revivedSeconds,
+        )
     }
 
     /// The states the grades leave behind.
@@ -144,6 +158,32 @@ struct ProgressStoreContractFixture {
         }
     }
 
+    /// The third card's states: the one its unreadable row held, and the one its first
+    /// grade as a new card leaves.
+    private struct ThirdCardStates {
+        let unreadable: FSRSState
+        let revived: FSRSState
+
+        init() throws {
+            unreadable = try FSRSState(
+                stability: Value.unreadableStability,
+                difficulty: Value.unreadableDifficulty,
+                reps: Value.fourReps,
+                lapses: Value.twoLapses,
+                lastDay: ProgressStoreContractFixture.day("2026-10-16"),
+                dueDay: ProgressStoreContractFixture.day("2026-10-19"),
+            )
+            revived = try FSRSState(
+                stability: Value.revivedStability,
+                difficulty: Value.revivedDifficulty,
+                reps: 1,
+                lapses: 0,
+                lastDay: ProgressStoreContractFixture.day("2026-10-18"),
+                dueDay: ProgressStoreContractFixture.day("2026-10-19"),
+            )
+        }
+    }
+
     /// `c_2t5h9y9g` graded ○ on its first day, 2026-10-14 (Example 1).
     let firstAnswer: Answer
     let firstProgress: CardProgress
@@ -162,6 +202,12 @@ struct ProgressStoreContractFixture {
     /// A grade of the second card recorded after the failure.
     let laterAnswer: Answer
     let laterProgress: CardProgress
+    /// A third card, `c_4a5b6c7d`, whose stored row the contract makes unreadable.
+    let unreadableProgress: CardProgress
+    /// That card graded △ as a new card — its unreadable row read as never seen — after
+    /// the damage.
+    let revivedAnswer: Answer
+    let revivedProgress: CardProgress
 
     /// The log once the second card and the re-ask are in, and still after the failure.
     var answersBeforeFailure: [Answer] {
@@ -171,7 +217,9 @@ struct ProgressStoreContractFixture {
     init() throws {
         let card = try CardID("c_2t5h9y9g")
         let other = try CardID("c_3w4x5y6z")
+        let damaged = try CardID("c_4a5b6c7d")
         let states = try States()
+        let third = try ThirdCardStates()
 
         firstAnswer = try Self.answer(card, Gradings.first, from: nil, to: states.first)
         firstProgress = CardProgress(cardID: card, state: states.first)
@@ -204,6 +252,9 @@ struct ProgressStoreContractFixture {
             to: states.otherLater,
         )
         laterProgress = CardProgress(cardID: other, state: states.otherLater)
+        unreadableProgress = CardProgress(cardID: damaged, state: third.unreadable)
+        revivedAnswer = try Self.answer(damaged, Gradings.revived, from: nil, to: third.revived)
+        revivedProgress = CardProgress(cardID: damaged, state: third.revived)
     }
 
     /// The practice day a `"YYYY-MM-DD"` string names.

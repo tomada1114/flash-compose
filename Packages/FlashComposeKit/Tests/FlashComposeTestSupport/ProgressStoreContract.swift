@@ -10,9 +10,9 @@ import Testing
 /// `SwiftDataProgressStore` with an in-memory store. Both run under `just test` and in CI.
 /// Every clause is one the port's `///` states; a new clause is stated there first.
 ///
-/// The port has no way to read the answer log back — nothing in the app does — and no way
-/// to make a save fail, so each implementation hands the contract a ``Probe`` for those
-/// two test-only reaches.
+/// The port has no way to read the answer log back — nothing in the app does — no way to
+/// make a save fail, and no way to store a row it cannot read back, so each implementation
+/// hands the contract a ``Probe`` for those three test-only reaches.
 package enum ProgressStoreContract {
     /// What the contract needs from an implementation beyond the port.
     package struct Probe: Sendable {
@@ -23,14 +23,21 @@ package enum ProgressStoreContract {
         /// fail at the point it would persist, after it has staged its change; `false`
         /// makes records succeed again.
         let failRecords: @Sendable (_ failing: Bool) async -> Void
+        /// Stores a row for `progress.cardID` that the store cannot read back — as a
+        /// stored practice day that names no date would be — in place of any row the card
+        /// has, the way damage on disk would reach it.
+        let storeUnreadableRow: @Sendable (_ progress: CardProgress) async throws -> Void
 
-        /// Pairs the log reader with the fault switch.
+        /// Pairs the log reader with the fault switch and the damage seam.
         package init(
             answers: @escaping @Sendable () async throws -> [Answer],
             failRecords: @escaping @Sendable (_ failing: Bool) async -> Void,
+            storeUnreadableRow: @escaping @Sendable (_ progress: CardProgress) async throws
+                -> Void,
         ) {
             self.answers = answers
             self.failRecords = failRecords
+            self.storeUnreadableRow = storeUnreadableRow
         }
     }
 
@@ -51,6 +58,7 @@ package enum ProgressStoreContract {
             try await run.checkSecondRecord(into: &broken)
             try await run.checkSecondCardAndReAsk(into: &broken)
             try await run.checkFailedRecord(into: &broken)
+            try await run.checkUnreadableRow(into: &broken)
         } catch {
             broken.append("an operation the contract expects to succeed threw \(error)")
         }
@@ -181,6 +189,32 @@ extension ProgressStoreContract {
                 broken.append(
                     "the record after a failed one did not store exactly its own change: "
                         + "\(loaded), \(answers)",
+                )
+            }
+        }
+
+        /// A row the store cannot read back is left out of the load, which still
+        /// succeeds with every other card, and the card's next record replaces it.
+        func checkUnreadableRow(into broken: inout [String]) async throws {
+            try await probe.storeUnreadableRow(fixture.unreadableProgress)
+            let loaded: [CardProgress]
+            do {
+                loaded = try await load()
+            } catch {
+                broken.append("loadProgress threw \(error) over a row it cannot read back")
+                return
+            }
+            if loaded != [fixture.secondProgress, fixture.laterProgress] {
+                broken.append(
+                    "loadProgress did not leave out only the row it cannot read back: \(loaded)",
+                )
+            }
+
+            try await store.record(answer: fixture.revivedAnswer, progress: fixture.revivedProgress)
+            let revived = try await load()
+            if revived != [fixture.secondProgress, fixture.laterProgress, fixture.revivedProgress] {
+                broken.append(
+                    "a record did not replace the card's unreadable row: \(revived)",
                 )
             }
         }

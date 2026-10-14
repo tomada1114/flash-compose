@@ -1,5 +1,6 @@
 import FlashComposeCore
 import FlashComposeTestSupport
+import Foundation
 import Testing
 
 /// A store with one deliberate flaw, for the contract's oracle: each flaw breaks one
@@ -14,10 +15,13 @@ actor FlawedProgressStore: ProgressStore {
         case keepsOnlyLatestAnswer
         /// Ignores the probe's fault switch and always saves.
         case neverFails
+        /// Fails the whole load while it holds a row it cannot read back.
+        case failsLoadOnUnreadableRow
     }
 
     private let flaw: Flaw
     private var rows: [CardProgress] = []
+    private var unreadable: Set<CardID> = []
     private var log: [Answer] = []
     private var failing = false
 
@@ -25,6 +29,7 @@ actor FlawedProgressStore: ProgressStore {
         ProgressStoreContract.Probe(
             answers: { await self.log },
             failRecords: { failing in await self.setFailing(failing) },
+            storeUnreadableRow: { progress in await self.storeUnreadableRow(progress.cardID) },
         )
     }
 
@@ -36,8 +41,16 @@ actor FlawedProgressStore: ProgressStore {
         self.failing = failing
     }
 
-    func loadProgress() -> [CardProgress] {
-        rows
+    func storeUnreadableRow(_ cardID: CardID) {
+        rows.removeAll { $0.cardID == cardID }
+        unreadable.insert(cardID)
+    }
+
+    func loadProgress() throws(ProgressStoreError) -> [CardProgress] {
+        if flaw == .failsLoadOnUnreadableRow, !unreadable.isEmpty {
+            throw .corruptedRecord
+        }
+        return rows
     }
 
     func record(answer: Answer, progress: CardProgress) throws(ProgressStoreError) {
@@ -46,6 +59,7 @@ actor FlawedProgressStore: ProgressStore {
             throw .storageFailure
         }
         log = flaw == .keepsOnlyLatestAnswer ? [answer] : log + [answer]
+        unreadable.remove(progress.cardID)
         if flaw != .appendsProgressRows {
             rows.removeAll { $0.cardID == progress.cardID }
         }
@@ -83,6 +97,7 @@ struct ProgressStoreContractTests {
             "the answer log did not keep the first answer and append the second",
         ),
         (.neverFails, "record did not throw while saves were failing"),
+        (.failsLoadOnUnreadableRow, "loadProgress threw corruptedRecord over a row it cannot"),
     ])
     func `a store with a flaw is reported`(flaw: FlawedProgressStore.Flaw, report: String) async {
         let store = FlawedProgressStore(flaw)
@@ -92,9 +107,15 @@ struct ProgressStoreContractTests {
 
     @Test
     func `a store that cannot be reached is reported`() async {
-        let probe = ProgressStoreContract.Probe(answers: { [] }, failRecords: { _ in
-            // Nothing to break: every call already fails.
-        })
+        let probe = ProgressStoreContract.Probe(
+            answers: { [] },
+            failRecords: { _ in
+                // Nothing to break: every call already fails.
+            },
+            storeUnreadableRow: { _ in
+                // Nothing to damage: there is no store.
+            },
+        )
         let violations = await ProgressStoreContract.violations(
             of: UnavailableProgressStore(),
             probe: probe,
@@ -133,11 +154,44 @@ struct ProgressStoreContractTests {
     }
 
     @Test
+    func `an unreadable row stays in the fake until a record for its card replaces it`(
+    ) async throws {
+        let card = try CardID("c_2t5h9y9g")
+        let day = try PracticeDay(year: 2_026, month: 10, day: 14)
+        let progress = CardProgress(cardID: card, state: FSRSState(
+            stability: 1,
+            difficulty: 5,
+            reps: 1,
+            lapses: 0,
+            lastDay: day,
+            dueDay: day,
+        ))
+        let store = InMemoryProgressStore(progress: [progress])
+        await store.storeUnreadableRow(for: card)
+
+        #expect(try await store.loadProgress().isEmpty)
+        #expect(await store.unreadableRows == [card])
+        let answer = Answer(
+            cardID: card,
+            gradedAt: Date(timeIntervalSinceReferenceDate: 0),
+            practiceDay: day,
+            grade: .good,
+            kind: .firstOfDay,
+            before: nil,
+            after: progress.state,
+            secondsToReveal: 1,
+        )
+        try await store.record(answer: answer, progress: progress)
+        #expect(await store.unreadableRows.isEmpty)
+        #expect(try await store.loadProgress() == [progress])
+    }
+
+    @Test
     func `a failing load throws the error it was given until it succeeds again`() async throws {
         let store = InMemoryProgressStore()
-        await store.fail(.loadProgress, with: .corruptedRecord)
+        await store.fail(.loadProgress, with: .storageFailure)
 
-        await #expect(throws: ProgressStoreError.corruptedRecord) {
+        await #expect(throws: ProgressStoreError.storageFailure) {
             try await store.loadProgress()
         }
         await store.succeed(.loadProgress)

@@ -154,6 +154,18 @@ card is never shown again (§3.1).
   rolls back both and the card stays on screen (E2, save then advance).
 - **Read at launch, written per grade.** Start-up fetches every progress row — at most
   one per card. Nothing in this version reads the log back except the tests.
+- **A row that does not read back is skipped, not fatal.** When one progress row no
+  longer makes a Core value — a stored practice day that names no date, a card id out of
+  format — the load leaves it out, logs how many rows it left out (the count only, no
+  card id or other stored value), and succeeds. That card reads as never seen: it comes
+  back as a new card and its FSRS history restarts, while every other card keeps its
+  schedule and the drill opens normally. The load does not delete the row: when its
+  stored card id still names a card, that card's next grade overwrites it, found by the
+  id; a row whose card id is out of format matches no card, so it stays stored and is
+  left out of every load. E1 stays for what its wording says: the store cannot be
+  opened, or the fetch as a whole fails. Failing the whole load instead would put every
+  launch on E1 for good, and since resetting progress in the app is a non-goal, the only
+  way out would be deleting the app and every card's progress with it.
 
 ### Scope
 
