@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "OK"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
         }
       }
     },
@@ -173,6 +179,12 @@
             "state" : "translated",
             "value" : "Created"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "作成日"
+          }
         }
       }
     },
@@ -183,6 +195,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "It may have been deleted."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "削除済みの可能性あり"
           }
         }
       }
@@ -195,6 +213,12 @@
             "state" : "translated",
             "value" : "Item Not Found"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目なし"
+          }
         }
       }
     },
@@ -205,6 +229,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加"
           }
         }
       }
@@ -217,6 +247,12 @@
             "state" : "translated",
             "value" : "Completed items are hidden."
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了済みの項目は非表示"
+          }
         }
       }
     },
@@ -227,6 +263,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "All Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべて完了"
           }
         }
       }
@@ -239,6 +281,12 @@
             "state" : "translated",
             "value" : "New Item"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新しい項目"
+          }
         }
       }
     },
@@ -249,6 +297,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Items you add appear here."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "追加した項目をここに表示"
           }
         }
       }
@@ -261,6 +315,12 @@
             "state" : "translated",
             "value" : "No Items"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目なし"
+          }
         }
       }
     },
@@ -271,6 +331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "The item could not be deleted."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目の削除に失敗"
           }
         }
       }
@@ -283,6 +349,12 @@
             "state" : "translated",
             "value" : "Your items could not be loaded."
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "項目の読み込みに失敗"
+          }
         }
       }
     },
@@ -293,6 +365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Your change could not be saved."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "変更の保存に失敗"
           }
         }
       }
@@ -305,6 +383,12 @@
             "state" : "translated",
             "value" : "Something Went Wrong"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
         }
       }
     },
@@ -315,6 +399,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hide Completed"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了済みを隠す"
           }
         }
       }
@@ -327,6 +417,12 @@
             "state" : "translated",
             "value" : "Mark as Done"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "完了にする"
+          }
         }
       }
     },
@@ -337,6 +433,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mark as Not Done"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未完了に戻す"
           }
         }
       }
@@ -349,6 +451,12 @@
             "state" : "translated",
             "value" : "Try Again"
           }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再試行"
+          }
         }
       }
     },
@@ -359,6 +467,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To-Do"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "やること"
           }
         }
       }

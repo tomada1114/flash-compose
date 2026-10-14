@@ -37,6 +37,9 @@ targets:
     info:
       path: App/Info.plist
       properties:
+        # The app bundle itself has no ja.lproj, so without this iOS runs the app in
+        # English and never reaches Core's ja catalog (localizing-the-app).
+        CFBundleLocalizations: [en, ja]
         CFBundleURLTypes:
           - CFBundleURLName: io.github.tomada1114.FlashCompose
             CFBundleURLSchemes: [flash-compose]

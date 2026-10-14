@@ -240,9 +240,6 @@ export (§3.6).
   stated only in Apple Developer Forums answers, unchecked against Apple's
   documentation. Settled at the first weekly reinstall on the device; if the store does
   not survive, distribution goes back to the owner (the paid program, or an export).
-- **What iOS needs to show the Japanese UI** — the package's `ja` catalog alone, or also
-  `CFBundleLocalizations` in `project.yml` (`localizing-the-app` › Adding a language).
-  Settled in the running app by the change that adds the Japanese values.
 - **The measured first-card time** on the device (Quality targets).
 
 ### Follow-ups
@@ -264,7 +261,6 @@ Code work these decisions imply; each becomes an issue.
   from the scope at random, re-asks.
 - The drill (D1–D3, E1, E2) and the scope sheet (S1) with their view models and the scope
   keys.
-- The Japanese values in `Localizable.xcstrings`, settling the open question above.
 - The design-lock screenshots `designing-ui` asks for.
 - The launch test driven through the drill instead of the to-do list.
 - CodeQL's Swift build, failing since the template (its "Build the package for analysis"
@@ -696,7 +692,9 @@ use. Card content — the prompt, the answer, the alternatives, the point, and t
 names — is data, not wording: a view shows it with `Text(verbatim:)` in either language.
 `swift test` copies the catalog uncompiled, so tests resolve English from `defaultValue`
 (the `english` helper in `FlashComposeCoreTests`); `xcodebuild` compiles it into the app.
-Whether iOS offers Japanese from Core's catalog alone is [open](#open).
+The app's `Info.plist` declares `CFBundleLocalizations: [en, ja]` (`project.yml`): iOS
+picks an app's language from its main bundle, which holds no `.lproj`, so without the key
+the app runs in English on a Japanese iPhone and never reaches Core's `ja` catalog.
 
 ## Testing
 

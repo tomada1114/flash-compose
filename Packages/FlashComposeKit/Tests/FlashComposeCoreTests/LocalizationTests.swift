@@ -30,6 +30,7 @@ private struct CatalogEntry: Decodable {
 
 private struct CatalogLocalization: Decodable {
     struct StringUnit: Decodable {
+        let state: String?
         let value: String
     }
 
@@ -113,6 +114,13 @@ struct LocalizationTests {
         try Set(ResourceDeclarationScan.declarations(inSourcesAt: coreSources).compactMap(\.key))
     }
 
+    /// The format specifiers in `format`, in order (`%@`, `%lld`, `%1$@`, …), so a
+    /// translation that drops or retypes an argument fails rather than crashing at runtime.
+    static func formatSpecifiers(in format: String) -> [String] {
+        let pattern = /%(?:\d+\$)?[-+ #0]*\d*(?:\.\d+)?(?:hh|h|ll|l|q|z|t|j)?[@dDiuUxXoOfeEgGcCsSp%]/
+        return format.matches(of: pattern).map { String(format[$0.range]) }.filter { $0 != "%%" }
+    }
+
     @Test
     func `every resource is looked up in Core's resource bundle, not the main bundle`() {
         for testCase in Self.everyCase() {
@@ -186,6 +194,32 @@ struct LocalizationTests {
             let formatted = String(format: english, arguments: testCase.arguments)
             #expect(formatted == testCase.resource.resolved(in: .english), "\(key)")
         }
+    }
+
+    @Test
+    func `every catalog key has a translated Japanese value with the English specifiers`(
+    ) throws {
+        let catalog = try Self.catalog()
+        for (key, entry) in catalog.strings.sorted(by: { $0.key < $1.key }) {
+            guard let japanese = entry.localizations["ja"]?.stringUnit else {
+                Issue.record("missing ja for key \"\(key)\"")
+                continue
+            }
+            #expect(!japanese.value.isEmpty, "empty ja for key \"\(key)\"")
+            #expect(japanese.state == "translated", "ja for key \"\(key)\" is not translated")
+            let english = entry.localizations[catalog.sourceLanguage]?.stringUnit?.value ?? ""
+            #expect(
+                Self.formatSpecifiers(in: japanese.value).sorted()
+                    == Self.formatSpecifiers(in: english).sorted(),
+                "ja for key \"\(key)\" does not carry the English format specifiers",
+            )
+        }
+    }
+
+    @Test
+    func `the specifier scan reads positional and length-modified specifiers`() {
+        #expect(Self.formatSpecifiers(in: "%1$@ of %2$lld, 100%%") == ["%1$@", "%2$lld"])
+        #expect(Self.formatSpecifiers(in: "none").isEmpty)
     }
 
     @Test
