@@ -467,10 +467,12 @@ the main actor never waits on a write it did not ask for.
 - **A failed save rolls the context back**, or the pending change would be written by
   the next successful save.
 - **The schema is versioned from day one** (`AppSchemaV1`, `AppMigrationPlan`), and it
-  is the whole app's, not one entity's. The stored shape is contract (below): the next
-  change to `TodoRecord` adds `AppSchemaV2` and a migration stage instead of editing V1.
-  Adding a second entity is the same move: a `@Model` in `AppSchemaV2` plus a stage in
-  `AppMigrationPlan`, and a repository over the shared container. The store records the
+  is the whole app's, not one entity's: `TodoRecord` beside `SwiftDataProgressStore`'s
+  `CardProgressRecord` and `AnswerRecord`. V1 is edited in place while no build carrying
+  it has been installed outside the owner's Mac ([Progress store](#progress-store)).
+  The stored shape is contract (below): from the first such install, the next change to
+  a record, or another entity, adds `AppSchemaV2` and a migration stage instead of
+  editing V1, and a repository over the shared container. The store records the
   model's entities, attributes, and version identifier — never the Swift names of the
   schema or the plan — so a store written before both were renamed to their `App`
   names opens unchanged (`PersistenceStoreTests` reopens one written by a frozen copy of
