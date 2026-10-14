@@ -37,11 +37,6 @@ public enum AppLog {
     /// The persistence concern: opening the store and the adapters that read and write it.
     public static let persistence = Logger(subsystem: subsystem, category: "persistence")
 
-    /// The networking concern: the ``HTTPClient`` adapter's failed requests. A request's
-    /// method and host are `.public`; its path, query, and the framework's error text are
-    /// `.private`, since a URL can carry user data.
-    public static let network = Logger(subsystem: subsystem, category: "network")
-
     /// The preferences concern: the ``PreferencesStoring`` adapter finding a stored value
     /// of the wrong type. A key's name and a type's name are `.public`; the stored value
     /// itself is never logged.

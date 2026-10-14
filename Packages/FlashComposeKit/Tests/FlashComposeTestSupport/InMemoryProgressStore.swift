@@ -24,6 +24,10 @@ package actor InMemoryProgressStore: ProgressStore {
     /// back, read here without recording a call.
     package private(set) var answers: [Answer] = []
 
+    /// Cards whose stored row the store cannot read back: kept, never loaded, until a
+    /// record for the card replaces the row — read without recording a call.
+    package private(set) var unreadableRows: Set<CardID> = []
+
     private var progress: [CardID: CardProgress]
     private var failures: [Operation: ProgressStoreError] = [:]
     private var beforeRecord: (@Sendable () async -> Void)?
@@ -33,7 +37,8 @@ package actor InMemoryProgressStore: ProgressStore {
         progress.values.sorted { $0.cardID.rawValue < $1.cardID.rawValue }
     }
 
-    /// The probe `ProgressStoreContract` needs: this fake's log, and a failing record.
+    /// The probe `ProgressStoreContract` needs: this fake's log, a failing record, and an
+    /// unreadable row.
     package nonisolated var contractProbe: ProgressStoreContract.Probe {
         ProgressStoreContract.Probe(
             answers: { await self.answers },
@@ -44,6 +49,7 @@ package actor InMemoryProgressStore: ProgressStore {
                     await self.succeed(.record)
                 }
             },
+            storeUnreadableRow: { progress in await self.storeUnreadableRow(for: progress.cardID) },
         )
     }
 
@@ -69,6 +75,14 @@ package actor InMemoryProgressStore: ProgressStore {
         failures[operation] = nil
     }
 
+    /// Replaces any progress held for `cardID` with a row the store cannot read back, as
+    /// damage on disk would: ``loadProgress()`` leaves the card out, and the card's next
+    /// ``record(answer:progress:)`` replaces the row.
+    package func storeUnreadableRow(for cardID: CardID) {
+        progress[cardID] = nil
+        unreadableRows.insert(cardID)
+    }
+
     /// Runs `hook` inside every later ``record(answer:progress:)``, before anything is
     /// stored or a failure thrown — the seam a test uses to act while a save is in
     /// flight, as a second tap would.
@@ -85,6 +99,7 @@ package actor InMemoryProgressStore: ProgressStore {
         await beforeRecord?()
         try note(.record)
         answers.append(answer)
+        unreadableRows.remove(progress.cardID)
         self.progress[progress.cardID] = progress
     }
 

@@ -75,11 +75,20 @@ extension SwiftDataTodoRepositoryTests {
     /// keeps out.
     @Suite("SwiftDataProgressStore")
     struct SwiftDataProgressStoreTests {
-        /// The contract's reach into the adapter: its test-only log reader and fault switch.
+        /// The contract's reach into the adapter: its test-only log reader and fault switch,
+        /// and a row saved through a second context over the same container with a due day
+        /// that names no date.
         static func probe(of store: SwiftDataProgressStore) -> ProgressStoreContract.Probe {
             ProgressStoreContract.Probe(
                 answers: { try await store.loggedAnswers() },
                 failRecords: { failing in await store.failSaves(failing) },
+                storeUnreadableRow: { progress in
+                    let context = ModelContext(store.modelContainer)
+                    let record = CardProgressRecord(progress)
+                    ProgressRowDamage.dueDayOnFebruary29OfACommonYear.apply(to: record)
+                    context.insert(record)
+                    try context.save()
+                },
             )
         }
 

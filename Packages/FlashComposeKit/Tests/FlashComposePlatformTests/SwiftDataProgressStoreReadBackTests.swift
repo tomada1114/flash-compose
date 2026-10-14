@@ -65,9 +65,10 @@ enum AnswerRowDamage: CaseIterable, Sendable {
 
 extension SwiftDataTodoRepositoryTests {
     /// What the adapter reads back from a row: the stored day encoding, the grade and
-    /// kind names, and a row that no longer makes a Core value, which is reported as
-    /// ``FlashComposeCore/ProgressStoreError/corruptedRecord`` rather than skipped or
-    /// crashed on.
+    /// kind names, and a row that no longer makes a Core value — a progress row the load
+    /// leaves out and keeps, so that card reads as never recorded, and an answer row the
+    /// log read reports as ``FlashComposeCore/ProgressStoreError/corruptedRecord`` rather
+    /// than crashing on.
     ///
     /// Nested in `SwiftDataTodoRepositoryTests` for its `.serialized` trait, as every
     /// suite that opens a container is.
@@ -96,6 +97,18 @@ extension SwiftDataTodoRepositoryTests {
                 after: progress.state,
                 secondsToReveal: 4.2,
             )
+        }
+
+        /// A second card's progress, stored beside the damaged row.
+        static func otherProgress() throws -> CardProgress {
+            try CardProgress(cardID: CardID("c_3w4x5y6z"), state: FSRSState(
+                stability: 7.25,
+                difficulty: 2.75,
+                reps: 2,
+                lapses: 1,
+                lastDay: PracticeDay(year: 2_026, month: 10, day: 17),
+                dueDay: PracticeDay(year: 2_026, month: 10, day: 27),
+            ))
         }
 
         @Test(arguments: [
@@ -154,20 +167,46 @@ extension SwiftDataTodoRepositoryTests {
         }
 
         @Test(arguments: ProgressRowDamage.allCases)
-        func `a progress row that no longer reads back fails the load`(
+        func `a progress row that no longer reads back is left out of the load and kept`(
             damage: ProgressRowDamage,
         ) async throws {
             let container = try PersistenceStore.makeContainer(storage: .inMemory)
             let context = ModelContext(container)
-            let record = try CardProgressRecord(Self.progress())
-            damage.apply(to: record)
-            context.insert(record)
+            let damaged = try CardProgressRecord(Self.progress())
+            damage.apply(to: damaged)
+            context.insert(damaged)
+            try context.insert(CardProgressRecord(Self.otherProgress()))
             try context.save()
 
             let store = SwiftDataProgressStore(modelContainer: container)
-            await #expect(throws: ProgressStoreError.corruptedRecord) {
-                try await store.loadProgress()
-            }
+            #expect(try await store.loadProgress() == [Self.otherProgress()])
+            let stored = try ModelContext(container).fetch(FetchDescriptor<CardProgressRecord>())
+            #expect(stored.count == 2)
+        }
+
+        @Test(arguments: [
+            ProgressRowDamage.dueDayOnFebruary29OfACommonYear,
+            .lastDayOfMonth13,
+            .lastDayZero,
+        ])
+        func `the next grade of a card whose row no longer reads back replaces the row`(
+            damage: ProgressRowDamage,
+        ) async throws {
+            let container = try PersistenceStore.makeContainer(storage: .inMemory)
+            let context = ModelContext(container)
+            let damaged = try CardProgressRecord(Self.progress())
+            damage.apply(to: damaged)
+            context.insert(damaged)
+            try context.insert(CardProgressRecord(Self.otherProgress()))
+            try context.save()
+
+            let store = SwiftDataProgressStore(modelContainer: container)
+            _ = try await store.loadProgress()
+            try await store.record(answer: Self.answer(), progress: Self.progress())
+
+            let loaded = try await SwiftDataProgressStore(modelContainer: container).loadProgress()
+                .sorted { $0.cardID.rawValue < $1.cardID.rawValue }
+            #expect(try loaded == [Self.progress(), Self.otherProgress()])
         }
 
         @Test(arguments: AnswerRowDamage.allCases)
