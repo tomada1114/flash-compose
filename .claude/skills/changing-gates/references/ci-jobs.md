@@ -20,7 +20,7 @@ rename removes it from every app), `changes` (ubuntu, not required: a `git diff 
 the pull request against one path list in `ci.yml`; `app`, `smoke`, and `ios-tests` need it,
 always run under their required names, and skip their steps only on its exact output
 `simulator=false` — a push to `main` always says true, and a failed `changes` leaves the
-output empty so they run in full; a job skipped outright would report as passing), and `zizmor` (ubuntu: the required `Workflow Security Lint`, zizmor's audit of
+output empty so they run in full; a job skipped outright would report as passing — paused until FlashCompose's MVP is built, by the owner's call: its detection is commented out and it always says `simulator=false`, so all three skip every step on every event until the comment in `ci.yml` is undone), and `zizmor` (ubuntu: the required `Workflow Security Lint`, zizmor's audit of
 every workflow, configured by `.github/zizmor.yml`). Beside it run `check-pr-title.yml`
 (the required `Validate PR title`) and `pr-label.yml`, which labels a pull request from
 its title type with `scripts/label-pr.sh` checked out at the base SHA, and the security

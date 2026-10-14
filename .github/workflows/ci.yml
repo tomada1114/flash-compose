@@ -75,6 +75,11 @@ jobs:
   # ios-tests) exercise. Those jobs are required checks, so they always run and report
   # under their own names; they only skip their steps when this job says
   # `simulator=false`. A push (main) always says true.
+  #
+  # PAUSED until the MVP is built (the owner's call): the detection below is commented
+  # out and this job always says `simulator=false`, so the simulator jobs skip every
+  # step on every event. To turn them back on, delete the `echo`/`exit` pair and
+  # uncomment the block under it.
   changes:
     name: Detect Simulator-Relevant Changes
     runs-on: ubuntu-latest
@@ -96,22 +101,25 @@ jobs:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
-          if [[ "${EVENT_NAME}" != "pull_request" ]]; then
-            echo "simulator=true" >>"${GITHUB_OUTPUT}"
-            exit 0
-          fi
-          # The paths the simulator jobs exercise, as one extended regex: anything
-          # matching sends them through in full. Keep this the only copy of the list.
-          relevant='^(App/|Packages/|LaunchUITests/|Config/|scripts/|\.github/actions/|project\.yml$|justfile$|mise\.toml$|\.xcode-version$|\.github/workflows/ci\.yml$)'
-          # The pull request's own change set (three dots: from the merge base). A
-          # failed diff fails this step, and the simulator jobs then run (see below).
-          files="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
-          printf 'Changed files:\n%s\n' "${files}"
-          if [[ -n "${files}" ]] && ! grep -qE -- "${relevant}" <<<"${files}"; then
-            echo "simulator=false" >>"${GITHUB_OUTPUT}"
-          else
-            echo "simulator=true" >>"${GITHUB_OUTPUT}"
-          fi
+          # PAUSED until the MVP is built — see the job's comment.
+          echo "simulator=false" >>"${GITHUB_OUTPUT}"
+          exit 0
+          # if [[ "${EVENT_NAME}" != "pull_request" ]]; then
+          #   echo "simulator=true" >>"${GITHUB_OUTPUT}"
+          #   exit 0
+          # fi
+          # # The paths the simulator jobs exercise, as one extended regex: anything
+          # # matching sends them through in full. Keep this the only copy of the list.
+          # relevant='^(App/|Packages/|LaunchUITests/|Config/|scripts/|\.github/actions/|project\.yml$|justfile$|mise\.toml$|\.xcode-version$|\.github/workflows/ci\.yml$)'
+          # # The pull request's own change set (three dots: from the merge base). A
+          # # failed diff fails this step, and the simulator jobs then run (see below).
+          # files="$(git diff --name-only "${BASE_SHA}...${HEAD_SHA}")"
+          # printf 'Changed files:\n%s\n' "${files}"
+          # if [[ -n "${files}" ]] && ! grep -qE -- "${relevant}" <<<"${files}"; then
+          #   echo "simulator=false" >>"${GITHUB_OUTPUT}"
+          # else
+          #   echo "simulator=true" >>"${GITHUB_OUTPUT}"
+          # fi
 
   app:
     name: App Build & UI Test (iOS Simulator)
