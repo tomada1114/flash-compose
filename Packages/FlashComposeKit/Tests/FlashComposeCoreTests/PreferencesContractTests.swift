@@ -68,8 +68,8 @@ struct PreferencesContractTests {
     @Test
     func `the snapshot shows what was set, by key name`() {
         let preferences = InMemoryPreferences()
-        preferences.set(true, for: PreferenceKeys.hideCompleted)
-        #expect(preferences.snapshot["todoList.hideCompleted"] as? Bool == true)
+        preferences.set("tech", for: PreferenceKeys.scopeTopicsOff)
+        #expect(preferences.snapshot["scope.topicsOff"] as? String == "tech")
         #expect(preferences.snapshot.count == 1)
     }
 }

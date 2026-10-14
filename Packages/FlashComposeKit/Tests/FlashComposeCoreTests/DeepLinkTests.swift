@@ -2,7 +2,8 @@ import FlashComposeCore
 import Foundation
 import Testing
 
-/// ``DeepLink``: the one URL shape the app opens, and the scheme it is registered under.
+/// ``DeepLink``: the one URL shape the app opens — `flash-compose://`, the drill — and the
+/// scheme it is registered under.
 ///
 /// The URLs below spell the scheme as a literal on purpose — an oracle independent of
 /// ``DeepLink/scheme``. `scripts/bootstrap.sh` rewrites that literal here, in
@@ -10,8 +11,6 @@ import Testing
 /// derived, because the rename does not rewrite an upper-cased placeholder.
 @Suite("DeepLink")
 struct DeepLinkTests {
-    static let id = UUID(uuidString: "3F2504E0-4F89-11D3-9A0C-0305E82C3301") ?? UUID()
-
     /// The key in `project.yml`'s `info:` block that lists the URL schemes the app claims.
     static let schemesKey = "CFBundleURLSchemes:"
 
@@ -45,75 +44,38 @@ struct DeepLinkTests {
     // MARK: - Parsing
 
     @Test
-    func `a to-do link opens that item's detail`() throws {
-        let url = try #require(URL(string: "flash-compose://todo/\(Self.id.uuidString)"))
-        #expect(DeepLink.route(for: url) == .todoDetail(Self.id))
-    }
-
-    @Test
-    func `a lower-cased identifier parses to the same item`() throws {
-        let url =
-            try #require(URL(string: "flash-compose://todo/\(Self.id.uuidString.lowercased())"))
-        #expect(DeepLink.route(for: url) == .todoDetail(Self.id))
+    func `the bare scheme opens the root, the drill`() throws {
+        let url = try #require(URL(string: "flash-compose://"))
+        #expect(DeepLink.destination(for: url) == .drill)
     }
 
     @Test
     func `the scheme is compared without regard to case`() throws {
-        let url = try #require(
-            URL(string: "\(DeepLink.scheme.uppercased())://todo/\(Self.id.uuidString)"),
-        )
+        let url = try #require(URL(string: "\(DeepLink.scheme.uppercased())://"))
         #expect(url.scheme != DeepLink.scheme, "the fixture must really be upper-cased")
-        #expect(DeepLink.route(for: url) == .todoDetail(Self.id))
+        #expect(DeepLink.destination(for: url) == .drill)
     }
 
     // MARK: - Rejecting
 
-    /// Every shape other than exactly `flash-compose://todo/<uuid>`, each with its own reason.
+    /// Every shape other than exactly `flash-compose://`, each with its own reason —
+    /// among them the removed detail-screen link, which no longer opens anything.
     @Test(arguments: [
-        ("another scheme", "https://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
-        ("another host", "flash-compose://item/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
-        ("the host in another case", "flash-compose://TODO/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
-        ("no host", "flash-compose:/todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
-        ("no identifier", "flash-compose://todo"),
-        ("an empty identifier", "flash-compose://todo/"),
-        ("a malformed identifier", "flash-compose://todo/not-a-uuid"),
-        ("a truncated identifier", "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C330"),
-        (
-            "a percent-encoded identifier",
-            "flash-compose://todo/3F2504E0%2D4F89-11D3-9A0C-0305E82C3301",
-        ),
-        (
-            "an extra path component",
-            "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301/edit",
-        ),
-        ("a trailing slash", "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301/"),
-        ("a query string", "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301?edit=1"),
-        ("an empty query string", "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301?"),
-        ("a fragment", "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301#title"),
-        ("a user", "flash-compose://me@todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
-        ("a port", "flash-compose://todo:80/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
+        ("another scheme", "https://"),
+        ("the removed detail link", "flash-compose://todo/3F2504E0-4F89-11D3-9A0C-0305E82C3301"),
+        ("a host", "flash-compose://drill"),
+        ("no authority", "flash-compose:"),
+        ("a path without a host", "flash-compose:/drill"),
+        ("a trailing slash", "flash-compose:///"),
+        ("a query string", "flash-compose://?scope=tech"),
+        ("an empty query string", "flash-compose://?"),
+        ("a fragment", "flash-compose://#drill"),
+        ("a user", "flash-compose://me@"),
+        ("a port", "flash-compose://:80"),
     ])
     func `a link of any other shape opens nothing`(reason: String, link: String) throws {
         let url = try #require(URL(string: link), "\(reason): the fixture must be a URL")
-        #expect(DeepLink.route(for: url) == nil, "\(reason): \(link)")
-    }
-
-    // MARK: - Building
-
-    @Test
-    func `a route's link is the documented shape`() {
-        let url = DeepLink.url(for: .todoDetail(Self.id))
-        #expect(url.absoluteString == "flash-compose://todo/\(Self.id.uuidString)")
-    }
-
-    @Test(arguments: [
-        UUID(uuidString: "00000000-0000-0000-0000-000000000000") ?? UUID(),
-        UUID(uuidString: "3F2504E0-4F89-11D3-9A0C-0305E82C3301") ?? UUID(),
-        UUID(uuidString: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF") ?? UUID(),
-    ])
-    func `a route survives a round trip through its link`(id: UUID) {
-        let route = AppRoute.todoDetail(id)
-        #expect(DeepLink.route(for: DeepLink.url(for: route)) == route)
+        #expect(DeepLink.destination(for: url) == nil, "\(reason): \(link)")
     }
 
     // MARK: - The registered scheme

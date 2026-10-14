@@ -117,21 +117,12 @@ struct LocalizationTests {
     /// source-scan tests fail until this list names every key Core's sources declare.
     static func everyCase() -> [Case] {
         let strings: [LocalizedStringResource] = [
-            TodoListStrings.title, TodoListStrings.draftPlaceholder, TodoListStrings.add,
-            TodoListStrings.emptyTitle, TodoListStrings.emptyDescription,
-            TodoListStrings.failureTitle, FailureStrings.dismiss, TodoListStrings.retry,
-            TodoListStrings.markDone, TodoListStrings.markNotDone,
-            TodoListStrings.hideCompleted, TodoListStrings.allDoneTitle,
-            TodoListStrings.allDoneDescription,
-            TodoDetailStrings.created, TodoDetailStrings.notFoundTitle,
-            TodoDetailStrings.notFoundDescription,
+            FailureStrings.dismiss,
             ScopeStrings.title, ScopeStrings.done, ScopeStrings.noteNewCards,
             ScopeStrings.noteReviews, ScopeStrings.topicsHeader, ScopeStrings.levelsHeader,
             ScopeStrings.pickAtLeastOne, ScopeStrings.allShown,
         ]
-        let failures: [TodoListFailure] = [.deleteFailed, .loadFailed, .saveFailed]
         return strings.map { Case(resource: $0, arguments: []) }
-            + failures.map { Case(resource: $0.message, arguments: []) }
             + [Case(resource: ScopeStrings.unseenCount("1,402"), arguments: ["1,402"])]
             + drillCases()
     }
@@ -331,8 +322,8 @@ struct LocalizationTests {
     @Test
     func `the catalog and Core's bundle both declare English as the development language`() throws {
         #expect(try Self.catalog().sourceLanguage == "en")
-        guard case let .atURL(url) = TodoListStrings.title.bundle else {
-            Issue.record("TodoListStrings.title is not looked up in Core's bundle")
+        guard case let .atURL(url) = FailureStrings.dismiss.bundle else {
+            Issue.record("FailureStrings.dismiss is not looked up in Core's bundle")
             return
         }
         #expect(Bundle(url: url)?.developmentLocalization == "en")

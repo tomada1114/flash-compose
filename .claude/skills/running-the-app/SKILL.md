@@ -62,7 +62,7 @@ between builds. A log line the change adds is the other proof — see it in the 
 
 Shipped code logs through `AppLog` (`os.Logger`), never `print`
 (`docs/architecture.md` › Logging): one subsystem, the bundle identifier, and one
-category per concern (`todos`, `persistence`, `preferences`, `navigation`).
+category per concern (`drill`, `persistence`, `preferences`, `navigation`).
 
 ```bash
 just logs     # simctl spawn booted log stream --level debug, this app's subsystem
@@ -85,11 +85,12 @@ Four things cost time if you guess them:
 
 - **`log show` reaches only what was persisted.** `xcrun simctl spawn booted log show
   --last 5m --predicate 'subsystem == "io.github.tomada1114.FlashCompose"'` prints an empty table for
-  `.debug` lines such as `load: 0 items`, even with `--debug --info`; it sees `.notice`
-  (Default) and above. Stream for anything lower.
-- **Anything user-derived is redacted.** `title=<private>` is the design
-  (`TodoListViewModel.addDraft()` logs it `.private`). Assert on the public half of the
-  line instead of turning private data on.
+  `.debug` lines, even with `--debug --info`; it sees `.notice` (Default) and above.
+  Stream for anything lower.
+- **Anything that may carry user data is redacted.** `record failed: <private>` in the
+  `persistence` category is the design: `SwiftDataProgressStore` logs the operation
+  `.public` and the SwiftData error `.private`, since its message can quote stored
+  values. Assert on the public half of the line instead of turning private data on.
 - **`getpwuid_r did not find a match for uid 501`** on the first line is the simulator's
   noise, not your app's.
 

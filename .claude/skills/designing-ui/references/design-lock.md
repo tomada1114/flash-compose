@@ -26,7 +26,7 @@ it as an open question in the pull request until it is decided.
 | iPad layout | "Same as iPhone, readable width", or a `NavigationSplitView` at regular width — or "iPhone only" when the device family is | The root view, switching on `horizontalSizeClass`; `TARGETED_DEVICE_FAMILY` in `project.yml` |
 | Haptics | "None", or which actions play which system pattern | `.sensoryFeedback(_:trigger:)` at those call sites only |
 | Motion | "System transitions only", or which custom animations exist and what each says; always none under Reduce Motion | `DesignTokens.Motion`, extended if the lock adds curves |
-| Copy style | Title case or sentence case per element type (buttons, navigation titles, section headers, alerts); the voice in one sentence | The English values in `Localizable.xcstrings`, returned by Core (`TodoListStrings`) |
+| Copy style | Title case or sentence case per element type (buttons, navigation titles, section headers, alerts); the voice in one sentence | The English values in `Localizable.xcstrings`, returned by Core (`DrillStrings`) |
 | App icon | Who supplies it and in which format — an Icon Composer `.icon` file, or `AppIcon.appiconset` with dark and tinted variants — or "placeholder until distribution" | `App/Assets.xcassets/AppIcon.appiconset`, or the `.icon` file the target references in `project.yml` |
 
 ## Sharing values between views

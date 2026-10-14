@@ -40,7 +40,8 @@ states the four kinds; this is the same split applied to a system API.
 ## The fake for a permission
 
 A permission port's fake is an actor in `Tests/FlashComposeTestSupport` that starts in the
-state a test hands it and records what it was asked, like `InMemoryTodoRepository`:
+state a test hands it and records what it was asked, like `InMemoryProgressStore`
+(`init(progress:)`, `calls`):
 
 ```swift
 package actor FakeNotificationScheduler: NotificationScheduling {

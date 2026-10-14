@@ -1,10 +1,17 @@
 import Foundation
 
-/// The app's custom URL scheme: which links open which ``AppRoute``, and the inverse.
+/// The app's custom URL scheme: which links open which screen.
 ///
 /// Parsing lives in Core, not in the view that receives the URL, so every accepted and
-/// rejected shape is a unit test. The one shape accepted is `flash-compose://todo/<uuid>`.
+/// rejected shape is a unit test. The one shape accepted is `flash-compose://`, which
+/// opens the app on its root screen, the drill.
 public enum DeepLink {
+    /// Where a link the app understands takes it.
+    public enum Destination: Equatable, Sendable {
+        /// The root screen, the drill: whatever is pushed is popped.
+        case drill
+    }
+
     /// The URL scheme the app registers and parses.
     ///
     /// Contract once an app ships: links to it live in messages, notes, and other apps,
@@ -14,20 +21,18 @@ public enum DeepLink {
     /// so keep it one unsplit literal.
     public static let scheme = "flash-compose"
 
-    /// The host of a link to one to-do item.
-    private static let todoHost = "todo"
-
-    /// The route `url` names, or `nil` when it is not exactly `flash-compose://todo/<uuid>`.
+    /// Where `url` takes the app, or `nil` when it is not exactly `flash-compose://`.
     ///
-    /// The scheme compares without regard to case, as URL schemes do; the host must be
-    /// `todo` exactly, followed by one path component that parses as a `UUID`. A query, a
-    /// fragment, a user, a port, or any further path component rejects the link rather
-    /// than being ignored, so a link that says more than this version understands opens
-    /// nothing instead of opening something else.
-    public static func route(for url: URL) -> AppRoute? {
+    /// The scheme compares without regard to case, as URL schemes do; a host, a path, a
+    /// query, a fragment, a user, or a port rejects the link rather than being ignored, so
+    /// a link that says more than this version understands opens nothing instead of
+    /// opening something else. A pushed screen's link shape arrives with its ``AppRoute``
+    /// case, as a ``Destination`` case of its own.
+    public static func destination(for url: URL) -> Destination? {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
               components.scheme?.lowercased() == scheme,
-              components.host == todoHost,
+              components.host?.isEmpty == true,
+              components.percentEncodedPath.isEmpty,
               components.user == nil,
               components.password == nil,
               components.port == nil,
@@ -36,30 +41,6 @@ public enum DeepLink {
         else {
             return nil
         }
-        // The encoded path, so a percent-escaped character is not decoded into a match.
-        // Everything after the leading slash must be one UUID: a further component or a
-        // trailing slash is not one.
-        let path = components.percentEncodedPath
-        guard path.hasPrefix("/"), let id = UUID(uuidString: String(path.dropFirst())) else {
-            return nil
-        }
-        return .todoDetail(id)
-    }
-
-    /// The link that opens `route` — what ``route(for:)`` parses back to the same route.
-    public static func url(for route: AppRoute) -> URL {
-        switch route {
-        case let .todoDetail(id):
-            var components = URLComponents()
-            components.scheme = scheme
-            components.host = todoHost
-            components.path = "/\(id.uuidString)"
-            guard let url = components.url else {
-                // Unreachable: the scheme, the host, and a UUID's characters are all
-                // valid unescaped in a URL, so the components always form one.
-                preconditionFailure("DeepLink could not form a URL for \(route)")
-            }
-            return url
-        }
+        return .drill
     }
 }

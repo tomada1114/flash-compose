@@ -47,14 +47,14 @@ exceptions (`AGENTS.md`'s "Important Reminders").
 
 ## Declaring a string
 
-`TodoListStrings.emptyDescription` is the worked example:
+`DrillStrings.showAnswer` is the worked example:
 
 ```swift
 LocalizedStringResource(
-    "todoList.empty.description",
-    defaultValue: "Items you add appear here.",
+    "drill.showAnswer",
+    defaultValue: "Show answer",
     bundle: .module,
-    comment: "Explanation under the empty-list headline.",
+    comment: "Button under the prompt that reveals the model answer.",
 )
 ```
 
@@ -66,7 +66,7 @@ Every part is there for a reason:
 - **`defaultValue`.** `swift test` (`just test`) builds with SwiftPM's native build
   system, which copies the `.xcstrings` into Core's bundle uncompiled, so the English a
   test sees comes from here. Without it a test would see the key.
-- **An explicit key**, `feature.purpose` (`todoList.add`, `todoList.failure.save`), not
+- **An explicit key**, `feature.purpose` (`drill.showAnswer`, `drill.failure.save.title`), not
   the English text: the English can be polished without re-keying every translation, and
   a key is something a test and a search can name.
 - **`comment`** is a translator's only context: where the text appears and what each
@@ -74,11 +74,11 @@ Every part is there for a reason:
 - **One whole sentence per state**, with arguments interpolated (a `String` becomes
   `%@`, an `Int` becomes `%lld`), never a fixed prefix glued to a swapped-in fragment: a
   translation must be free to reorder the sentence around its arguments.
-  `TodoListFailure.message` shows the shape — one sentence per failure, not one prefix
-  and three endings.
-- **A computed property**, as every `TodoListStrings` member and
-  `TodoListFailure.message` are: the initializer's `locale` defaults to `.current` when
-  the resource is built, so each read builds it afresh.
+  `DrillStrings.header(new:review:reAsk:pile:)` shows the shape — one whole sentence per
+  pile and one for no card on screen, not one prefix of counts and four endings.
+- **A computed property or a function**, as every `DrillStrings` member and
+  `DrillFailure.message` are: the initializer's `locale` defaults to `.current` when the
+  resource is built, so each read or call builds it afresh.
 - **No generated symbols.** `xcodebuild` runs `GenerateStringSymbols` over the catalog,
   but SwiftPM's native build does not, so code that names one fails to compile under
   `just test`.
@@ -88,12 +88,13 @@ Every part is there for a reason:
 - A view has no localizable literal. `Text("…")` and `Button("…")` take a
   `LocalizedStringKey` that is looked up in the app's main bundle, not the package's, and
   `-exportLocalizations` exports it under a `FlashComposeUI` strings file that has nowhere to
-  ship. Render a Core resource instead, as `TodoListView` does:
-  `Text(TodoListStrings.emptyTitle)`, `Button(TodoListStrings.add) { … }`,
-  `.accessibilityLabel(Text(toggleLabel))`.
-- What is not language is `Text(verbatim:)`: the user's own text (`TodoRow`'s
-  `Text(verbatim: item.title)`), a number (formatted in Core with an injected `Locale`
-  when formatting matters), a glyph, and a preview's note to the developer.
+  ship. Render a Core resource instead, as the drill's views do:
+  `Text(DrillStrings.alternatives)`, `Button(FailureStrings.dismiss, action: dismiss)`,
+  `.accessibilityLabel(Text(option.accessibilityLabel))`.
+- What is not language is `Text(verbatim:)`: card content (`QuestionFace`'s
+  `Text(verbatim: card.card.japanese)`), a number (formatted in Core with an injected
+  `Locale` when formatting matters, as `DrillHeaderView`'s counts are), a glyph (its `›`
+  separator), and a preview's note to the developer.
 - Accessibility identifiers are never localized (`building-swiftui-screens`).
 
 ## Strings outside Core
@@ -119,7 +120,7 @@ Every part is there for a reason:
   `bundle: .module`; a declared key the catalog or `everyCase()` lacks; a catalog key
   declared nowhere; or catalog English that differs from `defaultValue`. It reads the
   catalog's source, not a compiled bundle, because `swift test` never compiles one.
-- A new case on an enum whose `message` is a resource (`TodoListFailure`) fails the
+- A new case on an enum whose `message` is a resource (`DrillFailure`) fails the
   source-scan test until `everyCase()` lists it. That is intended.
 - The scan is text, not a parser. It does not see a resource made from a bare literal
   (`let title: LocalizedStringResource = "Add"`, which also lands in the main bundle),

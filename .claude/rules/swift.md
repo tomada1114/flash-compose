@@ -76,24 +76,24 @@ paths:
 ## Constants
 
 - A view's spacing, corner radius, and hit-target size: `DesignTokens`
-  (`Sources/FlashComposeUI/DesignSystem/DesignTokens.swift`) — `TodoListView.swift` is the
-  worked example. A number only one view needs and the scale does not cover: a
-  `private enum Layout` at the top of that view's file. A test's timeouts likewise
+  (`Sources/FlashComposeUI/DesignSystem/DesignTokens.swift`). A number only one view
+  needs and the scale does not cover: a `private enum Layout` at the top of that view's
+  file — `GradeBar.swift` is the worked example of both. A test's timeouts likewise
   (`LaunchTests.swift`'s `Timeout`)
 - A number someone might tune (a delay, a threshold, a limit): one tuning type in Core
   (the `designing-core-logic` skill); a domain invariant is a parameter or a `static` on
-  its type (`TodoItem.normalizedTitle(_:)`), not a tunable
+  its type (`PracticeDay.boundaryHour`), not a tunable
 - User-visible wording Core decides: a `static` on a caseless enum in Core
-  (`TodoListStrings`), backed by the String Catalog; the logging subsystem: `AppLog`, once
+  (`DrillStrings`), backed by the String Catalog; the logging subsystem: `AppLog`, once
 - A type holding only `static` members is a caseless `enum` (SwiftLint's
   `convenience_type`). No global `let`, and no `Constants.swift` grab bag: a constant
   lives beside the one concern that uses it
 
 ## Error Handling
 
-- Define typed errors per module (an `enum ... : Error, Equatable` with payload), thrown
-  with context — `TodoRepositoryError` is the worked example; its payloads carry
-  identifiers, never a title
+- Define typed errors per module (an `enum ... : Error, Equatable`), thrown with context —
+  `ProgressStoreError` is the worked example. A payload carries only what a caller needs
+  to decide, such as an identifier or a count, never user content
 - NEVER `try!` or force-unwrap (`!`) in production code; `guard let`/`throws` instead
 - Never swallow errors silently; if catching, handle meaningfully or rethrow
 - Never use errors for control flow
@@ -111,25 +111,26 @@ paths:
   (`Bundle.main.bundleIdentifier` answers for the test runner under `swift test` and for
   the preview agent in a preview), and one `category` names one concern. `just logs`
   streams that subsystem; `AppLogTests` fails if it drifts from `project.yml`
-- Anything user-derived carries a privacy annotation — a to-do's title, anything typed,
-  a file path — is `.private`. Only values that are safe in anyone's log, such as an
-  identifier, a count, or an operation name, are `.public`. `os.Logger` defaults
-  interpolated strings to `.private`, so say which one you mean rather than relying on
-  the default
+- Anything user-derived carries a privacy annotation — card text, anything typed, a file
+  path, a framework error's message — is `.private`. Only values that are safe in
+  anyone's log, such as an identifier, a count, or an operation name, are `.public`.
+  `os.Logger` defaults interpolated strings to `.private`, so say which one you mean
+  rather than relying on the default
 - Level by intent: `.debug` for the development stream `just logs` shows, `.info` for a
   milestone worth keeping, `.error`/`.fault` for something that went wrong. See
-  `TodoListViewModel.load()` for the worked example
+  `SwiftDataProgressStore`'s `storageFailure(_:during:)` (`.error`) and
+  `PersistenceStore.makeContainer(storage:)` (`.fault`) for the worked examples
 - A log message is an autoclosure: log a local constant, not a `self.` property
   (`docs/architecture.md` › Logging)
 
 ## Concurrency
 
 - Swift 6 language mode is on: data-race safety errors are non-negotiable
-- UI-facing state is `@MainActor` (`TodoListViewModel`); keep Core types `Sendable` where
+- UI-facing state is `@MainActor` (`DrillViewModel`); keep Core types `Sendable` where
   they cross actors
 - Ports are `Sendable`. The repository ports are `async`; `PreferencesStoring` is
   deliberately synchronous (`docs/architecture.md` › Preferences)
-- Adapters and fakes are actors (`SwiftDataTodoRepository`, `InMemoryTodoRepository`), or
+- Adapters and fakes are actors (`SwiftDataProgressStore`, `InMemoryProgressStore`), or
   `Sendable` structs holding only `Sendable` values (`UserDefaultsPreferences`) and final classes guarding their state with a `Mutex`
   (`InMemoryPreferences`) — never `@unchecked Sendable` (`docs/architecture.md` ›
   Concurrency)

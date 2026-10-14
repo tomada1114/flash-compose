@@ -4,8 +4,8 @@ import SwiftData
 
 /// The SwiftData-backed adapter for ``FlashComposeCore/ProgressStore``.
 ///
-/// The same shape as `SwiftDataTodoRepository`: it translates between Core's values and
-/// the stored `CardProgressRecord` and `AnswerRecord`, maps every framework error into
+/// It translates between Core's values and the stored `CardProgressRecord` and
+/// `AnswerRecord`, maps every framework error into
 /// ``FlashComposeCore/ProgressStoreError``, and makes no decision about a grade of its
 /// own. `ProgressStoreContract` checks the translation in `FlashComposePlatformTests`
 /// against an in-memory store, under plain `just test`, in CI.

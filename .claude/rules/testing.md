@@ -10,7 +10,7 @@ Four kinds of test, split by what is under test (`docs/architecture.md` › Test
 
 1. **A decision → a Core test with the fake.** Anything that branches, clamps, formats,
    orders, or remembers lives in `FlashComposeCore` and is tested in `Tests/FlashComposeCoreTests`
-   against the port's fake, `InMemoryTodoRepository` (see "Fakes, not mocks" below).
+   against the port's fake, `InMemoryProgressStore` (see "Fakes, not mocks" below).
    These run under `just test` and in CI's `test` job on every push, and are what the 80%
    line- and 75% function-coverage floors measure. This is the default: if an adapter
    looks like it needs a test for a decision, move the decision into Core instead.
@@ -28,12 +28,13 @@ Four kinds of test, split by what is under test (`docs/architecture.md` › Test
    device, or push delivery shows is not a test at all: the pull request carries the
    evidence (a screenshot, the log lines from `just logs`).
 4. **What only the assembled app shows → `LaunchUITests`.** The one XCTest target holds
-   the launch guarantee: the app starts on the iOS Simulator, shows its list, and the
-   core interaction — adding an item — round-trips through `App/`'s real wiring
-   (`LaunchTests.swift`). It launches the app with `-uiTesting`, which opens an in-memory
-   store, so every run starts empty. A new test belongs there only when what it proves
-   is that wiring — scene lifecycle, the composition root handing over the real adapter —
-   and nothing smaller can fail for it. A decision is a Core test, a view is covered
+   the launch guarantee: the app starts on the iOS Simulator, opens on the drill, and
+   the core interaction — revealing a card's answer and grading it — round-trips through
+   `App/`'s real wiring (`LaunchTests.swift`). It launches the app with `-uiTesting`,
+   which opens an in-memory store and scratch preferences, so every run starts with
+   every card new and the default scope. A new test belongs there only when what it
+   proves is that wiring — scene lifecycle, the composition root handing over the real
+   adapter — and nothing smaller can fail for it. A decision is a Core test, a view is covered
    through its Core view model, and an adapter's translation is a Platform test. It
    waits on a predicate with a timeout (`waitForExistence(timeout:)`), never `sleep`.
 
@@ -46,12 +47,14 @@ translation-only, and outside the coverage floor, precisely so that stays true.
 
 - Swift Testing only (`@Test`, `#expect`, `#require`, `@Suite`); XCTest is reserved for the
   XCUITest launch target in `LaunchUITests/`
-- Test names are backticked sentences (`` func `load publishes the stored items in display order`() ``)
+- Test names are backticked sentences
+  (`` func `a failing progress load shows E1, and a retry reaches the drill`() ``)
 - Use `@Test(arguments:)` for input/output variations; don't copy-paste test bodies
 - Group related tests in a `@Suite`; annotate `@MainActor` suites that touch view models
 - Shared values and builders for one subject's suites go in one fixture enum beside them
-  — `TodoListViewModelFixture` is the worked example: fixed dates and identifiers, and a
-  view model whose clock and identifier source are pinned
+  — `DrillFixture.swift` is the worked example: fixed instants, days, and a time zone,
+  and `DrillSetup`, which builds a drill whose clock, time zone, locale, generator, and
+  catalog are pinned
 - TDD is required: write the failing test first, then implement to green (the `tdd` skill)
 - A Core test uses plain `import FlashComposeCore`, never `@testable import`: it exercises the
   public API the rest of the app calls, so an internal can be renamed without touching a
@@ -64,18 +67,19 @@ translation-only, and outside the coverage floor, precisely so that stays true.
 
 - Test *behavior and contracts*, not implementation details
 - Always test the happy path AND the error path for every public API
-- Error-path tests assert the thrown error's payload with `#expect(throws:)`, not just its
-  type — `TodoRepositoryError.corruptedRecord(item.id)`, not any `TodoRepositoryError`
+- Error-path tests assert the exact thrown case, and its payload when it has one, with
+  `#expect(throws:)`, not just its type — `ProgressStoreError.corruptedRecord`, not any
+  `ProgressStoreError`; `FSRSWeightsError.wrongCount(count)`, with the count
 
 ## An Independent Oracle
 
 The expected value comes from somewhere other than the code under test: a literal worked
 out by hand, a case table in `@Test(arguments:)` pairing each input with its answer, or
-an invariant that must hold whatever the input (a round-trip through the repository
-returns what went in). Never compute it by calling the implementation, and never
-re-derive it with the implementation's own formula: after loading items created at
-minute 2 and minute 1, `#expect(model.items == stored.sorted(by: TodoItem.isOrderedBefore))`
-passes with any bug `isOrderedBefore` has, where `#expect(model.items == [first, second])`
+an invariant that must hold whatever the input (a round-trip through the store returns
+what went in). Never compute it by calling the implementation, and never re-derive it
+with the implementation's own formula: with levels 10 and 3 turned off, an expected
+string built by sorting and joining `levelsOff` the way `encodedLevelsOff` does passes
+with any bug that encoding has, where `#expect(selection.encodedLevelsOff == "3,10")`
 does not.
 
 ## Fakes, not mocks
@@ -86,16 +90,16 @@ working implementation of the protocol that lives in `Tests/FlashComposeTestSupp
 from data the test hands it, and records what it was asked in a plain value — the calls
 it received — which the test reads afterwards with `#expect`. It declares no
 expectations up front, verifies nothing itself, and needs no framework:
-`InMemoryTodoRepository` is the worked example to copy — `fail(_:with:)` to make an
-operation throw, `calls` and `snapshot` to read what happened, `onSave(_:)` and
-`onFetch(_:)` to act while a save or a fetch is in flight. It is `package`, not
-`public`, and matches its port's shape — an
-actor for an async port (`InMemoryTodoRepository`), a final class over a `Mutex` for a
+`InMemoryProgressStore` is the worked example to copy — `fail(_:with:)` to make an
+operation throw, `calls` and `snapshot` to read what happened, `onRecord(_:)` to act
+while a record is in flight. It is `package`, not `public`, and matches its port's
+shape — an actor for an async port (`InMemoryProgressStore`), a final class over a
+`Mutex` for a
 synchronous one (`InMemoryPreferences`) — so it is `Sendable` the honest way, never
 `@unchecked Sendable`. Every test of a given port
 uses that one fake, so the port's test-time behavior is defined in one place rather than
 re-stubbed per test. Asserting on the recorded calls is for the cases where *asking* is
-the behavior (not asking the repository before `load()`); otherwise assert on the state
+the behavior (not asking the store before `start()`); otherwise assert on the state
 the answer produced, not on the interaction that produced it.
 
 ## One Contract Suite per Port
@@ -103,36 +107,41 @@ the answer produced, not on the interaction that produced it.
 A fake stands in for the adapter only while both keep the port's promises, so those
 promises are asserted once, against both. The contract suite is a function over the
 protocol, not over either implementation, and every clause it checks is one the port's
-`///` states (add the clause there first). `TodoRepository` is the worked example
+`///` states (add the clause there first). `ProgressStore` is the worked example
 (`docs/architecture.md` › Repositories):
 
 - The fakes and one contract function per port live in the `FlashComposeTestSupport` target
   (`Tests/FlashComposeTestSupport`), which both test targets depend on — never one test target
   depending on another. It is test code: no product exports it, and
   `ArchitectureBoundaryTests` fails if a shipped module imports it.
-- `TodoRepositoryContract.check(_:)` takes `some TodoRepository` that starts empty and
-  asserts with `#expect` every promise the port states: ordering, save as insert or
-  replace, delete, and `notFound` for a missing identifier. Its `violations(of:)` returns
-  what `check(_:)` asserts on, so a Core test hands it an implementation that breaks a
-  clause and sees the contract report it — the proof the contract is not vacuous.
-- `FlashComposeCoreTests/TodoRepositoryContractTests.swift` runs it against
-  `InMemoryTodoRepository`, and against the deliberately broken implementations: CI runs
+- `ProgressStoreContract.check(_:probe:)` takes `some ProgressStore` that starts empty,
+  with a `Probe` for what the port itself cannot reach (the answer log, a failing record,
+  an unreadable row), and asserts with `#expect` every promise the port states: an empty
+  store loads nothing, a record replaces the card's progress and appends its answer, one
+  row per card through a re-ask, a failed record keeps neither half, and an unreadable
+  row is left out of the load until the card's next record replaces it. Its
+  `violations(of:probe:)` returns what `check(_:probe:)` asserts on, so a Core test hands
+  it an implementation that breaks a clause and sees the contract report it — the proof
+  the contract is not vacuous.
+- `FlashComposeCoreTests/Progress/ProgressStoreContractTests.swift` runs it against
+  `InMemoryProgressStore`, and against `FlawedProgressStore`'s deliberate flaws: CI runs
   it, so the fake cannot drift from the port.
-- `FlashComposePlatformTests/SwiftDataTodoRepositoryTests.swift` runs the same function against
-  `SwiftDataTodoRepository` with an in-memory store, beside the adapter-only cases, under
-  `just test` and in CI.
+- `FlashComposePlatformTests/SwiftDataProgressStoreTests.swift` runs the same function
+  against `SwiftDataProgressStore` with an in-memory store, beside the adapter-only
+  cases, nested under `SwiftDataStoreTests` (`.serialized`, as every suite that opens a
+  container is), under `just test` and in CI.
 
 ## Edge Cases (always consider these)
 
-- **Boundary values**: values at, just inside, and just outside every bound (an empty or
-  whitespace-only title)
-- **Repeated operations**: idempotence and repeats (toggle twice, delete what is already
-  gone, a double tap on Add)
+- **Boundary values**: values at, just inside, and just outside every bound (a level
+  at either end of `Level.range` and one past it, a stored day that names no date)
+- **Repeated operations**: idempotence and repeats (toggle twice, a second `start()`
+  once the drill has started, a double tap on a grade)
 - **State transitions**: initial state, after one operation, after error recovery (a
   failed load, then a retry)
 - **Reentrancy**: a `@MainActor` method that `await`s can be re-entered before it
-  resumes — drive the interleaving through the fake's `onSave(_:)`
-  or `onFetch(_:)` (`docs/architecture.md` › View models)
+  resumes — drive the interleaving through the fake's `onRecord(_:)`
+  (`docs/architecture.md` › View models)
 - **Both branches** of every conditional in Core (the coverage floors measure lines and functions, not branches, so they will not notice a missed one — write the test for each branch yourself)
 
 ## Hygiene

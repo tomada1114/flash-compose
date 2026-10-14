@@ -13,8 +13,6 @@ import Testing
 struct PreferenceKeysTests {
     @Test
     func `stored key names never change`() {
-        #expect(PreferenceKeys.hideCompleted.name == "todoList.hideCompleted")
-        #expect(PreferenceKeys.hideCompleted.defaultValue == false)
         #expect(PreferenceKeys.scopeTopicsOff.name == "scope.topicsOff")
         #expect(PreferenceKeys.scopeTopicsOff.defaultValue.isEmpty)
         #expect(PreferenceKeys.scopeLevelsOff.name == "scope.levelsOff")

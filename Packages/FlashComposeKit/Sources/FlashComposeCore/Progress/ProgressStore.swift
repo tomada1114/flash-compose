@@ -22,7 +22,7 @@ public enum ProgressStoreError: Error, Equatable, Sendable {
 /// Core declares it; `FlashComposePlatform` holds the SwiftData adapter
 /// (`SwiftDataProgressStore`) over the app's one container; `FlashComposeTestSupport`
 /// holds the in-memory fake every Core test uses; and `App/` decides which one the drill
-/// gets. The same shape as ``TodoRepository`` (`docs/architecture.md` › Repositories):
+/// gets. The shape every storage port follows (`docs/architecture.md` › Repositories):
 /// `Sendable`, value types only across it, every method `async` because an
 /// implementation is an actor, and every method throwing ``ProgressStoreError`` and
 /// nothing else, so a caller handles a closed set of cases and never learns which store

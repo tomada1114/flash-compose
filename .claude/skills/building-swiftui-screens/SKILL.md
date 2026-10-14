@@ -29,13 +29,13 @@ launching the app and the evidence a pull request carries (`running-the-app`).
 
 A view renders Core state and forwards user intent to a Core action; it decides nothing.
 `FlashComposeUI` is outside the coverage floor — `scripts/coverage.sh` measures `FlashComposeCore`
-only — so any branch that lives in a view is a branch no gate tests. `TodoListView` over
-`TodoListViewModel` is the worked example; copy its shape.
+only — so any branch that lives in a view is a branch no gate tests. `DrillView` over
+`DrillViewModel` is the worked example; copy its shape.
 
 - A view is a `struct` in `FlashComposeUI` importing `SwiftUI` and `FlashComposeCore`, never
   `FlashComposePlatform`. Enforced by: `ArchitectureBoundaryTests`' sibling-import tests.
-- It is `public` only when `App/` constructs it; a subview (`TodoRow`) stays `private`
-  or internal.
+- It is `public` only when `App/` constructs it (`RootView`); a screen and its subviews
+  stay internal (`DrillView`, `GradeBar`) or `private` (`GradeBar`'s `GradeButton`).
 
 ## Getting the view model
 
@@ -47,16 +47,16 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
   `@State` per scene, so each window navigates on its own, and passes both to
   `RootView(app:navigation:)`.
 - **A model every scene shares** is a stored property of `AppModel`, which `RootView`
-  hands to its screen: `TodoListView(model: app.todoList)`.
-- **A pushed screen's own model** comes from the `AppModel` factory for its route,
-  called in `RootView`'s destination switch:
-  `TodoDetailView(model: app.makeTodoDetailViewModel(id: id))`. The screen keeps it in
-  `@State private var model`, set with `_model = State(initialValue: model)`, so it
-  holds the first model for as long as it is pushed and ignores the fresh one a parent
-  re-render builds. `TodoDetailView` over `TodoDetailViewModel` is the worked example.
-- **A view handed its model** holds it as a plain `let`; `@Observable` re-renders the
-  view when a property its `body` read changes. `TodoListView` uses `@Bindable` instead
-  only because its text field binds to `draftTitle`, the one settable property.
+  hands to its screen: `DrillView(model: app.drill, startup: app.startupIndicator)`.
+- **A pushed screen's own model** comes from a named `AppModel` factory for its route
+  (`make…ViewModel(…)`), called in `RootView`'s destination switch; none exists while
+  `AppRoute` has no case. The screen keeps it in `@State private var model`, set with
+  `_model = State(initialValue: model)`, so it holds the first model for as long as it
+  is pushed and ignores the fresh one a parent re-render builds.
+- **A view handed its model** holds it as a plain `let`, as `DrillView` does;
+  `@Observable` re-renders the view when a property its `body` read changes. `@Bindable`
+  only where a control binds to a settable property: `RootView` takes it for
+  `NavigationModel`, so the stack can bind `path`.
 - **A view that owns a portless model** holds it in `@State private var model`, set with
   `_model = State(initialValue: model)` from an initializer parameter, so a preview can
   inject a state.
@@ -71,11 +71,11 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
 
 | Belongs in the view | Belongs in the Core view model |
 |---|---|
-| Layout, modifiers, the order things appear in | Whether an action is allowed now (`canAdd`) |
+| Layout, modifiers, the order things appear in | Whether an action is allowed now (`grade(_:)` ignores a grade while `isGrading`) |
 | Choosing a layout from the size class or text size | Any rule, threshold, or comparison on domain values |
 | Calling an action from a `Button`, `.onSubmit`, `.refreshable`, `.onDelete` | What the action does and the state it leaves |
-| *When* to ask — `.task`, as `TodoListView` loads on first appearance | *What* asking means (`load()`), and which empty state shows (`showsEmptyState`) |
-| `Text(verbatim:)` for the user's own text (`item.title`) | Every word a person reads, as a `LocalizedStringResource` (`TodoListStrings`) |
+| *When* to ask — `.task`, as `DrillView` starts the drill on first appearance | *What* asking means (`start()`), and which face shows (`phase`) |
+| `Text(verbatim:)` for card content, which is data (`card.card.japanese`) | Every word a person reads, as a `LocalizedStringResource` (`DrillStrings`) |
 
 - An action that waits is `async`; call it from `.task` (cancelled with the view) or a
   `Task { }` in a button's closure.
@@ -84,37 +84,38 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
   number only one view needs goes in a `private enum Layout` in that view's file.
   Enforced by: `opt_in_rules: all`, which turns on `no_magic_numbers`.
 - When `body` nears `function_body_length`, extract a subview `struct` taking exactly the
-  slice it renders, as `TodoRow` does.
+  slice it renders, as `DrillHeaderView` (handed `model.header`) and `GradeBar` (handed
+  the card's grade options) do.
 
 ## Navigation
 
 - One `NavigationStack(path:)` per navigation root, bound to Core's `NavigationModel`
-  (`docs/architecture.md` › Navigation), with one value-based
-  `navigationDestination(for: AppRoute.self)`: a link pushes an `AppRoute`, the
-  destination builds its screen from it. Both live in `RootView`, never in a screen:
-  `TodoListView` is a plain screen that only pushes routes with
-  `NavigationLink(value:)`. A new screen is a new `AppRoute` case and a new branch of
-  `RootView`'s destination `switch` — building its model through an `AppModel` factory
-  when it needs one — never navigation state in a view's `@State`.
+  (`docs/architecture.md` › Navigation). It lives in `RootView`, never in a screen:
+  `DrillView` is a plain screen at the stack's root. `AppRoute` has no case yet, so the
+  stack declares no `navigationDestination`. The first pushed screen adds an `AppRoute`
+  case, one value-based `navigationDestination(for: AppRoute.self)` in `RootView` with
+  a branch per route — building its model through an `AppModel` factory when it needs
+  one — and a `NavigationLink(value:)` that pushes the route; never navigation state in
+  a view's `@State`.
 - A screen's previews give it the stack `RootView` would: wrap it in a plain
-  `NavigationStack { … }`, as `TodoListView`'s and `TodoDetailView`'s previews do.
+  `NavigationStack { … }`, as `DrillPreview` does.
 - A button inside a `NavigationLink` row takes a non-default style
-  (`.buttonStyle(.borderless)`, as `TodoDoneToggle` has), or a tap on it follows the link.
+  (`.buttonStyle(.borderless)`), or a tap on it follows the link.
 - `NavigationSplitView` only for a regular-width iPad layout the design lock asks for;
   on iPhone it collapses to a stack anyway.
 
 ## Sheets and alerts
 
-- Whether something is presented is view-model state: a `Bool` such as
-  `isPresentingAddItem`, or an optional value (`failure`) whose presence presents it.
+- Whether something is presented is view-model state: a `Bool`, or an optional value
+  (`DrillViewModel.failure`) whose presence presents it.
   Bind through an action-built `Binding`, so every dismissal route — a button, a swipe,
   the system — goes through the action. `FailureAlert.swift` is the example.
 - **A failure is presented once, from `RootView`, outside the `NavigationStack`**, with
   `.failureAlert(_:dismiss:)`, never by an `.alert` on a screen: an alert attached to a
   screen inside the stack does not present while another screen is pushed over it, so a
-  failure on the detail screen showed nothing until the user went back (#78). A
+  failure on a pushed screen would show nothing until the user went back (#78). A
   feature's failure type adopts Core's `PresentableFailure` (a `title` and a `message`
-  as `LocalizedStringResource`), as `TodoListFailure` does; a second feature's failure
+  as `LocalizedStringResource`), as `DrillFailure` does; a second feature's failure
   is one more `.failureAlert` beside the first in `RootView`.
 - `.presentationDetents` and other sheet sizing only as the design lock says.
 
@@ -130,40 +131,46 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
   `dynamicTypeSize.isAccessibilitySize` (for example, an `HStack` becoming a `VStack`).
   Preview at `.dynamicTypeSize(.accessibility3)`.
 - **Safe areas:** never hard-code an inset or a device height. A bar pinned to an edge
-  is `.safeAreaInset(edge:)`, as `TodoListView`'s add bar is, so the list's content
-  is inset by the bar's height and its last row is never hidden behind it.
+  is `.safeAreaInset(edge:)`, as `DrillView`'s bottom bar is, so the card is inset by
+  the bar's height and never hidden behind it.
 
 ## The keyboard
 
+The app has no text field today; these hold for the first one.
+
 - `@FocusState` for which field has focus; set it from an action's result, not a timer.
-- `.submitLabel` names the return key and `.onSubmit` calls the Core action —
-  `TodoListView` submits the draft with `.submitLabel(.done)` and
-  `.onSubmit { Task { await model.addDraft() } }`.
+- `.submitLabel` names the return key and `.onSubmit` calls the Core action.
 - `.scrollDismissesKeyboard(.interactively)` on a scrolling form.
 
 ## Touch targets and iOS-only modifiers
 
 - Every tappable element is at least 44×44 pt (HIG). An icon-only button reaches it with
-  `.contentShape(Rectangle())` over a frame of `DesignTokens.Size.minimumHitTarget`, as
-  `TodoRow`'s toggle does.
-- A text field padded out to that target is a trap: a plain `TextField` takes focus only
-  from a tap on its own text line, so the padding is dead, and `.onTapGesture` on it
-  fails SwiftLint's `accessibility_trait_for_button` (an `.isButton` trait would
-  mislead VoiceOver). Draw the fill with a `.plain` `Button` in `.background { … }` that
-  sets a `@FocusState`, marked `.accessibilityHidden(true)` so VoiceOver still reaches
-  the field — `TodoListView`'s `addBar` is the worked example.
+  `.contentShape(Rectangle())` over a frame of `DesignTokens.Size.minimumHitTarget`. A
+  custom button takes a `.plain` style, a minimum height, and a `.contentShape` of its
+  own shape, as `PrimaryActionButton` (50 pt) and `GradeBar`'s buttons (64 pt) do.
+- A large hit region over content is a `.plain` `Button` in `.background { … }`, marked
+  `.accessibilityHidden(true)`, never `.onTapGesture`, which fails SwiftLint's
+  `accessibility_trait_for_button` (an `.isButton` trait would mislead VoiceOver).
+  `QuestionFace` makes the whole card reveal the answer this way: the content in front
+  takes `.allowsHitTesting(false)`, so a tap on the prompt falls through to the button,
+  and VoiceOver reaches the reveal through the Show answer button instead.
+- A text field padded out to the target is a trap: a plain `TextField` takes focus only
+  from a tap on its own text line, so the padding is dead. Draw the fill with the same
+  background `Button`, setting a `@FocusState`, so VoiceOver still reaches the field.
 - `FlashComposeUI` also compiles for macOS under `swift build`, so an iOS-only modifier —
   `.navigationBarTitleDisplayMode`, `.keyboardType`, `.textInputAutocapitalization` —
-  sits inside `#if os(iOS)`. `TodoListView` needs none today: `.submitLabel`,
-  `.refreshable`, and `.safeAreaInset` exist on both platforms. `swift build` fails when
-  one is missed, so `just test` catches it.
+  sits inside `#if os(iOS)`, as `DrillView`'s `.navigationBarTitleDisplayMode(.inline)`
+  does. `swift build` fails when one is missed, so `just test` catches it.
 
 ## Previews
 
-- One `#Preview("Name")` per state worth seeing, built by injecting a view model already
-  in it — `TodoListView`'s "Items", "Empty", and "Load failed", over the Debug-only
-  `PreviewTodoRepository` or Core's `UnavailableTodoRepository`. Previews sit under
-  `#if DEBUG` and never construct a `FlashComposePlatform` adapter.
+- One `#Preview("Name")` per state worth seeing, over a view model Core brought to that
+  state, never values written for the preview. `DrillPreview` drives a real
+  `DrillViewModel` over a one-card catalog through its actions (`reveal()`,
+  `grade(_:)`) — "D1 new", "D2 dark", "D2 longest card, AX5", "D3" — over the Debug-only
+  `PreviewProgressStore`, `PreviewProgressStore(failsRecords: true)` for "D2 save failed
+  (E2)", or Core's `UnavailableProgressStore` for "E1". Previews sit under `#if DEBUG`
+  and never construct a `FlashComposePlatform` adapter.
 - Add a dark preview (`.preferredColorScheme(.dark)`), a regular-width one for an iPad
   layout, and an accessibility-size one for a screen that shows text.
 - No `try!` or force unwrap in a preview (`.claude/rules/swift.md`).
@@ -171,13 +178,16 @@ only — so any branch that lives in a view is a branch no gate tests. `TodoList
 
 ## Accessibility
 
-- **Identifiers are a test contract.** Every control a UI test touches carries a stable,
-  unlocalized `.accessibilityIdentifier` — `newItemField`, `addButton`, `retryButton`,
-  `toggle-<uuid>`. `LaunchTests` types into `newItemField` and taps `addButton`, so a
-  rename changes the test in the same commit.
-- **Labels are what VoiceOver says.** A glyph-only control gets
-  `.accessibilityLabel` from a Core `LocalizedStringResource`, as `TodoRow`'s toggle
-  does with `toggleLabel`. A decorative image is `Image(decorative:)` or
+- **Identifiers are a test contract.** Every element a UI test touches carries a stable,
+  unlocalized `.accessibilityIdentifier` — `showAnswerButton`, `grade-again`,
+  `grade-hard`, `grade-good`, `drillPrompt`, `modelAnswer`, `drillHeader`, `drillDone`,
+  `retryButton`, `drillStartFailure`. `LaunchTests` taps `showAnswerButton` and
+  `grade-good` and reads `drillHeader`'s label, so a rename changes the test in the same
+  commit.
+- **Labels are what VoiceOver says.** A control whose visible text is not what VoiceOver
+  should say gets `.accessibilityLabel` from a Core `LocalizedStringResource`, as
+  `GradeBar`'s buttons do with `GradeOption.accessibilityLabel` (the grade and its
+  interval in one phrase). A decorative image is `Image(decorative:)` or
   `.accessibilityHidden(true)`. Enforced by: `accessibility_label_for_image` and
   `accessibility_trait_for_button`; neither sees a glyph-only text button — review does.
 - **Group** a value and its caption with `.accessibilityElement(children: .combine)`.

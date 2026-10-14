@@ -8,59 +8,22 @@ import SwiftData
 /// Versioned from day one because the stored shape is contract (`docs/architecture.md`
 /// › What is contract): an installed app's store outlives every build, so a change to a
 /// `@Model` class that a shipped schema does not describe is a migration, not an edit.
-/// This version holds the to-do sample's record beside the learner's progress and answer
-/// log, and is still edited in place because no build carrying it has been installed
-/// outside the owner's Mac (`docs/architecture.md` › Progress store). From the first such
+/// This version holds the learner's progress and answer log, and is still edited in place
+/// because no build carrying it has been installed outside the owner's Mac
+/// (`docs/architecture.md` › Progress store). From the first such
 /// install, the next change — a changed record or another entity — adds `AppSchemaV2`
 /// beside this one and a stage to ``AppMigrationPlan``, and this enum is never edited
 /// again. Only the Swift names of the schema and the plan are free to change: the store
 /// records the model's entities, attributes, and version identifier, never these names.
 enum AppSchemaV1: VersionedSchema {
-    /// SwiftData's stored shape of a ``FlashComposeCore/TodoItem``. Internal to this module: no
-    /// `@Model` object ever crosses the port, which speaks only Core's value types.
-    ///
-    /// `@Attribute(.unique)` makes a save with a known identifier an update rather than
-    /// a duplicate row. CloudKit sync does not allow unique constraints, so an app that
-    /// turns sync on replaces it with a fetch-before-insert in a new schema version.
-    @Model
-    final class TodoRecord {
-        @Attribute(.unique)
-        var id: UUID
-        var title: String
-        var isDone: Bool
-        var createdAt: Date
-
-        init(_ item: TodoItem) {
-            id = item.id
-            title = item.title
-            isDone = item.isDone
-            createdAt = item.createdAt
-        }
-
-        /// Copies what may change about an item. Identity and creation time never do.
-        func update(from item: TodoItem) {
-            title = item.title
-            isDone = item.isDone
-        }
-
-        /// Core's value for this record, or
-        /// ``FlashComposeCore/TodoRepositoryError/corruptedRecord(_:)``
-        /// when the stored title no longer satisfies ``FlashComposeCore/TodoItem``'s invariant.
-        func item() throws(TodoRepositoryError) -> TodoItem {
-            do {
-                return try TodoItem(id: id, title: title, createdAt: createdAt, isDone: isDone)
-            } catch {
-                throw .corruptedRecord(id)
-            }
-        }
-    }
-
     /// SwiftData's stored shape of a ``FlashComposeCore/CardProgress``: one row per card
     /// that has moved, keyed by its card id.
     ///
     /// `@Attribute(.unique)` on the card id keeps a second row for a card from ever being
-    /// written, whatever the adapter does. Practice days are stored as ``StoredDay``
-    /// integers, so the row holds no calendar or time zone.
+    /// written, whatever the adapter does. CloudKit sync does not allow unique
+    /// constraints, so an app that turns sync on replaces it with a fetch-before-insert in
+    /// a new schema version. Practice days are stored as ``StoredDay`` integers, so the
+    /// row holds no calendar or time zone.
     @Model
     final class CardProgressRecord {
         @Attribute(.unique)
@@ -222,6 +185,6 @@ enum AppSchemaV1: VersionedSchema {
     static let versionIdentifier = Schema.Version(1, 0, 0)
 
     static var models: [any PersistentModel.Type] {
-        [TodoRecord.self, CardProgressRecord.self, AnswerRecord.self]
+        [CardProgressRecord.self, AnswerRecord.self]
     }
 }

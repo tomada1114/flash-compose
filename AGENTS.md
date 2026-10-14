@@ -14,9 +14,11 @@ This is an iOS SwiftUI app built from a strict template: XcodeGen generates the 
 project from `project.yml`, all real code lives in a local Swift package
 (`Packages/FlashComposeKit`), and quality gates (SwiftLint strict, SwiftFormat, Swift 6
 language mode, an 80% line-coverage and a 75% function-coverage floor on the Core
-module) are enforced from day one. It ships a small worked example — a to-do list —
-that exercises every seam an app needs: MVVM with `@Observable` view models, a
-repository port with a SwiftData adapter, a fake and a contract test, and an XCUITest.
+module) are enforced from day one. The drill exercises every seam an app needs: MVVM with
+`@Observable` view models (`DrillViewModel`, `ScopeViewModel`), a storage port with a
+SwiftData adapter (`ProgressStore` / `SwiftDataProgressStore`), a fake and a contract
+test (`InMemoryProgressStore`, `ProgressStoreContract`), and an XCUITest that reveals and
+grades a card (`LaunchUITests/LaunchTests.swift`).
 
 ## Product
 
@@ -77,7 +79,7 @@ just fix           # Format, auto-fix SwiftLint violations, then run just lint
 just lint          # Lint (scripts/lint.sh: swiftformat --lint + swiftlint --strict + shellcheck + actionlint + typos + skills mirror)
 just verify-hooks  # Verify the git hooks are installed and executable (scripts/verify-hooks.sh)
 just test          # Run the package tests on the host Mac with the 80% line / 75% function floors on FlashComposeCore
-just test-fast TodoItemTests  # Run only the matching tests, no coverage floor (iteration only)
+just test-fast ScopeSelectionTests  # Run only the matching tests, no coverage floor (iteration only)
 just test-scripts  # Run the plain-bash tests for scripts/ and the skills' Python suites (scripts/tests/run.sh)
 just check-harness # Re-assert the harness's claims about itself (scripts/checks/run-all.sh)
 just build         # Build the app (Debug) for the iOS Simulator
@@ -171,7 +173,7 @@ LaunchUITests/              # XCUITest on the iOS Simulator (XCTest by necessity
   `FlashComposeUI` and `FlashComposePlatform` are siblings and never import each other.
 - Storage and OS services go in `FlashComposePlatform` as an adapter behind a `Sendable` port
   Core declares, with one fake and one contract function in `Tests/FlashComposeTestSupport`.
-  The worked example is `TodoRepository` / `SwiftDataTodoRepository`; preferences included:
+  The worked example is `ProgressStore` / `SwiftDataProgressStore`; preferences included:
   `PreferencesStoring` / `UserDefaultsPreferences`.
 - `FlashComposeCore` never imports SwiftUI, UIKit, AppKit, Cocoa, SwiftData, CoreData, CloudKit,
   UserNotifications, CoreLocation, Photos, PhotosUI, StoreKit, or WidgetKit — in any
